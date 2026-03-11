@@ -81,7 +81,7 @@ export default function UrgenceIA() {
                 className="w-full"
               />
               <div className="px-4 py-3 border-t border-gray-100 flex items-center justify-between">
-                <span className="text-[11px] text-gray-400">Stanford HAI, 2024</span>
+                <span className="text-[11px] text-gray-400">ANTHROPIC, March 5, 2026</span>
                 <a
                   href="https://cdn.sanity.io/files/4zrzovbb/website/dc7bcd0224644fce97cecb7f9e68dcd8434b35f1.pdf"
                   target="_blank"
