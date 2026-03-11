@@ -132,7 +132,7 @@ export default function Hero() {
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-black/10 rounded-full blur-xl" />
 
             <div
-              className="relative inline-flex items-center gap-4 rounded-full px-6 py-3 bg-[#0A0A0A]/90 backdrop-blur-sm border border-white/10"
+              className="relative inline-flex items-center gap-4 rounded-full px-6 py-3 bg-[#0A0A0A]/70 backdrop-blur-sm border border-white/10"
               style={{
                 boxShadow: "0 8px 32px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 3px rgba(0,0,0,0.1)",
               }}
