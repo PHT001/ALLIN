@@ -71,8 +71,8 @@ export default function Navbar() {
             href="#pricing"
             className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-[13px] font-semibold text-white transition-all hover:opacity-90"
             style={{
-              background: "linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%)",
-              boxShadow: "0 2px 12px rgba(99,102,241,0.4)",
+              background: "linear-gradient(135deg, #FF1744 0%, #D50000 100%)",
+              boxShadow: "0 2px 12px rgba(255,23,68,0.4)",
             }}
           >
             Audit Gratuit
