@@ -52,7 +52,7 @@ const stats = [
 
 export default function DarkStats() {
   return (
-    <section className="relative py-24 lg:py-32 bg-[#0A0A0A] overflow-hidden">
+    <section className="relative py-16 lg:py-20 bg-[#0A0A0A] overflow-hidden">
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#111] to-[#0A0A0A]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#FF1744]/5 rounded-full blur-[120px]" />

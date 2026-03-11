@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-24 lg:py-32 bg-[#0A0A0A] overflow-hidden">
+    <section className="relative py-16 lg:py-20 bg-[#0A0A0A] overflow-hidden">
       {/* Glow effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF1744]/8 rounded-full blur-[150px]" />
 

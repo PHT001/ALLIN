@@ -28,13 +28,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="process" className="pt-24 lg:pt-32 pb-12 lg:pb-16 bg-white">
+    <section id="process" className="pt-16 lg:pt-20 pb-10 lg:pb-12 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
             Processus
@@ -47,7 +47,7 @@ export default function HowItWorks() {
           </p>
         </motion.div>
 
-        <div className="space-y-24 lg:space-y-32">
+        <div className="space-y-16 lg:space-y-20">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
@@ -55,7 +55,7 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.7 }}
-              className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
+              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
                 i % 2 === 1 ? "lg:direction-rtl" : ""
               }`}
             >

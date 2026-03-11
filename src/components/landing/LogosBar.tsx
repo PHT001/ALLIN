@@ -22,13 +22,13 @@ const otherLogos: { name: string; file: string; size: string }[] = [];
 
 export default function LogosBar() {
   return (
-    <section className="bg-[#F8F9FA] py-16 border-y border-gray-100">
+    <section className="bg-[#F8F9FA] py-10 border-y border-gray-100">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm font-medium text-[#6B7280] mb-10"
+          className="text-center text-sm font-medium text-[#6B7280] mb-6"
         >
           Ils utilisent les outils qu&apos;on enseigne :
         </motion.p>
@@ -38,7 +38,7 @@ export default function LogosBar() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center justify-center gap-6 lg:gap-10 mb-10"
+          className="flex items-center justify-center gap-6 lg:gap-10 mb-6"
         >
           {heroLogos.map((logo, i) => (
             <motion.div

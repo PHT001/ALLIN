@@ -49,13 +49,13 @@ function Stars() {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 lg:py-32 bg-white">
+    <section id="testimonials" className="py-16 lg:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
             Témoignages

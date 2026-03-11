@@ -117,7 +117,7 @@ function SwappingCards() {
 
 export default function UrgenceIA() {
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <section className="relative py-14 lg:py-20 bg-white overflow-hidden">
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

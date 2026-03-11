@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function VideoClaude() {
   return (
-    <section className="pt-32 pb-0 bg-white">
+    <section className="pt-16 pb-0 bg-white">
       <div className="mx-auto max-w-xs px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

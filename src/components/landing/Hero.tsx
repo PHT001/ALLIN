@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative flex items-center pt-24 pb-8 overflow-hidden">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-red-50/30 pointer-events-none" />
 
@@ -19,7 +19,7 @@ export default function Hero() {
         <Image src="/images/deco-star.png" alt="" width={120} height={120} className="w-20 lg:w-28" />
       </motion.div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-16">
         <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-16 lg:mt-20 flex justify-center"
+          className="mt-10 lg:mt-12 flex justify-center"
         >
           <div className="inline-flex items-center gap-4 bg-[#0A0A0A] rounded-full px-6 py-3 shadow-xl">
             <div className="flex -space-x-2">

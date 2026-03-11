@@ -68,7 +68,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="relative py-24 lg:py-32 bg-[#F8F9FA] overflow-hidden">
+    <section className="relative py-16 lg:py-20 bg-[#F8F9FA] overflow-hidden">
       {/* Decorative mascot subtle */}
       <div className="absolute top-16 right-8 lg:right-16 opacity-[0.04] pointer-events-none">
         <Image
@@ -85,7 +85,7 @@ export default function Features() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
             Services
