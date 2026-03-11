@@ -94,6 +94,23 @@ export default function HowItWorks() {
                 </ul>
               </div>
 
+              {/* Arrow connector — mobile only */}
+              <motion.div
+                initial={{ opacity: 0, y: -5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex justify-center lg:hidden -my-4"
+              >
+                <motion.svg
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  width="28" height="40" viewBox="0 0 28 40" fill="none"
+                >
+                  <path d="M14 4V32" stroke="#FF1744" strokeWidth="2.5" strokeLinecap="round" />
+                  <path d="M6 24L14 34L22 24" stroke="#FF1744" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                </motion.svg>
+              </motion.div>
+
               {/* Visual side */}
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                 {i === 0 ? (
