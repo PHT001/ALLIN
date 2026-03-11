@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function VideoRobot() {
   return (
-    <section className="py-0 bg-white">
+    <section className="py-0 -mb-16 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
