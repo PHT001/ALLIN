@@ -132,20 +132,18 @@ export default function Hero() {
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-black/10 rounded-full blur-xl" />
 
             <div
-              className="relative inline-flex items-center gap-4 rounded-full px-6 py-3 border border-white/20 backdrop-blur-xl"
+              className="relative inline-flex items-center gap-4 rounded-full px-6 py-3 bg-[#0A0A0A]/90 backdrop-blur-sm border border-white/10"
               style={{
-                background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.08)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.08), 0 1px 3px rgba(0,0,0,0.1)",
               }}
             >
               {/* Inner glass highlight */}
               <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
-                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-                <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-white/10 to-transparent rounded-full" />
+                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white/15 to-transparent" />
               </div>
 
               <div className="relative flex -space-x-2">
-                <div className="h-10 w-10 rounded-full border-2 border-white/30 overflow-hidden shadow-lg">
+                <div className="h-10 w-10 rounded-full border-2 border-[#333] overflow-hidden">
                   <Image
                     src="/images/founder-marius.png"
                     alt="Marius"
@@ -154,7 +152,7 @@ export default function Hero() {
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="h-10 w-10 rounded-full border-2 border-white/30 overflow-hidden shadow-lg">
+                <div className="h-10 w-10 rounded-full border-2 border-[#333] overflow-hidden">
                   <Image
                     src="/images/founder-igor.jpg"
                     alt="Igor"
@@ -165,10 +163,10 @@ export default function Hero() {
                 </div>
               </div>
               <div className="relative">
-                <p className="text-gray-900 text-sm font-semibold">
+                <p className="text-white text-sm font-semibold">
                   Fondé par Marius &amp; Igor
                 </p>
-                <p className="text-gray-500 text-xs flex items-center gap-1">
+                <p className="text-gray-400 text-xs flex items-center gap-1">
                   <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
