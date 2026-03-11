@@ -49,7 +49,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <span className="text-xl font-extrabold text-white tracking-tight">
-              Opex<span className="text-[#FF1744]">IA</span>
+              Opex<span className="text-white/50">IA</span>
             </span>
           </a>
 
