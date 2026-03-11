@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center pt-24 pb-8 overflow-hidden">
+    <section className="relative flex items-center pt-20 pb-4 overflow-hidden">
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-red-50/30 pointer-events-none" />
 
@@ -19,7 +19,7 @@ export default function Hero() {
         <Image src="/images/deco-star.png" alt="" width={120} height={120} className="w-20 lg:w-28" />
       </motion.div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-16">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-6 lg:py-12">
         <div className="max-w-3xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -116,47 +116,68 @@ export default function Hero() {
             </motion.div>
         </div>
 
-        {/* Founders Badge — Dark pill */}
+        {/* Founders Badge — 3D Floating Liquid Glass */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
           className="mt-10 lg:mt-12 flex justify-center"
         >
-          <div className="inline-flex items-center gap-4 bg-[#0A0A0A] rounded-full px-6 py-3 shadow-xl">
-            <div className="flex -space-x-2">
-              <div className="h-10 w-10 rounded-full border-2 border-[#333] overflow-hidden">
-                <Image
-                  src="/images/founder-marius.png"
-                  alt="Marius"
-                  width={40}
-                  height={40}
-                  className="h-full w-full object-cover"
-                />
+          <motion.div
+            animate={{ y: [0, -6, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="relative"
+          >
+            {/* Soft shadow underneath */}
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-black/10 rounded-full blur-xl" />
+
+            <div
+              className="relative inline-flex items-center gap-4 rounded-full px-6 py-3 border border-white/20 backdrop-blur-xl"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.1) 100%)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.08)",
+              }}
+            >
+              {/* Inner glass highlight */}
+              <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+                <div className="absolute top-0 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+                <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-white/10 to-transparent rounded-full" />
               </div>
-              <div className="h-10 w-10 rounded-full border-2 border-[#333] overflow-hidden">
-                <Image
-                  src="/images/founder-igor.jpg"
-                  alt="Igor"
-                  width={40}
-                  height={40}
-                  className="h-full w-full object-cover"
-                />
+
+              <div className="relative flex -space-x-2">
+                <div className="h-10 w-10 rounded-full border-2 border-white/30 overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/founder-marius.png"
+                    alt="Marius"
+                    width={40}
+                    height={40}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="h-10 w-10 rounded-full border-2 border-white/30 overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/founder-igor.jpg"
+                    alt="Igor"
+                    width={40}
+                    height={40}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="relative">
+                <p className="text-gray-900 text-sm font-semibold">
+                  Fondé par Marius &amp; Igor
+                </p>
+                <p className="text-gray-500 text-xs flex items-center gap-1">
+                  <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Paris, France
+                </p>
               </div>
             </div>
-            <div>
-              <p className="text-white text-sm font-semibold">
-                Fondé par Marius &amp; Igor
-              </p>
-              <p className="text-gray-400 text-xs flex items-center gap-1">
-                <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                Paris, France
-              </p>
-            </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
