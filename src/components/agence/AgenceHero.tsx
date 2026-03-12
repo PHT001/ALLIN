@@ -101,15 +101,6 @@ export default function AgenceHero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-[#FAFAFA]">
-      {/* Grid pattern background */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: "linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* LEFT — Text content */}
