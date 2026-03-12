@@ -8,33 +8,36 @@ import DeployAnimation from "./DeployAnimation";
 const steps = [
   {
     num: "01",
-    title: "Audit gratuit (30 min)",
-    desc: "On analyse vos process actuels et on identifie les quick wins IA. Vous repartez avec une cartographie claire de ce qui peut être automatisé — et combien ça vous fait gagner.",
+    title: "Audit gratuit",
+    duration: "30 min",
+    desc: "On analyse vos process actuels et on identifie les quick wins IA.",
     features: ["Analyse de vos workflows", "Détection des goulots", "Chiffrage du potentiel"],
   },
   {
     num: "02",
-    title: "Plan d'action sur-mesure",
-    desc: "On vous présente exactement quoi automatiser, combien ça coûte, et combien ça rapporte. Pas de jargon, que du concret avec un ROI clair.",
+    title: "Plan d'action",
+    duration: "Sur-mesure",
+    desc: "On vous présente exactement quoi automatiser, combien ça coûte, et le ROI attendu.",
     features: ["Roadmap personnalisée", "ROI détaillé par action", "Priorisation par impact"],
   },
   {
     num: "03",
-    title: "Installation & Formation",
-    desc: "On déploie les systèmes IA, on teste, on forme votre équipe. Vous n'avez rien à faire. En 30 jours, tout tourne.",
-    features: ["Déploiement clé en main", "Formation de vos équipes", "Support continu"],
+    title: "Déploiement",
+    duration: "30 jours",
+    desc: "On déploie, on teste, on forme votre équipe. Vous n'avez rien à faire.",
+    features: ["Installation clé en main", "Formation équipes", "Support continu"],
   },
 ];
 
 export default function ProcessSteps() {
   return (
-    <section id="process" className="pt-16 lg:pt-20 pb-10 lg:pb-12 bg-white">
+    <section id="process" className="py-20 lg:py-28 bg-[#FAFAFA] overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
           <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
             Processus
@@ -42,48 +45,79 @@ export default function ProcessSteps() {
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
             3 &eacute;tapes. 30 jours. C&apos;est tout.
           </h2>
-          <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
-            On s&apos;occupe de tout. Votre &eacute;quipe n&apos;a rien &agrave; installer, rien &agrave; configurer.
-          </p>
         </motion.div>
 
-        <div className="space-y-16 lg:space-y-20">
+        {/* Horizontal timeline — desktop */}
+        <div className="hidden lg:block mb-20">
+          {/* Connected line */}
+          <div className="relative flex items-center justify-between max-w-3xl mx-auto mb-12">
+            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-200" />
+            <motion.div
+              className="absolute top-1/2 left-0 h-[2px] bg-[#FF1744]"
+              initial={{ width: "0%" }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+            />
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 + i * 0.3, type: "spring", stiffness: 300 }}
+                className="relative z-10 flex flex-col items-center"
+              >
+                <div className="w-14 h-14 rounded-full bg-white border-[3px] border-[#FF1744] flex items-center justify-center shadow-lg shadow-red-100">
+                  <span className="text-lg font-black text-[#FF1744]">{step.num}</span>
+                </div>
+                <div className="mt-4 text-center">
+                  <p className="text-sm font-bold text-[#111]">{step.title}</p>
+                  <p className="text-xs text-[#FF1744] font-semibold mt-0.5">{step.duration}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Step cards — stacked vertically on mobile, row on desktop */}
+        <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-6">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7 }}
-              className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
             >
-              {/* Text side */}
-              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <span className="text-6xl lg:text-8xl font-black text-[#FF1744]/10">
-                  {step.num}
-                </span>
-                <h3 className="mt-2 text-2xl lg:text-3xl font-bold tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
-                  {step.desc}
-                </p>
-                <ul className="mt-6 space-y-3">
+              {/* Mobile step indicator */}
+              <div className="flex items-center gap-3 mb-4 lg:hidden">
+                <div className="w-10 h-10 rounded-full bg-[#FF1744] flex items-center justify-center">
+                  <span className="text-sm font-black text-white">{step.num}</span>
+                </div>
+                <div>
+                  <p className="text-lg font-bold">{step.title}</p>
+                  <p className="text-xs text-[#FF1744] font-semibold">{step.duration}</p>
+                </div>
+              </div>
+
+              {/* Description card */}
+              <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm mb-4">
+                <p className="text-[#6B7280] leading-relaxed mb-4">{step.desc}</p>
+                <ul className="space-y-2">
                   {step.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-[#111]">
-                      <span className="h-6 w-6 rounded-full bg-[#FF1744]/10 flex items-center justify-center flex-shrink-0">
-                        <svg className="h-3.5 w-3.5 text-[#FF1744]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </span>
+                    <li key={f} className="flex items-center gap-2 text-sm text-[#111]">
+                      <svg className="h-4 w-4 text-[#FF1744] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
                       <span className="font-medium">{f}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Visual side */}
-              <div className={`${i % 2 === 1 ? "lg:order-1" : ""} scale-[0.9] origin-top lg:scale-100`}>
+              {/* Animation card */}
+              <div className="scale-[0.92] origin-top">
                 {i === 0 ? <AuditAnimation /> : i === 1 ? <PlanAnimation /> : <DeployAnimation />}
               </div>
             </motion.div>
