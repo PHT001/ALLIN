@@ -33,61 +33,6 @@ function TypewriterWord({ word }: { word: string }) {
   );
 }
 
-/* Animated mesh gradient blob */
-function MeshBlob() {
-  return (
-    <div className="relative w-full h-full">
-      {/* Main blob */}
-      <motion.div
-        className="absolute inset-0"
-        animate={{
-          borderRadius: [
-            "30% 70% 70% 30% / 30% 30% 70% 70%",
-            "50% 50% 30% 70% / 60% 40% 60% 40%",
-            "70% 30% 50% 50% / 40% 60% 40% 60%",
-            "30% 70% 70% 30% / 30% 30% 70% 70%",
-          ],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          background: "linear-gradient(135deg, #FF1744 0%, #FF5252 25%, #FF8A80 50%, #FF1744 75%, #D50000 100%)",
-          filter: "blur(1px)",
-        }}
-      />
-      {/* Inner pulse */}
-      <motion.div
-        className="absolute inset-4"
-        animate={{
-          borderRadius: [
-            "50% 50% 30% 70% / 60% 40% 60% 40%",
-            "30% 70% 70% 30% / 30% 30% 70% 70%",
-            "70% 30% 50% 50% / 40% 60% 40% 60%",
-            "50% 50% 30% 70% / 60% 40% 60% 40%",
-          ],
-          scale: [0.9, 1, 0.95, 0.9],
-        }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          background: "linear-gradient(225deg, rgba(255,255,255,0.3) 0%, transparent 50%)",
-        }}
-      />
-      {/* Stats inside blob */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center text-white">
-          <motion.p
-            animate={{ opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="text-6xl lg:text-8xl font-black"
-          >
-            x6
-          </motion.p>
-          <p className="text-sm font-medium text-white/80 mt-1">ROI moyen</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function AgenceHero() {
   const [wordIndex, setWordIndex] = useState(0);
 
@@ -103,9 +48,7 @@ export default function AgenceHero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-[#FAFAFA]">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* LEFT — Text content */}
-          <div>
+        <div className="max-w-2xl">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -231,49 +174,6 @@ export default function AgenceHero() {
                 </div>
               ))}
             </motion.div>
-          </div>
-
-          {/* RIGHT — Animated mesh blob */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative w-[420px] h-[420px] mx-auto">
-              {/* Shadow */}
-              <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-[70%] h-8 bg-black/10 rounded-full blur-2xl" />
-              <MeshBlob />
-            </div>
-
-            {/* Floating micro-cards */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-8 -left-4 bg-white rounded-xl shadow-lg border border-gray-100 px-4 py-3"
-            >
-              <p className="text-[10px] text-[#9CA3AF] uppercase tracking-wider">Temps gagn&eacute;</p>
-              <p className="text-lg font-black text-[#111]">-73%</p>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-16 -right-4 bg-white rounded-xl shadow-lg border border-gray-100 px-4 py-3"
-            >
-              <p className="text-[10px] text-[#9CA3AF] uppercase tracking-wider">Co&ucirc;ts r&eacute;duits</p>
-              <p className="text-lg font-black text-[#FF1744]">-45%</p>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute top-1/2 -right-8 bg-[#0A0A0A] rounded-xl shadow-lg px-4 py-3"
-            >
-              <p className="text-[10px] text-white/50 uppercase tracking-wider">Satisfaction</p>
-              <p className="text-lg font-black text-white">98%</p>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>
