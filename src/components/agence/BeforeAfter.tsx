@@ -188,8 +188,7 @@ function ResultCard({ caseData, index }: { caseData: (typeof cases)[0]; index: n
 
 export default function BeforeAfter() {
   return (
-    <section id="resultats" className="relative py-20 lg:py-28 bg-[#F8F9FA]">
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+    <section id="resultats" className="py-20 lg:py-28 bg-[#F8F9FA]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

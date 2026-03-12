@@ -73,8 +73,7 @@ export default function AgenceTestimonials() {
   }, [next]);
 
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+    <section className="py-20 lg:py-28 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left — Header + navigation */}

@@ -38,8 +38,7 @@ export default function LogoMarquee() {
   const row2 = [...sectors2, ...sectors2, ...sectors2];
 
   return (
-    <section className="relative py-12 lg:py-16 bg-[#F8F9FA] overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+    <section className="py-12 lg:py-16 bg-[#F8F9FA] overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
