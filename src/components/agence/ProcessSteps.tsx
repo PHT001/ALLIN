@@ -31,7 +31,8 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section id="process" className="py-20 lg:py-28 bg-[#FAFAFA] overflow-hidden">
+    <section id="process" className="relative py-20 lg:py-28 bg-[#FAFAFA] overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

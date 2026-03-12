@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function FormationBridge() {
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="relative py-16 lg:py-20 bg-white">
+      <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
