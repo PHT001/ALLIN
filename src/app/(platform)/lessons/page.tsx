@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { MODULE_METADATA, WEEKS, TIER_MODULE_ACCESS } from "@/lib/constants";
+import { MODULE_METADATA, WEEKS, TIER_MODULE_ACCESS, MODULES } from "@/lib/constants";
 import type { ModuleMetadata } from "@/lib/constants";
 
 interface LessonItem {
@@ -30,10 +30,10 @@ interface ModuleGroup {
 
 /* ——— Week Themes ——— */
 const WEEK_THEMES = [
-  { gradient: "from-emerald-500/20 via-emerald-500/5 to-transparent", accent: "text-emerald-400", accentBg: "bg-emerald-500/10", border: "border-emerald-500/20", bar: "bg-emerald-400", ring: "stroke-emerald-400", glow: "shadow-emerald-500/10" },
-  { gradient: "from-blue-500/20 via-blue-500/5 to-transparent",      accent: "text-blue-400",    accentBg: "bg-blue-500/10",    border: "border-blue-500/20",    bar: "bg-blue-400",    ring: "stroke-blue-400",    glow: "shadow-blue-500/10" },
-  { gradient: "from-violet-500/20 via-violet-500/5 to-transparent",   accent: "text-violet-400",  accentBg: "bg-violet-500/10",  border: "border-violet-500/20",  bar: "bg-violet-400",  ring: "stroke-violet-400",  glow: "shadow-violet-500/10" },
-  { gradient: "from-amber-500/20 via-amber-500/5 to-transparent",     accent: "text-amber-400",   accentBg: "bg-amber-500/10",   border: "border-amber-500/20",   bar: "bg-amber-400",   ring: "stroke-amber-400",   glow: "shadow-amber-500/10" },
+  { accent: "text-emerald-400", accentBg: "bg-emerald-500/10", border: "border-emerald-500/20", bar: "bg-emerald-400", ring: "stroke-emerald-400", leftBorder: "border-l-emerald-500" },
+  { accent: "text-blue-400",    accentBg: "bg-blue-500/10",    border: "border-blue-500/20",    bar: "bg-blue-400",    ring: "stroke-blue-400",    leftBorder: "border-l-blue-500" },
+  { accent: "text-violet-400",  accentBg: "bg-violet-500/10",  border: "border-violet-500/20",  bar: "bg-violet-400",  ring: "stroke-violet-400",  leftBorder: "border-l-violet-500" },
+  { accent: "text-amber-400",   accentBg: "bg-amber-500/10",   border: "border-amber-500/20",   bar: "bg-amber-400",   ring: "stroke-amber-400",   leftBorder: "border-l-amber-500" },
 ];
 
 /* ——— Animation Variants ——— */
@@ -154,12 +154,20 @@ function IconLayers({ className }: { className?: string }) {
   );
 }
 
+function IconSparkle({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M8 0C8 0 9.5 5 11 6.5C12.5 8 16 8 16 8C16 8 12.5 8 11 9.5C9.5 11 8 16 8 16C8 16 6.5 11 5 9.5C3.5 8 0 8 0 8C0 8 3.5 8 5 6.5C6.5 5 8 0 8 0Z" />
+    </svg>
+  );
+}
+
 /* ——— Circular Progress Ring ——— */
 function CircularProgress({
   percentage,
   size = 56,
   strokeWidth = 4,
-  strokeColor = "stroke-white/60",
+  strokeColor = "stroke-[#FF1744]",
   className,
 }: {
   percentage: number;
@@ -182,7 +190,7 @@ function CircularProgress({
           fill="none"
           stroke="currentColor"
           strokeWidth={strokeWidth}
-          className="text-white/[0.06]"
+          className="text-[#FF1744]/[0.08]"
         />
         <circle
           cx={size / 2}
@@ -197,7 +205,7 @@ function CircularProgress({
           style={{ transition: "stroke-dashoffset 1s ease-out" }}
         />
       </svg>
-      <span className="absolute text-xs font-black text-white/80">
+      <span className="absolute text-xs font-black text-white/80 stat-number">
         {percentage}%
       </span>
     </div>
@@ -243,23 +251,19 @@ export default function LessonsPage() {
   if (loading) {
     return (
       <div className="max-w-5xl mx-auto animate-pulse space-y-8">
-        <div className="flex items-center justify-between p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
-          <div className="space-y-3">
-            <div className="h-10 bg-white/5 rounded-lg w-56" />
-            <div className="h-4 bg-white/5 rounded w-72" />
-            <div className="flex gap-3 mt-4">
-              <div className="h-7 bg-white/5 rounded-full w-24" />
-              <div className="h-7 bg-white/5 rounded-full w-24" />
-              <div className="h-7 bg-white/5 rounded-full w-24" />
-            </div>
+        <div className="space-y-3 py-8">
+          <div className="h-10 bg-white/5 rounded-lg w-56" />
+          <div className="h-4 bg-white/5 rounded w-72" />
+          <div className="flex gap-3 mt-4">
+            <div className="h-7 bg-white/5 rounded-full w-24" />
+            <div className="h-7 bg-white/5 rounded-full w-24" />
+            <div className="h-7 bg-white/5 rounded-full w-24" />
           </div>
-          <div className="w-16 h-16 rounded-full bg-white/5" />
         </div>
         {[1, 2, 3, 4].map((i) => (
           <div key={i} className="space-y-4">
-            <div className="h-32 bg-white/[0.03] rounded-2xl" />
+            <div className="h-28 bg-white/[0.03] rounded-2xl" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <div className="h-28 bg-white/[0.03] rounded-xl" />
               <div className="h-28 bg-white/[0.03] rounded-xl" />
               <div className="h-28 bg-white/[0.03] rounded-xl" />
             </div>
@@ -271,34 +275,30 @@ export default function LessonsPage() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      {/* ═══════ Hero Header ═══════ */}
+      {/* ═══════ Hero Header — Full bleed ═══════ */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.06] to-white/[0.02] border border-white/[0.08] p-8 mb-12 shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+        className="relative py-8 mb-12"
       >
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-white/[0.03] to-transparent rounded-full -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-white/[0.02] to-transparent rounded-full translate-y-1/2 -translate-x-1/4" />
-
-        <div className="relative flex items-center justify-between gap-8">
+        <div className="flex items-center justify-between gap-8">
           <div>
             <h1 className="text-3xl font-semibold tracking-tight mb-2">Formation</h1>
-            <p className="text-sm text-white/40 mb-5 max-w-md">
-              Progresse à ton rythme et deviens un expert IA. Chaque semaine te rapproche de l&apos;autonomie complete.
+            <p className="text-sm text-white/35 mb-5 max-w-md">
+              Progresse à ton rythme et deviens un expert IA. Chaque semaine te rapproche de l&apos;autonomie complète.
             </p>
             <div className="flex items-center gap-3 flex-wrap">
-              <span className="flex items-center gap-1.5 text-xs font-medium text-white/50 bg-white/[0.05] px-3 py-1.5 rounded-full border border-white/[0.06]">
-                <IconBook className="w-3.5 h-3.5 text-white/40" />
+              <span className="flex items-center gap-1.5 text-xs font-medium text-white/50 bg-white/[0.06] px-3 py-1.5 rounded-full border border-white/[0.08]">
+                <IconBook className="w-3.5 h-3.5 text-[#FF1744]/60" />
                 {totalLessons} leçons
               </span>
-              <span className="flex items-center gap-1.5 text-xs font-medium text-white/50 bg-white/[0.05] px-3 py-1.5 rounded-full border border-white/[0.06]">
-                <IconLayers className="w-3.5 h-3.5 text-white/40" />
+              <span className="flex items-center gap-1.5 text-xs font-medium text-white/50 bg-white/[0.06] px-3 py-1.5 rounded-full border border-white/[0.08]">
+                <IconLayers className="w-3.5 h-3.5 text-[#FF1744]/60" />
                 {totalModules} modules
               </span>
-              <span className="flex items-center gap-1.5 text-xs font-medium text-white/50 bg-white/[0.05] px-3 py-1.5 rounded-full border border-white/[0.06]">
-                <IconClock className="w-3.5 h-3.5 text-white/40" />
+              <span className="flex items-center gap-1.5 text-xs font-medium text-white/50 bg-white/[0.06] px-3 py-1.5 rounded-full border border-white/[0.08]">
+                <IconClock className="w-3.5 h-3.5 text-[#FF1744]/60" />
                 4 semaines
               </span>
             </div>
@@ -310,7 +310,7 @@ export default function LessonsPage() {
               percentage={totalProgress}
               size={80}
               strokeWidth={5}
-              strokeColor="stroke-white"
+              strokeColor="stroke-[#FF1744]"
             />
           </div>
         </div>
@@ -337,23 +337,21 @@ export default function LessonsPage() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
             >
-              {/* ——— Week Header Card ——— */}
+              {/* ——— Week Header — Left border accent ——— */}
               <div className={cn(
-                "relative overflow-hidden rounded-2xl border border-white/[0.06] mb-6",
-                !weekAccessible && "opacity-60"
+                "relative overflow-hidden rounded-2xl border border-[rgba(255,255,255,0.08)] mb-6 border-l-[3px]",
+                theme.leftBorder,
+                !weekAccessible && "opacity-50"
               )}>
-                {/* Gradient accent bar */}
-                <div className={cn("h-1", theme.bar)} />
-
                 {/* Background hero number */}
                 <div className="absolute right-6 top-1/2 -translate-y-1/2 select-none pointer-events-none">
-                  <span className={cn("text-[140px] font-black leading-none opacity-[0.03]", theme.accent)}>
+                  <span className={cn("text-[140px] font-black leading-none opacity-[0.05]", theme.accent)}>
                     {String(week.week).padStart(2, "0")}
                   </span>
                 </div>
 
                 {/* Content */}
-                <div className={cn("relative p-6 bg-gradient-to-r", theme.gradient)}>
+                <div className="relative p-6">
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <div className="flex items-center gap-3 mb-1.5">
@@ -387,7 +385,7 @@ export default function LessonsPage() {
                           strokeWidth={3.5}
                           strokeColor={theme.ring}
                         />
-                        <span className="text-[10px] text-white/30 font-medium">
+                        <span className="text-[10px] text-white/30 font-medium stat-number">
                           {weekCompleted}/{weekTotal}
                         </span>
                       </div>
@@ -420,9 +418,11 @@ export default function LessonsPage() {
                       key={mod.id}
                       variants={cardVariants}
                       className={cn(
-                        "group relative rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-all duration-300",
+                        "group relative rounded-xl border overflow-hidden transition-all duration-300",
                         isExpanded && "lg:col-span-2",
-                        modAccessible && "hover:border-white/[0.12] hover:bg-white/[0.04] hover:shadow-[0_0_30px_rgba(255,255,255,0.03)] hover:scale-[1.005]",
+                        modAccessible
+                          ? "border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] hover:border-[rgba(255,255,255,0.18)] hover:bg-[rgba(255,255,255,0.04)]"
+                          : "border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.01)]",
                       )}
                     >
                       {/* Module header button */}
@@ -439,9 +439,11 @@ export default function LessonsPage() {
                       >
                         {/* Module number box */}
                         <div className={cn(
-                          "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors",
+                          "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all",
                           modAccessible
-                            ? cn("border bg-white/[0.04]", theme.border)
+                            ? cn("border bg-[rgba(255,255,255,0.04)]", theme.border,
+                                hasActive && "ring-2 ring-[#FF1744]/20"
+                              )
                             : "border border-white/[0.06] bg-white/[0.02]"
                         )}>
                           {modAccessible ? (
@@ -455,7 +457,6 @@ export default function LessonsPage() {
 
                         {/* Content */}
                         <div className="flex-1 min-w-0">
-                          {/* Title row with brand icons */}
                           <div className="flex items-center gap-2 mb-1">
                             <h3 className={cn(
                               "text-sm font-bold",
@@ -464,7 +465,6 @@ export default function LessonsPage() {
                               {mod.title}
                             </h3>
 
-                            {/* Brand icons */}
                             {hasClaude && (
                               <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-orange-500/10 border border-orange-500/20 flex-shrink-0" title="Claude">
                                 <IconClaude className="text-orange-400 w-3.5 h-3.5" />
@@ -476,7 +476,6 @@ export default function LessonsPage() {
                               </span>
                             )}
 
-                            {/* Status badges */}
                             {modAccessible && isModuleCompleted && (
                               <span className="flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full flex-shrink-0 border border-emerald-500/20">
                                 <IconCheck className="w-3 h-3" /> Terminé
@@ -492,7 +491,6 @@ export default function LessonsPage() {
                             )}
                           </div>
 
-                          {/* Description */}
                           <p className={cn(
                             "text-xs mb-2",
                             modAccessible ? "text-white/35" : "text-white/15"
@@ -500,7 +498,6 @@ export default function LessonsPage() {
                             {mod.description}
                           </p>
 
-                          {/* Metadata row */}
                           <div className="flex items-center gap-3">
                             <span className={cn("flex items-center gap-1 text-[10px]", modAccessible ? "text-white/30" : "text-white/15")}>
                               <IconClock /> {meta.estimatedTime}
@@ -512,7 +509,7 @@ export default function LessonsPage() {
                             {modAccessible && pct > 0 && (
                               <>
                                 <span className="w-0.5 h-0.5 rounded-full bg-white/20" />
-                                <span className={cn("text-[10px] font-semibold", theme.accent)}>
+                                <span className={cn("text-[10px] font-semibold stat-number", theme.accent)}>
                                   {pct}%
                                 </span>
                               </>
@@ -524,7 +521,7 @@ export default function LessonsPage() {
                         {modAccessible && (
                           <div className="flex items-center gap-3 flex-shrink-0">
                             <div className="hidden sm:block">
-                              <div className="w-20 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                              <div className="w-20 h-2 rounded-full bg-white/[0.06] overflow-hidden">
                                 <div
                                   className={cn("h-full rounded-full transition-all duration-700", theme.bar)}
                                   style={{ width: `${pct}%`, opacity: pct > 0 ? 1 : 0 }}
@@ -541,19 +538,18 @@ export default function LessonsPage() {
                         )}
                       </button>
 
-                      {/* Lock overlay for inaccessible modules */}
+                      {/* Lock overlay — visible but dimmed, no blur */}
                       {!modAccessible && (
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent backdrop-blur-[1px] flex items-center justify-center rounded-xl">
-                          <div className="flex flex-col items-center gap-2">
-                            <div className="w-10 h-10 rounded-full bg-white/[0.08] border border-white/[0.1] flex items-center justify-center backdrop-blur-sm">
-                              <IconLock className="text-white/40 w-4 h-4" />
+                        <div className="absolute inset-0 flex items-end rounded-xl">
+                          <div className="w-full bg-gradient-to-t from-[#09090F]/90 via-[#09090F]/40 to-transparent p-5 pt-12 rounded-b-xl">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <IconLock className="text-[#FF1744]/50 w-3.5 h-3.5" />
+                                <span className="text-[11px] text-white/40">
+                                  {meta.lessonCount} leçons — {mod.title}
+                                </span>
+                              </div>
                             </div>
-                            <Link
-                              href="/formations"
-                              className="text-[11px] font-medium text-white/50 hover:text-white/70 transition-colors bg-white/[0.06] hover:bg-white/[0.1] px-3 py-1 rounded-full border border-white/[0.08]"
-                            >
-                              Débloquer avec Academy
-                            </Link>
                           </div>
                         </div>
                       )}
@@ -565,7 +561,7 @@ export default function LessonsPage() {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeOut" }}
-                          className="border-t border-white/[0.04] bg-white/[0.01]"
+                          className="border-t border-[rgba(255,255,255,0.06)]"
                         >
                           {mod.lessons.map((lesson, idx) => {
                             const isLocked = lesson.status === "locked";
@@ -630,7 +626,7 @@ export default function LessonsPage() {
                                       </span>
                                     )}
                                     {isCompleted && lesson.xpEarned > 0 && (
-                                      <span className="text-[10px] text-white/50 font-medium">
+                                      <span className="text-[10px] text-[#FF1744]/60 font-medium stat-number">
                                         +{lesson.xpEarned} XP
                                       </span>
                                     )}
@@ -650,7 +646,7 @@ export default function LessonsPage() {
 
                             const sharedClassName = cn(
                               "flex items-start gap-4 px-5 py-4 transition-all relative",
-                              !isLast && "border-b border-white/[0.03]",
+                              !isLast && "border-b border-[rgba(255,255,255,0.04)]",
                               isLocked
                                 ? "opacity-40 cursor-not-allowed"
                                 : "cursor-pointer hover:bg-white/[0.03]",
@@ -685,17 +681,13 @@ export default function LessonsPage() {
                 >
                   <Link
                     href="/formations"
-                    className={cn(
-                      "flex items-center gap-3 px-5 py-3 rounded-xl bg-white/[0.03] border transition-all group w-fit",
-                      theme.border,
-                      "hover:bg-white/[0.06] hover:border-white/[0.15]"
-                    )}
+                    className="flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-[#FF1744]/[0.06] to-transparent border border-[#FF1744]/[0.10] transition-all group w-fit hover:border-[#FF1744]/[0.20] hover:from-[#FF1744]/[0.10]"
                   >
-                    <IconLock className={cn("w-4 h-4", theme.accent, "opacity-60")} />
+                    <IconSparkle className="text-[#FF1744]/60" />
                     <span className="text-xs font-medium text-white/50 group-hover:text-white/70 transition-colors">
-                      Passe à Academy pour débloquer la Semaine {week.week}
+                      Débloquer 12 modules supplémentaires — 397€
                     </span>
-                    <IconArrowRight className={cn("w-3.5 h-3.5 transition-all group-hover:translate-x-0.5", theme.accent, "opacity-40 group-hover:opacity-80")} />
+                    <IconArrowRight className="w-3.5 h-3.5 transition-all group-hover:translate-x-0.5 text-[#FF1744]/40 group-hover:text-[#FF1744]/80" />
                   </Link>
                 </motion.div>
               )}

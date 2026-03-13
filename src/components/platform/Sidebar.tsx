@@ -234,8 +234,8 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     defaultOpen: true,
     items: [
       { href: "/dashboard", label: "Accueil", icon: IconHome },
-      { href: "/notes", label: "Mes notes", icon: IconNotes, badge: "Bientôt" },
-      { href: "/ressources", label: "Ressources", icon: IconFolder, badge: "Bientôt" },
+      { href: "/notes", label: "Mes notes", icon: IconNotes, badge: "Bient\u00f4t" },
+      { href: "/ressources", label: "Ressources", icon: IconFolder, badge: "Bient\u00f4t" },
     ],
   },
   {
@@ -244,7 +244,7 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     defaultOpen: true,
     items: [
       { href: "/lessons", label: "Formation", icon: IconLessons },
-      { href: "/masterclass", label: "Masterclass", icon: IconVideo, lockedForStarter: true, lockedTeaser: "Masterclass vidéo exclusives avec études de cas réelles et stratégies avancées pour lancer ton business IA." },
+      { href: "/masterclass", label: "Masterclass", icon: IconVideo, lockedForStarter: true, lockedTeaser: "Masterclass vid\u00e9o exclusives avec \u00e9tudes de cas r\u00e9elles et strat\u00e9gies avanc\u00e9es pour lancer ton business IA." },
     ],
   },
   {
@@ -252,8 +252,8 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     label: "Coaching",
     defaultOpen: true,
     items: [
-      { href: "/assistant", label: "Parler à l'IA", icon: IconBot, lockedForStarter: true, lockedTeaser: "Un assistant IA personnel qui répond à toutes tes questions sur la formation et t'aide à avancer." },
-      { href: "/coaching", label: "Réserver un appel", icon: IconPhone, badge: "Bientôt" },
+      { href: "/assistant", label: "Parler \u00e0 l'IA", icon: IconBot, lockedForStarter: true, lockedTeaser: "Un assistant IA personnel qui r\u00e9pond \u00e0 toutes tes questions sur la formation et t'aide \u00e0 avancer." },
+      { href: "/coaching", label: "R\u00e9server un appel", icon: IconPhone, badge: "Bient\u00f4t" },
     ],
   },
   {
@@ -262,9 +262,9 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     defaultOpen: true,
     items: [
       { href: "/pipeline", label: "Pipeline", icon: IconPipeline },
-      { href: "/templates", label: "Templates IA", icon: IconTemplate, lockedForStarter: true, lockedTeaser: "Bibliothèque de prompts et templates prêts à l'emploi pour tes projets clients et tes automatisations." },
-      { href: "/generateur", label: "Générateur", icon: IconWand, lockedForStarter: true, lockedTeaser: "Génère des livrables complets en un clic : landing pages, emails, scripts de vente, propositions commerciales." },
-      { href: "/marketplace", label: "Marketplace", icon: IconStore, badge: "Bientôt" },
+      { href: "/templates", label: "Templates IA", icon: IconTemplate, lockedForStarter: true, lockedTeaser: "Biblioth\u00e8que de prompts et templates pr\u00eats \u00e0 l'emploi pour tes projets clients et tes automatisations." },
+      { href: "/generateur", label: "G\u00e9n\u00e9rateur", icon: IconWand, lockedForStarter: true, lockedTeaser: "G\u00e9n\u00e8re des livrables complets en un clic : landing pages, emails, scripts de vente, propositions commerciales." },
+      { href: "/marketplace", label: "Marketplace", icon: IconStore, badge: "Bient\u00f4t" },
     ],
   },
   {
@@ -299,9 +299,31 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
+/* ——— Tier Badge ——— */
+function TierBadge({ tier }: { tier: string }) {
+  const config = {
+    one_to_one: { label: "Premium", bg: "bg-purple-500/10", text: "text-purple-400", border: "border-purple-500/20" },
+    academy: { label: "Academy", bg: "bg-[#FF1744]/10", text: "text-[#FF1744]", border: "border-[#FF1744]/20" },
+    starter: { label: "Starter", bg: "bg-white/[0.05]", text: "text-white/50", border: "border-white/[0.08]" },
+  }[tier] || { label: "Starter", bg: "bg-white/[0.05]", text: "text-white/50", border: "border-white/[0.08]" };
+
+  return (
+    <div className={cn("inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border", config.bg, config.text, config.border)}>
+      {tier === "one_to_one" && (
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+      )}
+      {config.label}
+    </div>
+  );
+}
+
 export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, open, onClose }: SidebarProps) {
   const pathname = usePathname();
   const [lockedItem, setLockedItem] = useState<NavItem | null>(null);
+
+  const level = Math.floor(xp / 500) + 1;
+  const xpInLevel = xp % 500;
+  const xpProgress = (xpInLevel / 500) * 100;
 
   return (
     <>
@@ -323,11 +345,11 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
             style={{ animation: "upgradeCardIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="glass-card !border-red-500/25 !bg-[#141418] p-7 text-center">
+            <div className="glass-card !border-[#FF1744]/25 !bg-[#0f0f18] p-7 text-center">
 
               {/* Icon */}
-              <div className="mx-auto w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 ring-1 ring-red-500/20">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-red-400">
+              <div className="mx-auto w-12 h-12 rounded-xl bg-[#FF1744]/10 flex items-center justify-center mb-4 ring-1 ring-[#FF1744]/20">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-[#FF1744]">
                   <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                   <path d="M7 11V7a5 5 0 0110 0v4" />
                 </svg>
@@ -338,16 +360,28 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
 
               {/* Teaser */}
               {lockedItem.lockedTeaser && (
-                <div className="rounded-lg bg-white/[0.03] border border-white/[0.06] p-3 mb-5 text-left">
+                <div className="rounded-lg bg-white/[0.04] border border-white/[0.08] p-3 mb-5 text-left">
                   <p className="text-[12px] text-white/50 leading-relaxed">{lockedItem.lockedTeaser}</p>
                 </div>
               )}
 
+              {/* Features preview */}
+              <div className="mb-5 text-left space-y-2">
+                {["13 modules complets", "80 le\u00e7ons progressives", "Quiz de validation", "Assistant IA int\u00e9gr\u00e9"].map((f) => (
+                  <div key={f} className="flex items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-[#FF1744]/15 flex items-center justify-center flex-shrink-0">
+                      <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-[#FF1744]"><polyline points="20 6 9 17 4 12" /></svg>
+                    </div>
+                    <span className="text-[11px] text-white/45">{f}</span>
+                  </div>
+                ))}
+              </div>
+
               <a
                 href="/pricing"
-                className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-sm font-semibold text-black hover:bg-white/90 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-[#FF1744] to-[#D50000] text-sm font-semibold text-white hover:from-[#D50000] hover:to-[#FF1744] transition-all duration-200 shadow-lg shadow-[#FF1744]/20"
               >
-                Débloquer — 399€
+                Débloquer — 397€
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
@@ -367,28 +401,39 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
 
       <aside
         className={cn(
-          "fixed top-0 left-0 h-full w-[260px] bg-[#0d0d15] border-r border-white/[0.06] z-50 flex flex-col transition-transform duration-300",
+          "fixed top-0 left-0 h-full w-[260px] bg-[#0A0A0A] border-r border-[rgba(255,23,68,0.08)] z-50 flex flex-col transition-transform duration-300",
           "md:translate-x-0",
           open ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         )}
       >
-        {/* Logo */}
-        <div className="px-6 h-16 flex items-center border-b border-white/[0.06] shrink-0">
+        {/* Logo + Tier badge */}
+        <div className="px-6 pt-5 pb-4 shrink-0">
           <Link href="/dashboard" className="flex items-center gap-2.5">
             <span className="text-xl font-bold tracking-tight">
               <span className="text-white">Opex</span>
-              <span className="bg-gradient-to-r from-white to-white/40 bg-clip-text text-transparent">IA</span>
+              <span className="text-[#FF1744]">IA</span>
             </span>
           </Link>
+          {/* Glow line */}
+          <div className="h-px bg-gradient-to-r from-transparent via-[#FF1744]/15 to-transparent mt-4 mb-3" />
+          {/* Tier badge */}
+          <div className="flex items-center justify-between">
+            <TierBadge tier={tier} />
+            {tier === "starter" && (
+              <a href="/pricing" className="text-[9px] text-[#FF1744]/60 hover:text-[#FF1744] transition-colors font-medium">
+                Upgrade
+              </a>
+            )}
+          </div>
         </div>
 
         {/* Navigation — scrollable */}
-        <nav className="flex-1 px-3 pt-4 pb-3 flex flex-col gap-1 overflow-y-auto sidebar-scroll">
+        <nav className="flex-1 px-3 pb-3 flex flex-col gap-1 overflow-y-auto sidebar-scroll">
           {SIDEBAR_SECTIONS.map((section) => (
               <div key={section.id} className="mb-1">
                 {/* Section label */}
                 <div className="px-3 py-1.5">
-                  <span className="text-[10px] uppercase tracking-[0.12em] text-white/30 font-semibold">
+                  <span className="text-[10px] uppercase tracking-[0.12em] text-white/25 font-semibold">
                     {section.label}
                   </span>
                 </div>
@@ -405,11 +450,11 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
                         <button
                           key={item.href}
                           onClick={() => setLockedItem(item)}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] font-medium text-white/50 hover:text-white/80 hover:bg-white/[0.04] transition-all duration-150 w-full text-left"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] font-medium text-white/40 hover:text-white/60 hover:bg-white/[0.04] transition-all duration-150 w-full text-left"
                         >
-                          <Icon className="text-white/40" />
+                          <Icon className="text-white/30" />
                           <span className="truncate">{item.label}</span>
-                          <IconLockSmall className="ml-auto text-white/20 shrink-0" />
+                          <IconLockSmall className="ml-auto text-[#FF1744]/30 shrink-0" />
                         </button>
                       );
                     }
@@ -422,14 +467,14 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
                         className={cn(
                           "flex items-center gap-3 px-3 py-2 rounded-lg text-[13px] font-medium transition-all duration-150",
                           active
-                            ? "bg-white/[0.08] text-white"
+                            ? "bg-[#FF1744]/10 text-white border-l-2 border-[#FF1744] ml-0"
                             : "text-white/50 hover:text-white/80 hover:bg-white/[0.04]"
                         )}
                       >
-                        <Icon className={active ? "text-white" : "text-white/40"} />
+                        <Icon className={active ? "text-[#FF1744]" : "text-white/40"} />
                         <span className="truncate">{item.label}</span>
                         {item.badge && (
-                          <span className="text-[9px] font-semibold text-white/30 bg-white/[0.06] px-1.5 py-0.5 rounded-full ml-auto shrink-0">
+                          <span className="text-[9px] font-semibold text-white/25 bg-white/[0.06] px-1.5 py-0.5 rounded-full ml-auto shrink-0">
                             {item.badge}
                           </span>
                         )}
@@ -440,39 +485,60 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
               </div>
             ))}
 
-          {/* Progression card */}
-          <div className="mt-3 mx-1 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06] shadow-[0_2px_8px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.03)]">
+          {/* Streak & XP card */}
+          <div className="mt-3 mx-1 p-4 rounded-xl bg-white/[0.04] border border-white/[0.08] shadow-[0_2px_8px_rgba(0,0,0,0.15)]">
+            {/* Streak */}
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                  <IconStreak className="text-orange-400" />
+                <div className={cn("w-7 h-7 rounded-lg flex items-center justify-center", streak > 0 ? "bg-amber-500/15" : "bg-white/[0.06]")}>
+                  <IconStreak className={streak > 0 ? "text-amber-400" : "text-white/30"} />
                 </div>
                 <div>
                   <p className="text-[11px] text-white/40 leading-none">Streak</p>
-                  <p className="text-sm font-bold text-white/90">{streak} jour{streak > 1 ? "s" : ""}</p>
+                  <p className="text-sm font-bold text-white/90 stat-number">{streak} jour{streak > 1 ? "s" : ""}</p>
                 </div>
               </div>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center">
-                <IconXP className="text-white" />
+              {/* Mini 7-day calendar */}
+              <div className="flex gap-0.5">
+                {Array.from({ length: 7 }, (_, i) => (
+                  <div
+                    key={i}
+                    className={cn(
+                      "w-2 h-2 rounded-full",
+                      i < streak ? "bg-amber-400/60" : "bg-white/[0.06]"
+                    )}
+                  />
+                ))}
               </div>
-              <div>
-                <p className="text-[11px] text-white/40 leading-none">Points XP</p>
-                <p className="text-sm font-bold text-white/90">{xp.toLocaleString()}</p>
+            </div>
+
+            {/* XP + Level */}
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-lg bg-[#FF1744]/15 flex items-center justify-center">
+                <IconXP className="text-[#FF1744]" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-baseline justify-between">
+                  <p className="text-[11px] text-white/40 leading-none">Level {level}</p>
+                  <p className="text-[10px] text-white/25 stat-number">{xpInLevel}/500</p>
+                </div>
+                <div className="w-full h-1 rounded-full bg-white/[0.04] mt-1 overflow-hidden">
+                  <div className="h-full rounded-full bg-[#FF1744]/40 transition-all duration-500" style={{ width: `${xpProgress}%` }} />
+                </div>
+                <p className="text-sm font-bold text-white/90 stat-number mt-0.5">{xp.toLocaleString()} XP</p>
               </div>
             </div>
           </div>
         </nav>
 
         {/* User section */}
-        <div className="p-3 border-t border-white/[0.06] shrink-0">
+        <div className="p-3 border-t border-[rgba(255,23,68,0.08)] shrink-0">
           <div className="flex items-center gap-3 px-2 py-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-white/20 to-white/5 flex items-center justify-center text-[11px] font-bold text-white ring-1 ring-white/15">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF1744]/15 to-[#FF1744]/5 flex items-center justify-center text-[11px] font-bold text-white ring-1 ring-[#FF1744]/15">
               {userName?.[0]?.toUpperCase() || "?"}
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-[13px] font-medium text-white/80 truncate">{userName || "Élève"}</p>
+              <p className="text-[13px] font-medium text-white/80 truncate">{userName || "\u00c9l\u00e8ve"}</p>
               <p className="text-[10px] text-white/30">
                 {role === "admin" ? "Administrateur" : tier === "one_to_one" ? "Membre Premium" : tier === "academy" ? "Membre Academy" : "Membre Starter"}
               </p>
@@ -480,7 +546,7 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
               className="p-1.5 rounded-md text-white/25 hover:text-white/60 hover:bg-white/[0.06] transition-colors"
-              title="Déconnexion"
+              title="D\u00e9connexion"
             >
               <IconLogout />
             </button>

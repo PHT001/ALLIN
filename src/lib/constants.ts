@@ -14,19 +14,19 @@ export const BADGES = [
 ] as const;
 
 export const MODULES = [
-  { order: 1, title: "Comprendre l'IA et Découvrir Claude", description: "Histoire, concepts et prise en main de Claude" },
-  { order: 2, title: "Prompt Engineering et Skills Claude", description: "Prompting avancé et création de Skills" },
-  { order: 3, title: "Installer et Configurer OpenClaw", description: "Setup de ton agent IA 24/7" },
-  { order: 4, title: "Sécuriser OpenClaw", description: "Hardware, VPN, firewall et bonnes pratiques de sécurité" },
-  { order: 5, title: "Créer et Publier des Skills OpenClaw", description: "Skills OpenClaw et ClawHub marketplace" },
-  { order: 6, title: "Compétences Techniques Essentielles", description: "Web, APIs, déploiement et bases de données" },
-  { order: 7, title: "Construire un MVP de A à Z", description: "Créer ton premier produit avec Claude" },
-  { order: 8, title: "Projets Pratiques avec Claude", description: "6 projets concrets à ajouter à ton portfolio" },
-  { order: 9, title: "Projets Pratiques avec OpenClaw", description: "6 agents IA à construire et déployer" },
-  { order: 10, title: "Business avec Claude", description: "Lancer un business avec l'écosystème Claude" },
-  { order: 11, title: "Business avec OpenClaw", description: "6 stratégies de revenus avec OpenClaw" },
-  { order: 12, title: "Vente et Acquisition Clients", description: "Prospection, vente et closing" },
-  { order: 13, title: "Scaler et Pérenniser", description: "Pricing, délégation et croissance" },
+  { order: 1, title: "Découvrir l'IA & les opportunités", description: "Comprendre l'IA, les outils, et le potentiel business d'une agence IA" },
+  { order: 2, title: "Prompt Engineering avancé & Claude Pro", description: "Maîtriser Claude comme outil de travail quotidien" },
+  { order: 3, title: "Créer ton premier site web avec l'IA", description: "De zéro à un site en ligne, même sans savoir coder" },
+  { order: 4, title: "Bases de données & Backend", description: "Supabase : donner un cerveau et une mémoire à tes projets" },
+  { order: 5, title: "APIs & Intégrations", description: "Connecter les outils entre eux : Stripe, webhooks, APIs" },
+  { order: 6, title: "Automatisations", description: "Make, n8n, Zapier : créer des machines qui bossent pour toi" },
+  { order: 7, title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre" },
+  { order: 8, title: "Agents IA autonomes", description: "Des IA qui travaillent seules : veille, prospection, analyse" },
+  { order: 9, title: "Construire un MVP complet", description: "Ton premier vrai produit de A à Z" },
+  { order: 10, title: "Ton offre & tes prix", description: "Passer de \"je sais faire\" à \"je vends\"" },
+  { order: 11, title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing" },
+  { order: 12, title: "Livrer & fidéliser", description: "Un client satisfait = 3 clients en plus" },
+  { order: 13, title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable" },
 ] as const;
 
 /* ——— Module metadata (brand, difficulty, estimated time) ——— */
@@ -42,19 +42,19 @@ export interface ModuleMetadata {
 }
 
 export const MODULE_METADATA: Record<number, ModuleMetadata> = {
-  1:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
-  2:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h30",  lessonCount: 7  },
-  3:  { brands: ["openclaw"],  difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
-  4:  { brands: ["openclaw"],  difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
-  5:  { brands: ["openclaw"],  difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
-  6:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 7  },
-  7:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 7  },
-  8:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 6  },
-  9:  { brands: ["openclaw"],  difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 6  },
-  10: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 6  },
-  11: { brands: ["openclaw"],  difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 6  },
-  12: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 6  },
-  13: { brands: [],            difficulty: "avance",         estimatedTime: "~1h30",  lessonCount: 5  },
+  1:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h30",  lessonCount: 6  },
+  2:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 5  },
+  3:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~3h",    lessonCount: 6  },
+  4:  { brands: [],            difficulty: "debutant",       estimatedTime: "~3h",    lessonCount: 6  },
+  5:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 5  },
+  6:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 6  },
+  7:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 6  },
+  8:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 5  },
+  9:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 6  },
+  10: { brands: [],            difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 6  },
+  11: { brands: [],            difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 6  },
+  12: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 5  },
+  13: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 5  },
 };
 
 export const DIFFICULTY_CONFIG = {
@@ -66,10 +66,10 @@ export const DIFFICULTY_CONFIG = {
 /* ——— Weeks structure (4 weeks x 3 modules) ——— */
 
 export const WEEKS = [
-  { week: 1, title: "Fondations",          subtitle: "IA, prompting, installation et sécurisation d'OpenClaw", modules: [1, 2, 3, 4] },
-  { week: 2, title: "Construction",         subtitle: "Skills, compétences techniques et création de MVP",      modules: [5, 6, 7] },
-  { week: 3, title: "Projets & Business",   subtitle: "Projets concrets et lancement de ton activité",         modules: [8, 9, 10] },
-  { week: 4, title: "Scale",                subtitle: "Vente, acquisition clients et croissance",               modules: [11, 12, 13] },
+  { week: 1, title: "Fondations",          subtitle: "IA, prompting et premiers outils",                       modules: [1, 2] },
+  { week: 2, title: "Technique",           subtitle: "Sites web, bases de données, APIs et automatisations",   modules: [3, 4, 5] },
+  { week: 3, title: "Services",            subtitle: "Chatbots, agents IA, automatisations et MVP",            modules: [6, 7, 8, 9] },
+  { week: 4, title: "Business",            subtitle: "Offre, clients, livraison et croissance",                modules: [10, 11, 12, 13] },
 ] as const;
 
 /* ——— Tier-based module access ——— */
@@ -84,7 +84,7 @@ export const TIERS = [
   {
     id: "starter",
     name: "Starter",
-    price: 49,
+    price: 47,
     period: "one-shot",
     description: "Pour les curieux qui veulent comprendre avant de se lancer",
     features: [
@@ -95,13 +95,13 @@ export const TIERS = [
       { text: "Accompagnement personnalisé", included: false },
       { text: "Sessions en visio", included: false },
     ],
-    cta: "Commencer pour 49\u20ac",
+    cta: "Commencer pour 47\u20ac",
     popular: false,
   },
   {
     id: "academy",
     name: "Academy",
-    price: 399,
+    price: 397,
     period: "one-shot",
     description: "La formation complète pour lancer ton agence IA",
     features: [
@@ -118,7 +118,7 @@ export const TIERS = [
   {
     id: "one_to_one",
     name: "One-to-One",
-    price: 1299,
+    price: 3997,
     period: "one-shot",
     description: "L'accompagnement premium pour aller plus vite",
     features: [
@@ -149,7 +149,7 @@ export const COACHING_PRICE_DISPLAY = "90";
 /* ——— Referral / Parrainage ——— */
 export const REFERRAL_COMMISSION_RATE = 0.20; // 20%
 export const TIER_PRICES_CENTS: Record<string, number> = {
-  starter: 4900,
-  academy: 39900,
-  one_to_one: 129900,
+  starter: 4700,
+  academy: 39700,
+  one_to_one: 399700,
 };
