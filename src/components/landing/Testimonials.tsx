@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const row1 = [
   {
@@ -111,7 +112,7 @@ function PlatformIcon({ platform }: { platform: "google" | "twitter" }) {
 
 function TestimonialCard({ t }: { t: typeof row1[0] }) {
   return (
-    <div className="flex-shrink-0 w-[380px] bg-white rounded-2xl border border-gray-100 p-6 mx-3">
+    <div className="flex-shrink-0 w-[320px] sm:w-[380px] bg-white rounded-2xl border border-gray-100 p-6 mx-3">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center font-semibold text-gray-500 text-sm">
@@ -166,13 +167,9 @@ export default function Testimonials() {
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
-        <video
+        <LazyVideo
           src="/images/idee.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-40 h-40 lg:w-52 lg:h-52 object-contain"
+          className="w-40 h-40 lg:w-52 lg:h-52"
           style={{ mask: "radial-gradient(circle, black 50%, transparent 75%)", WebkitMask: "radial-gradient(circle, black 50%, transparent 75%)" }}
         />
       </motion.div>

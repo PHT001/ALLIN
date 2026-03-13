@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const dreamPoints = [
   "Tu factures **3 \u00e0 5 clients** entre 2 000\u20ac et 5 000\u20ac/mois chacun pour des automatisations IA.",
@@ -28,44 +29,7 @@ export default function DreamSection() {
     <section className="py-16 lg:py-24 bg-[#F8F9FA]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
-              La vision
-            </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8">
-              Imagine ta vie
-              <br />
-              dans 90 jours.
-            </h2>
-
-            <ul className="space-y-5">
-              {dreamPoints.map((point, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="flex gap-4 items-start"
-                >
-                  <span className="text-[#FF1744] font-bold mt-0.5 flex-shrink-0">
-                    &rarr;
-                  </span>
-                  <span className="text-[#6B7280] leading-relaxed">
-                    {formatBold(point)}
-                  </span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Income card */}
+          {/* Income card — LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,13 +43,9 @@ export default function DreamSection() {
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              <video
+              <LazyVideo
                 src="/images/robot-1.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-contain"
+                className="w-full h-full"
               />
             </motion.div>
 
@@ -120,6 +80,43 @@ export default function DreamSection() {
                 </div>
               </div>
             </div>
+          </motion.div>
+
+          {/* Text side — RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
+              La vision
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8">
+              Imagine ta vie
+              <br />
+              dans 90 jours.
+            </h2>
+
+            <ul className="space-y-5">
+              {dreamPoints.map((point, i) => (
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: 10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="flex gap-4 items-start"
+                >
+                  <span className="text-[#FF1744] font-bold mt-0.5 flex-shrink-0">
+                    &rarr;
+                  </span>
+                  <span className="text-[#6B7280] leading-relaxed">
+                    {formatBold(point)}
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
           </motion.div>
         </div>
       </div>

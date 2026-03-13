@@ -25,17 +25,17 @@ export default function FormationBridge() {
             <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
             {/* Glow */}
-            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#FF1744]/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#007AFF]/10 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="relative">
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#FF1744]/15 border border-[#FF1744]/30 px-4 py-1.5 text-xs font-semibold text-[#FF5252] mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#007AFF]/15 border border-[#007AFF]/30 px-4 py-1.5 text-xs font-semibold text-[#5AC8FA] mb-6">
                 Formation disponible
               </span>
 
               <h2 className="text-2xl lg:text-4xl font-bold text-white tracking-tight leading-tight">
-                Vous pr&eacute;f&eacute;rez apprendre &agrave; le faire
+                Vous voulez aussi rendre votre &eacute;quipe
                 <br />
-                <span className="text-white/40">vous-m&ecirc;me ?</span>
+                <span className="text-white/40">autonome sur l&apos;IA ?</span>
               </h2>
 
               <p className="mt-4 text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
@@ -53,7 +53,7 @@ export default function FormationBridge() {
                     key={item}
                     className="inline-flex items-center gap-2 text-xs text-white/60 bg-white/[0.04] border border-white/[0.06] rounded-full px-3 py-1.5"
                   >
-                    <svg className="h-3 w-3 text-[#FF1744]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <svg className="h-3 w-3 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     {item}
@@ -63,8 +63,8 @@ export default function FormationBridge() {
 
               <div className="mt-8">
                 <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-semibold text-white hover:bg-white/[0.08] transition-all"
+                  href="/formation"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0055D4] hover:shadow-lg hover:shadow-blue-500/25 transition-all"
                 >
                   D&eacute;couvrir la formation
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

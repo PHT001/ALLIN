@@ -9,16 +9,6 @@ export default function Hero() {
       {/* Subtle background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-red-50/30 pointer-events-none" />
 
-      {/* Decorative star element */}
-      <motion.div
-        initial={{ opacity: 0, rotate: -30 }}
-        animate={{ opacity: 0.06, rotate: 0 }}
-        transition={{ duration: 1.2, delay: 0.5 }}
-        className="absolute top-32 right-10 lg:right-32 pointer-events-none"
-      >
-        <Image src="/images/deco-star.png" alt="" width={120} height={120} className="w-20 lg:w-28" />
-      </motion.div>
-
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 py-6 lg:py-12">
         <div className="max-w-4xl mx-auto text-center">
             <motion.div

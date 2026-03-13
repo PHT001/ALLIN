@@ -3,42 +3,25 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const nodes = [
-  { id: "trigger", label: "Nouveau lead", x: 10, y: 15, icon: "⚡" },
-  { id: "email", label: "Email auto", x: 55, y: 5, icon: "📧" },
-  { id: "crm", label: "CRM update", x: 55, y: 42, icon: "📊" },
-  { id: "chatbot", label: "Chatbot", x: 10, y: 55, icon: "🤖" },
-  { id: "invoice", label: "Devis envoyé", x: 55, y: 78, icon: "📄" },
-  { id: "notify", label: "Notification", x: 10, y: 90, icon: "🔔" },
-];
-
-const connections = [
-  { from: "trigger", to: "email" },
-  { from: "trigger", to: "crm" },
-  { from: "crm", to: "chatbot" },
-  { from: "chatbot", to: "invoice" },
-  { from: "invoice", to: "notify" },
+const steps = [
+  { id: "install", label: "Installation outils", icon: "🔧", duration: "Jour 1-5" },
+  { id: "config", label: "Configuration IA", icon: "⚙️", duration: "Jour 6-12" },
+  { id: "test", label: "Tests & ajustements", icon: "🧪", duration: "Jour 13-20" },
+  { id: "train", label: "Formation équipe", icon: "🎓", duration: "Jour 21-25" },
+  { id: "live", label: "Mise en production", icon: "🚀", duration: "Jour 26-30" },
 ];
 
 export default function DeployAnimation() {
-  const [activeNodes, setActiveNodes] = useState<Set<string>>(new Set());
-  const [activeLines, setActiveLines] = useState<Set<number>>(new Set());
+  const [activeStep, setActiveStep] = useState(-1);
 
   useEffect(() => {
     const sequence = async () => {
-      setActiveNodes(new Set());
-      setActiveLines(new Set());
+      setActiveStep(-1);
+      await new Promise((r) => setTimeout(r, 500));
 
-      // Activate nodes one by one
-      for (let i = 0; i < nodes.length; i++) {
-        await new Promise((r) => setTimeout(r, 400));
-        setActiveNodes((prev) => new Set(prev).add(nodes[i].id));
-
-        // Activate connection that leads TO this node
-        const connIdx = connections.findIndex((c) => c.to === nodes[i].id);
-        if (connIdx >= 0) {
-          setActiveLines((prev) => new Set(prev).add(connIdx));
-        }
+      for (let i = 0; i < steps.length; i++) {
+        await new Promise((r) => setTimeout(r, 600));
+        setActiveStep(i);
       }
 
       await new Promise((r) => setTimeout(r, 3000));
@@ -49,92 +32,92 @@ export default function DeployAnimation() {
     return () => clearInterval(interval);
   }, []);
 
-  const getNodePos = (id: string) => {
-    const node = nodes.find((n) => n.id === id);
-    return node ? { x: node.x + 12, y: node.y + 6 } : { x: 0, y: 0 };
-  };
-
   return (
-    <div className="relative w-full rounded-2xl bg-[#0A0A0A] border border-white/[0.06] p-6 overflow-hidden" style={{ minHeight: 300 }}>
+    <div className="relative w-full rounded-2xl bg-white border border-gray-100 p-6 overflow-hidden shadow-sm" style={{ height: 380 }}>
       {/* Header */}
-      <div className="flex items-center gap-2 mb-4">
-        <div className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-        <div className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-        <div className="h-3 w-3 rounded-full bg-[#27C93F]" />
-        <span className="ml-3 text-[11px] text-white/30 font-mono">workflow_deploy.ai</span>
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded-lg bg-[#007AFF]/10 flex items-center justify-center">
+            <svg className="h-4 w-4 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <span className="text-xs font-semibold text-[#111]">D&eacute;ploiement 30j</span>
+        </div>
+        <span className="text-[10px] font-mono text-[#9CA3AF]">
+          {activeStep >= 0 ? `${Math.min((activeStep + 1) * 20, 100)}%` : "0%"}
+        </span>
       </div>
 
-      {/* Workflow area */}
-      <div className="relative" style={{ height: 220 }}>
-        {/* SVG Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-          {connections.map((conn, i) => {
-            const from = getNodePos(conn.from);
-            const to = getNodePos(conn.to);
-            return (
-              <motion.line
-                key={i}
-                x1={`${from.x}%`}
-                y1={`${from.y}%`}
-                x2={`${to.x}%`}
-                y2={`${to.y}%`}
-                stroke={activeLines.has(i) ? "#FF1744" : "rgba(255,255,255,0.06)"}
-                strokeWidth="0.5"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: activeLines.has(i) ? 1 : 0.3 }}
-                transition={{ duration: 0.6 }}
-              />
-            );
-          })}
-        </svg>
+      {/* Progress bar */}
+      <div className="h-1.5 bg-gray-100 rounded-full mb-5 overflow-hidden">
+        <motion.div
+          className="h-full bg-gradient-to-r from-[#007AFF] to-[#5AC8FA] rounded-full"
+          animate={{ width: activeStep >= 0 ? `${Math.min((activeStep + 1) * 20, 100)}%` : "0%" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        />
+      </div>
 
-        {/* Nodes */}
-        {nodes.map((node) => (
+      {/* Steps */}
+      <div className="space-y-2">
+        {steps.map((step, i) => (
           <motion.div
-            key={node.id}
-            className="absolute"
-            style={{ left: `${node.x}%`, top: `${node.y}%` }}
-            initial={{ opacity: 0.3, scale: 0.9 }}
+            key={step.id}
+            initial={{ opacity: 0.4 }}
             animate={{
-              opacity: activeNodes.has(node.id) ? 1 : 0.3,
-              scale: activeNodes.has(node.id) ? 1 : 0.9,
+              opacity: i <= activeStep ? 1 : 0.4,
             }}
-            transition={{ duration: 0.3 }}
+            className={`flex items-center justify-between py-2.5 px-3 rounded-xl transition-all duration-300 ${
+              i === activeStep
+                ? "bg-[#007AFF]/5 border border-[#007AFF]/15"
+                : i < activeStep
+                ? "bg-gray-50"
+                : ""
+            }`}
           >
-            <div
-              className={`flex items-center gap-2 px-3 py-2 rounded-lg border text-xs font-medium whitespace-nowrap transition-colors ${
-                activeNodes.has(node.id)
-                  ? "border-[#FF1744]/30 bg-[#FF1744]/10 text-white"
-                  : "border-white/[0.06] bg-white/[0.02] text-white/30"
-              }`}
-            >
-              <span>{node.icon}</span>
-              {node.label}
+            <div className="flex items-center gap-3">
+              <span className="text-sm">{step.icon}</span>
+              <span className="text-sm text-[#374151] font-medium">{step.label}</span>
             </div>
-            {activeNodes.has(node.id) && (
-              <motion.div
-                className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-[#27C93F]"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 500 }}
-              />
-            )}
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] text-[#9CA3AF]">{step.duration}</span>
+              {i < activeStep && (
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="h-5 w-5 rounded-full bg-emerald-500 flex items-center justify-center"
+                >
+                  <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </motion.div>
+              )}
+              {i === activeStep && (
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                  className="h-5 w-5 rounded-full bg-[#007AFF] flex items-center justify-center"
+                >
+                  <div className="h-1.5 w-1.5 rounded-full bg-white" />
+                </motion.div>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Status */}
-      <motion.div
-        animate={{ opacity: activeNodes.size === nodes.length ? 1 : 0.5 }}
-        className="mt-2 flex items-center gap-2"
-      >
-        <div className={`h-2 w-2 rounded-full ${activeNodes.size === nodes.length ? "bg-[#27C93F] animate-pulse" : "bg-white/10"}`} />
-        <span className="text-[11px] text-white/40 font-medium">
-          {activeNodes.size === nodes.length
-            ? "Workflow opérationnel — 0 intervention humaine"
-            : `Déploiement en cours... ${activeNodes.size}/${nodes.length}`}
-        </span>
-      </motion.div>
+      {/* Completion */}
+      {activeStep === steps.length - 1 && (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mt-4 p-3 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center gap-2"
+        >
+          <span className="text-lg">✅</span>
+          <p className="text-sm font-semibold text-emerald-700">Workflow op&eacute;rationnel &mdash; 0 intervention humaine</p>
+        </motion.div>
+      )}
     </div>
   );
 }

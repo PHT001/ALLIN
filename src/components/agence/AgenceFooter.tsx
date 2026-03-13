@@ -16,9 +16,9 @@ export default function AgenceFooter() {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <span className="text-xl font-extrabold tracking-tight">
-              Opex<span className="text-[#E57373]">IA</span>
+              Opex<span className="text-[#5AC8FA]">IA</span>
             </span>
-            <span className="text-xs text-[#6B7280]">Agence d&apos;infrastructure IA</span>
+            <span className="text-xs text-[#6B7280]">Agence d&apos;automatisation IA</span>
           </div>
 
           {/* Links */}
@@ -39,7 +39,7 @@ export default function AgenceFooter() {
           {/* CTA */}
           <a
             href="#calendly"
-            className="text-sm font-semibold text-[#FF1744] hover:text-[#D50000] transition-colors"
+            className="text-sm font-semibold text-[#007AFF] hover:text-[#0055D4] transition-colors"
           >
             R&eacute;server un audit &rarr;
           </a>

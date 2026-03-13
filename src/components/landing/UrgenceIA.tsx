@@ -9,6 +9,14 @@ const stats = [
   { value: "85%", label: "des métiers de 2030 n'existent pas encore" },
 ];
 
+const timeline = [
+  { year: "2023", event: "ChatGPT explose. Tout le monde en parle.", opacity: "text-white/30" },
+  { year: "2024", event: "Les premiers freelances IA facturent 5K\u20ac/mois.", opacity: "text-white/50" },
+  { year: "2025", event: "Les entreprises recrutent des agences IA.", opacity: "text-white/70" },
+  { year: "2026", event: "Le march\u00e9 se structure. Les retardataires gal\u00e8rent.", opacity: "text-white", highlight: true },
+  { year: "2027", event: "Trop tard pour les d\u00e9butants sans m\u00e9thode.", opacity: "text-white/30" },
+];
+
 export default function UrgenceIA() {
   return (
     <section className="relative py-14 lg:py-20 bg-white overflow-hidden">
@@ -97,6 +105,72 @@ export default function UrgenceIA() {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Timeline card — merged from WindowClosing */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 rounded-2xl bg-[#0A0A0A] p-8 lg:p-12 overflow-hidden relative"
+        >
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-[#FF1744]/5 rounded-full blur-[100px]" />
+
+          <div className="relative">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8">
+              La fen&ecirc;tre se ferme.
+            </h3>
+
+            <div className="relative max-w-xl mx-auto">
+              <div className="absolute left-[18px] top-0 bottom-0 w-px bg-gradient-to-b from-white/5 via-[#FF1744]/40 to-white/5" />
+
+              {timeline.map((item, i) => (
+                <motion.div
+                  key={item.year}
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="relative flex items-start gap-5 py-3"
+                >
+                  <div className="relative z-10 flex-shrink-0 w-[37px] flex justify-center">
+                    <div
+                      className={`h-2.5 w-2.5 rounded-full border-2 ${
+                        item.highlight
+                          ? "bg-[#FF1744] border-[#FF1744] shadow-[0_0_10px_rgba(255,23,68,0.6)]"
+                          : "bg-transparent border-white/20"
+                      }`}
+                    />
+                  </div>
+                  <div className="flex-1 -mt-0.5">
+                    <span className={`text-[10px] font-mono tracking-wider ${item.highlight ? "text-[#FF1744]" : "text-white/20"}`}>
+                      {item.year}
+                    </span>
+                    <p className={`text-base font-medium leading-snug mt-0.5 ${item.opacity}`}>
+                      {item.event}
+                    </p>
+                  </div>
+                  {item.highlight && (
+                    <span className="flex-shrink-0 text-[10px] font-bold text-[#FF1744] bg-[#FF1744]/10 border border-[#FF1744]/30 rounded-full px-2.5 py-0.5 mt-0.5">
+                      Tu es ici
+                    </span>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <a
+                href="#pricing"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FF1744] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#D50000] transition-all hover:shadow-xl hover:shadow-red-900/30"
+              >
+                Prendre ma place
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

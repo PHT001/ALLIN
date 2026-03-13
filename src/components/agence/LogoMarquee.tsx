@@ -45,7 +45,7 @@ export default function LogoMarquee() {
         viewport={{ once: true }}
         className="text-center mb-8"
       >
-        <p className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
+        <p className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
           Ils nous font confiance
         </p>
         <p className="mt-2 text-[#6B7280] text-base">

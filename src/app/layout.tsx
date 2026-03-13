@@ -23,21 +23,21 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "OpexIA — Lance ton agence IA rentable en 30 jours",
+    default: "OpexIA — Agence IA | Sites, Chatbots & Automatisations",
     template: "%s | OpexIA",
   },
   description:
-    "Formation complète pour créer et vendre des services IA aux entreprises locales. Atteins 10k€/mois.",
+    "Agence IA spécialisée : sites web, chatbots intelligents, automatisations et agents IA pour booster votre entreprise. Audit gratuit.",
   keywords: [
     "agence IA",
-    "formation IA",
-    "automatisation IA",
+    "chatbot IA",
+    "automatisation entreprise",
     "intelligence artificielle",
-    "freelance IA",
+    "site web IA",
   ],
   openGraph: {
-    title: "OpexIA — Lance ton agence IA",
-    description: "Formations IA pour créer et gérer ta propre agence. Premier client en 30 jours.",
+    title: "OpexIA — Agence IA | Sites, Chatbots & Automatisations",
+    description: "Agence IA spécialisée : sites web, chatbots, automatisations et agents IA pour booster votre entreprise.",
     type: "website",
     locale: "fr_FR",
   },

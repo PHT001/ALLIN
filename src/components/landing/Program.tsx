@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const weeks = [
   {
@@ -150,13 +151,9 @@ export default function Program() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="relative w-56 h-56 lg:w-72 lg:h-72"
         >
-          <video
+          <LazyVideo
             src="/images/imprimante.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain"
+            className="w-full h-full"
           />
           <div
             className="absolute inset-0 pointer-events-none"

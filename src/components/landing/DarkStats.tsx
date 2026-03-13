@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import Image from "next/image";
+
 
 function AnimatedCounter({
   target,
@@ -56,18 +56,6 @@ export default function DarkStats() {
       {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#111] to-[#0A0A0A]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#FF1744]/5 rounded-full blur-[120px]" />
-
-
-      {/* Decorative star */}
-      <div className="absolute top-12 left-8 lg:left-24 opacity-10 pointer-events-none">
-        <Image
-          src="/images/deco-star.png"
-          alt=""
-          width={80}
-          height={80}
-          className="w-14 lg:w-20"
-        />
-      </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div

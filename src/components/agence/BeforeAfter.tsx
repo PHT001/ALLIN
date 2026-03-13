@@ -97,7 +97,7 @@ function ResultCard({ caseData, index }: { caseData: (typeof cases)[0]; index: n
               animate={{
                 left: showAfter ? "50%" : "2px",
                 right: showAfter ? "2px" : "50%",
-                backgroundColor: showAfter ? "#FF1744" : "#0A0A0A",
+                backgroundColor: showAfter ? "#007AFF" : "#0A0A0A",
               }}
               transition={{ type: "spring", stiffness: 400, damping: 30 }}
             />
@@ -145,14 +145,14 @@ function ResultCard({ caseData, index }: { caseData: (typeof cases)[0]; index: n
                 <p className="text-sm text-white/40">{caseData.after.detail}</p>
 
                 {/* Decorative check */}
-                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-[#FF1744]/20 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-[#FF1744]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-[#007AFF]/20 flex items-center justify-center">
+                  <svg className="w-3 h-3 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
 
                 {/* Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FF1744]/10 to-transparent rounded-xl pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#007AFF]/10 to-transparent rounded-xl pointer-events-none" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -165,7 +165,7 @@ function ResultCard({ caseData, index }: { caseData: (typeof cases)[0]; index: n
             <motion.div
               animate={{ scale: showAfter ? 1.1 : 1 }}
               className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 ${
-                showAfter ? "bg-[#FF1744]/10 text-[#FF1744]" : "bg-gray-50 text-[#9CA3AF]"
+                showAfter ? "bg-[#007AFF]/10 text-[#007AFF]" : "bg-gray-50 text-[#9CA3AF]"
               }`}
             >
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -178,8 +178,8 @@ function ResultCard({ caseData, index }: { caseData: (typeof cases)[0]; index: n
         </div>
 
         {/* Saving footer */}
-        <div className="px-6 py-4 bg-gradient-to-r from-[#FF1744]/5 to-transparent border-t border-gray-50">
-          <p className="text-sm font-bold text-[#FF1744] text-center">{caseData.saving}</p>
+        <div className="px-6 py-4 bg-gradient-to-r from-[#007AFF]/5 to-transparent border-t border-gray-50">
+          <p className="text-sm font-bold text-[#007AFF] text-center">{caseData.saving}</p>
         </div>
       </div>
     </div>
@@ -196,7 +196,7 @@ export default function BeforeAfter() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
+          <span className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
             R&eacute;sultats concrets
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">

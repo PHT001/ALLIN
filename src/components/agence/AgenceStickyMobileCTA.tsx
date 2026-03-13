@@ -24,7 +24,7 @@ export default function AgenceStickyMobileCTA() {
         >
           <a
             href="#calendly"
-            className="inline-flex items-center gap-2 rounded-full bg-[#FF1744] px-6 py-3.5 text-sm font-bold text-white shadow-2xl shadow-red-900/40"
+            className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3.5 text-sm font-bold text-white shadow-2xl shadow-blue-900/40"
           >
             Audit gratuit
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

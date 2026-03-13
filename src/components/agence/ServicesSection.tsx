@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const services = [
   {
     title: "Chatbots & Support client",
-    desc: "Un assistant IA qui répond à vos clients 24/7, dans votre ton, avec vos informations. Fini les temps d'attente.",
+    desc: "Vos clients ont une réponse en 30 secondes. Même à 3h du matin.",
     keyword: "CHATBOT",
     stat: "24/7",
     statLabel: "disponibilité",
@@ -22,7 +22,7 @@ const services = [
   },
   {
     title: "Automatisation des process",
-    desc: "Facturation, relances, onboarding, reporting — tout tourne tout seul. Vos équipes se concentrent sur la valeur.",
+    desc: "Facturation, relances, onboarding, reporting — tout tourne sans vous.",
     keyword: "AUTOMATION",
     stat: "-73%",
     statLabel: "temps manuel",
@@ -36,7 +36,7 @@ const services = [
   },
   {
     title: "Génération de contenus",
-    desc: "Posts LinkedIn, emails marketing, fiches produits, articles SEO — en 10 minutes au lieu de 3 heures.",
+    desc: "Posts, emails, fiches produits, SEO — 10 min au lieu de 3 heures.",
     keyword: "CONTENU",
     stat: "x20",
     statLabel: "plus rapide",
@@ -49,7 +49,7 @@ const services = [
   },
   {
     title: "CRM intelligent",
-    desc: "Votre base client se met à jour, se segmente et se relance automatiquement. Plus aucun lead oublié.",
+    desc: "Votre base se met à jour et se relance toute seule. Aucun lead oublié.",
     keyword: "CRM",
     stat: "0",
     statLabel: "lead perdu",
@@ -64,7 +64,7 @@ const services = [
   },
   {
     title: "Dashboards & Analyse",
-    desc: "Toutes vos données dans un seul écran, lisible et actionnable. Décisions en 30 secondes.",
+    desc: "Toutes vos données sur un écran. Décision en 30 secondes.",
     keyword: "DASHBOARD",
     stat: "1",
     statLabel: "seul écran",
@@ -79,7 +79,7 @@ const services = [
   },
   {
     title: "Formation de vos équipes",
-    desc: "On forme vos collaborateurs à utiliser les outils qu'on installe. Autonomie totale, zéro dépendance.",
+    desc: "Votre équipe maîtrise les outils qu'on installe. Zéro dépendance.",
     keyword: "FORMATION",
     stat: "100%",
     statLabel: "autonomie",
@@ -105,7 +105,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="mb-16 max-w-2xl"
         >
-          <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
+          <span className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
             Nos services
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
@@ -128,14 +128,14 @@ export default function ServicesSection() {
               className="group relative rounded-2xl border border-white/[0.06] p-7 cursor-pointer transition-all duration-500 overflow-hidden"
               style={{
                 background: hoveredIndex === i
-                  ? "linear-gradient(135deg, rgba(255,23,68,0.08) 0%, rgba(255,23,68,0.02) 100%)"
+                  ? "linear-gradient(135deg, rgba(0,122,255,0.08) 0%, rgba(0,122,255,0.02) 100%)"
                   : "rgba(255,255,255,0.02)",
               }}
             >
               {/* Top row — icon + stat */}
               <div className="flex items-start justify-between mb-6">
                 <div className={`p-3 rounded-xl transition-colors duration-300 ${
-                  hoveredIndex === i ? "bg-[#FF1744]/20 text-[#FF1744]" : "bg-white/[0.04] text-white/40"
+                  hoveredIndex === i ? "bg-[#007AFF]/20 text-[#007AFF]" : "bg-white/[0.04] text-white/40"
                 }`}>
                   {service.icon}
                 </div>
@@ -147,7 +147,7 @@ export default function ServicesSection() {
                       exit={{ opacity: 0, scale: 0.8 }}
                       className="text-right"
                     >
-                      <p className="text-2xl font-black text-[#FF1744]">{service.stat}</p>
+                      <p className="text-2xl font-black text-[#007AFF]">{service.stat}</p>
                       <p className="text-[10px] text-white/30 uppercase tracking-wider">{service.statLabel}</p>
                     </motion.div>
                   )}
@@ -160,7 +160,7 @@ export default function ServicesSection() {
               </p>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#FF1744] transition-colors duration-300">
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#007AFF] transition-colors duration-300">
                 {service.title}
               </h3>
 
@@ -174,7 +174,7 @@ export default function ServicesSection() {
                 className="absolute bottom-0 left-0 right-0 h-[2px]"
                 animate={{
                   background: hoveredIndex === i
-                    ? "linear-gradient(90deg, transparent, #FF1744, transparent)"
+                    ? "linear-gradient(90deg, transparent, #007AFF, transparent)"
                     : "linear-gradient(90deg, transparent, transparent, transparent)",
                 }}
                 transition={{ duration: 0.3 }}
@@ -192,7 +192,7 @@ export default function ServicesSection() {
         >
           <a
             href="#calendly"
-            className="inline-flex items-center gap-2 rounded-full bg-[#FF1744] px-8 py-4 text-base font-semibold text-white hover:bg-[#D50000] transition-all hover:shadow-xl hover:shadow-red-900/30"
+            className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-900/30"
           >
             D&eacute;couvrir ce qu&apos;on peut faire pour vous
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

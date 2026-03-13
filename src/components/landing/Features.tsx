@@ -5,22 +5,10 @@ import { motion, useScroll, useTransform, useMotionValueEvent, AnimatePresence }
 
 const features = [
   {
-    title: "Articles IA automatisés",
-    desc: "Contenu SEO optimisé. Blog posts, fiches produits, pages de vente — en quelques minutes.",
-    price: "500–1 500€",
-    keyword: "CONTENU",
-  },
-  {
     title: "Chatbots sur mesure",
     desc: "Chatbots intelligents qui répondent 24/7. Support, prise de RDV, qualification de leads.",
     price: "800–2 500€",
     keyword: "CHATBOT",
-  },
-  {
-    title: "Sites web en 2h",
-    desc: "Sites vitrines professionnels avec l'IA. Landing pages, e-commerce, portfolios.",
-    price: "1 000–3 000€",
-    keyword: "SITE WEB",
   },
   {
     title: "Automatisations business",
@@ -33,12 +21,6 @@ const features = [
     desc: "Agents autonomes qui travaillent pendant que tes clients dorment. Veille, analyse, prospection.",
     price: "1 500–5 000€",
     keyword: "AGENT",
-  },
-  {
-    title: "Support client intelligent",
-    desc: "Assistants IA qui comprennent le contexte et résolvent les problèmes de tes clients.",
-    price: "800–2 000€",
-    keyword: "SUPPORT",
   },
 ];
 

@@ -14,7 +14,7 @@ export default function UrgencyTimeline() {
   return (
     <section className="relative py-16 lg:py-24 bg-[#0A0A0A] overflow-hidden">
       {/* Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#FF1744]/5 rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#007AFF]/5 rounded-full blur-[120px]" />
 
       <div className="relative mx-auto max-w-3xl px-6 lg:px-8">
         <motion.div
@@ -23,7 +23,7 @@ export default function UrgencyTimeline() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <span className="text-sm font-semibold text-[#FF1744] uppercase tracking-wider">
+          <span className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
             Urgence
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
@@ -32,13 +32,14 @@ export default function UrgencyTimeline() {
             <span className="text-white/40">C&apos;est la norme.</span>
           </h2>
           <p className="mt-4 text-lg text-white/40">
-            La question n&apos;est plus &laquo;&nbsp;est-ce que je dois le faire&nbsp;&raquo; mais &laquo;&nbsp;est-ce que je peux me permettre de ne pas le faire&nbsp;&raquo;.
+            88% des entreprises d&eacute;clarent que l&apos;IA a augment&eacute; leur chiffre d&apos;affaires. O&ugrave; en &ecirc;tes-vous ?
+            <span className="block text-sm text-[#007AFF]/60 mt-2 font-medium">Source : NVIDIA, State of AI Report, 2026</span>
           </p>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
-          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-gradient-to-b from-white/5 via-[#FF1744]/40 to-white/5" />
+          <div className="absolute left-[22px] top-0 bottom-0 w-px bg-gradient-to-b from-white/5 via-[#007AFF]/40 to-white/5" />
 
           <div className="space-y-0">
             {timeline.map((item, i) => (
@@ -54,7 +55,7 @@ export default function UrgencyTimeline() {
                   <div
                     className={`h-3 w-3 rounded-full border-2 ${
                       item.highlight
-                        ? "bg-[#FF1744] border-[#FF1744] shadow-[0_0_12px_rgba(255,23,68,0.6)]"
+                        ? "bg-[#007AFF] border-[#007AFF] shadow-[0_0_12px_rgba(0,122,255,0.6)]"
                         : "bg-transparent border-white/20"
                     }`}
                   />
@@ -63,7 +64,7 @@ export default function UrgencyTimeline() {
                 <div className="flex-1 -mt-1">
                   <span
                     className={`text-xs font-mono tracking-wider ${
-                      item.highlight ? "text-[#FF1744]" : "text-white/20"
+                      item.highlight ? "text-[#007AFF]" : "text-white/20"
                     }`}
                   >
                     {item.year}
@@ -74,7 +75,7 @@ export default function UrgencyTimeline() {
                 </div>
 
                 {item.highlight && (
-                  <span className="flex-shrink-0 text-xs font-bold text-[#FF1744] bg-[#FF1744]/10 border border-[#FF1744]/30 rounded-full px-3 py-1 mt-0.5">
+                  <span className="flex-shrink-0 text-xs font-bold text-[#007AFF] bg-[#007AFF]/10 border border-[#007AFF]/30 rounded-full px-3 py-1 mt-0.5">
                     Vous &ecirc;tes ici
                   </span>
                 )}
@@ -91,7 +92,7 @@ export default function UrgencyTimeline() {
         >
           <a
             href="#calendly"
-            className="inline-flex items-center gap-2 rounded-full bg-[#FF1744] px-8 py-4 text-base font-semibold text-white hover:bg-[#D50000] transition-all hover:shadow-xl hover:shadow-red-900/30"
+            className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-900/30"
           >
             Agir maintenant
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

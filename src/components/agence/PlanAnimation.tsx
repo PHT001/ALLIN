@@ -3,14 +3,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
-const bars = [
-  { label: "Emails", before: 20, after: 85, color: "#FF1744" },
-  { label: "Factures", before: 15, after: 92, color: "#FF5252" },
-  { label: "Support", before: 30, after: 78, color: "#FF8A80" },
-  { label: "Reporting", before: 10, after: 95, color: "#FF1744" },
+const metrics = [
+  { label: "Temps gagné", value: 73, suffix: "%", icon: "⏱️" },
+  { label: "Coûts réduits", value: 45, suffix: "%", icon: "💰" },
+  { label: "Productivité", value: 320, suffix: "%", icon: "📈" },
+  { label: "Satisfaction", value: 98, suffix: "%", icon: "⭐" },
 ];
 
-function ROICounter({ target }: { target: number }) {
+function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: false });
   const [count, setCount] = useState(0);
@@ -21,7 +21,7 @@ function ROICounter({ target }: { target: number }) {
       return;
     }
     let start = 0;
-    const duration = 2000;
+    const duration = 1500;
     const step = target / (duration / 16);
     const timer = setInterval(() => {
       start += step;
@@ -35,7 +35,7 @@ function ROICounter({ target }: { target: number }) {
     return () => clearInterval(timer);
   }, [isInView, target]);
 
-  return <span ref={ref}>{count.toLocaleString("fr-FR")}</span>;
+  return <span ref={ref}>{count}{suffix}</span>;
 }
 
 export default function PlanAnimation() {
@@ -54,63 +54,69 @@ export default function PlanAnimation() {
   }, []);
 
   return (
-    <div className="relative w-full rounded-2xl bg-[#0A0A0A] border border-white/[0.06] p-6 overflow-hidden" style={{ minHeight: 300 }}>
+    <div className="relative w-full rounded-2xl bg-white border border-gray-100 p-6 overflow-hidden shadow-sm" style={{ height: 380 }}>
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
-          <div className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-          <div className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-          <div className="h-3 w-3 rounded-full bg-[#27C93F]" />
-          <span className="ml-3 text-[11px] text-white/30 font-mono">plan_action.dashboard</span>
+          <div className="h-8 w-8 rounded-lg bg-[#007AFF]/10 flex items-center justify-center">
+            <svg className="h-4 w-4 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <span className="text-xs font-semibold text-[#111]">Plan d&apos;action</span>
         </div>
-        <span className="text-[10px] font-bold uppercase tracking-wider text-white/20">
-          {showAfter ? "Après IA" : "Avant IA"}
-        </span>
+        <motion.span
+          animate={{ backgroundColor: showAfter ? "#007AFF" : "#E5E7EB" }}
+          className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full text-white"
+          style={{ color: showAfter ? "white" : "#9CA3AF" }}
+        >
+          {showAfter ? "Après IA" : "Avant"}
+        </motion.span>
       </div>
 
-      {/* Bars */}
-      <div className="space-y-4">
-        {bars.map((bar, i) => (
-          <div key={bar.label}>
-            <div className="flex justify-between mb-1.5">
-              <span className="text-xs text-white/50 font-medium">{bar.label}</span>
-              <span className="text-xs font-bold text-white/70">
-                {showAfter ? `${bar.after}%` : `${bar.before}%`}
-              </span>
-            </div>
-            <div className="h-2 bg-white/[0.06] rounded-full overflow-hidden">
-              <motion.div
-                className="h-full rounded-full"
-                style={{ backgroundColor: bar.color }}
-                animate={{
-                  width: showAfter ? `${bar.after}%` : `${bar.before}%`,
-                }}
-                transition={{ duration: 1, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-              />
-            </div>
-          </div>
+      {/* Metrics grid */}
+      <div className="grid grid-cols-2 gap-3">
+        {metrics.map((m, i) => (
+          <motion.div
+            key={m.label}
+            animate={{
+              backgroundColor: showAfter ? "rgb(239, 246, 255)" : "rgb(249, 250, 251)",
+              borderColor: showAfter ? "rgba(0,122,255,0.15)" : "rgb(243, 244, 246)",
+            }}
+            transition={{ delay: i * 0.1, duration: 0.4 }}
+            className="rounded-xl border p-4 text-center"
+          >
+            <span className="text-lg mb-1 block">{m.icon}</span>
+            <motion.p
+              className="text-2xl font-black"
+              animate={{ color: showAfter ? "#007AFF" : "#D1D5DB" }}
+              transition={{ delay: i * 0.1 }}
+            >
+              {showAfter ? <AnimatedNumber target={m.value} suffix={m.suffix} /> : "—"}
+            </motion.p>
+            <p className="text-[10px] text-[#6B7280] mt-0.5 font-medium">{m.label}</p>
+          </motion.div>
         ))}
       </div>
 
       {/* ROI card */}
       {showAfter && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-5 flex items-center justify-between p-4 rounded-xl bg-[#FF1744]/10 border border-[#FF1744]/20"
+          className="mt-4 flex items-center justify-between p-4 rounded-xl bg-[#007AFF]/5 border border-[#007AFF]/15"
         >
-          <div>
-            <p className="text-[10px] text-white/40 uppercase tracking-wider">ROI estimé</p>
-            <p className="text-2xl font-black text-[#FF1744]">
-              x<ROICounter target={6} />
-            </p>
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🚀</span>
+            <div>
+              <p className="text-xs text-[#6B7280]">ROI estim&eacute;</p>
+              <p className="text-xl font-black text-[#007AFF]">x6</p>
+            </div>
           </div>
           <div className="text-right">
-            <p className="text-[10px] text-white/40 uppercase tracking-wider">Économie / an</p>
-            <p className="text-lg font-bold text-white">
-              <ROICounter target={84} />&nbsp;000&euro;
-            </p>
+            <p className="text-xs text-[#6B7280]">&Eacute;conomie / an</p>
+            <p className="text-lg font-bold text-[#111]">84&nbsp;000&euro;</p>
           </div>
         </motion.div>
       )}

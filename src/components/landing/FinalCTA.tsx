@@ -1,30 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function FinalCTA() {
   return (
     <section className="relative py-16 lg:py-20 bg-[#0A0A0A] overflow-hidden">
       {/* Glow effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#FF1744]/8 rounded-full blur-[150px]" />
-
-
-      {/* Decorative star right */}
-      <motion.div
-        initial={{ opacity: 0, rotate: 30 }}
-        whileInView={{ opacity: 0.1, rotate: 0 }}
-        viewport={{ once: true }}
-        className="absolute top-12 right-12 lg:right-32 pointer-events-none"
-      >
-        <Image
-          src="/images/deco-star.png"
-          alt=""
-          width={80}
-          height={80}
-          className="w-14 lg:w-20"
-        />
-      </motion.div>
 
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
         <motion.div
