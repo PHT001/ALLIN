@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
 interface LazyVideoProps {
   src: string;
@@ -11,6 +11,12 @@ interface LazyVideoProps {
 export default function LazyVideo({ src, className, style }: LazyVideoProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+
+  const videoRef = useCallback((node: HTMLVideoElement | null) => {
+    if (node) {
+      node.play().catch(() => {});
+    }
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -34,6 +40,7 @@ export default function LazyVideo({ src, className, style }: LazyVideoProps) {
     <div ref={ref} className={className} style={style}>
       {visible && (
         <video
+          ref={videoRef}
           src={src}
           autoPlay
           loop
