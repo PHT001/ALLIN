@@ -2,7 +2,7 @@
 
 import AgenceNavbar from "@/components/agence/AgenceNavbar";
 import AgenceHero from "@/components/agence/AgenceHero";
-import LogoMarquee from "@/components/agence/LogoMarquee";
+import SectorChat from "@/components/agence/SectorChat";
 import ProblemSection from "@/components/agence/ProblemSection";
 import UrgencyTimeline from "@/components/agence/UrgencyTimeline";
 import ServicesSection from "@/components/agence/ServicesSection";
@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <AgenceNavbar />
       <AgenceHero />
-      <LogoMarquee />
+      <SectorChat />
       <ProblemSection />
       <UrgencyTimeline />
       <ServicesSection />

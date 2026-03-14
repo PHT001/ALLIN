@@ -36,6 +36,10 @@ export default function LazyVideo({ src, className, style }: LazyVideoProps) {
     return () => observer.disconnect();
   }, []);
 
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) return null;
+
   return (
     <div ref={ref} className={className} style={style}>
       {visible && (
@@ -47,6 +51,7 @@ export default function LazyVideo({ src, className, style }: LazyVideoProps) {
           muted
           playsInline
           className="w-full h-full object-contain"
+          onError={() => setHasError(true)}
         />
       )}
     </div>

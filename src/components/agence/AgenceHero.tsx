@@ -105,7 +105,7 @@ export default function AgenceHero() {
               </a>
             </motion.div>
 
-            {/* iPhone video */}
+            {/* iPhone video — hidden if file missing */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -119,6 +119,8 @@ export default function AgenceHero() {
                   muted
                   playsInline
                   className="w-full h-auto block"
+                  style={{ display: 'none' }}
+                  onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}
                 >
                   <source src="/images/iphone.mp4" type="video/mp4" />
                 </video>
