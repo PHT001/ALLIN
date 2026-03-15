@@ -234,8 +234,8 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     defaultOpen: true,
     items: [
       { href: "/dashboard", label: "Accueil", icon: IconHome },
-      { href: "/notes", label: "Mes notes", icon: IconNotes, badge: "Bient\u00f4t" },
-      { href: "/ressources", label: "Ressources", icon: IconFolder, badge: "Bient\u00f4t" },
+      { href: "/notes", label: "Mes notes", icon: IconNotes },
+      { href: "/ressources", label: "Ressources", icon: IconFolder },
     ],
   },
   {
@@ -253,7 +253,7 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     defaultOpen: true,
     items: [
       { href: "/assistant", label: "Parler \u00e0 l'IA", icon: IconBot, lockedForStarter: true, lockedTeaser: "Un assistant IA personnel qui r\u00e9pond \u00e0 toutes tes questions sur la formation et t'aide \u00e0 avancer." },
-      { href: "/coaching", label: "R\u00e9server un appel", icon: IconPhone, badge: "Bient\u00f4t" },
+      { href: "/coaching", label: "R\u00e9server un appel", icon: IconPhone },
     ],
   },
   {
@@ -264,7 +264,7 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
       { href: "/pipeline", label: "Pipeline", icon: IconPipeline },
       { href: "/templates", label: "Templates IA", icon: IconTemplate, lockedForStarter: true, lockedTeaser: "Biblioth\u00e8que de prompts et templates pr\u00eats \u00e0 l'emploi pour tes projets clients et tes automatisations." },
       { href: "/generateur", label: "G\u00e9n\u00e9rateur", icon: IconWand, lockedForStarter: true, lockedTeaser: "G\u00e9n\u00e8re des livrables complets en un clic : landing pages, emails, scripts de vente, propositions commerciales." },
-      { href: "/marketplace", label: "Marketplace", icon: IconStore, badge: "Bient\u00f4t" },
+      { href: "/marketplace", label: "Marketplace", icon: IconStore },
     ],
   },
   {
