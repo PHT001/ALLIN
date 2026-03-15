@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import ChatbotAnimation from "./ChatbotAnimation";
 import ProjectBuilderAnimation from "./ProjectBuilderAnimation";
 import AgencyLaunchAnimation from "./AgencyLaunchAnimation";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const steps = [
   {
@@ -123,6 +124,32 @@ export default function HowItWorks() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Floating robot video — just below step 3 */}
+        <div className="flex justify-center mt-4 pointer-events-none">
+          <motion.div
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-48 h-48 lg:w-64 lg:h-64"
+          >
+            <LazyVideo
+              src="/images/imprimante.mp4"
+              className="w-full h-full"
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                boxShadow: "inset 30px 0 35px 6px white, inset -30px 0 35px 6px white, inset 0 35px 40px 8px white, inset 0 -35px 40px 8px white",
+              }}
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: "radial-gradient(ellipse 72% 68% at 50% 50%, transparent 30%, white 83%)",
+              }}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

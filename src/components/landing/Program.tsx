@@ -1,13 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
-import LazyVideo from "@/components/ui/LazyVideo";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const weeks = [
   {
     num: 1,
     title: "Fondations IA & Stack Technique",
     lessons: "7 le\u00e7ons",
+    emoji: "\u{1F9E0}",
     points: [
       "Comprendre l\u2019\u00e9cosyst\u00e8me : LLMs, APIs, agents, prompting avanc\u00e9",
       "Choisir les bons outils selon chaque cas client",
@@ -20,6 +21,7 @@ const weeks = [
     num: 2,
     title: "Construire des Infrastructures IA",
     lessons: "7 le\u00e7ons",
+    emoji: "\u2699\uFE0F",
     points: [
       "Techniques avanc\u00e9es de prompt engineering",
       "Cr\u00e9er des workflows complexes et agents autonomes",
@@ -32,6 +34,7 @@ const weeks = [
     num: 3,
     title: "D\u00e9finir & Packager ton Offre",
     lessons: "8 le\u00e7ons",
+    emoji: "\u{1F4E6}",
     points: [
       "Trouver ta niche et cr\u00e9er des offres productis\u00e9es",
       "Cr\u00e9er tes premiers projets clients",
@@ -44,6 +47,7 @@ const weeks = [
     num: 4,
     title: "Trouver tes Clients & Scaler",
     lessons: "6 le\u00e7ons",
+    emoji: "\u{1F680}",
     points: [
       "Scripts de prospection test\u00e9s",
       "Strat\u00e9gies de prospection client",
@@ -55,6 +59,8 @@ const weeks = [
 ];
 
 export default function Program() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <section className="py-2 lg:py-3 bg-white relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -71,103 +77,109 @@ export default function Program() {
             4 semaines pour tout changer
           </h2>
           <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
-            74 leçons, 13 modules — du débutant complet au freelance IA rentable
+            {"74 le\u00e7ons, 13 modules \u2014 du d\u00e9butant complet au freelance IA rentable"}
           </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative max-w-3xl mx-auto z-10">
-          {/* Vertical line */}
-          <div className="absolute left-6 lg:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#FF1744]/20 via-[#FF1744]/40 to-[#FF1744]/20" />
-
-          <div className="space-y-16">
-            {weeks.map((week, i) => (
+        {/* Accordion */}
+        <div className="relative z-10 max-w-3xl mx-auto space-y-3">
+          {weeks.map((week, i) => {
+            const isOpen = openIndex === i;
+            return (
               <motion.div
                 key={week.num}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="relative pl-16 lg:pl-20"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? "border-[#FF1744]/20 bg-[#FF1744]/[0.02] shadow-lg shadow-red-100/40"
+                    : "border-gray-200 bg-white hover:border-gray-300"
+                }`}
               >
-                {/* Circle on timeline */}
-                <div className="absolute left-3 lg:left-5 top-1 h-7 w-7 rounded-full border-2 border-[#FF1744] bg-white flex items-center justify-center">
-                  <span className="text-xs font-bold text-[#FF1744]">
-                    {week.num}
-                  </span>
-                </div>
+                {/* Header — always visible */}
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="w-full flex items-center gap-4 px-5 py-4 lg:px-6 lg:py-5 cursor-pointer group text-left"
+                >
+                  {/* Week number circle */}
+                  <div
+                    className={`h-10 w-10 rounded-xl flex items-center justify-center flex-shrink-0 text-lg transition-all duration-300 ${
+                      isOpen
+                        ? "bg-[#FF1744]/10"
+                        : "bg-gray-100 group-hover:bg-[#FF1744]/5"
+                    }`}
+                  >
+                    {week.emoji}
+                  </div>
 
-                <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-xl lg:text-2xl font-bold">
-                      Semaine {week.num}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2.5">
+                      <span className={`text-xs font-bold uppercase tracking-wider transition-colors ${
+                        isOpen ? "text-[#FF1744]" : "text-gray-400"
+                      }`}>
+                        {"Semaine " + week.num}
+                      </span>
+                      <span className="text-[11px] font-medium text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+                        {week.lessons}
+                      </span>
+                    </div>
+                    <h3 className={`text-base lg:text-lg font-semibold mt-0.5 transition-colors ${
+                      isOpen ? "text-gray-900" : "text-gray-700 group-hover:text-gray-900"
+                    }`}>
+                      {week.title}
                     </h3>
-                    <span className="text-xs font-medium text-[#6B7280] bg-gray-100 px-3 py-1 rounded-full">
-                      {week.lessons}
-                    </span>
                   </div>
-                  <p className="text-lg font-semibold text-[#111] mb-4">
-                    {week.title}
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    {week.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex items-start gap-2.5 text-[#6B7280]"
-                      >
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF1744]/40 flex-shrink-0" />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#FF1744]">
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
+
+                  {/* Chevron */}
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="flex-shrink-0"
+                  >
+                    <svg className={`h-5 w-5 transition-colors ${isOpen ? "text-[#FF1744]" : "text-gray-300"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
-                    {week.result}
-                  </div>
-                </div>
+                  </motion.div>
+                </button>
+
+                {/* Expanded content */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 pb-5 lg:px-6 lg:pb-6 pl-[4.5rem] lg:pl-[5rem]">
+                        <ul className="space-y-2.5 mb-4">
+                          {week.points.map((point) => (
+                            <li key={point} className="flex items-start gap-2.5 text-[15px] text-gray-600">
+                              <svg className="h-4 w-4 text-[#FF1744]/50 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#FF1744] bg-[#FF1744]/[0.06] px-3 py-1.5 rounded-lg">
+                          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                          {week.result}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-      </div>
-
-      {/* Floating robot with printer video */}
-      <div className="flex justify-center -mt-8 pb-2">
-        <motion.div
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="relative w-56 h-56 lg:w-72 lg:h-72"
-        >
-          <LazyVideo
-            src="/images/imprimante.mp4"
-            className="w-full h-full"
-          />
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              boxShadow: "inset 30px 0 35px 6px white, inset -30px 0 35px 6px white, inset 0 35px 40px 8px white, inset 0 -35px 40px 8px white",
-            }}
-          />
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: "radial-gradient(ellipse 72% 68% at 50% 50%, transparent 30%, white 83%)",
-            }}
-          />
-        </motion.div>
       </div>
     </section>
   );

@@ -205,8 +205,8 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     label: "Vue d'ensemble",
     items: [
       { href: "/dashboard", label: "Accueil", icon: IconHome },
-      { href: "/notes", label: "Mes notes", icon: IconNotes, badge: "Bientôt" },
-      { href: "/ressources", label: "Ressources", icon: IconFolder, badge: "Bientôt" },
+      { href: "/notes", label: "Mes notes", icon: IconNotes },
+      { href: "/ressources", label: "Ressources", icon: IconFolder },
     ],
   },
   {
@@ -222,7 +222,7 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     label: "Coaching",
     items: [
       { href: "/assistant", label: "Parler à l'IA", icon: IconBot, lockedForStarter: true, lockedTeaser: "Un assistant IA personnel qui répond à toutes tes questions sur la formation et t'aide à avancer." },
-      { href: "/coaching", label: "Réserver un appel", icon: IconPhone, badge: "Bientôt" },
+      { href: "/coaching", label: "Réserver un appel", icon: IconPhone },
     ],
   },
   {
@@ -232,7 +232,7 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
       { href: "/pipeline", label: "Pipeline", icon: IconPipeline },
       { href: "/templates", label: "Templates IA", icon: IconTemplate, lockedForStarter: true, lockedTeaser: "Bibliothèque de prompts et templates prêts à l'emploi pour tes projets clients et tes automatisations." },
       { href: "/generateur", label: "Générateur", icon: IconWand, lockedForStarter: true, lockedTeaser: "Génère des livrables complets en un clic : landing pages, emails, scripts de vente, propositions commerciales." },
-      { href: "/marketplace", label: "Marketplace", icon: IconStore, badge: "Bientôt" },
+      { href: "/marketplace", label: "Marketplace", icon: IconStore },
     ],
   },
   {
