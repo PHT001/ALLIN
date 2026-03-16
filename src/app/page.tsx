@@ -15,12 +15,9 @@ import AgenceFinalCTA from "@/components/agence/AgenceFinalCTA";
 import AgenceFooter from "@/components/agence/AgenceFooter";
 import AgenceStickyMobileCTA from "@/components/agence/AgenceStickyMobileCTA";
 import AgenceChatbot from "@/components/agence/AgenceChatbot";
-import ScrollRocket from "@/components/agence/ScrollRocket";
-
 export default function Home() {
   return (
     <>
-      <ScrollRocket />
       <AgenceNavbar />
       <AgenceHero />
       <SectorChat />
