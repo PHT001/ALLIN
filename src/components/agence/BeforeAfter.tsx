@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const cases = [
   {
@@ -30,163 +30,35 @@ const cases = [
   },
 ];
 
-function ResultCard({ caseData, index }: { caseData: (typeof cases)[0]; index: number }) {
+export default function BeforeAfter() {
+  const [activeCase, setActiveCase] = useState(0);
   const [showAfter, setShowAfter] = useState(false);
 
+  const nextCase = useCallback(() => {
+    setShowAfter(false);
+    setTimeout(() => {
+      setActiveCase((prev) => (prev + 1) % cases.length);
+    }, 100);
+  }, []);
+
+  // Auto-cycle: show before 2s, then after 2s, then next case
   useEffect(() => {
-    const delay = index * 600;
-    const timer = setTimeout(() => {
-      const interval = setInterval(() => {
-        setShowAfter((prev) => !prev);
-      }, 3000);
-      return () => clearInterval(interval);
-    }, delay);
-
-    // Initial flip after delay
-    const initialFlip = setTimeout(() => {
+    const showAfterTimer = setTimeout(() => {
       setShowAfter(true);
-    }, 2000 + delay);
+    }, 1800);
 
-    const loop = setInterval(() => {
-      setShowAfter((prev) => !prev);
-    }, 3000);
+    const nextTimer = setTimeout(() => {
+      nextCase();
+    }, 4000);
 
     return () => {
-      clearTimeout(timer);
-      clearTimeout(initialFlip);
-      clearInterval(loop);
+      clearTimeout(showAfterTimer);
+      clearTimeout(nextTimer);
     };
-  }, [index]);
+  }, [activeCase, nextCase]);
 
-  return (
-    <div className="group relative">
-      {/* Card */}
-      <div className="rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
-        {/* Header */}
-        <div className="px-6 pt-6 pb-4">
-          <div className="flex items-center gap-3 mb-1">
-            <span className="text-xl">{caseData.icon}</span>
-            <div>
-              <h3 className="text-base font-bold text-[#111]">{caseData.sector}</h3>
-              <p className="text-xs text-[#9CA3AF]">{caseData.metric}</p>
-            </div>
-          </div>
-        </div>
+  const current = cases[activeCase];
 
-        {/* Toggle button */}
-        <div className="px-6 mb-4 flex">
-          <div className="relative flex bg-gray-100 rounded-full p-0.5">
-            <button
-              onClick={() => setShowAfter(false)}
-              className={`relative z-10 px-4 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
-                !showAfter ? "text-white" : "text-[#6B7280]"
-              }`}
-            >
-              Avant
-            </button>
-            <button
-              onClick={() => setShowAfter(true)}
-              className={`relative z-10 px-4 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 ${
-                showAfter ? "text-white" : "text-[#6B7280]"
-              }`}
-            >
-              Après IA
-            </button>
-            <motion.div
-              className="absolute top-0.5 bottom-0.5 rounded-full"
-              animate={{
-                left: showAfter ? "50%" : "2px",
-                right: showAfter ? "2px" : "50%",
-                backgroundColor: showAfter ? "#007AFF" : "#0A0A0A",
-              }}
-              transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            />
-          </div>
-        </div>
-
-        {/* Content area */}
-        <div className="relative h-[160px] mx-6 mb-6 rounded-xl overflow-hidden">
-          <AnimatePresence mode="wait">
-            {!showAfter ? (
-              <motion.div
-                key="before"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-gray-50 rounded-xl p-6 flex flex-col items-center justify-center"
-              >
-                <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-4xl lg:text-5xl font-black text-[#111]">{caseData.before.value}</span>
-                  <span className="text-base text-[#6B7280] font-medium">{caseData.before.unit}</span>
-                </div>
-                <p className="text-sm text-[#9CA3AF]">{caseData.before.detail}</p>
-
-                {/* Decorative red X */}
-                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-red-50 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="after"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="absolute inset-0 bg-[#0A0A0A] rounded-xl p-6 flex flex-col items-center justify-center"
-              >
-                <div className="flex items-baseline gap-2 mb-3">
-                  <span className="text-4xl lg:text-5xl font-black text-white">{caseData.after.value}</span>
-                  <span className="text-base text-white/50 font-medium">{caseData.after.unit}</span>
-                </div>
-                <p className="text-sm text-white/40">{caseData.after.detail}</p>
-
-                {/* Decorative check */}
-                <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-[#007AFF]/20 flex items-center justify-center">
-                  <svg className="w-3 h-3 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-
-                {/* Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#007AFF]/10 to-transparent rounded-xl pointer-events-none" />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
-        {/* Arrow indicator between states */}
-        <div className="px-6 pb-2">
-          <div className="flex items-center gap-2 justify-center">
-            <div className="h-px flex-1 bg-gray-100" />
-            <motion.div
-              animate={{ scale: showAfter ? 1.1 : 1 }}
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider transition-colors duration-300 ${
-                showAfter ? "bg-[#007AFF]/10 text-[#007AFF]" : "bg-gray-50 text-[#9CA3AF]"
-              }`}
-            >
-              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-              R&eacute;sultat
-            </motion.div>
-            <div className="h-px flex-1 bg-gray-100" />
-          </div>
-        </div>
-
-        {/* Saving footer */}
-        <div className="px-6 py-4 bg-gradient-to-r from-[#007AFF]/5 to-transparent border-t border-gray-50">
-          <p className="text-sm font-bold text-[#007AFF] text-center">{caseData.saving}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function BeforeAfter() {
   return (
     <section id="resultats" className="py-20 lg:py-28 bg-[#F8F9FA]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -204,22 +76,161 @@ export default function BeforeAfter() {
             <span className="text-[#9CA3AF]">l&apos;IA</span>
           </h2>
           <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
-            Des r&eacute;sultats mesur&eacute;s chez nos clients. Cliquez pour comparer.
+            Des r&eacute;sultats mesur&eacute;s chez nos clients.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        {/* Sector tabs */}
+        <div className="flex justify-center gap-2 mb-8">
           {cases.map((c, i) => (
-            <motion.div
+            <button
               key={c.sector}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              onClick={() => {
+                setShowAfter(false);
+                setActiveCase(i);
+              }}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer ${
+                activeCase === i
+                  ? "bg-[#0A0A0A] text-white shadow-lg"
+                  : "bg-white text-[#6B7280] hover:bg-gray-100 border border-gray-200"
+              }`}
             >
-              <ResultCard caseData={c} index={i} />
-            </motion.div>
+              <span>{c.icon}</span>
+              <span className="hidden sm:inline">{c.sector}</span>
+            </button>
           ))}
+        </div>
+
+        {/* Single card */}
+        <div className="max-w-lg mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCase}
+              initial={{ opacity: 0, y: 20, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.97 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="rounded-2xl border border-gray-100 bg-white overflow-hidden shadow-lg"
+            >
+              {/* Header */}
+              <div className="px-6 pt-6 pb-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-2xl">{current.icon}</span>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#111]">{current.sector}</h3>
+                    <p className="text-xs text-[#9CA3AF]">{current.metric}</p>
+                  </div>
+                </div>
+                {/* Toggle */}
+                <div className="relative flex bg-gray-100 rounded-full p-0.5">
+                  <button
+                    onClick={() => setShowAfter(false)}
+                    className={`relative z-10 px-4 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 cursor-pointer ${
+                      !showAfter ? "text-white" : "text-[#6B7280]"
+                    }`}
+                  >
+                    Avant
+                  </button>
+                  <button
+                    onClick={() => setShowAfter(true)}
+                    className={`relative z-10 px-4 py-1.5 text-xs font-semibold rounded-full transition-colors duration-300 cursor-pointer ${
+                      showAfter ? "text-white" : "text-[#6B7280]"
+                    }`}
+                  >
+                    Apr&egrave;s IA
+                  </button>
+                  <motion.div
+                    className="absolute top-0.5 bottom-0.5 rounded-full"
+                    animate={{
+                      left: showAfter ? "50%" : "2px",
+                      right: showAfter ? "2px" : "50%",
+                      backgroundColor: showAfter ? "#007AFF" : "#0A0A0A",
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                </div>
+              </div>
+
+              {/* Content area */}
+              <div className="relative h-[200px] mx-6 mb-6 rounded-xl overflow-hidden">
+                <AnimatePresence mode="wait">
+                  {!showAfter ? (
+                    <motion.div
+                      key="before"
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 30 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-gray-50 rounded-xl p-8 flex flex-col items-center justify-center"
+                    >
+                      <div className="flex items-baseline gap-2 mb-3">
+                        <span className="text-5xl lg:text-6xl font-black text-[#111]">{current.before.value}</span>
+                        <span className="text-lg text-[#6B7280] font-medium">{current.before.unit}</span>
+                      </div>
+                      <p className="text-sm text-[#9CA3AF]">{current.before.detail}</p>
+                      <div className="absolute top-4 right-4 w-7 h-7 rounded-full bg-red-50 flex items-center justify-center">
+                        <svg className="w-3.5 h-3.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="after"
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 30 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-[#0A0A0A] rounded-xl p-8 flex flex-col items-center justify-center"
+                    >
+                      <div className="flex items-baseline gap-2 mb-3">
+                        <span className="text-5xl lg:text-6xl font-black text-white">{current.after.value}</span>
+                        <span className="text-lg text-white/50 font-medium">{current.after.unit}</span>
+                      </div>
+                      <p className="text-sm text-white/40">{current.after.detail}</p>
+                      <div className="absolute top-4 right-4 w-7 h-7 rounded-full bg-[#007AFF]/20 flex items-center justify-center">
+                        <svg className="w-3.5 h-3.5 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#007AFF]/10 to-transparent rounded-xl pointer-events-none" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Saving footer */}
+              <div className="px-6 py-4 bg-gradient-to-r from-[#007AFF]/5 to-transparent border-t border-gray-50">
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="w-4 h-4 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                  <p className="text-base font-bold text-[#007AFF]">{current.saving}</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Progress dots */}
+          <div className="flex justify-center gap-2 mt-6">
+            {cases.map((_, i) => (
+              <div
+                key={i}
+                className="relative h-1.5 rounded-full overflow-hidden bg-gray-200"
+                style={{ width: activeCase === i ? 32 : 8, transition: "width 0.3s" }}
+              >
+                {activeCase === i && (
+                  <motion.div
+                    className="absolute inset-y-0 left-0 bg-[#007AFF] rounded-full"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 4, ease: "linear" }}
+                    key={activeCase}
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
