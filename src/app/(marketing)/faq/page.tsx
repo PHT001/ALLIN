@@ -14,8 +14,8 @@ const faqItems = [
     answer: "Oui, absolument. Le programme est conçu pour les débutants complets. On part de zéro et on t'accompagne étape par étape. Pas besoin de savoir coder.",
   },
   {
-    question: "C'est quoi OpenClaw / Claude Code ?",
-    answer: "Ce sont des outils IA qui te permettent de créer des agents intelligents, des chatbots et des automatisations. On t'apprend à les maîtriser de A à Z dans la formation.",
+    question: "C'est quoi Claude Code ?",
+    answer: "Claude Code est l'outil de vibe coding d'Anthropic. Il te permet de construire des apps complètes en décrivant ce que tu veux. On t'apprend à le maîtriser pour créer des apps, des SaaS et des agents IA vendables.",
   },
   {
     question: "Combien de temps ça prend ?",

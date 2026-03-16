@@ -27,6 +27,7 @@ export const authOptions: NextAuthOptions = {
           email: user.email,
           name: user.name,
           role: user.role,
+          createdAt: user.createdAt.toISOString(),
         };
       },
     }),
@@ -37,6 +38,7 @@ export const authOptions: NextAuthOptions = {
       if (user) {
         token.id = user.id;
         token.role = user.role;
+        token.createdAt = (user as unknown as Record<string, unknown>).createdAt as string;
       }
       return token;
     },
@@ -44,6 +46,7 @@ export const authOptions: NextAuthOptions = {
       if (session.user) {
         session.user.id = token.id;
         session.user.role = token.role;
+        session.user.createdAt = token.createdAt as string;
       }
       return session;
     },

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { Sidebar } from "@/components/platform/Sidebar";
+import PageTransition from "@/components/platform/PageTransition";
 
 export default function PlatformLayout({ children }: { children: React.ReactNode }) {
   const { data: session } = useSession();
@@ -21,7 +22,7 @@ export default function PlatformLayout({ children }: { children: React.ReactNode
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA]">
+    <div className="min-h-screen bg-[#F0F1F3]">
       <Sidebar
         userName={session?.user?.name}
         role={session?.user?.role}
@@ -33,26 +34,27 @@ export default function PlatformLayout({ children }: { children: React.ReactNode
       />
 
       {/* Mobile topbar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-xl border-b border-gray-200 flex items-center px-4 shadow-sm">
+      <div className="md:hidden fixed top-0 left-0 right-0 z-30 h-14 flex items-center px-4" style={{ background: "linear-gradient(90deg, #1A1A2E, #16162A)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
         <button
           onClick={() => setSidebarOpen(true)}
-          className="p-2 text-gray-500"
+          className="p-2 text-white/60"
           aria-label="Menu"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M3 12h18M3 6h18M3 18h18" />
           </svg>
         </button>
-
         <span className="ml-3 text-lg font-bold tracking-tight">
-          <span className="text-[#111]">Opex</span>
+          <span className="text-white">Opex</span>
           <span className="text-[#FF1744]">IA</span>
         </span>
       </div>
 
       <main className="md:ml-[260px] pt-14 md:pt-0 min-h-screen">
-        <div className="p-6 md:p-10 max-w-7xl">
-          {children}
+        <div className="p-5 md:p-8">
+          <PageTransition>
+            {children}
+          </PageTransition>
         </div>
       </main>
     </div>

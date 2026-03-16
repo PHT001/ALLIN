@@ -39,12 +39,12 @@ export default function FormationBridge() {
               </h2>
 
               <p className="mt-4 text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
-                On a cr&eacute;&eacute; une formation compl&egrave;te pour ma&icirc;triser l&apos;IA dans votre business — m&ecirc;me si vous partez de z&eacute;ro. 13 modules, 74 le&ccedil;ons, un assistant IA int&eacute;gr&eacute;.
+                On a cr&eacute;&eacute; une formation compl&egrave;te pour ma&icirc;triser l&apos;IA dans votre business — m&ecirc;me si vous partez de z&eacute;ro. 15 modules, 86 le&ccedil;ons, un assistant IA int&eacute;gr&eacute;.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4">
                 {[
-                  "13 modules structurés",
+                  "15 modules structurés",
                   "74 leçons interactives",
                   "Assistant IA intégré",
                   "Accès à vie",

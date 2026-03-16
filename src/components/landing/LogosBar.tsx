@@ -11,8 +11,8 @@ const heroLogos = [
     color: "#D4A574",
   },
   {
-    name: "OpenClaw",
-    sub: "Platform",
+    name: "ClawBot",
+    sub: "Agent IA",
     icon: "/images/logos/openclaw-icon.svg",
     color: "#6366F1",
   },
@@ -33,7 +33,7 @@ export default function LogosBar() {
           Ils utilisent les outils qu&apos;on enseigne :
         </motion.p>
 
-        {/* Hero logos — Claude & OpenClaw */}
+        {/* Hero logos — Claude & ClawBot */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

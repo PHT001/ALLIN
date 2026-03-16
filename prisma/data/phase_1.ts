@@ -36,7 +36,7 @@ export const LESSONS = [
 <p><strong>Attention</strong> : Ne tombe pas dans le piège de croire que l'IA fait tout toute seule. L'IA est un multiplicateur de compétences, pas un remplacement. Quelqu'un qui ne sait pas ce qu'est un bon site web ne créera pas un bon site web avec l'IA. C'est toi qui apportes la vision, la stratégie et le jugement. L'IA apporte la vitesse d'exécution.</p>
 
 <h2>Les concepts clés</h2>
-<p><strong>Machine Learning (ML)</strong> : L'ordinateur apprend à partir de données plutôt que de règles programmées. Tu lui montres 10 000 photos de chats, et il apprend à reconnaître un chat — sans que personne ne lui ait écrit une seule règle du type "un chat a des oreilles pointues". C'est fondamentalement différent de la programmation classique. En programmation classique, tu écris les règles. En ML, la machine découvre les règles toute seule à partir des exemples. C'est pour ça que c'est si puissant : la machine peut trouver des patterns que les humains n'auraient jamais identifiés.</p>
+<p><strong>Machine Learning (ML)</strong> : L'ordinateur apprend à partir de données plutôt que de règles programmées. Tu lui montres 10 000 photos de chats, et il apprend à reconnaître un chat — sans que personne ne lui ait écrit une seule règle du type "un chat à des oreilles pointues". C'est fondamentalement différent de la programmation classique. En programmation classique, tu écris les règles. En ML, la machine découvre les règles toute seule à partir des exemples. C'est pour ça que c'est si puissant : la machine peut trouver des patterns que les humains n'auraient jamais identifiés.</p>
 <p><strong>Deep Learning</strong> : Une sous-catégorie du ML qui utilise des réseaux de neurones profonds (avec beaucoup de couches — d'où le "deep"). Pense à ça comme un filtre en cascade : chaque couche extrait des caractéristiques de plus en plus abstraites. La première couche détecte des lignes, la deuxième des formes, la troisième des objets, la quatrième des scènes entières. C'est ce qui fait tourner la reconnaissance vocale (Siri, Alexa), la traduction (Google Translate), et les LLM que tu vas utiliser.</p>
 <p><strong>LLM (Large Language Model)</strong> : Un modèle entraîné sur des milliards de textes qui peut comprendre et générer du langage humain. Claude, GPT-4, Gemini sont des LLM. L'analogie la plus simple : imagine quelqu'un qui a lu tous les livres, tous les articles, tous les forums d'Internet. Il ne "sait" pas tout, mais il a vu tellement de texte qu'il peut produire des réponses pertinentes sur presque n'importe quel sujet. C'est une simplification, mais ça capture l'essentiel.</p>
 <p><strong>IA Générative</strong> : L'IA qui crée du contenu nouveau (texte, images, code, musique) plutôt que de simplement analyser des données existantes. C'est la branche de l'IA qui a explosé depuis 2022 et qui est directement applicable à ton business. Midjourney génère des images, Suno génère de la musique, et Claude génère du texte et du code de qualité professionnelle.</p>
@@ -60,7 +60,7 @@ export const LESSONS = [
     order: 2,
     module: 1,
     title: "Les grands modèles : GPT, Claude, Gemini, Mistral",
-    slug: "grands-modeles-gpt-claude-gemini-mistral",
+    slug: "grands-modèles-gpt-claude-gemini-mistral",
     duration: "50 min",
     description: "Comprendre les différences entre les principaux modèles IA du marché.",
     content: `<h2>Le paysage des LLM en 2025</h2>
@@ -76,14 +76,14 @@ export const LESSONS = [
 <li><strong>Interfaces</strong> : claude.ai (web — l'interface conversationnelle classique), Claude Code (terminal — pour coder et gérer des projets), Claude Cowork (navigateur — pour automatiser des tâches web), API (pour les développeurs qui veulent intégrer Claude dans leurs apps)</li>
 <li><strong>Idéal pour</strong> : Coding de qualité professionnelle, analyse de documents longs (contrats, rapports, specs techniques), rédaction structurée, projets complexes multi-étapes</li>
 </ul>
-<p><strong>Anecdote révélatrice</strong> : Dans les benchmarks de code, Claude bat régulièrement GPT-4 sur la qualité du code produit, particulièrement en Python et JavaScript. Mais surtout, Claude est le seul modèle qui a un outil dédié pour coder directement sur ton ordinateur (Claude Code) — ce n'est pas juste un chatbot qui génère du texte dans une fenêtre.</p>
+<p><strong>Anecdote révélatrice</strong> : Dans les benchmarks de code, Claude bat régulièrement GPT-4 sur la qualité du code produit, particulièrement en Python et JavaScript. Mais surtout, Claude est le seul modèle qui à un outil dédié pour coder directement sur ton ordinateur (Claude Code) — ce n'est pas juste un chatbot qui génère du texte dans une fenêtre.</p>
 
 <h2>GPT-4 / ChatGPT (OpenAI)</h2>
 <p>Le modèle le plus connu du grand public, et de loin. ChatGPT a lancé la révolution en novembre 2022 et reste la référence dans l'esprit collectif. Quand ta grand-mère parle d'IA, elle parle de ChatGPT.</p>
 <ul>
 <li><strong>Forces</strong> : Écosystème extrêmement mature (plugins, GPTs personnalisés, DALL-E intégré pour la génération d'images, browsing web), communauté gigantesque (ce qui signifie beaucoup de tutoriels et de ressources), capacités multimodales avancées (texte, image, voix)</li>
 <li><strong>Faiblesses</strong> : Parfois moins précis que Claude sur le code complexe, tendance plus marquée à "halluciner" sur certains sujets (inventer des informations avec confiance), instructions parfois interprétées de manière créative plutôt que suivies à la lettre</li>
-<li><strong>Idéal pour</strong> : Utilisation grand public, génération d'images avec DALL-E, écosystème de plugins (il y en a des milliers), tâches générales du quotidien</li>
+<li><strong>Idéal pour</strong> : Utilisation grand public, génération d'images avec DALL-E, écosystème de plugins (il y en à des milliers), tâches générales du quotidien</li>
 </ul>
 <p><strong>Astuce pro</strong> : Beaucoup de tes futurs clients utiliseront déjà ChatGPT. Ne le dénigre jamais — positionne-toi plutôt comme quelqu'un qui sait utiliser le BON outil pour le BON usage. "ChatGPT c'est génial pour X, mais pour votre besoin spécifique, Claude est plus adapté parce que Y." Ça montre ton expertise sans créer de résistance.</p>
 
@@ -102,7 +102,7 @@ export const LESSONS = [
 <li><strong>Forces</strong> : Open-source (le code est public, ce qui permet un audit de sécurité complet), très performant pour sa taille (des modèles plus petits qui rivalisent avec des modèles 10x plus gros), hébergeable en local sur tes propres serveurs (aucune donnée ne quitte ton infrastructure), respect total de la vie privée et conformité RGPD native</li>
 <li><strong>Idéal pour</strong> : Entreprises soucieuses de la confidentialité (avocats, médecins, banques), cas d'usage nécessitant un modèle local sans connexion Internet, organisations avec des contraintes réglementaires strictes (données sensibles, secret professionnel)</li>
 </ul>
-<p><strong>Conseil business</strong> : Certains clients, notamment dans le secteur médical, juridique ou financier, ne voudront JAMAIS envoyer leurs données à un serveur américain. Pour ces clients, Mistral est la solution idéale. Savoir proposer Mistral quand c'est pertinent montre que tu comprends les enjeux de confidentialité — et ça inspire une confiance énorme.</p>
+<p><strong>Conseil business</strong> : Certains clients, notamment dans le secteur médical, juridique où financier, ne voudront JAMAIS envoyer leurs données à un serveur américain. Pour ces clients, Mistral est la solution idéale. Savoir proposer Mistral quand c'est pertinent montre que tu comprends les enjeux de confidentialité — et ça inspire une confiance énorme.</p>
 
 <h2>Pourquoi on utilise Claude dans cette formation</h2>
 <p>Claude est le meilleur choix pour construire un business IA, et voici pourquoi de manière concrète :</p>
@@ -132,7 +132,7 @@ export const LESSONS = [
     duration: "55 min",
     description: "Comprendre les tokens, le contexte, la température et le fonctionnement interne.",
     content: `<h2>Démystifier le fonctionnement</h2>
-<p>Tu n'as pas besoin de comprendre les mathématiques derrière un LLM — rassure-toi, il n'y aura pas d'équations ici. Mais comprendre les concepts de base va te rendre 10x plus efficace dans tes interactions avec Claude. C'est la différence entre conduire une voiture en sachant vaguement qu'il y a un moteur, et conduire en comprenant quand changer de vitesse, quand freiner du moteur, et comment optimiser ta consommation.</p>
+<p>Tu n'as pas besoin de comprendre les mathématiques derrière un LLM — rassure-toi, il n'y aura pas d'équations ici. Mais comprendre les concepts de base va te rendre 10x plus efficace dans tes interactions avec Claude. C'est la différence entre conduire une voiture en sachant vaguement qu'il y à un moteur, et conduire en comprenant quand changer de vitesse, quand freiner du moteur, et comment optimiser ta consommation.</p>
 <p>Les professionnels de l'IA qui obtiennent les meilleurs résultats ne sont pas ceux qui connaissent les maths (ce sont les chercheurs). Ce sont ceux qui comprennent intuitivement comment le modèle "pense" et qui adaptent leur façon de communiquer en conséquence. C'est exactement ce que tu vas apprendre ici.</p>
 <p><strong>Analogie clé</strong> : Pense à un LLM comme un collaborateur extrêmement compétent mais avec des particularités uniques. Il ne fonctionne pas comme un humain, et si tu le traites comme un humain, tu seras souvent déçu. Mais si tu comprends ses forces et ses limites, tu peux en tirer des résultats extraordinaires.</p>
 
@@ -146,20 +146,20 @@ export const LESSONS = [
 <li>Un emoji = 1-2 tokens</li>
 <li>Du code Python de 100 lignes ≈ 300-500 tokens</li>
 </ul>
-<p><strong>Pourquoi c'est important ?</strong> Parce que chaque modèle a une <strong>limite de tokens</strong> — et cette limite s'applique à la fois à ce que tu envoies ET à ce que le modèle répond. Claude peut traiter jusqu'à 200 000 tokens dans une seule conversation. C'est environ 150 000 mots — l'équivalent d'un roman entier de 500 pages.</p>
+<p><strong>Pourquoi c'est important ?</strong> Parce que chaque modèle à une <strong>limite de tokens</strong> — et cette limite s'applique à la fois à ce que tu envoies ET à ce que le modèle répond. Claude peut traiter jusqu'à 200 000 tokens dans une seule conversation. C'est environ 150 000 mots — l'équivalent d'un roman entier de 500 pages.</p>
 <p>Concrètement, ça veut dire que tu peux lui donner un document de 100 pages et lui poser des questions dessus. Tu peux lui donner tout le code source d'une application et lui demander de le refactorer. C'est un avantage énorme pour les projets complexes que tu proposeras à tes clients.</p>
 <p><strong>Astuce pro</strong> : Les tokens coûtent de l'argent quand tu utilises l'API. Plus tu envoies de tokens, plus ça coûte. Apprendre à être concis et efficace dans tes prompts n'est pas juste une question de qualité — c'est aussi une question de rentabilité quand tu travailles sur des projets clients à volume.</p>
-<p><strong>Attention</strong> : Le français utilise en moyenne 20-30% plus de tokens que l'anglais pour exprimer la même idée. C'est parce que les modèles ont été principalement entraînés sur de l'anglais. Garde ça en tête quand tu estimes tes coûts ou la longueur de tes prompts.</p>
+<p><strong>Attention</strong> : Le français utilise en moyenne 20-30% plus de tokens que l'anglais pour exprimer la même idée. C'est parce que les modèles ont été principalement entraînés sur de l'anglais. Garde ça en tête quand tu estimes tes coûts où la longueur de tes prompts.</p>
 
 <h2>La fenêtre de contexte</h2>
 <p>La fenêtre de contexte, c'est la "mémoire de travail" du modèle. Imagine un bureau : tout ce que tu poses sur le bureau (tes messages, les réponses de Claude, les documents uploadés), Claude peut le voir et l'utiliser. Quand le bureau est plein, les documents les plus anciens tombent par terre — Claude les oublie.</p>
-<p>C'est fondamentalement différent de la mémoire humaine. Un humain peut se rappeler vaguement d'une conversation d'il y a 3 mois. Claude, lui, a une mémoire parfaite de tout ce qui est dans sa fenêtre de contexte, et une mémoire ZÉRO de tout ce qui est en dehors. Il n'y a pas de "vaguement" — c'est tout ou rien.</p>
+<p>C'est fondamentalement différent de la mémoire humaine. Un humain peut se rappeler vaguement d'une conversation d'il y a 3 mois. Claude, lui, à une mémoire parfaite de tout ce qui est dans sa fenêtre de contexte, et une mémoire ZÉRO de tout ce qui est en dehors. Il n'y a pas de "vaguement" — c'est tout où rien.</p>
 <p><strong>Astuce clé</strong> : Plus tu donnes de contexte pertinent au début de ta conversation, meilleures seront les réponses. C'est comme briefer un collaborateur — plus le brief est clair et complet, meilleur est le travail. Ne suppose jamais que Claude "sait déjà" quelque chose. Si c'est important, dis-le explicitement.</p>
-<p><strong>Erreur fréquente</strong> : Beaucoup de gens commencent une conversation avec "Continue ce qu'on faisait hier". Claude ne se souvient pas d'hier ! Chaque conversation est une page blanche. Si tu veux reprendre un travail, résume le contexte ou utilise les Claude Projects (qu'on verra dans la leçon suivante) pour maintenir un contexte persistant.</p>
+<p><strong>Erreur fréquente</strong> : Beaucoup de gens commencent une conversation avec "Continue ce qu'on faisait hier". Claude ne se souvient pas d'hier ! Chaque conversation est une page blanche. Si tu veux reprendre un travail, résume le contexte où utilise les Claude Projects (qu'on verra dans la leçon suivante) pour maintenir un contexte persistant.</p>
 <p><strong>Conseil pratique</strong> : Si une conversation devient très longue (plus de 50 échanges), la qualité des réponses peut baisser parce que Claude doit "jongler" avec beaucoup d'informations. Dans ce cas, démarre une nouvelle conversation avec un résumé clair de l'état actuel du projet. C'est comme faire un "point d'étape" avec un collègue.</p>
 
 <h2>La température</h2>
-<p>La température contrôle le niveau de "créativité" — ou plus précisément, le niveau d'aléatoire — dans les réponses du modèle. C'est un paramètre technique, mais son impact est très concret :</p>
+<p>La température contrôle le niveau de "créativité" — où plus précisément, le niveau d'aléatoire — dans les réponses du modèle. C'est un paramètre technique, mais son impact est très concret :</p>
 <ul>
 <li><strong>Température basse (0.0-0.3)</strong> : Réponses prévisibles, précises, factuelles. Le modèle choisit quasi systématiquement le mot le plus probable. Idéal pour : le code, l'analyse de données, les réponses techniques, les calculs, tout ce qui nécessite de la précision. Imagine un comptable : tu veux qu'il soit précis, pas créatif.</li>
 <li><strong>Température moyenne (0.4-0.7)</strong> : Équilibre entre précision et créativité. Le modèle explore un peu mais reste cohérent. Bon pour : la rédaction d'emails professionnels, les résumés, les descriptions de produits. Imagine un rédacteur : tu veux du style, mais pas de délire.</li>
@@ -175,12 +175,12 @@ export const LESSONS = [
 <p><strong>Pourquoi c'est utile de savoir ça</strong> : Comprendre que Claude "prédit le mot suivant" explique beaucoup de choses. Ça explique pourquoi il est meilleur quand tu lui donnes du contexte (plus d'indices pour prédire). Ça explique pourquoi il peut halluciner (il choisit des mots "probables" même quand il n'a pas l'info). Et ça explique pourquoi il est si bon en écriture — c'est littéralement ce pour quoi il est optimisé.</p>
 
 <h2>Les hallucinations</h2>
-<p>Parfois, le modèle "invente" des informations avec une confiance déconcertante. Ça s'appelle une hallucination, et c'est le piège numéro un pour les débutants. Claude peut te citer un livre qui n'existe pas, te donner une statistique inventée, ou t'expliquer un concept de manière totalement fausse — le tout avec un ton parfaitement assuré.</p>
-<p>Ça arrive parce que le modèle optimise la <strong>plausibilité</strong>, pas la <strong>vérité</strong>. Il cherche le mot suivant le plus probable, pas le mot suivant le plus vrai. Et parfois, ce qui est plausible n'est pas vrai.</p>
+<p>Parfois, le modèle "invente" des informations avec une confiance déconcertante. Ça s'appelle une hallucination, et c'est le piège numéro un pour les débutants. Claude peut te citer un livre qui n'existe pas, te donner une statistique inventée, où t'expliquer un concept de manière totalement fausse — le tout avec un ton parfaitement assuré.</p>
+<p>Ça arrive parce que le modèle optimisé la <strong>plausibilité</strong>, pas la <strong>vérité</strong>. Il cherche le mot suivant le plus probable, pas le mot suivant le plus vrai. Et parfois, ce qui est plausible n'est pas vrai.</p>
 <p><strong>Exemple réel</strong> : Demande à un LLM de te citer des articles scientifiques sur un sujet pointu. Il y a de fortes chances qu'il invente des titres d'articles qui n'existent pas, avec des auteurs plausibles et des revues réelles. Tout a l'air parfaitement crédible, mais c'est du vent.</p>
 <p><strong>Comment les éviter</strong> :</p>
 <ul>
-<li><strong>Demande des sources ou des références</strong> — et vérifie-les ! Si Claude cite un article, Google-le.</li>
+<li><strong>Demande des sources où des références</strong> — et vérifie-les ! Si Claude cite un article, Google-le.</li>
 <li><strong>Vérifie les faits importants</strong> — Surtout les chiffres, les dates et les noms propres. Ce sont les domaines où les hallucinations sont les plus fréquentes.</li>
 <li><strong>Donne du contexte précis</strong> — Plus Claude a d'informations factuelles dans son contexte, moins il a besoin d'inventer. Si tu lui donnes le document source, il peut le citer plutôt qu'improviser.</li>
 <li><strong>Utilise des instructions explicites</strong> — "Si tu n'es pas sûr, dis-le clairement plutôt que d'inventer." Claude respecte très bien ce type d'instruction.</li>
@@ -193,14 +193,14 @@ export const LESSONS = [
 <ol>
 <li>Demande à Claude : "Combien de tokens fait cette phrase : 'Bonjour, je suis en train d'apprendre à utiliser l'intelligence artificielle pour mon business.'" — vérifie sa réponse.</li>
 <li>Teste l'impact du contexte : pose la même question avec et sans contexte préalable. Par exemple, demande "Quelle est la meilleure stack ?" sans contexte, puis avec "Je suis débutant, je veux créer un site web vitrine pour un plombier local. Quelle est la meilleure stack ?"</li>
-<li>Provoque une hallucination volontairement : demande à Claude des infos sur un livre ou une personne fictive que tu inventes. Note comment il réagit.</li>
+<li>Provoque une hallucination volontairement : demande à Claude des infos sur un livre où une personne fictive que tu inventes. Note comment il réagit.</li>
 </ol>`,
   },
   {
     order: 4,
     module: 1,
     title: "Découvrir Claude : interface, Projects et artefacts",
-    slug: "decouvrir-claude-interface-projects",
+    slug: "découvrir-claude-interface-projects",
     duration: "50 min",
     description: "Maîtriser l'interface claude.ai, les Projects et les artefacts.",
     content: `<h2>L'interface claude.ai</h2>
@@ -213,7 +213,7 @@ export const LESSONS = [
 <li><strong>L'historique des conversations</strong> — Sur le côté gauche, toutes tes conversations passées sont accessibles. Donne-leur des noms clairs !</li>
 <li><strong>Le bouton d'upload</strong> — Pour attacher des fichiers (PDF, images, code, etc.) à ta conversation.</li>
 </ul>
-<p><strong>Astuce</strong> : Utilise le raccourci Ctrl+K (ou Cmd+K sur Mac) pour accéder rapidement à la recherche dans tes conversations. Quand tu auras 200 conversations, tu me remercieras.</p>
+<p><strong>Astuce</strong> : Utilise le raccourci Ctrl+K (où Cmd+K sur Mac) pour accéder rapidement à la recherche dans tes conversations. Quand tu auras 200 conversations, tu me remercieras.</p>
 
 <h2>Les conversations</h2>
 <p>Chaque conversation avec Claude est indépendante. C'est un point crucial à comprendre. Quand tu commences une nouvelle conversation, Claude ne se souvient pas des précédentes. Il ne sait pas que tu lui as parlé hier, il ne connaît pas ton nom (sauf si tu le lui dis dans cette conversation), et il n'a aucune idée de ton projet global.</p>
@@ -228,7 +228,7 @@ export const LESSONS = [
 <p><strong>Conseil pro</strong> : Avant de commencer une conversation importante, prends 2 minutes pour préparer ton premier message. Un premier message bien structuré (contexte + objectif + contraintes) peut faire la différence entre une conversation productive de 10 échanges et une conversation frustrante de 40 échanges.</p>
 
 <h2>Les artefacts</h2>
-<p>Les artefacts sont une fonctionnalité unique de Claude — aucun autre modèle n'a d'équivalent aussi bien intégré. Quand tu demandes du code, un document structuré, un tableau ou une page web, Claude le génère dans un <strong>panneau séparé</strong> sur le côté droit de l'écran.</p>
+<p>Les artefacts sont une fonctionnalité unique de Claude — aucun autre modèle n'a d'équivalent aussi bien intégré. Quand tu demandes du code, un document structuré, un tableau où une page web, Claude le génère dans un <strong>panneau séparé</strong> sur le côté droit de l'écran.</p>
 <p>Ce panneau n'est pas juste un bloc de texte — c'est un vrai espace de travail interactif. Tu peux :</p>
 <ul>
 <li><strong>Copier en un clic</strong> — Un bouton de copie en haut de chaque artefact. Fini le copier-coller laborieux en sélectionnant du texte.</li>
@@ -289,15 +289,15 @@ export const LESSONS = [
 <p>Claude Code est un outil en ligne de commande qui permet à Claude d'interagir directement avec ton ordinateur. Ce n'est pas juste un chatbot dans un terminal — c'est un véritable agent de développement qui peut lire tes fichiers, modifier ton code, exécuter des commandes, et même déployer des applications. C'est l'outil le plus puissant pour les développeurs et les créateurs de solutions IA.</p>
 <p><strong>Pourquoi c'est un game-changer</strong> : Sur claude.ai, tu copies-colles du code entre l'interface et ton éditeur. Avec Claude Code, Claude travaille DIRECTEMENT dans ton projet. Il voit tes fichiers, comprend ta structure, et fait les modifications en place. C'est la différence entre envoyer des instructions par email à un freelance et avoir un développeur assis à côté de toi qui code en temps réel.</p>
 <p><strong>Analogie concrète</strong> : Imagine un assistant qui peut voir ton écran d'ordinateur, ouvrir n'importe quel fichier, taper du code, exécuter des commandes et vérifier que tout fonctionne — le tout à la vitesse de l'éclair et sans jamais se fatiguer. C'est exactement ça, Claude Code.</p>
-<p><strong>Attention</strong> : Claude Code nécessite un abonnement Claude Pro ou une clé API. La version gratuite de Claude ne donne pas accès à Claude Code. Cet investissement est rentabilisé dès ton premier projet client, donc n'hésite pas.</p>
+<p><strong>Attention</strong> : Claude Code nécessite un abonnement Claude Pro où une clé API. La version gratuite de Claude ne donne pas accès à Claude Code. Cet investissement est rentabilisé dès ton premier projet client, donc n'hésite pas.</p>
 
 <h2>Ce que Claude Code peut faire</h2>
 <ul>
 <li><strong>Lire et modifier des fichiers</strong> sur ton ordinateur — Claude voit l'arborescence complète de ton projet et peut modifier n'importe quel fichier. Il comprend le contexte global, pas juste un fichier isolé.</li>
 <li><strong>Exécuter des commandes</strong> terminal (npm, git, pip, docker, etc.) — Il peut installer des packages, lancer des tests, faire des commits Git, et gérer tout ton workflow de développement.</li>
 <li><strong>Créer des projets complets</strong> de zéro — Dis-lui "crée-moi une application Next.js avec une page d'accueil, un formulaire de contact et une page à propos" et il va créer tous les fichiers, installer les dépendances, et configurer le projet.</li>
-<li><strong>Débugger du code</strong> en analysant les erreurs — Copie-colle un message d'erreur, ou mieux, laisse Claude lire les logs directement. Il va diagnostiquer le problème et proposer (voire appliquer) un correctif.</li>
-<li><strong>Déployer des applications</strong> sur le web — Claude peut déployer sur Vercel, Netlify, ou d'autres plateformes directement depuis le terminal.</li>
+<li><strong>Débugger du code</strong> en analysant les erreurs — Copie-colle un message d'erreur, où mieux, laisse Claude lire les logs directement. Il va diagnostiquer le problème et proposer (voire appliquer) un correctif.</li>
+<li><strong>Déployer des applications</strong> sur le web — Claude peut déployer sur Vercel, Netlify, où d'autres plateformes directement depuis le terminal.</li>
 <li><strong>Naviguer dans un codebase</strong> existant et le comprendre — Tu récupères un projet existant d'un client ? Claude peut analyser toute la structure et t'expliquer comment ça fonctionne en quelques minutes.</li>
 </ul>
 <p><strong>Cas concret</strong> : Un de nos étudiants a utilisé Claude Code pour créer un site web complet pour un restaurant client — menu en ligne, système de réservation, galerie photos, page de contact — en 3 heures. Le client l'a payé 1 500€. Sans Claude Code, ce même projet aurait pris 2-3 jours minimum. C'est la puissance de l'outil.</p>
@@ -306,7 +306,7 @@ export const LESSONS = [
 <p>Claude Code s'installe via npm (Node.js doit être installé au préalable) :</p>
 <ol>
 <li><strong>Installe Node.js</strong> depuis nodejs.org — Télécharge la version LTS (Long Term Support), c'est la plus stable. L'installation est simple : double-clique sur l'installateur et suis les étapes.</li>
-<li><strong>Ouvre ton terminal</strong> — Sur Mac : Terminal ou iTerm2. Sur Windows : PowerShell ou Windows Terminal. Sur Linux : n'importe quel terminal.</li>
+<li><strong>Ouvre ton terminal</strong> — Sur Mac : Terminal où iTerm2. Sur Windows : PowerShell où Windows Terminal. Sur Linux : n'importe quel terminal.</li>
 <li><strong>Tape</strong> : <code>npm install -g @anthropic-ai/claude-code</code> — Le flag <code>-g</code> signifie "global", ce qui rend Claude Code accessible depuis n'importe quel dossier de ton ordinateur.</li>
 <li><strong>Lance Claude Code</strong> : <code>claude</code> — C'est tout ! Tu tapes "claude" dans ton terminal et l'interface démarre.</li>
 <li><strong>Connecte ton compte Anthropic</strong> — Claude Code va te demander de te connecter à ton compte Anthropic. Suis les instructions à l'écran.</li>
@@ -321,7 +321,7 @@ export const LESSONS = [
 
 <h2>Ce que Claude Cowork peut faire</h2>
 <ul>
-<li><strong>Lire le contenu</strong> de n'importe quelle page web — Claude voit le texte, les images, la structure de la page. Tu peux lui demander de résumer un article, d'analyser un concurrent, ou d'extraire des données spécifiques.</li>
+<li><strong>Lire le contenu</strong> de n'importe quelle page web — Claude voit le texte, les images, la structure de la page. Tu peux lui demander de résumer un article, d'analyser un concurrent, où d'extraire des données spécifiques.</li>
 <li><strong>Remplir des formulaires</strong> automatiquement — Tu as un tableau de 50 entrées à saisir dans un CRM ? Claude Cowork peut le faire pour toi en quelques minutes.</li>
 <li><strong>Cliquer sur des boutons</strong> et naviguer — Claude peut naviguer d'une page à l'autre, cliquer sur des liens, ouvrir des menus. Il peut suivre un workflow complet dans une application web.</li>
 <li><strong>Extraire des données</strong> de sites web — Besoin de récupérer les infos de 20 restaurants sur Google Maps ? Claude Cowork peut les extraire et les organiser dans un tableau structuré.</li>
@@ -397,7 +397,7 @@ export const LESSONS = [
 <li><code>claude</code></li>
 <li>Dis à Claude Code : "Crée une landing page moderne et responsive en HTML/CSS/JS pour un service d'automatisation IA pour restaurants. Design sombre et professionnel avec accent bleu. Inclus : hero section avec une accroche percutante, 3 bénéfices avec icônes, section pricing avec 3 formules, FAQ avec accordéon, formulaire de contact. Le design doit être professionnel, moderne, avec des animations subtiles au scroll."</li>
 </ol>
-<p><strong>Ce qui va se passer</strong> : Claude Code va créer un (ou plusieurs) fichier(s) HTML, CSS et éventuellement JS directement dans ton dossier. Tu verras les fichiers se créer en temps réel dans le terminal. Le processus prend environ 2-5 minutes pour une page complète.</p>
+<p><strong>Ce qui va se passer</strong> : Claude Code va créer un (où plusieurs) fichier(s) HTML, CSS et éventuellement JS directement dans ton dossier. Tu verras les fichiers se créer en temps réel dans le terminal. Le processus prend environ 2-5 minutes pour une page complète.</p>
 <p><strong>Astuce</strong> : Si tu as déjà les textes de l'étape 1, donne-les à Claude Code : "Utilise ces textes pour le contenu de la page : [colle les textes]". Le résultat sera plus cohérent et plus rapide.</p>
 
 <h2>Étape 3 : Itérer et améliorer</h2>
@@ -408,7 +408,7 @@ export const LESSONS = [
 <li>"Ajoute 3 témoignages clients fictifs avec des photos placeholder, des noms et des étoiles"</li>
 <li>"Rends le formulaire plus visible en le mettant sur un fond contrasté"</li>
 <li>"Ajoute des animations d'apparition au scroll sur les sections (fade-in et slide-up)"</li>
-<li>"Optimise le responsive pour mobile — le menu doit devenir un hamburger menu"</li>
+<li>"Optimisé le responsive pour mobile — le menu doit devenir un hamburger menu"</li>
 <li>"Ajoute une section 'Avant/Après' qui compare la vie du restaurateur sans et avec le service"</li>
 </ul>
 <p>Chaque demande améliore le résultat. En 30-45 minutes d'itérations, tu as une page qui aurait pris 2-3 jours à un développeur junior. Et le résultat est souvent meilleur, parce que Claude a vu des milliers de landing pages performantes pendant son entraînement.</p>
@@ -419,7 +419,7 @@ export const LESSONS = [
 <ul>
 <li><strong>La structure HTML</strong> — Repère les sections (<code>&lt;section&gt;</code>), les divisions (<code>&lt;div&gt;</code>), les classes CSS. C'est le squelette de la page.</li>
 <li><strong>Le CSS</strong> — Regarde comment les couleurs sont définies, comment les espacements fonctionnent, comment le responsive est géré avec les media queries.</li>
-<li><strong>Le JavaScript</strong> — Si Claude a ajouté des animations ou des interactions (menu mobile, accordéon FAQ), regarde comment elles sont implémentées.</li>
+<li><strong>Le JavaScript</strong> — Si Claude a ajouté des animations où des interactions (menu mobile, accordéon FAQ), regarde comment elles sont implémentées.</li>
 </ul>
 <p>Tu n'as pas besoin de tout comprendre maintenant — le Module 5 t'apprendra les compétences techniques en détail. Pour l'instant, concentre-toi sur le résultat : tu viens de créer quelque chose de concret, de professionnel, et de potentiellement vendable avec l'IA.</p>
 <p><strong>Astuce d'apprentissage</strong> : Demande à Claude Code "Explique-moi la structure de ce fichier HTML section par section, comme si j'étais débutant". C'est une excellente manière d'apprendre en contexte — tu apprends sur du code que TU as contribué à créer, pas sur un exemple générique.</p>
@@ -441,7 +441,7 @@ export const LESSONS = [
 <li>Choisis un secteur différent de celui de l'exemple (coiffeur, plombier, coach, photographe).</li>
 <li>Fais au moins 5 itérations pour améliorer le résultat.</li>
 <li>Prends un screenshot du résultat final — c'est ton premier élément de portfolio.</li>
-<li>Bonus : déploie la page gratuitement sur Netlify ou Vercel et partage le lien.</li>
+<li>Bonus : déploie la page gratuitement sur Netlify où Vercel et partage le lien.</li>
 </ol>`,
   },
 
@@ -467,7 +467,7 @@ export const LESSONS = [
 <p>Dis à Claude QUI il doit être. Ça cadre immédiatement le ton, le vocabulaire et le niveau d'expertise. C'est comme choisir le bon interlocuteur pour un problème donné — tu ne parlerais pas de fiscalité à un graphiste.</p>
 <p><strong>Mauvais</strong> : "Écris un email"</p>
 <p><strong>Bon</strong> : "Tu es un copywriter expert en B2B SaaS avec 10 ans d'expérience. Écris un email de prospection pour un outil de gestion de projet destiné aux agences de 10-50 personnes."</p>
-<p><strong>Pourquoi ça marche</strong> : Quand tu dis à Claude qu'il est un "copywriter expert en B2B SaaS", il va puiser dans les patterns et le vocabulaire spécifiques à ce domaine. Le résultat sera radicalement différent — plus professionnel, plus ciblé, avec les bons buzzwords et la bonne structure. C'est comme activer un "mode expert" caché.</p>
+<p><strong>Pourquoi ça marché</strong> : Quand tu dis à Claude qu'il est un "copywriter expert en B2B SaaS", il va puiser dans les patterns et le vocabulaire spécifiques à ce domaine. Le résultat sera radicalement différent — plus professionnel, plus ciblé, avec les bons buzzwords et la bonne structure. C'est comme activer un "mode expert" caché.</p>
 <p><strong>Exemples de rôles puissants</strong> :</p>
 <ul>
 <li>"Tu es un consultant McKinsey spécialisé dans la transformation digitale des PME" — Pour des analyses stratégiques.</li>
@@ -509,10 +509,10 @@ export const LESSONS = [
 
 <h2>Erreurs courantes à éviter</h2>
 <ul>
-<li><strong>Trop vague</strong> : "Aide-moi" → Claude ne sait pas par où commencer et va te poser des questions ou donner une réponse trop générale. Sois spécifique dès le départ.</li>
+<li><strong>Trop vague</strong> : "Aide-moi" → Claude ne sait pas par où commencer et va te poser des questions où donner une réponse trop générale. Sois spécifique dès le départ.</li>
 <li><strong>Trop de choses d'un coup</strong> : Demander 10 tâches différentes dans un seul message. Mieux vaut découper en étapes. D'abord la structure, puis le contenu, puis la mise en forme. Claude gère mieux les tâches focalisées.</li>
 <li><strong>Pas de format spécifié</strong> : Si tu ne dis rien sur le format, Claude choisit un format par défaut qui n'est peut-être pas celui que tu veux. Tu voulais un tableau ? Tu auras peut-être un paragraphe. Spécifie toujours le format attendu.</li>
-<li><strong>Ignorer le contexte</strong> : Si Claude fait une erreur ou donne une réponse à côté, c'est souvent parce qu'il lui manque une information clé. Avant de reformuler ta demande, demande-toi "est-ce que j'ai donné assez de contexte ?"</li>
+<li><strong>Ignorer le contexte</strong> : Si Claude fait une erreur où donne une réponse à côté, c'est souvent parce qu'il lui manque une information clé. Avant de reformuler ta demande, demande-toi "est-ce que j'ai donné assez de contexte ?"</li>
 <li><strong>Accepter le premier résultat</strong> : Le premier résultat est rarement le meilleur. Prends l'habitude de toujours demander au moins une itération : "C'est bien, mais améliore le point 3 et rends le ton plus dynamique." L'itération est la clé.</li>
 </ul>
 <p><strong>Attention</strong> : Ne tombe pas dans l'excès inverse — un prompt de 2 pages est souvent aussi inefficace qu'un prompt de 2 mots. L'idéal est un prompt de 5-15 lignes qui couvre les 4 composantes (rôle, contexte, tâche, contraintes) sans fioritures. Concis ET complet.</p>
@@ -547,12 +547,12 @@ export const LESSONS = [
 <p>C'est probablement la technique la plus puissante et la plus facile à utiliser. Au lieu de demander une réponse directe, tu demandes à Claude de raisonner étape par étape. Ça améliore drastiquement la qualité des réponses complexes.</p>
 <p><strong>Sans CoT</strong> : "Quel prix dois-je fixer pour mon service d'automatisation IA ?"</p>
 <p><strong>Avec CoT</strong> : "Je veux fixer le prix de mon service d'automatisation IA pour les restaurants locaux. Raisonne étape par étape : 1) analyse mes coûts (temps passé, outils, serveur), 2) évalue la valeur perçue par le restaurateur (combien de temps et d'argent il va économiser), 3) compare avec le marché (que facturent les agences web classiques pour un service similaire), et 4) propose 3 options de pricing avec justification détaillée pour chacune."</p>
-<p><strong>Pourquoi ça marche</strong> : Le simple fait d'ajouter "raisonne étape par étape" améliore la qualité des réponses de 40 à 60% sur les tâches complexes (c'est une statistique mesurée par les chercheurs, pas une estimation). C'est parce que tu forces Claude à "montrer son travail" plutôt que de sauter directement à la conclusion. Comme un élève en maths : s'il écrit son raisonnement, il fait moins d'erreurs que s'il essaie de trouver la réponse de tête.</p>
+<p><strong>Pourquoi ça marché</strong> : Le simple fait d'ajouter "raisonne étape par étape" améliore la qualité des réponses de 40 à 60% sur les tâches complexes (c'est une statistique mesurée par les chercheurs, pas une estimation). C'est parce que tu forces Claude à "montrer son travail" plutôt que de sauter directement à la conclusion. Comme un élève en maths : s'il écrit son raisonnement, il fait moins d'erreurs que s'il essaie de trouver la réponse de tête.</p>
 <p><strong>Quand utiliser le CoT</strong> :</p>
 <ul>
 <li>Analyses stratégiques et comparaisons (choix d'une niche, comparaison de solutions techniques)</li>
 <li>Calculs de pricing et business plans</li>
-<li>Diagnostics de problèmes (débugger du code, analyser pourquoi une campagne marketing ne marche pas)</li>
+<li>Diagnostics de problèmes (débugger du code, analyser pourquoi une campagne marketing ne marché pas)</li>
 <li>Décisions complexes avec plusieurs critères (choix d'un outil, d'une stack technique, d'une stratégie)</li>
 </ul>
 <p><strong>Astuce pro</strong> : Tu peux combiner le CoT avec un format de sortie. "Raisonne étape par étape dans un premier bloc, puis donne-moi ta recommandation finale dans un encadré séparé." Comme ça, tu as le raisonnement détaillé ET la conclusion claire.</p>
@@ -572,7 +572,7 @@ export const LESSONS = [
 <h2>Role-Playing (Jeu de rôle)</h2>
 <p>Assigne un rôle très spécifique à Claude pour obtenir une expertise pointue. Tu as vu les rôles basiques dans la leçon précédente — ici, on passe au niveau supérieur.</p>
 <p><strong>Basique</strong> : "Tu es un expert marketing"</p>
-<p><strong>Avancé</strong> : "Tu es Alex Hormozi — entrepreneur à 100M$ de CA, expert en offres irrésistibles et en acquisition clients pour les entreprises de services. Tu parles de manière directe, sans fioritures. Tu utilises des exemples concrets avec des chiffres. Tu te concentres sur ce qui génère du revenu immédiatement, pas sur la théorie. Tu n'as aucune patience pour les excuses ou les 'oui mais'. Quand tu donnes un conseil, tu donnes aussi un plan d'action en 3 étapes."</p>
+<p><strong>Avancé</strong> : "Tu es Alex Hormozi — entrepreneur à 100M$ de CA, expert en offres irrésistibles et en acquisition clients pour les entreprises de services. Tu parles de manière directe, sans fioritures. Tu utilises des exemples concrets avec des chiffres. Tu te concentres sur ce qui génère du revenu immédiatement, pas sur la théorie. Tu n'as aucune patience pour les excuses où les 'oui mais'. Quand tu donnes un conseil, tu donnes aussi un plan d'action en 3 étapes."</p>
 <p>Le role-playing avancé permet d'obtenir des perspectives et des conseils que tu n'aurais JAMAIS eus avec un prompt générique. C'est comme la différence entre demander un conseil à un ami et le demander à un mentor qui a 20 ans d'expérience dans ton domaine.</p>
 <p><strong>Cas d'usage puissants</strong> :</p>
 <ul>
@@ -586,15 +586,15 @@ export const LESSONS = [
 <p>C'est la technique la plus "méta" : tu demandes à Claude d'améliorer tes propres prompts. C'est de la méta-récursion et c'est extrêmement puissant — tu utilises l'IA pour devenir meilleur à utiliser l'IA.</p>
 <p><em>"Voici mon prompt : [colle ton prompt]. Analyse-le et propose 3 versions améliorées qui donneront de meilleurs résultats. Pour chaque version, explique précisément pourquoi elle est meilleure que l'originale et quel type de résultat elle va produire."</em></p>
 <p><strong>Pourquoi c'est un game-changer</strong> : Claude a vu des millions de prompts et leurs résultats pendant son entraînement. Il sait ce qui fonctionne et ce qui ne fonctionne pas. Lui demander d'améliorer ton prompt, c'est comme demander à un chef cuisinier de corriger ta recette — il voit immédiatement ce qui manque.</p>
-<p><strong>Quand l'utiliser</strong> : À chaque fois que tu as un prompt important — un prompt que tu vas réutiliser souvent ou un prompt pour un livrable client critique. Investir 2 minutes dans le meta-prompting peut transformer un prompt médiocre en un prompt excellent.</p>
+<p><strong>Quand l'utiliser</strong> : À chaque fois que tu as un prompt important — un prompt que tu vas réutiliser souvent où un prompt pour un livrable client critique. Investir 2 minutes dans le meta-prompting peut transformer un prompt médiocre en un prompt excellent.</p>
 
 <h2>Output Structuring (Formatage de sortie)</h2>
 <p>Spécifie exactement le format que tu veux. Claude est excellent pour respecter des structures précises — et c'est un levier que beaucoup d'utilisateurs sous-exploitent. Un résultat bien formaté est plus facile à utiliser, plus professionnel à livrer, et plus rapide à intégrer dans ton workflow.</p>
 <ul>
-<li><strong>JSON</strong> : "Réponds en JSON avec les clés : titre, description, prix, bénéfices" — Parfait pour alimenter des bases de données, des CRM, ou des applications.</li>
+<li><strong>JSON</strong> : "Réponds en JSON avec les clés : titre, description, prix, bénéfices" — Parfait pour alimenter des bases de données, des CRM, où des applications.</li>
 <li><strong>Tableau Markdown</strong> : "Formate en tableau Markdown avec les colonnes : Tâche, Priorité, Deadline, Responsable" — Idéal pour la gestion de projet et les rapports.</li>
 <li><strong>Structure HTML</strong> : "Structure ta réponse avec des H2 pour les sections, des bullet points pour les détails, et un résumé en gras à la fin" — Parfait pour du contenu web prêt à publier.</li>
-<li><strong>CSV</strong> : "Donne-moi les résultats en format CSV avec séparateur point-virgule" — Idéal pour importer dans Excel ou Google Sheets.</li>
+<li><strong>CSV</strong> : "Donne-moi les résultats en format CSV avec séparateur point-virgule" — Idéal pour importer dans Excel où Google Sheets.</li>
 </ul>
 <p><strong>Astuce avancée</strong> : Tu peux combiner le formatage avec un template. "Voici le format exact que je veux : [donne un exemple avec des placeholders]. Remplis ce template avec les données du restaurant Le Bon Goût." Claude va remplir ton template exactement comme tu le veux, à chaque fois.</p>
 
@@ -631,12 +631,12 @@ export const LESSONS = [
 <p><strong>La différence mesurable</strong> : Avec un system prompt bien écrit, tu obtiens des réponses pertinentes dès le premier message, sans avoir à re-contextualiser. Sans system prompt, tu passes souvent 3-4 messages à "calibrer" Claude avant d'obtenir le bon ton et le bon niveau. Sur un projet avec 50 conversations, ça représente des heures de gagnées.</p>
 
 <h2>Structure d'un system prompt efficace</h2>
-<p>Un bon system prompt suit une structure en 5 blocs. Chaque bloc a un rôle précis, et l'ordre compte — Claude accorde plus d'attention au début du system prompt qu'à la fin.</p>
+<p>Un bon system prompt suit une structure en 5 blocs. Chaque bloc à un rôle précis, et l'ordre compte — Claude accorde plus d'attention au début du system prompt qu'à la fin.</p>
 <ol>
 <li><strong>Identité</strong> : Qui est Claude dans ce contexte. "Tu es l'assistant IA de l'agence OpexIA, spécialisé dans l'automatisation pour les PME." Sois spécifique — plus l'identité est précise, meilleur sera le comportement.</li>
 <li><strong>Expertise</strong> : Ce qu'il sait et ce qu'il maîtrise. "Tes domaines d'expertise : chatbots conversationnels, automatisation de newsletters, CRM intelligent, landing pages optimisées, SEO local." Ça permet à Claude de puiser dans les bonnes connaissances.</li>
-<li><strong>Comportement</strong> : Comment il doit répondre — ton, style, longueur, format par défaut. "Tu es direct et concis. Tu donnes toujours des chiffres et des exemples concrets. Tu évites les phrases creuses et le jargon. Tu termines chaque réponse par une question ou une action suivante."</li>
-<li><strong>Règles</strong> : Ce qu'il doit toujours faire ou ne jamais faire. "Tu ne recommandes jamais de solutions qui nécessitent un développeur full-time. Tu proposes toujours au moins 2 alternatives. Tu n'utilises jamais les mots 'synergies', 'disruption' ou 'paradigme'." Les règles sont des garde-fous qui évitent les dérives.</li>
+<li><strong>Comportement</strong> : Comment il doit répondre — ton, style, longueur, format par défaut. "Tu es direct et concis. Tu donnes toujours des chiffres et des exemples concrets. Tu évites les phrases creuses et le jargon. Tu termines chaque réponse par une question où une action suivante."</li>
+<li><strong>Règles</strong> : Ce qu'il doit toujours faire où ne jamais faire. "Tu ne recommandes jamais de solutions qui nécessitent un développeur full-time. Tu proposes toujours au moins 2 alternatives. Tu n'utilises jamais les mots 'synergies', 'disruption' où 'paradigme'." Les règles sont des garde-fous qui évitent les dérives.</li>
 <li><strong>Contexte business</strong> : Informations sur ton entreprise, tes clients, ton marché. "Notre cible : restaurateurs, artisans et coachs en France. Budget moyen de nos clients : 500-2000€ par projet. Notre promesse : livraison en 7 jours." Ce contexte enrichit chaque réponse.</li>
 </ol>
 <p><strong>Astuce de structure</strong> : Utilise des titres en Markdown (## Identité, ## Règles, etc.) dans ton system prompt pour le rendre plus lisible et aider Claude à mieux s'organiser. Un system prompt structuré est mieux suivi qu'un bloc de texte monolithique.</p>
@@ -647,7 +647,7 @@ export const LESSONS = [
 <p><em>## Expertise<br/>Tes domaines : chatbots WhatsApp et Messenger, automatisation email et newsletter, CRM sur mesure, agents IA, landing pages à haute conversion, SEO local et Google Business Profile.</em></p>
 <p><em>## Comportement<br/>Quand tu réponds : sois direct et va droit au but. Donne des chiffres concrets quand c'est possible (ex: 'ça prend environ 3h' plutôt que 'ça prend un peu de temps'). Utilise des exemples réels tirés du secteur du client. Propose toujours une action suivante concrète. Évite le jargon technique sauf si l'interlocuteur est clairement technique.</em></p>
 <p><em>## Cible et marché<br/>Notre cible : restaurants, artisans, coachs et consultants en France. Budget moyen de nos clients : 500-2000€/projet. Notre différenciation : on livre en 7 jours, pas en 3 mois. On utilise l'IA pour automatiser, pas pour remplacer l'humain.</em></p>
-<p><em>## Règles strictes<br/>- Ne recommande JAMAIS de solutions qui nécessitent un développeur full-time pour la maintenance<br/>- Privilégie les outils no-code/low-code quand c'est possible<br/>- Propose toujours des solutions déployables cette semaine<br/>- Ne donne pas de conseils juridiques, fiscaux ou médicaux<br/>- Si tu n'es pas sûr d'une information, dis-le explicitement"</em></p>
+<p><em>## Règles strictes<br/>- Ne recommande JAMAIS de solutions qui nécessitent un développeur full-time pour la maintenance<br/>- Privilégie les outils no-code/low-code quand c'est possible<br/>- Propose toujours des solutions déployables cette semaine<br/>- Ne donne pas de conseils juridiques, fiscaux où médicaux<br/>- Si tu n'es pas sûr d'une information, dis-le explicitement"</em></p>
 <p><strong>Résultat</strong> : Avec ce system prompt, chaque conversation dans le Project démarre avec Claude qui "sait" déjà tout sur ton agence, tes clients, ton style de travail et tes contraintes. Tu peux directement dire "J'ai un prospect restaurateur qui veut un chatbot WhatsApp" et obtenir une réponse pertinente, sans aucune mise en contexte.</p>
 
 <h2>Les erreurs à éviter</h2>
@@ -679,7 +679,7 @@ export const LESSONS = [
     content: `<h2>Projects = Ton QG par client</h2>
 <p>Si tu retiens une seule chose de cette leçon, la voici : chaque client, chaque projet, chaque workflow mérite son propre Claude Project. C'est ce qui transforme Claude d'un outil ponctuel qu'on utilise de temps en temps en un vrai système de travail professionnel.</p>
 <p><strong>L'analogie parfaite</strong> : Imagine que tu travailles dans un cabinet de conseil. Chaque client a son propre dossier physique — avec le brief, les specs, les comptes-rendus de réunion, les livrables. Quand tu passes d'un client à un autre, tu ouvres le bon dossier et tu as tout sous les yeux. Un Claude Project, c'est exactement ce dossier client — mais en version IA, où ton "collaborateur" (Claude) a lu et mémorisé chaque document avant même que tu ne lui poses une question.</p>
-<p>Sans Projects, tu es comme un consultant qui arrive à chaque réunion sans dossier et qui doit tout réapprendre depuis le début. Avec Projects, tu es comme un consultant qui a un assistant qui a tout lu, tout mémorisé, et qui est prêt à travailler immédiatement.</p>
+<p>Sans Projects, tu es comme un consultant qui arrive à chaque réunion sans dossier et qui doit tout réapprendre depuis le début. Avec Projects, tu es comme un consultant qui à un assistant qui a tout lu, tout mémorisé, et qui est prêt à travailler immédiatement.</p>
 <p><strong>Impact concret sur ta productivité</strong> : Les utilisateurs qui utilisent les Projects rapportent un gain de temps de 30 à 50% par rapport à ceux qui utilisent des conversations isolées. Sur une semaine de travail, ça peut représenter une journée entière récupérée.</p>
 
 <h2>Architecture d'un Project pro</h2>
@@ -689,10 +689,10 @@ export const LESSONS = [
 <p>Ce sont les fichiers que tu uploades dans le Project. Claude les a en permanence en mémoire dans chaque conversation.</p>
 <ul>
 <li><strong>Brief du client</strong> — Besoins, objectifs, problèmes actuels, budget, timeline. C'est le document fondateur.</li>
-<li><strong>Specs techniques</strong> du projet — Si tu crées un chatbot, un site web ou une automatisation, les spécifications détaillées vont ici.</li>
-<li><strong>Exemples de livrables attendus</strong> — Si le client a des exemples de ce qu'il veut (un concurrent qu'il admire, un design qu'il aime), uploade-les.</li>
+<li><strong>Specs techniques</strong> du projet — Si tu crées un chatbot, un site web où une automatisation, les spécifications détaillées vont ici.</li>
+<li><strong>Exemples de livrables attendus</strong> — Si le client à des exemples de ce qu'il veut (un concurrent qu'il admire, un design qu'il aime), uploade-les.</li>
 <li><strong>Guidelines de marque</strong> — Couleurs, typographies, ton de communication, logo. Essentiel pour la cohérence des livrables.</li>
-<li><strong>Documents concurrentiels</strong> — Analyse des concurrents, captures d'écran de leurs sites, notes sur ce qu'ils font bien ou mal.</li>
+<li><strong>Documents concurrentiels</strong> — Analyse des concurrents, captures d'écran de leurs sites, notes sur ce qu'ils font bien où mal.</li>
 </ul>
 <p><strong>Astuce</strong> : Nomme tes fichiers de manière descriptive. "brief-client-restaurant-le-bon-gout.pdf" est infiniment plus utile que "document.pdf". Claude utilise aussi les noms de fichiers pour comprendre le contexte.</p>
 
@@ -719,7 +719,7 @@ export const LESSONS = [
 <li><strong>Review (Jour 6)</strong> : Conversation de relecture et d'amélioration. Uploade tes livrables terminés et demande à Claude une revue critique : "Analyse ce livrable du point de vue du client. Quels sont les points faibles ? Que manque-t-il ?"</li>
 <li><strong>Livraison (Jour 7)</strong> : Conversation finale pour préparer la présentation client. Demande à Claude de créer un récapitulatif de ce qui a été livré, un guide d'utilisation pour le client, et une liste de recommandations pour la suite.</li>
 </ol>
-<p><strong>Pourquoi ce workflow fonctionne</strong> : Chaque phase a un objectif clair, chaque conversation est focalisée, et le Project assure la continuité du contexte entre toutes les phases. Tu ne perds jamais le fil, et Claude non plus.</p>
+<p><strong>Pourquoi ce workflow fonctionne</strong> : Chaque phase à un objectif clair, chaque conversation est focalisée, et le Project assure la continuité du contexte entre toutes les phases. Tu ne perds jamais le fil, et Claude non plus.</p>
 
 <h2>Tips avancés</h2>
 <ul>
@@ -735,7 +735,7 @@ export const LESSONS = [
 <p><em>"## Projet : [Nom du projet]<br/>## Client : [Nom du client, secteur d'activité, taille de l'entreprise, localisation]<br/>## Objectif principal : [Ce qu'on doit livrer — sois précis]<br/>## Budget : [Montant total et éventuelle répartition]<br/>## Deadline : [Date de livraison finale]<br/>## Stack technique : [Outils et technologies utilisés]<br/>## Ton de communication : [Formel / décontracté / technique / accessible]<br/>## Contraintes : [Ce qu'il faut éviter, limitations techniques, préférences du client]<br/>## Livrables attendus : [Liste numérotée de tous les livrables avec description courte]<br/>## Notes particulières : [Tout ce qui est spécifique à ce client — ses pet peeves, ses préférences, ses demandes récurrentes]"</em></p>
 <p><strong>Astuce finale</strong> : Après 2-3 projets, tu auras ton propre template rodé qui reflète exactement ton workflow. Ce template deviendra l'un de tes actifs les plus précieux — il te permettra de démarrer un nouveau projet en 10 minutes au lieu de 30.</p>
 
-<blockquote>Un Project bien organisé te fait gagner des heures par semaine. C'est la différence entre un amateur qui "utilise ChatGPT" et un pro qui a un système.</blockquote>`,
+<blockquote>Un Project bien organisé te fait gagner des heures par semaine. C'est la différence entre un amateur qui "utilise ChatGPT" et un pro qui à un système.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
 <li>Crée un Claude Project pour un client fictif de ton choix (restaurateur, coach, avocat...).</li>
@@ -749,13 +749,13 @@ export const LESSONS = [
     order: 11,
     module: 2,
     title: "Créer ta première Skill Claude",
-    slug: "creer-premiere-skill-claude",
+    slug: "créer-première-skill-claude",
     duration: "60 min",
     description: "Comprendre et créer des Skills Claude : SKILL.md, folder structure, YAML frontmatter.",
     content: `<h2>Les Skills : transformer des prompts en systèmes</h2>
-<p>Les Skills sont la fonctionnalité la plus sous-estimée de Claude — et pourtant, c'est peut-être la plus révolutionnaire pour ton business. Une Skill, c'est un ensemble d'instructions packagées que Claude charge automatiquement quand c'est pertinent. Tu l'écris une fois, ça marche à chaque fois, de manière cohérente et fiable.</p>
+<p>Les Skills sont la fonctionnalité la plus sous-estimée de Claude — et pourtant, c'est peut-être la plus révolutionnaire pour ton business. Une Skill, c'est un ensemble d'instructions packagées que Claude charge automatiquement quand c'est pertinent. Tu l'écris une fois, ça marché à chaque fois, de manière cohérente et fiable.</p>
 <p>Plus besoin de re-expliquer tes préférences à chaque conversation. Plus besoin de copier-coller le même prompt à chaque utilisation. Tu le configures une fois, et Claude le mémorise pour toujours.</p>
-<p><strong>L'analogie qui clarifie tout</strong> : Imagine un restaurant. Le chef a des recettes écrites — pas dans sa tête, mais sur papier, avec les ingrédients, les quantités, les étapes, les temps de cuisson. Grâce à ces recettes, n'importe quel cuisinier compétent peut reproduire le plat avec le même niveau de qualité. Une Skill, c'est une recette pour Claude. Tu la rédiges une fois, et Claude peut "cuisiner" le même résultat de manière consistante, à chaque utilisation.</p>
+<p><strong>L'analogie qui clarifie tout</strong> : Imagine un restaurant. Le chef à des recettes écrites — pas dans sa tête, mais sur papier, avec les ingrédients, les quantités, les étapes, les temps de cuisson. Grâce à ces recettes, n'importe quel cuisinier compétent peut reproduire le plat avec le même niveau de qualité. Une Skill, c'est une recette pour Claude. Tu la rédiges une fois, et Claude peut "cuisiner" le même résultat de manière consistante, à chaque utilisation.</p>
 <p><strong>Pourquoi c'est un game-changer pour ton business</strong> : Quand tu crées une Skill, tu crées un <strong>actif réutilisable</strong>. Une Skill "audit SEO local" que tu crées pour un client restaurateur peut être réutilisée pour un client plombier, un client coiffeur, un client dentiste... Tu investis du temps une fois, et tu récoltes les bénéfices sur tous tes projets futurs. C'est le principe de scalabilité appliqué aux services IA.</p>
 
 <h2>Anatomie d'une Skill</h2>
@@ -764,7 +764,7 @@ export const LESSONS = [
 <ul>
 <li><strong>SKILL.md</strong> (obligatoire) — Le fichier principal avec les instructions. C'est le cœur de ta Skill. Sans ce fichier, pas de Skill.</li>
 <li><strong>scripts/</strong> (optionnel) — Scripts Python, Bash, JavaScript, etc. que la Skill peut exécuter. Par exemple, un script qui vérifie automatiquement le SEO d'un site web.</li>
-<li><strong>references/</strong> (optionnel) — Documentation que Claude peut consulter quand il a besoin de détails. API docs, guides de style, checklists.</li>
+<li><strong>références/</strong> (optionnel) — Documentation que Claude peut consulter quand il a besoin de détails. API docs, guides de style, checklists.</li>
 <li><strong>assets/</strong> (optionnel) — Templates, icônes, exemples de livrables. Par exemple, un template de proposition commerciale que Claude remplit pour chaque client.</li>
 </ul>
 <p><strong>Exemple concret de structure</strong> :</p>
@@ -773,7 +773,7 @@ audit-seo-local/
 ├── SKILL.md                    → Instructions principales
 ├── scripts/
 │   └── check-google-business.py → Script de vérification
-├── references/
+├── références/
 │   ├── seo-checklist.md         → Checklist SEO complète
 │   └── google-ranking-factors.md → Facteurs de ranking
 └── assets/
@@ -784,7 +784,7 @@ audit-seo-local/
 <p>Tout commence par le YAML frontmatter en haut du fichier. Le frontmatter, c'est un bloc de métadonnées entre deux lignes de <code>---</code>. Il dit à Claude QUOI est cette Skill et QUAND la charger.</p>
 <p><code>---<br/>name: audit-seo-local<br/>description: Audite le SEO local d'une entreprise et génère un plan d'action priorisé. Use when user mentions 'SEO', 'Google Business', 'audit local', 'ranking Google', 'référencement local', or 'visibilité Google'.<br/>---</code></p>
 <p><strong>Le champ description est CRUCIAL</strong> — c'est probablement la ligne la plus importante de toute ta Skill. C'est elle qui détermine quand Claude charge ta Skill. Si la description est trop vague ("aide avec le marketing"), Claude ne saura jamais quand l'activer. Si elle est trop spécifique ("audite le SEO du restaurant Le Bon Goût à Lyon"), elle ne se déclenchera que pour ce cas ultra-précis.</p>
-<p><strong>La règle d'or</strong> : Ta description doit répondre à deux questions : 1) Que fait cette Skill ? (en une phrase claire), et 2) Quand doit-elle se déclencher ? (avec des "trigger phrases" — les mots ou expressions qui devraient activer la Skill). Les trigger phrases sont écrites en anglais parce que c'est la convention attendue par le système.</p>
+<p><strong>La règle d'or</strong> : Ta description doit répondre à deux questions : 1) Que fait cette Skill ? (en une phrase claire), et 2) Quand doit-elle se déclencher ? (avec des "trigger phrases" — les mots où expressions qui devraient activer la Skill). Les trigger phrases sont écrites en anglais parce que c'est la convention attendue par le système.</p>
 
 <h2>Bonnes descriptions vs mauvaises</h2>
 <p><strong>Mauvais</strong> : "Aide avec les projets" — Beaucoup trop vague. Ça pourrait être n'importe quoi. Claude ne saura jamais quand utiliser cette Skill.</p>
@@ -808,7 +808,7 @@ audit-seo-local/
 
 <h2>Les 3 cas d'usage principaux</h2>
 <ol>
-<li><strong>Création de documents</strong> : Templates de rapports, specs, présentations, propositions commerciales. Intègre tes guidelines de style directement dans la Skill — couleurs, police, structure, ton. Résultat : chaque rapport que Claude crée a le même niveau de qualité et de cohérence. Plus de "cette fois le rapport est bien, mais la fois d'avant c'était moyen".</li>
+<li><strong>Création de documents</strong> : Templates de rapports, specs, présentations, propositions commerciales. Intègre tes guidelines de style directement dans la Skill — couleurs, police, structure, ton. Résultat : chaque rapport que Claude crée à le même niveau de qualité et de cohérence. Plus de "cette fois le rapport est bien, mais la fois d'avant c'était moyen".</li>
 <li><strong>Automatisation de workflow</strong> : Processus multi-étapes qui doivent tourner de la même façon à chaque fois. Par exemple : "1) Lis le brief client, 2) Extrait les besoins principaux, 3) Génère 3 propositions de solution, 4) Estime le temps et le coût pour chacune, 5) Formate en proposition commerciale". Avec des points de validation intégrés à chaque étape — Claude demande confirmation avant de passer à la suite.</li>
 <li><strong>Enhancement MCP</strong> : Si tu as un serveur MCP connecté (Notion, Linear, Slack, Google Sheets), les Skills ajoutent la couche intelligence. Le MCP donne la cuisine (l'accès aux données et aux outils). Les Skills donnent les recettes (comment utiliser ces outils intelligemment). Par exemple, un MCP Notion te donne accès à tes bases de données. Une Skill "Gestion de sprint" sait comment créer des tâches, les prioriser et les assigner automatiquement selon tes critères.</li>
 </ol>
@@ -828,14 +828,14 @@ audit-seo-local/
     order: 12,
     module: 2,
     title: "Le système 3 niveaux et progressive disclosure",
-    slug: "systeme-3-niveaux-progressive-disclosure",
+    slug: "système-3-niveaux-progressive-disclosure",
     duration: "50 min",
     description: "Comprendre le système de chargement progressif des Skills pour des performances optimales.",
     content: `<h2>Pourquoi le système 3 niveaux existe</h2>
 <p>Si Claude chargeait toutes les instructions de toutes tes Skills en permanence dans son contexte, ça consommerait énormément de tokens et ralentirait les réponses. Imagine un employé qui devrait relire 50 manuels de procédures avant de répondre à chaque question — même la plus simple. Ce serait absurde, lent, et coûteux.</p>
 <p>Le système 3 niveaux résout ce problème avec élégance. C'est un système de "chargement progressif" — Claude ne charge que ce dont il a besoin, quand il en a besoin. C'est exactement le même principe que le lazy loading sur un site web : tu ne charges pas toutes les images de la page d'un coup, tu les charges quand l'utilisateur scrolle vers elles.</p>
 <p><strong>Pourquoi tu dois comprendre ça</strong> : Quand tu crées des Skills professionnelles pour tes clients, la performance compte. Un chatbot qui met 10 secondes à répondre parce qu'il charge 200 pages d'instructions à chaque message, c'est un chatbot que personne n'utilisera. Le système 3 niveaux te permet de créer des Skills aussi complètes et détaillées que nécessaire sans sacrifier la vitesse.</p>
-<p><strong>Analogie concrète</strong> : Pense à un médecin. Il a dans sa tête les connaissances essentielles (Niveau 1 — le frontmatter). Quand un patient décrit ses symptômes, le médecin active les connaissances spécifiques au domaine concerné — cardiologie, dermatologie, etc. (Niveau 2 — le corps du SKILL.md). Et s'il a besoin de détails précis sur un médicament ou un protocole, il consulte son Vidal ou une base de données médicale (Niveau 3 — les fichiers de référence). Il ne lit pas le Vidal en entier avant chaque consultation !</p>
+<p><strong>Analogie concrète</strong> : Pense à un médecin. Il a dans sa tête les connaissances essentielles (Niveau 1 — le frontmatter). Quand un patient décrit ses symptômes, le médecin active les connaissances spécifiques au domaine concerné — cardiologie, dermatologie, etc. (Niveau 2 — le corps du SKILL.md). Et s'il a besoin de détails précis sur un médicament où un protocole, il consulte son Vidal où une base de données médicale (Niveau 3 — les fichiers de référence). Il ne lit pas le Vidal en entier avant chaque consultation !</p>
 
 <h2>Niveau 1 : YAML Frontmatter (toujours chargé)</h2>
 <p>Le frontmatter est TOUJOURS présent dans le contexte de Claude, à chaque message, à chaque conversation. C'est un investissement minimal en tokens — quelques lignes de texte — qui permet à Claude de savoir quelle Skill activer et quand.</p>
@@ -857,12 +857,12 @@ audit-seo-local/
 <ul>
 <li>Commence par les instructions les plus importantes (Claude accorde plus d'attention au début)</li>
 <li>Utilise des headers Markdown (## et ###) pour structurer clairement</li>
-<li>Mets les règles critiques en MAJUSCULES ou avec <strong>gras</strong> pour attirer l'attention</li>
+<li>Mets les règles critiques en MAJUSCULES où avec <strong>gras</strong> pour attirer l'attention</li>
 <li>Inclus des exemples courts directement dans le corps — les exemples sont plus efficaces que les descriptions abstraites</li>
 </ul>
 
 <h2>Niveau 3 : Fichiers liés (chargés à la demande)</h2>
-<p>Les fichiers dans <code>references/</code> ne sont chargés que quand Claude en a explicitement besoin — c'est-à-dire quand tes instructions du Niveau 2 lui disent de les consulter. C'est là que tu mets tout le contenu détaillé qui serait trop lourd pour le corps du SKILL.md :</p>
+<p>Les fichiers dans <code>références/</code> ne sont chargés que quand Claude en a explicitement besoin — c'est-à-dire quand tes instructions du Niveau 2 lui disent de les consulter. C'est là que tu mets tout le contenu détaillé qui serait trop lourd pour le corps du SKILL.md :</p>
 <ul>
 <li><strong>Documentation détaillée d'APIs</strong> — Endpoints, paramètres, exemples de requêtes et réponses, codes d'erreur. Ça peut faire des dizaines de pages.</li>
 <li><strong>Exemples de code complets</strong> — Des implémentations de référence que Claude peut s'inspirer pour adapter à la situation.</li>
@@ -875,34 +875,34 @@ audit-seo-local/
 <h2>Structurer pour la performance</h2>
 <p>Voici un exemple de structuration optimale qui tire parti des 3 niveaux :</p>
 <p><strong>SKILL.md (Niveaux 1 + 2)</strong> : Frontmatter avec triggers + instructions core, workflow principal en 5-7 étapes, règles critiques à ne jamais violer, format de sortie attendu.</p>
-<p><strong>references/api-patterns.md (Niveau 3)</strong> : Patterns d'API, gestion du rate limiting, pagination des résultats, gestion des erreurs HTTP, exemples de payloads complets.</p>
-<p><strong>references/style-guide.md (Niveau 3)</strong> : Guidelines complètes de design, palette de couleurs avec codes hex, typographies autorisées, espacement et layout, exemples visuels décrits en détail.</p>
-<p><strong>references/examples.md (Niveau 3)</strong> : 5-10 exemples complets de bons outputs — des livrables terminés qui servent de référence qualité.</p>
+<p><strong>références/api-patterns.md (Niveau 3)</strong> : Patterns d'API, gestion du rate limiting, pagination des résultats, gestion des erreurs HTTP, exemples de payloads complets.</p>
+<p><strong>références/style-guide.md (Niveau 3)</strong> : Guidelines complètes de design, palette de couleurs avec codes hex, typographies autorisées, espacement et layout, exemples visuels décrits en détail.</p>
+<p><strong>références/examples.md (Niveau 3)</strong> : 5-10 exemples complets de bons outputs — des livrables terminés qui servent de référence qualité.</p>
 <p>Dans ton SKILL.md, référence tes fichiers avec des instructions claires :</p>
-<p><em>"Avant d'écrire des requêtes API, consulte <code>references/api-patterns.md</code> pour les patterns de rate limiting et pagination. Ne fais AUCUN appel API sans avoir vérifié les limits dans ce fichier."</em></p>
-<p><em>"Pour le formatage du rapport final, suis les guidelines dans <code>references/style-guide.md</code>. Le rapport doit respecter TOUTES les règles de style sans exception."</em></p>
+<p><em>"Avant d'écrire des requêtes API, consulte <code>références/api-patterns.md</code> pour les patterns de rate limiting et pagination. Ne fais AUCUN appel API sans avoir vérifié les limits dans ce fichier."</em></p>
+<p><em>"Pour le formatage du rapport final, suis les guidelines dans <code>références/style-guide.md</code>. Le rapport doit respecter TOUTES les règles de style sans exception."</em></p>
 <p><strong>Attention</strong> : Assure-toi que les chemins de fichiers dans tes références sont corrects. Si Claude ne trouve pas le fichier, il va improviser au lieu de suivre tes guidelines — et ça peut donner des résultats incohérents.</p>
 
 <h2>Triggers négatifs</h2>
 <p>Si ta Skill se déclenche trop souvent — pour des tâches où elle n'est pas pertinente — ajoute des triggers négatifs dans la description. C'est comme un filtre anti-spam pour ta Skill.</p>
-<p><em>"Do NOT use for simple data exploration, quick questions about the API, or general coding help. Only activate for full SEO audits requiring structured analysis."</em></p>
+<p><em>"Do NOT use for simple data exploration, quick questions about the API, or général coding help. Only activate for full SEO audits requiring structured analysis."</em></p>
 <p>Ça réduit les faux positifs et améliore la précision du déclenchement. Sans triggers négatifs, une Skill "audit SEO" pourrait se déclencher chaque fois que quelqu'un mentionne "Google" — même pour "recherche sur Google comment faire une pizza". Avec le trigger négatif, Claude comprend que ce n'est pas le même type de requête.</p>
 <p><strong>Quand ajouter des triggers négatifs</strong> : Si tu remarques que ta Skill se déclenche pour des requêtes non pertinentes lors de tes tests, c'est le signe qu'il faut des triggers négatifs. Note les faux déclenchements et écris des exclusions spécifiques.</p>
 
 <h2>Gestion des erreurs</h2>
-<p>Inclus toujours une section de troubleshooting dans ton SKILL.md. C'est ce qui fait la différence entre une Skill amateur et une Skill professionnelle. Quand quelque chose ne fonctionne pas, Claude doit savoir quoi faire plutôt que de rester bloqué ou d'improviser.</p>
+<p>Inclus toujours une section de troubleshooting dans ton SKILL.md. C'est ce qui fait la différence entre une Skill amateur et une Skill professionnelle. Quand quelque chose ne fonctionne pas, Claude doit savoir quoi faire plutôt que de rester bloqué où d'improviser.</p>
 <p>Exemple de section troubleshooting :</p>
 <p><em>"## Problèmes courants</em></p>
 <p><em>### Connexion MCP échouée<br/>Si tu vois 'Connection refused' :<br/>1. Vérifie que le serveur MCP tourne (commande : <code>ps aux | grep mcp</code>)<br/>2. Confirme que la clé API est valide et non expirée<br/>3. Teste la connexion avec <code>curl http://localhost:3000/health</code><br/>4. Si rien ne fonctionne, demande à l'utilisateur de redémarrer le serveur MCP</em></p>
 <p><em>### Données manquantes dans le rapport<br/>Si des sections du rapport sont vides :<br/>1. Vérifie que tous les fichiers source sont présents dans le dossier d'entrée<br/>2. Relance le script de validation pour identifier les champs manquants<br/>3. Demande à l'utilisateur de fournir les données manquantes avant de continuer"</em></p>
-<p><strong>Pourquoi c'est important</strong> : Dans un contexte professionnel, une Skill qui plante silencieusement ou qui produit des résultats incomplets est pire qu'une Skill qui n'existe pas. Le troubleshooting intégré fait que ta Skill est robuste et fiable — exactement ce que tes clients attendent.</p>
+<p><strong>Pourquoi c'est important</strong> : Dans un contexte professionnel, une Skill qui plante silencieusement où qui produit des résultats incomplets est pire qu'une Skill qui n'existe pas. Le troubleshooting intégré fait que ta Skill est robuste et fiable — exactement ce que tes clients attendent.</p>
 
 <blockquote>Le système 3 niveaux est ce qui rend les Skills scalables. Tu peux avoir 50 Skills chargées sans impacter les performances.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
 <li>Reprends la Skill que tu as créée dans la leçon précédente.</li>
-<li>Ajoute un dossier <code>references/</code> avec un fichier <code>checklist.md</code> contenant une checklist détaillée pour l'onboarding.</li>
-<li>Dans le SKILL.md, ajoute une référence : "Consulte references/checklist.md pour la checklist complète".</li>
+<li>Ajoute un dossier <code>références/</code> avec un fichier <code>checklist.md</code> contenant une checklist détaillée pour l'onboarding.</li>
+<li>Dans le SKILL.md, ajoute une référence : "Consulte références/checklist.md pour la checklist complète".</li>
 <li>Ajoute une section "Problèmes courants" avec 3 scénarios de troubleshooting.</li>
 <li>Teste que la Skill fonctionne toujours correctement avec les fichiers liés.</li>
 </ol>`,
@@ -911,7 +911,7 @@ audit-seo-local/
     order: 13,
     module: 2,
     title: "Tester, optimiser et déployer tes Skills",
-    slug: "tester-optimiser-deployer-skills",
+    slug: "tester-optimiser-déployer-skills",
     duration: "55 min",
     description: "Tester, débugger et optimiser tes Skills pour des résultats professionnels.",
     content: `<h2>Les 3 dimensions du test</h2>
@@ -922,11 +922,11 @@ audit-seo-local/
 <p>La première question : est-ce que ta Skill se charge quand elle devrait ? Et reste silencieuse quand elle ne devrait pas ? C'est le test le plus fondamental — si la Skill ne se déclenche pas, tout le reste est inutile.</p>
 <p>Teste avec un protocole rigoureux :</p>
 <ul>
-<li><strong>Requêtes évidentes</strong> : "aide-moi à planifier ce sprint" → devrait se déclencher. C'est le cas de base — si ça ne marche pas ici, ta description est à revoir de fond en comble.</li>
+<li><strong>Requêtes évidentes</strong> : "aide-moi à planifier ce sprint" → devrait se déclencher. C'est le cas de base — si ça ne marché pas ici, ta description est à revoir de fond en comble.</li>
 <li><strong>Reformulations</strong> : "j'ai besoin de créer des tâches pour le projet" → devrait aussi se déclencher. Les utilisateurs ne formulent jamais leur demande de la même façon, tes triggers doivent couvrir les variations courantes.</li>
 <li><strong>Formulations en anglais</strong> : "help me with sprint planning" → devrait se déclencher si tu travailles dans un contexte international.</li>
 <li><strong>Requêtes hors-sujet</strong> : "quel temps fait-il à Paris ?" → ne devrait PAS se déclencher. Les faux positifs sont aussi problématiques que les faux négatifs.</li>
-<li><strong>Requêtes ambiguës</strong> : "organise mes tâches" → doit-elle se déclencher ou non ? C'est ici que tu affines tes triggers pour trouver le bon équilibre.</li>
+<li><strong>Requêtes ambiguës</strong> : "organise mes tâches" → doit-elle se déclencher où non ? C'est ici que tu affines tes triggers pour trouver le bon équilibre.</li>
 </ul>
 <p>Si le déclenchement est trop sensible (trop de faux positifs), ajoute des triggers négatifs dans la description. S'il n'est pas assez sensible (trop de faux négatifs), ajoute plus de synonymes et de reformulations dans les trigger phrases.</p>
 <p><strong>Conseil pratique</strong> : Crée un document de test avec 10 requêtes — 6 qui devraient déclencher la Skill et 4 qui ne devraient pas. Exécute-les toutes et note les résultats. Vise un taux de réussite de 90%+ avant de considérer le déclenchement comme validé.</p>
@@ -935,11 +935,11 @@ audit-seo-local/
 <p>Deuxième question : est-ce que la Skill fait ce qu'elle est censée faire ? Et surtout, est-ce qu'elle le fait de manière cohérente ? Un résultat parfait une fois sur trois, ce n'est pas un résultat fiable.</p>
 <ul>
 <li><strong>Test de cohérence</strong> : Lance la même requête 3 à 5 fois et compare les résultats. Le format doit être identique à chaque fois. Le contenu peut varier (c'est normal), mais la structure, le ton et le niveau de détail doivent être constants.</li>
-<li><strong>Test des cas limites</strong> : Que se passe-t-il avec des données manquantes ? Des inputs inattendus ? Des erreurs ? Une bonne Skill gère les cas limites gracieusement — elle demande les informations manquantes plutôt que de planter ou d'inventer.</li>
-<li><strong>Test d'intégration</strong> : Si ta Skill appelle des APIs ou exécute des scripts, vérifie que ces appels fonctionnent. Un script qui marchait hier peut ne plus marcher aujourd'hui si l'API a changé.</li>
+<li><strong>Test des cas limites</strong> : Que se passe-t-il avec des données manquantes ? Des inputs inattendus ? Des erreurs ? Une bonne Skill gère les cas limites gracieusement — elle demande les informations manquantes plutôt que de planter où d'inventer.</li>
+<li><strong>Test d'intégration</strong> : Si ta Skill appelle des APIs où exécute des scripts, vérifie que ces appels fonctionnent. Un script qui marchait hier peut ne plus marcher aujourd'hui si l'API a changé.</li>
 <li><strong>Test de qualité</strong> : Le résultat est-il au niveau professionnel ? Montre le output à quelqu'un d'objectif et demande "est-ce que tu paierais pour ce livrable ?" Si la réponse est non, la Skill a besoin d'améliorations.</li>
 </ul>
-<p><strong>Astuce d'expert</strong> : Garde les meilleurs outputs de tes tests comme "exemples de référence" dans le dossier <code>references/</code> de ta Skill. Claude pourra s'en inspirer pour maintenir un niveau de qualité constant. C'est le principe du "golden sample" utilisé en contrôle qualité industriel.</p>
+<p><strong>Astuce d'expert</strong> : Garde les meilleurs outputs de tes tests comme "exemples de référence" dans le dossier <code>références/</code> de ta Skill. Claude pourra s'en inspirer pour maintenir un niveau de qualité constant. C'est le principe du "golden sample" utilisé en contrôle qualité industriel.</p>
 
 <h3>3. Performance</h3>
 <p>Troisième question : est-ce que la Skill améliore vraiment les choses par rapport à ne pas avoir de Skill ?</p>
@@ -959,7 +959,7 @@ audit-seo-local/
 <ul>
 <li><strong>Générer le SKILL.md</strong> avec le frontmatter correct, des triggers pertinents, et un corps d'instructions structuré</li>
 <li><strong>Suggérer des trigger phrases</strong> auxquelles tu n'aurais pas pensé — il connaît les synonymes et reformulations courantes</li>
-<li><strong>Identifier les problèmes potentiels</strong> — ambiguïtés dans les instructions, manque de gestion d'erreur, triggers trop vagues ou trop spécifiques</li>
+<li><strong>Identifier les problèmes potentiels</strong> — ambiguïtés dans les instructions, manque de gestion d'erreur, triggers trop vagues où trop spécifiques</li>
 <li><strong>Recommander des cas de test</strong> — une liste de requêtes à tester pour valider le déclenchement et la fonctionnalité</li>
 </ul>
 <p><strong>Workflow recommandé</strong> : Utilise le Skill Creator pour générer une première version, puis teste-la, puis affine manuellement. C'est plus rapide que de tout écrire de zéro, et la qualité de base est généralement bonne. Mais ne te contente JAMAIS de la version générée sans la tester et l'adapter — le Skill Creator est un assistant, pas un remplaçant pour ton jugement.</p>
@@ -968,10 +968,10 @@ audit-seo-local/
 <p>Voici les problèmes les plus fréquents que tu rencontreras avec tes Skills, et comment les résoudre :</p>
 <ul>
 <li><strong>Skill ne s'uploade pas</strong> : Le fichier doit s'appeler exactement <code>SKILL.md</code> — en majuscules, avec l'extension .md. C'est sensible à la casse. <code>skill.md</code>, <code>Skill.md</code>, <code>SKILL.txt</code> ne fonctionneront pas. Vérifie aussi que tu n'as pas d'espace invisible dans le nom du fichier.</li>
-<li><strong>Skill ne se déclenche pas</strong> : 90% du temps, c'est un problème de description. Elle est trop vague, ou les triggers ne correspondent pas aux mots que tu utilises. Solution : ajoute plus de trigger phrases, inclus des synonymes, et assure-toi que la première phrase de la description décrit clairement la fonction.</li>
+<li><strong>Skill ne se déclenche pas</strong> : 90% du temps, c'est un problème de description. Elle est trop vague, où les triggers ne correspondent pas aux mots que tu utilises. Solution : ajoute plus de trigger phrases, inclus des synonymes, et assure-toi que la première phrase de la description décrit clairement la fonction.</li>
 <li><strong>Skill se déclenche trop souvent</strong> : Les triggers sont trop larges. Un trigger comme "projet" va se déclencher à chaque mention du mot "projet", même quand ce n'est pas pertinent. Solution : ajoute des triggers négatifs et rends les triggers positifs plus spécifiques ("sprint planning projet agile" au lieu de juste "projet").</li>
-<li><strong>Instructions pas suivies</strong> : Les instructions sont trop longues, trop floues, ou les points critiques sont enterrés au milieu du texte. Solution : place les instructions les plus importantes EN HAUT du SKILL.md, utilise des headers en Markdown comme "## CRITIQUE" ou "## OBLIGATOIRE", et reformule les instructions vagues en directives spécifiques et actionnables.</li>
-<li><strong>Résultats incohérents</strong> : La Skill produit des résultats différents à chaque exécution. Solution : ajoute plus d'exemples de référence dans <code>references/</code>, spécifie un format de sortie très précis (template avec placeholders), et ajoute des checkpoints de validation dans le workflow.</li>
+<li><strong>Instructions pas suivies</strong> : Les instructions sont trop longues, trop floues, où les points critiques sont enterrés au milieu du texte. Solution : place les instructions les plus importantes EN HAUT du SKILL.md, utilise des headers en Markdown comme "## CRITIQUE" où "## OBLIGATOIRE", et reformule les instructions vagues en directives spécifiques et actionnables.</li>
+<li><strong>Résultats incohérents</strong> : La Skill produit des résultats différents à chaque exécution. Solution : ajoute plus d'exemples de référence dans <code>références/</code>, spécifie un format de sortie très précis (template avec placeholders), et ajoute des checkpoints de validation dans le workflow.</li>
 </ul>
 
 <h2>Déploiement multi-plateforme</h2>

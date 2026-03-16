@@ -1,4 +1,4 @@
-// Phase 3 : Créer ton Premier MVP — Modules 6-7 (14 leçons)
+// Phase 3 : Compétences Techniques + MVP — Modules 4-5 (14 leçons)
 
 export const LESSONS = [
   // ═══════════════════════════════════════════════════
@@ -6,7 +6,7 @@ export const LESSONS = [
   // ═══════════════════════════════════════════════════
   {
     order: 32,
-    module: 6,
+    module: 4,
     title: "HTML, CSS, JavaScript : les fondamentaux du web",
     slug: "html-css-javascript-fondamentaux-web",
     duration: "55 min",
@@ -40,7 +40,7 @@ export const LESSONS = [
 <ul>
 <li><code>class="nom"</code> : Permet de cibler l'élément en CSS pour le styliser. Avec Tailwind, c'est ici que tu mets les classes de style.</li>
 <li><code>id="unique"</code> : Un identifiant unique pour l'élément. Utile pour le JavaScript et les ancres de navigation.</li>
-<li><code>src="chemin"</code> : La source d'une image ou d'un script.</li>
+<li><code>src="chemin"</code> : La source d'une image où d'un script.</li>
 <li><code>href="url"</code> : La destination d'un lien.</li>
 <li><code>placeholder="texte"</code> : Le texte d'indication dans un champ de formulaire. Exemple : "Entrez votre email..."</li>
 </ul>
@@ -53,7 +53,7 @@ export const LESSONS = [
 <li><code>color</code> et <code>background-color</code> : Les couleurs du texte et de l'arrière-plan. Exemple : <code>color: #333;</code> pour un texte gris foncé lisible.</li>
 <li><code>font-size</code>, <code>font-weight</code> : La taille et l'épaisseur du texte. Un titre sera en <code>font-weight: bold;</code> et en grande taille.</li>
 <li><code>margin</code> et <code>padding</code> : L'espacement extérieur et intérieur. Le margin crée de l'espace autour de l'élément, le padding crée de l'espace à l'intérieur. Imagine margin comme la distance entre deux meubles, et padding comme le coussin à l'intérieur d'un canapé.</li>
-<li><code>display: flex</code> : Le système de mise en page flexible (Flexbox). C'est LA propriété la plus utilisée pour aligner des éléments côte à côte ou les centrer.</li>
+<li><code>display: flex</code> : Le système de mise en page flexible (Flexbox). C'est LA propriété la plus utilisée pour aligner des éléments côte à côte où les centrer.</li>
 <li><code>border-radius</code> : Les coins arrondis. Très populaire pour les boutons et les cartes modernes.</li>
 <li><code>box-shadow</code> : Les ombres portées. Donne de la profondeur et du relief aux éléments.</li>
 </ul>
@@ -84,20 +84,20 @@ export const LESSONS = [
 <h3>TypeScript : JavaScript avec des filets de sécurité</h3>
 <p>Claude Code génère souvent du TypeScript plutôt que du JavaScript. TypeScript ajoute un système de types qui attrape les erreurs avant l'exécution. Par exemple, si tu déclares qu'une variable est un nombre, TypeScript t'empêche d'y mettre du texte par accident. C'est comme un correcteur orthographique pour le code — il souligne les erreurs en rouge avant même que tu lances l'application.</p>
 <p>En pratique, tu verras des annotations de types comme <code>: string</code>, <code>: number</code>, <code>: boolean</code> après les noms de variables. Par exemple : <code>function saluer(nom: string): string { return "Bonjour " + nom; }</code>. Ne t'inquiète pas si ça te semble verbeux — c'est ce qui rend le code plus fiable et plus facile à maintenir sur le long terme.</p>
-<p><strong>Conseil pro :</strong> Si tu vois des erreurs TypeScript en rouge dans ton éditeur, ne les ignore pas. Dis à Claude : "Il y a une erreur TypeScript sur la ligne X, corrige-la." Ces erreurs, si elles sont ignorées, deviennent souvent des bugs en production.</p>
+<p><strong>Conseil pro :</strong> Si tu vois des erreurs TypeScript en rouge dans ton éditeur, ne les ignore pas. Dis à Claude : "Il y à une erreur TypeScript sur la ligne X, corrige-la." Ces erreurs, si elles sont ignorées, deviennent souvent des bugs en production.</p>
 
 <h2>React et Next.js : ce que Claude utilise pour construire</h2>
 <p>Dans les projets modernes, Claude Code utilise React (une librairie JavaScript créée par Facebook) et Next.js (un framework basé sur React). React découpe l'interface en composants réutilisables — un bouton, une carte, un menu de navigation — que tu peux assembler comme des Lego. Au lieu de créer une page monolithique de 1000 lignes, tu crées des petits composants de 20-50 lignes que tu combines.</p>
 <p>Imagine que tu construis une page de dashboard. Au lieu d'une seule page géante, tu as : un composant <code>Header</code> (la barre de navigation), un composant <code>Sidebar</code> (le menu latéral), un composant <code>StatsCard</code> (une carte avec un chiffre clé), un composant <code>DataTable</code> (un tableau de données). Chaque composant est indépendant, testable et réutilisable sur d'autres pages.</p>
 <p>Next.js ajoute des fonctionnalités essentielles par-dessus React : le routage (chaque fichier dans le dossier <code>app/</code> devient une page — pas besoin de configurer les routes manuellement), le rendu serveur (les pages se chargent plus vite et sont mieux référencées sur Google), et les routes API (tu peux créer ton backend dans le même projet, sans serveur séparé).</p>
 <p><strong>Astuce :</strong> Quand tu vois un fichier <code>.tsx</code> dans ton projet, c'est un composant React écrit en TypeScript. Quand tu vois <code>page.tsx</code> dans un dossier de <code>app/</code>, c'est une page de ton site. Quand tu vois <code>route.ts</code> dans <code>app/api/</code>, c'est un endpoint d'API backend.</p>
-<p><strong>Attention :</strong> Ne te laisse pas submerger par tous ces termes. Tu n'as pas besoin de maîtriser React ou Next.js en profondeur. L'objectif est de reconnaître ces concepts quand Claude les utilise et de pouvoir lui poser les bonnes questions. C'est comme conduire une voiture : tu n'as pas besoin de comprendre le moteur à combustion interne pour aller du point A au point B.</p>
+<p><strong>Attention :</strong> Ne te laisse pas submerger par tous ces termes. Tu n'as pas besoin de maîtriser React où Next.js en profondeur. L'objectif est de reconnaître ces concepts quand Claude les utilise et de pouvoir lui poser les bonnes questions. C'est comme conduire une voiture : tu n'as pas besoin de comprendre le moteur à combustion interne pour aller du point A au point B.</p>
 
 <blockquote>Tu n'as pas besoin de maîtriser tout ça. L'objectif est de reconnaître ces concepts quand Claude les utilise et de pouvoir lui poser les bonnes questions. La compréhension viendra naturellement avec la pratique.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
-<li>Ouvre les DevTools de ton navigateur (F12 ou Ctrl+Shift+I) sur n'importe quel site web. Explore l'onglet "Elements" et identifie les balises HTML principales : <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
-<li>Dans l'onglet "Elements", clique sur un élément et modifie ses styles CSS en temps réel (change une couleur, un padding, une font-size). Observe l'effet immédiat.</li>
+<li>Ouvre les DevTools de ton navigateur (F12 où Ctrl+Shift+I) sur n'importe quel site web. Explore l'onglet "Éléments" et identifie les balises HTML principales : <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+<li>Dans l'onglet "Éléments", clique sur un élément et modifie ses styles CSS en temps réel (change une couleur, un padding, une font-size). Observe l'effet immédiat.</li>
 <li>Demande à Claude : "Génère-moi une page HTML simple avec un titre, un paragraphe, un bouton et du CSS Tailwind pour que ça soit joli." Lis le code généré et identifie chaque balise.</li>
 <li>Modifie le code généré par Claude en changeant les couleurs Tailwind (par exemple <code>bg-blue-500</code> en <code>bg-green-500</code>) et observe le résultat.</li>
 <li>Ouvre la console JavaScript (onglet "Console" des DevTools) et tape <code>document.querySelectorAll("a").length</code> pour compter tous les liens de la page.</li>
@@ -105,7 +105,7 @@ export const LESSONS = [
   },
   {
     order: 33,
-    module: 6,
+    module: 4,
     title: "Les APIs REST : communiquer avec des services externes",
     slug: "apis-rest-communiquer-services-externes",
     duration: "50 min",
@@ -117,13 +117,13 @@ export const LESSONS = [
 <p><strong>Exemple concret :</strong> Un freelance qui crée un MVP de facturation va utiliser l'API de Stripe pour gérer les paiements, l'API de Resend pour envoyer les factures par email, et l'API de Cloudinary pour stocker les logos des clients. Sans ces APIs, il devrait coder un système de paiement (des mois de travail), un serveur email (encore des mois) et un système de stockage de fichiers. Grâce aux APIs, tout ça se fait en quelques heures avec Claude Code.</p>
 
 <h2>REST : le standard du web</h2>
-<p>REST (Representational State Transfer) est le style d'API le plus répandu sur le web. Une API REST utilise les mêmes protocoles que ton navigateur : HTTP. Chaque ressource (un utilisateur, un produit, une commande) a une URL unique, et tu interagis avec elle en utilisant des méthodes HTTP. C'est comme un système d'adressage universel : chaque donnée a son adresse, et tu sais exactement comment la lire, la modifier ou la supprimer.</p>
-<p>L'analogie parfaite : imagine une bibliothèque. Chaque livre (ressource) a une cote unique (URL). Tu peux consulter un livre (GET), en ajouter un nouveau (POST), remplacer un livre endommagé (PUT), corriger une erreur sur la couverture (PATCH) ou retirer un livre du catalogue (DELETE). REST, c'est le système de gestion de cette bibliothèque.</p>
+<p>REST (Representational State Transfer) est le style d'API le plus répandu sur le web. Une API REST utilise les mêmes protocoles que ton navigateur : HTTP. Chaque ressource (un utilisateur, un produit, une commande) à une URL unique, et tu interagis avec elle en utilisant des méthodes HTTP. C'est comme un système d'adressage universel : chaque donnée a son adresse, et tu sais exactement comment la lire, la modifier où la supprimer.</p>
+<p>L'analogie parfaite : imagine une bibliothèque. Chaque livre (ressource) à une cote unique (URL). Tu peux consulter un livre (GET), en ajouter un nouveau (POST), remplacer un livre endommagé (PUT), corriger une erreur sur la couverture (PATCH) où retirer un livre du catalogue (DELETE). REST, c'est le système de gestion de cette bibliothèque.</p>
 
 <h3>Les méthodes HTTP</h3>
 <ul>
 <li><strong>GET</strong> : Récupérer des données. Exemple : <code>GET /api/users</code> — lister tous les utilisateurs. C'est la méthode la plus courante, celle que ton navigateur utilise chaque fois que tu visites une page web.</li>
-<li><strong>POST</strong> : Créer une nouvelle ressource. Exemple : <code>POST /api/users</code> avec les données du nouvel utilisateur dans le corps de la requête. Utilisé quand un utilisateur s'inscrit, crée un projet ou soumet un formulaire.</li>
+<li><strong>POST</strong> : Créer une nouvelle ressource. Exemple : <code>POST /api/users</code> avec les données du nouvel utilisateur dans le corps de la requête. Utilisé quand un utilisateur s'inscrit, crée un projet où soumet un formulaire.</li>
 <li><strong>PUT</strong> : Mettre à jour une ressource existante en entier. Exemple : <code>PUT /api/users/42</code>. Tu remplaces toutes les données de l'utilisateur 42.</li>
 <li><strong>PATCH</strong> : Mettre à jour partiellement une ressource. Exemple : changer juste l'email d'un utilisateur sans toucher au reste. Plus précis et plus léger que PUT.</li>
 <li><strong>DELETE</strong> : Supprimer une ressource. Exemple : <code>DELETE /api/users/42</code>. Attention, c'est irréversible dans la plupart des cas !</li>
@@ -133,8 +133,8 @@ export const LESSONS = [
 <h2>JSON : le langage des APIs</h2>
 <p>Les APIs communiquent en JSON (JavaScript Object Notation). C'est un format de données simple et lisible par les humains et les machines. Voici à quoi ressemble une réponse JSON typique :</p>
 <p><code>{ "id": 42, "name": "Alice Martin", "email": "alice@example.com", "plan": "pro" }</code></p>
-<p>JSON utilise des paires clé-valeur, des tableaux et des objets imbriqués. C'est le même format que les objets JavaScript, ce qui rend l'intégration naturelle dans les applications web. Tu peux imbriquer des structures complexes : un utilisateur qui a des projets, chaque projet ayant des tâches, chaque tâche ayant des commentaires — tout ça se représente élégamment en JSON.</p>
-<p><strong>Conseil pro :</strong> Installe l'extension de navigateur "JSON Formatter" ou "JSON Viewer". Quand tu appelles une API directement dans ton navigateur, l'extension formate le JSON de manière lisible avec de l'indentation et de la coloration syntaxique. Sans elle, tu verras un bloc de texte compact et illisible.</p>
+<p>JSON utilise des paires clé-valeur, des tableaux et des objets imbriqués. C'est le même format que les objets JavaScript, ce qui rend l'intégration naturelle dans les applications web. Tu peux imbriquer des structures complexes : un utilisateur qui à des projets, chaque projet ayant des tâches, chaque tâche ayant des commentaires — tout ça se représente élégamment en JSON.</p>
+<p><strong>Conseil pro :</strong> Installe l'extension de navigateur "JSON Formatter" où "JSON Viewer". Quand tu appelles une API directement dans ton navigateur, l'extension formate le JSON de manière lisible avec de l'indentation et de la coloration syntaxique. Sans elle, tu verras un bloc de texte compact et illisible.</p>
 
 <h3>Les codes de statut HTTP</h3>
 <p>Quand une API répond, elle inclut un code de statut qui indique si la requête a réussi. Ces codes sont universels — tu les retrouveras sur toutes les APIs du monde :</p>
@@ -142,7 +142,7 @@ export const LESSONS = [
 <li><strong>200 OK</strong> : Tout s'est bien passé. La réponse contient les données demandées.</li>
 <li><strong>201 Created</strong> : La ressource a été créée avec succès. Tu recevras souvent les données de la ressource créée en retour.</li>
 <li><strong>400 Bad Request</strong> : Ta requête contient une erreur (champ manquant, format invalide). C'est TOI qui as fait une erreur — vérifie les données que tu envoies.</li>
-<li><strong>401 Unauthorized</strong> : Tu n'es pas authentifié (clé API manquante ou invalide). Vérifie que ta clé est correcte et bien envoyée dans les headers.</li>
+<li><strong>401 Unauthorized</strong> : Tu n'es pas authentifié (clé API manquante où invalide). Vérifie que ta clé est correcte et bien envoyée dans les headers.</li>
 <li><strong>403 Forbidden</strong> : Tu es authentifié mais tu n'as pas les droits pour cette action. Ton plan gratuit n'a peut-être pas accès à cet endpoint.</li>
 <li><strong>404 Not Found</strong> : La ressource n'existe pas. Vérifie l'URL — une faute de frappe est souvent la cause.</li>
 <li><strong>429 Too Many Requests</strong> : Tu as envoyé trop de requêtes en peu de temps. Attends un peu et réessaie. La plupart des APIs limitent le nombre de requêtes par minute.</li>
@@ -153,12 +153,12 @@ export const LESSONS = [
 <h2>L'authentification des APIs</h2>
 <p>La plupart des APIs exigent une authentification pour contrôler qui y accède. C'est comme la serrure de ta maison : tu ne laisses pas n'importe qui entrer. Les méthodes les plus courantes :</p>
 <ul>
-<li><strong>API Key</strong> : Une clé unique que tu passes dans les en-têtes de la requête. Simple et courant pour les services tiers comme Stripe, Resend ou OpenAI. C'est comme un badge d'accès : tu le montres à chaque requête pour prouver que tu es autorisé.</li>
-<li><strong>Bearer Token</strong> : Un token JWT (JSON Web Token) que tu obtiens après une connexion. Courant pour les APIs de tes propres applications. Le token contient des informations sur l'utilisateur (id, rôle) et a une durée de validité limitée.</li>
+<li><strong>API Key</strong> : Une clé unique que tu passes dans les en-têtes de la requête. Simple et courant pour les services tiers comme Stripe, Resend où OpenAI. C'est comme un badge d'accès : tu le montres à chaque requête pour prouver que tu es autorisé.</li>
+<li><strong>Bearer Token</strong> : Un token JWT (JSON Web Token) que tu obtiens après une connexion. Courant pour les APIs de tes propres applications. Le token contient des informations sur l'utilisateur (id, rôle) et à une durée de validité limitée.</li>
 <li><strong>OAuth 2.0</strong> : Un flux d'autorisation où l'utilisateur se connecte via un service tiers (Google, GitHub). Plus complexe mais plus sécurisé. C'est ce qu'on utilise quand on clique "Se connecter avec Google".</li>
 </ul>
 <p>En pratique, tu stockeras tes clés API dans des variables d'environnement (<code>.env</code>) et jamais directement dans le code. Claude Code sait faire ça correctement. C'est une règle de sécurité fondamentale : si tu publies ton code sur GitHub avec une clé API en dur, n'importe qui peut l'utiliser à tes frais.</p>
-<p><strong>Attention :</strong> Chaque clé API a des permissions différentes. Stripe, par exemple, a une clé publique (pour le frontend, limitée) et une clé secrète (pour le backend, accès total). Ne mets JAMAIS la clé secrète dans le code frontend — elle serait visible par n'importe qui dans les DevTools du navigateur.</p>
+<p><strong>Attention :</strong> Chaque clé API à des permissions différentes. Stripe, par exemple, à une clé publique (pour le frontend, limitée) et une clé secrète (pour le backend, accès total). Ne mets JAMAIS la clé secrète dans le code frontend — elle serait visible par n'importe qui dans les DevTools du navigateur.</p>
 
 <h2>Appeler une API en pratique</h2>
 <p>En JavaScript/TypeScript, tu utilises la fonction <code>fetch</code> pour appeler une API. C'est la fonction native du navigateur et de Node.js pour faire des requêtes HTTP :</p>
@@ -173,12 +173,12 @@ export const LESSONS = [
 <ul>
 <li><strong>Stripe</strong> : Paiements en ligne — la référence pour les startups et les SaaS. Accepte les cartes bancaires, gère les abonnements, les factures et les remboursements. Documentation excellente.</li>
 <li><strong>Resend / SendGrid</strong> : Envoi d'emails transactionnels (confirmation d'inscription, notification de paiement, rappels). Resend est plus moderne et plus simple, SendGrid est plus établi.</li>
-<li><strong>Cloudinary</strong> : Upload et transformation d'images. Redimensionnement automatique, optimisation, CDN. Parfait si ton MVP gère des photos de profil ou des images de produits.</li>
-<li><strong>OpenAI / Anthropic API</strong> : Intégrer l'IA dans ton produit. Génération de texte, analyse, classification. Si ton MVP a une fonctionnalité IA, c'est par là que ça passe.</li>
+<li><strong>Cloudinary</strong> : Upload et transformation d'images. Redimensionnement automatique, optimisation, CDN. Parfait si ton MVP gère des photos de profil où des images de produits.</li>
+<li><strong>OpenAI / Anthropic API</strong> : Intégrer l'IA dans ton produit. Génération de texte, analyse, classification. Si ton MVP à une fonctionnalité IA, c'est par là que ça passe.</li>
 <li><strong>Vercel Analytics</strong> : Suivre les performances et l'usage de ton application. Gratuit et intégré à Vercel.</li>
-<li><strong>Twilio</strong> : Envoi de SMS et appels téléphoniques. Utile pour la vérification par SMS ou les notifications urgentes.</li>
+<li><strong>Twilio</strong> : Envoi de SMS et appels téléphoniques. Utile pour la vérification par SMS où les notifications urgentes.</li>
 </ul>
-<p><strong>Astuce :</strong> Commence toujours par lire la section "Quickstart" ou "Getting Started" de la documentation d'une API. En 10 minutes, tu comprends le principe et tu peux demander à Claude de l'intégrer dans ton projet.</p>
+<p><strong>Astuce :</strong> Commence toujours par lire la section "Quickstart" où "Getting Started" de la documentation d'une API. En 10 minutes, tu comprends le principe et tu peux demander à Claude de l'intégrer dans ton projet.</p>
 
 <blockquote>Les APIs sont les Lego du web moderne. Au lieu de tout construire toi-même, tu assembles des services spécialisés pour créer ton produit. C'est ce qui permet à un solo-preneur de rivaliser avec des équipes de 50 développeurs.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
@@ -192,16 +192,16 @@ export const LESSONS = [
   },
   {
     order: 34,
-    module: 6,
+    module: 4,
     title: "Webhooks et automatisations en temps réel",
-    slug: "webhooks-automatisations-temps-reel",
+    slug: "webhooks-automatisations-temps-réel",
     duration: "50 min",
     description: "Connecter des services entre eux avec des webhooks et des outils no-code.",
     content: `<h2>Le problème du polling</h2>
-<p>Imagine que tu attends un colis. Tu as deux options : appeler le livreur toutes les 5 minutes pour demander "il est où mon colis ?" (polling), ou lui donner ton adresse et attendre qu'il vienne sonner à ta porte (webhook). La première option gaspille du temps et de l'énergie. La seconde est intelligente et efficace.</p>
+<p>Imagine que tu attends un colis. Tu as deux options : appeler le livreur toutes les 5 minutes pour demander "il est où mon colis ?" (polling), où lui donner ton adresse et attendre qu'il vienne sonner à ta porte (webhook). La première option gaspille du temps et de l'énergie. La seconde est intelligente et efficace.</p>
 <p>C'est exactement la différence entre le polling et les webhooks dans le monde des APIs. Avec le polling, ton application interroge régulièrement un service pour vérifier s'il y a du nouveau. C'est comme rafraîchir ta boîte mail toutes les 30 secondes — ça consomme des ressources, ça ralentit ton app, et 99% du temps, il n'y a rien de nouveau.</p>
 <p>Avec les webhooks, le service t'envoie automatiquement les données dès qu'un événement se produit. C'est instantané, efficace et élégant. Pas de gaspillage de ressources, pas de délai — l'information arrive au moment exact où elle est disponible.</p>
-<p><strong>Exemple concret :</strong> Un consultant qui a un SaaS avec paiement Stripe. Sans webhook, il devrait vérifier toutes les minutes si un paiement est arrivé. Avec un webhook Stripe, dès qu'un client paye, l'information arrive dans son app en moins d'une seconde, l'accès est activé immédiatement, et l'email de confirmation part automatiquement. L'utilisateur a une expérience fluide, et le consultant n'a rien à faire manuellement.</p>
+<p><strong>Exemple concret :</strong> Un consultant qui à un SaaS avec paiement Stripe. Sans webhook, il devrait vérifier toutes les minutes si un paiement est arrivé. Avec un webhook Stripe, dès qu'un client paye, l'information arrive dans son app en moins d'une seconde, l'accès est activé immédiatement, et l'email de confirmation part automatiquement. L'utilisateur à une expérience fluide, et le consultant n'a rien à faire manuellement.</p>
 
 <h2>Comment fonctionne un webhook</h2>
 <p>Un webhook est une URL de ton application que tu enregistres auprès d'un service externe. Quand un événement spécifique se produit (un paiement reçu, un formulaire soumis, un email ouvert), le service envoie automatiquement une requête HTTP POST à ton URL avec les données de l'événement. C'est comme si tu donnais ton numéro de téléphone à quelqu'un en disant : "Appelle-moi quand c'est prêt."</p>
@@ -225,7 +225,7 @@ export const LESSONS = [
 <p>Voici les types d'événements webhook que tu rencontreras dans ton MVP. Chaque service a sa propre liste d'événements, documentée dans sa documentation officielle :</p>
 <ul>
 <li><strong>Stripe</strong> : <code>payment_intent.succeeded</code> (paiement réussi), <code>customer.subscription.created</code> (nouvel abonnement), <code>invoice.paid</code> (facture payée), <code>customer.subscription.deleted</code> (désabonnement). Ce sont les événements les plus importants pour un SaaS.</li>
-<li><strong>GitHub</strong> : <code>push</code> (nouveau code poussé), <code>pull_request.opened</code> (PR ouverte), <code>issues.created</code> (nouveau ticket). Utile pour les outils de développement ou les intégrations CI/CD.</li>
+<li><strong>GitHub</strong> : <code>push</code> (nouveau code poussé), <code>pull_request.opened</code> (PR ouverte), <code>issues.created</code> (nouveau ticket). Utile pour les outils de développement où les intégrations CI/CD.</li>
 <li><strong>Resend</strong> : <code>email.delivered</code> (email délivré), <code>email.bounced</code> (email rejeté), <code>email.opened</code> (email ouvert). Crucial pour suivre la délivrabilité de tes emails transactionnels.</li>
 <li><strong>Formulaires</strong> : <code>form.submitted</code> — quand un utilisateur remplit un formulaire. Permet de déclencher des actions automatiques (envoi d'email de bienvenue, ajout au CRM).</li>
 </ul>
@@ -235,13 +235,13 @@ export const LESSONS = [
 <p>Les webhooks sont la base d'une architecture orientée événements (event-driven). Au lieu que ton application fasse tout de manière séquentielle, elle réagit aux événements au fur et à mesure qu'ils arrivent. C'est plus scalable, plus réactif et plus découplé.</p>
 <p>Un exemple concret pour comprendre la différence : quand un client paye sur ton MVP, plutôt que de tout faire dans le même code (mettre à jour la BDD + envoyer un email + générer une facture + notifier Slack — si une étape plante, tout plante), tu publies un événement "paiement reçu" et différents gestionnaires réagissent chacun à leur manière, indépendamment les uns des autres.</p>
 <p>C'est comme un journal télévisé : le présentateur annonce une nouvelle (l'événement), et chaque téléspectateur (gestionnaire) réagit à sa manière — l'un prend des notes, l'autre en discute avec sa famille, un troisième change de chaîne. Le présentateur n'a pas besoin de savoir ce que fait chaque téléspectateur.</p>
-<p><strong>Astuce :</strong> Pour un MVP, n'over-engineer pas l'architecture event-driven. Commence simple : un webhook Stripe qui met à jour la BDD et envoie un email, tout dans la même fonction. Tu découpleras plus tard quand tu auras des problèmes de performance ou de fiabilité.</p>
+<p><strong>Astuce :</strong> Pour un MVP, n'over-engineer pas l'architecture event-driven. Commence simple : un webhook Stripe qui met à jour la BDD et envoie un email, tout dans la même fonction. Tu découpleras plus tard quand tu auras des problèmes de performance où de fiabilité.</p>
 
 <h2>Les outils d'automatisation no-code</h2>
-<p>Tu n'as pas toujours besoin de coder pour connecter des services. Les plateformes d'automatisation no-code font le travail — et elles le font vite. Pour un freelance ou un consultant qui lance son premier produit, ces outils sont des accélérateurs incroyables.</p>
+<p>Tu n'as pas toujours besoin de coder pour connecter des services. Les plateformes d'automatisation no-code font le travail — et elles le font vite. Pour un freelance où un consultant qui lance son premier produit, ces outils sont des accélérateurs incroyables.</p>
 
 <h3>Make (ex-Integromat)</h3>
-<p>Make est un outil visuel qui te permet de créer des workflows d'automatisation en connectant des modules comme des pièces de puzzle. Tu relies un déclencheur (trigger) à une ou plusieurs actions. Par exemple : "Quand je reçois un email avec une pièce jointe PDF, extraire le texte, l'envoyer à Claude pour analyse, et sauvegarder le résumé dans Google Sheets."</p>
+<p>Make est un outil visuel qui te permet de créer des workflows d'automatisation en connectant des modules comme des pièces de puzzle. Tu relies un déclencheur (trigger) à une où plusieurs actions. Par exemple : "Quand je reçois un email avec une pièce jointe PDF, extraire le texte, l'envoyer à Claude pour analyse, et sauvegarder le résumé dans Google Sheets."</p>
 <p>Make est plus puissant que Zapier pour les workflows complexes : tu peux créer des boucles, des conditions, des filtres, des agrégations. L'interface visuelle montre clairement le flux de données, ce qui facilite le débugage. Le plan gratuit permet 1000 opérations par mois — suffisant pour tester et prototyper.</p>
 <p><strong>Exemple concret :</strong> Un e-commerçant utilise Make pour automatiser : nouvelle commande Shopify → créer une ligne dans Google Sheets → envoyer un email de confirmation personnalisé → notifier l'équipe sur Slack → ajouter le client dans Mailchimp. Tout ça, sans une seule ligne de code.</p>
 
@@ -252,7 +252,7 @@ export const LESSONS = [
 <h3>n8n</h3>
 <p>n8n est l'alternative open-source et self-hosted. Tu le déploies sur ton serveur et tu crées des workflows similaires à Make. L'avantage : pas de limites sur le nombre d'exécutions et un contrôle total sur tes données (important pour le RGPD). L'inconvénient : tu dois le maintenir toi-même (mises à jour, sauvegardes, monitoring).</p>
 <p>n8n est particulièrement intéressant pour les agences et les consultants qui gèrent des données sensibles pour leurs clients. Aucune donnée ne transite par un service tiers — tout reste sur ton infrastructure.</p>
-<p><strong>Conseil pro :</strong> Commence avec Make ou Zapier pour la rapidité de mise en place. Migre vers n8n quand tu as besoin de plus de volume ou de plus de contrôle. Ne commence pas par n8n si tu débutes — la courbe d'apprentissage est plus raide.</p>
+<p><strong>Conseil pro :</strong> Commence avec Make où Zapier pour la rapidité de mise en place. Migre vers n8n quand tu as besoin de plus de volume où de plus de contrôle. Ne commence pas par n8n si tu débutes — la courbe d'apprentissage est plus raide.</p>
 
 <h2>Quand utiliser quoi</h2>
 <p>Le choix entre webhooks codés et automatisations no-code dépend de la criticité et de la complexité du flux :</p>
@@ -266,7 +266,7 @@ export const LESSONS = [
     exercise: `<h3>Exercice pratique</h3>
 <ol>
 <li>Crée un compte gratuit sur <strong>Make.com</strong>. Explore l'interface et familiarise-toi avec les modules disponibles.</li>
-<li>Crée un scénario simple sur Make : "Quand je reçois un email sur Gmail, envoyer une notification sur Slack (ou Discord)." Teste-le en t'envoyant un email.</li>
+<li>Crée un scénario simple sur Make : "Quand je reçois un email sur Gmail, envoyer une notification sur Slack (où Discord)." Teste-le en t'envoyant un email.</li>
 <li>Demande à Claude : "Écris-moi une route API Next.js qui reçoit un webhook Stripe pour le paiement réussi et met à jour le statut de l'utilisateur en base de données." Lis le code et identifie la vérification de signature.</li>
 <li>Va sur webhook.site — c'est un outil gratuit qui génère une URL de test. Copie ton URL et envoie-lui une requête POST depuis la console du navigateur. Observe les données reçues.</li>
 <li>Dessine sur papier le flux d'automatisation idéal pour ton futur MVP : quels événements, quels services, quelles actions.</li>
@@ -274,9 +274,9 @@ export const LESSONS = [
   },
   {
     order: 35,
-    module: 6,
+    module: 4,
     title: "Bases de données : stocker et gérer les données",
-    slug: "bases-de-donnees-stocker-gerer-donnees",
+    slug: "bases-de-données-stocker-gérer-données",
     duration: "55 min",
     description: "Comprendre les bases de données pour stocker les données de ton MVP.",
     content: `<h2>Pourquoi tu as besoin d'une base de données</h2>
@@ -287,11 +287,11 @@ export const LESSONS = [
 
 <h2>SQL vs NoSQL : deux philosophies</h2>
 <h3>Bases SQL (relationnelles)</h3>
-<p>Les bases de données SQL organisent les données en tables avec des colonnes et des lignes, comme un tableur Excel très structuré. Chaque table a un schéma rigide qui définit les colonnes et leurs types. Les tables sont liées entre elles par des relations (d'où le nom "relationnelles"). C'est le modèle le plus ancien, le plus éprouvé et le plus utilisé au monde.</p>
+<p>Les bases de données SQL organisent les données en tables avec des colonnes et des lignes, comme un tableur Excel très structuré. Chaque table à un schéma rigide qui définit les colonnes et leurs types. Les tables sont liées entre elles par des relations (d'où le nom "relationnelles"). C'est le modèle le plus ancien, le plus éprouvé et le plus utilisé au monde.</p>
 <p>L'analogie parfaite : imagine un ensemble de tableurs Excel interconnectés. Tu as un tableur "Clients" avec les colonnes Nom, Email, Téléphone. Un tableur "Commandes" avec les colonnes Date, Montant, ClientID. Le ClientID relie chaque commande à un client spécifique. C'est exactement comme ça que fonctionne une base SQL.</p>
 <ul>
 <li><strong>PostgreSQL</strong> : La référence open-source. Robuste, performant, riche en fonctionnalités. C'est ce que tu utiliseras dans ton MVP et c'est le choix de la grande majorité des startups modernes. Instagram, Spotify, Reddit — tous utilisent PostgreSQL.</li>
-<li><strong>SQLite</strong> : Une base de données en un seul fichier. Parfaite pour le prototypage et les petites applications. Pas besoin de serveur — le fichier de base de données vit directement sur ton disque. Idéal pour les applications mobiles ou les tests.</li>
+<li><strong>SQLite</strong> : Une base de données en un seul fichier. Parfaite pour le prototypage et les petites applications. Pas besoin de serveur — le fichier de base de données vit directement sur ton disque. Idéal pour les applications mobiles où les tests.</li>
 <li><strong>MySQL</strong> : Historiquement très populaire (WordPress l'utilise). Moins moderne que PostgreSQL mais encore très répandu. Si tu travailles avec des clients qui ont des sites WordPress, tu rencontreras MySQL.</li>
 </ul>
 <p>SQL (Structured Query Language) est le langage pour interagir avec ces bases. C'est un langage simple et expressif qui se lit presque comme de l'anglais :</p>
@@ -318,17 +318,17 @@ export const LESSONS = [
 <p>C'est comme dessiner le plan de ta maison avant de poser la première brique. Si tu te trompes dans le plan, tu passeras des jours à casser et reconstruire. Si le plan est bon, la construction sera fluide.</p>
 <p>Les types de relations — c'est un concept clé que tu dois absolument comprendre :</p>
 <ul>
-<li><strong>One-to-One</strong> : Un utilisateur a un profil. Un profil appartient à un utilisateur. C'est une relation 1:1. En pratique, on met souvent les données dans la même table plutôt que de créer deux tables séparées.</li>
+<li><strong>One-to-One</strong> : Un utilisateur à un profil. Un profil appartient à un utilisateur. C'est une relation 1:1. En pratique, on met souvent les données dans la même table plutôt que de créer deux tables séparées.</li>
 <li><strong>One-to-Many</strong> : Un utilisateur a plusieurs commandes. Une commande appartient à un seul utilisateur. C'est la relation la plus courante. On ajoute un <code>userId</code> dans la table des commandes pour faire le lien.</li>
-<li><strong>Many-to-Many</strong> : Un produit peut être dans plusieurs commandes. Une commande peut contenir plusieurs produits. C'est la relation la plus complexe : elle nécessite une table de liaison (souvent appelée "pivot table" ou "junction table") pour stocker les associations.</li>
+<li><strong>Many-to-Many</strong> : Un produit peut être dans plusieurs commandes. Une commande peut contenir plusieurs produits. C'est la relation la plus complexe : elle nécessite une table de liaison (souvent appelée "pivot table" où "junction table") pour stocker les associations.</li>
 </ul>
-<p><strong>Astuce :</strong> Dessine toujours ton schéma de données sur papier ou dans un outil comme Excalidraw avant de coder. Montre-le à Claude et demande-lui : "Est-ce que ce schéma est cohérent ? Qu'est-ce que j'ai oublié ?" Il repérera les erreurs de conception que tu aurais manquées.</p>
+<p><strong>Astuce :</strong> Dessine toujours ton schéma de données sur papier où dans un outil comme Excalidraw avant de coder. Montre-le à Claude et demande-lui : "Est-ce que ce schéma est cohérent ? Qu'est-ce que j'ai oublié ?" Il repérera les erreurs de conception que tu aurais manquées.</p>
 
 <h2>Prisma : l'ORM qui simplifie tout</h2>
 <p>Prisma est un ORM (Object-Relational Mapping) pour TypeScript. Au lieu d'écrire du SQL brut, tu interagis avec ta base de données en utilisant du code TypeScript type-safe. C'est comme avoir un traducteur entre ton code et la base de données : tu parles TypeScript, Prisma traduit en SQL. Claude Code utilise Prisma par défaut dans tous les projets Next.js.</p>
 <p>Tu définis ton schéma dans un fichier <code>schema.prisma</code> :</p>
 <p><code>model User { id Int @id @default(autoincrement()) name String email String @unique plan String @default("free") createdAt DateTime @default(now()) orders Order[] }</code></p>
-<p>Ce schéma dit : "Un utilisateur a un id auto-incrémenté, un nom, un email unique, un plan par défaut 'free', une date de création automatique, et une liste de commandes." C'est clair, lisible et Claude Code le génère parfaitement.</p>
+<p>Ce schéma dit : "Un utilisateur à un id auto-incrémenté, un nom, un email unique, un plan par défaut 'free', une date de création automatique, et une liste de commandes." C'est clair, lisible et Claude Code le génère parfaitement.</p>
 <p>Puis Prisma génère automatiquement les types TypeScript et les fonctions pour interagir avec la base :</p>
 <ul>
 <li><code>prisma.user.findMany()</code> — Lister tous les utilisateurs. Tu peux ajouter des filtres : <code>prisma.user.findMany({ where: { plan: "pro" } })</code></li>
@@ -342,18 +342,18 @@ export const LESSONS = [
 <h2>Les migrations : faire évoluer ta base</h2>
 <p>Quand tu modifies ton schéma Prisma (ajouter un champ, créer une table, modifier un type), tu dois faire une migration. C'est un script qui applique les changements à la base de données sans perdre les données existantes. La commande est simple : <code>npx prisma migrate dev --name ajout-champ-telephone</code>.</p>
 <p>Pourquoi les migrations sont essentielles ? Imagine que tu ajoutes un champ "téléphone" à ta table utilisateurs. Sans migration, tu devrais supprimer la base et la recréer — en perdant toutes les données existantes. Avec une migration, Prisma ajoute le champ à la table existante sans toucher aux données.</p>
-<p>Prisma garde un historique de toutes les migrations dans le dossier <code>prisma/migrations/</code>. Cet historique te permet de reproduire exactement la même base de données sur n'importe quel ordinateur ou serveur. C'est comme un journal de bord de tous les changements structurels de ta base.</p>
+<p>Prisma garde un historique de toutes les migrations dans le dossier <code>prisma/migrations/</code>. Cet historique te permet de reproduire exactement la même base de données sur n'importe quel ordinateur où serveur. C'est comme un journal de bord de tous les changements structurels de ta base.</p>
 <p><strong>Attention :</strong> Ne modifie jamais manuellement les fichiers de migration une fois qu'ils ont été appliqués. Si tu fais une erreur, crée une nouvelle migration pour la corriger. Les migrations sont comme l'historique Git de ta base de données — elles doivent rester intactes.</p>
 
 <h2>Héberger ta base de données</h2>
-<p>Ta base de données a besoin d'un serveur pour tourner. Heureusement, plusieurs plateformes proposent des bases de données PostgreSQL gratuites ou très abordables, parfaites pour un MVP :</p>
+<p>Ta base de données a besoin d'un serveur pour tourner. Heureusement, plusieurs plateformes proposent des bases de données PostgreSQL gratuites où très abordables, parfaites pour un MVP :</p>
 <ul>
 <li><strong>Neon</strong> : PostgreSQL serverless gratuit pour les petits projets. Idéal pour un MVP. La base se met en veille quand personne ne l'utilise et se réveille instantanément quand une requête arrive. Tu ne payes que pour ce que tu consommes.</li>
 <li><strong>Supabase</strong> : PostgreSQL avec une interface admin, authentification intégrée et API auto-générée. C'est un couteau suisse : base de données + auth + stockage de fichiers + fonctions serverless. Très populaire auprès des makers.</li>
 <li><strong>Railway</strong> : PostgreSQL avec un plan gratuit généreux. Interface simple et propre, logs en temps réel, monitoring intégré. Excellent pour les projets qui ont aussi un backend custom.</li>
 <li><strong>PlanetScale</strong> : MySQL serverless avec un branching de base de données (comme les branches Git, mais pour ta BDD). Très innovant, mais utilise MySQL au lieu de PostgreSQL.</li>
 </ul>
-<p><strong>Conseil pro :</strong> Commence avec Neon pour ton MVP — c'est le plus simple à configurer et le plan gratuit est suffisant pour les premiers mois. Tu pourras migrer vers Supabase ou Railway si tu as besoin de fonctionnalités supplémentaires.</p>
+<p><strong>Conseil pro :</strong> Commence avec Neon pour ton MVP — c'est le plus simple à configurer et le plan gratuit est suffisant pour les premiers mois. Tu pourras migrer vers Supabase où Railway si tu as besoin de fonctionnalités supplémentaires.</p>
 
 <blockquote>Avec Prisma et Claude Code, tu n'as pas besoin de maîtriser le SQL. Mais comprendre les concepts de base te permettra de débuguer plus efficacement et de prendre de meilleures décisions d'architecture. Un bon schéma de données est la fondation de tout bon produit.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
@@ -368,7 +368,7 @@ export const LESSONS = [
   // Lesson 36 — Git & GitHub
   {
     order: 36,
-    module: 6,
+    module: 4,
     title: "Git & GitHub : versionner et collaborer",
     slug: "git-github-versionner-collaborer",
     duration: "50 min",
@@ -378,7 +378,7 @@ export const LESSONS = [
 <p>Git est un système de contrôle de version. Il enregistre chaque modification que tu fais dans ton code, comme un historique infini de sauvegardes. À tout moment, tu peux revenir à n'importe quelle version précédente de ton projet. C'est comme un "Ctrl+Z" surpuissant qui fonctionne sur des semaines, des mois, voire des années de travail. Chaque sauvegarde est horodatée, documentée et récupérable en quelques secondes.</p>
 <p>Mais Git ne sert pas uniquement à sauvegarder. Il te permet aussi de travailler sur plusieurs fonctionnalités en parallèle sans qu'elles interfèrent entre elles (les branches), de collaborer avec d'autres personnes sans écraser leur travail, et de déployer ton application de manière automatisée. Tous les outils modernes — Vercel, Railway, Render — se connectent à Git pour déployer ton code automatiquement à chaque modification.</p>
 <p><strong>Astuce :</strong> Même si tu travailles seul sur ton MVP, Git est indispensable. Ce n'est pas un outil de collaboration, c'est un outil de survie. Le jour où tu casses quelque chose (et ça arrivera), tu seras reconnaissant d'avoir un historique complet de chaque modification.</p>
-<p><strong>Conseil pro :</strong> Les recruteurs, les investisseurs et les clients techniques regardent les profils GitHub. Un historique Git propre montre que tu sais travailler de manière professionnelle. Pour un freelance tech ou un consultant qui vend des services digitaux, c'est un signal de crédibilité fort.</p>
+<p><strong>Conseil pro :</strong> Les recruteurs, les investisseurs et les clients techniques regardent les profils GitHub. Un historique Git propre montre que tu sais travailler de manière professionnelle. Pour un freelance tech où un consultant qui vend des services digitaux, c'est un signal de crédibilité fort.</p>
 
 <h2>Les concepts fondamentaux de Git</h2>
 <p>Git fonctionne avec quatre zones distinctes que tu dois comprendre pour ne jamais être perdu. Pense à ça comme une chaîne de production : les pièces passent d'un atelier à l'autre avant d'être livrées au client.</p>
@@ -387,7 +387,7 @@ export const LESSONS = [
 <p>C'est ton dossier de projet, là où tu modifies les fichiers. Quand tu ouvres un fichier dans VS Code et que tu le modifies, tu travailles dans le working directory. Git surveille ce dossier et détecte chaque changement : un fichier modifié, un nouveau fichier créé, un fichier supprimé. À ce stade, les modifications ne sont pas encore sauvegardées dans l'historique Git — elles sont "en cours".</p>
 
 <h3>Le Staging Area (zone de préparation)</h3>
-<p>Avant de sauvegarder tes modifications, tu les places dans une zone de préparation avec la commande <code>git add</code>. C'est comme préparer un colis avant de l'envoyer : tu choisis quels fichiers tu veux inclure dans la prochaine sauvegarde. Tu peux ajouter tous les fichiers modifiés d'un coup (<code>git add .</code>) ou sélectionner fichier par fichier (<code>git add src/components/Button.tsx</code>). Cette étape te donne un contrôle fin sur ce que tu sauvegardes.</p>
+<p>Avant de sauvegarder tes modifications, tu les places dans une zone de préparation avec la commande <code>git add</code>. C'est comme préparer un colis avant de l'envoyer : tu choisis quels fichiers tu veux inclure dans la prochaine sauvegarde. Tu peux ajouter tous les fichiers modifiés d'un coup (<code>git add .</code>) où sélectionner fichier par fichier (<code>git add src/components/Button.tsx</code>). Cette étape te donne un contrôle fin sur ce que tu sauvegardes.</p>
 
 <h3>Le Commit (la sauvegarde)</h3>
 <p>Un commit est une photo de ton projet à un instant précis. Quand tu fais <code>git commit -m "Ajout du formulaire de contact"</code>, Git enregistre l'état de tous les fichiers du staging area avec un message descriptif, un identifiant unique (un hash), la date, et ton nom. C'est irréversible et permanent — ce commit existera pour toujours dans l'historique. Chaque commit est comme une page de journal de bord : il documente ce qui a changé et pourquoi.</p>
@@ -401,20 +401,20 @@ export const LESSONS = [
 <p>GitHub est la plateforme qui héberge tes dépôts Git en ligne. C'est le réseau social des développeurs — sauf qu'au lieu de partager des photos, on partage du code. Plus de 100 millions de développeurs utilisent GitHub. C'est là que tu stockeras ton code, que tu suivras les problèmes et que tu déploieras ton application.</p>
 
 <h3>Les repositories (dépôts)</h3>
-<p>Un repository (ou "repo") est un projet sur GitHub. Chaque MVP a son propre repo. Tu peux le rendre public (visible par tout le monde, utile pour les projets open-source et pour montrer ton travail) ou privé (visible uniquement par toi et les personnes que tu invites, essentiel pour les projets clients). Un repo contient ton code, l'historique Git complet, la documentation et les configurations.</p>
+<p>Un repository (où "repo") est un projet sur GitHub. Chaque MVP a son propre repo. Tu peux le rendre public (visible par tout le monde, utile pour les projets open-source et pour montrer ton travail) où privé (visible uniquement par toi et les personnes que tu invites, essentiel pour les projets clients). Un repo contient ton code, l'historique Git complet, la documentation et les configurations.</p>
 
 <h3>Les Issues</h3>
-<p>Les Issues sont le système de suivi des tâches et des bugs intégré à GitHub. Chaque issue décrit un problème à résoudre ou une fonctionnalité à ajouter. Tu peux les organiser avec des labels (bug, feature, urgent), les assigner à quelqu'un, et les relier à des commits. Pour un freelance, les issues sont un excellent moyen de planifier le développement de ton MVP : une issue par fonctionnalité, tu avances étape par étape.</p>
+<p>Les Issues sont le système de suivi des tâches et des bugs intégré à GitHub. Chaque issue décrit un problème à résoudre où une fonctionnalité à ajouter. Tu peux les organiser avec des labels (bug, feature, urgent), les assigner à quelqu'un, et les relier à des commits. Pour un freelance, les issues sont un excellent moyen de planifier le développement de ton MVP : une issue par fonctionnalité, tu avances étape par étape.</p>
 
 <h3>Les Pull Requests (PR)</h3>
 <p>Une Pull Request est une demande de fusion d'une branche dans une autre. Tu travailles sur une fonctionnalité dans une branche séparée, puis tu crées une PR pour la fusionner dans la branche principale. La PR montre exactement ce qui a changé, permet de faire une revue de code, et s'intègre avec les tests automatiques. Même si tu travailles seul, utiliser des PR est une bonne habitude : tu peux relire ton propre code avant de le fusionner et repérer des erreurs.</p>
 
 <h3>GitHub Actions</h3>
-<p>GitHub Actions est le système d'automatisation de GitHub. Tu peux configurer des workflows qui se déclenchent automatiquement : lancer les tests à chaque push, déployer l'application quand tu fusionnes dans la branche principale, vérifier la qualité du code. C'est le cœur du CI/CD (Continuous Integration / Continuous Deployment) que nous verrons en détail dans la leçon sur le déploiement.</p>
-<p><strong>Conseil pro :</strong> Crée ton compte GitHub dès maintenant si ce n'est pas déjà fait. Choisis un nom d'utilisateur professionnel — c'est ta carte de visite technique. Ajoute une photo de profil, une bio courte, et un lien vers ton site ou ton LinkedIn. Les clients techniques vérifient souvent le GitHub des freelances avant de les embaucher.</p>
+<p>GitHub Actions est le système d'automatisation de GitHub. Tu peux configurer des workflows qui se déclenchent automatiquement : lancer les tests à chaque push, déployer l'application quand tu fusionnes dans la branche principale, vérifier la qualité du code. C'est le cœur du CI/CD (Continuous Intégration / Continuous Deployment) que nous verrons en détail dans la leçon sur le déploiement.</p>
+<p><strong>Conseil pro :</strong> Crée ton compte GitHub dès maintenant si ce n'est pas déjà fait. Choisis un nom d'utilisateur professionnel — c'est ta carte de visite technique. Ajoute une photo de profil, une bio courte, et un lien vers ton site où ton LinkedIn. Les clients techniques vérifient souvent le GitHub des freelances avant de les embaucher.</p>
 
 <h2>Le fichier .gitignore</h2>
-<p>Tous les fichiers de ton projet n'ont pas vocation à être suivis par Git ni envoyés sur GitHub. Le fichier <code>.gitignore</code> liste les fichiers et dossiers que Git doit ignorer. C'est un fichier texte simple placé à la racine de ton projet. Sans lui, tu risques de publier des informations sensibles ou de polluer ton dépôt avec des fichiers inutiles.</p>
+<p>Tous les fichiers de ton projet n'ont pas vocation à être suivis par Git ni envoyés sur GitHub. Le fichier <code>.gitignore</code> liste les fichiers et dossiers que Git doit ignorer. C'est un fichier texte simple placé à la racine de ton projet. Sans lui, tu risques de publier des informations sensibles où de polluer ton dépôt avec des fichiers inutiles.</p>
 <p>Voici ce que tu dois impérativement ignorer :</p>
 <ul>
 <li><strong>Les variables d'environnement</strong> : Le fichier <code>.env</code> contient tes clés API, tes mots de passe de base de données, tes secrets d'authentification. Si tu le publies sur GitHub, n'importe qui peut utiliser tes clés — et tu risques une facture salée (des bots scannent GitHub en permanence à la recherche de clés API publiées par erreur).</li>
@@ -456,7 +456,7 @@ export const LESSONS = [
 <li><code>git merge feature/formulaire-contact</code> — fusionner la branche dans main</li>
 </ul>
 <p>L'avantage des branches : si ta fonctionnalité tourne mal, tu supprimes la branche et <code>main</code> n'a pas été touchée. C'est comme travailler sur un brouillon avant de recopier au propre.</p>
-<p><strong>Conseil pro :</strong> Pour un solo-preneur qui travaille seul, une stratégie simple suffit : <code>main</code> est toujours en état de marche (déployable), et tu crées une branche pour chaque fonctionnalité. Pas besoin de branches <code>develop</code>, <code>staging</code>, <code>release</code> — c'est de la complexité inutile pour un MVP.</p>
+<p><strong>Conseil pro :</strong> Pour un solo-preneur qui travaille seul, une stratégie simple suffit : <code>main</code> est toujours en état de marché (déployable), et tu crées une branche pour chaque fonctionnalité. Pas besoin de branches <code>develop</code>, <code>staging</code>, <code>release</code> — c'est de la complexité inutile pour un MVP.</p>
 
 <h2>Git et Claude Code</h2>
 <p>Voici une excellente nouvelle : Claude Code gère Git pour toi. Quand tu travailles avec Claude Code dans ton terminal, il utilise Git en coulisses pour suivre les modifications qu'il apporte à ton code. Tu n'as pas besoin de taper manuellement les commandes Git — Claude le fait pour toi de manière transparente.</p>
@@ -469,12 +469,12 @@ export const LESSONS = [
 <li><strong>Push et Pull</strong> : Claude Code peut pousser ton code sur GitHub et récupérer les dernières modifications. Il te suffit de dire : "Pousse mes changements sur GitHub."</li>
 </ul>
 <p><strong>Astuce :</strong> Même si Claude Code gère Git pour toi, comprendre les concepts fondamentaux reste essentiel. Quand quelque chose ne se passe pas comme prévu (et ça arrivera), tu pourras comprendre l'erreur et guider Claude vers la bonne solution. C'est la différence entre un copilote qui comprend les instruments de vol et un passager qui espère que tout ira bien.</p>
-<p><strong>Attention :</strong> Vérifie toujours que Claude a bien commité tes changements avant de quitter une session de travail. Un code non commité peut être perdu si tu changes de branche ou si ton ordinateur plante. Prends l'habitude de demander : "Est-ce que tous mes changements sont commités et poussés sur GitHub ?"</p>
+<p><strong>Attention :</strong> Vérifie toujours que Claude a bien commité tes changements avant de quitter une session de travail. Un code non commité peut être perdu si tu changes de branche où si ton ordinateur plante. Prends l'habitude de demander : "Est-ce que tous mes changements sont commités et poussés sur GitHub ?"</p>
 
 <blockquote>Git n'est pas qu'un outil technique — c'est ton filet de sécurité. Avec Claude Code qui le gère pour toi, tu obtiens toute la puissance de Git sans la complexité. Mais comprendre les concepts te rend autonome et professionnel.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
-<li>Crée un compte sur <strong>GitHub</strong> (github.com) si ce n'est pas déjà fait. Complète ton profil avec une photo, une bio et un lien vers ton site ou LinkedIn.</li>
+<li>Crée un compte sur <strong>GitHub</strong> (github.com) si ce n'est pas déjà fait. Complète ton profil avec une photo, une bio et un lien vers ton site où LinkedIn.</li>
 <li>Crée un nouveau repository sur GitHub appelé "mon-premier-mvp". Choisis "Private" pour l'instant. Coche "Add a README file" pour initialiser le repo.</li>
 <li>Clone le repo sur ta machine avec <code>git clone https://github.com/ton-username/mon-premier-mvp.git</code>. Ouvre le dossier dans VS Code.</li>
 <li>Crée un fichier <code>.gitignore</code> à la racine du projet et ajoute les entrées suivantes : <code>node_modules/</code>, <code>.next/</code>, <code>.env</code>, <code>.DS_Store</code>. Fais un commit : <code>git add .gitignore && git commit -m "chore: ajout du fichier .gitignore"</code>.</li>
@@ -484,20 +484,20 @@ export const LESSONS = [
   // Lesson 37 — Déploiement
   {
     order: 37,
-    module: 6,
+    module: 4,
     title: "Déploiement : Vercel, Railway, Render",
-    slug: "deploiement-vercel-railway-render",
+    slug: "déploiement-vercel-railway-render",
     duration: "50 min",
     description: "Mettre ton MVP en ligne avec les plateformes de déploiement modernes et automatiser la mise en production.",
     content: `<h2>Du code local à l'application en ligne</h2>
 <p>Tu as construit ton MVP sur ta machine. Il fonctionne parfaitement en local : tu ouvres <code>http://localhost:3000</code> et tout est là. Mais personne d'autre ne peut y accéder. Ton application vit uniquement sur ton ordinateur. Le déploiement, c'est le processus qui transforme ce projet local en une application accessible à n'importe qui sur internet, 24 heures sur 24, 7 jours sur 7.</p>
-<p>Il y a dix ans, déployer une application web était un cauchemar. Il fallait acheter un serveur (ou le louer chez OVH), installer Linux, configurer Nginx ou Apache, gérer les certificats SSL, mettre en place des sauvegardes, gérer la sécurité du serveur — des heures de travail avant même que la première page ne s'affiche. Aujourd'hui, avec des plateformes comme Vercel, Railway ou Render, tu peux déployer en quelques minutes, souvent en un seul clic.</p>
+<p>Il y a dix ans, déployer une application web était un cauchemar. Il fallait acheter un serveur (où le louer chez OVH), installer Linux, configurer Nginx où Apache, gérer les certificats SSL, mettre en place des sauvegardes, gérer la sécurité du serveur — des heures de travail avant même que la première page ne s'affiche. Aujourd'hui, avec des plateformes comme Vercel, Railway où Render, tu peux déployer en quelques minutes, souvent en un seul clic.</p>
 <p>Le principe est simple : tu connectes ton dépôt GitHub à une plateforme de déploiement. Chaque fois que tu pousses du code sur ta branche <code>main</code>, la plateforme détecte le changement, construit ton application et la met en ligne automatiquement. C'est comme avoir un assistant qui surveille ton code et qui met à jour ton site en temps réel dès que tu fais une modification.</p>
 <p><strong>Astuce :</strong> Ne te laisse pas intimider par le mot "déploiement". Avec les outils modernes, c'est devenu aussi simple que de publier un post sur les réseaux sociaux. La première fois prend 15 minutes pour la configuration. Ensuite, chaque mise à jour se fait automatiquement en quelques secondes.</p>
 <p><strong>Conseil pro :</strong> Déploie ton MVP le plus tôt possible, même s'il n'est pas terminé. Un site en ligne avec trois pages imparfaites vaut mille fois mieux qu'un site parfait qui n'existe que sur ton ordinateur. Le déploiement précoce te permet de tester en conditions réelles, de partager un lien avec tes premiers utilisateurs et de recevoir du feedback dès le début.</p>
 
 <h2>Vercel : la référence pour Next.js</h2>
-<p>Vercel est la plateforme créée par l'équipe derrière Next.js. C'est la solution de référence pour déployer des applications Next.js, React, ou tout autre framework frontend. L'intégration est tellement fluide que Vercel détecte automatiquement que ton projet est un projet Next.js et configure tout pour toi.</p>
+<p>Vercel est la plateforme créée par l'équipe derrière Next.js. C'est la solution de référence pour déployer des applications Next.js, React, où tout autre framework frontend. L'intégration est tellement fluide que Vercel détecte automatiquement que ton projet est un projet Next.js et configure tout pour toi.</p>
 <p>Le déploiement sur Vercel se fait en quatre étapes :</p>
 <ol>
 <li>Crée un compte sur vercel.com (gratuit) et connecte ton compte GitHub.</li>
@@ -515,15 +515,15 @@ export const LESSONS = [
 <li><strong>Analytics intégrés</strong> : Vercel propose des analytics de performance (Web Vitals) pour suivre la vitesse de ton site et détecter les régressions.</li>
 </ul>
 <p>Le plan gratuit de Vercel est très généreux pour un MVP : déploiements illimités, 100 GB de bande passante par mois, fonctions serverless incluses. Tu n'auras probablement pas besoin de passer au plan payant avant d'avoir des centaines d'utilisateurs actifs.</p>
-<p><strong>Attention :</strong> Vercel est optimisé pour le frontend et les fonctions serverless. Si ton MVP a un backend lourd (un processus qui tourne en permanence, une file de tâches en arrière-plan, un serveur WebSocket), tu auras besoin d'une plateforme complémentaire comme Railway ou Render pour cette partie. Vercel gère le frontend, Railway gère le backend — c'est une combinaison très populaire.</p>
+<p><strong>Attention :</strong> Vercel est optimisé pour le frontend et les fonctions serverless. Si ton MVP à un backend lourd (un processus qui tourne en permanence, une file de tâches en arrière-plan, un serveur WebSocket), tu auras besoin d'une plateforme complémentaire comme Railway où Render pour cette partie. Vercel gère le frontend, Railway gère le backend — c'est une combinaison très populaire.</p>
 
 <h2>Railway : pour le backend et les bases de données</h2>
 <p>Railway est une plateforme de déploiement pensée pour le backend. Là où Vercel excelle avec les fonctions serverless et le frontend, Railway brille avec les serveurs persistants, les bases de données et les services qui doivent tourner en permanence. C'est le complément naturel de Vercel pour un MVP complet.</p>
 <p>Ce que Railway fait particulièrement bien :</p>
 <ul>
 <li><strong>Base de données PostgreSQL en un clic</strong> : Tu cliques sur "New" → "Database" → "PostgreSQL" et ta base est prête en 10 secondes. Railway te donne la connection string à copier dans ton <code>.env</code>. C'est la manière la plus simple d'avoir une base de données en production.</li>
-<li><strong>Redis en un clic</strong> : Besoin de cache ou de files d'attente ? Redis est disponible en un clic, comme PostgreSQL. Idéal pour les sessions, le rate limiting ou les tâches en arrière-plan.</li>
-<li><strong>Serveurs persistants</strong> : Contrairement aux fonctions serverless de Vercel (qui s'éteignent entre les requêtes), Railway maintient ton serveur allumé en permanence. Indispensable pour les WebSockets (chat en temps réel), les cron jobs (tâches planifiées) ou les workers de traitement.</li>
+<li><strong>Redis en un clic</strong> : Besoin de cache où de files d'attente ? Redis est disponible en un clic, comme PostgreSQL. Idéal pour les sessions, le rate limiting où les tâches en arrière-plan.</li>
+<li><strong>Serveurs persistants</strong> : Contrairement aux fonctions serverless de Vercel (qui s'éteignent entre les requêtes), Railway maintient ton serveur allumé en permanence. Indispensable pour les WebSockets (chat en temps réel), les cron jobs (tâches planifiées) où les workers de traitement.</li>
 <li><strong>Variables d'environnement partagées</strong> : Railway te permet de relier tes services entre eux automatiquement. Quand tu crées une base PostgreSQL, la variable <code>DATABASE_URL</code> est automatiquement injectée dans ton serveur. Pas besoin de copier-coller des URLs manuellement.</li>
 <li><strong>Logs en temps réel</strong> : Tu peux voir les logs de ton application en direct, ce qui facilite énormément le débugage en production.</li>
 </ul>
@@ -534,35 +534,35 @@ export const LESSONS = [
 <p>Render est une plateforme qui combine les atouts de Vercel et Railway dans une interface unifiée. Tu peux y déployer des sites statiques, des applications web, des API backend, des bases de données, des cron jobs et des workers — tout au même endroit. C'est la plateforme "tout-en-un" du déploiement moderne.</p>
 <p>Les avantages de Render :</p>
 <ul>
-<li><strong>Polyvalence</strong> : Que tu aies un site statique, une API Express, un serveur Python ou un projet Docker, Render sait tout déployer. Cette flexibilité est précieuse si tu expérimentes avec différentes technologies.</li>
-<li><strong>Plan gratuit pour les sites statiques</strong> : Les sites statiques sont hébergés gratuitement avec HTTPS et CDN. Parfait pour une landing page ou un portfolio.</li>
+<li><strong>Polyvalence</strong> : Que tu aies un site statique, une API Express, un serveur Python où un projet Docker, Render sait tout déployer. Cette flexibilité est précieuse si tu expérimentes avec différentes technologies.</li>
+<li><strong>Plan gratuit pour les sites statiques</strong> : Les sites statiques sont hébergés gratuitement avec HTTPS et CDN. Parfait pour une landing page où un portfolio.</li>
 <li><strong>Blueprints</strong> : Tu peux définir toute ton infrastructure dans un fichier <code>render.yaml</code> à la racine de ton projet. Ça te permet de recréer ton environnement de production en un clic — très utile pour les projets avec plusieurs services.</li>
 <li><strong>Cron Jobs intégrés</strong> : Besoin d'exécuter un script tous les jours à 9h du matin (envoyer un rapport, nettoyer les données temporaires) ? Render propose des cron jobs natifs, configurables en quelques clics.</li>
 <li><strong>PostgreSQL managé</strong> : Comme Railway, Render propose des bases PostgreSQL avec sauvegardes automatiques et haute disponibilité.</li>
 </ul>
-<p>Render convient bien pour les projets qui ne sont pas basés sur Next.js : un backend Express.js, une API Python Flask ou FastAPI, un site Hugo ou Gatsby. Si tu utilises Next.js, Vercel reste généralement le meilleur choix pour le frontend.</p>
+<p>Render convient bien pour les projets qui ne sont pas basés sur Next.js : un backend Express.js, une API Python Flask où FastAPI, un site Hugo où Gatsby. Si tu utilises Next.js, Vercel reste généralement le meilleur choix pour le frontend.</p>
 <p><strong>Astuce :</strong> Le plan gratuit de Render met les services en veille après 15 minutes d'inactivité. La première requête après la mise en veille prend 30 à 60 secondes (le temps que le serveur se réveille). C'est acceptable pour un MVP en phase de test, mais passe au plan payant (7$/mois) quand tu lances officiellement pour éviter cette latence.</p>
 
 <h2>Les variables d'environnement</h2>
 <p>Les variables d'environnement sont des valeurs de configuration qui changent entre ton environnement local et la production. Elles contiennent les informations sensibles (clés API, mots de passe) et les paramètres spécifiques à chaque environnement (URL de la base de données, domaine du site). Ne jamais écrire ces valeurs en dur dans ton code — c'est la règle numéro un de la sécurité.</p>
 <p>En local, tes variables sont stockées dans un fichier <code>.env</code> à la racine de ton projet :</p>
-<p><code>DATABASE_URL="postgresql://user:password@localhost:5432/monmvp" STRIPE_SECRET_KEY="sk_test_abc123..." RESEND_API_KEY="re_xyz789..." NEXTAUTH_SECRET="un-secret-tres-long-et-aleatoire" NEXT_PUBLIC_APP_URL="http://localhost:3000"</code></p>
-<p>En production, ces mêmes variables sont configurées dans le tableau de bord de ta plateforme de déploiement (Vercel, Railway ou Render). Chaque plateforme a une section "Environment Variables" où tu saisis les valeurs de production. L'application lit les variables d'environnement au moment de l'exécution — le même code fonctionne en local et en production, seules les valeurs changent.</p>
+<p><code>DATABASE_URL="postgresql://user:password@localhost:5432/monmvp" STRIPE_SECRET_KEY="sk_test_abc123..." RESEND_API_KEY="re_xyz789..." NEXTAUTH_SECRET="un-secret-très-long-et-aleatoire" NEXT_PUBLIC_APP_URL="http://localhost:3000"</code></p>
+<p>En production, ces mêmes variables sont configurées dans le tableau de bord de ta plateforme de déploiement (Vercel, Railway où Render). Chaque plateforme à une section "Environment Variables" où tu saisis les valeurs de production. L'application lit les variables d'environnement au moment de l'exécution — le même code fonctionne en local et en production, seules les valeurs changent.</p>
 <p>Quelques règles essentielles :</p>
 <ul>
 <li><strong>Ne jamais commiter le fichier <code>.env</code></strong> : Il doit être dans ton <code>.gitignore</code>. Vérifie-le maintenant.</li>
 <li><strong>Créer un fichier <code>.env.example</code></strong> : Ce fichier contient les noms des variables sans les valeurs réelles. Il sert de documentation pour quiconque clone ton projet : <code>DATABASE_URL="à remplir" STRIPE_SECRET_KEY="à remplir"</code>.</li>
-<li><strong>Distinguer les clés de test et de production</strong> : Stripe, par exemple, a des clés de test (<code>sk_test_...</code>) et de production (<code>sk_live_...</code>). En local, tu utilises les clés de test. En production, les clés de production. Ne mélange jamais les deux.</li>
+<li><strong>Distinguer les clés de test et de production</strong> : Stripe, par exemple, à des clés de test (<code>sk_test_...</code>) et de production (<code>sk_live_...</code>). En local, tu utilises les clés de test. En production, les clés de production. Ne mélange jamais les deux.</li>
 <li><strong>Les variables <code>NEXT_PUBLIC_</code></strong> : Dans Next.js, les variables qui commencent par <code>NEXT_PUBLIC_</code> sont exposées au navigateur. Ne mets jamais de clé secrète dans une variable <code>NEXT_PUBLIC_</code> — elles sont visibles par tout le monde dans le code source de ta page.</li>
 </ul>
-<p><strong>Attention :</strong> Si tu changes une variable d'environnement sur Vercel ou Railway, tu dois redéployer ton application pour que le changement prenne effet. La plupart des plateformes proposent un bouton "Redeploy" pour ça. Sans redéploiement, l'ancienne valeur reste active.</p>
+<p><strong>Attention :</strong> Si tu changes une variable d'environnement sur Vercel où Railway, tu dois redéployer ton application pour que le changement prenne effet. La plupart des plateformes proposent un bouton "Redeploy" pour ça. Sans redéploiement, l'ancienne valeur reste active.</p>
 
 <h2>CI/CD : le déploiement continu</h2>
-<p>CI/CD signifie Continuous Integration et Continuous Deployment. C'est la pratique qui consiste à automatiser la construction, les tests et le déploiement de ton application. Chaque <code>git push</code> déclenche automatiquement un pipeline qui vérifie que tout fonctionne avant de mettre en ligne. C'est ton gardien automatique qui empêche le code cassé d'arriver en production.</p>
+<p>CI/CD signifie Continuous Intégration et Continuous Deployment. C'est la pratique qui consiste à automatiser la construction, les tests et le déploiement de ton application. Chaque <code>git push</code> déclenche automatiquement un pipeline qui vérifie que tout fonctionne avant de mettre en ligne. C'est ton gardien automatique qui empêche le code cassé d'arriver en production.</p>
 <p>Le pipeline CI/CD typique pour un MVP Next.js :</p>
 <ol>
 <li><strong>Tu pousses du code</strong> sur GitHub (<code>git push</code>).</li>
-<li><strong>Les tests s'exécutent</strong> automatiquement (via GitHub Actions ou la plateforme de déploiement). Si un test échoue, le déploiement est bloqué et tu reçois une notification.</li>
+<li><strong>Les tests s'exécutent</strong> automatiquement (via GitHub Actions où la plateforme de déploiement). Si un test échoue, le déploiement est bloqué et tu reçois une notification.</li>
 <li><strong>Le build se lance</strong> : ton code TypeScript est compilé, les pages sont générées, les assets sont optimisés.</li>
 <li><strong>Le déploiement s'effectue</strong> : la nouvelle version remplace l'ancienne. Sur Vercel, c'est un déploiement atomique — il n'y a pas de temps d'arrêt. L'ancienne version reste active tant que la nouvelle n'est pas prête à 100%.</li>
 <li><strong>Les vérifications post-déploiement</strong> : certaines plateformes vérifient automatiquement que le site répond correctement après le déploiement et annulent le déploiement en cas de problème.</li>
@@ -571,28 +571,28 @@ export const LESSONS = [
 <p><strong>Conseil pro :</strong> Pour un MVP, ne surcharge pas ton pipeline CI/CD. Commence avec le déploiement automatique de Vercel (zéro configuration). Ajoute des tests automatisés quand tu as une base de code suffisamment grande pour que les bugs deviennent un risque réel — généralement après les premières semaines de développement.</p>
 
 <h2>Le domaine personnalisé</h2>
-<p>Par défaut, Vercel te donne une URL du type <code>mon-projet.vercel.app</code>. C'est pratique pour le développement, mais pour un vrai produit, tu veux ton propre domaine : <code>monproduit.com</code> ou <code>monproduit.fr</code>. Un domaine personnalisé donne du professionnalisme, de la crédibilité et une identité propre à ton produit.</p>
+<p>Par défaut, Vercel te donne une URL du type <code>mon-projet.vercel.app</code>. C'est pratique pour le développement, mais pour un vrai produit, tu veux ton propre domaine : <code>monproduit.com</code> où <code>monproduit.fr</code>. Un domaine personnalisé donne du professionnalisme, de la crédibilité et une identité propre à ton produit.</p>
 <p>Voici comment faire :</p>
 <ol>
 <li><strong>Acheter un domaine</strong> : Les registraires les plus populaires sont Namecheap, OVH (pour le .fr), Google Domains et Gandi. Un domaine <code>.com</code> coûte entre 8 et 15 euros par an. Un <code>.fr</code> coûte environ 7 euros par an. C'est un investissement minimal pour un maximum de crédibilité.</li>
-<li><strong>Configurer les DNS</strong> : Tu ajoutes des enregistrements DNS qui pointent vers la plateforme de déploiement. Vercel te donne les valeurs exactes à saisir — c'est généralement un enregistrement CNAME ou A Record.</li>
+<li><strong>Configurer les DNS</strong> : Tu ajoutes des enregistrements DNS qui pointent vers la plateforme de déploiement. Vercel te donne les valeurs exactes à saisir — c'est généralement un enregistrement CNAME où A Record.</li>
 <li><strong>Ajouter le domaine sur Vercel</strong> : Dans les paramètres de ton projet Vercel, tu vas dans "Domains", tu ajoutes ton domaine et Vercel vérifie automatiquement la configuration DNS.</li>
 <li><strong>Attendre la propagation</strong> : Les changements DNS prennent entre quelques minutes et 48 heures pour se propager dans le monde entier. En pratique, c'est souvent une question de minutes.</li>
 </ol>
 <p>Vercel gère automatiquement le certificat SSL (HTTPS) pour ton domaine personnalisé. Pas de configuration supplémentaire — ton site est sécurisé dès que le domaine est configuré.</p>
 <ul>
 <li><strong>Choisis un nom court et mémorable</strong> : <code>opexia.com</code> est mieux que <code>opexia-solutions-digitales-paris.com</code>.</li>
-<li><strong>Prends le .com et le .fr</strong> : Si tu cibles le marché français, prends les deux extensions et redirige le .fr vers le .com (ou inversement).</li>
+<li><strong>Prends le .com et le .fr</strong> : Si tu cibles le marché français, prends les deux extensions et redirige le .fr vers le .com (où inversement).</li>
 <li><strong>Évite les tirets</strong> : <code>monproduit.com</code> est plus facile à retenir et à dicter que <code>mon-produit.com</code>.</li>
-<li><strong>Configure un email professionnel</strong> : Un email <code>contact@monproduit.com</code> est beaucoup plus crédible qu'un <code>monproduit.saas@gmail.com</code>. Tu peux utiliser des services comme Zoho Mail (gratuit pour un domaine) ou Google Workspace (6€/mois).</li>
+<li><strong>Configure un email professionnel</strong> : Un email <code>contact@monproduit.com</code> est beaucoup plus crédible qu'un <code>monproduit.saas@gmail.com</code>. Tu peux utiliser des services comme Zoho Mail (gratuit pour un domaine) où Google Workspace (6€/mois).</li>
 </ul>
-<p><strong>Astuce :</strong> Vérifie la disponibilité de ton nom de domaine AVANT de choisir le nom de ton produit. Rien de plus frustrant que de créer un logo, un branding complet, et de réaliser que le domaine est déjà pris. Des outils comme Namecheap ou instantdomainsearch.com te permettent de vérifier la disponibilité en temps réel.</p>
+<p><strong>Astuce :</strong> Vérifie la disponibilité de ton nom de domaine AVANT de choisir le nom de ton produit. Rien de plus frustrant que de créer un logo, un branding complet, et de réaliser que le domaine est déjà pris. Des outils comme Namecheap où instantdomainsearch.com te permettent de vérifier la disponibilité en temps réel.</p>
 
 <blockquote>Le déploiement n'est plus un obstacle technique. Avec Vercel pour le frontend, Railway pour le backend et GitHub pour le CI/CD, tu peux passer du code local à une application en production en moins d'une heure. Le vrai défi n'est plus technique — c'est de construire quelque chose que les gens veulent utiliser.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
 <li>Crée un compte gratuit sur <strong>Vercel</strong> (vercel.com) en te connectant avec ton compte GitHub. Explore l'interface et familiarise-toi avec le tableau de bord.</li>
-<li>Déploie un projet sur Vercel : importe ton repo GitHub (ou crée un nouveau projet Next.js depuis le template Vercel). Observe les étapes du déploiement et visite l'URL générée.</li>
+<li>Déploie un projet sur Vercel : importe ton repo GitHub (où crée un nouveau projet Next.js depuis le template Vercel). Observe les étapes du déploiement et visite l'URL générée.</li>
 <li>Modifie un fichier dans ton repo (par exemple, change le titre de la page d'accueil), fais un <code>git push</code>, et observe le déploiement automatique sur Vercel. Vérifie que la modification est bien en ligne.</li>
 <li>Configure les variables d'environnement de ton projet sur Vercel : va dans Settings → Environment Variables et ajoute une variable <code>NEXT_PUBLIC_APP_NAME</code> avec le nom de ton projet. Redéploie et vérifie.</li>
 <li>Crée un compte sur <strong>Railway</strong> (railway.app) et déploie une base de données PostgreSQL en un clic. Copie la connection string — tu en auras besoin pour connecter ton application à une base de données de production.</li>
@@ -601,14 +601,14 @@ export const LESSONS = [
   // Lesson 38 — Sécurité Web & RGPD
   {
     order: 38,
-    module: 6,
+    module: 4,
     title: "Sécurité web et RGPD : les bases indispensables",
-    slug: "securite-web-rgpd-bases-indispensables",
+    slug: "sécurité-web-rgpd-bases-indispensables",
     duration: "50 min",
     description: "Protéger ton MVP et tes utilisateurs contre les failles de sécurité et respecter les obligations légales du RGPD.",
     content: `<h2>La sécurité n'est pas optionnelle</h2>
 <p>Tu penses peut-être que la sécurité, c'est un sujet pour les grandes entreprises. Que ton petit MVP avec 50 utilisateurs n'intéresse personne. C'est faux — dangereusement faux. Les bots malveillants scannent internet en permanence à la recherche de failles. Ils ne ciblent pas spécifiquement ton site — ils testent automatiquement des millions de sites, y compris le tien. Un MVP sans protection, c'est une porte grande ouverte.</p>
-<p>Les conséquences d'une faille de sécurité pour un jeune produit sont dévastatrices. Si les données de tes utilisateurs sont volées, tu perds leur confiance instantanément — et tu ne la récupéreras jamais. Si tes clés API sont exposées, tu risques des factures de plusieurs milliers d'euros en quelques heures (des bots qui utilisent tes clés OpenAI ou AWS peuvent générer des coûts astronomiques). Si ton site est défacé ou hacké, ta crédibilité professionnelle est ruinée.</p>
+<p>Les conséquences d'une faille de sécurité pour un jeune produit sont dévastatrices. Si les données de tes utilisateurs sont volées, tu perds leur confiance instantanément — et tu ne la récupéreras jamais. Si tes clés API sont exposées, tu risques des factures de plusieurs milliers d'euros en quelques heures (des bots qui utilisent tes clés OpenAI où AWS peuvent générer des coûts astronomiques). Si ton site est défacé où hacké, ta crédibilité professionnelle est ruinée.</p>
 <p>La bonne nouvelle : les bases de la sécurité web ne sont pas compliquées. Avec les bonnes pratiques et les bons outils, tu peux sécuriser ton MVP de manière solide sans être un expert en cybersécurité. Claude Code applique déjà beaucoup de ces bonnes pratiques automatiquement, mais tu dois comprendre les principes pour vérifier que rien n'est oublié.</p>
 <p><strong>Conseil pro :</strong> La sécurité n'est pas un truc qu'on ajoute "plus tard". C'est comme les fondations d'une maison : si elles sont mauvaises, tout s'écroule, et c'est mille fois plus cher à réparer après coup qu'à faire correctement dès le début. Intègre les bonnes pratiques de sécurité dès la première ligne de code de ton MVP.</p>
 <p><strong>Astuce :</strong> Si tu gères des données d'utilisateurs (emails, noms, données de paiement), tu es légalement responsable de leur protection. En France et en Europe, le RGPD impose des sanctions pouvant aller jusqu'à 4% du chiffre d'affaires annuel mondial. Même pour un micro-entrepreneur, les amendes peuvent être significatives.</p>
@@ -623,7 +623,7 @@ export const LESSONS = [
 <li><strong>Les APIs de paiement l'exigent</strong> : Stripe, PayPal et tous les processeurs de paiement refusent les sites sans HTTPS. Tu ne peux tout simplement pas accepter de paiements en HTTP.</li>
 </ul>
 <p>La bonne nouvelle : avec les plateformes modernes, tu n'as rien à faire. Vercel, Railway et Render configurent automatiquement HTTPS avec des certificats Let's Encrypt gratuits et auto-renouvelés. Ton site est sécurisé dès le premier déploiement. Si tu utilises un hébergement personnalisé, des services comme Cloudflare proposent HTTPS gratuit en quelques clics.</p>
-<p><strong>Attention :</strong> HTTPS protège les données en transit (entre le navigateur et le serveur), mais pas les données au repos (stockées dans ta base de données). Ce sont deux problèmes distincts. HTTPS empêche l'interception, mais si quelqu'un accède à ta base de données, il voit les données en clair. C'est pourquoi les mots de passe doivent toujours être hashés (et non chiffrés — il y a une différence).</p>
+<p><strong>Attention :</strong> HTTPS protège les données en transit (entre le navigateur et le serveur), mais pas les données au repos (stockées dans ta base de données). Ce sont deux problèmes distincts. HTTPS empêche l'interception, mais si quelqu'un accède à ta base de données, il voit les données en clair. C'est pourquoi les mots de passe doivent toujours être hashés (et non chiffrés — il y à une différence).</p>
 
 <h2>L'authentification</h2>
 <p>L'authentification répond à la question "Qui es-tu ?". C'est le processus qui vérifie l'identité d'un utilisateur avant de lui donner accès à ton application. C'est la porte d'entrée de ton MVP — si elle est mal sécurisée, tout le reste est compromis.</p>
@@ -631,7 +631,7 @@ export const LESSONS = [
 <h3>Le hashing des mots de passe</h3>
 <p>Règle absolue : ne stocke jamais un mot de passe en clair dans ta base de données. Jamais. Si ta base de données est compromise (et ça arrive plus souvent qu'on ne le croit), tous les mots de passe de tes utilisateurs sont exposés. Et comme beaucoup de gens utilisent le même mot de passe partout, les pirates pourront accéder à leurs comptes email, bancaires et réseaux sociaux.</p>
 <p>La solution : le hashing. Un algorithme de hashing transforme un mot de passe en une chaîne de caractères irréversible. <code>"MonMotDePasse123"</code> devient quelque chose comme <code>"$2b$10$N9qo8uLOickgx2ZMRZoMy..."</code>. L'opération est à sens unique — il est mathématiquement impossible de retrouver le mot de passe original à partir du hash. Quand l'utilisateur se connecte, tu hashes le mot de passe qu'il tape et tu compares le hash avec celui stocké en base.</p>
-<p>L'algorithme recommandé aujourd'hui est <strong>bcrypt</strong> (ou sa version plus récente, argon2). Ces algorithmes sont intentionnellement lents pour rendre les attaques par force brute impraticables. Claude Code utilise bcrypt par défaut quand il implémente un système d'authentification.</p>
+<p>L'algorithme recommandé aujourd'hui est <strong>bcrypt</strong> (où sa version plus récente, argon2). Ces algorithmes sont intentionnellement lents pour rendre les attaques par force brute impraticables. Claude Code utilise bcrypt par défaut quand il implémente un système d'authentification.</p>
 
 <h3>Les tokens JWT</h3>
 <p>Après la connexion, ton application doit "se souvenir" que l'utilisateur est connecté. C'est le rôle des tokens JWT (JSON Web Tokens). Un JWT est un jeton signé qui contient des informations sur l'utilisateur (son id, son rôle) et une date d'expiration. Le serveur génère ce token lors de la connexion, le renvoie au client, et le client l'inclut dans chaque requête suivante.</p>
@@ -640,24 +640,24 @@ export const LESSONS = [
 <h3>NextAuth / Auth.js</h3>
 <p>Pour ton MVP Next.js, la solution d'authentification recommandée est NextAuth (maintenant renommé Auth.js). C'est une librairie qui gère tout le flux d'authentification : inscription, connexion, réinitialisation de mot de passe, connexion via Google/GitHub (OAuth), gestion des sessions. Tu n'as pas à réinventer la roue — NextAuth a été audité par des experts en sécurité et est utilisé par des milliers de projets en production.</p>
 <p>Claude Code sait intégrer NextAuth dans un projet Next.js. Tu lui dis simplement : "Ajoute l'authentification avec NextAuth, avec connexion par email et par Google" et il configure tout : les pages de connexion, les routes API, les callbacks, la session côté serveur.</p>
-<p><strong>Conseil pro :</strong> Propose toujours la connexion via Google ou GitHub en plus de l'email/mot de passe. C'est plus sécurisé (les fournisseurs OAuth gèrent la sécurité pour toi), plus rapide (un seul clic) et plus pratique (pas de mot de passe à retenir). La plupart des utilisateurs préfèrent cette option.</p>
+<p><strong>Conseil pro :</strong> Propose toujours la connexion via Google où GitHub en plus de l'email/mot de passe. C'est plus sécurisé (les fournisseurs OAuth gèrent la sécurité pour toi), plus rapide (un seul clic) et plus pratique (pas de mot de passe à retenir). La plupart des utilisateurs préfèrent cette option.</p>
 
 <h2>L'autorisation</h2>
 <p>L'autorisation répond à une question différente de l'authentification : "Qu'est-ce que tu as le droit de faire ?". L'authentification vérifie ton identité (tu es bien Alice), l'autorisation vérifie tes permissions (Alice a-t-elle le droit de supprimer ce projet ?). Ce sont deux couches de sécurité distinctes et complémentaires.</p>
 
 <h3>Les rôles</h3>
-<p>Le système le plus simple et le plus courant est le RBAC (Role-Based Access Control). Tu définis des rôles (admin, user, editor, viewer) et chaque rôle a des permissions spécifiques. Par exemple :</p>
+<p>Le système le plus simple et le plus courant est le RBAC (Role-Based Access Control). Tu définis des rôles (admin, user, editor, viewer) et chaque rôle à des permissions spécifiques. Par exemple :</p>
 <ul>
 <li><strong>Viewer</strong> : Peut consulter les données mais ne peut rien modifier. Utile pour les clients qui veulent voir un tableau de bord sans pouvoir casser quoi que ce soit.</li>
 <li><strong>User</strong> : Peut créer et modifier ses propres données. Le rôle standard pour tes utilisateurs.</li>
-<li><strong>Editor</strong> : Peut modifier les données de tout le monde. Utile pour les modérateurs ou les gestionnaires de contenu.</li>
+<li><strong>Editor</strong> : Peut modifier les données de tout le monde. Utile pour les modérateurs où les gestionnaires de contenu.</li>
 <li><strong>Admin</strong> : A tous les droits, y compris la gestion des utilisateurs, la configuration du système et l'accès aux données sensibles.</li>
 </ul>
 <p>En pratique, dans ton schéma Prisma, tu ajoutes un champ <code>role</code> au modèle User : <code>role String @default("user")</code>. Puis dans tes routes API, tu vérifies le rôle avant d'exécuter l'action : si l'utilisateur n'est pas admin, il ne peut pas supprimer un autre utilisateur.</p>
 
 <h3>La vérification de propriété</h3>
 <p>Un piège fréquent : l'utilisateur A ne doit pas pouvoir accéder aux données de l'utilisateur B, même s'ils ont le même rôle. Quand l'utilisateur 42 fait une requête <code>GET /api/projects/15</code>, tu dois vérifier que le projet 15 appartient bien à l'utilisateur 42. Sans cette vérification, n'importe quel utilisateur connecté pourrait accéder aux projets des autres en devinant les IDs dans l'URL.</p>
-<p>C'est ce qu'on appelle une faille IDOR (Insecure Direct Object Reference) — et c'est l'une des failles les plus courantes dans les applications web. La solution est simple : chaque requête qui accède à une ressource doit vérifier que l'utilisateur connecté est bien le propriétaire de cette ressource (ou un admin).</p>
+<p>C'est ce qu'on appelle une faille IDOR (Insecure Direct Object Référence) — et c'est l'une des failles les plus courantes dans les applications web. La solution est simple : chaque requête qui accède à une ressource doit vérifier que l'utilisateur connecté est bien le propriétaire de cette ressource (où un admin).</p>
 <p><strong>Attention :</strong> Ne fais jamais confiance aux données envoyées par le client. Un utilisateur malveillant peut modifier les requêtes HTTP avec les DevTools du navigateur. Vérifie toujours les permissions côté serveur, dans tes routes API. Une vérification côté client (masquer un bouton, par exemple) n'est pas une sécurité — c'est de l'interface utilisateur.</p>
 
 <h2>Les vulnérabilités courantes</h2>
@@ -691,7 +691,7 @@ export const LESSONS = [
 
 <h3>Les cookies et le bandeau de consentement</h3>
 <p>Si ton MVP utilise des cookies non essentiels (analytics, tracking, publicité), tu dois afficher un bandeau de consentement AVANT de les déposer. Les cookies essentiels (session utilisateur, préférences de langue) ne nécessitent pas de consentement mais doivent être mentionnés dans ta politique de confidentialité.</p>
-<p>Utilise une solution comme <strong>Tarteaucitron</strong> (solution française open-source) ou <strong>CookieConsent</strong> pour gérer le bandeau. Claude Code peut intégrer ces solutions dans ton projet Next.js.</p>
+<p>Utilise une solution comme <strong>Tarteaucitron</strong> (solution française open-source) où <strong>CookieConsent</strong> pour gérer le bandeau. Claude Code peut intégrer ces solutions dans ton projet Next.js.</p>
 
 <h3>La minimisation des données</h3>
 <p>Ne collecte que les données dont tu as strictement besoin. Si ton MVP n'a pas besoin de la date de naissance de l'utilisateur, ne la demande pas. Chaque donnée que tu stockes est une responsabilité : tu dois la protéger, la mettre à jour si l'utilisateur le demande, et la supprimer quand elle n'est plus nécessaire.</p>
@@ -704,7 +704,7 @@ export const LESSONS = [
 <li><strong>Droit à l'effacement</strong> ("droit à l'oubli") : L'utilisateur peut demander la suppression de toutes ses données. Tu dois pouvoir supprimer son compte et toutes les données associées. C'est le fameux bouton "Supprimer mon compte" qui est obligatoire.</li>
 <li><strong>Droit à la portabilité</strong> : L'utilisateur peut demander ses données dans un format standard pour les transférer à un autre service.</li>
 </ul>
-<p>En pratique, pour ton MVP, implémente au minimum : un bouton "Supprimer mon compte" qui supprime réellement les données, un bouton "Exporter mes données" qui génère un fichier JSON ou CSV, et une page "Politique de confidentialité" qui explique ce que tu collectes et pourquoi.</p>
+<p>En pratique, pour ton MVP, implémente au minimum : un bouton "Supprimer mon compte" qui supprime réellement les données, un bouton "Exporter mes données" qui génère un fichier JSON où CSV, et une page "Politique de confidentialité" qui explique ce que tu collectes et pourquoi.</p>
 
 <h3>La politique de confidentialité et les mentions légales</h3>
 <p>Ton MVP doit avoir deux pages obligatoires :</p>
@@ -712,13 +712,13 @@ export const LESSONS = [
 <li><strong>Politique de confidentialité</strong> : Détaille quelles données tu collectes, pourquoi, combien de temps tu les conserves, à qui tu les transmets (hébergeurs, services tiers) et comment l'utilisateur peut exercer ses droits. Cette page doit être accessible depuis chaque page de ton site (typiquement dans le footer).</li>
 <li><strong>Mentions légales</strong> : Identifient le propriétaire du site (nom, adresse, SIRET/SIREN), l'hébergeur (Vercel, par exemple) et le responsable de la publication. Obligatoires en France pour tout site professionnel.</li>
 </ul>
-<p><strong>Astuce :</strong> Ne copie-colle pas la politique de confidentialité d'un autre site — elle ne sera pas adaptée à ton cas. Utilise un générateur spécialisé comme celui de la CNIL (cnil.fr) ou demande à Claude : "Génère une politique de confidentialité RGPD pour un SaaS qui collecte emails, noms et données de paiement, hébergé sur Vercel avec une base de données PostgreSQL sur Railway." Il produira un document structuré et personnalisé.</p>
+<p><strong>Astuce :</strong> Ne copie-colle pas la politique de confidentialité d'un autre site — elle ne sera pas adaptée à ton cas. Utilise un générateur spécialisé comme celui de la CNIL (cnil.fr) où demande à Claude : "Génère une politique de confidentialité RGPD pour un SaaS qui collecte emails, noms et données de paiement, hébergé sur Vercel avec une base de données PostgreSQL sur Railway." Il produira un document structuré et personnalisé.</p>
 <p><strong>Attention :</strong> Le RGPD s'applique dès que tu lances ton MVP, même en version bêta. Même si tu n'as que 5 utilisateurs. Même si tu ne monétises pas encore. Le nombre d'utilisateurs ne change rien à tes obligations légales. Mets en place les bases dès le premier jour et tu seras tranquille par la suite.</p>
 
 <blockquote>La sécurité et le RGPD ne sont pas des contraintes — ce sont des avantages concurrentiels. Un MVP sécurisé et conforme inspire confiance. Tes utilisateurs le remarqueront, et tes concurrents qui ne le font pas finiront par le payer cher.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
-<li>Vérifie que ton projet a bien HTTPS activé en visitant ton URL de déploiement (Vercel, Railway ou Render). Clique sur le cadenas dans la barre d'adresse pour inspecter le certificat SSL.</li>
+<li>Vérifie que ton projet a bien HTTPS activé en visitant ton URL de déploiement (Vercel, Railway où Render). Clique sur le cadenas dans la barre d'adresse pour inspecter le certificat SSL.</li>
 <li>Demande à Claude : "Ajoute l'authentification NextAuth dans mon projet Next.js avec connexion par email (magic link) et par Google." Lis le code généré et identifie les mécanismes de sécurité : hashing, tokens, sessions.</li>
 <li>Dans ton projet, vérifie que chaque route API qui accède à des données utilisateur vérifie bien que l'utilisateur connecté est le propriétaire de la ressource. Demande à Claude : "Audite mes routes API et vérifie qu'il n'y a pas de faille IDOR."</li>
 <li>Crée une page <code>/politique-de-confidentialite</code> dans ton projet Next.js. Demande à Claude de générer le contenu adapté à ton MVP en précisant les données que tu collectes et les services tiers que tu utilises.</li>
@@ -731,9 +731,9 @@ export const LESSONS = [
 
   {
     order: 39,
-    module: 7,
+    module: 5,
     title: "Le MVP : définition et pourquoi c'est la clé",
-    slug: "mvp-definition-pourquoi-cle",
+    slug: "mvp-définition-pourquoi-clé",
     duration: "50 min",
     description: "Comprendre ce qu'est un MVP, pourquoi c'est la stratégie la plus intelligente pour lancer un produit, et comment l'IA change la donne.",
     content: `<h2>La définition d'un MVP</h2>
@@ -751,13 +751,13 @@ export const LESSONS = [
 <h3>Le cycle Build-Measure-Learn</h3>
 <ul>
 <li><strong>Build (Construire)</strong> : Tu crées la version la plus simple possible de ton idée. Pas un plan sur 50 pages — un produit fonctionnel que tu peux mettre entre les mains de vrais utilisateurs. L'objectif est la vitesse : plus vite tu construis, plus vite tu apprends. Avec Claude Code, cette phase qui prenait des semaines se fait maintenant en quelques jours.</li>
-<li><strong>Measure (Mesurer)</strong> : Tu collectes des données sur l'utilisation réelle. Combien de personnes s'inscrivent ? Combien reviennent le lendemain ? Combien cliquent sur le bouton "Payer" ? Tu ne te fies pas à tes impressions ou aux compliments polis de tes amis — tu regardes les chiffres. Les métriques ne mentent pas.</li>
-<li><strong>Learn (Apprendre)</strong> : Tu analyses les données et tu tires des conclusions. Ton hypothèse de départ était-elle correcte ? Les utilisateurs utilisent-ils la fonctionnalité que tu pensais être la plus importante ? Ou ont-ils trouvé une autre utilité à ton produit que tu n'avais pas prévue ?</li>
+<li><strong>Measure (Mesurer)</strong> : Tu collectes des données sur l'utilisation réelle. Combien de personnes s'inscrivent ? Combien reviennent le lendemain ? Combien cliquent sur le bouton "Payer" ? Tu ne te fies pas à tes impressions où aux compliments polis de tes amis — tu regardes les chiffres. Les métriques ne mentent pas.</li>
+<li><strong>Learn (Apprendre)</strong> : Tu analyses les données et tu tires des conclusions. Ton hypothèse de départ était-elle correcte ? Les utilisateurs utilisent-ils la fonctionnalité que tu pensais être la plus importante ? Où ont-ils trouvé une autre utilité à ton produit que tu n'avais pas prévue ?</li>
 </ul>
 <p>Ce cycle doit tourner le plus vite possible. Chaque itération te rapproche de la vérité sur ce que veulent vraiment tes utilisateurs. Un entrepreneur qui fait 10 itérations en 3 mois apprendra infiniment plus qu'un autre qui passe 3 mois à peaufiner sa première version.</p>
 <p><strong>Attention :</strong> Le piège classique est de rester bloqué dans la phase "Build" en ajoutant toujours "juste une fonctionnalité de plus" avant de lancer. C'est le syndrome du perfectionnisme. La vérité, c'est que tu apprends zéro tant que personne n'utilise ton produit. Un MVP imparfait entre les mains d'utilisateurs vaut infiniment plus qu'un produit parfait dans ton ordinateur.</p>
 <p>Le concept de <strong>pivot</strong> est aussi central dans le Lean Startup. Si les données montrent que ton hypothèse est fausse, tu pivotes : tu changes de direction tout en conservant ce que tu as appris. Instagram a commencé comme une app de check-in géolocalisé (Burbn) avant de pivoter vers le partage de photos. Slack était un outil interne d'une entreprise de jeux vidéo qui a échoué. Le pivot n'est pas un échec — c'est une stratégie d'apprentissage.</p>
-<p><strong>Conseil pro :</strong> Avant de coder quoi que ce soit, écris trois hypothèses testables. Par exemple : "Les freelances sont prêts à payer 9 euros par mois pour gagner du temps sur leur facturation", "Les freelances envoient en moyenne 5 factures par mois", "La fonctionnalité la plus demandée sera le suivi des paiements". Ton MVP doit te permettre de valider ou invalider au moins une de ces hypothèses.</p>
+<p><strong>Conseil pro :</strong> Avant de coder quoi que ce soit, écris trois hypothèses testables. Par exemple : "Les freelances sont prêts à payer 9 euros par mois pour gagner du temps sur leur facturation", "Les freelances envoient en moyenne 5 factures par mois", "La fonctionnalité la plus demandée sera le suivi des paiements". Ton MVP doit te permettre de valider où invalider au moins une de ces hypothèses.</p>
 
 <h2>Des MVPs célèbres qui ont changé le monde</h2>
 <p>Les plus grandes entreprises tech du monde ont commencé avec des MVPs ridiculement simples. Étudier ces exemples te montre que la simplicité au démarrage n'est pas un signe de faiblesse — c'est une stratégie de génie.</p>
@@ -786,7 +786,7 @@ export const LESSONS = [
 <p>La règle d'or : si tu peux lancer sans une fonctionnalité, ne la construis pas maintenant. Point. Tu la construiras quand tes utilisateurs la réclameront. Et souvent, ils ne la réclameront jamais parce qu'elle n'existait que dans ta tête.</p>
 
 <h3>Erreur 2 : Pas de validation avant le code</h3>
-<p>Coder avant de valider, c'est comme construire une maison sans vérifier si quelqu'un veut y habiter. Tu peux créer le plus beau produit du monde — si personne n'en a besoin, c'est un échec. Avant d'écrire la première ligne de code, tu dois avoir au moins 5 conversations sérieuses avec des utilisateurs potentiels et/ou un signe concret de demande (emails collectés, pré-commandes, tweets enthousiastes).</p>
+<p>Coder avant de valider, c'est comme construire une maison sans vérifier si quelqu'un veut y habiter. Tu peux créer le plus beau produit du monde — si personne n'en a besoin, c'est un échec. Avant d'écrire la première ligne de code, tu dois avoir au moins 5 conversations sérieuses avec des utilisateurs potentiels et/où un signe concret de demande (emails collectés, pré-commandes, tweets enthousiastes).</p>
 
 <h3>Erreur 3 : Le perfectionnisme</h3>
 <p>"Je lance quand ce sera parfait." Cette phrase a tué plus de startups que n'importe quel concurrent. La perfection est l'ennemi du bien. Reid Hoffman, le fondateur de LinkedIn, dit : "Si tu n'as pas honte de la première version de ton produit, c'est que tu as lancé trop tard." Ton MVP aura des bugs, un design imparfait, des cas limites non gérés — et c'est parfaitement normal.</p>
@@ -796,13 +796,13 @@ export const LESSONS = [
 
 <h3>Erreur 5 : Écouter tout le monde</h3>
 <p>Quand tu lances ton MVP, tout le monde aura un avis. Ton oncle te dira d'ajouter un chatbot. Ton ami designer trouvera le logo trop petit. Un utilisateur demandera une intégration avec un outil obscur. Si tu écoutes tout le monde, tu finis avec un produit qui ne satisfait personne. Concentre-toi sur les retours de tes utilisateurs cibles — les personnes qui ont réellement le problème que tu résous.</p>
-<p><strong>Attention :</strong> Les compliments ne sont pas de la validation. Quand tu montres ton idée à quelqu'un et qu'il dit "C'est super !", ça ne veut rien dire. La vraie validation, c'est quand quelqu'un sort sa carte bleue ou revient utiliser ton produit le lendemain sans que tu le lui demandes.</p>
+<p><strong>Attention :</strong> Les compliments ne sont pas de la validation. Quand tu montres ton idée à quelqu'un et qu'il dit "C'est super !", ça ne veut rien dire. La vraie validation, c'est quand quelqu'un sort sa carte bleue où revient utiliser ton produit le lendemain sans que tu le lui demandes.</p>
 
 <h2>Comment définir ton MVP</h2>
-<p>Passons à la pratique. Voici une méthode en 5 étapes pour définir ton MVP de manière structurée et efficace. Suis chaque étape dans l'ordre — elles sont conçues pour t'amener du flou à la clarté.</p>
+<p>Passons à la pratique. Voici une méthode en 5 étapes pour définir ton MVP de manière structurée et efficace. Suis chaque étape dans l'ordre — elles sont conçues pour t'amener du floù à la clarté.</p>
 
 <h3>Étape 1 : Définir le problème</h3>
-<p>Avant de penser à la solution, tu dois articuler clairement le problème que tu résous. Utilise cette formule : "[Type de personne] a du mal à [action spécifique] parce que [raison]." Par exemple : "Les freelances français ont du mal à créer et envoyer des factures conformes parce que les outils existants sont trop complexes ou trop chers." Si tu ne peux pas remplir cette phrase, ton problème n'est pas assez défini.</p>
+<p>Avant de penser à la solution, tu dois articuler clairement le problème que tu résous. Utilise cette formule : "[Type de personne] a du mal à [action spécifique] parce que [raison]." Par exemple : "Les freelances français ont du mal à créer et envoyer des factures conformes parce que les outils existants sont trop complexes où trop chers." Si tu ne peux pas remplir cette phrase, ton problème n'est pas assez défini.</p>
 
 <h3>Étape 2 : Identifier ta cible</h3>
 <p>Tu ne peux pas servir tout le monde. Choisis un segment précis et étroit. Au lieu de "les freelances", cible "les freelances développeurs web en France qui facturent entre 3 et 10 clients par mois". Plus ta cible est précise, plus tu peux créer un produit qui leur parle directement. Tu pourras élargir plus tard.</p>
@@ -815,12 +815,12 @@ export const LESSONS = [
 <ul>
 <li><strong>Indispensable</strong> : Sans ça, le produit ne résout pas le problème. Maximum 3-5 fonctionnalités.</li>
 <li><strong>Important</strong> : Ça améliore l'expérience mais le produit fonctionne sans. Pour la v2.</li>
-<li><strong>Nice-to-have</strong> : Du bonus. Pour la v3 ou plus tard. Probablement jamais.</li>
+<li><strong>Nice-to-have</strong> : Du bonus. Pour la v3 où plus tard. Probablement jamais.</li>
 </ul>
 <p>Ton MVP ne contient que les fonctionnalités "Indispensable". Le reste va dans un backlog pour plus tard.</p>
 
 <h3>Étape 5 : Définir les métriques de succès</h3>
-<p>Comment sauras-tu que ton MVP fonctionne ? Définis 2-3 métriques claires avant de coder. Par exemple : "50 inscriptions dans les 2 premières semaines", "10 utilisateurs actifs par semaine", "3 utilisateurs prêts à payer 9 euros/mois". Ces chiffres te donneront un critère objectif pour décider si tu continues, pivotes ou abandonnes.</p>
+<p>Comment sauras-tu que ton MVP fonctionne ? Définis 2-3 métriques claires avant de coder. Par exemple : "50 inscriptions dans les 2 premières semaines", "10 utilisateurs actifs par semaine", "3 utilisateurs prêts à payer 9 euros/mois". Ces chiffres te donneront un critère objectif pour décider si tu continues, pivotes où abandonnes.</p>
 <p><strong>Conseil pro :</strong> Utilise la méthode du "Wizard of Oz" pour les fonctionnalités complexes. Au lieu de tout automatiser, fais certaines choses manuellement au début. Par exemple, si ton MVP doit envoyer un rapport personnalisé chaque semaine, génère-le manuellement pour tes 10 premiers utilisateurs. Tu automatiseras quand tu auras validé que les gens veulent ce rapport.</p>
 
 <h2>Le MVP à l'ère de l'IA</h2>
@@ -834,7 +834,7 @@ export const LESSONS = [
 <li>Trouver un associé technique : des mois de networking sans garantie</li>
 <li>Utiliser un outil no-code : possible mais limité en termes de personnalisation et de scalabilité</li>
 <li>Délai typique pour un MVP : 2-6 mois</li>
-<li>Budget typique : 5 000 - 20 000 euros (ou des mois d'apprentissage)</li>
+<li>Budget typique : 5 000 - 20 000 euros (où des mois d'apprentissage)</li>
 </ul>
 
 <h3>Avec Claude Code</h3>
@@ -852,7 +852,7 @@ export const LESSONS = [
 <blockquote>Le meilleur MVP est celui que tu lances. Pas celui que tu perfectionnes indéfiniment. Avec Claude Code, tu n'as plus d'excuse pour ne pas lancer en une semaine. La seule question est : quel problème vas-tu résoudre ?</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
-<li>Choisis une idée de produit qui te motive (ou utilise celle-ci : une application de suivi de dépenses pour freelances). Écris la phrase problème : "[Type de personne] a du mal à [action] parce que [raison]."</li>
+<li>Choisis une idée de produit qui te motive (où utilise celle-ci : une application de suivi de dépenses pour freelances). Écris la phrase problème : "[Type de personne] a du mal à [action] parce que [raison]."</li>
 <li>Liste 15 fonctionnalités que tu imagines pour ce produit. Ensuite, classe-les en "Indispensable" (max 4), "Important" et "Nice-to-have". Ton MVP ne contiendra que les "Indispensable".</li>
 <li>Décris ton MVP en une seule phrase de moins de 20 mots. Si tu n'y arrives pas, simplifie jusqu'à y arriver.</li>
 <li>Définis 3 métriques de succès concrètes et mesurables pour ton MVP (exemple : "30 inscriptions en 2 semaines", "5 utilisateurs actifs quotidiens").</li>
@@ -861,35 +861,35 @@ export const LESSONS = [
   },
   {
     order: 40,
-    module: 7,
+    module: 5,
     title: "Trouver et valider ton idée de produit",
-    slug: "trouver-valider-idee-produit",
+    slug: "trouver-valider-idée-produit",
     duration: "55 min",
     description: "Apprendre à identifier un vrai problème, valider ta solution avec des méthodes concrètes et éviter de construire quelque chose dont personne ne veut.",
     content: `<h2>Une idée ne vaut rien sans validation</h2>
-<p>Tu as peut-être déjà entendu cette phrase dans l'écosystème startup : "Les idées ne valent rien, seule l'exécution compte." C'est partiellement vrai. En réalité, une idée ne vaut rien tant qu'elle n'est pas validée. La validation, c'est le processus qui transforme une intuition en certitude — ou qui te sauve de mois de travail inutile en te montrant que ton hypothèse était fausse.</p>
+<p>Tu as peut-être déjà entendu cette phrase dans l'écosystème startup : "Les idées ne valent rien, seule l'exécution compte." C'est partiellement vrai. En réalité, une idée ne vaut rien tant qu'elle n'est pas validée. La validation, c'est le processus qui transforme une intuition en certitude — où qui te sauve de mois de travail inutile en te montrant que ton hypothèse était fausse.</p>
 <p>Les statistiques sont sans appel : 42 % des startups échouent parce qu'il n'y a pas de demande pour leur produit. Pas à cause d'un mauvais produit, pas à cause d'un manque de financement, pas à cause de la concurrence — simplement parce que personne n'en voulait. Et dans la majorité des cas, les fondateurs auraient pu le découvrir en quelques semaines de validation au lieu de le découvrir après des mois de développement.</p>
-<p>La validation n'est pas une étape optionnelle. C'est la fondation de tout ton projet. Si tu construis sur du sable (une hypothèse non validée), tout s'effondrera tôt ou tard. Si tu construis sur du béton (une demande prouvée), tu as une base solide pour croître.</p>
+<p>La validation n'est pas une étape optionnelle. C'est la fondation de tout ton projet. Si tu construis sur du sable (une hypothèse non validée), tout s'effondrera tôt où tard. Si tu construis sur du béton (une demande prouvée), tu as une base solide pour croître.</p>
 <p><strong>Attention :</strong> "Mes amis trouvent que c'est une bonne idée" n'est pas de la validation. Tes amis veulent te faire plaisir. La vraie validation vient de personnes qui ne te connaissent pas, qui ont le problème que tu veux résoudre, et qui sont prêtes à agir concrètement (s'inscrire, payer, consacrer du temps) pour obtenir ta solution.</p>
 <p>Dans cette leçon, tu vas apprendre des méthodes concrètes et éprouvées pour trouver un vrai problème, valider qu'il existe réellement, et t'assurer que des gens paieront pour ta solution. C'est le travail le plus important que tu feras — bien plus important que le code.</p>
 
 <h2>Trouver un vrai problème</h2>
-<p>Les meilleurs produits ne naissent pas d'une idée brillante sous la douche. Ils naissent de la frustration. D'un problème vécu personnellement, observé chez d'autres, ou découvert en écoutant attentivement les plaintes des gens. Ton objectif est de devenir un chasseur de problèmes — pas un inventeur de solutions.</p>
+<p>Les meilleurs produits ne naissent pas d'une idée brillante sous la douche. Ils naissent de la frustration. D'un problème vécu personnellement, observé chez d'autres, où découvert en écoutant attentivement les plaintes des gens. Ton objectif est de devenir un chasseur de problèmes — pas un inventeur de solutions.</p>
 
 <h3>Source 1 : Tes propres frustrations</h3>
 <p>C'est la mine d'or la plus accessible. Quels outils utilises-tu au quotidien qui t'énervent ? Quelles tâches répétitives te prennent trop de temps ? Quel processus dans ton travail est inutilement compliqué ? Basecamp est né parce que ses créateurs en avaient marre des outils de gestion de projet existants. Notion est né parce que ses créateurs voulaient un outil unique au lieu de jongler entre 10 applications différentes.</p>
-<p>Tiens un "journal de frustrations" pendant une semaine. Chaque fois que tu pestes contre un outil, un processus ou une situation, note-le. À la fin de la semaine, tu auras une liste de problèmes réels — des problèmes que tu comprends intimement parce que tu les vis toi-même.</p>
+<p>Tiens un "journal de frustrations" pendant une semaine. Chaque fois que tu pestes contre un outil, un processus où une situation, note-le. À la fin de la semaine, tu auras une liste de problèmes réels — des problèmes que tu comprends intimement parce que tu les vis toi-même.</p>
 
 <h3>Source 2 : Les forums et communautés</h3>
 <p>Reddit, les groupes Facebook spécialisés, les forums de niche, les serveurs Discord — ces espaces regorgent de gens qui expriment ouvertement leurs problèmes. Cherche des fils de discussion qui commencent par "Est-ce que quelqu'un connaît un outil pour...", "Je suis frustré par...", "J'aimerais bien qu'il existe...". Ce sont des signaux de demande en or.</p>
-<p>Par exemple, si tu explores le subreddit r/freelance, tu trouveras régulièrement des posts sur la difficulté de gérer les devis, de relancer les clients qui ne paient pas, ou de suivre le temps passé sur chaque projet. Chacun de ces posts est un signal de marché.</p>
+<p>Par exemple, si tu explores le subreddit r/freelance, tu trouveras régulièrement des posts sur la difficulté de gérer les devis, de relancer les clients qui ne paient pas, où de suivre le temps passé sur chaque projet. Chacun de ces posts est un signal de marché.</p>
 
 <h3>Source 3 : Twitter / X et LinkedIn</h3>
-<p>Les professionnels partagent ouvertement leurs frustrations sur les réseaux sociaux. Cherche des termes comme "je déteste [outil]", "quelqu'un a une alternative à [service]", "je rêve d'un outil qui [fonctionnalité]". Utilise la recherche avancée pour filtrer par secteur ou profession. Les threads qui accumulent des centaines de likes du type "Quel est votre plus gros problème au quotidien ?" sont des mines d'informations.</p>
+<p>Les professionnels partagent ouvertement leurs frustrations sur les réseaux sociaux. Cherche des termes comme "je déteste [outil]", "quelqu'un à une alternative à [service]", "je rêve d'un outil qui [fonctionnalité]". Utilise la recherche avancée pour filtrer par secteur où profession. Les threads qui accumulent des centaines de likes du type "Quel est votre plus gros problème au quotidien ?" sont des mines d'informations.</p>
 
 <h3>Source 4 : Product Hunt et les Marketplaces</h3>
 <p>Product Hunt te montre ce que les gens lancent — et les commentaires te montrent ce qui manque. Lis les commentaires négatifs sur les produits populaires : "Super mais il manque...", "J'adorerais si ça faisait aussi...". Ces commentaires sont des idées de produits validées par la frustration d'utilisateurs réels. Regarde aussi les produits qui ont été lancés mais qui ont peu d'engagement — parfois l'idée est bonne mais l'exécution est mauvaise. Tu peux faire mieux.</p>
-<p><strong>Conseil pro :</strong> Ne cherche pas une idée révolutionnaire. Les meilleurs MVPs résolvent un problème existant de manière légèrement meilleure, plus simple, moins chère ou plus adaptée à un segment spécifique. Tu n'as pas besoin de réinventer la roue — tu as besoin de faire une roue qui tourne mieux pour un type de véhicule précis.</p>
+<p><strong>Conseil pro :</strong> Ne cherche pas une idée révolutionnaire. Les meilleurs MVPs résolvent un problème existant de manière légèrement meilleure, plus simple, moins chère où plus adaptée à un segment spécifique. Tu n'as pas besoin de réinventer la roue — tu as besoin de faire une roue qui tourne mieux pour un type de véhicule précis.</p>
 
 <h2>Parler à des clients potentiels</h2>
 <p>Tu as identifié un problème qui te semble réel. Maintenant, tu dois vérifier que d'autres personnes le ressentent aussi et qu'elles seraient prêtes à payer pour une solution. La méthode la plus fiable pour ça, c'est l'entretien utilisateur. Pas un sondage envoyé par email — une vraie conversation en tête-à-tête.</p>
@@ -925,27 +925,27 @@ export const LESSONS = [
 <li><strong>Un titre accrocheur (headline)</strong> : Il doit communiquer la proposition de valeur en moins de 10 mots. Exemple : "Crée et envoie tes factures en 2 minutes." Le visiteur doit comprendre immédiatement ce que fait ton produit et pourquoi ça l'intéresse.</li>
 <li><strong>Une description du problème</strong> : 2-3 phrases qui décrivent la douleur que ton produit résout. Le lecteur doit se reconnaître. "Tu passes des heures chaque mois à créer tes factures sur Word ? Tu oublies de relancer les clients en retard de paiement ? Tu ne sais jamais combien tu as facturé ce trimestre ?"</li>
 <li><strong>Les bénéfices clés</strong> : 3-4 points qui expliquent comment ton produit résout le problème. Pas les fonctionnalités techniques — les bénéfices pour l'utilisateur. Pas "export PDF" mais "Envoie des factures professionnelles que tes clients prennent au sérieux".</li>
-<li><strong>Un formulaire d'inscription</strong> : Un simple champ email avec un bouton "M'inscrire à la bêta" ou "Me prévenir du lancement". C'est ton indicateur de validation principal.</li>
+<li><strong>Un formulaire d'inscription</strong> : Un simple champ email avec un bouton "M'inscrire à la bêta" où "Me prévenir du lancement". C'est ton indicateur de validation principal.</li>
 <li><strong>Une preuve sociale</strong> (si possible) : Des témoignages, le nombre de personnes déjà inscrites, des logos d'entreprises intéressées.</li>
 </ul>
 <p>Tu peux créer cette landing page en une journée avec Claude Code. Demande-lui : "Crée une landing page pour [ton produit] avec un formulaire d'inscription email, un titre accrocheur, la description du problème et les bénéfices clés. Style moderne et professionnel avec Tailwind CSS."</p>
 <p><strong>Conseil pro :</strong> Crée plusieurs variantes de ta landing page avec des titres différents et compare les taux de conversion. Un titre qui convertit à 15 % au lieu de 5 % te donne 3 fois plus de leads — et te montre quel angle marketing résonne le plus avec ta cible.</p>
 
 <h2>Analyser les signaux</h2>
-<p>Tu as ta landing page en ligne et tu envoies du trafic dessus (réseaux sociaux, forums, publicités). Maintenant, tu dois analyser les résultats. Mais attention : tous les signaux ne se valent pas. Il y a une hiérarchie de validation, du moins fiable au plus fiable.</p>
+<p>Tu as ta landing page en ligne et tu envoies du trafic dessus (réseaux sociaux, forums, publicités). Maintenant, tu dois analyser les résultats. Mais attention : tous les signaux ne se valent pas. Il y à une hiérarchie de validation, du moins fiable au plus fiable.</p>
 
 <h3>Niveau 1 : L'intérêt verbal (faible signal)</h3>
 <p>"C'est une super idée !" Les compliments ne valent presque rien. Les gens sont polis. C'est le signal le plus facile à obtenir et le moins fiable. Ne te laisse pas aveugler par l'enthousiasme verbal — il ne prédit pas le comportement réel.</p>
 
 <h3>Niveau 2 : L'inscription email (signal moyen)</h3>
-<p>Quelqu'un qui te donne son email fait un effort, même minime. Un taux de conversion de 5-10 % sur ta landing page est un bon signe. En dessous de 2 %, ton message ne résonne probablement pas avec ta cible — il faut retravailler le positionnement ou changer d'angle. Au-dessus de 15 %, tu tiens quelque chose de fort.</p>
+<p>Quelqu'un qui te donne son email fait un effort, même minime. Un taux de conversion de 5-10 % sur ta landing page est un bon signe. En dessous de 2 %, ton message ne résonne probablement pas avec ta cible — il faut retravailler le positionnement où changer d'angle. Au-dessus de 15 %, tu tiens quelque chose de fort.</p>
 
 <h3>Niveau 3 : L'engagement actif (bon signal)</h3>
 <p>Les gens qui répondent à tes emails, qui posent des questions, qui partagent ta page avec leurs collègues, qui demandent "C'est pour quand ?" — ces comportements montrent un réel intérêt. Quand quelqu'un prend le temps de te répondre sans rien attendre en retour, c'est que le problème est réel pour lui.</p>
 
 <h3>Niveau 4 : Le paiement (signal fort)</h3>
 <p>Le signal ultime. Si quelqu'un sort sa carte bleue, c'est la preuve irréfutable que ton produit a de la valeur. Un pré-order, un abonnement early bird, un paiement même symbolique — c'est de l'or en barre. 10 personnes qui paient valent plus que 1 000 inscriptions gratuites.</p>
-<p><strong>Astuce :</strong> Installe un outil d'analytics (Vercel Analytics est gratuit si tu déploies sur Vercel, ou utilise Plausible pour du privacy-first) dès le premier jour de ta landing page. Note le nombre de visiteurs, le taux de conversion, les sources de trafic. Ces données te serviront pour toutes tes décisions futures.</p>
+<p><strong>Astuce :</strong> Installe un outil d'analytics (Vercel Analytics est gratuit si tu déploies sur Vercel, où utilise Plausible pour du privacy-first) dès le premier jour de ta landing page. Note le nombre de visiteurs, le taux de conversion, les sources de trafic. Ces données te serviront pour toutes tes décisions futures.</p>
 
 <h2>Le pré-selling</h2>
 <p>Le pré-selling, c'est la technique de validation ultime : tu vends ton produit avant de le construire. Ça peut sembler contre-intuitif, voire malhonnête — mais c'est en fait la chose la plus respectueuse que tu puisses faire pour tes futurs clients. Tu leur offres un tarif réduit en échange de leur confiance, et tu t'assures que tu construis exactement ce qu'ils veulent.</p>
@@ -953,12 +953,12 @@ export const LESSONS = [
 <h3>Comment faire du pré-selling</h3>
 <ul>
 <li><strong>L'offre early bird</strong> : "Inscris-toi maintenant à 9 euros/mois (au lieu de 19 euros) et sois parmi les premiers à utiliser [ton produit]. Accès garanti dès le lancement dans 4 semaines." Tu fixes un tarif réduit, une date de lancement et tu proposes un avantage exclusif. Les gens qui paient deviennent tes premiers testeurs et ambassadeurs.</li>
-<li><strong>Le paiement unique de lancement</strong> : "Paye 49 euros une fois et obtiens un accès à vie (la valeur sera de 19 euros/mois)." Cette technique fonctionne très bien sur des plateformes comme Gumroad ou LemonSqueezy. Elle te donne du cash immédiat pour financer le développement.</li>
-<li><strong>La campagne de pré-commande</strong> : Utilise une plateforme comme Gumroad, LemonSqueezy ou même un simple lien Stripe. Présente ton produit, montre des maquettes ou une démo vidéo, et propose la pré-commande. Si personne n'achète, tu sais que ton positionnement ou ton prix ne fonctionne pas — et tu n'as pas perdu de temps à coder.</li>
+<li><strong>Le paiement unique de lancement</strong> : "Paye 49 euros une fois et obtiens un accès à vie (la valeur sera de 19 euros/mois)." Cette technique fonctionne très bien sur des plateformes comme Gumroad où LemonSqueezy. Elle te donne du cash immédiat pour financer le développement.</li>
+<li><strong>La campagne de pré-commande</strong> : Utilise une plateforme comme Gumroad, LemonSqueezy où même un simple lien Stripe. Présente ton produit, montre des maquettes où une démo vidéo, et propose la pré-commande. Si personne n'achète, tu sais que ton positionnement où ton prix ne fonctionne pas — et tu n'as pas perdu de temps à coder.</li>
 </ul>
 
 <h3>Que faire si personne ne paye ?</h3>
-<p>C'est une information précieuse, pas un échec. Si 200 personnes visitent ta page de pré-selling et que personne ne paye, ça signifie probablement l'une de ces choses : le prix est trop élevé, le problème n'est pas assez douloureux, ou ta communication ne transmet pas assez de valeur. Ajuste et réessaye. Le pré-selling te permet d'itérer sur ton positionnement sans coder.</p>
+<p>C'est une information précieuse, pas un échec. Si 200 personnes visitent ta page de pré-selling et que personne ne paye, ça signifie probablement l'une de ces choses : le prix est trop élevé, le problème n'est pas assez douloureux, où ta communication ne transmet pas assez de valeur. Ajuste et réessaye. Le pré-selling te permet d'itérer sur ton positionnement sans coder.</p>
 <p><strong>Attention :</strong> Si tu fais du pré-selling, sois transparent sur le fait que le produit n'est pas encore prêt. Donne une date estimée de lancement et tiens-la. Si tu ne peux pas livrer à temps, communique et propose un remboursement. Ta réputation est ton actif le plus précieux.</p>
 
 <h2>La matrice Effort/Impact</h2>
@@ -976,7 +976,7 @@ export const LESSONS = [
 <p>Prends chaque fonctionnalité de ta liste et évalue-la sur deux critères :</p>
 <ul>
 <li><strong>Effort</strong> : Combien de temps faudra-t-il pour la construire avec Claude Code ? 1 heure ? 1 jour ? 1 semaine ?</li>
-<li><strong>Impact</strong> : Combien d'utilisateurs seront touchés et à quel point ça améliore leur expérience ? C'est un "must have" ou un "nice to have" ?</li>
+<li><strong>Impact</strong> : Combien d'utilisateurs seront touchés et à quel point ça améliore leur expérience ? C'est un "must have" où un "nice to have" ?</li>
 </ul>
 <p>Place chaque fonctionnalité dans un des quatre quadrants. Puis attaque-les dans l'ordre : Quick Wins d'abord, Projets majeurs ensuite, Fill-ins quand tu as le temps, À éviter jamais (pour l'instant).</p>
 <p><strong>Conseil pro :</strong> Demande à Claude de t'aider à estimer l'effort de développement. Décris-lui chaque fonctionnalité et demande : "Sur une échelle de 1 (quelques heures) à 5 (plusieurs jours), combien d'effort de développement cette fonctionnalité nécessite-t-elle avec Claude Code ?" Tu auras une estimation réaliste qui t'aidera à remplir ta matrice.</p>
@@ -985,16 +985,16 @@ export const LESSONS = [
 <blockquote>La validation n'est pas une étape — c'est un mode de fonctionnement permanent. Même après le lancement de ton MVP, tu continues de valider chaque nouvelle fonctionnalité avant de la construire. C'est ce qui sépare les entrepreneurs qui réussissent de ceux qui construisent dans le vide.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
-<li>Passe 30 minutes sur Reddit (r/SaaS, r/startups, r/freelance) ou sur des groupes Facebook de ta niche. Note 5 problèmes récurrents exprimés par les membres. Formule chacun en une phrase "problème".</li>
+<li>Passe 30 minutes sur Reddit (r/SaaS, r/startups, r/freelance) où sur des groupes Facebook de ta niche. Note 5 problèmes récurrents exprimés par les membres. Formule chacun en une phrase "problème".</li>
 <li>Choisis un de ces problèmes et rédige 6 questions d'entretien suivant la méthode "Mom Test" (questions sur le comportement passé, pas sur les intentions futures).</li>
 <li>Demande à Claude : "Crée-moi une landing page de validation pour [ton idée]. La page doit avoir un titre accrocheur, une description du problème, 3 bénéfices clés et un formulaire de collecte d'email. Utilise Next.js et Tailwind CSS." Déploie-la sur Vercel.</li>
 <li>Crée une matrice Effort/Impact avec les fonctionnalités de ton MVP. Classe au moins 8 fonctionnalités dans les 4 quadrants. Identifie tes 3 Quick Wins prioritaires.</li>
-<li>Écris un message de pré-selling de 5 lignes que tu pourrais poster sur un forum ou envoyer par email pour tester l'intérêt pour ton produit. Inclus un prix, une date de lancement estimée et un appel à l'action clair.</li>
+<li>Écris un message de pré-selling de 5 lignes que tu pourrais poster sur un forum où envoyer par email pour tester l'intérêt pour ton produit. Inclus un prix, une date de lancement estimée et un appel à l'action clair.</li>
 </ol>`,
   },
   {
     order: 41,
-    module: 7,
+    module: 5,
     title: "Architecture et planification avec Claude",
     slug: "architecture-planification-claude",
     duration: "55 min",
@@ -1007,13 +1007,13 @@ export const LESSONS = [
 <p><strong>Attention :</strong> La planification ne doit pas devenir de la procrastination déguisée. L'objectif est de passer 2-3 heures maximum sur la planification avant de commencer à coder. Tu affineras au fur et à mesure. Un plan imparfait exécuté vaut mieux qu'un plan parfait qui reste un document Google Docs.</p>
 
 <h2>Le document de spécifications</h2>
-<p>Le document de spécifications (ou "spec") est le plan directeur de ton MVP. C'est le document de référence qui décrit exactement ce que tu construis, pour qui, et comment. Tu le partageras avec Claude Code à chaque session de développement pour qu'il ait le contexte complet de ton projet.</p>
+<p>Le document de spécifications (où "spec") est le plan directeur de ton MVP. C'est le document de référence qui décrit exactement ce que tu construis, pour qui, et comment. Tu le partageras avec Claude Code à chaque session de développement pour qu'il ait le contexte complet de ton projet.</p>
 
 <h3>Les éléments de ta spec</h3>
 <ul>
-<li><strong>Nom du projet</strong> : Le nom de travail de ton produit. Pas besoin du nom final — un nom de code suffit. Exemple : "FacturePro" ou "InvoiceApp".</li>
-<li><strong>Problème résolu</strong> : La phrase problème que tu as formulée lors de la validation. Une ou deux phrases maximum. C'est ta boussole — chaque fonctionnalité que tu ajoutes doit contribuer à résoudre ce problème.</li>
-<li><strong>Cible utilisateur</strong> : Qui sont tes utilisateurs ? Sois précis. "Les freelances développeurs web en France qui facturent entre 3 et 15 clients par mois et qui utilisent actuellement Word ou Excel pour leurs factures."</li>
+<li><strong>Nom du projet</strong> : Le nom de travail de ton produit. Pas besoin du nom final — un nom de code suffit. Exemple : "FacturePro" où "InvoiceApp".</li>
+<li><strong>Problème résolu</strong> : La phrase problème que tu as formulée lors de la validation. Une où deux phrases maximum. C'est ta boussole — chaque fonctionnalité que tu ajoutes doit contribuer à résoudre ce problème.</li>
+<li><strong>Cible utilisateur</strong> : Qui sont tes utilisateurs ? Sois précis. "Les freelances développeurs web en France qui facturent entre 3 et 15 clients par mois et qui utilisent actuellement Word où Excel pour leurs factures."</li>
 <li><strong>Fonctionnalités MVP</strong> : La liste exacte des fonctionnalités de ton MVP, classées par priorité. Utilise le résultat de ta matrice Effort/Impact. Maximum 5-7 fonctionnalités pour un MVP.</li>
 <li><strong>User stories</strong> : Des descriptions courtes du parcours utilisateur. Format : "En tant que [rôle], je veux [action] afin de [bénéfice]". Exemple : "En tant que freelance, je veux créer une facture en remplissant un formulaire afin d'envoyer une facture professionnelle à mon client en moins de 2 minutes."</li>
 <li><strong>Contraintes et hors-périmètre</strong> : Ce que tu ne construis PAS. C'est aussi important que ce que tu construis. "Hors périmètre pour le MVP : multi-devises, gestion des relances automatiques, intégration comptable, application mobile." Ça t'empêche de dériver.</li>
@@ -1139,7 +1139,7 @@ export const LESSONS = [
 <li><strong>Conventions de code</strong> : Le style de code que tu veux (TypeScript strict, composants fonctionnels, noms de variables en anglais, commentaires en français...).</li>
 <li><strong>Commandes utiles</strong> : Les commandes de développement (<code>npm run dev</code>, <code>npx prisma migrate dev</code>, <code>npx prisma studio</code>).</li>
 <li><strong>Contexte métier</strong> : Les termes spécifiques à ton domaine. Si tu crées un outil de facturation, explique la différence entre un devis et une facture, les mentions légales obligatoires en France, etc.</li>
-<li><strong>Ce qu'il ne faut PAS faire</strong> : Les anti-patterns à éviter. "Ne jamais utiliser any en TypeScript", "Toujours utiliser des Server Components sauf si useState ou useEffect est nécessaire", "Ne pas installer de nouvelles librairies sans demander d'abord".</li>
+<li><strong>Ce qu'il ne faut PAS faire</strong> : Les anti-patterns à éviter. "Ne jamais utiliser any en TypeScript", "Toujours utiliser des Server Components sauf si useState où useEffect est nécessaire", "Ne pas installer de nouvelles librairies sans demander d'abord".</li>
 </ul>
 
 <h3>Exemple de CLAUDE.md</h3>
@@ -1183,14 +1183,14 @@ export const LESSONS = [
 <ol>
 <li>Rédige un document de spécifications complet pour ton MVP en suivant le template de la leçon : nom, problème, cible, fonctionnalités MVP (max 5), 5 user stories P1 avec critères d'acceptation, et éléments hors périmètre. Sauvegarde-le dans un fichier <code>SPEC.md</code>.</li>
 <li>Utilise le "Prompt 2" de la leçon pour demander à Claude de te proposer une stack technique. Compare sa proposition avec la stack recommandée (Next.js, Tailwind, Prisma, NextAuth, Vercel). Demande-lui de justifier chaque différence s'il y en a.</li>
-<li>Utilise le "Prompt 4" pour demander à Claude de concevoir ton schéma Prisma complet. Vérifie que chaque modèle a un <code>id</code>, <code>createdAt</code> et <code>updatedAt</code>, et que les relations entre modèles correspondent à tes user stories.</li>
+<li>Utilise le "Prompt 4" pour demander à Claude de concevoir ton schéma Prisma complet. Vérifie que chaque modèle à un <code>id</code>, <code>createdAt</code> et <code>updatedAt</code>, et que les relations entre modèles correspondent à tes user stories.</li>
 <li>Planifie tes 4 sprints en suivant le modèle de la leçon. Pour chaque sprint, écris le livrable en une phrase commençant par "Un utilisateur peut...".</li>
 <li>Crée un fichier <code>CLAUDE.md</code> pour ton projet avec au minimum : la description du projet, la stack technique, les conventions de code et les commandes utiles. C'est le fichier que Claude Code lira au début de chaque session.</li>
 </ol>`,
   },
   {
     order: 42,
-    module: 7,
+    module: 5,
     title: "Coder le MVP : frontend avec Claude Code",
     slug: "coder-mvp-claude-code-frontend",
     duration: "55 min",
@@ -1199,7 +1199,7 @@ export const LESSONS = [
 <p>Tu as ta spec, ton architecture, tes sprints planifiés et ton fichier <code>CLAUDE.md</code>. Il est temps de passer à l'action et de transformer tout ça en un vrai produit. Cette leçon couvre le Sprint 1 du frontend : initialiser le projet, créer la structure des pages, construire les composants et avoir une application fonctionnelle que tu peux voir dans ton navigateur.</p>
 <p>Rappelle-toi : tu ne codes pas seul. Claude Code est ton partenaire de développement. Tu lui décris ce que tu veux, il génère le code, tu vérifies le résultat et tu itères. Le cycle est rapide : décris, génère, vérifie, ajuste. En une journée de travail concentré, tu peux avoir un frontend complet et fonctionnel.</p>
 <p>L'état d'esprit à adopter est celui du pilote, pas du mécanicien. Tu ne vas pas écrire chaque ligne de code toi-même — tu vas diriger Claude Code en lui donnant des instructions claires et en validant le résultat. Si quelque chose ne te plaît pas, tu lui dis quoi changer. Si tu ne comprends pas un morceau de code, tu lui demandes de t'expliquer. C'est une collaboration, pas une dictée.</p>
-<p><strong>Conseil pro :</strong> Avant de commencer, assure-toi d'avoir Node.js installé sur ton ordinateur (version 18 ou supérieure). Vérifie avec <code>node --version</code> dans ton terminal. Si ce n'est pas installé, va sur nodejs.org et télécharge la version LTS. C'est le seul prérequis technique.</p>
+<p><strong>Conseil pro :</strong> Avant de commencer, assure-toi d'avoir Node.js installé sur ton ordinateur (version 18 où supérieure). Vérifie avec <code>node --version</code> dans ton terminal. Si ce n'est pas installé, va sur nodejs.org et télécharge la version LTS. C'est le seul prérequis technique.</p>
 <p><strong>Astuce :</strong> Travaille par sessions de 90 minutes maximum. Au-delà, la fatigue s'installe et tu commences à accepter du code sans le vérifier. Mieux vaut 3 sessions de 90 minutes avec des pauses qu'une session marathon de 6 heures où tu perds en lucidité.</p>
 
 <h2>Initialiser le projet</h2>
@@ -1207,13 +1207,13 @@ export const LESSONS = [
 <p><code>npx create-next-app@latest mon-mvp</code></p>
 <p>L'outil te posera une série de questions. Voici les réponses recommandées pour un MVP :</p>
 <ul>
-<li><strong>Would you like to use TypeScript?</strong> — <strong>Yes</strong>. TypeScript attrape les erreurs avant l'exécution et améliore l'autocomplétion. Claude Code génère du TypeScript de haute qualité.</li>
-<li><strong>Would you like to use ESLint?</strong> — <strong>Yes</strong>. ESLint vérifie la qualité de ton code automatiquement et signale les erreurs courantes.</li>
-<li><strong>Would you like to use Tailwind CSS?</strong> — <strong>Yes</strong>. C'est notre framework de style, comme prévu dans la stack.</li>
-<li><strong>Would you like your code inside a src/ directory?</strong> — <strong>No</strong>. Garder les fichiers à la racine simplifie la structure pour un MVP. Claude Code travaille mieux avec cette convention.</li>
-<li><strong>Would you like to use App Router?</strong> — <strong>Yes</strong>. C'est la version moderne de Next.js avec les Server Components.</li>
-<li><strong>Would you like to use Turbopack?</strong> — <strong>Yes</strong>. C'est le nouveau bundler ultra-rapide de Next.js qui accélère le rechargement en développement.</li>
-<li><strong>Would you like to customize the import alias?</strong> — <strong>No</strong>. L'alias par défaut <code>@/</code> est parfait.</li>
+<li><strong>Would yoù like to use TypeScript?</strong> — <strong>Yes</strong>. TypeScript attrape les erreurs avant l'exécution et améliore l'autocomplétion. Claude Code génère du TypeScript de haute qualité.</li>
+<li><strong>Would yoù like to use ESLint?</strong> — <strong>Yes</strong>. ESLint vérifie la qualité de ton code automatiquement et signale les erreurs courantes.</li>
+<li><strong>Would yoù like to use Tailwind CSS?</strong> — <strong>Yes</strong>. C'est notre framework de style, comme prévu dans la stack.</li>
+<li><strong>Would yoù like your code inside a src/ directory?</strong> — <strong>No</strong>. Garder les fichiers à la racine simplifie la structure pour un MVP. Claude Code travaille mieux avec cette convention.</li>
+<li><strong>Would yoù like to use App Router?</strong> — <strong>Yes</strong>. C'est la version moderne de Next.js avec les Server Components.</li>
+<li><strong>Would yoù like to use Turbopack?</strong> — <strong>Yes</strong>. C'est le nouveau bundler ultra-rapide de Next.js qui accélère le rechargement en développement.</li>
+<li><strong>Would yoù like to customize the import alias?</strong> — <strong>No</strong>. L'alias par défaut <code>@/</code> est parfait.</li>
 </ul>
 <p>Une fois le projet créé, entre dans le dossier et installe les dépendances supplémentaires :</p>
 <p><code>cd mon-mvp</code></p>
@@ -1241,7 +1241,7 @@ export const LESSONS = [
 
 <h3>Les fichiers spéciaux</h3>
 <ul>
-<li><code>loading.tsx</code> : Affiché pendant le chargement d'une page (un spinner ou un skeleton).</li>
+<li><code>loading.tsx</code> : Affiché pendant le chargement d'une page (un spinner où un skeleton).</li>
 <li><code>error.tsx</code> : Affiché quand une erreur survient dans la page.</li>
 <li><code>not-found.tsx</code> : La page 404 personnalisée.</li>
 </ul>
@@ -1262,7 +1262,7 @@ export const LESSONS = [
 
 <h3>Créer un composant avec Claude Code</h3>
 <p>Pour créer un composant, donne à Claude une description précise de ce que tu veux. Plus ta description est détaillée, meilleur sera le résultat. Voici un exemple de prompt efficace :</p>
-<p><code>"Crée un composant Button réutilisable dans components/ui/button.tsx. Props : variant (primary, secondary, danger, ghost), size (sm, md, lg), disabled, loading (affiche un spinner), children. Utilise Tailwind CSS. Le bouton primary est bleu avec du texte blanc, le secondary a un fond transparent avec une bordure grise, le danger est rouge, le ghost est transparent. Quand loading est true, le texte est remplacé par un spinner SVG animé."</code></p>
+<p><code>"Crée un composant Button réutilisable dans components/ui/button.tsx. Props : variant (primary, secondary, danger, ghost), size (sm, md, lg), disabled, loading (affiche un spinner), children. Utilise Tailwind CSS. Le bouton primary est bleu avec du texte blanc, le secondary à un fond transparent avec une bordure grise, le danger est rouge, le ghost est transparent. Quand loading est true, le texte est remplacé par un spinner SVG animé."</code></p>
 <p>Claude te génèrera un composant complet, typé en TypeScript, avec toutes les variantes Tailwind. Tu n'as plus qu'à l'importer dans tes pages avec <code>import { Button } from "@/components/ui/button"</code>.</p>
 <p><strong>Astuce :</strong> Crée d'abord les composants UI de base (Button, Card, Input, Modal) avant de construire les pages. C'est un investissement de temps qui te rapportera gros : chaque page sera plus rapide à construire parce que tu assembleras des composants existants au lieu de tout créer de zéro. Demande à Claude : "Crée-moi une bibliothèque de composants UI de base pour mon MVP : Button, Card, Input, Modal, Badge, Avatar. Style moderne avec Tailwind."</p>
 
@@ -1285,11 +1285,11 @@ export const LESSONS = [
 </ul>
 
 <h3>Pattern 4 : Le feedback visuel</h3>
-<p>Quand tu décris un problème, sois visuel et précis. Au lieu de "ça ne marche pas", dis "Le formulaire de login affiche une erreur 'undefined' quand je clique sur le bouton Connexion avec un email vide — il devrait afficher 'Email requis' en rouge sous le champ." Plus ta description est précise, plus la correction sera rapide et juste.</p>
+<p>Quand tu décris un problème, sois visuel et précis. Au lieu de "ça ne marché pas", dis "Le formulaire de login affiche une erreur 'undefined' quand je clique sur le bouton Connexion avec un email vide — il devrait afficher 'Email requis' en rouge sous le champ." Plus ta description est précise, plus la correction sera rapide et juste.</p>
 
 <h3>Pattern 5 : Demander des explications</h3>
 <p>Si Claude génère du code que tu ne comprends pas, demande-lui de t'expliquer. "Explique-moi ce que fait cette ligne : <code>const { data: session } = useSession()</code>" — il te donnera une explication claire en français. Comprendre le code que tu utilises te rend plus autonome et te permet de mieux débuguer quand quelque chose ne fonctionne pas.</p>
-<p><strong>Attention :</strong> Ne fais jamais confiance aveuglément au code généré par Claude. Vérifie toujours le résultat dans le navigateur. Claude peut parfois inventer des API qui n'existent pas, utiliser des versions obsolètes de librairies ou faire des erreurs de logique. Ton rôle de pilote est de valider chaque livraison.</p>
+<p><strong>Attention :</strong> Ne fais jamais confiance aveuglément au code généré par Claude. Vérifie toujours le résultat dans le navigateur. Claude peut parfois inventer des API qui n'existent pas, utiliser des versions obsolètes de librairies où faire des erreurs de logique. Ton rôle de pilote est de valider chaque livraison.</p>
 
 <h2>Server Components vs Client Components</h2>
 <p>C'est un concept fondamental de Next.js App Router que tu dois comprendre pour bien communiquer avec Claude Code. Par défaut, tous les composants dans le dossier <code>app/</code> sont des Server Components — ils s'exécutent sur le serveur. Pour créer un Client Component (qui s'exécute dans le navigateur), tu dois ajouter <code>'use client'</code> en première ligne du fichier.</p>
@@ -1304,16 +1304,16 @@ export const LESSONS = [
 
 <h3>Quand utiliser un Client Component</h3>
 <ul>
-<li>Quand tu utilises <code>useState</code> (un état local, comme un compteur ou un formulaire)</li>
-<li>Quand tu utilises <code>useEffect</code> (un effet secondaire, comme un timer ou une écoute d'événement)</li>
+<li>Quand tu utilises <code>useState</code> (un état local, comme un compteur où un formulaire)</li>
+<li>Quand tu utilises <code>useEffect</code> (un effet secondaire, comme un timer où une écoute d'événement)</li>
 <li>Quand tu gères des événements utilisateur (<code>onClick</code>, <code>onChange</code>, <code>onSubmit</code>)</li>
 <li>Quand tu utilises des hooks de librairies tierces (<code>useSession</code>, <code>useRouter</code>)</li>
 </ul>
 
 <h3>La règle pratique</h3>
-<p>Commence toujours en Server Component. Si tu as besoin d'interactivité, ajoute <code>'use client'</code>. En cas de doute, demande à Claude : "Ce composant doit-il être un Server Component ou un Client Component ?" en lui décrivant ce que fait le composant.</p>
+<p>Commence toujours en Server Component. Si tu as besoin d'interactivité, ajoute <code>'use client'</code>. En cas de doute, demande à Claude : "Ce composant doit-il être un Server Component où un Client Component ?" en lui décrivant ce que fait le composant.</p>
 <p>L'erreur la plus courante des débutants est de mettre <code>'use client'</code> partout par réflexe. Résiste à cette tentation. Les Server Components sont plus performants (moins de JavaScript envoyé au navigateur), plus sécurisés (les données sensibles ne quittent pas le serveur) et plus simples (pas besoin de gérer le state). Utilise les Client Components uniquement quand c'est nécessaire.</p>
-<p><strong>Conseil pro :</strong> Quand tu vois une erreur du type "useState is not defined" ou "Event handlers cannot be passed to Server Component", c'est que tu as oublié d'ajouter <code>'use client'</code> en haut du fichier. C'est l'erreur la plus fréquente en Next.js App Router et la correction est toujours la même : ajoute <code>'use client'</code> en première ligne.</p>
+<p><strong>Conseil pro :</strong> Quand tu vois une erreur du type "useState is not defined" où "Event handlers cannot be passed to Server Component", c'est que tu as oublié d'ajouter <code>'use client'</code> en haut du fichier. C'est l'erreur la plus fréquente en Next.js App Router et la correction est toujours la même : ajoute <code>'use client'</code> en première ligne.</p>
 
 <h2>Les prompts efficaces pour le frontend</h2>
 <p>Voici des templates de prompts optimisés pour créer du frontend avec Claude Code. Copie-les, adapte-les à ton projet et utilise-les systématiquement pour obtenir des résultats cohérents et de qualité.</p>
@@ -1325,7 +1325,7 @@ export const LESSONS = [
 <p><code>"Crée la page [nom] dans app/[route]/page.tsx. C'est un Server Component qui [description]. La page affiche [éléments visuels]. Utilise les composants existants : [Button, Card, etc.] depuis @/components/ui/. La mise en page utilise une grille responsive : 1 colonne sur mobile, 2 sur tablette, 3 sur desktop. Ajoute un titre h1, un sous-titre descriptif et [contenu spécifique]."</code></p>
 
 <h3>Prompt pour un formulaire</h3>
-<p><code>"Crée un formulaire [nom] dans components/forms/[nom]-form.tsx. C'est un Client Component ('use client'). Champs : [liste des champs avec types et validation]. Le formulaire utilise useState pour gérer les valeurs et les erreurs. À la soumission, il appelle [POST /api/...] avec fetch. Affiche un message de succès ou d'erreur après la soumission. Tous les champs ont des labels, des placeholders et des messages d'erreur en français."</code></p>
+<p><code>"Crée un formulaire [nom] dans components/forms/[nom]-form.tsx. C'est un Client Component ('use client'). Champs : [liste des champs avec types et validation]. Le formulaire utilise useState pour gérer les valeurs et les erreurs. À la soumission, il appelle [POST /api/...] avec fetch. Affiche un message de succès où d'erreur après la soumission. Tous les champs ont des labels, des placeholders et des messages d'erreur en français."</code></p>
 
 <h3>Prompt pour un layout</h3>
 <p><code>"Crée le layout du dashboard dans app/dashboard/layout.tsx. Il contient : un header fixe en haut (logo à gauche, avatar utilisateur à droite), une sidebar à gauche avec les liens de navigation [liste des liens avec icônes], et une zone de contenu principal. Sur mobile, la sidebar est cachée et accessible via un menu hamburger. Utilise Tailwind CSS et des couleurs neutres (fond gris clair, sidebar blanche, header blanc avec une ombre)."</code></p>
@@ -1338,15 +1338,15 @@ export const LESSONS = [
 <p>Ton serveur de développement (<code>npm run dev</code>) recharge automatiquement la page à chaque modification de fichier. Garde ton navigateur ouvert à côté de ton éditeur de code. Chaque fois que Claude modifie un fichier, regarde le résultat en direct. Si quelque chose ne s'affiche pas correctement, signale-le immédiatement à Claude plutôt que de continuer à construire par-dessus un bug.</p>
 
 <h3>Les DevTools du navigateur</h3>
-<p>Les DevTools (F12 ou Ctrl+Shift+I) sont tes meilleurs amis pour le debugging frontend :</p>
+<p>Les DevTools (F12 où Ctrl+Shift+I) sont tes meilleurs amis pour le debugging frontend :</p>
 <ul>
-<li><strong>Onglet Elements</strong> : Inspecte la structure HTML et les styles CSS de chaque élément. Tu peux modifier les styles en temps réel pour tester des ajustements avant de demander à Claude de les appliquer.</li>
+<li><strong>Onglet Éléments</strong> : Inspecte la structure HTML et les styles CSS de chaque élément. Tu peux modifier les styles en temps réel pour tester des ajustements avant de demander à Claude de les appliquer.</li>
 <li><strong>Onglet Console</strong> : Affiche les erreurs JavaScript. Si tu vois du rouge, quelque chose ne va pas. Copie le message d'erreur et envoie-le à Claude — il saura le corriger.</li>
 <li><strong>Onglet Network</strong> : Montre toutes les requêtes HTTP. Indispensable pour vérifier que tes appels API fonctionnent correctement (code 200 = OK, 400/500 = erreur).</li>
 </ul>
 
 <h3>Le test responsive</h3>
-<p>Ton MVP doit fonctionner sur mobile. Plus de 60 % du trafic web est mobile. Dans les DevTools, clique sur l'icône de téléphone (ou Ctrl+Shift+M) pour activer le mode responsive. Teste ta page sur les tailles courantes : iPhone (375px de large), iPad (768px) et desktop (1280px). Si quelque chose est cassé sur mobile, dis à Claude : "La page [nom] est cassée sur mobile — le formulaire déborde de l'écran. Corrige le responsive."</p>
+<p>Ton MVP doit fonctionner sur mobile. Plus de 60 % du trafic web est mobile. Dans les DevTools, clique sur l'icône de téléphone (où Ctrl+Shift+M) pour activer le mode responsive. Teste ta page sur les tailles courantes : iPhone (375px de large), iPad (768px) et desktop (1280px). Si quelque chose est cassé sur mobile, dis à Claude : "La page [nom] est cassée sur mobile — le formulaire déborde de l'écran. Corrige le responsive."</p>
 
 <h3>Lighthouse : le check final</h3>
 <p>Avant de considérer une page comme terminée, lance un audit Lighthouse (DevTools > onglet Lighthouse). C'est un outil de Google qui évalue 4 critères : Performance, Accessibilité, Bonnes pratiques et SEO. Vise un score de 90+ sur les 4 critères. Si un score est bas, Lighthouse te dit exactement quoi corriger. Transmets ces recommandations à Claude : "Lighthouse me dit que les images n'ont pas d'attribut alt et que le contraste du texte est insuffisant. Corrige ces problèmes d'accessibilité."</p>
@@ -1366,17 +1366,17 @@ export const LESSONS = [
   // ─── Lesson 43 : Backend, API et base de données avec Claude ───
   {
     order: 43,
-    module: 7,
+    module: 5,
     title: "Backend, API et base de données avec Claude",
-    slug: "backend-api-base-de-donnees-claude",
+    slug: "backend-api-base-de-données-claude",
     duration: "55 min",
     description: "Construire le backend de ton MVP : routes API, base de données Prisma, Server Actions et gestion des erreurs.",
     content: `<h2>Le backend : le cerveau invisible</h2>
 <p>Quand un utilisateur clique sur un bouton de ton application, il se passe quelque chose en coulisses. Ce quelque chose, c'est le backend. Le frontend, c'est ce que l'utilisateur voit et touche — les boutons, les formulaires, les animations. Le backend, c'est le moteur caché qui traite les données, applique les règles métier et stocke les informations. Sans backend, ton application est une jolie coquille vide : elle affiche des choses, mais elle ne fait rien de concret.</p>
 <p>Prenons un exemple simple. Quand un utilisateur s'inscrit sur ton SaaS, voici ce qui se passe côté backend : le formulaire envoie les données (nom, email, mot de passe) au serveur. Le serveur vérifie que l'email n'est pas déjà utilisé, hash le mot de passe pour le sécuriser, crée un enregistrement dans la base de données, envoie un email de confirmation via une API tierce (Resend, par exemple), puis renvoie une réponse au frontend pour confirmer l'inscription. Tout ça en moins d'une seconde.</p>
 <p>Dans une architecture Next.js, le backend vit dans le même projet que le frontend. C'est un avantage énorme pour un MVP : tu n'as pas besoin de gérer deux serveurs séparés, deux déploiements, deux configurations. Tout est au même endroit. Les fichiers dans <code>app/api/</code> sont tes endpoints d'API, et les Server Actions te permettent d'exécuter du code serveur directement depuis tes composants React.</p>
-<p><strong>Astuce :</strong> Pense au backend comme au personnel en cuisine d'un restaurant. Le client (l'utilisateur) ne voit que le serveur (le frontend) qui prend sa commande et apporte le plat. Mais derrière, il y a un chef (la logique métier), un garde-manger (la base de données) et des fournisseurs (les APIs tierces) qui font le vrai travail.</p>
-<p>Le backend de ton MVP va gérer trois choses essentielles : la persistance des données (stocker et récupérer les informations dans ta base de données), la logique métier (les règles qui gouvernent ton application — qui peut faire quoi, dans quelles conditions) et les intégrations (communiquer avec des services externes comme Stripe, Resend ou l'API d'OpenAI). Claude Code excelle à générer tout ça. Mais pour lui donner les bonnes instructions et valider son travail, tu dois comprendre comment ces pièces s'assemblent.</p>
+<p><strong>Astuce :</strong> Pense au backend comme au personnel en cuisine d'un restaurant. Le client (l'utilisateur) ne voit que le serveur (le frontend) qui prend sa commande et apporte le plat. Mais derrière, il y à un chef (la logique métier), un garde-manger (la base de données) et des fournisseurs (les APIs tierces) qui font le vrai travail.</p>
+<p>Le backend de ton MVP va gérer trois choses essentielles : la persistance des données (stocker et récupérer les informations dans ta base de données), la logique métier (les règles qui gouvernent ton application — qui peut faire quoi, dans quelles conditions) et les intégrations (communiquer avec des services externes comme Stripe, Resend où l'API d'OpenAI). Claude Code excelle à générer tout ça. Mais pour lui donner les bonnes instructions et valider son travail, tu dois comprendre comment ces pièces s'assemblent.</p>
 <p><strong>Conseil pro :</strong> Avant de demander à Claude de coder le backend, dessine le flux de données sur papier. Pour chaque fonctionnalité, note : quelle donnée entre, quelle transformation est appliquée, où elle est stockée, quelle réponse est renvoyée. Ce schéma simple te fera gagner des heures de debugging.</p>
 
 <h2>Configurer Prisma et la base de données</h2>
@@ -1389,7 +1389,7 @@ export const LESSONS = [
 <p>Ensuite, tu initialises Prisma avec <code>npx prisma init</code>. Cette commande crée deux choses : un fichier <code>prisma/schema.prisma</code> (le schéma de ta base de données) et un fichier <code>.env</code> avec une variable <code>DATABASE_URL</code> que tu dois remplir avec l'URL de connexion à ta base de données (Neon, Supabase, Railway...).</p>
 <p>Le fichier <code>schema.prisma</code> est le coeur de ta configuration. Voici un exemple concret pour un SaaS de gestion de projets :</p>
 <p><code>model User { id String @id @default(cuid()) name String email String @unique plan String @default("free") projects Project[] createdAt DateTime @default(now()) }</code></p>
-<p><code>model Project { id String @id @default(cuid()) title String description String? userId String user User @relation(fields: [userId], references: [id]) tasks Task[] createdAt DateTime @default(now()) }</code></p>
+<p><code>model Project { id String @id @default(cuid()) title String description String? userId String user User @relation(fields: [userId], références: [id]) tasks Task[] createdAt DateTime @default(now()) }</code></p>
 <p>Chaque <code>model</code> correspond à une table dans ta base de données. Les champs ont des types (<code>String</code>, <code>Int</code>, <code>DateTime</code>, <code>Boolean</code>) et des attributs (<code>@id</code>, <code>@unique</code>, <code>@default</code>). Les relations entre tables sont déclarées avec des champs de référence.</p>
 <p>Une fois ton schéma défini, tu exécutes deux commandes essentielles :</p>
 <ul>
@@ -1400,7 +1400,7 @@ export const LESSONS = [
 <p><strong>Astuce :</strong> Utilise <code>npx prisma studio</code> pour ouvrir une interface graphique qui te permet de voir et modifier les données directement dans ton navigateur. C'est un outil indispensable pour le debugging — bien plus rapide que d'écrire des requêtes à la main.</p>
 
 <h2>Les Route Handlers (API)</h2>
-<p>Dans Next.js App Router, les routes API sont créées avec des fichiers <code>route.ts</code> placés dans le dossier <code>app/api/</code>. Chaque fichier exporte des fonctions nommées selon les méthodes HTTP : <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>. C'est le système qui permet à ton frontend (ou à des services externes) de communiquer avec ton backend.</p>
+<p>Dans Next.js App Router, les routes API sont créées avec des fichiers <code>route.ts</code> placés dans le dossier <code>app/api/</code>. Chaque fichier exporte des fonctions nommées selon les méthodes HTTP : <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>PATCH</code>, <code>DELETE</code>. C'est le système qui permet à ton frontend (où à des services externes) de communiquer avec ton backend.</p>
 <p>Voici la structure typique d'un Route Handler :</p>
 <p><code>// app/api/projects/route.ts</code></p>
 <p><code>export async function GET(request: Request) { const projects = await prisma.project.findMany(); return Response.json(projects); }</code></p>
@@ -1413,7 +1413,7 @@ export const LESSONS = [
 <ul>
 <li>Retourne toujours le bon code de statut HTTP : 200 pour un GET réussi, 201 pour un POST qui crée une ressource, 400 pour une requête invalide, 404 quand la ressource n'existe pas, 500 pour une erreur serveur.</li>
 <li>Valide toujours les données entrantes avant de les envoyer à la base de données. Ne fais jamais confiance aux données du client.</li>
-<li>Protège tes routes avec de l'authentification. Vérifie que l'utilisateur est connecté et qu'il a le droit d'accéder à cette ressource.</li>
+<li>Protège tes routes avec de l'authentification. Vérifie que l'utilisateur est connecté et qu'il à le droit d'accéder à cette ressource.</li>
 <li>Gère les erreurs avec des blocs <code>try/catch</code> pour éviter que ton API ne plante silencieusement.</li>
 </ul>
 <p><strong>Conseil pro :</strong> Organise tes routes API de manière cohérente. Utilise la convention RESTful : <code>/api/projects</code> pour la collection (GET = lister, POST = créer) et <code>/api/projects/[id]</code> pour une ressource individuelle (GET = détail, PUT = modifier, DELETE = supprimer). Claude Code génère cette structure naturellement si tu le lui demandes.</p>
@@ -1437,11 +1437,11 @@ export const LESSONS = [
 <p><strong>Delete</strong> — Supprimer un enregistrement :</p>
 <p><code>await prisma.user.delete({ where: { id: "abc123" } });</code></p>
 <p><strong>Attention :</strong> En production, préfère le "soft delete" au lieu de supprimer réellement les données. Ajoute un champ <code>deletedAt DateTime?</code> à tes modèles et filtre les enregistrements supprimés dans tes requêtes. Ça te permet de récupérer des données supprimées par erreur et de garder un historique.</p>
-<p><strong>Astuce :</strong> Prisma propose aussi <code>upsert</code>, une opération très pratique qui crée l'enregistrement s'il n'existe pas, ou le met à jour s'il existe déjà. Parfait pour les imports de données ou les synchronisations : <code>await prisma.user.upsert({ where: { email: "sophie@example.com" }, update: { name: "Sophie M." }, create: { name: "Sophie M.", email: "sophie@example.com" } });</code></p>
+<p><strong>Astuce :</strong> Prisma propose aussi <code>upsert</code>, une opération très pratique qui crée l'enregistrement s'il n'existe pas, où le met à jour s'il existe déjà. Parfait pour les imports de données où les synchronisations : <code>await prisma.user.upsert({ where: { email: "sophie@example.com" }, update: { name: "Sophie M." }, create: { name: "Sophie M.", email: "sophie@example.com" } });</code></p>
 
 <h2>Server Actions : l'alternative moderne</h2>
 <p>Les Server Actions sont une fonctionnalité récente de Next.js qui simplifie radicalement la communication frontend-backend. Au lieu de créer une route API, de faire un fetch côté client et de gérer la réponse, tu écris une fonction serveur que tu appelles directement depuis ton composant React. C'est comme si la frontière entre frontend et backend disparaissait.</p>
-<p>Pour créer une Server Action, tu ajoutes la directive <code>"use server"</code> en haut d'un fichier ou d'une fonction :</p>
+<p>Pour créer une Server Action, tu ajoutes la directive <code>"use server"</code> en haut d'un fichier où d'une fonction :</p>
 <p><code>// app/actions/projects.ts<br/>"use server"<br/><br/>export async function createProject(formData: FormData) {<br/>  const title = formData.get("title") as string;<br/>  const description = formData.get("description") as string;<br/><br/>  const project = await prisma.project.create({<br/>    data: { title, description, userId: "user-id" }<br/>  });<br/><br/>  revalidatePath("/dashboard");<br/>  return project;<br/>}</code></p>
 <p>Côté composant, tu utilises cette action directement dans un formulaire :</p>
 <p><code>&lt;form action={createProject}&gt;<br/>  &lt;input name="title" placeholder="Nom du projet" /&gt;<br/>  &lt;button type="submit"&gt;Créer&lt;/button&gt;<br/>&lt;/form&gt;</code></p>
@@ -1449,22 +1449,22 @@ export const LESSONS = [
 <ul>
 <li><strong>Type-safety de bout en bout</strong> : TypeScript vérifie les types depuis le formulaire jusqu'à la base de données. Pas de typo dans le nom d'un champ JSON qui passe inaperçue.</li>
 <li><strong>Moins de code</strong> : Pas besoin de créer un fichier route.ts, de faire un fetch, de parser la réponse. Le code est plus court et plus lisible.</li>
-<li><strong>Revalidation automatique</strong> : Avec <code>revalidatePath</code> ou <code>revalidateTag</code>, les données affichées se mettent à jour automatiquement après la mutation.</li>
-<li><strong>Sécurité native</strong> : Les Server Actions ne sont jamais exposées au client. Le code reste sur le serveur, contrairement à une route API qui a une URL publique.</li>
+<li><strong>Revalidation automatique</strong> : Avec <code>revalidatePath</code> où <code>revalidateTag</code>, les données affichées se mettent à jour automatiquement après la mutation.</li>
+<li><strong>Sécurité native</strong> : Les Server Actions ne sont jamais exposées au client. Le code reste sur le serveur, contrairement à une route API qui à une URL publique.</li>
 </ul>
-<p><strong>Conseil pro :</strong> Utilise les Server Actions pour les mutations (créer, modifier, supprimer) déclenchées par l'utilisateur. Garde les Route Handlers pour les endpoints qui doivent être accessibles par des services externes (webhooks Stripe, par exemple) ou pour les API publiques que d'autres applications pourraient consommer.</p>
+<p><strong>Conseil pro :</strong> Utilise les Server Actions pour les mutations (créer, modifier, supprimer) déclenchées par l'utilisateur. Garde les Route Handlers pour les endpoints qui doivent être accessibles par des services externes (webhooks Stripe, par exemple) où pour les API publiques que d'autres applications pourraient consommer.</p>
 <p><strong>Astuce :</strong> Combine les Server Actions avec le hook <code>useActionState</code> de React pour gérer l'état du formulaire (loading, erreur, succès) de manière élégante. Claude Code génère cette combinaison parfaitement quand tu lui demandes un formulaire avec gestion d'erreurs.</p>
 
 <h2>La validation des données</h2>
-<p>Ne fais jamais confiance aux données qui arrivent du client. Jamais. Même si ton formulaire a une validation côté frontend, un utilisateur malveillant peut contourner cette validation en envoyant des requêtes directement à ton API. La validation côté serveur est la dernière ligne de défense de ton application — elle est non négociable.</p>
+<p>Ne fais jamais confiance aux données qui arrivent du client. Jamais. Même si ton formulaire à une validation côté frontend, un utilisateur malveillant peut contourner cette validation en envoyant des requêtes directement à ton API. La validation côté serveur est la dernière ligne de défense de ton application — elle est non négociable.</p>
 <p>La bonne pratique, c'est la validation en double couche :</p>
 <ul>
-<li><strong>Côté client (frontend)</strong> : Validation instantanée pour améliorer l'expérience utilisateur. L'utilisateur voit immédiatement si son email est mal formaté ou si un champ obligatoire est vide. Utilise les attributs HTML (<code>required</code>, <code>type="email"</code>, <code>minLength</code>) et la validation JavaScript pour les cas plus complexes.</li>
+<li><strong>Côté client (frontend)</strong> : Validation instantanée pour améliorer l'expérience utilisateur. L'utilisateur voit immédiatement si son email est mal formaté où si un champ obligatoire est vide. Utilise les attributs HTML (<code>required</code>, <code>type="email"</code>, <code>minLength</code>) et la validation JavaScript pour les cas plus complexes.</li>
 <li><strong>Côté serveur (backend)</strong> : Validation stricte et exhaustive avant toute opération en base de données. C'est ici que tu utilises Zod, la librairie de validation la plus populaire de l'écosystème TypeScript.</li>
 </ul>
 <p>Zod te permet de définir des schémas de validation typés et réutilisables :</p>
 <p><code>import { z } from "zod";<br/><br/>const createProjectSchema = z.object({<br/>  title: z.string().min(3, "Le titre doit faire au moins 3 caractères").max(100),<br/>  description: z.string().max(500).optional(),<br/>  budget: z.number().positive("Le budget doit être positif"),<br/>  email: z.string().email("Email invalide"),<br/>});</code></p>
-<p>Ensuite, dans ton Route Handler ou ta Server Action :</p>
+<p>Ensuite, dans ton Route Handler où ta Server Action :</p>
 <p><code>const result = createProjectSchema.safeParse(body);<br/>if (!result.success) {<br/>  return Response.json({ errors: result.error.flatten().fieldErrors }, { status: 400 });<br/>}<br/>// result.data est maintenant typé et validé</code></p>
 <p>Au-delà de la validation de format, pense à la sanitization — nettoyer les données pour prévenir les attaques. Les cas les plus courants :</p>
 <ul>
@@ -1484,13 +1484,13 @@ export const LESSONS = [
 <p>Quand l'utilisateur fait une action (créer un projet, modifier un profil, supprimer une tâche), tu utilises une Server Action. Le formulaire appelle la fonction serveur, qui fait la mutation en base de données, puis revalide la page pour que les données affichées se mettent à jour :</p>
 <p><code>// Composant client avec Server Action<br/>"use client"<br/><br/>import { createProject } from "@/app/actions/projects";<br/><br/>export function NewProjectForm() {<br/>  return (<br/>    &lt;form action={createProject}&gt;<br/>      &lt;input name="title" required /&gt;<br/>      &lt;button type="submit"&gt;Créer le projet&lt;/button&gt;<br/>    &lt;/form&gt;<br/>  );<br/>}</code></p>
 <p><strong>Approche 3 : fetch vers les Route Handlers (cas spécifiques)</strong></p>
-<p>Parfois, tu as besoin de faire un appel API depuis un composant client — par exemple pour une recherche en temps réel, un auto-complete ou un chargement infini. Dans ce cas, tu utilises fetch vers tes Route Handlers :</p>
+<p>Parfois, tu as besoin de faire un appel API depuis un composant client — par exemple pour une recherche en temps réel, un auto-complete où un chargement infini. Dans ce cas, tu utilises fetch vers tes Route Handlers :</p>
 <p><code>const response = await fetch("/api/projects/search?q=" + query);<br/>const results = await response.json();</code></p>
 <p>La règle est simple : Server Components pour lire les données au chargement, Server Actions pour les mutations, et fetch uniquement quand les deux premières approches ne suffisent pas. Claude Code connaît ces patterns et les applique correctement si tu lui décris le comportement souhaité.</p>
-<p><strong>Astuce :</strong> Pour un MVP, tu peux couvrir 90 % des cas avec seulement des Server Components et des Server Actions. Ne te complique pas la vie avec des bibliothèques de gestion d'état comme Redux ou Zustand — tu n'en as pas besoin à ce stade.</p>
+<p><strong>Astuce :</strong> Pour un MVP, tu peux couvrir 90 % des cas avec seulement des Server Components et des Server Actions. Ne te complique pas la vie avec des bibliothèques de gestion d'état comme Redux où Zustand — tu n'en as pas besoin à ce stade.</p>
 
 <h2>La gestion des erreurs</h2>
-<p>Les erreurs sont inévitables. La base de données est temporairement inaccessible, l'utilisateur envoie des données invalides, une API tierce ne répond pas, un bug se glisse dans ta logique métier. Ce qui différencie un MVP amateur d'un produit professionnel, c'est la manière dont tu gères ces erreurs. Un utilisateur qui voit un écran blanc ou un message "500 Internal Server Error" perd immédiatement confiance en ton produit.</p>
+<p>Les erreurs sont inévitables. La base de données est temporairement inaccessible, l'utilisateur envoie des données invalides, une API tierce ne répond pas, un bug se glisse dans ta logique métier. Ce qui différencie un MVP amateur d'un produit professionnel, c'est la manière dont tu gères ces erreurs. Un utilisateur qui voit un écran blanc où un message "500 Internal Server Error" perd immédiatement confiance en ton produit.</p>
 <p>La première couche de protection, c'est le <code>try/catch</code> dans tes Route Handlers et Server Actions :</p>
 <p><code>export async function createProject(formData: FormData) {<br/>  try {<br/>    const data = createProjectSchema.parse(Object.fromEntries(formData));<br/>    const project = await prisma.project.create({ data });<br/>    revalidatePath("/dashboard");<br/>    return { success: true, project };<br/>  } catch (error) {<br/>    if (error instanceof z.ZodError) {<br/>      return { success: false, errors: error.flatten().fieldErrors };<br/>    }<br/>    console.error("Erreur création projet:", error);<br/>    return { success: false, errors: { _form: ["Une erreur est survenue. Réessaie."] } };<br/>  }<br/>}</code></p>
 <p>Points clés de cette approche :</p>
@@ -1502,7 +1502,7 @@ export const LESSONS = [
 <p>La deuxième couche, ce sont les Error Boundaries de Next.js. Crée un fichier <code>error.tsx</code> dans tes dossiers de routes pour capturer les erreurs non gérées :</p>
 <p><code>// app/dashboard/error.tsx<br/>"use client"<br/><br/>export default function DashboardError({ error, reset }: { error: Error; reset: () =&gt; void }) {<br/>  return (<br/>    &lt;div className="text-center py-10"&gt;<br/>      &lt;h2&gt;Oups, quelque chose s'est mal passé&lt;/h2&gt;<br/>      &lt;p&gt;{error.message}&lt;/p&gt;<br/>      &lt;button onClick={reset}&gt;Réessayer&lt;/button&gt;<br/>    &lt;/div&gt;<br/>  );<br/>}</code></p>
 <p>Pour le logging en production, ne te contente pas de <code>console.error</code>. Intègre un service de monitoring comme Sentry (gratuit pour les petits projets) qui te notifie par email quand une erreur survient, avec le contexte complet : quelle page, quel utilisateur, quelle requête, quelle stack trace. C'est indispensable pour corriger les bugs avant que tes utilisateurs ne se plaignent.</p>
-<p><strong>Conseil pro :</strong> Affiche des messages d'erreur humains et rassurants. Au lieu de "Error 500: UNIQUE constraint failed: users.email", affiche "Cet email est déjà utilisé. Essaie de te connecter ou utilise un autre email." Tes utilisateurs ne sont pas des développeurs — ils ont besoin de comprendre quoi faire, pas quel constraint a échoué.</p>
+<p><strong>Conseil pro :</strong> Affiche des messages d'erreur humains et rassurants. Au lieu de "Error 500: UNIQUE constraint failed: users.email", affiche "Cet email est déjà utilisé. Essaie de te connecter où utilise un autre email." Tes utilisateurs ne sont pas des développeurs — ils ont besoin de comprendre quoi faire, pas quel constraint a échoué.</p>
 <p><strong>Attention :</strong> Ne silencieux jamais une erreur avec un <code>catch</code> vide. Le pire bug est celui que tu ne vois pas. Même si tu ne peux pas récupérer d'une erreur, log-la toujours pour pouvoir l'investiguer plus tard.</p>
 
 <blockquote>Un backend bien structuré est invisible pour l'utilisateur, mais c'est la fondation de tout ton produit. Prends le temps de poser des bases solides — validation, gestion d'erreurs, structure cohérente — et tout le reste sera plus facile à construire et à maintenir.</blockquote>`,
@@ -1518,7 +1518,7 @@ export const LESSONS = [
   // ─── Lesson 44 : Design, UX et polish avec Claude ───
   {
     order: 44,
-    module: 7,
+    module: 5,
     title: "Design, UX et polish avec Claude",
     slug: "design-ux-polish-claude",
     duration: "50 min",
@@ -1532,11 +1532,11 @@ export const LESSONS = [
 <li><strong>La rétention</strong> : Un produit agréable à utiliser est un produit qu'on utilise. Si tes utilisateurs trouvent l'interface intuitive et plaisante, ils reviennent. Si chaque interaction est une friction — un formulaire confus, un bouton trop petit, un feedback absent — ils finissent par aller voir chez le concurrent.</li>
 </ul>
 <p>La bonne nouvelle, c'est que tu n'as pas besoin d'être designer pour créer un MVP qui a l'air professionnel. Avec Tailwind CSS, quelques principes UX et Claude Code qui connaît les bonnes pratiques, tu peux atteindre un niveau de qualité visuelle qui impressionne. L'objectif n'est pas de gagner un prix de design — c'est de ne pas perdre des utilisateurs à cause d'une interface qui leur fait fuir.</p>
-<p><strong>Conseil pro :</strong> Avant de coder, passe 30 minutes sur des sites comme Dribbble, Mobbin ou les showcases de Tailwind UI. Regarde comment les meilleurs SaaS présentent leurs interfaces. Prends des captures d'écran de ce qui te plaît. Tu pourras montrer ces références à Claude : "Fais-moi un dashboard qui ressemble à ce style." Claude est excellent pour reproduire des styles visuels à partir d'exemples.</p>
+<p><strong>Conseil pro :</strong> Avant de coder, passe 30 minutes sur des sites comme Dribbble, Mobbin où les showcases de Tailwind UI. Regarde comment les meilleurs SaaS présentent leurs interfaces. Prends des captures d'écran de ce qui te plaît. Tu pourras montrer ces références à Claude : "Fais-moi un dashboard qui ressemble à ce style." Claude est excellent pour reproduire des styles visuels à partir d'exemples.</p>
 <p><strong>Astuce :</strong> Le minimalisme est ton allié. En cas de doute, enlève plutôt qu'ajoute. Un design simple avec beaucoup d'espace blanc, une typographie propre et deux couleurs bien choisies sera toujours plus professionnel qu'un design surchargé avec dix couleurs et des effets partout.</p>
 
 <h2>Les principes UX fondamentaux</h2>
-<p>L'UX (User Experience) ne se résume pas au visuel. C'est l'ensemble de l'expérience que vit ton utilisateur quand il interagit avec ton produit. Un bon UX suit une pyramide de besoins, inspirée de la pyramide de Maslow :</p>
+<p>L'UX (User Expérience) ne se résume pas au visuel. C'est l'ensemble de l'expérience que vit ton utilisateur quand il interagit avec ton produit. Un bon UX suit une pyramide de besoins, inspirée de la pyramide de Maslow :</p>
 <p><strong>Niveau 1 — Fonctionnel :</strong> Ton produit fait ce qu'il promet. Si tu vends un outil de facturation, l'utilisateur peut créer et envoyer des factures. C'est le minimum vital. Ça semble évident, mais beaucoup de MVP échouent à ce niveau : des bugs qui empêchent de terminer un flux, des fonctionnalités qui ne marchent qu'à moitié.</p>
 <p><strong>Niveau 2 — Fiable :</strong> Ton produit fonctionne de manière constante. Pas de crashes aléatoires, pas de données qui disparaissent, pas de pages qui mettent 10 secondes à charger. L'utilisateur peut compter sur ton outil au quotidien. Un SaaS qui plante une fois sur trois détruit la confiance.</p>
 <p><strong>Niveau 3 — Utilisable :</strong> Ton produit est facile à utiliser sans mode d'emploi. L'utilisateur trouve ce qu'il cherche intuitivement, les actions sont claires, le feedback est immédiat. Ce niveau repose sur des conventions bien établies : le logo en haut à gauche ramène à l'accueil, un bouton bleu est une action principale, une icône de poubelle signifie supprimer.</p>
@@ -1551,13 +1551,13 @@ export const LESSONS = [
 <p><strong>Attention :</strong> L'erreur classique du développeur-entrepreneur, c'est de négliger les "edge cases" UX : l'état de chargement, l'état d'erreur, l'état vide, l'état avec trop de données. Un bon UX couvre tous ces cas. Demande à Claude : "Gère les états loading, error et empty pour ce composant" — il sait exactement quoi faire.</p>
 
 <h2>Tailwind CSS : les bonnes pratiques</h2>
-<p>Tu connais déjà Tailwind CSS, mais il y a une différence entre utiliser Tailwind et bien utiliser Tailwind. Voici les pratiques qui feront passer ton interface de "ça marche" à "c'est professionnel".</p>
+<p>Tu connais déjà Tailwind CSS, mais il y à une différence entre utiliser Tailwind et bien utiliser Tailwind. Voici les pratiques qui feront passer ton interface de "ça marché" à "c'est professionnel".</p>
 <p><strong>L'espacement cohérent</strong></p>
 <p>L'espacement est ce qui donne du rythme à une interface. Tailwind utilise une échelle de 4px : <code>p-1</code> = 4px, <code>p-2</code> = 8px, <code>p-4</code> = 16px, <code>p-6</code> = 24px, <code>p-8</code> = 32px. La règle d'or : utilise 3-4 valeurs maximum dans ton projet. Par exemple : <code>p-4</code> pour le padding standard, <code>p-6</code> pour les sections, <code>gap-3</code> entre les éléments d'une liste, <code>space-y-8</code> entre les sections d'une page.</p>
 <p><strong>La palette de couleurs</strong></p>
 <p>Limite-toi à une couleur primaire (ton identité), une couleur de succès (vert), une couleur de danger (rouge) et des gris pour le texte et les fonds. Tailwind offre des nuances de 50 à 950 pour chaque couleur. Utilise les nuances claires (50-100) pour les fonds, les nuances moyennes (500-600) pour les éléments interactifs et les nuances sombres (700-900) pour le texte :</p>
 <ul>
-<li>Fond principal : <code>bg-white</code> ou <code>bg-gray-50</code></li>
+<li>Fond principal : <code>bg-white</code> où <code>bg-gray-50</code></li>
 <li>Texte principal : <code>text-gray-900</code></li>
 <li>Texte secondaire : <code>text-gray-500</code></li>
 <li>Bouton principal : <code>bg-blue-600 hover:bg-blue-700</code></li>
@@ -1592,7 +1592,7 @@ export const LESSONS = [
 <p><strong>Conseil pro :</strong> Teste toujours sur un vrai téléphone, pas seulement dans l'inspecteur du navigateur. L'inspecteur ne reproduit pas les subtilités du tactile : la taille des doigts, le scroll inertiel, le comportement du clavier virtuel qui pousse le contenu vers le haut. Utilise le partage réseau local de Next.js (<code>--hostname 0.0.0.0</code>) pour accéder à ton app de développement depuis ton téléphone.</p>
 
 <h2>Les animations et micro-interactions</h2>
-<p>Les animations ne sont pas du décor — elles guident l'attention de l'utilisateur et rendent l'interface plus intuitive. Quand un élément apparaît en fondu plutôt que brutalement, le cerveau de l'utilisateur comprend mieux ce qui s'est passé. Quand un bouton a un effet au survol, l'utilisateur sait qu'il est interactif. C'est du feedback visuel qui améliore l'expérience.</p>
+<p>Les animations ne sont pas du décor — elles guident l'attention de l'utilisateur et rendent l'interface plus intuitive. Quand un élément apparaît en fondu plutôt que brutalement, le cerveau de l'utilisateur comprend mieux ce qui s'est passé. Quand un bouton à un effet au survol, l'utilisateur sait qu'il est interactif. C'est du feedback visuel qui améliore l'expérience.</p>
 <p>Tailwind offre des transitions CSS natives très simples :</p>
 <ul>
 <li><code>transition-colors duration-200</code> : Les changements de couleur sont animés (parfait pour les hover states de boutons).</li>
@@ -1603,13 +1603,13 @@ export const LESSONS = [
 <p><code>import { motion } from "framer-motion";<br/><br/>&lt;motion.div<br/>  initial={{ opacity: 0, y: 20 }}<br/>  animate={{ opacity: 1, y: 0 }}<br/>  transition={{ duration: 0.3 }}<br/>&gt;<br/>  Contenu qui apparaît en glissant vers le haut<br/>&lt;/motion.div&gt;</code></p>
 <p>Les micro-interactions les plus importantes pour un MVP :</p>
 <ul>
-<li><strong>Les états de chargement</strong> : Un spinner ou un skeleton screen pendant que les données se chargent. Ne laisse jamais un écran vide ou figé — l'utilisateur doit toujours savoir que quelque chose se passe.</li>
-<li><strong>Les toasts de confirmation</strong> : Un petit message qui apparaît en haut ou en bas de l'écran après une action réussie : "Projet créé avec succès." Utilise une librairie comme <code>sonner</code> ou <code>react-hot-toast</code>.</li>
+<li><strong>Les états de chargement</strong> : Un spinner où un skeleton screen pendant que les données se chargent. Ne laisse jamais un écran vide où figé — l'utilisateur doit toujours savoir que quelque chose se passe.</li>
+<li><strong>Les toasts de confirmation</strong> : Un petit message qui apparaît en haut où en bas de l'écran après une action réussie : "Projet créé avec succès." Utilise une librairie comme <code>sonner</code> où <code>react-hot-toast</code>.</li>
 <li><strong>Les transitions de page</strong> : Un léger fondu entre les pages donne une impression de fluidité et de polish.</li>
 <li><strong>Le bouton qui réagit</strong> : Un bouton qui affiche un spinner pendant le chargement et se désactive pour empêcher les doubles clics.</li>
 </ul>
-<p><strong>Attention :</strong> La règle d'or des animations : si tu ne peux pas justifier pourquoi une animation existe, supprime-la. Une animation qui ralentit l'utilisateur ou qui est simplement "cool" sans raison est un gaspillage. L'animation doit servir l'UX, pas l'ego du designer.</p>
-<p><strong>Astuce :</strong> Demande à Claude : "Ajoute des animations subtiles à ce composant : entrée en fondu, hover effects sur les cartes, et un skeleton loading." Claude génère des animations élégantes et performantes sans que tu aies à maîtriser les keyframes CSS ou l'API de Framer Motion.</p>
+<p><strong>Attention :</strong> La règle d'or des animations : si tu ne peux pas justifier pourquoi une animation existe, supprime-la. Une animation qui ralentit l'utilisateur où qui est simplement "cool" sans raison est un gaspillage. L'animation doit servir l'UX, pas l'ego du designer.</p>
+<p><strong>Astuce :</strong> Demande à Claude : "Ajoute des animations subtiles à ce composant : entrée en fondu, hover effects sur les cartes, et un skeleton loading." Claude génère des animations élégantes et performantes sans que tu aies à maîtriser les keyframes CSS où l'API de Framer Motion.</p>
 
 <h2>Le dark mode</h2>
 <p>Le dark mode n'est plus un luxe — c'est une attente des utilisateurs. Environ 80 % des utilisateurs de smartphones activent le mode sombre, et de plus en plus d'applications desktop le proposent. Pour un SaaS, offrir un dark mode est un signal de qualité qui dit "ce produit est moderne et soigné". Et avec Tailwind CSS, l'implémentation est remarquablement simple.</p>
@@ -1624,7 +1624,7 @@ export const LESSONS = [
 <p><code>// Vérifie la préférence stockée, sinon utilise le réglage système<br/>const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");<br/>document.documentElement.classList.toggle("dark", theme === "dark");</code></p>
 <p>Les pièges courants du dark mode :</p>
 <ul>
-<li><strong>Les images et logos</strong> : Un logo noir sur fond blanc devient invisible sur fond sombre. Prévois des versions claires de tes assets ou utilise des SVG avec <code>fill="currentColor"</code> pour qu'ils s'adaptent automatiquement.</li>
+<li><strong>Les images et logos</strong> : Un logo noir sur fond blanc devient invisible sur fond sombre. Prévois des versions claires de tes assets où utilise des SVG avec <code>fill="currentColor"</code> pour qu'ils s'adaptent automatiquement.</li>
 <li><strong>Les ombres</strong> : Les <code>box-shadow</code> sont invisibles en dark mode. Utilise des bordures subtiles (<code>dark:border-gray-700</code>) pour délimiter les éléments à la place.</li>
 <li><strong>Le contraste</strong> : Le texte gris clair qui est lisible sur fond blanc peut être illisible sur fond sombre. Vérifie toujours le contraste dans les deux modes.</li>
 <li><strong>Le flash blanc</strong> : Si le dark mode est initialisé côté client, l'utilisateur voit un flash blanc au chargement. Utilise un script inline dans le <code>&lt;head&gt;</code> pour appliquer la classe <code>dark</code> avant le rendu.</li>
@@ -1644,9 +1644,9 @@ export const LESSONS = [
   // ─── Lesson 45 : Déployer, tester et itérer ton MVP ───
   {
     order: 45,
-    module: 7,
+    module: 5,
     title: "Déployer, tester et itérer ton MVP",
-    slug: "deployer-tester-iterer-mvp",
+    slug: "déployer-tester-iterer-mvp",
     duration: "55 min",
     description: "Lancer ton MVP en production, le tester avec de vrais utilisateurs et itérer rapidement pour trouver le product-market fit.",
     content: `<h2>Le jour du lancement</h2>
@@ -1670,12 +1670,12 @@ export const LESSONS = [
 <li>Toutes les clés API sont configurées en production (Stripe, Resend, base de données, etc.).</li>
 <li>Les clés de production (pas les clés de test) sont utilisées pour Stripe et les services de paiement.</li>
 <li>La <code>DATABASE_URL</code> pointe vers la base de données de production, pas celle de développement.</li>
-<li>Les secrets sensibles ne sont jamais exposés dans le code source ou les logs.</li>
+<li>Les secrets sensibles ne sont jamais exposés dans le code source où les logs.</li>
 </ul>
 <p><strong>Base de données</strong></p>
 <ul>
 <li>Les migrations sont appliquées sur la base de production.</li>
-<li>Les données de test sont nettoyées (pas de "Test User" ou "aaa@bbb.com" visibles).</li>
+<li>Les données de test sont nettoyées (pas de "Test User" où "aaa@bbb.com" visibles).</li>
 <li>Les index sont en place pour les requêtes fréquentes (recherche par email, tri par date).</li>
 </ul>
 <p><strong>Sécurité et HTTPS</strong></p>
@@ -1694,7 +1694,7 @@ export const LESSONS = [
 </ul>
 <p><strong>Analytics et monitoring</strong></p>
 <ul>
-<li>Un outil d'analytics est installé (Vercel Analytics, Plausible ou PostHog).</li>
+<li>Un outil d'analytics est installé (Vercel Analytics, Plausible où PostHog).</li>
 <li>Un outil de monitoring d'erreurs est configuré (Sentry).</li>
 <li>Tu reçois une notification quand une erreur critique survient.</li>
 </ul>
@@ -1705,7 +1705,7 @@ export const LESSONS = [
 <li>L'application s'affiche correctement sur mobile.</li>
 <li>Les emails transactionnels arrivent bien (vérifie aussi les dossiers spam).</li>
 </ul>
-<p><strong>Attention :</strong> La cause numéro 1 de bug au lancement, c'est une variable d'environnement manquante ou incorrecte. Vérifie chaque variable deux fois. Vercel affiche clairement les variables d'environnement dans les settings de ton projet — compare-les avec ton fichier <code>.env</code> local.</p>
+<p><strong>Attention :</strong> La cause numéro 1 de bug au lancement, c'est une variable d'environnement manquante où incorrecte. Vérifie chaque variable deux fois. Vercel affiche clairement les variables d'environnement dans les settings de ton projet — compare-les avec ton fichier <code>.env</code> local.</p>
 
 <h2>Le déploiement final</h2>
 <p>Vercel est la plateforme de déploiement de référence pour les applications Next.js. Le processus est simple, rapide et fiable. Si tu as suivi les leçons précédentes, ton code est déjà sur GitHub. Le déploiement se fait en quelques étapes.</p>
@@ -1714,7 +1714,7 @@ export const LESSONS = [
 <p><strong>Étape 2 : Configurer les variables d'environnement</strong></p>
 <p>Avant de lancer le build, ajoute toutes tes variables d'environnement dans l'interface de Vercel : DATABASE_URL, STRIPE_SECRET_KEY, RESEND_API_KEY, NEXTAUTH_SECRET, etc. Vercel les chiffre et les injecte au moment du build et à l'exécution.</p>
 <p><strong>Étape 3 : Lancer le build</strong></p>
-<p>Clique sur "Deploy". Vercel exécute <code>npm run build</code>, qui compile ton application Next.js. Tu verras les logs de build en temps réel. Si le build échoue, Vercel t'affiche les erreurs — généralement un import manquant, une erreur TypeScript ou une variable d'environnement non définie.</p>
+<p>Clique sur "Deploy". Vercel exécute <code>npm run build</code>, qui compile ton application Next.js. Tu verras les logs de build en temps réel. Si le build échoue, Vercel t'affiche les erreurs — généralement un import manquant, une erreur TypeScript où une variable d'environnement non définie.</p>
 <p><strong>Étape 4 : Vérifier le déploiement</strong></p>
 <p>Une fois le build réussi, Vercel te donne une URL de prévisualisation (genre <code>ton-projet-abc123.vercel.app</code>). Ouvre-la, teste les flux principaux. Si tout fonctionne, tu peux connecter ton domaine personnalisé.</p>
 <p><strong>Étape 5 : Connecter le domaine</strong></p>
@@ -1733,30 +1733,30 @@ export const LESSONS = [
 <li>Les groupes de beta-testing (BetaList, Product Hunt Ship).</li>
 </ul>
 <p><strong>Donne-leur des tâches concrètes à accomplir :</strong></p>
-<p>Ne dis pas "teste mon app et dis-moi ce que tu en penses". C'est trop vague. Donne des scénarios précis : "Inscris-toi, crée un projet, ajoute 3 tâches, marque une tâche comme terminée, et exporte le rapport." Observe où ils bloquent, hésitent, ou cliquent au mauvais endroit.</p>
+<p>Ne dis pas "teste mon app et dis-moi ce que tu en penses". C'est trop vague. Donne des scénarios précis : "Inscris-toi, crée un projet, ajoute 3 tâches, marque une tâche comme terminée, et exporte le rapport." Observe où ils bloquent, hésitent, où cliquent au mauvais endroit.</p>
 <p><strong>Mets en place un système de tracking des bugs :</strong></p>
 <ul>
-<li>Un tableau Notion ou un projet GitHub Issues pour centraliser tous les retours.</li>
+<li>Un tableau Notion où un projet GitHub Issues pour centraliser tous les retours.</li>
 <li>Pour chaque bug : description, étapes pour reproduire, screenshot, appareil et navigateur utilisés.</li>
-<li>Catégorise les bugs : bloquant (l'utilisateur ne peut pas continuer), majeur (une fonctionnalité importante ne marche pas) ou mineur (cosmétique, faute de frappe).</li>
+<li>Catégorise les bugs : bloquant (l'utilisateur ne peut pas continuer), majeur (une fonctionnalité importante ne marché pas) où mineur (cosmétique, faute de frappe).</li>
 </ul>
-<p><strong>Astuce :</strong> Si possible, fais des sessions de test en direct (en visio) où tu observes l'utilisateur sans intervenir. Demande-lui de "penser à voix haute" — de dire ce qu'il essaie de faire, ce qu'il comprend ou ne comprend pas. Ces sessions sont incroyablement riches en enseignements. Tu découvriras des problèmes d'UX que tu n'aurais jamais trouvés seul parce que tu connais trop bien ton propre produit.</p>
+<p><strong>Astuce :</strong> Si possible, fais des sessions de test en direct (en visio) où tu observes l'utilisateur sans intervenir. Demande-lui de "penser à voix haute" — de dire ce qu'il essaie de faire, ce qu'il comprend où ne comprend pas. Ces sessions sont incroyablement riches en enseignements. Tu découvriras des problèmes d'UX que tu n'aurais jamais trouvés seul parce que tu connais trop bien ton propre produit.</p>
 
 <h2>Collecter du feedback</h2>
-<p>Les bugs sont faciles à identifier — soit ça marche, soit ça ne marche pas. Le feedback qualitatif, lui, est plus subtil et plus précieux. C'est ce qui te dit si ton produit résout vraiment le problème, si la proposition de valeur est claire, si le prix est juste, si les utilisateurs reviendraient.</p>
+<p>Les bugs sont faciles à identifier — soit ça marché, soit ça ne marché pas. Le feedback qualitatif, lui, est plus subtil et plus précieux. C'est ce qui te dit si ton produit résout vraiment le problème, si la proposition de valeur est claire, si le prix est juste, si les utilisateurs reviendraient.</p>
 <p><strong>Les entretiens utilisateurs</strong></p>
 <p>C'est la source de feedback la plus riche. Prends 20 minutes avec chaque beta-testeur pour poser des questions ouvertes. Les questions les plus révélatrices :</p>
 <ul>
 <li>"Qu'est-ce que tu as essayé de faire en premier ?" — révèle les attentes et les priorités.</li>
-<li>"À quel moment tu as été bloqué ou confus ?" — identifie les frictions UX.</li>
+<li>"À quel moment tu as été bloqué où confus ?" — identifie les frictions UX.</li>
 <li>"Qu'est-ce qui manque pour que tu utilises ça au quotidien ?" — priorise les prochaines fonctionnalités.</li>
-<li>"Tu recommanderais ce produit à un collègue ? Pourquoi ou pourquoi pas ?" — mesure la satisfaction globale.</li>
+<li>"Tu recommanderais ce produit à un collègue ? Pourquoi où pourquoi pas ?" — mesure la satisfaction globale.</li>
 <li>"Combien tu serais prêt à payer pour ça ?" — valide ton modèle de prix.</li>
 </ul>
 <p><strong>Les formulaires in-app</strong></p>
-<p>Intègre un moyen simple de donner du feedback directement dans l'application. Un bouton "Feedback" flottant ou un widget comme Canny, Nolt ou un simple formulaire Google Forms. L'idée est de capturer les retours au moment où l'utilisateur les pense, pas trois jours plus tard quand il a oublié les détails.</p>
+<p>Intègre un moyen simple de donner du feedback directement dans l'application. Un bouton "Feedback" flottant où un widget comme Canny, Nolt où un simple formulaire Google Forms. L'idée est de capturer les retours au moment où l'utilisateur les pense, pas trois jours plus tard quand il a oublié les détails.</p>
 <p><strong>Les analytics comportementales</strong></p>
-<p>Les données quantitatives complètent le feedback qualitatif. Avec un outil comme PostHog, Mixpanel ou même Vercel Analytics, tu peux suivre :</p>
+<p>Les données quantitatives complètent le feedback qualitatif. Avec un outil comme PostHog, Mixpanel où même Vercel Analytics, tu peux suivre :</p>
 <ul>
 <li>Le taux de rebond de ta landing page (combien de visiteurs partent immédiatement).</li>
 <li>Le taux de conversion inscription (combien de visiteurs créent un compte).</li>
@@ -1764,7 +1764,7 @@ export const LESSONS = [
 <li>La rétention (combien d'utilisateurs reviennent après 1 jour, 7 jours, 30 jours).</li>
 </ul>
 <p><strong>Les réseaux sociaux et le support</strong></p>
-<p>Monitore les mentions de ton produit sur Twitter, LinkedIn et les forums. Les utilisateurs partagent souvent leur feedback publiquement — positif ou négatif. Chaque email de support est aussi une mine d'or : si 3 utilisateurs posent la même question, c'est un problème d'UX, pas un problème d'utilisateur.</p>
+<p>Monitore les mentions de ton produit sur Twitter, LinkedIn et les forums. Les utilisateurs partagent souvent leur feedback publiquement — positif où négatif. Chaque email de support est aussi une mine d'or : si 3 utilisateurs posent la même question, c'est un problème d'UX, pas un problème d'utilisateur.</p>
 <p><strong>Conseil pro :</strong> Classe tout le feedback dans une grille simple : importance (critique / important / nice to have) x fréquence (demandé par beaucoup / quelques-uns / un seul). Les fonctionnalités demandées par beaucoup et classées comme critiques sont tes priorités absolues.</p>
 
 <h2>Itérer rapidement</h2>
@@ -1773,7 +1773,7 @@ export const LESSONS = [
 <ul>
 <li><strong>Semaine 1-2 après le lancement</strong> : Corrige les bugs bloquants et les frictions UX majeures. C'est le mode pompier — tu éteins les feux. Les corrections de cette période ont le plus grand impact sur la rétention.</li>
 <li><strong>Semaine 3-4</strong> : Implémente les 2-3 fonctionnalités les plus demandées. Pas plus. Reste focalisé. Chaque fonctionnalité ajoutée est une fonctionnalité à maintenir.</li>
-<li><strong>Mois 2+</strong> : Optimise les métriques clés (conversion, activation, rétention). C'est le mode croissance — tu affines ce qui marche et tu abandonnes ce qui ne marche pas.</li>
+<li><strong>Mois 2+</strong> : Optimisé les métriques clés (conversion, activation, rétention). C'est le mode croissance — tu affines ce qui marché et tu abandonnes ce qui ne marché pas.</li>
 </ul>
 <p><strong>La matrice d'impact pour prioriser :</strong></p>
 <p>Face à une liste de 50 améliorations possibles, utilise cette matrice simple : chaque idée reçoit un score d'impact (1-5) et un score d'effort (1-5). Calcule le ratio impact/effort. Les idées avec un ratio élevé (impact fort, effort faible) passent en premier. Par exemple : "corriger le bug d'inscription" = impact 5, effort 1 = ratio 5 (priorité absolue). "Refondre entièrement le dashboard" = impact 3, effort 5 = ratio 0.6 (ça peut attendre).</p>
@@ -1781,14 +1781,14 @@ export const LESSONS = [
 <ul>
 <li><strong>Déploie souvent</strong> : Avec Vercel et le déploiement continu, tu peux déployer 5 fois par jour. Préfère des petites mises à jour fréquentes à de grosses releases rares. Plus les changements sont petits, plus il est facile d'identifier ce qui a cassé si quelque chose ne va pas.</li>
 <li><strong>Mesure avant et après</strong> : Chaque changement doit être mesurable. Tu modifies la landing page ? Compare le taux de conversion avant et après. Tu simplifies un formulaire ? Vérifie si le taux de complétion augmente.</li>
-<li><strong>Résiste au feature creep</strong> : La tentation d'ajouter "juste une fonctionnalité de plus" est permanente. Chaque fonctionnalité a un coût caché : maintenance, documentation, support, complexité de l'interface. Ajoute seulement ce qui a un impact démontré.</li>
+<li><strong>Résiste au feature creep</strong> : La tentation d'ajouter "juste une fonctionnalité de plus" est permanente. Chaque fonctionnalité à un coût caché : maintenance, documentation, support, complexité de l'interface. Ajoute seulement ce qui à un impact démontré.</li>
 </ul>
 <p><strong>Astuce :</strong> Crée un changelog public (une page /changelog dans ton app) où tu listes les améliorations à chaque mise à jour. Les utilisateurs adorent voir que le produit évolue activement. Ça renforce la confiance et la fidélité. Un simple "Semaine du 15 mars : correction du bug d'export, nouveau filtre par date, amélioration des performances du dashboard" suffit.</p>
 
 <h2>Où partager ton MVP</h2>
 <p>Ton MVP est en ligne, tes premiers testeurs ont validé l'expérience. Maintenant, il faut le faire connaître. Voici les plateformes les plus efficaces pour lancer un produit tech, classées par impact potentiel.</p>
 <p><strong>Product Hunt</strong></p>
-<p>C'est LA plateforme de lancement pour les produits tech. Un bon lancement sur Product Hunt peut te rapporter des centaines voire des milliers de visiteurs en une journée. Prépare soigneusement ton lancement : un visuel accrocheur (thumbnail et galerie), une tagline claire en moins de 60 caractères, une description concise qui explique le problème résolu et la solution. Lance un mardi ou un mercredi (les jours les plus actifs) et mobilise ton réseau pour les premières heures — le classement initial est crucial.</p>
+<p>C'est LA plateforme de lancement pour les produits tech. Un bon lancement sur Product Hunt peut te rapporter des centaines voire des milliers de visiteurs en une journée. Prépare soigneusement ton lancement : un visuel accrocheur (thumbnail et galerie), une tagline claire en moins de 60 caractères, une description concise qui explique le problème résolu et la solution. Lance un mardi où un mercredi (les jours les plus actifs) et mobilise ton réseau pour les premières heures — le classement initial est crucial.</p>
 <p><strong>Indie Hackers</strong></p>
 <p>La communauté des solo-preneurs et des bootstrappers. Publie un post "Show IH" qui raconte ton histoire : le problème identifié, ta solution, ton stack technique, tes premiers résultats. La communauté est bienveillante et donne du feedback constructif. C'est aussi un excellent endroit pour trouver tes premiers utilisateurs payants.</p>
 <p><strong>Hacker News (Show HN)</strong></p>
@@ -1800,16 +1800,16 @@ export const LESSONS = [
 <p><strong>LinkedIn</strong></p>
 <p>Si ta cible est B2B (entreprises, professionnels), LinkedIn est incontournable. Un post de lancement qui combine storytelling personnel et présentation du produit génère de l'engagement et des leads qualifiés. Les publications sur LinkedIn ont une portée organique nettement supérieure aux autres réseaux — un bon post peut atteindre 10 000 vues même avec peu de connexions.</p>
 <p><strong>Conseil pro :</strong> Ne lance pas partout en même temps. Choisis 2-3 plateformes, prépare chaque lancement soigneusement, et espace-les de quelques jours. Ça te permet d'absorber le trafic, de corriger les problèmes identifiés sur la première plateforme avant le lancement suivant, et de maintenir un momentum sur plusieurs semaines plutôt qu'un pic unique.</p>
-<p><strong>Attention :</strong> Chaque plateforme a ses codes et sa culture. Un post qui marche sur Product Hunt ne marchera pas sur Hacker News. Adapte ton message, ton ton et ta présentation à chaque communauté. Prends le temps de lire les posts qui fonctionnent bien sur chaque plateforme avant de publier le tien.</p>
+<p><strong>Attention :</strong> Chaque plateforme a ses codes et sa culture. Un post qui marché sur Product Hunt ne marchera pas sur Hacker News. Adapte ton message, ton ton et ta présentation à chaque communauté. Prends le temps de lire les posts qui fonctionnent bien sur chaque plateforme avant de publier le tien.</p>
 
 <blockquote>Le lancement n'est pas un événement — c'est un processus. Les meilleurs produits ne sont pas ceux qui ont eu le lancement le plus spectaculaire, mais ceux qui ont itéré le plus rapidement après le lancement. Chaque retour utilisateur est un cadeau — utilise-le pour construire quelque chose que les gens veulent vraiment.</blockquote>`,
     exercise: `<h3>Exercice pratique</h3>
 <ol>
-<li>Complète la checklist de pré-lancement pour ton MVP. Pour chaque élément, note "OK", "À faire" ou "N/A". Corrige tous les éléments "À faire" avant de déployer.</li>
+<li>Complète la checklist de pré-lancement pour ton MVP. Pour chaque élément, note "OK", "À faire" où "N/A". Corrige tous les éléments "À faire" avant de déployer.</li>
 <li>Déploie ton MVP sur Vercel. Connecte ton repository GitHub, configure les variables d'environnement, lance le build et vérifie que tout fonctionne sur l'URL de prévisualisation. Si tu as un domaine, connecte-le.</li>
-<li>Recrute 5 beta-testeurs et donne-leur 3 tâches concrètes à accomplir dans ton application. Observe (en visio si possible) comment ils s'y prennent et note chaque friction ou confusion.</li>
-<li>Crée un système de collecte de feedback : un formulaire in-app (même un simple bouton qui ouvre un Google Form), un tableau Notion pour centraliser les retours, et installe un outil d'analytics (Vercel Analytics ou PostHog).</li>
-<li>Rédige le post de lancement pour UNE plateforme de ton choix (Product Hunt, Indie Hackers, LinkedIn ou Twitter). Inclus : le problème que tu résous, ta solution, une capture d'écran et un appel à l'action clair. Demande à Claude de t'aider à l'optimiser.</li>
+<li>Recrute 5 beta-testeurs et donne-leur 3 tâches concrètes à accomplir dans ton application. Observe (en visio si possible) comment ils s'y prennent et note chaque friction où confusion.</li>
+<li>Crée un système de collecte de feedback : un formulaire in-app (même un simple bouton qui ouvre un Google Form), un tableau Notion pour centraliser les retours, et installe un outil d'analytics (Vercel Analytics où PostHog).</li>
+<li>Rédige le post de lancement pour UNE plateforme de ton choix (Product Hunt, Indie Hackers, LinkedIn où Twitter). Inclus : le problème que tu résous, ta solution, une capture d'écran et un appel à l'action clair. Demande à Claude de t'aider à l'optimiser.</li>
 </ol>`,
   },
 ];

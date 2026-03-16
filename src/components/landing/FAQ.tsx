@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const faqs = [
   {
     q: "Est-ce que j'ai besoin de savoir coder ?",
-    a: "Non, absolument pas. La formation est con\u00e7ue pour les d\u00e9butants complets. On utilise des outils no-code et low-code (n8n, Make, interfaces API visuelles). Si tu sais utiliser un ordinateur, tu peux construire des infrastructures IA pro.",
+    a: "Non, absolument pas. La formation est conçue pour les débutants complets. On utilise Claude Code pour vibe coder : tu décris ce que tu veux, l'IA code pour toi. Si tu sais utiliser un ordinateur, tu peux construire des apps pro.",
   },
   {
     q: "Combien de temps faut-il pour voir des résultats ?",
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: "C'est quoi la différence entre Starter et Academy ?",
-    a: "Le Starter te donne les guides et ressources pour comprendre l'IA. L'Academy, c'est la formation complète avec 80 leçons, la plateforme interactive, l'assistant IA, le CRM, et tout ce qu'il faut pour lancer concrètement ton agence.",
+    a: "Le Starter te donne les guides et ressources pour comprendre l'IA. L'Academy, c'est la formation complète avec 100 leçons, la plateforme interactive, l'assistant IA, le CRM, et tout ce qu'il faut pour lancer concrètement ton agence.",
   },
   {
     q: "Est-ce que je peux faire ça en parallèle de mon travail ?",

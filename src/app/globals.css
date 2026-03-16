@@ -68,14 +68,12 @@ body {
 }
 
 ::selection {
-  background: #FF1744;
+  background: #007AFF;
   color: white;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #F8F9FA; }
-::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #999; }
+::-webkit-scrollbar { width: 0px; background: transparent; }
+* { scrollbar-width: none; }
 
 /* Landing animations */
 @keyframes pulse-glow {

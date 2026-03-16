@@ -6,94 +6,62 @@ import { motion, AnimatePresence } from "framer-motion";
 const services = [
   {
     title: "Chatbots & Support client",
-    desc: "Vos clients ont une réponse en 30 secondes. Même à 3h du matin.",
-    keyword: "CHATBOT",
+    desc: "Vos clients ont une r\u00e9ponse en 30 secondes. M\u00eame \u00e0 3h du matin.",
     stat: "24/7",
-    statLabel: "disponibilité",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-        <rect x="4" y="6" width="24" height="16" rx="3" />
-        <path d="M12 26l4-4h-8l4 4z" />
-        <circle cx="11" cy="14" r="1.5" fill="currentColor" />
-        <circle cx="16" cy="14" r="1.5" fill="currentColor" />
-        <circle cx="21" cy="14" r="1.5" fill="currentColor" />
-      </svg>
-    ),
+    statLabel: "disponibilit\u00e9",
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    accentColor: "#00B4D8",
+    features: ["R\u00e9ponse instantan\u00e9e", "Multi-canal", "Qualification leads"],
   },
   {
     title: "Automatisation des process",
-    desc: "Facturation, relances, onboarding, reporting — tout tourne sans vous.",
-    keyword: "AUTOMATION",
+    desc: "Facturation, relances, onboarding, reporting \u2014 tout tourne sans vous.",
     stat: "-73%",
     statLabel: "temps manuel",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-        <path d="M6 16h6m8 0h6M16 6v6m0 8v6" />
-        <circle cx="16" cy="16" r="4" />
-        <path d="M16 4a12 12 0 110 24 12 12 0 010-24z" strokeDasharray="4 3" />
-      </svg>
-    ),
+    gradient: "from-violet-500/20 to-purple-500/20",
+    accentColor: "#8B5CF6",
+    features: ["Workflows custom", "Int\u00e9grations API", "Z\u00e9ro erreur"],
   },
   {
-    title: "Génération de contenus",
-    desc: "Posts, emails, fiches produits, SEO — 10 min au lieu de 3 heures.",
-    keyword: "CONTENU",
+    title: "G\u00e9n\u00e9ration de contenus",
+    desc: "Posts, emails, fiches produits, SEO \u2014 10 min au lieu de 3 heures.",
     stat: "x20",
     statLabel: "plus rapide",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-        <rect x="6" y="4" width="20" height="24" rx="2" />
-        <path d="M10 10h12M10 14h12M10 18h8" />
-      </svg>
-    ),
+    gradient: "from-emerald-500/20 to-green-500/20",
+    accentColor: "#10B981",
+    features: ["SEO optimis\u00e9", "Ton de marque", "Multi-format"],
   },
   {
     title: "CRM intelligent",
-    desc: "Votre base se met à jour et se relance toute seule. Aucun lead oublié.",
-    keyword: "CRM",
+    desc: "Votre base se met \u00e0 jour et se relance toute seule. Aucun lead oubli\u00e9.",
     stat: "0",
     statLabel: "lead perdu",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-        <circle cx="16" cy="10" r="4" />
-        <circle cx="8" cy="22" r="3" />
-        <circle cx="24" cy="22" r="3" />
-        <path d="M12.5 13l-2.5 6M19.5 13l2.5 6M11 22h10" />
-      </svg>
-    ),
+    gradient: "from-amber-500/20 to-orange-500/20",
+    accentColor: "#F59E0B",
+    features: ["Scoring auto", "Relances IA", "Pipeline visuel"],
   },
   {
     title: "Dashboards & Analyse",
-    desc: "Toutes vos données sur un écran. Décision en 30 secondes.",
-    keyword: "DASHBOARD",
+    desc: "Toutes vos donn\u00e9es sur un \u00e9cran. D\u00e9cision en 30 secondes.",
     stat: "1",
-    statLabel: "seul écran",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-        <rect x="4" y="4" width="24" height="24" rx="3" />
-        <rect x="8" y="16" width="4" height="8" rx="1" fill="currentColor" opacity={0.3} />
-        <rect x="14" y="12" width="4" height="12" rx="1" fill="currentColor" opacity={0.5} />
-        <rect x="20" y="8" width="4" height="16" rx="1" fill="currentColor" opacity={0.7} />
-      </svg>
-    ),
+    statLabel: "seul \u00e9cran",
+    gradient: "from-rose-500/20 to-pink-500/20",
+    accentColor: "#F43F5E",
+    features: ["Temps r\u00e9el", "KPIs cl\u00e9s", "Alertes auto"],
   },
   {
-    title: "Formation de vos équipes",
-    desc: "Votre équipe maîtrise les outils qu'on installe. Zéro dépendance.",
-    keyword: "FORMATION",
+    title: "Formation de vos \u00e9quipes",
+    desc: "Votre \u00e9quipe ma\u00eetrise les outils qu'on installe. Z\u00e9ro d\u00e9pendance.",
     stat: "100%",
     statLabel: "autonomie",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-        <path d="M16 4l12 6-12 6-12-6 12-6z" />
-        <path d="M4 10v8l12 6 12-6v-8" />
-      </svg>
-    ),
+    gradient: "from-sky-500/20 to-blue-500/20",
+    accentColor: "#007AFF",
+    features: ["Sur mesure", "Support inclus", "Vid\u00e9os & docs"],
   },
 ];
 
 export default function ServicesSection() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-[#0A0A0A] overflow-hidden">
@@ -109,78 +77,152 @@ export default function ServicesSection() {
             Nos services
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
-            On installe l&apos;IA dans votre entreprise.{" "}
-            <span className="text-white/30">Cl&eacute; en main.</span>
+            {"On installe l'IA dans votre entreprise. "}
+            <span className="text-white/30">{"Cl\u00e9 en main."}</span>
           </h2>
         </motion.div>
 
-        {/* Bento grid — 3x2 */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.keyword}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06 }}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative rounded-2xl border border-white/[0.06] p-7 cursor-pointer transition-all duration-500 overflow-hidden"
-              style={{
-                background: hoveredIndex === i
-                  ? "linear-gradient(135deg, rgba(0,122,255,0.08) 0%, rgba(0,122,255,0.02) 100%)"
-                  : "rgba(255,255,255,0.02)",
-              }}
-            >
-              {/* Top row — icon + stat */}
-              <div className="flex items-start justify-between mb-6">
-                <div className={`p-3 rounded-xl transition-colors duration-300 ${
-                  hoveredIndex === i ? "bg-[#007AFF]/20 text-[#007AFF]" : "bg-white/[0.04] text-white/40"
-                }`}>
-                  {service.icon}
-                </div>
-                <AnimatePresence>
-                  {hoveredIndex === i && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      className="text-right"
+        {/* Accordion + Detail panel — same layout on all screens */}
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 items-start">
+          {/* Left: Service list */}
+          <div className="space-y-2">
+            {services.map((service, i) => (
+              <motion.button
+                key={service.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                onClick={() => setActiveIndex(i)}
+                className={`w-full text-left rounded-2xl px-5 py-4 transition-all duration-300 cursor-pointer group ${
+                  activeIndex === i
+                    ? "bg-white/[0.06] border border-white/[0.1]"
+                    : "bg-transparent border border-transparent hover:bg-white/[0.03]"
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  {/* Active indicator */}
+                  <div
+                    className={`h-8 w-1 rounded-full transition-all duration-300 ${
+                      activeIndex === i ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{ background: activeIndex === i ? service.accentColor : "transparent" }}
+                  />
+                  <div className="flex-1 min-w-0">
+                    <h3
+                      className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
+                        activeIndex === i ? "text-white" : "text-white/40 group-hover:text-white/60"
+                      }`}
                     >
-                      <p className="text-2xl font-black text-[#007AFF]">{service.stat}</p>
-                      <p className="text-[10px] text-white/30 uppercase tracking-wider">{service.statLabel}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      {service.title}
+                    </h3>
+                    <AnimatePresence>
+                      {activeIndex === i && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="text-xs sm:text-sm text-white/30 mt-1 leading-relaxed overflow-hidden"
+                        >
+                          {service.desc}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                  {/* Stat badge */}
+                  <div
+                    className={`text-right transition-opacity duration-300 ${
+                      activeIndex === i ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <p className="text-lg font-black" style={{ color: service.accentColor }}>{service.stat}</p>
+                    <p className="text-[9px] text-white/25 uppercase tracking-wider">{service.statLabel}</p>
+                  </div>
+                </div>
+              </motion.button>
+            ))}
+          </div>
+
+          {/* Right / Below: Detail panel */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, scale: 0.97, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.97, y: -10 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className={`relative rounded-3xl border border-white/[0.08] p-6 sm:p-8 lg:p-10 overflow-hidden min-h-[320px] lg:min-h-[380px] flex flex-col justify-between bg-gradient-to-br ${services[activeIndex].gradient}`}
+            >
+              {/* Glow orb */}
+              <div
+                className="absolute -top-20 -right-20 w-60 h-60 rounded-full blur-[100px] opacity-40"
+                style={{ background: services[activeIndex].accentColor }}
+              />
+
+              <div className="relative z-10">
+                {/* Big stat */}
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.15, type: "spring", stiffness: 200 }}
+                  className="mb-6 lg:mb-8"
+                >
+                  <span
+                    className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight"
+                    style={{ color: services[activeIndex].accentColor }}
+                  >
+                    {services[activeIndex].stat}
+                  </span>
+                  <p className="text-xs sm:text-sm text-white/30 uppercase tracking-widest mt-1">
+                    {services[activeIndex].statLabel}
+                  </p>
+                </motion.div>
+
+                {/* Title + description */}
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3">
+                  {services[activeIndex].title}
+                </h3>
+                <p className="text-sm sm:text-base text-white/50 leading-relaxed max-w-md">
+                  {services[activeIndex].desc}
+                </p>
+
+                {/* Feature chips */}
+                <div className="flex flex-wrap gap-2 mt-5 sm:mt-6">
+                  {services[activeIndex].features.map((feat, fi) => (
+                    <motion.span
+                      key={feat}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 + fi * 0.08 }}
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium border"
+                      style={{
+                        borderColor: services[activeIndex].accentColor + "30",
+                        color: services[activeIndex].accentColor,
+                        background: services[activeIndex].accentColor + "10",
+                      }}
+                    >
+                      {feat}
+                    </motion.span>
+                  ))}
+                </div>
               </div>
 
-              {/* Keyword */}
-              <p className="text-[10px] font-bold tracking-[0.3em] text-white/20 uppercase mb-2">
-                {service.keyword}
-              </p>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#007AFF] transition-colors duration-300">
-                {service.title}
-              </h3>
-
-              {/* Desc */}
-              <p className="text-sm text-white/40 leading-relaxed">
-                {service.desc}
-              </p>
-
-              {/* Bottom border glow on hover */}
-              <motion.div
-                className="absolute bottom-0 left-0 right-0 h-[2px]"
-                animate={{
-                  background: hoveredIndex === i
-                    ? "linear-gradient(90deg, transparent, #007AFF, transparent)"
-                    : "linear-gradient(90deg, transparent, transparent, transparent)",
-                }}
-                transition={{ duration: 0.3 }}
-              />
+              {/* Bottom navigation dots */}
+              <div className="relative z-10 flex items-center gap-2 mt-6 lg:mt-8">
+                {services.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveIndex(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      i === activeIndex ? "w-8" : "w-1.5 bg-white/10 hover:bg-white/20"
+                    }`}
+                    style={i === activeIndex ? { background: services[activeIndex].accentColor } : {}}
+                  />
+                ))}
+              </div>
             </motion.div>
-          ))}
+          </AnimatePresence>
         </div>
 
         {/* CTA */}
@@ -188,13 +230,13 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-14"
         >
           <a
             href="#calendly"
             className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-900/30"
           >
-            D&eacute;couvrir ce qu&apos;on peut faire pour vous
+            {"D\u00e9couvrir ce qu'on peut faire pour vous"}
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

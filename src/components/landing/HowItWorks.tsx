@@ -4,14 +4,13 @@ import { motion } from "framer-motion";
 import ChatbotAnimation from "./ChatbotAnimation";
 import ProjectBuilderAnimation from "./ProjectBuilderAnimation";
 import AgencyLaunchAnimation from "./AgencyLaunchAnimation";
-import LazyVideo from "@/components/ui/LazyVideo";
 
 const steps = [
   {
     num: "01",
     title: "Apprends les fondamentaux",
     desc: "Ma\u00eetrise le prompt engineering, les LLMs et les bases de l'IA appliqu\u00e9e au business. Tu pars de z\u00e9ro ? Parfait. Nos 74 le\u00e7ons sont con\u00e7ues pour \u00e7a.",
-    features: ["13 modules structurés", "Quiz interactifs", "Assistant IA intégré"],
+    features: ["15 modules structurés", "Quiz interactifs", "Assistant IA intégré"],
   },
   {
     num: "02",
@@ -124,32 +123,6 @@ export default function HowItWorks() {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Floating robot video — just below step 3 */}
-        <div className="flex justify-center mt-4 pointer-events-none">
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-48 h-48 lg:w-64 lg:h-64"
-          >
-            <LazyVideo
-              src="/images/imprimante.mp4"
-              className="w-full h-full"
-            />
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                boxShadow: "inset 30px 0 35px 6px white, inset -30px 0 35px 6px white, inset 0 35px 40px 8px white, inset 0 -35px 40px 8px white",
-              }}
-            />
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: "radial-gradient(ellipse 72% 68% at 50% 50%, transparent 30%, white 83%)",
-              }}
-            />
-          </motion.div>
         </div>
       </div>
     </section>

@@ -2,7 +2,21 @@
 
 import { motion } from "framer-motion";
 
-const plans = [
+interface Plan {
+  name: string;
+  price: string;
+  oldPrice: string;
+  period: string;
+  description: string;
+  popular: boolean;
+  features: string[];
+  notIncluded: string[];
+  cta: string;
+  href?: string;
+  external?: boolean;
+}
+
+const plans: Plan[] = [
   {
     name: "Starter",
     price: "49",
@@ -48,9 +62,9 @@ const plans = [
   },
   {
     name: "One-to-One",
-    price: "997",
-    oldPrice: "1497",
-    period: "paiement unique",
+    price: "3 997",
+    oldPrice: "5 997",
+    period: "payable en 4x sans frais",
     description: "Accompagnement personnalis\u00e9 premium",
     popular: false,
     features: [
@@ -62,7 +76,9 @@ const plans = [
       "Acc\u00e8s \u00e0 vie aux mises \u00e0 jour",
     ],
     notIncluded: [],
-    cta: "Postuler",
+    cta: "Prendre un appel",
+    href: "https://wa.me/33768683946?text=Salut%20!%20Je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20pack%20One-to-One%20%F0%9F%91%8B",
+    external: true,
   },
 ];
 
@@ -83,10 +99,10 @@ export default function Pricing() {
             Choisis ta formule
           </h2>
           <p className="mt-4 text-lg text-[#6B7280]">
-            Investis dans toi. Rentabilise d&egrave;s le premier mois.
+            {"Investis dans toi. Rentabilise d\u00e8s le premier mois."}
           </p>
           <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#FF1744]/10 border border-[#FF1744]/20 px-4 py-2 text-sm text-[#FF1744] font-medium">
-            <span>&#9889;</span> Tarif early-bird &mdash; expire le 31 mars 2026
+            <span>{"\u26A1"}</span> {"Tarif early-bird \u2014 expire le 31 mars 2026"}
           </div>
         </motion.div>
 
@@ -119,18 +135,20 @@ export default function Pricing() {
                 </p>
                 <div className="mt-6 flex items-baseline gap-2">
                   <span className="text-lg font-medium text-[#6B7280] line-through">
-                    {plan.oldPrice}&euro;
+                    {plan.oldPrice}{"\u20AC"}
                   </span>
                   <span className="text-5xl font-black tracking-tight text-[#111]">
                     {plan.price}
                   </span>
-                  <span className="text-lg font-medium text-[#6B7280]">&euro;</span>
+                  <span className="text-lg font-medium text-[#6B7280]">{"\u20AC"}</span>
                 </div>
                 <p className="text-sm text-[#6B7280] mt-1">{plan.period}</p>
               </div>
 
               <a
-                href="#"
+                href={plan.href || "#"}
+                target={plan.external ? "_blank" : undefined}
+                rel={plan.external ? "noopener noreferrer" : undefined}
                 className={`block w-full text-center rounded-full py-3.5 text-sm font-semibold transition-all ${
                   plan.popular
                     ? "bg-[#FF1744] text-white hover:bg-[#D50000] hover:shadow-lg hover:shadow-red-200"
@@ -204,7 +222,7 @@ export default function Pricing() {
               />
             </svg>
             <span className="text-sm font-medium">
-              Satisfait ou remboursé — 14 jours, sans condition
+              {"Satisfait ou rembours\u00e9 \u2014 14 jours, sans condition"}
             </span>
           </div>
         </motion.div>

@@ -1,40 +1,46 @@
 "use client";
 
-import { GlassCard } from "@/components/ui/GlassCard";
-import { Badge } from "@/components/ui/Badge";
-
 const resources = [
-  { icon: "📄", title: "PDFs & Guides", desc: "Fiches récapitulatives et guides pratiques" },
-  { icon: "📋", title: "Templates", desc: "Modèles de contrats, propositions et offres" },
-  { icon: "🔗", title: "Liens utiles", desc: "Outils, APIs et ressources externes" },
-  { icon: "🎬", title: "Videos bonus", desc: "Replays et tutoriels supplémentaires" },
-  { icon: "🧰", title: "Outils IA", desc: "Liste curatée des meilleurs outils IA" },
-  { icon: "📊", title: "Checklists", desc: "Listes de vérification par étape" },
+  { icon: "📄", title: "PDFs & Guides", desc: "Fiches récapitulatives et guides pratiques", color: "#6C5CE7" },
+  { icon: "📋", title: "Templates", desc: "Modèles de contrats, propositions et offres", color: "#FF6B6B" },
+  { icon: "🔗", title: "Liens utiles", desc: "Outils, APIs et ressources externes", color: "#0984E3" },
+  { icon: "🎬", title: "Videos bonus", desc: "Replays et tutoriels supplémentaires", color: "#00B894" },
+  { icon: "🧰", title: "Outils IA", desc: "Liste curatée des meilleurs outils IA", color: "#E84393" },
+  { icon: "📊", title: "Checklists", desc: "Listes de vérification par étape", color: "#FDCB6E" },
 ];
 
 export default function RessourcesPage() {
   return (
-    <div className="max-w-5xl">
+    <div className="w-full">
       <div className="mb-8">
-        <div className="flex items-center gap-3 mb-1">
-          <h1 className="text-2xl font-semibold tracking-tight">Ressources</h1>
-          <Badge>Bientôt</Badge>
-        </div>
-        <p className="text-sm text-white/40">
+        <h1 className="text-2xl font-semibold tracking-tight text-gray-900 mb-1">
+          Ressources
+        </h1>
+        <p className="text-sm text-gray-500">
           Toutes les ressources de la formation accessibles en un endroit.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {resources.map((r) => (
-          <GlassCard key={r.title} className="p-6">
-            <span className="text-2xl mb-3 block">{r.icon}</span>
-            <h3 className="font-semibold text-sm mb-1">{r.title}</h3>
-            <p className="text-xs text-white/35">{r.desc}</p>
-            <span className="inline-block mt-3 text-[9px] font-semibold text-white/30 bg-white/[0.06] px-2 py-0.5 rounded-full">
+          <div
+            key={r.title}
+            className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer group"
+          >
+            <div
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-4"
+              style={{ background: `${r.color}15` }}
+            >
+              {r.icon}
+            </div>
+            <h3 className="font-semibold text-sm text-gray-900 mb-1 group-hover:text-[#FF1744] transition-colors duration-200">
+              {r.title}
+            </h3>
+            <p className="text-xs text-gray-500 leading-relaxed">{r.desc}</p>
+            <span className="inline-block mt-3 text-[10px] font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
               Bientôt disponible
             </span>
-          </GlassCard>
+          </div>
         ))}
       </div>
     </div>
