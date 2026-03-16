@@ -98,7 +98,7 @@ export default function ProcessSteps() {
           className="text-center mt-16"
         >
           {/* Floating video behind */}
-          <div className="relative w-36 sm:w-44 -mb-14 overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
+          <div className="relative w-36 sm:w-44 -mb-14 mx-auto overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
             <video autoPlay loop muted playsInline className="w-full h-auto block" style={{ display: 'none' }} onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}>
               <source src="/images/floatting.mp4" type="video/mp4" />
             </video>
