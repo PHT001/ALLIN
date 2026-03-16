@@ -12,7 +12,7 @@ function TypewriterWord({ word }: { word: string }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="inline-flex text-[#007AFF]"
+      className="inline-flex text-red-600"
     >
       {word.split("").map((char, i) => (
         <motion.span
