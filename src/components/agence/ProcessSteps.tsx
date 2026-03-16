@@ -104,7 +104,7 @@ export default function ProcessSteps() {
             </video>
           </div>
           <a
-            href="#calendly"
+            href="https://calendly.com/opexiapro/audit-ia-gratuit"
             className="relative z-10 inline-flex items-center justify-center rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#0055D4] hover:shadow-xl hover:shadow-blue-200"
           >
             {"Réserver mon audit gratuit"}

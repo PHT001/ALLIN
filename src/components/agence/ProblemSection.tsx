@@ -111,34 +111,6 @@ export default function ProblemSection() {
           ))}
         </motion.div>
 
-        {/* Big stat banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl bg-[#0A0A0A] p-6 sm:p-10 max-w-3xl mx-auto text-center"
-        >
-          <p className="text-white/40 text-xs uppercase tracking-wider mb-2">En moyenne</p>
-          <p className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#007AFF] leading-none">
-            <AnimatedCounter target={72} suffix="K€" />
-          </p>
-          <p className="text-white/40 text-sm sm:text-base mt-3">perdus par an en t&acirc;ches automatisables pour une PME de 10 salari&eacute;s</p>
-          <div className="h-px w-full bg-white/10 my-5" />
-          <p className="text-white/60 text-sm sm:text-base leading-relaxed">
-            Vos concurrents automatisent d&eacute;j&agrave;. <strong className="text-white">Chaque semaine qui passe creuse l&apos;&eacute;cart.</strong>
-          </p>
-          <div className="mt-5">
-            <a
-              href="#calendly"
-              className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#0055D4] transition-all"
-            >
-              R&eacute;server mon audit gratuit
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

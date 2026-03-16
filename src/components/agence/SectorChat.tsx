@@ -327,7 +327,7 @@ export default function SectorChat() {
                               className="flex flex-col sm:flex-row items-center gap-3 mt-3"
                             >
                               <a
-                                href="#calendly"
+                                href="https://calendly.com/opexiapro/audit-ia-gratuit"
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-lg hover:shadow-blue-200"
                               >
                                 Réserver mon audit gratuit

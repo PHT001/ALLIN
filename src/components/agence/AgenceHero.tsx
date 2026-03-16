@@ -93,7 +93,7 @@ export default function AgenceHero() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
             >
               <a
-                href="#calendly"
+                href="https://calendly.com/opexiapro/audit-ia-gratuit"
                 className="group inline-flex items-center justify-center rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#0055D4] hover:shadow-xl hover:shadow-blue-200"
               >
                 R&eacute;server mon audit gratuit

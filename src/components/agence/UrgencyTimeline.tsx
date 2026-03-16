@@ -91,7 +91,7 @@ export default function UrgencyTimeline() {
           className="text-center mt-14"
         >
           <a
-            href="#calendly"
+            href="https://calendly.com/opexiapro/audit-ia-gratuit"
             className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-900/30"
           >
             R&eacute;server mon audit gratuit

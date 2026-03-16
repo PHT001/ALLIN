@@ -23,7 +23,7 @@ export default function AgenceStickyMobileCTA() {
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden"
         >
           <a
-            href="#calendly"
+            href="https://calendly.com/opexiapro/audit-ia-gratuit"
             className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3.5 text-sm font-bold text-white shadow-2xl shadow-blue-900/40"
           >
             Audit gratuit
