@@ -98,14 +98,14 @@ export default function ProcessSteps() {
           className="text-center mt-16"
         >
           {/* Floating video behind */}
-          <div className="relative w-36 sm:w-44 -mb-14 mx-auto overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
+          <div className="relative z-0 w-36 sm:w-44 -mb-14 mx-auto overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
             <video autoPlay loop muted playsInline className="w-full h-auto block" style={{ display: 'none' }} onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}>
               <source src="/images/floatting.mp4" type="video/mp4" />
             </video>
           </div>
           <a
             href="#calendly"
-            className="inline-flex items-center justify-center rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#0055D4] hover:shadow-xl hover:shadow-blue-200"
+            className="relative z-10 inline-flex items-center justify-center rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#0055D4] hover:shadow-xl hover:shadow-blue-200"
           >
             {"Commencer par l'audit gratuit"}
             <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
