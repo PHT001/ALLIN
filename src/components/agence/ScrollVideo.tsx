@@ -31,8 +31,11 @@ export default function ScrollVideo() {
       const ctx = offscreen.getContext("2d")!;
       const frames: ImageData[] = [];
 
+      const startTime = 0.6; // skip first 0.6s (blue border)
+      const usableDuration = duration - startTime;
+
       for (let i = 0; i < TOTAL_FRAMES; i++) {
-        video.currentTime = (i / (TOTAL_FRAMES - 1)) * duration;
+        video.currentTime = startTime + (i / (TOTAL_FRAMES - 1)) * usableDuration;
         await new Promise<void>((resolve) => { video.onseeked = () => resolve(); });
         ctx.drawImage(video, 0, 0, w, h);
         frames.push(ctx.getImageData(0, 0, w, h));
