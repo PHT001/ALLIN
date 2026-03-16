@@ -53,7 +53,7 @@ export default function TestimonialsPage() {
           <ScrollFadeIn key={t.name} delay={i * 80}>
             <GlassCard className="p-6 flex flex-col h-full">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-white/10 ring-1 ring-white/15 flex items-center justify-center text-sm font-bold text-white">
+                <div className="w-10 h-10 rounded-full ring-1 ring-white/15 flex items-center justify-center text-sm font-bold text-white" style={{ background: `linear-gradient(135deg, ${['#007AFF,#64D2FF','#FF6B6B,#FFE66D','#A855F7,#EC4899','#10B981,#34D399','#F59E0B,#FBBF24','#6366F1,#818CF8'][i % 6]})` }}>
                   {t.name[0]}
                 </div>
                 <div>

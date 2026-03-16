@@ -68,89 +68,76 @@ const painPoints = [
 
 export default function ProblemSection() {
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
-      <div className="relative mx-auto max-w-5xl px-6 lg:px-8">
-        {/* Header — centered, punchy */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold text-[#007AFF] uppercase tracking-wider mb-4">
+    <section className="relative bg-white py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-10 sm:mb-16">
+          <span className="inline-block text-sm font-semibold text-[#007AFF] uppercase tracking-wider mb-3">
             Le probl&egrave;me
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
             Vous perdez du temps et de l&apos;argent{" "}
             <span className="text-[#9CA3AF]">sans le savoir.</span>
           </h2>
-        </motion.div>
+        </div>
 
-        {/* Horloge video */}
+        {/* Horloge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-10"
+          className="flex justify-center mb-10 sm:mb-14"
         >
-          <div className="relative w-40 sm:w-48 overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
+          <div className="relative w-24 sm:w-36 overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
             <LazyVideo src="/images/horloge.mp4" className="w-full h-auto" />
           </div>
         </motion.div>
 
-        {/* 3 pain point cards — clean, same style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
+        {/* Pain points — inline stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-row items-start justify-center gap-6 sm:gap-12 lg:gap-20 mb-8 sm:mb-12 max-w-3xl mx-auto"
+        >
           {painPoints.map((point, i) => (
-            <motion.div
-              key={point.stat}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative rounded-2xl bg-[#F7F8FA] border border-gray-100 p-7 text-center group hover:border-[#007AFF]/20 transition-all duration-300"
-            >
-              <div className="flex justify-center mb-4">
-                <div className="h-11 w-11 rounded-xl bg-[#007AFF]/10 flex items-center justify-center">
-                  {point.icon}
-                </div>
-              </div>
-              <p className="text-4xl lg:text-5xl font-black text-[#111] leading-none">
+            <div key={point.stat} className="flex flex-col items-center text-center flex-1">
+              <p className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#111] leading-none">
                 {point.stat}
-                <span className="text-lg font-semibold text-[#6B7280] ml-1">{point.unit}</span>
               </p>
-              <p className="text-[#6B7280] text-sm mt-3 leading-relaxed">{point.label}</p>
-            </motion.div>
+              <p className="text-xs sm:text-sm font-semibold text-[#007AFF] mt-1">{point.unit}</p>
+              <p className="text-[#9CA3AF] text-xs sm:text-sm mt-2 leading-snug">{point.label}</p>
+            </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Big stat banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl bg-[#0A0A0A] p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8"
+          className="rounded-2xl bg-[#0A0A0A] p-6 sm:p-10 max-w-3xl mx-auto text-center"
         >
-          <div className="text-center md:text-left">
-            <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Pourtant</p>
-            <p className="text-4xl lg:text-6xl font-black text-[#007AFF] leading-none">
-              <AnimatedCounter target={88} suffix="%" />
-            </p>
-            <p className="text-white/40 text-sm mt-1">des entreprises IA voient leur CA augmenter</p>
-            <p className="text-[#007AFF]/50 text-xs mt-2 font-medium">Source : NVIDIA, State of AI Report, 2026</p>
-          </div>
-          <div className="hidden md:block h-16 w-px bg-white/10" />
-          <p className="text-white/60 text-base max-w-sm text-center md:text-left leading-relaxed">
+          <p className="text-white/40 text-xs uppercase tracking-wider mb-2">En moyenne</p>
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#007AFF] leading-none">
+            <AnimatedCounter target={72} suffix="K€" />
+          </p>
+          <p className="text-white/40 text-sm sm:text-base mt-3">perdus par an en t&acirc;ches automatisables pour une PME de 10 salari&eacute;s</p>
+          <div className="h-px w-full bg-white/10 my-5" />
+          <p className="text-white/60 text-sm sm:text-base leading-relaxed">
             Vos concurrents automatisent d&eacute;j&agrave;. <strong className="text-white">Chaque semaine qui passe creuse l&apos;&eacute;cart.</strong>
           </p>
-          <a
-            href="#calendly"
-            className="flex-shrink-0 inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0055D4] transition-all"
-          >
-            Lancer mon audit
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          <div className="mt-5">
+            <a
+              href="#calendly"
+              className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#0055D4] transition-all"
+            >
+              R&eacute;server mon audit gratuit
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

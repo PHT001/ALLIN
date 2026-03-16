@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import LazyVideo from "@/components/ui/LazyVideo";
 
 const rotatingWords = ["automatisent", "économisent", "accélèrent", "scalent"];
 
@@ -82,7 +83,7 @@ export default function AgenceHero() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg text-[#6B7280] max-w-lg mx-auto mb-8 leading-relaxed"
             >
-              On installe l&apos;IA dans votre entreprise pour &eacute;liminer les t&acirc;ches r&eacute;p&eacute;titives et lib&eacute;rer votre &eacute;quipe — en 30 jours, cl&eacute; en main.
+              On installe l&apos;IA dans votre entreprise pour <strong className="font-semibold text-[#374151]">&eacute;liminer les t&acirc;ches r&eacute;p&eacute;titives</strong> et <strong className="font-semibold text-[#374151]">lib&eacute;rer votre &eacute;quipe</strong> — en <strong className="font-semibold text-[#374151]">30 jours</strong>, cl&eacute; en main.
             </motion.p>
 
             <motion.div
@@ -103,6 +104,18 @@ export default function AgenceHero() {
               <a href="#resultats" className="text-[#6B7280] text-sm font-medium hover:text-[#111] transition-colors flex items-center gap-1.5 py-4">
                 Voir les r&eacute;sultats &darr;
               </a>
+            </motion.div>
+
+            {/* Robot mascot video */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.45, duration: 0.6 }}
+              className="flex justify-center mb-8"
+            >
+              <div className="w-44 sm:w-56" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
+                <LazyVideo src="/images/iphone.mp4" className="w-full h-auto" />
+              </div>
             </motion.div>
 
             {/* Founders trust badge */}
@@ -142,7 +155,7 @@ export default function AgenceHero() {
               className="flex justify-center gap-8 border-t border-gray-200 pt-6"
             >
               {[
-                { num: "47", label: "entreprises" },
+                { num: "200+", label: "entreprises" },
                 { num: "2 400h", label: "économisées/mois" },
                 { num: "30j", label: "pour déployer" },
               ].map((stat) => (

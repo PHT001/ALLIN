@@ -22,9 +22,9 @@ export default function AgenceFinalCTA() {
           </h2>
 
           <p className="mt-6 text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">
-            30 minutes pour d&eacute;couvrir ce que l&apos;IA peut changer dans votre business.
+            <strong className="font-semibold text-gray-300">1 heure</strong> pour d&eacute;couvrir ce que l&apos;IA peut changer dans votre business.
             <br />
-            Gratuit. Sans engagement.
+            <strong className="font-semibold text-gray-300">Gratuit</strong>. <strong className="font-semibold text-gray-300">Sans engagement</strong>.
           </p>
 
           <div className="mt-10">
@@ -40,7 +40,7 @@ export default function AgenceFinalCTA() {
           </div>
 
           <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-            {["30 min", "Gratuit", "Sans engagement", "En visio"].map((item) => (
+            {["1h", "Gratuit", "Sans engagement", "En visio"].map((item) => (
               <span key={item} className="flex items-center gap-1.5">
                 <svg className="h-3.5 w-3.5 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

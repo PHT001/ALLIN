@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+
 
 export default function FormationBridge() {
   return (
@@ -39,13 +39,13 @@ export default function FormationBridge() {
               </h2>
 
               <p className="mt-4 text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
-                On a cr&eacute;&eacute; une formation compl&egrave;te pour ma&icirc;triser l&apos;IA dans votre business — m&ecirc;me si vous partez de z&eacute;ro. 15 modules, 86 le&ccedil;ons, un assistant IA int&eacute;gr&eacute;.
+                On a créé une <strong className="font-semibold text-white/70">formation complète</strong> pour <strong className="font-semibold text-white/70">maîtriser l&apos;IA</strong> dans votre business — même si vous partez de zéro. <strong className="font-semibold text-white/70">15 modules</strong>, <strong className="font-semibold text-white/70">+100 leçons</strong>, un <strong className="font-semibold text-white/70">assistant IA intégré</strong>.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-4">
                 {[
                   "15 modules structurés",
-                  "74 leçons interactives",
+                  "+100 leçons interactives",
                   "Assistant IA intégré",
                   "Accès à vie",
                 ].map((item) => (
@@ -62,15 +62,18 @@ export default function FormationBridge() {
               </div>
 
               <div className="mt-8">
-                <Link
+                <a
                   href="/formation"
                   className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0055D4] hover:shadow-lg hover:shadow-blue-500/25 transition-all"
                 >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
                   D&eacute;couvrir la formation
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

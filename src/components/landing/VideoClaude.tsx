@@ -18,6 +18,8 @@ export default function VideoClaude() {
               muted
               playsInline
               className="w-full h-auto"
+              style={{ display: 'none' }}
+              onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}
             >
               <source src="/images/videoclaude.mp4" type="video/mp4" />
             </video>

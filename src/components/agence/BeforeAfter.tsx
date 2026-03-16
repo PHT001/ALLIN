@@ -60,7 +60,7 @@ export default function BeforeAfter() {
   const current = cases[activeCase];
 
   return (
-    <section id="resultats" className="py-20 lg:py-28 bg-[#F8F9FA]">
+    <section id="resultats" className="py-20 lg:py-28 bg-[#F8F9FA] scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -230,6 +230,19 @@ export default function BeforeAfter() {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-10">
+            <a
+              href="#calendly"
+              className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-200"
+            >
+              R&eacute;server mon audit gratuit
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

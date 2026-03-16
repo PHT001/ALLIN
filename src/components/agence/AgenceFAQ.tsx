@@ -1,36 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const faqs = [
+const B = ({ children }: { children: ReactNode }) => (
+  <strong className="font-semibold text-[#374151]">{children}</strong>
+);
+
+const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "Est-ce que l'IA va remplacer mes employés ?",
-    a: "Non. L'IA ne remplace pas vos équipes — elle les libère des tâches répétitives et chronophages. Vos collaborateurs pourront se concentrer sur ce qui a vraiment de la valeur : la relation client, la stratégie, la créativité. C'est un multiplicateur de force, pas un remplacement.",
+    a: <>Non. L&apos;IA ne remplace pas vos équipes — elle les <B>libère des tâches répétitives</B> et chronophages. Vos collaborateurs pourront se concentrer sur ce qui a vraiment de la valeur : la <B>relation client</B>, la <B>stratégie</B>, la <B>créativité</B>. C&apos;est un <B>multiplicateur de force</B>, pas un remplacement.</>,
   },
   {
     q: "C'est compliqué à mettre en place ?",
-    a: "Pas du tout. On s'occupe de tout : installation, configuration, tests, formation de vos équipes. Vous n'avez rien à installer, rien à coder, rien à maintenir. Notre objectif est que vos systèmes tournent en 30 jours, sans friction.",
+    a: <>Pas du tout. On s&apos;occupe de tout : installation, configuration, tests, formation de vos équipes. Vous n&apos;avez <B>rien à installer</B>, rien à coder, rien à maintenir. Notre objectif est que vos systèmes tournent en <B>30 jours</B>, sans friction.</>,
   },
   {
     q: "Combien ça coûte ?",
-    a: "Chaque projet est sur-mesure, donc le coût dépend de vos besoins. L'audit gratuit de 30 minutes permet de chiffrer précisément : combien ça coûte ET combien ça vous fait économiser. La plupart de nos clients ont un ROI positif dès le premier mois.",
+    a: <>Chaque projet est <B>sur-mesure</B>, donc le coût dépend de vos besoins. L&apos;<B>audit gratuit d&apos;1 heure</B> permet de chiffrer précisément : combien ça coûte ET combien ça vous fait économiser. La plupart de nos clients ont un <B>ROI positif dès le premier mois</B>.</>,
   },
   {
     q: "Et si ça ne marche pas ?",
-    a: "On garantit des résultats mesurables. On définit ensemble des KPIs clairs avant de commencer (temps gagné, coûts réduits, taux de conversion). Si les objectifs ne sont pas atteints, on ajuste jusqu'à ce que ça fonctionne.",
+    a: <>On garantit des <B>résultats mesurables</B>. On définit ensemble des <B>KPIs clairs</B> avant de commencer (temps gagné, coûts réduits, taux de conversion). Si les objectifs ne sont pas atteints, on ajuste jusqu&apos;à ce que ça fonctionne.</>,
   },
   {
     q: "Mon secteur est trop spécifique pour l'IA",
-    a: "On a accompagné plus de 15 secteurs différents : BTP, immobilier, santé, e-commerce, restauration, logistique, cabinets comptables... L'IA s'adapte à tout. Et c'est justement notre job de l'adapter à votre métier.",
+    a: <>On a accompagné plus de <B>15 secteurs différents</B> : BTP, immobilier, santé, e-commerce, restauration, logistique, cabinets comptables... <B>L&apos;IA s&apos;adapte à tout</B>. Et c&apos;est justement notre job de l&apos;adapter à votre métier.</>,
   },
   {
     q: "Je n'y connais rien en IA",
-    a: "C'est exactement pour ça qu'on existe. Zéro jargon technique, que du concret. On vous explique tout en termes de résultats business : temps gagné, argent économisé, clients gagnés. Pas besoin de comprendre comment ça marche sous le capot.",
+    a: <>C&apos;est exactement pour ça qu&apos;on existe. <B>Zéro jargon technique</B>, que du concret. On vous explique tout en termes de <B>résultats business</B> : temps gagné, argent économisé, clients gagnés. Pas besoin de comprendre comment ça marche sous le capot.</>,
   },
 ];
 
-function FAQItem({ q, a }: { q: string; a: string }) {
+function FAQItem({ q, a }: { q: string; a: ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -71,7 +75,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function AgenceFAQ() {
   return (
-    <section id="faq" className="py-16 lg:py-20 bg-white">
+    <section id="faq" className="py-16 lg:py-20 bg-white scroll-mt-20">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

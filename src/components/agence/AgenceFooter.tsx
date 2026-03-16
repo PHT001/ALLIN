@@ -5,7 +5,7 @@ const footerLinks = [
   { label: "Résultats", href: "#resultats" },
   { label: "Processus", href: "#process" },
   { label: "FAQ", href: "#faq" },
-  { label: "Formation", href: "/" },
+  { label: "Formation", href: "/formation" },
 ];
 
 export default function AgenceFooter() {

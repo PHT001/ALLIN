@@ -12,7 +12,7 @@ export default function ScrollVideo() {
 
   useEffect(() => {
     const video = document.createElement("video");
-    video.src = "/images/desk-transform.mp4";
+    video.src = "/images/videoav.mp4";
     video.muted = true;
     video.playsInline = true;
     video.preload = "auto";
@@ -31,8 +31,8 @@ export default function ScrollVideo() {
       const ctx = offscreen.getContext("2d")!;
       const frames: ImageData[] = [];
 
-      const startTime = 0.6; // skip first 0.6s (blue border)
-      const usableDuration = duration - startTime;
+      const startTime = 0;
+      const usableDuration = duration;
 
       for (let i = 0; i < TOTAL_FRAMES; i++) {
         video.currentTime = startTime + (i / (TOTAL_FRAMES - 1)) * usableDuration;

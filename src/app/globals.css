@@ -224,6 +224,11 @@ body {
   50% { opacity: 0.14; transform: scale(1.05); }
 }
 
+@keyframes pulse-border {
+  0%, 100% { border-color: #e5e7eb; box-shadow: none; }
+  50% { border-color: #007AFF; box-shadow: 0 0 12px -2px rgba(0,122,255,0.4); }
+}
+
 @keyframes orb-float {
   0% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(30px, -20px) scale(1.02); }

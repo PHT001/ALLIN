@@ -66,6 +66,8 @@ export default function Hero() {
                     muted
                     playsInline
                     className="w-full h-full object-contain"
+                    style={{ display: 'none' }}
+                    onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}
                   />
                 </motion.div>
 
@@ -137,6 +139,7 @@ export default function Hero() {
                     alt="Marius"
                     width={40}
                     height={40}
+                    priority
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -146,6 +149,7 @@ export default function Hero() {
                     alt="Igor"
                     width={40}
                     height={40}
+                    priority
                     className="h-full w-full object-cover"
                   />
                 </div>

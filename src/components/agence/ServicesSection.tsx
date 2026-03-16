@@ -76,10 +76,6 @@ export default function ServicesSection() {
           <span className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
             Nos services
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
-            {"On installe l'IA dans votre entreprise. "}
-            <span className="text-white/30">{"Cl\u00e9 en main."}</span>
-          </h2>
         </motion.div>
 
         {/* Accordion + Detail panel — same layout on all screens */}

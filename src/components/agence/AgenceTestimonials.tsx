@@ -40,7 +40,7 @@ const testimonials = [
     sector: "Tech",
   },
   {
-    quote: "L'audit gratuit m'a ouvert les yeux. En 30 minutes ils avaient identifié 50h/mois d'économies potentielles.",
+    quote: "L'audit gratuit m'a ouvert les yeux. En 1h ils avaient identifié 50h/mois d'économies potentielles.",
     name: "David Hoffmann",
     role: "DG — Groupe hôtelier, Côte d'Azur",
     result: "50h/mois identifiées",
@@ -91,7 +91,7 @@ export default function AgenceTestimonials() {
                 <span className="text-[#9CA3AF]">nos clients</span>
               </h2>
               <p className="mt-4 text-lg text-[#6B7280]">
-                +47 entreprises accompagn&eacute;es dans leur transformation IA.
+                +200 entreprises accompagn&eacute;es dans leur transformation IA.
               </p>
             </motion.div>
 
@@ -188,6 +188,19 @@ export default function AgenceTestimonials() {
               </button>
             </div>
           </div>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-16">
+          <a
+            href="#calendly"
+            className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-200"
+          >
+            Ces r&eacute;sultats vous parlent ? R&eacute;servez votre audit
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

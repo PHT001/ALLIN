@@ -115,7 +115,7 @@ function TestimonialCard({ t }: { t: typeof row1[0] }) {
     <div className="flex-shrink-0 w-[320px] sm:w-[380px] bg-white rounded-2xl border border-gray-100 p-6 mx-3">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center font-semibold text-gray-500 text-sm">
+          <div className="h-10 w-10 rounded-full flex items-center justify-center font-semibold text-white text-sm" style={{ background: `linear-gradient(135deg, ${['#007AFF,#64D2FF','#FF6B6B,#FFE66D','#A855F7,#EC4899','#10B981,#34D399','#F59E0B,#FBBF24','#6366F1,#818CF8','#EF4444,#F97316','#14B8A6,#5EEAD4','#8B5CF6,#C084FC','#EC4899,#F472B6'][[...t.name].reduce((a,c)=>a+c.charCodeAt(0),0) % 10]})` }}>
             {t.name[0]}
           </div>
           <div>

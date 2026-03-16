@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface Message {
   role: "bot" | "user";
@@ -13,7 +14,7 @@ const faqData: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["prix", "tarif", "combien", "coût", "cher", "budget", "devis"],
     answer:
-      "Chaque projet est unique. On propose un audit gratuit de 30 min pour comprendre vos besoins et vous donner un devis précis. Les projets démarrent généralement à partir de 500€.",
+      "Chaque projet est unique. On propose un audit gratuit d'1h pour comprendre vos besoins et vous donner un devis précis. Les projets démarrent généralement à partir de 500€.",
   },
   {
     keywords: ["chatbot", "chat", "bot", "assistant"],
@@ -43,7 +44,7 @@ const faqData: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["audit", "gratuit", "rdv", "rendez-vous", "appel", "calendly"],
     answer:
-      "L'audit gratuit dure 30 min. On analyse vos process, identifie les gains possibles avec l'IA, et vous propose un plan d'action concret. Sans engagement.",
+      "L'audit gratuit dure 1h. On analyse vos process, identifie les gains possibles avec l'IA, et vous propose un plan d'action concret. Sans engagement.",
   },
   {
     keywords: ["formation", "former", "apprendre", "cours", "programme"],
@@ -66,7 +67,7 @@ function findAnswer(input: string): { text: string; link?: { label: string; href
     }
   }
   return {
-    text: "Bonne question ! Pour une réponse personnalisée, réservez votre audit gratuit de 30 min. On analysera votre situation en détail.",
+    text: "Bonne question ! Pour une réponse personnalisée, réservez votre audit gratuit d'1h. On analysera votre situation en détail.",
   };
 }
 
@@ -175,8 +176,8 @@ export default function AgenceChatbot() {
           >
             {/* Header */}
             <div className="bg-[#0A0A0A] px-5 py-4 flex items-center gap-3">
-              <div className="h-9 w-9 rounded-full bg-[#007AFF] flex items-center justify-center text-white text-sm font-bold">
-                IA
+              <div className="h-9 w-9 rounded-full overflow-hidden flex-shrink-0">
+                <Image src="/images/logobleu.png" alt="OpexIA" width={36} height={36} className="h-full w-full object-cover" />
               </div>
               <div>
                 <p className="text-white text-sm font-semibold">Assistant OpexIA</p>

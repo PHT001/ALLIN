@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 type Phase = "question" | "typing" | "results";
 
@@ -156,12 +157,12 @@ export default function SectorChat() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="bg-white rounded-3xl shadow-lg shadow-black/[0.04] border border-gray-100 overflow-hidden"
+          className="relative bg-white rounded-3xl shadow-[0_0_40px_-5px_rgba(0,122,255,0.25)] border border-blue-100/60 overflow-hidden"
         >
           {/* Chat header bar */}
           <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-[#FAFAFA]">
-            <div className="w-9 h-9 rounded-full bg-[#007AFF] flex items-center justify-center text-white text-sm font-bold">
-              IA
+            <div className="w-9 h-9 rounded-full overflow-hidden flex-shrink-0">
+              <Image src="/images/logobleu.png" alt="OpexIA" width={36} height={36} className="h-full w-full object-cover" />
             </div>
             <div>
               <p className="text-sm font-semibold text-[#111]">OpexIA</p>
@@ -196,21 +197,41 @@ export default function SectorChat() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0, transition: { duration: 0.2 } }}
-                  className="flex flex-wrap gap-2 mb-4"
+                  className="flex flex-col gap-3 mb-4"
                 >
-                  {sectors.map((sector, i) => (
-                    <motion.button
-                      key={sector.name}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15 + i * 0.06 }}
-                      onClick={() => handleSelect(sector)}
-                      className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-[#374151] hover:border-[#007AFF] hover:text-[#007AFF] hover:bg-blue-50/50 transition-all cursor-pointer active:scale-95"
-                    >
-                      <span className="text-base">{sector.icon}</span>
-                      {sector.name}
-                    </motion.button>
-                  ))}
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-xs text-[#9CA3AF] flex items-center gap-1.5"
+                  >
+                    <svg className="h-3.5 w-3.5 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                    </svg>
+                    Cliquez sur votre secteur pour voir les résultats
+                  </motion.p>
+                  <div className="flex flex-wrap gap-2">
+                    {sectors.map((sector, i) => (
+                      <motion.button
+                        key={sector.name}
+                        initial={{ opacity: 0, scale: 0.3, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{
+                          delay: 0.4 + i * 0.12,
+                          type: "spring",
+                          stiffness: 260,
+                          damping: 15
+                        }}
+                        onClick={() => handleSelect(sector)}
+                        whileHover={{ scale: 1.06, y: -3 }}
+                        whileTap={{ scale: 0.94 }}
+                        className={`inline-flex items-center gap-2 rounded-full border-2 border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-[#374151] hover:border-[#007AFF] hover:text-[#007AFF] hover:bg-blue-50/50 hover:shadow-md hover:shadow-blue-100/50 transition-all cursor-pointer ${i === 0 ? "animate-[pulse-border_2s_ease-in-out_infinite_1.5s]" : ""}`}
+                      >
+                        <span className="text-base">{sector.icon}</span>
+                        {sector.name}
+                      </motion.button>
+                    ))}
+                  </div>
                 </motion.div>
               )}
 

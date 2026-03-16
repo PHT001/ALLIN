@@ -8,27 +8,27 @@ import DeployAnimation from "./DeployAnimation";
 const steps = [
   {
     num: "01",
-    title: "Audit gratuit (30 min)",
-    desc: "On analyse vos process actuels et on identifie les quick wins IA. Vous repartez avec une cartographie claire de ce qui peut \u00eatre automatis\u00e9 \u2014 et combien \u00e7a vous fait gagner.",
+    title: "Audit gratuit (1h)",
+    desc: <>On analyse vos process actuels et on identifie les <strong className="font-semibold text-[#374151]">quick wins IA</strong>. Vous repartez avec une <strong className="font-semibold text-[#374151]">cartographie claire</strong> de ce qui peut être automatisé — et combien ça vous fait gagner.</>,
     features: ["Analyse de vos workflows", "D\u00e9tection des goulots", "Chiffrage du potentiel"],
   },
   {
     num: "02",
     title: "Plan d'action sur-mesure",
-    desc: "On vous pr\u00e9sente exactement quoi automatiser, combien \u00e7a co\u00fbte, et combien \u00e7a rapporte. Pas de jargon, que du concret avec un ROI clair.",
+    desc: <>On vous présente exactement quoi automatiser, combien ça coûte, et combien ça rapporte. <strong className="font-semibold text-[#374151]">Pas de jargon</strong>, que du concret avec un <strong className="font-semibold text-[#374151]">ROI clair</strong>.</>,
     features: ["Roadmap personnalis\u00e9e", "ROI d\u00e9taill\u00e9 par action", "Priorisation par impact"],
   },
   {
     num: "03",
     title: "Installation & Formation",
-    desc: "On d\u00e9ploie les syst\u00e8mes IA, on teste, on forme votre \u00e9quipe. Vous n'avez rien \u00e0 faire. En 30 jours, tout tourne.",
+    desc: <>On déploie les systèmes IA, on teste, on forme votre équipe. <strong className="font-semibold text-[#374151]">Vous n&apos;avez rien à faire</strong>. En <strong className="font-semibold text-[#374151]">30 jours</strong>, tout tourne.</>,
     features: ["D\u00e9ploiement cl\u00e9 en main", "Formation de vos \u00e9quipes", "Support continu"],
   },
 ];
 
 export default function ProcessSteps() {
   return (
-    <section id="process" className="pt-16 lg:pt-20 pb-10 lg:pb-12 bg-white">
+    <section id="process" className="pt-16 lg:pt-20 pb-10 lg:pb-12 bg-white scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function ProcessSteps() {
             {"3 \u00e9tapes. 30 jours. C'est tout."}
           </h2>
           <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
-            {"On s'occupe de tout. Votre \u00e9quipe n'a rien \u00e0 installer, rien \u00e0 configurer."}
+            On s&apos;occupe de tout. Votre équipe n&apos;a <strong className="font-semibold text-[#374151]">rien à installer</strong>, <strong className="font-semibold text-[#374151]">rien à configurer</strong>.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ export default function ProcessSteps() {
             href="#calendly"
             className="relative z-10 inline-flex items-center justify-center rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#0055D4] hover:shadow-xl hover:shadow-blue-200"
           >
-            {"Commencer par l'audit gratuit"}
+            {"Réserver mon audit gratuit"}
             <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
