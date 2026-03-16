@@ -99,7 +99,7 @@ export default function ProcessSteps() {
         >
           {/* Floating video behind button */}
           <div className="relative inline-block">
-            <div className="absolute left-1/2 -translate-x-1/2 bottom-2 z-0 w-36 sm:w-44">
+            <div className="absolute left-1/2 -translate-x-1/2 bottom-2 z-0 w-36 sm:w-44 overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
               <video autoPlay loop muted playsInline className="w-full h-auto block" style={{ display: 'none' }} onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}>
                 <source src="/images/floatting.mp4" type="video/mp4" />
               </video>
