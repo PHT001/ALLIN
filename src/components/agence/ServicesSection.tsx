@@ -90,9 +90,8 @@ export default function ServicesSection() {
               <motion.button
                 key={service.title}
                 initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.08 }}
                 onClick={() => setActiveIndex(i)}
                 className={`w-full text-left rounded-2xl px-5 py-4 transition-all duration-300 cursor-pointer group ${
                   activeIndex === i
@@ -110,9 +109,8 @@ export default function ServicesSection() {
                   />
                   <div className="flex-1 min-w-0">
                     <h3
-                      className={`text-sm sm:text-base font-semibold transition-colors duration-300 ${
-                        activeIndex === i ? "text-white" : "text-white/40 group-hover:text-white/60"
-                      }`}
+                      className="text-sm sm:text-base font-semibold transition-colors duration-300"
+                      style={{ color: activeIndex === i ? "#ffffff" : "rgba(255,255,255,0.4)" }}
                     >
                       {service.title}
                     </h3>
