@@ -105,24 +105,29 @@ export default function AgenceHero() {
               </a>
             </motion.div>
 
-            {/* iPhone video — hidden if file missing */}
+            {/* Before/After desk transformation video */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.4 }}
               className="mb-8 flex justify-center"
             >
-              <div className="relative w-48 sm:w-56 overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)' }}>
+              <div className="relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl shadow-black/10">
+                {/* Labels */}
+                <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-red-500/90 text-white text-xs font-bold backdrop-blur-sm">Avant</span>
+                </div>
+                <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold backdrop-blur-sm">Apr&egrave;s</span>
+                </div>
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
                   className="w-full h-auto block"
-                  style={{ display: 'none' }}
-                  onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}
                 >
-                  <source src="/images/iphone.mp4" type="video/mp4" />
+                  <source src="/images/desk-transform.mp4" type="video/mp4" />
                 </video>
               </div>
             </motion.div>
