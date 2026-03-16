@@ -19,11 +19,11 @@ import ScrollVideo from "@/components/agence/ScrollVideo";
 export default function Home() {
   return (
     <>
-      <ScrollVideo />
       <AgenceNavbar />
       <AgenceHero />
       <SectorChat />
       <ProblemSection />
+      <ScrollVideo />
       <UrgencyTimeline />
       <ServicesSection />
       <ProcessSteps />
