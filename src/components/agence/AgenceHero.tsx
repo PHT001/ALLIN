@@ -90,10 +90,9 @@ export default function AgenceHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6"
+              className="text-[28px] sm:text-5xl lg:text-[52px] font-bold leading-[1.15] tracking-tight mb-6"
             >
-              OpexIA, l&apos;agence qui
-              <br />
+              OpexIA, l&apos;agence qui{" "}
               <span className="inline-block">
                 <AnimatePresence mode="wait">
                   <TypewriterWord key={wordIndex} word={rotatingWords[wordIndex]} />
