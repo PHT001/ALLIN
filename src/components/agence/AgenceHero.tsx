@@ -119,7 +119,7 @@ export default function AgenceHero() {
             >
               <Image src="/images/customers.webp" alt="Customers" width={100} height={28} className="h-7 w-auto" />
               <span className="text-sm text-[#6B7280]">
-                <strong className="font-semibold text-[#111]">4.9</strong>/5 from <strong className="font-semibold text-[#111]">1783</strong> customers
+                <strong className="font-semibold text-[#111]">4.9</strong>/5 par <strong className="font-semibold text-[#111]">1783</strong> clients
               </span>
               <Image src="/images/blue-badge.svg" alt="Verified" width={18} height={18} className="h-[18px] w-[18px]" />
             </motion.div>
