@@ -110,6 +110,20 @@ export default function AgenceHero() {
               On installe l&apos;IA dans votre entreprise pour <strong className="font-semibold text-[#374151]">&eacute;liminer les t&acirc;ches r&eacute;p&eacute;titives</strong> et <strong className="font-semibold text-[#374151]">lib&eacute;rer votre &eacute;quipe</strong> — en <strong className="font-semibold text-[#374151]">30 jours</strong>, cl&eacute; en main.
             </motion.p>
 
+            {/* Social proof badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="flex items-center justify-center gap-2.5 mb-8"
+            >
+              <Image src="/images/customers.webp" alt="Customers" width={100} height={28} className="h-7 w-auto" />
+              <span className="text-sm text-[#6B7280]">
+                <strong className="font-semibold text-[#111]">4.9</strong>/5 from <strong className="font-semibold text-[#111]">1783</strong> customers
+              </span>
+              <Image src="/images/blue-badge.svg" alt="Verified" width={18} height={18} className="h-[18px] w-[18px]" />
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
