@@ -79,23 +79,46 @@ export default function FullJourneyAnimation() {
         </div>
 
         {/* Step indicator */}
-        <div className="flex items-center justify-center gap-1 px-4 py-3 bg-gray-50/50 border-b border-gray-100">
+        <div className="flex items-center justify-between px-4 py-3 bg-gray-50/50 border-b border-gray-100">
           {stepLabels.map((s, i) => (
-            <div key={s.label} className="flex items-center">
-              <motion.div
-                className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold transition-colors duration-300 ${
+            <div key={s.label} className="flex items-center flex-1 last:flex-none">
+              <div className="flex items-center gap-2">
+                <motion.div
+                  animate={{
+                    scale: i === activeStep ? 1.1 : 1,
+                  }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className={`w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold transition-colors duration-300 ${
+                    i === activeStep
+                      ? "bg-[#FF1744] text-white shadow-md shadow-red-200"
+                      : i < activeStep
+                      ? "bg-green-500 text-white"
+                      : "bg-gray-200 text-gray-500"
+                  }`}
+                >
+                  {i < activeStep ? "✓" : i + 1}
+                </motion.div>
+                <span className={`text-[11px] font-semibold hidden sm:inline transition-colors duration-300 ${
                   i === activeStep
-                    ? "bg-[#FF1744]/10 text-[#FF1744]"
+                    ? "text-gray-900"
                     : i < activeStep
-                    ? "bg-green-50 text-green-600"
-                    : "bg-gray-100 text-gray-400"
-                }`}
-              >
-                <span className="text-xs">{i < activeStep ? "✓" : s.icon}</span>
-                <span className="hidden sm:inline">{s.label}</span>
-              </motion.div>
+                    ? "text-green-600"
+                    : "text-gray-400"
+                }`}>
+                  {s.label}
+                </span>
+              </div>
               {i < 3 && (
-                <div className={`w-4 h-px mx-0.5 ${i < activeStep ? "bg-green-300" : "bg-gray-200"}`} />
+                <div className="flex-1 mx-2">
+                  <div className="h-[2px] rounded-full bg-gray-200 overflow-hidden">
+                    <motion.div
+                      className="h-full bg-green-400 rounded-full"
+                      initial={{ width: "0%" }}
+                      animate={{ width: i < activeStep ? "100%" : "0%" }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </div>
+                </div>
               )}
             </div>
           ))}
