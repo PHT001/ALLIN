@@ -22,15 +22,14 @@ export default function AgenceStickyMobileCTA() {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden"
         >
-          <a
+          <motion.a
             href="https://calendly.com/opexiapro/audit-ia-gratuit"
-            className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-6 py-3.5 text-sm font-bold text-white shadow-2xl shadow-blue-900/40"
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="inline-flex items-center rounded-full bg-[#007AFF] px-6 py-3.5 text-sm font-bold text-white shadow-[0_0_20px_rgba(0,122,255,0.5),0_0_40px_rgba(0,122,255,0.25)]"
           >
             Audit gratuit
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          </motion.a>
         </motion.div>
       )}
     </AnimatePresence>
