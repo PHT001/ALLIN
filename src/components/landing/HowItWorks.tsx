@@ -1,28 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import ChatbotAnimation from "./ChatbotAnimation";
-import ProjectBuilderAnimation from "./ProjectBuilderAnimation";
-import AgencyLaunchAnimation from "./AgencyLaunchAnimation";
+import FullJourneyAnimation from "./FullJourneyAnimation";
 
 const steps = [
   {
     num: "01",
-    title: "Apprends les fondamentaux",
-    desc: "Ma\u00eetrise le prompt engineering, les LLMs et les bases de l'IA appliqu\u00e9e au business. Tu pars de z\u00e9ro ? Parfait. Nos 74 le\u00e7ons sont con\u00e7ues pour \u00e7a.",
-    features: ["15 modules structurés", "Quiz interactifs", "Assistant IA intégré"],
+    title: "Forme-toi à l'IA",
+    desc: "74 leçons, 15 modules, quiz interactifs. Du prompt engineering au déploiement.",
+    icon: "📚",
   },
   {
     num: "02",
-    title: "Crée tes premiers projets IA",
-    desc: "Construis des chatbots, des sites web et des automatisations avec les meilleurs outils IA. Tu auras un portfolio complet de services \u00e0 vendre.",
-    features: ["Exercices pratiques", "Templates prêts à l'emploi", "Projets réels"],
+    title: "Crée tes projets",
+    desc: "Chatbots, sites web, automatisations. Un portfolio complet de services à vendre.",
+    icon: "🛠️",
   },
   {
     num: "03",
-    title: "Lance ton agence et facture",
-    desc: "Utilise notre pipeline CRM et nos stratégies de prospection pour trouver tes premiers clients. Les entreprises locales n'attendent que toi.",
-    features: ["Pipeline CRM intégré", "Scripts de prospection", "Modèles de devis"],
+    title: "Trouve tes clients",
+    desc: "Pipeline CRM intégré, scripts de prospection, stratégies testées.",
+    icon: "🤝",
+  },
+  {
+    num: "04",
+    title: "Facture & scale",
+    desc: "Modèles de devis, facturation, et stratégies pour scaler ton agence.",
+    icon: "💰",
   },
 ];
 
@@ -43,86 +47,58 @@ export default function HowItWorks() {
             Comment ça marche
           </h2>
           <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
-            3 étapes simples pour passer de débutant à freelance IA rentable
+            De débutant à freelance IA rentable, tout est inclus
           </p>
         </motion.div>
 
-        <div className="space-y-16 lg:space-y-20">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7 }}
-              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
-                i % 2 === 1 ? "lg:direction-rtl" : ""
-              }`}
-            >
-              {/* Text side */}
-              <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <span className="text-6xl lg:text-8xl font-black text-[#FF1744]/10">
-                  {step.num}
-                </span>
-                <h3 className="mt-2 text-2xl lg:text-3xl font-bold tracking-tight">
-                  {step.title}
-                </h3>
-                <p className="mt-4 text-lg text-[#6B7280] leading-relaxed">
-                  {step.desc}
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {step.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-[#111]">
-                      <span className="h-6 w-6 rounded-full bg-[#FF1744]/10 flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="h-3.5 w-3.5 text-[#FF1744]"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={3}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      </span>
-                      <span className="font-medium">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Arrow connector — mobile only */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          {/* Left: steps list */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            {steps.map((step, i) => (
               <motion.div
-                initial={{ opacity: 0, y: -5 }}
+                key={step.num}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="flex justify-center lg:hidden -my-4"
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="flex gap-4 items-start"
               >
-                <motion.svg
-                  animate={{ y: [0, 6, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  width="28" height="40" viewBox="0 0 28 40" fill="none"
-                >
-                  <path d="M14 4V32" stroke="#FF1744" strokeWidth="2.5" strokeLinecap="round" />
-                  <path d="M6 24L14 34L22 24" stroke="#FF1744" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </motion.svg>
+                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#FF1744]/10 flex items-center justify-center text-lg">
+                  {step.icon}
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-bold text-[#FF1744]/50 uppercase tracking-wider">
+                      Étape {step.num}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 tracking-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-[#6B7280] leading-relaxed mt-1">
+                    {step.desc}
+                  </p>
+                </div>
               </motion.div>
+            ))}
+          </motion.div>
 
-              {/* Visual side */}
-              <div className={`${i % 2 === 1 ? "lg:order-1" : ""} scale-[0.85] origin-top lg:scale-100`}>
-                {i === 0 ? (
-                  <ChatbotAnimation />
-                ) : i === 1 ? (
-                  <ProjectBuilderAnimation />
-                ) : (
-                  <AgencyLaunchAnimation />
-                )}
-              </div>
-            </motion.div>
-          ))}
+          {/* Right: unified animation */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:sticky lg:top-24"
+          >
+            <FullJourneyAnimation />
+          </motion.div>
         </div>
       </div>
     </section>
