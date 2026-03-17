@@ -24,7 +24,7 @@ export default function Home() {
       {/* <ServicesSection /> */}
       <ProcessSteps />
       <SectorChat />
-      <BeforeAfter />
+      {/* <BeforeAfter /> */}
       <AgenceTestimonials />
       <FoundersSection />
       <AgenceFAQ />
