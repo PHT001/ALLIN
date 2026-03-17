@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function FoundersSection() {
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-white py-14 lg:py-20">
       <div className="mx-auto max-w-2xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,10 +57,13 @@ export default function FoundersSection() {
           {/* Personal message */}
           <div className="text-left space-y-4 text-[#6B7280] leading-relaxed">
             <p>
-              On a cr&eacute;&eacute; OpexIA parce qu&apos;on voyait des entreprises solides se faire d&eacute;passer par des concurrents qui automatisent tout.
+              OpexIA est n&eacute;e d&apos;un <strong className="text-[#111]">constat terrain</strong> : des <strong className="text-[#111]">entreprises performantes</strong> perdent du terrain face &agrave; des concurrents qui ont d&eacute;j&agrave; <strong className="text-[#111]">int&eacute;gr&eacute; l&apos;IA</strong> dans leurs op&eacute;rations. Pas par manque de comp&eacute;tences, mais par <strong className="text-[#111]">manque de temps</strong> et d&apos;accompagnement adapt&eacute;.
             </p>
             <p>
-              <strong className="text-[#111]">On analyse vos process, on automatise, on d&eacute;ploie</strong> — en 30 jours, cl&eacute; en main. Vous ne touchez &agrave; rien.
+              Nous avons accompagn&eacute; <strong className="text-[#111]">plus de 200 entreprises</strong> — PME, agences, cabinets — dans l&apos;int&eacute;gration concr&egrave;te de l&apos;IA. Notre m&eacute;thode est rod&eacute;e : identification des <strong className="text-[#111]">processus &agrave; fort impact</strong>, d&eacute;ploiement <strong className="text-[#111]">cl&eacute; en main en 14 jours</strong>, <strong className="text-[#111]">r&eacute;sultats mesurables</strong> d&egrave;s le premier mois.
+            </p>
+            <p>
+              <strong className="text-[#111]">Audit, automatisation, d&eacute;ploiement, formation, support continu</strong> — tout est inclus. Vous restez concentr&eacute; sur <strong className="text-[#111]">votre activit&eacute;</strong>, on s&apos;occupe de la <strong className="text-[#111]">transformation</strong>.
             </p>
           </div>
         </motion.div>

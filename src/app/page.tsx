@@ -9,7 +9,6 @@ import UrgencyTimeline from "@/components/agence/UrgencyTimeline";
 import ProcessSteps from "@/components/agence/ProcessSteps";
 import BeforeAfter from "@/components/agence/BeforeAfter";
 import AgenceTestimonials from "@/components/agence/AgenceTestimonials";
-import FormationBridge from "@/components/agence/FormationBridge";
 import FoundersSection from "@/components/agence/FoundersSection";
 import AgenceFAQ from "@/components/agence/AgenceFAQ";
 import AgenceFooter from "@/components/agence/AgenceFooter";
@@ -20,16 +19,15 @@ export default function Home() {
     <>
       <AgenceNavbar />
       <AgenceHero />
-      <SectorChat />
       <ProblemSection />
       <UrgencyTimeline />
       {/* <ServicesSection /> */}
       <ProcessSteps />
+      <SectorChat />
       <BeforeAfter />
       <AgenceTestimonials />
       <FoundersSection />
       <AgenceFAQ />
-      <FormationBridge />
       <AgenceFooter />
       <AgenceStickyMobileCTA />
       <AgenceChatbot />

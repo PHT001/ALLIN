@@ -60,7 +60,7 @@ export default function BeforeAfter() {
   const current = cases[activeCase];
 
   return (
-    <section id="resultats" className="py-20 lg:py-28 bg-[#0A0A0A] scroll-mt-20">
+    <section id="resultats" className="py-14 lg:py-20 bg-[#0A0A0A] scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

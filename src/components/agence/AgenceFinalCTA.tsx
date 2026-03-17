@@ -16,7 +16,7 @@ export default function AgenceFinalCTA() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
-            Dans 30 jours, votre entreprise
+            Dans 14 jours, votre entreprise
             <br />
             peut tourner <span className="text-[#007AFF]">2x plus vite.</span>
           </h2>

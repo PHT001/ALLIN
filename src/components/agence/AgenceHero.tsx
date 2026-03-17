@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import LazyVideo from "@/components/ui/LazyVideo";
 
-const rotatingWords = ["automatise", "accélère", "transforme", "scale"];
+const rotatingWords = ["automatise", "acc\u00e9l\u00e8re", "optimise"];
 
 function TypewriterWord({ word }: { word: string }) {
   return (
@@ -92,24 +92,23 @@ export default function AgenceHero() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-[28px] sm:text-5xl lg:text-[52px] font-bold leading-[1.15] tracking-tight mb-6"
             >
-              OpexIA, l&apos;agence qui
-              <br />
+              On{" "}
               <span className="inline-block">
                 <AnimatePresence mode="wait">
                   <TypewriterWord key={wordIndex} word={rotatingWords[wordIndex]} />
                 </AnimatePresence>
               </span>
               <br />
-              votre entreprise
+              votre entreprise avec l&apos;IA.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg text-[#6B7280] max-w-lg mx-auto mb-8 leading-relaxed"
+              className="text-lg text-[#6B7280] max-w-xl mx-auto mb-8 leading-relaxed"
             >
-              On installe l&apos;IA dans votre entreprise pour <strong className="font-semibold text-[#374151]">&eacute;liminer les t&acirc;ches r&eacute;p&eacute;titives</strong> et <strong className="font-semibold text-[#374151]">lib&eacute;rer votre &eacute;quipe</strong> — en <strong className="font-semibold text-[#374151]">30 jours</strong>, cl&eacute; en main.
+              R&eacute;cup&eacute;rez <strong className="font-semibold text-[#111]">40 &agrave; 60h/mois</strong> par &eacute;quipe sans changer vos outils. D&eacute;ploy&eacute; en <strong className="font-semibold text-[#111]">14 jours</strong>, cl&eacute; en main.
             </motion.p>
 
             {/* Social proof badge */}
@@ -146,47 +145,6 @@ export default function AgenceHero() {
               </a>
             </motion.div>
 
-            {/* Robot mascot video */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.45, duration: 0.6 }}
-              className="flex justify-center mb-8"
-            >
-              <div className="w-44 sm:w-56" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
-                <LazyVideo src="/images/iphone.mp4" className="w-full h-auto" />
-              </div>
-            </motion.div>
-
-            {/* Founders trust badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55 }}
-              className="mb-5 flex flex-col items-center gap-3"
-            >
-              <div className="inline-flex items-center gap-3.5 rounded-full bg-[#3A3A3A] pl-2 pr-5 py-2">
-                <div className="flex -space-x-2">
-                  <div className="h-10 w-10 rounded-full border-2 border-[#3A3A3A] overflow-hidden">
-                    <Image src="/images/founder-marius.png" alt="Marius" width={40} height={40} className="h-full w-full object-cover" />
-                  </div>
-                  <div className="h-10 w-10 rounded-full border-2 border-[#3A3A3A] overflow-hidden">
-                    <Image src="/images/founder-igor.jpg" alt="Igor" width={40} height={40} className="h-full w-full object-cover" />
-                  </div>
-                </div>
-                <div>
-                  <p className="text-white text-sm font-semibold">Fond&eacute; par Marius &amp; Igor</p>
-                  <p className="text-gray-400 text-xs flex items-center gap-1">
-                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    Paris, France
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
             {/* Stat bar */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -203,8 +161,8 @@ export default function AgenceHero() {
                 <p className="text-xs text-[#9CA3AF] mt-0.5">économisées/mois</p>
               </div>
               <div>
-                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={30} suffix="j" /></p>
-                <p className="text-xs text-[#9CA3AF] mt-0.5">pour déployer</p>
+                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={14} suffix="j" /></p>
+                <p className="text-xs text-[#9CA3AF] mt-0.5">pour d&eacute;ployer</p>
               </div>
             </motion.div>
         </div>

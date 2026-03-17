@@ -14,7 +14,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "C'est compliqué à mettre en place ?",
-    a: <>Pas du tout. On s&apos;occupe de tout : installation, configuration, tests, formation de vos équipes. Vous n&apos;avez <B>rien à installer</B>, rien à coder, rien à maintenir. Notre objectif est que vos systèmes tournent en <B>30 jours</B>, sans friction.</>,
+    a: <>Pas du tout. On s&apos;occupe de tout : installation, configuration, tests, formation de vos équipes. Vous n&apos;avez <B>rien à installer</B>, rien à coder, rien à maintenir. Notre objectif est que vos systèmes tournent en <B>14 jours</B>, sans friction.</>,
   },
   {
     q: "Combien ça coûte ?",
@@ -31,6 +31,14 @@ const faqs: { q: string; a: ReactNode }[] = [
   {
     q: "Je n'y connais rien en IA",
     a: <>C&apos;est exactement pour ça qu&apos;on existe. <B>Zéro jargon technique</B>, que du concret. On vous explique tout en termes de <B>résultats business</B> : temps gagné, argent économisé, clients gagnés. Pas besoin de comprendre comment ça marche sous le capot.</>,
+  },
+  {
+    q: "Et la sécurité de mes données / RGPD ?",
+    a: <>Toutes nos solutions sont <B>conformes RGPD</B>. Vos données restent hébergées en Europe, chiffrées, et ne sont jamais utilisées pour entraîner des modèles tiers. On signe un <B>DPA (accord de traitement de données)</B> avec chaque client. La confidentialité est non-négociable.</>,
+  },
+  {
+    q: "Au bout de combien de temps je vois des résultats ?",
+    a: <>Les premiers gains sont visibles <B>dès la deuxième semaine</B> de déploiement. En moyenne, nos clients récupèrent <B>40 à 60h/mois par équipe</B> dès le premier mois complet. On définit des KPIs mesurables avant de commencer pour que les résultats soient concrets et vérifiables.</>,
   },
 ];
 

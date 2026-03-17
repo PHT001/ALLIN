@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const steps = [
-  { id: "install", label: "Installation outils", icon: "🔧", duration: "Jour 1-5" },
-  { id: "config", label: "Configuration IA", icon: "⚙️", duration: "Jour 6-12" },
-  { id: "test", label: "Tests & ajustements", icon: "🧪", duration: "Jour 13-20" },
-  { id: "train", label: "Formation équipe", icon: "🎓", duration: "Jour 21-25" },
-  { id: "live", label: "Mise en production", icon: "🚀", duration: "Jour 26-30" },
+  { id: "install", label: "Installation outils", icon: "🔧", duration: "Jour 1-2" },
+  { id: "config", label: "Configuration IA", icon: "⚙️", duration: "Jour 3-6" },
+  { id: "test", label: "Tests & ajustements", icon: "🧪", duration: "Jour 7-10" },
+  { id: "train", label: "Formation équipe", icon: "🎓", duration: "Jour 11-12" },
+  { id: "live", label: "Mise en production", icon: "🚀", duration: "Jour 13-14" },
 ];
 
 export default function DeployAnimation() {
@@ -33,7 +33,7 @@ export default function DeployAnimation() {
   }, []);
 
   return (
-    <div className="relative w-full rounded-2xl bg-white border border-gray-100 p-6 overflow-hidden shadow-sm" style={{ height: 380 }}>
+    <div className="relative w-full rounded-2xl bg-white border border-gray-100 p-6 overflow-hidden shadow-sm" style={{ height: 440 }}>
       {/* Header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-2">
@@ -42,7 +42,7 @@ export default function DeployAnimation() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <span className="text-xs font-semibold text-[#111]">D&eacute;ploiement 30j</span>
+          <span className="text-xs font-semibold text-[#111]">D&eacute;ploiement 14j</span>
         </div>
         <span className="text-[10px] font-mono text-[#9CA3AF]">
           {activeStep >= 0 ? `${Math.min((activeStep + 1) * 20, 100)}%` : "0%"}

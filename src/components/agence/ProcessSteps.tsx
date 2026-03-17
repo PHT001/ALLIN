@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LazyVideo from "@/components/ui/LazyVideo";
 import AuditAnimation from "./AuditAnimation";
 import PlanAnimation from "./PlanAnimation";
 import DeployAnimation from "./DeployAnimation";
@@ -9,20 +10,20 @@ const steps = [
   {
     num: "01",
     title: "Audit gratuit (1h)",
-    desc: <>On analyse vos process actuels et on identifie les <strong className="font-semibold text-[#374151]">quick wins IA</strong>. Vous repartez avec une <strong className="font-semibold text-[#374151]">cartographie claire</strong> de ce qui peut être automatisé — et combien ça vous fait gagner.</>,
-    features: ["Analyse de vos workflows", "D\u00e9tection des goulots", "Chiffrage du potentiel"],
+    desc: <>On passe en revue vos <strong className="font-semibold text-[#374151]">process du quotidien</strong> : mails, devis, CRM, reporting. On identifie les tâches qui vous coûtent le plus cher en temps — et on chiffre le <strong className="font-semibold text-[#374151]">gain potentiel en heures et en euros</strong>.</>,
+    features: ["Cartographie de vos workflows", "Chiffrage heures/euros récupérables", "Livrable écrit sous 48h"],
   },
   {
     num: "02",
     title: "Plan d'action sur-mesure",
-    desc: <>On vous présente exactement quoi automatiser, combien ça coûte, et combien ça rapporte. <strong className="font-semibold text-[#374151]">Pas de jargon</strong>, que du concret avec un <strong className="font-semibold text-[#374151]">ROI clair</strong>.</>,
-    features: ["Roadmap personnalis\u00e9e", "ROI d\u00e9taill\u00e9 par action", "Priorisation par impact"],
+    desc: <>Vous recevez une <strong className="font-semibold text-[#374151]">roadmap concrète</strong> : quelles tâches automatiser, dans quel ordre, avec quel <strong className="font-semibold text-[#374151]">ROI attendu par action</strong>. Pas de jargon technique — que des décisions business.</>,
+    features: ["Roadmap priorisée par impact", "ROI détaillé par automatisation", "Planning de déploiement 14 jours"],
   },
   {
     num: "03",
-    title: "Installation & Formation",
-    desc: <>On déploie les systèmes IA, on teste, on forme votre équipe. <strong className="font-semibold text-[#374151]">Vous n&apos;avez rien à faire</strong>. En <strong className="font-semibold text-[#374151]">30 jours</strong>, tout tourne.</>,
-    features: ["D\u00e9ploiement cl\u00e9 en main", "Formation de vos \u00e9quipes", "Support continu"],
+    title: "Déploiement & Formation",
+    desc: <>On installe, on configure, on teste, on forme votre équipe. <strong className="font-semibold text-[#374151]">Vous n&apos;avez rien à faire</strong>. En <strong className="font-semibold text-[#374151]">14 jours</strong>, tout tourne — et on reste disponible avec un <strong className="font-semibold text-[#374151]">support continu inclus</strong>.</>,
+    features: ["Déploiement clé en main", "Formation pratique de vos équipes", "Support illimité post-lancement"],
   },
 ];
 
@@ -40,7 +41,7 @@ export default function ProcessSteps() {
             Processus
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            {"3 \u00e9tapes. 30 jours. C'est tout."}
+            {"3 \u00e9tapes. 14 jours. C'est tout."}
           </h2>
           <p className="mt-4 text-lg text-[#6B7280] max-w-2xl mx-auto">
             On s&apos;occupe de tout. Votre équipe n&apos;a <strong className="font-semibold text-[#374151]">rien à installer</strong>, <strong className="font-semibold text-[#374151]">rien à configurer</strong>.
@@ -99,9 +100,7 @@ export default function ProcessSteps() {
         >
           {/* Floating video behind button */}
           <div className="relative z-0 w-36 sm:w-44 -mb-14 mx-auto overflow-hidden" style={{ maskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)', WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at center, black 40%, transparent 95%)' }}>
-            <video autoPlay loop muted playsInline className="w-full h-auto block" style={{ display: 'none' }} onLoadedData={(e) => { (e.target as HTMLVideoElement).style.display = 'block'; }}>
-              <source src="/images/floatting.mp4" type="video/mp4" />
-            </video>
+            <LazyVideo src="/images/floatting.mp4" className="w-full h-auto" />
           </div>
           <a
             href="https://calendly.com/opexiapro/audit-ia-gratuit"
