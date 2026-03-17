@@ -14,6 +14,7 @@ interface Plan {
   cta: string;
   href?: string;
   external?: boolean;
+  limited?: boolean;
 }
 
 const plans: Plan[] = [
@@ -71,6 +72,7 @@ const plans: Plan[] = [
     period: "ou 4x 999\u20ac sans frais",
     description: "Accompagnement premium avec Marius & Igor",
     popular: false,
+    limited: true,
     features: [
       "Tout le pack Academy",
       "8 visios individuelles (1h)",
@@ -163,6 +165,18 @@ export default function Pricing() {
               >
                 {plan.cta}
               </a>
+
+              {plan.limited && (
+                <div className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
+                  </span>
+                  <span className="text-xs font-semibold text-amber-700">
+                    Moins de 10 places — pour garantir un suivi de qualité
+                  </span>
+                </div>
+              )}
 
               <div className="mt-8 space-y-3">
                 {plan.features.map((f) => (
