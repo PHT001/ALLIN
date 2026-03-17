@@ -92,12 +92,14 @@ export default function AgenceHero() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-[28px] sm:text-5xl lg:text-[52px] font-bold leading-[1.15] tracking-tight mb-6"
             >
-              OpexIA, l&apos;agence qui{" "}
+              OpexIA, l&apos;agence qui
+              <br />
               <span className="inline-block">
                 <AnimatePresence mode="wait">
                   <TypewriterWord key={wordIndex} word={rotatingWords[wordIndex]} />
                 </AnimatePresence>
-              </span>{" "}
+              </span>
+              <br />
               votre entreprise
             </motion.h1>
 
