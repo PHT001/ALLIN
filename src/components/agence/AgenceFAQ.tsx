@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const B = ({ children }: { children: ReactNode }) => (
-  <strong className="font-semibold text-[#374151]">{children}</strong>
+  <strong className="font-semibold text-white">{children}</strong>
 );
 
 const faqs: { q: string; a: ReactNode }[] = [
@@ -38,17 +38,17 @@ function FAQItem({ q, a }: { q: string; a: ReactNode }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b border-white/10 last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-6 text-left group"
       >
-        <span className="text-base lg:text-lg font-semibold text-[#111] pr-8 group-hover:text-[#007AFF] transition-colors">
+        <span className="text-base lg:text-lg font-semibold text-white pr-8 group-hover:text-[#007AFF] transition-colors">
           {q}
         </span>
         <span
           className={`flex-shrink-0 h-8 w-8 rounded-full flex items-center justify-center transition-all ${
-            open ? "bg-[#007AFF] text-white rotate-45" : "bg-gray-100 text-[#6B7280]"
+            open ? "bg-[#007AFF] text-white rotate-45" : "bg-white/10 text-gray-400"
           }`}
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -65,7 +65,7 @@ function FAQItem({ q, a }: { q: string; a: ReactNode }) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-[#6B7280] leading-relaxed max-w-3xl">{a}</p>
+            <p className="pb-6 text-gray-400 leading-relaxed max-w-3xl">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -75,7 +75,7 @@ function FAQItem({ q, a }: { q: string; a: ReactNode }) {
 
 export default function AgenceFAQ() {
   return (
-    <section id="faq" className="py-16 lg:py-20 bg-white scroll-mt-20">
+    <section id="faq" className="py-16 lg:py-20 bg-[#0A0A0A] scroll-mt-20">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +86,7 @@ export default function AgenceFAQ() {
           <span className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
             FAQ
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
             Questions fr&eacute;quentes
           </h2>
         </motion.div>

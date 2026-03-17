@@ -205,7 +205,7 @@ export default function BeforeAfter() {
                   <svg className="w-4 h-4 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                  <p className="text-base font-bold text-[#007AFF]">{current.saving}</p>
+                  <p className="text-base font-bold text-white">{current.saving}</p>
                 </div>
               </div>
             </motion.div>
