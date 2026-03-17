@@ -21,8 +21,8 @@ export default function FoundersSection() {
           {/* Founder cards */}
           <div className="flex justify-center gap-4 sm:gap-6 mb-10">
             {[
-              { name: "Marius", role: "Co-Fondateur", img: "/images/ben.webp" },
-              { name: "Igor", role: "Co-Fondateur", img: "/images/bfilip.webp" },
+              { name: "Marius", role: "Co-Fondateur", img: "/images/marius.png" },
+              { name: "Igor", role: "Co-Fondateur", img: "/images/igor.jpg" },
             ].map((founder) => (
               <div
                 key={founder.name}
@@ -57,22 +57,10 @@ export default function FoundersSection() {
           {/* Personal message */}
           <div className="text-left space-y-4 text-[#6B7280] leading-relaxed">
             <p>
-              On a cr&eacute;&eacute; OpexIA parce qu&apos;on en avait marre de voir des entreprises
-              solides se faire d&eacute;passer par des concurrents qui automatisent tout.
+              On a cr&eacute;&eacute; OpexIA parce qu&apos;on voyait des entreprises solides se faire d&eacute;passer par des concurrents qui automatisent tout.
             </p>
             <p>
-              Vous savez que l&apos;IA peut vous aider. Vous avez test&eacute; ChatGPT, regard&eacute;
-              des tutos, peut-&ecirc;tre m&ecirc;me essay&eacute; d&apos;automatiser deux-trois trucs.
-              Mais entre &ldquo;tester&rdquo; et &ldquo;transformer son business&rdquo;, il y a un monde.
-            </p>
-            <p>
-              <strong className="text-[#111]">OpexIA fait le pont.</strong> On analyse vos process, on identifie
-              ce qui peut &ecirc;tre automatis&eacute;, et on d&eacute;ploie — en 30 jours, cl&eacute; en main.
-              Vous ne touchez &agrave; rien.
-            </p>
-            <p>
-              R&eacute;sultat : vos &eacute;quipes sont lib&eacute;r&eacute;es, vos clients sont servis
-              plus vite, et vous gagnez un avantage que vos concurrents n&apos;ont pas encore.
+              <strong className="text-[#111]">On analyse vos process, on automatise, on d&eacute;ploie</strong> — en 30 jours, cl&eacute; en main. Vous ne touchez &agrave; rien.
             </p>
           </div>
         </motion.div>
