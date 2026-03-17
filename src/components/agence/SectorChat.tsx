@@ -134,7 +134,7 @@ export default function SectorChat() {
   };
 
   return (
-    <section className="py-16 lg:py-20 bg-[#F8F9FA] overflow-hidden">
+    <section className="py-16 lg:py-20 bg-[#0A0A0A] overflow-hidden">
       <div className="mx-auto max-w-2xl px-6">
         {/* Header */}
         <motion.div
@@ -146,7 +146,7 @@ export default function SectorChat() {
           <span className="text-sm font-semibold text-[#007AFF] uppercase tracking-wider">
             Projection instantanée
           </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-[#111] tracking-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Voyez ce qu&apos;on automatise <span className="text-[#007AFF]">chez vous</span>
           </h2>
         </motion.div>
@@ -157,7 +157,7 @@ export default function SectorChat() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="relative bg-white rounded-3xl shadow-[0_0_40px_-5px_rgba(0,122,255,0.25)] border border-blue-100/60 overflow-hidden"
+          className="relative bg-white rounded-3xl shadow-[0_0_80px_0px_rgba(255,255,255,0.25),0_0_150px_0px_rgba(255,255,255,0.1)] border border-white/20 overflow-hidden"
         >
           {/* Chat header bar */}
           <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-[#FAFAFA]">
@@ -330,7 +330,7 @@ export default function SectorChat() {
                                 href="https://calendly.com/opexiapro/audit-ia-gratuit"
                                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#007AFF] px-6 py-3 text-sm font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-lg hover:shadow-blue-200"
                               >
-                                Réserver mon audit gratuit
+                                Planifier mon audit offert
                                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>

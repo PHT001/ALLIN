@@ -139,7 +139,7 @@ export default function AgenceTestimonials() {
           </div>
 
           {/* Right — Stacked card */}
-          <div className="relative h-[320px]">
+          <div className="relative h-[380px] sm:h-[320px]">
             {/* Background cards (stack effect) */}
             <div className="absolute top-4 left-4 right-[-4px] bottom-[-4px] rounded-2xl bg-gray-100 border border-gray-100" />
             <div className="absolute top-2 left-2 right-[-2px] bottom-[-2px] rounded-2xl bg-gray-50 border border-gray-100" />
@@ -152,7 +152,7 @@ export default function AgenceTestimonials() {
                 animate={{ opacity: 1, x: 0, rotateY: 0 }}
                 exit={{ opacity: 0, x: -50, rotateY: 5 }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                className="relative h-full bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-100/50 p-8 flex flex-col justify-between"
+                className="relative h-full bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-100/50 p-5 sm:p-8 flex flex-col justify-between"
               >
                 <div>
                   <Stars />
@@ -161,7 +161,7 @@ export default function AgenceTestimonials() {
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between mt-6 pt-5 border-t border-gray-50">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-6 pt-5 border-t border-gray-50 gap-3">
                   <div className="flex items-center gap-3">
                     <div className="h-11 w-11 rounded-full overflow-hidden flex-shrink-0">
                       <Image src={testimonials[activeIndex].img} alt={testimonials[activeIndex].name} width={44} height={44} className="h-full w-full object-cover" />
@@ -171,7 +171,7 @@ export default function AgenceTestimonials() {
                       <p className="text-xs text-[#6B7280]">{testimonials[activeIndex].role}</p>
                     </div>
                   </div>
-                  <div className="text-right">
+                  <div className="sm:text-right">
                     <p className="text-lg font-black text-[#007AFF]">{testimonials[activeIndex].result}</p>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export default function AgenceTestimonials() {
             href="https://calendly.com/opexiapro/audit-ia-gratuit"
             className="inline-flex items-center gap-2 rounded-full bg-[#007AFF] px-8 py-4 text-base font-semibold text-white hover:bg-[#0055D4] transition-all hover:shadow-xl hover:shadow-blue-200"
           >
-            R&eacute;servez votre audit gratuit
+            Demandez votre audit offert
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
