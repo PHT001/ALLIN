@@ -11,7 +11,7 @@ const steps = [
     num: "01",
     title: "Audit gratuit (1h)",
     desc: <>On passe en revue vos <strong className="font-semibold text-[#374151]">process du quotidien</strong> : mails, devis, CRM, reporting. On identifie les tâches qui vous coûtent le plus cher en temps — et on chiffre le <strong className="font-semibold text-[#374151]">gain potentiel en heures et en euros</strong>.</>,
-    features: ["Cartographie de vos workflows", "Chiffrage heures/euros récupérables", "Livrable écrit sous 48h"],
+    features: ["Analyse complète de vos tâches du quotidien", "Chiffrage heures/euros récupérables", "Livrable écrit sous 48h"],
   },
   {
     num: "02",

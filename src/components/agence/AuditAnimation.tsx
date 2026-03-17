@@ -3,121 +3,160 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const scanItems = [
-  { label: "Emails & Communication", status: "slow", icon: "📧" },
-  { label: "Facturation & Devis", status: "critical", icon: "📄" },
-  { label: "Support Client", status: "slow", icon: "💬" },
-  { label: "Reporting & Data", status: "critical", icon: "📊" },
-  { label: "Onboarding Clients", status: "ok", icon: "👤" },
-];
+/*
+  Visual story: A clock with hands spinning fast (time being wasted),
+  task icons pile up around it, then everything calms down and shows the savings.
+  No text needed to understand — pure visual.
+*/
+
+const taskIcons = ["📧", "📄", "💬", "📊", "🔔", "📋"];
 
 export default function AuditAnimation() {
-  const [phase, setPhase] = useState(0);
-  const [scanIndex, setScanIndex] = useState(-1);
+  const [phase, setPhase] = useState<"idle" | "spinning" | "result">("idle");
+  const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
     const sequence = async () => {
-      setPhase(0);
-      setScanIndex(-1);
-      await new Promise((r) => setTimeout(r, 600));
-      setPhase(1);
+      setPhase("idle");
+      setRotation(0);
+      await new Promise((r) => setTimeout(r, 500));
 
-      for (let i = 0; i < scanItems.length; i++) {
-        await new Promise((r) => setTimeout(r, 500));
-        setScanIndex(i);
-      }
+      setPhase("spinning");
+      // Simulate clock spinning fast
+      const spinDuration = 3000;
+      const startTime = Date.now();
+      const tick = () => {
+        const elapsed = Date.now() - startTime;
+        if (elapsed < spinDuration) {
+          setRotation((elapsed / spinDuration) * 1800); // 5 full rotations
+          requestAnimationFrame(tick);
+        } else {
+          setRotation(1800);
+        }
+      };
+      requestAnimationFrame(tick);
 
-      await new Promise((r) => setTimeout(r, 800));
-      setPhase(2);
-      await new Promise((r) => setTimeout(r, 3000));
-      setPhase(0);
-      setScanIndex(-1);
+      await new Promise((r) => setTimeout(r, spinDuration + 500));
+      setPhase("result");
+      await new Promise((r) => setTimeout(r, 4000));
     };
     sequence();
-    const interval = setInterval(sequence, 9000);
+    const interval = setInterval(sequence, 10000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full rounded-2xl bg-white border border-gray-100 p-6 overflow-hidden shadow-sm" style={{ height: 440 }}>
-      {/* Header */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-[#007AFF]/10 flex items-center justify-center">
-            <svg className="h-4 w-4 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <span className="text-xs font-semibold text-[#111]">Scan en cours...</span>
-        </div>
-        <span className="text-[10px] font-mono text-[#9CA3AF]">
-          {scanIndex + 1}/{scanItems.length}
-        </span>
-      </div>
+    <div className="w-full rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden" style={{ minHeight: 380 }}>
+      <div className="relative w-full h-[380px] flex items-center justify-center">
 
-      {/* Progress bar */}
-      <div className="h-1.5 bg-gray-100 rounded-full mb-5 overflow-hidden">
-        <motion.div
-          className="h-full bg-gradient-to-r from-[#007AFF] to-[#5AC8FA] rounded-full"
-          animate={{ width: phase === 0 ? "0%" : phase === 1 ? `${((scanIndex + 1) / scanItems.length) * 100}%` : "100%" }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        />
-      </div>
-
-      {/* Scan items */}
-      <div className="space-y-2">
-        {scanItems.map((item, i) => (
-          <motion.div
-            key={item.label}
-            initial={{ opacity: 0.4 }}
-            animate={{ opacity: i <= scanIndex ? 1 : 0.4 }}
-            className={`flex items-center justify-between py-2.5 px-3 rounded-xl transition-colors ${
-              i <= scanIndex ? "bg-gray-50" : ""
-            }`}
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-sm">{item.icon}</span>
-              <span className="text-sm text-[#374151] font-medium">{item.label}</span>
-            </div>
-            {i <= scanIndex && (
+        {/* Floating task icons — appear during spinning */}
+        {phase === "spinning" && taskIcons.map((icon, i) => {
+          const angle = (i / taskIcons.length) * 360;
+          const radius = 130;
+          const x = Math.cos((angle * Math.PI) / 180) * radius;
+          const y = Math.sin((angle * Math.PI) / 180) * radius;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0, x: 0, y: 0 }}
+              animate={{ opacity: [0, 0.8, 0.6], scale: [0, 1.2, 1], x, y }}
+              transition={{ delay: i * 0.15, duration: 0.5 }}
+              className="absolute text-2xl"
+              style={{ filter: "grayscale(0.3)" }}
+            >
               <motion.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                  item.status === "critical"
-                    ? "bg-orange-50 text-orange-500"
-                    : item.status === "slow"
-                    ? "bg-amber-50 text-amber-500"
-                    : "bg-emerald-50 text-emerald-500"
-                }`}
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 + i * 0.2, ease: "easeInOut" }}
+                className="block"
               >
-                {item.status === "critical" ? "Critique" : item.status === "slow" ? "Lent" : "OK"}
+                {icon}
               </motion.span>
-            )}
-          </motion.div>
-        ))}
-      </div>
+            </motion.div>
+          );
+        })}
 
-      {/* Result overlay */}
-      {phase === 2 && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mt-4 p-4 rounded-xl bg-[#007AFF]/5 border border-[#007AFF]/15"
-        >
-          <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-full bg-[#007AFF] flex items-center justify-center">
-              <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-sm font-bold text-[#007AFF]">3 process critiques</p>
-              <p className="text-xs text-[#6B7280]">&Eacute;conomie potentielle : 47h/mois</p>
-            </div>
+        {/* Central clock */}
+        {phase !== "result" && (
+          <div className="relative z-10">
+            <svg width="120" height="120" viewBox="0 0 120 120">
+              {/* Clock face */}
+              <circle cx="60" cy="60" r="55" fill="white" stroke="#E5E7EB" strokeWidth="2" />
+              {/* Hour marks */}
+              {Array.from({ length: 12 }).map((_, i) => {
+                const a = (i / 12) * 360 - 90;
+                const x1 = 60 + Math.cos((a * Math.PI) / 180) * 45;
+                const y1 = 60 + Math.sin((a * Math.PI) / 180) * 45;
+                const x2 = 60 + Math.cos((a * Math.PI) / 180) * 50;
+                const y2 = 60 + Math.sin((a * Math.PI) / 180) * 50;
+                return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#D1D5DB" strokeWidth="2" strokeLinecap="round" />;
+              })}
+              {/* Minute hand */}
+              <line
+                x1="60" y1="60" x2="60" y2="20"
+                stroke={phase === "spinning" ? "#EF4444" : "#9CA3AF"}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                transform={`rotate(${rotation} 60 60)`}
+              />
+              {/* Hour hand */}
+              <line
+                x1="60" y1="60" x2="60" y2="30"
+                stroke={phase === "spinning" ? "#EF4444" : "#6B7280"}
+                strokeWidth="3"
+                strokeLinecap="round"
+                transform={`rotate(${rotation / 12} 60 60)`}
+              />
+              {/* Center dot */}
+              <circle cx="60" cy="60" r="4" fill={phase === "spinning" ? "#EF4444" : "#9CA3AF"} />
+            </svg>
+
+            {/* Red pulse when spinning */}
+            {phase === "spinning" && (
+              <motion.div
+                animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0, 0.2] }}
+                transition={{ repeat: Infinity, duration: 1 }}
+                className="absolute inset-0 rounded-full border-2 border-red-400"
+              />
+            )}
           </div>
-        </motion.div>
-      )}
+        )}
+
+        {/* Result phase */}
+        {phase === "result" && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="flex flex-col items-center gap-4 w-full max-w-[280px]"
+          >
+            {/* Big check */}
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="h-16 w-16 rounded-full bg-[#007AFF]/10 flex items-center justify-center"
+            >
+              <svg className="h-8 w-8 text-[#007AFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </motion.div>
+
+            <p className="text-sm font-bold text-[#111]">Audit terminé</p>
+
+            {/* Result card */}
+            <div className="w-full rounded-xl border border-gray-100 bg-gray-50 p-4 flex items-center justify-between">
+              <div>
+                <p className="text-[10px] text-[#9CA3AF] font-medium">Temps perdu / jour</p>
+                <p className="text-xl font-black text-[#111]">~5h</p>
+              </div>
+              <div className="text-right">
+                <p className="text-[10px] text-[#9CA3AF] font-medium">Récupérable</p>
+                <p className="text-xl font-black text-[#007AFF]">~4h30</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </div>
     </div>
   );
 }

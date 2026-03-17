@@ -38,7 +38,7 @@ function Card({ c, i }: { c: typeof cases[0]; i: number }) {
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -6, transition: { duration: 0.25 } }}
-      className="rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-blue-900/10 transition-shadow duration-300 flex-shrink-0 w-[85vw] snap-center md:w-auto"
+      className="rounded-2xl border border-white/30 bg-white overflow-hidden shadow-[0_0_60px_10px_rgba(255,255,255,0.15),0_0_20px_0px_rgba(255,255,255,0.3)] hover:shadow-[0_0_80px_15px_rgba(255,255,255,0.2),0_0_30px_0px_rgba(255,255,255,0.4)] transition-shadow duration-300 flex-shrink-0 w-[85vw] snap-center md:w-auto"
     >
       {/* Header */}
       <div className="px-5 pt-5 pb-3 flex items-center gap-3">

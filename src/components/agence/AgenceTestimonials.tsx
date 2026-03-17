@@ -74,11 +74,6 @@ export default function AgenceTestimonials() {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
   }, []);
 
-  useEffect(() => {
-    const timer = setInterval(next, 5000);
-    return () => clearInterval(timer);
-  }, [next]);
-
   return (
     <section className="py-14 lg:py-20 bg-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -118,20 +113,28 @@ export default function AgenceTestimonials() {
             </div>
 
             {/* Sector pills */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {testimonials.map((t, i) => (
-                <button
-                  key={t.sector}
-                  onClick={() => setActiveIndex(i)}
-                  className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all ${
-                    i === activeIndex
-                      ? "bg-[#0A0A0A] text-white"
-                      : "bg-gray-100 text-[#6B7280] hover:bg-gray-200"
-                  }`}
-                >
-                  {t.sector}
-                </button>
-              ))}
+            <div className="mt-6">
+              <p className="text-[11px] text-[#9CA3AF] font-medium mb-2 flex items-center gap-1.5">
+                <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                </svg>
+                Cliquez sur un secteur
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {testimonials.map((t, i) => (
+                  <button
+                    key={t.sector}
+                    onClick={() => setActiveIndex(i)}
+                    className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all cursor-pointer ${
+                      i === activeIndex
+                        ? "bg-[#0A0A0A] text-white shadow-sm"
+                        : "bg-gray-100 text-[#6B7280] hover:bg-gray-200 hover:text-[#374151]"
+                    }`}
+                  >
+                    {t.sector}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
