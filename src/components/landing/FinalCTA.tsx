@@ -15,9 +15,9 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          {/* Urgency badge */}
+          {/* Badge */}
           <span className="inline-flex items-center gap-2 rounded-full bg-[#FF1744]/15 border border-[#FF1744]/30 px-5 py-2 text-sm font-medium text-[#FF5252] mb-8">
-            <span className="text-base">&#9889;</span> 12 places restantes au tarif de lancement
+            <span className="text-base">&#127891;</span> Formation compl&egrave;te &bull; CRM inclus &bull; Acc&egrave;s &agrave; vie
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
