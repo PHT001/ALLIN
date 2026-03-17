@@ -1,5 +1,5 @@
 import Navbar from "@/components/landing/Navbar";
-import UrgencyBanner from "@/components/landing/UrgencyBanner";
+
 import Hero from "@/components/landing/Hero";
 import LogosBar from "@/components/landing/LogosBar";
 import PainSection from "@/components/landing/PainSection";
@@ -21,7 +21,6 @@ import Chatbot from "@/components/landing/Chatbot";
 export default function FormationPage() {
   return (
     <>
-      <UrgencyBanner />
       <Navbar />
       <Hero />
       <LogosBar />
