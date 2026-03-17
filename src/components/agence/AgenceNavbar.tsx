@@ -25,14 +25,24 @@ export default function AgenceNavbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-5"
+      className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-2 md:pt-5"
     >
+      {/* Full-width backdrop to hide content scrolling behind navbar */}
+      <div
+        className="absolute inset-x-0 -top-1 bottom-0 pointer-events-none -z-10"
+        style={{
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
+        }}
+      />
       <div
         className="relative w-full max-w-3xl rounded-full border border-white/[0.08] px-5 py-2.5 transition-all duration-500"
         style={{
-          background: scrolled ? "rgba(10, 10, 10, 0.85)" : "rgba(10, 10, 10, 0.6)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
+          background: scrolled ? "rgba(10, 10, 10, 0.95)" : "rgba(10, 10, 10, 0.6)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
           boxShadow: scrolled
             ? "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06)"
             : "0 4px 20px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06)",

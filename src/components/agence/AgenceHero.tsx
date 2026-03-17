@@ -1,11 +1,11 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import LazyVideo from "@/components/ui/LazyVideo";
 
-const rotatingWords = ["automatisent", "économisent", "accélèrent", "scalent"];
+const rotatingWords = ["automatise", "accélère", "transforme", "scale"];
 
 function TypewriterWord({ word }: { word: string }) {
   return (
@@ -31,6 +31,31 @@ function TypewriterWord({ word }: { word: string }) {
         transition={{ duration: 0.6, repeat: Infinity, ease: "linear", repeatType: "reverse" }}
       />
     </motion.span>
+  );
+}
+
+function AnimatedCounter({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+    const startTime = Date.now();
+    const tick = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [isInView, target, duration]);
+
+  return (
+    <span ref={ref}>
+      {count.toLocaleString("fr-FR")}{suffix}
+    </span>
   );
 }
 
@@ -67,14 +92,14 @@ export default function AgenceHero() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-[52px] font-bold leading-[1.1] tracking-tight mb-6"
             >
-              Pendant que vous g&eacute;rez le quotidien,
+              OpexIA, l&apos;agence qui
               <br />
-              vos concurrents{" "}
               <span className="inline-block">
                 <AnimatePresence mode="wait">
                   <TypewriterWord key={wordIndex} word={rotatingWords[wordIndex]} />
                 </AnimatePresence>
-              </span>
+              </span>{" "}
+              votre entreprise
             </motion.h1>
 
             <motion.p
@@ -154,16 +179,18 @@ export default function AgenceHero() {
               transition={{ delay: 0.5 }}
               className="flex justify-center gap-8 border-t border-gray-200 pt-6"
             >
-              {[
-                { num: "200+", label: "entreprises" },
-                { num: "2 400h", label: "économisées/mois" },
-                { num: "30j", label: "pour déployer" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl font-black text-[#111]">{stat.num}</p>
-                  <p className="text-xs text-[#9CA3AF] mt-0.5">{stat.label}</p>
-                </div>
-              ))}
+              <div>
+                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={200} suffix="+" /></p>
+                <p className="text-xs text-[#9CA3AF] mt-0.5">entreprises</p>
+              </div>
+              <div>
+                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={2400} suffix="h" /></p>
+                <p className="text-xs text-[#9CA3AF] mt-0.5">économisées/mois</p>
+              </div>
+              <div>
+                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={30} suffix="j" /></p>
+                <p className="text-xs text-[#9CA3AF] mt-0.5">pour déployer</p>
+              </div>
             </motion.div>
         </div>
       </div>
