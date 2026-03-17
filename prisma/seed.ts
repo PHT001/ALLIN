@@ -145,7 +145,17 @@ async function main() {
       data: { lessonId: lesson.id, passingScore: 80 },
     });
 
-    const questions = makeQuiz(lessonData.order);
+    const ld = lessonData as any;
+    const questions = ld.quiz
+      ? ld.quiz.map((q: any, i: number) => ({
+          type: q.type,
+          question: q.question,
+          options: q.options,
+          correctAnswer: q.correctAnswer,
+          explanation: q.explanation,
+          order: i + 1,
+        }))
+      : makeQuiz(lessonData.order);
     for (const q of questions) {
       await prisma.quizQuestion.create({
         data: { ...q, quizId: quiz.id },

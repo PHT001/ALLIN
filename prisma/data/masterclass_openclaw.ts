@@ -36,6 +36,13 @@ export const MASTERCLASS_OPENCLAW_LESSONS = [
       ]},
     ]),
     exercise: "<p>Rends-toi sur le dépôt GitHub officiel d'OpenClaw et sur la documentation. Réponds : (1) Quelle licence utilise OpenClaw ? (2) Combien d'apps de messagerie sont supportées ? (3) Quel est le prérequis minimum Node.js ?</p>",
+    quiz: [
+      { type: "mcq", question: "Combien d'applications de messagerie OpenClaw supporte-t-il simultanément ?", options: JSON.stringify(["3 apps", "5 apps", "7 apps", "10 apps"]), correctAnswer: "7 apps", explanation: "OpenClaw se connecte à 7 apps de messagerie simultanément : WhatsApp, Telegram, Discord, iMessage, Signal, Slack et Google Chat. Un seul assistant répond sur tous les canaux." },
+      { type: "true_false", question: "OpenClaw nécessite un abonnement mensuel en plus du coût de l'API Anthropic.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "OpenClaw est entièrement gratuit et open source. Le seul coût récurrent est l'API Anthropic, qui revient entre 5 et 20€ par mois selon l'usage. Aucun abonnement plateforme." },
+      { type: "mcq", question: "Quel est l'avantage principal du self-hosting d'OpenClaw par rapport aux chatbots classiques ?", options: JSON.stringify(["Il est plus rapide", "Tu possèdes tes données, elles ne transitent pas par un serveur tiers", "Il a plus de fonctionnalités", "Il est compatible avec plus de langues"]), correctAnswer: "Tu possèdes tes données, elles ne transitent pas par un serveur tiers", explanation: "Le self-hosting signifie que tout tourne sur ta machine. Tes conversations ne transitent jamais par un serveur tiers au-delà de l'API Anthropic elle-même. Tu gardes le contrôle total de tes données." },
+      { type: "true_false", question: "OpenClaw est un logiciel propriétaire développé par une entreprise privée.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "OpenClaw est gratuit et open source. Le code est public, auditable et modifiable. Tu ne dépends d'aucune entreprise, il n'y a aucun vendor lock-in." },
+      { type: "mcq", question: "Quel est le coût mensuel approximatif de l'utilisation d'OpenClaw via l'API Anthropic ?", options: JSON.stringify(["0€ — tout est gratuit", "5 à 20€ par mois", "50 à 100€ par mois", "200€ par mois minimum"]), correctAnswer: "5 à 20€ par mois", explanation: "Le coût de l'API Anthropic pour un usage personnel d'OpenClaw revient généralement entre 5 et 20€ par mois, sans limite artificielle de messages ni abonnement plateforme." },
+    ],
   },
   {
     order: 2,
@@ -66,6 +73,13 @@ export const MASTERCLASS_OPENCLAW_LESSONS = [
       { id: "2-7", type: "callout", variant: "tip", html: "OpenClaw doit tourner en permanence pour recevoir tes messages. Choisis une machine dédiée dès le départ." },
     ]),
     exercise: "<p>Installe Node.js v22+ puis exécute les 3 commandes d'installation. Note chaque étape de configuration et vérifie que la passerelle démarre correctement.</p>",
+    quiz: [
+      { type: "mcq", question: "Quelle version minimum de Node.js est requise pour installer OpenClaw ?", options: JSON.stringify(["Node.js v16", "Node.js v18", "Node.js v20", "Node.js v22"]), correctAnswer: "Node.js v22", explanation: "OpenClaw nécessite Node.js v22 ou supérieur. Tu peux vérifier ta version avec la commande node --version dans le terminal." },
+      { type: "true_false", question: "La commande openclaw gateway démarre le processus qui écoute les messages entrants.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "La commande openclaw gateway est la 3e et dernière étape d'installation. Elle démarre le processus qui écoute les messages entrants sur toutes les apps de messagerie configurées." },
+      { type: "mcq", question: "Quelles sont les 3 commandes d'installation d'OpenClaw dans l'ordre correct ?", options: JSON.stringify(["openclaw setup → npm install → openclaw start", "npm install -g @openclaw/openclaw → openclaw setup → openclaw gateway", "git clone openclaw → npm build → npm start", "pip install openclaw → openclaw config → openclaw run"]), correctAnswer: "npm install -g @openclaw/openclaw → openclaw setup → openclaw gateway", explanation: "Les 3 commandes sont : 1) npm install -g @openclaw/openclaw (installation globale), 2) openclaw setup (configuration interactive), 3) openclaw gateway (démarrage de la passerelle)." },
+      { type: "true_false", question: "OpenClaw peut fonctionner sans être allumé en permanence, il suffit de le lancer quand on en a besoin.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "OpenClaw doit tourner en permanence pour recevoir les messages. Il faut choisir une machine dédiée dès le départ : Mac Mini, vieux PC, Raspberry Pi ou serveur cloud (VPS)." },
+      { type: "mcq", question: "Quelle option de déploiement permanent coûte environ 5-10€ par mois ?", options: JSON.stringify(["Mac Mini", "Raspberry Pi", "Serveur cloud (VPS)", "Les trois options sont gratuites"]), correctAnswer: "Serveur cloud (VPS)", explanation: "Un VPS (serveur privé virtuel) coûte 5-10€/mois et offre une disponibilité garantie sans matériel à gérer. Le Mac Mini utilise du matériel existant (0€) et le Raspberry Pi coûte environ 50€ une fois." },
+    ],
   },
   {
     order: 3,
@@ -90,6 +104,13 @@ export const MASTERCLASS_OPENCLAW_LESSONS = [
       { id: "3-7", type: "callout", variant: "info", html: "<strong>Avantage multi-canal :</strong> Un seul assistant répond sur tous les canaux activés. Tu peux envoyer un message depuis Telegram et continuer sur WhatsApp — c'est le même assistant avec le même contexte." },
     ]),
     exercise: "<p>Connecte au moins un canal de messagerie. Commence par Telegram, envoie 3 messages différents à ton assistant et note les réponses.</p>",
+    quiz: [
+      { type: "mcq", question: "Quel canal de messagerie est recommandé comme point de départ pour OpenClaw ?", options: JSON.stringify(["WhatsApp", "Telegram", "Discord", "iMessage"]), correctAnswer: "Telegram", explanation: "Telegram est le point de départ recommandé car la procédure de connexion est simple : tu crées un bot via BotFather, tu copies le token et tu le colles dans la configuration OpenClaw." },
+      { type: "true_false", question: "WhatsApp nécessite un compte WhatsApp Business pour se connecter à OpenClaw.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "WhatsApp se connecte par scan de QR code via 'Appareils connectés'. Pas besoin de compte WhatsApp Business, un compte WhatsApp personnel suffit." },
+      { type: "mcq", question: "Comment fonctionne la connexion WhatsApp avec OpenClaw ?", options: JSON.stringify(["Par token API", "Par scan de QR code affiché dans le terminal", "Par identifiant et mot de passe", "Par connexion OAuth"]), correctAnswer: "Par scan de QR code affiché dans le terminal", explanation: "OpenClaw affiche un QR code dans le terminal que tu scannes avec ton téléphone via l'option 'Appareils connectés' de WhatsApp. C'est une connexion directe sans API tierce." },
+      { type: "true_false", question: "Un assistant OpenClaw conserve le même contexte de conversation entre Telegram et WhatsApp.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Un seul assistant répond sur tous les canaux activés. Tu peux envoyer un message depuis Telegram et continuer sur WhatsApp, c'est le même assistant avec le même contexte." },
+      { type: "mcq", question: "Quel outil Telegram utilises-tu pour créer un bot et obtenir un token API ?", options: JSON.stringify(["Telegram Settings", "BotFather", "Telegram API Console", "OpenClaw Dashboard"]), correctAnswer: "BotFather", explanation: "BotFather est le bot officiel de Telegram pour créer de nouveaux bots. Tu envoies /newbot, tu suis les instructions pour nommer ton bot, et BotFather te fournit un token API à copier dans la configuration OpenClaw." },
+    ],
   },
   {
     order: 4,
@@ -113,6 +134,13 @@ export const MASTERCLASS_OPENCLAW_LESSONS = [
       { id: "4-5", type: "callout", variant: "warning", html: "<strong>Règle n°1 :</strong> Toujours activer l'authentification. Sans elle, n'importe quel numéro peut interagir avec ton assistant et potentiellement contrôler ta machine." },
     ]),
     exercise: "<p>Lance openclaw security audit et corrige les points signalés. Documente les actions prises.</p>",
+    quiz: [
+      { type: "mcq", question: "Pourquoi la sécurité est-elle critique avec OpenClaw ?", options: JSON.stringify(["Parce que les données sont stockées sur un serveur public", "Parce que quiconque peut envoyer un message peut potentiellement contrôler ta machine", "Parce que l'API Anthropic n'est pas sécurisée", "Parce que les messages ne sont pas chiffrés"]), correctAnswer: "Parce que quiconque peut envoyer un message peut potentiellement contrôler ta machine", explanation: "OpenClaw donne à quiconque peut lui envoyer un message la capacité de naviguer sur le web et d'exécuter des commandes sur ta machine. Sans restriction, c'est une porte ouverte." },
+      { type: "true_false", question: "Il est sécurisé d'utiliser OpenClaw sans activer l'authentification si on est sur un réseau privé.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La règle n'est pas liée au réseau : toujours activer l'authentification. Sans elle, n'importe quel numéro peut interagir avec ton assistant et potentiellement contrôler ta machine." },
+      { type: "mcq", question: "Quel outil est recommandé pour l'accès distant sécurisé à OpenClaw ?", options: JSON.stringify(["Un VPN classique", "Tailscale", "TeamViewer", "Un proxy HTTP"]), correctAnswer: "Tailscale", explanation: "Tailscale est recommandé pour l'accès distant sécurisé. C'est un VPN personnel qui crée un réseau privé sans ouvrir de ports. L'installation n'est pas exposée directement sur Internet." },
+      { type: "true_false", question: "L'allowlist permet de définir quels numéros ou identifiants sont autorisés à interagir avec OpenClaw.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "L'allowlist est une bonne pratique de sécurité qui restreint l'accès à ton assistant aux seuls numéros/identifiants que tu as autorisés, bloquant tout message venant de sources inconnues." },
+      { type: "mcq", question: "Quelle commande permet de vérifier la sécurité de ton installation OpenClaw ?", options: JSON.stringify(["openclaw check", "openclaw security audit", "openclaw test", "openclaw scan"]), correctAnswer: "openclaw security audit", explanation: "La commande openclaw security audit vérifie la sécurité de ton installation et signale les points à corriger. Il est recommandé de la lancer régulièrement." },
+    ],
   },
   {
     order: 5,

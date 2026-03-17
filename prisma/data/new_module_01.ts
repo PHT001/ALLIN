@@ -66,6 +66,13 @@ export const MODULE_1_LESSONS = [
       ]},
     ]),
     exercise: "<h3>Réflexion</h3><p>Prends 5 minutes pour noter 3 entreprises autour de toi (restaurant, coiffeur, artisan, commerce) qui pourraient bénéficier de l'IA. Note ce que tu pourrais leur proposer — même vaguement. On y reviendra.</p>",
+    quiz: [
+      { type: "mcq", question: "Quel pourcentage d'entreprises n'avaient encore rien mis en place en matière d'IA en 2025 ?", options: JSON.stringify(["50%", "75%", "95%", "30%"]), correctAnswer: "95%", explanation: "95% des entreprises n'avaient encore rien mis en place — pas de chatbot, pas d'automatisation, pas d'IA dans leurs process. C'est ce qui crée l'opportunité." },
+      { type: "true_false", question: "Le marché mondial de l'IA a doublé entre 2023 et 2025, passant de 150 milliards $ à plus de 300 milliards $.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Le marché mondial de l'IA est passé de 150 milliards $ en 2023 à plus de 300 milliards $ en 2025, soit un doublement en deux ans." },
+      { type: "mcq", question: "Selon la formation, pourquoi 2025 est-il le moment idéal pour lancer une agence IA ?", options: JSON.stringify(["Les outils IA sont gratuits", "La demande explose mais l'offre de prestataires est encore faible", "Les entreprises n'ont pas besoin d'aide pour implémenter l'IA", "Le marché est déjà saturé"]), correctAnswer: "La demande explose mais l'offre de prestataires est encore faible", explanation: "La demande des entreprises pour des prestataires IA explose, mais il n'y a pas encore assez de professionnels qualifiés pour y répondre. C'est une fenêtre d'opportunité." },
+      { type: "true_false", question: "En 2026-2027, le marché de l'IA sera saturé et les premiers arrivés auront raflé les clients.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "La formation indique clairement que dans 2 ans, lancer une agence IA sera comme lancer une agence web en 2020 — possible mais en retard. Les premiers arrivés auront un avantage décisif." },
+      { type: "mcq", question: "Quel était le salaire moyen d'un consultant IA en 2025 ?", options: JSON.stringify(["30-40K€/an", "50-60K€/an", "80-120K€/an", "150-200K€/an"]), correctAnswer: "80-120K€/an", explanation: "Le salaire moyen d'un consultant IA est passé d'environ 50K€/an en 2023 à 80-120K€/an en 2025, reflétant la forte demande du marché." },
+    ],
   },
 
   // ─── LEÇON 2 ───
@@ -123,6 +130,13 @@ export const MODULE_1_LESSONS = [
       ]},
     ]),
     exercise: "<h3>Exercice</h3><p>Va sur <strong>claude.ai</strong> et crée un compte gratuit si ce n'est pas déjà fait. Pose-lui une question sur ton domaine d'expertise et observe la qualité de la réponse.</p>",
+    quiz: [
+      { type: "mcq", question: "Pour quel usage Claude est-il considéré comme le meilleur choix selon la formation ?", options: JSON.stringify(["Analyse d'images et vidéos", "Code et raisonnement", "Génération d'images", "Traduction en temps réel"]), correctAnswer: "Code et raisonnement", explanation: "Claude excelle en code (Claude Code est l'outil de dev IA le plus puissant du marché) et en raisonnement, ce qui en fait le meilleur choix pour construire des solutions IA." },
+      { type: "true_false", question: "Mistral est le meilleur choix quand on a besoin de traiter des données sensibles en local.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Mistral étant open-source et auto-hébergeable (self-hosted), il est le meilleur choix pour traiter des données sensibles sans les envoyer sur des serveurs tiers." },
+      { type: "mcq", question: "Quel modèle IA est recommandé pour analyser des images et des vidéos ?", options: JSON.stringify(["Claude", "Mistral", "Gemini", "ChatGPT"]), correctAnswer: "Gemini", explanation: "Gemini de Google obtient 5 étoiles en multimodal (images/vidéos) dans le comparatif, ce qui en fait le meilleur choix pour l'analyse visuelle." },
+      { type: "true_false", question: "Claude peut travailler avec un contexte de 200 000 tokens, soit environ 150 000 mots.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Claude dispose d'un contexte long de 200K tokens (~150 000 mots), ce qui lui permet de travailler sur des projets entiers sans perdre le fil." },
+      { type: "mcq", question: "Quel est le prix de Claude Pro et ChatGPT Plus ?", options: JSON.stringify(["Gratuit pour les deux", "10$/mois chacun", "20$/mois chacun", "50$/mois chacun"]), correctAnswer: "20$/mois chacun", explanation: "Claude Pro et ChatGPT Plus coûtent tous les deux 20$/mois, en plus de leurs versions gratuites respectives." },
+    ],
   },
 
   // ─── LEÇON 3 ───
@@ -182,6 +196,13 @@ export const MODULE_1_LESSONS = [
       ]},
     ]),
     exercise: "<h3>Exercice pratique</h3><ol><li>Ouvre Claude (claude.ai)</li><li>Écris ce prompt simple : <em>\"Écris-moi un email de prospection\"</em></li><li>Puis écris le même en RCTF avec un rôle, contexte, tâche et format précis</li><li>Compare les deux résultats et note ce qui change</li></ol>",
+    quiz: [
+      { type: "mcq", question: "Que signifie l'acronyme RCTF dans la structure de prompt ?", options: JSON.stringify(["Résultat, Code, Test, Feedback", "Rôle, Contexte, Tâche, Format", "Recherche, Contenu, Texte, Formulaire", "Rapide, Concis, Technique, Fiable"]), correctAnswer: "Rôle, Contexte, Tâche, Format", explanation: "RCTF signifie Rôle (qui est l'IA), Contexte (la situation), Tâche (ce qu'on veut) et Format (la forme du résultat). C'est la structure à utiliser pour 90% de tes prompts." },
+      { type: "true_false", question: "Un prompt court et vague donne généralement de meilleurs résultats qu'un prompt structuré avec RCTF.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "C'est l'inverse : un prompt structuré RCTF donne un résultat précis et utilisable dès le premier essai, tandis qu'un prompt vague produit du contenu générique qu'il faut refaire plusieurs fois." },
+      { type: "mcq", question: "Parmi les 5 erreurs de prompting, laquelle consiste à poser 10 questions en même temps ?", options: JSON.stringify(["Être trop vague", "Ne pas donner de contexte", "Demander trop en une fois", "Ne pas préciser le format"]), correctAnswer: "Demander trop en une fois", explanation: "Demander trop en une fois est une erreur courante. La règle : un prompt = une tâche claire. Pas 10 questions en même temps, sinon l'IA se disperse." },
+      { type: "true_false", question: "Le premier résultat d'un prompt est toujours parfait et ne nécessite jamais d'itération.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Ne pas itérer est l'une des 5 erreurs identifiées. Le premier résultat est rarement parfait — il faut affiner, préciser et relancer pour obtenir le meilleur résultat possible." },
+      { type: "mcq", question: "Dans un prompt RCTF, à quoi sert la partie 'Contexte' ?", options: JSON.stringify(["Donner un titre au prompt", "Dire à l'IA qui elle est", "Décrire la situation pour que l'IA puisse résoudre au lieu d'inventer", "Préciser la forme de la réponse"]), correctAnswer: "Décrire la situation pour que l'IA puisse résoudre au lieu d'inventer", explanation: "Le Contexte donne la situation à l'IA. Sans contexte, l'IA invente. Avec contexte, elle résout. Par exemple : 'Mon client vend un CRM à 49€/mois aux TPE françaises.'" },
+    ],
   },
 
   // ─── LEÇON 4 ───
@@ -240,6 +261,13 @@ export const MODULE_1_LESSONS = [
       ]},
     ]),
     exercise: "<h3>Exercice</h3><p>Choisis UN service parmi les 5. Note quel type de client tu viserais (ex : restaurants pour des chatbots de réservation) et à quel prix tu le vendrais pour commencer.</p>",
+    quiz: [
+      { type: "mcq", question: "Quel est le prix débutant pour la création d'un chatbot IA ?", options: JSON.stringify(["50-100€", "500-1 000€", "5 000-10 000€", "100-200€"]), correctAnswer: "500-1 000€", explanation: "Un chatbot IA se facture entre 500 et 1 000€ pour un débutant, et entre 2 000 et 5 000€ pour un profil confirmé, avec en plus une maintenance récurrente de 100-300€/mois." },
+      { type: "true_false", question: "Les sites web et landing pages sont le service recommandé pour commencer une agence IA.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Ce sont les chatbots IA qui sont recommandés pour commencer, car c'est le service le plus facile à vendre (le besoin est évident) et à livrer (quelques heures de travail)." },
+      { type: "mcq", question: "Combien peut rapporter un chatbot vendu 1 500€ avec maintenance à 200€/mois sur la première année ?", options: JSON.stringify(["1 500€", "2 400€", "3 900€", "6 000€"]), correctAnswer: "3 900€", explanation: "Un chatbot à 1 500€ + 200€/mois de maintenance = 1 500€ + (200€ × 12) = 1 500€ + 2 400€ = 3 900€ la première année." },
+      { type: "true_false", question: "Le revenu récurrent (maintenance mensuelle) est plus important que le prix initial pour la rentabilité d'une agence IA.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Le secret c'est le récurrent. 10 clients en maintenance à 250€/mois = 2 500€/mois de revenus prévisibles, soit 30 000€/an sans chercher de nouveaux clients." },
+      { type: "mcq", question: "Selon l'exemple de la formation, combien faut-il de sources de revenus différentes pour atteindre 10K€/mois ?", options: JSON.stringify(["1 seule grosse source", "2 sources", "4 sources combinées (chatbots + automatisations + récurrent + site web)", "10 sources différentes"]), correctAnswer: "4 sources combinées (chatbots + automatisations + récurrent + site web)", explanation: "L'exemple montre 4 sources : 3 chatbots (4 500€) + 2 automatisations (2 000€) + 10 clients récurrents (2 500€) + 1 site web (2 000€) = 11 000€/mois." },
+    ],
   },
 
   // ─── LEÇON 5 ───
@@ -296,6 +324,13 @@ export const MODULE_1_LESSONS = [
       ]},
     ]),
     exercise: "<h3>Exercice</h3><p>Va sur claude.ai et colle le prompt système du restaurant ci-dessus dans un nouveau projet. Teste-le en lui posant des questions comme un client le ferait. Note ce qui marche bien et ce qui pourrait être amélioré.</p>",
+    quiz: [
+      { type: "mcq", question: "Quelles sont les 3 composantes essentielles d'un chatbot IA ?", options: JSON.stringify(["Un site web, un logo et un nom de domaine", "Un prompt système, une API et une interface chat", "Un serveur, un CDN et une base de données", "Un CRM, un email et un téléphone"]), correctAnswer: "Un prompt système, une API et une interface chat", explanation: "Un chatbot IA se compose de 3 éléments : un prompt système (la personnalité), une API (le cerveau, ex: Claude), et une interface chat (le widget visible par l'utilisateur)." },
+      { type: "true_false", question: "Le prompt système est la partie la plus importante d'un chatbot IA.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Le prompt système est la 'personnalité' du chatbot. Plus il est précis, meilleur est le résultat. C'est lui qui définit comment le chatbot se comporte et répond." },
+      { type: "mcq", question: "Combien de temps faut-il pour créer un chatbot simple une fois formé ?", options: JSON.stringify(["1 semaine", "2-4 heures", "1 mois", "30 minutes"]), correctAnswer: "2-4 heures", explanation: "Avec les bons outils et un prompt système bien fait, un chatbot simple se crée en 2-4 heures. C'est pour ça que la marge est excellente quand on le vend 1 500€." },
+      { type: "true_false", question: "Pour créer un chatbot, il faut comprendre tout le code avant de commencer.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La démo est faite pour montrer ce qui est possible et à quelle vitesse. Il n'est pas nécessaire de tout comprendre — le Module 3 enseignera à coder avec l'IA sans être développeur." },
+      { type: "mcq", question: "Dans le prompt système du chatbot du restaurant, quelle règle est imposée pour les événements privés ?", options: JSON.stringify(["Refuser toute demande", "Proposer d'appeler le numéro du restaurant", "Envoyer un email automatique", "Demander de revenir plus tard"]), correctAnswer: "Proposer d'appeler le numéro du restaurant", explanation: "Le prompt système précise que pour les événements privés, le chatbot doit proposer d'appeler le 01 23 45 67 89, car ce type de demande nécessite un échange humain." },
+    ],
   },
 
   // ─── LEÇON 6 ───
@@ -359,5 +394,12 @@ export const MODULE_1_LESSONS = [
       ]},
     ]),
     exercise: "<h3>Exercice final du Module 1</h3><ol><li>Écris en une phrase ce que tu veux accomplir avec cette formation</li><li>Identifie ton premier service (chatbot recommandé)</li><li>Identifie 5 entreprises locales que tu pourrais contacter</li><li>Fixe-toi une date pour signer ton premier client</li></ol>",
+    quiz: [
+      { type: "mcq", question: "Combien de modules comporte la formation complète ?", options: JSON.stringify(["7 modules", "10 modules", "13 modules", "15 modules"]), correctAnswer: "13 modules", explanation: "La formation comporte 13 modules, allant de la découverte de l'IA (Module 1) jusqu'au scaling à 10K€/mois (Module 13)." },
+      { type: "true_false", question: "La formation recommande de maîtriser tous les services avant de commencer à vendre.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La formation recommande de commencer par un seul service (les chatbots de préférence), puis d'ajouter les autres progressivement. Pas besoin de tout maîtriser dès le début." },
+      { type: "mcq", question: "Selon la roadmap, en combien de temps peut-on raisonnablement passer de l'apprentissage à la vente de services ?", options: JSON.stringify(["1 jour", "2-3 semaines", "6 mois", "1 an"]), correctAnswer: "2-3 semaines", explanation: "La logique du parcours prévoit : Semaine 1-2 pour apprendre les outils, Semaine 2-3 pour construire des solutions, et Semaine 3-4 pour vendre ses services." },
+      { type: "true_false", question: "Les modules 2 à 13 sont accessibles dans la formule Starter à 47€.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Les modules 2 à 13 sont disponibles dans la formule Academy. Le Module 1 (Starter à 47€) est le module de découverte, et il faut passer à la formule supérieure pour accéder à la suite." },
+      { type: "mcq", question: "À la fin de la formation, qu'est-ce que l'élève est censé avoir ?", options: JSON.stringify(["Juste des compétences techniques", "Un diplôme certifié en IA", "Des compétences techniques, un portfolio, une offre claire, une méthode de prospection et un plan pour 10K€/mois", "Un emploi garanti dans une entreprise tech"]), correctAnswer: "Des compétences techniques, un portfolio, une offre claire, une méthode de prospection et un plan pour 10K€/mois", explanation: "La formation vise un résultat complet : compétences techniques, portfolio de projets, offre claire, méthode de prospection, et un plan concret pour atteindre 10K€/mois." },
+    ],
   },
 ];
