@@ -32,6 +32,7 @@ model Module {
   title       String
   description String
   order       Int      @unique
+  category    String   @default("formation") // "formation" | "masterclass"
   lessons     Lesson[]
 }
 

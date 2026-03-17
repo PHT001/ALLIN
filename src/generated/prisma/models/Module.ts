@@ -39,6 +39,7 @@ export type ModuleMinAggregateOutputType = {
   title: string | null
   description: string | null
   order: number | null
+  category: string | null
 }
 
 export type ModuleMaxAggregateOutputType = {
@@ -46,6 +47,7 @@ export type ModuleMaxAggregateOutputType = {
   title: string | null
   description: string | null
   order: number | null
+  category: string | null
 }
 
 export type ModuleCountAggregateOutputType = {
@@ -53,6 +55,7 @@ export type ModuleCountAggregateOutputType = {
   title: number
   description: number
   order: number
+  category: number
   _all: number
 }
 
@@ -70,6 +73,7 @@ export type ModuleMinAggregateInputType = {
   title?: true
   description?: true
   order?: true
+  category?: true
 }
 
 export type ModuleMaxAggregateInputType = {
@@ -77,6 +81,7 @@ export type ModuleMaxAggregateInputType = {
   title?: true
   description?: true
   order?: true
+  category?: true
 }
 
 export type ModuleCountAggregateInputType = {
@@ -84,6 +89,7 @@ export type ModuleCountAggregateInputType = {
   title?: true
   description?: true
   order?: true
+  category?: true
   _all?: true
 }
 
@@ -178,6 +184,7 @@ export type ModuleGroupByOutputType = {
   title: string
   description: string
   order: number
+  category: string
   _count: ModuleCountAggregateOutputType | null
   _avg: ModuleAvgAggregateOutputType | null
   _sum: ModuleSumAggregateOutputType | null
@@ -208,6 +215,7 @@ export type ModuleWhereInput = {
   title?: Prisma.StringFilter<"Module"> | string
   description?: Prisma.StringFilter<"Module"> | string
   order?: Prisma.IntFilter<"Module"> | number
+  category?: Prisma.StringFilter<"Module"> | string
   lessons?: Prisma.LessonListRelationFilter
 }
 
@@ -216,6 +224,7 @@ export type ModuleOrderByWithRelationInput = {
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  category?: Prisma.SortOrder
   lessons?: Prisma.LessonOrderByRelationAggregateInput
 }
 
@@ -227,6 +236,7 @@ export type ModuleWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.ModuleWhereInput | Prisma.ModuleWhereInput[]
   title?: Prisma.StringFilter<"Module"> | string
   description?: Prisma.StringFilter<"Module"> | string
+  category?: Prisma.StringFilter<"Module"> | string
   lessons?: Prisma.LessonListRelationFilter
 }, "id" | "order">
 
@@ -235,6 +245,7 @@ export type ModuleOrderByWithAggregationInput = {
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  category?: Prisma.SortOrder
   _count?: Prisma.ModuleCountOrderByAggregateInput
   _avg?: Prisma.ModuleAvgOrderByAggregateInput
   _max?: Prisma.ModuleMaxOrderByAggregateInput
@@ -250,6 +261,7 @@ export type ModuleScalarWhereWithAggregatesInput = {
   title?: Prisma.StringWithAggregatesFilter<"Module"> | string
   description?: Prisma.StringWithAggregatesFilter<"Module"> | string
   order?: Prisma.IntWithAggregatesFilter<"Module"> | number
+  category?: Prisma.StringWithAggregatesFilter<"Module"> | string
 }
 
 export type ModuleCreateInput = {
@@ -257,6 +269,7 @@ export type ModuleCreateInput = {
   title: string
   description: string
   order: number
+  category?: string
   lessons?: Prisma.LessonCreateNestedManyWithoutModuleInput
 }
 
@@ -265,6 +278,7 @@ export type ModuleUncheckedCreateInput = {
   title: string
   description: string
   order: number
+  category?: string
   lessons?: Prisma.LessonUncheckedCreateNestedManyWithoutModuleInput
 }
 
@@ -273,6 +287,7 @@ export type ModuleUpdateInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   lessons?: Prisma.LessonUpdateManyWithoutModuleNestedInput
 }
 
@@ -281,6 +296,7 @@ export type ModuleUncheckedUpdateInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  category?: Prisma.StringFieldUpdateOperationsInput | string
   lessons?: Prisma.LessonUncheckedUpdateManyWithoutModuleNestedInput
 }
 
@@ -289,6 +305,7 @@ export type ModuleCreateManyInput = {
   title: string
   description: string
   order: number
+  category?: string
 }
 
 export type ModuleUpdateManyMutationInput = {
@@ -296,6 +313,7 @@ export type ModuleUpdateManyMutationInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type ModuleUncheckedUpdateManyInput = {
@@ -303,6 +321,7 @@ export type ModuleUncheckedUpdateManyInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type ModuleCountOrderByAggregateInput = {
@@ -310,6 +329,7 @@ export type ModuleCountOrderByAggregateInput = {
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  category?: Prisma.SortOrder
 }
 
 export type ModuleAvgOrderByAggregateInput = {
@@ -321,6 +341,7 @@ export type ModuleMaxOrderByAggregateInput = {
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  category?: Prisma.SortOrder
 }
 
 export type ModuleMinOrderByAggregateInput = {
@@ -328,6 +349,7 @@ export type ModuleMinOrderByAggregateInput = {
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  category?: Prisma.SortOrder
 }
 
 export type ModuleSumOrderByAggregateInput = {
@@ -366,6 +388,7 @@ export type ModuleCreateWithoutLessonsInput = {
   title: string
   description: string
   order: number
+  category?: string
 }
 
 export type ModuleUncheckedCreateWithoutLessonsInput = {
@@ -373,6 +396,7 @@ export type ModuleUncheckedCreateWithoutLessonsInput = {
   title: string
   description: string
   order: number
+  category?: string
 }
 
 export type ModuleCreateOrConnectWithoutLessonsInput = {
@@ -396,6 +420,7 @@ export type ModuleUpdateWithoutLessonsInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type ModuleUncheckedUpdateWithoutLessonsInput = {
@@ -403,6 +428,7 @@ export type ModuleUncheckedUpdateWithoutLessonsInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
   order?: Prisma.IntFieldUpdateOperationsInput | number
+  category?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -441,6 +467,7 @@ export type ModuleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   title?: boolean
   description?: boolean
   order?: boolean
+  category?: boolean
   lessons?: boolean | Prisma.Module$lessonsArgs<ExtArgs>
   _count?: boolean | Prisma.ModuleCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["module"]>
@@ -450,6 +477,7 @@ export type ModuleSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   title?: boolean
   description?: boolean
   order?: boolean
+  category?: boolean
 }, ExtArgs["result"]["module"]>
 
 export type ModuleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -457,6 +485,7 @@ export type ModuleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   title?: boolean
   description?: boolean
   order?: boolean
+  category?: boolean
 }, ExtArgs["result"]["module"]>
 
 export type ModuleSelectScalar = {
@@ -464,9 +493,10 @@ export type ModuleSelectScalar = {
   title?: boolean
   description?: boolean
   order?: boolean
+  category?: boolean
 }
 
-export type ModuleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "order", ExtArgs["result"]["module"]>
+export type ModuleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "order" | "category", ExtArgs["result"]["module"]>
 export type ModuleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   lessons?: boolean | Prisma.Module$lessonsArgs<ExtArgs>
   _count?: boolean | Prisma.ModuleCountOutputTypeDefaultArgs<ExtArgs>
@@ -484,6 +514,7 @@ export type $ModulePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     title: string
     description: string
     order: number
+    category: string
   }, ExtArgs["result"]["module"]>
   composites: {}
 }
@@ -912,6 +943,7 @@ export interface ModuleFieldRefs {
   readonly title: Prisma.FieldRef<"Module", 'String'>
   readonly description: Prisma.FieldRef<"Module", 'String'>
   readonly order: Prisma.FieldRef<"Module", 'Int'>
+  readonly category: Prisma.FieldRef<"Module", 'String'>
 }
     
 

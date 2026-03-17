@@ -14,21 +14,24 @@ export const BADGES = [
 ] as const;
 
 export const MODULES = [
-  { order: 1,  title: "Comprendre l'IA et Découvrir Claude", description: "Histoire, concepts et prise en main de Claude" },
-  { order: 2,  title: "Prompt Engineering Avancé", description: "Prompting avancé et création de Skills Claude" },
-  { order: 3,  title: "Claude Code : Maîtriser le Vibe Coding", description: "Setup, workflow et premiers projets avec Claude Code" },
-  { order: 4,  title: "Compétences Techniques Essentielles", description: "Web, APIs, déploiement et bases de données" },
-  { order: 5,  title: "Construire un MVP avec Claude Code", description: "Créer ton premier produit de A à Z" },
-  { order: 6,  title: "Projets : Landing Pages et Sites de Vente", description: "6 projets concrets à ajouter à ton portfolio" },
-  { order: 7,  title: "Projets : Apps Web et SaaS", description: "Construire des apps complètes et vendables" },
-  { order: 8,  title: "Projets : Automatisations et Agents IA", description: "Créer des agents et automatisations intelligentes" },
-  { order: 9,  title: "ClawBot : Ton Agent IA Autonome", description: "Installer, configurer et déployer ton agent 24/7" },
-  { order: 10, title: "Lancer ton Business IA", description: "Modèles de business et premières ventes" },
-  { order: 11, title: "Monétiser : Apps, SaaS et Services", description: "Transformer tes créations en revenus récurrents" },
-  { order: 12, title: "Vente et Acquisition Clients", description: "Prospection, vente consultative et closing enterprise" },
-  { order: 13, title: "Scaler et Pérenniser", description: "Pricing premium, spécialisation et croissance" },
-  { order: 14, title: "Personal Branding & Acquisition Organique", description: "Contenu, communauté et leads entrants" },
-  { order: 15, title: "Déployer, Maintenir et Itérer", description: "CI/CD, monitoring et amélioration continue de tes apps" },
+  // ── Formation principale (14 modules) ──
+  { order: 1,  title: "Découvrir l'IA & les opportunités", description: "Comprendre l'IA, les outils, et le potentiel business", category: "formation" },
+  { order: 2,  title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", category: "formation" },
+  { order: 3,  title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne, même sans savoir coder", category: "formation" },
+  { order: 4,  title: "Backend & Bases de données", description: "Supabase : donner un cerveau et une mémoire à tes projets", category: "formation" },
+  { order: 5,  title: "APIs & Intégrations", description: "Connecter les outils entre eux : Stripe, webhooks, APIs", category: "formation" },
+  { order: 6,  title: "Automatisations", description: "Make, n8n, Zapier : créer des machines qui bossent pour toi", category: "formation" },
+  { order: 7,  title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", category: "formation" },
+  { order: 8,  title: "Agents IA autonomes", description: "Des IA qui travaillent seules : veille, prospection, analyse", category: "formation" },
+  { order: 9,  title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", category: "formation" },
+  { order: 10, title: "Ton offre & tes prix", description: "Passer de \"je sais faire\" à \"je vends\"", category: "formation" },
+  { order: 11, title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing", category: "formation" },
+  { order: 12, title: "Livrer & fidéliser", description: "Un client satisfait = 3 clients en plus", category: "formation" },
+  { order: 13, title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", category: "formation" },
+  { order: 14, title: "Juridique, contrats & admin", description: "Statuts, contrats, RGPD, facturation et assurances", category: "formation" },
+  // ── Masterclasses (bonus) ──
+  { order: 15, title: "Masterclass Claude Code", description: "Ton environnement de dev IA : coder avec Claude dans ton terminal", category: "masterclass" },
+  { order: 16, title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", category: "masterclass" },
 ] as const;
 
 /* ——— Module metadata (brand, difficulty, estimated time) ——— */
@@ -44,21 +47,24 @@ export interface ModuleMetadata {
 }
 
 export const MODULE_METADATA: Record<number, ModuleMetadata> = {
+  // Formation
   1:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
-  2:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h30",  lessonCount: 7  },
-  3:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
-  4:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 7  },
-  5:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 7  },
-  6:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 6  },
-  7:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 6  },
-  8:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 6  },
-  9:  { brands: ["clawbot"],   difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 6  },
-  10: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 6  },
-  11: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 6  },
-  12: { brands: [],            difficulty: "avance",         estimatedTime: "~5h",    lessonCount: 11 },
-  13: { brands: [],            difficulty: "avance",         estimatedTime: "~4h30",  lessonCount: 9  },
-  14: { brands: [],            difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 6  },
-  15: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 6  },
+  2:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 5  },
+  3:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h30",  lessonCount: 6  },
+  4:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
+  5:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
+  6:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
+  7:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
+  8:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
+  9:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
+  10: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
+  11: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
+  12: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
+  13: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
+  14: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
+  // Masterclasses
+  15: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 7  },
+  16: { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h30",  lessonCount: 8  },
 };
 
 export const DIFFICULTY_CONFIG = {
@@ -70,18 +76,20 @@ export const DIFFICULTY_CONFIG = {
 /* ——— Weeks structure (4 weeks x 3 modules) ——— */
 
 export const WEEKS = [
-  { week: 1, title: "Fondations",          subtitle: "IA, prompting et maîtrise de Claude Code",               modules: [1, 2, 3, 4] },
-  { week: 2, title: "Construction",         subtitle: "MVP, projets concrets et portfolio",                     modules: [5, 6, 7, 8] },
-  { week: 3, title: "Business",             subtitle: "ClawBot, monétisation et lancement commercial",          modules: [9, 10, 11, 12] },
-  { week: 4, title: "Scale",                subtitle: "Scaling, branding, déploiement et croissance",           modules: [13, 14, 15] },
+  { week: 1, title: "Fondations",          subtitle: "IA, prompting et création de sites web",                 modules: [1, 2, 3, 4] },
+  { week: 2, title: "Construction",         subtitle: "APIs, automatisations, chatbots et agents IA",           modules: [5, 6, 7, 8] },
+  { week: 3, title: "Business",             subtitle: "MVP, offre, clients et livraison",                      modules: [9, 10, 11, 12] },
+  { week: 4, title: "Scale & Juridique",    subtitle: "Scaling, juridique et masterclasses",                   modules: [13, 14] },
 ] as const;
+
+export const MASTERCLASS_MODULES = [15, 16] as const;
 
 /* ——— Tier-based module access ——— */
 
 export const TIER_MODULE_ACCESS: Record<string, number[]> = {
   starter:    [1],
-  academy:    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-  one_to_one: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+  academy:    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  one_to_one: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
 };
 
 export const TIERS = [
