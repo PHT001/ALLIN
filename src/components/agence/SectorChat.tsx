@@ -157,7 +157,7 @@ export default function SectorChat() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="relative bg-white rounded-3xl shadow-[0_0_80px_0px_rgba(255,255,255,0.25),0_0_150px_0px_rgba(255,255,255,0.1)] border border-white/20 overflow-hidden"
+          className="relative bg-white rounded-3xl shadow-[0_0_40px_0px_rgba(255,255,255,0.15),0_0_80px_0px_rgba(255,255,255,0.06)] border border-white/15 overflow-hidden"
         >
           {/* Chat header bar */}
           <div className="flex items-center gap-3 px-5 py-3.5 border-b border-gray-100 bg-[#FAFAFA]">
