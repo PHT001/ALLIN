@@ -23,8 +23,8 @@ export default function FormationPage() {
     <>
       <UrgencyBanner />
       <Navbar />
-      <Hero />
       <LogosBar />
+      <Hero />
       <PainSection />
       <DreamSection />
       <UrgenceIA />

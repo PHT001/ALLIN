@@ -69,13 +69,13 @@ export default function LogosBar() {
   const doubled = [...tools, ...tools];
 
   return (
-    <section className="bg-[#0A0A0A] py-10 border-y border-white/5 overflow-hidden">
+    <section className="bg-white py-10 border-y border-gray-100 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm font-medium text-white/40 mb-8 uppercase tracking-widest"
+          className="text-center text-sm font-medium text-gray-400 mb-8 uppercase tracking-widest"
         >
           Les outils que tu vas maîtriser
         </motion.p>
@@ -83,16 +83,16 @@ export default function LogosBar() {
 
       {/* Marquee logos */}
       <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
-        <div className="flex animate-marquee-right items-center">
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="flex animate-marquee-right md:[animation-duration:30s] [animation-duration:15s] items-center">
           {doubled.map((tool, i) => (
             <div
               key={`${tool.name}-${i}`}
-              className="flex-shrink-0 mx-4 lg:mx-8 flex items-center gap-3 bg-white/5 rounded-xl px-6 py-3.5 border border-white/10 hover:border-red-500/30 transition-colors"
+              className="flex-shrink-0 mx-4 lg:mx-8 flex items-center gap-3 bg-gray-50 rounded-xl px-6 py-3.5 border border-gray-200 hover:border-[#007AFF]/30 transition-colors"
             >
               <tool.Logo />
-              <span className="text-sm font-semibold text-white/90 whitespace-nowrap">
+              <span className="text-sm font-semibold text-gray-800 whitespace-nowrap">
                 {tool.name}
               </span>
             </div>
