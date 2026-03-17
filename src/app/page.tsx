@@ -10,6 +10,7 @@ import ProcessSteps from "@/components/agence/ProcessSteps";
 import BeforeAfter from "@/components/agence/BeforeAfter";
 import AgenceTestimonials from "@/components/agence/AgenceTestimonials";
 import FormationBridge from "@/components/agence/FormationBridge";
+import FoundersSection from "@/components/agence/FoundersSection";
 import AgenceFAQ from "@/components/agence/AgenceFAQ";
 import AgenceFooter from "@/components/agence/AgenceFooter";
 import AgenceStickyMobileCTA from "@/components/agence/AgenceStickyMobileCTA";
@@ -26,6 +27,7 @@ export default function Home() {
       <ProcessSteps />
       <BeforeAfter />
       <AgenceTestimonials />
+      <FoundersSection />
       <AgenceFAQ />
       <FormationBridge />
       <AgenceFooter />
