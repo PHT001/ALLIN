@@ -55,7 +55,7 @@ export default function FinalCTA() {
           </div>
 
           <p className="mt-6 text-sm text-gray-500">
-            Garantie remboursement 14 jours &bull; Acc&egrave;s imm&eacute;diat &bull; Paiement s&eacute;curis&eacute;
+            Garantie remboursement 14 jours &bull; Acc&egrave;s imm&eacute;diat &bull; Paiement s&eacute;curis&eacute; &bull; Payable en plusieurs fois
           </p>
         </motion.div>
       </div>

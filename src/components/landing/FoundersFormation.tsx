@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function FoundersSection() {
+export default function FoundersFormation() {
   return (
     <section className="bg-white py-14 lg:py-20">
       <div className="mx-auto max-w-2xl px-6 lg:px-8">
@@ -15,7 +15,7 @@ export default function FoundersSection() {
           className="text-center"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-10">
-            L&apos;&eacute;quipe derri&egrave;re OpexIA
+            Qui est derri&egrave;re cette formation ?
           </h2>
 
           {/* Founder cards */}
@@ -57,10 +57,10 @@ export default function FoundersSection() {
           {/* Personal message */}
           <div className="text-left space-y-4 text-[#6B7280] leading-relaxed">
             <p>
-              <strong className="text-[#111]">+200 entreprises</strong> accompagnées dans leur transformation IA. Notre méthode : <strong className="text-[#111]">identifier les processus à fort impact</strong>, déployer en <strong className="text-[#111]">14 jours</strong>, générer des <strong className="text-[#111]">résultats mesurables</strong> dès le premier mois.
+              On a cr&eacute;&eacute; cette formation parce qu&apos;on en avait <strong className="text-[#111]">marre de voir des gens galérer</strong> à comprendre l&apos;IA alors que les opportunités sont <strong className="text-[#111]">énormes</strong>. On a accompagn&eacute; <strong className="text-[#111]">+200 entreprises</strong> dans leur transformation IA — et on a compil&eacute; tout ce qu&apos;on sait dans un seul programme.
             </p>
             <p>
-              Vous restez concentré sur <strong className="text-[#111]">votre activité</strong>, on s&apos;occupe de tout — audit, automatisation, déploiement et <strong className="text-[#111]">support continu</strong>.
+              Pas de th&eacute;orie inutile, pas de blabla. Que du <strong className="text-[#111]">concret</strong>, des <strong className="text-[#111]">cas r&eacute;els</strong>, et une m&eacute;thode &eacute;prouv&eacute;e pour <strong className="text-[#111]">lancer ton agence IA</strong> ou <strong className="text-[#111]">booster ta carri&egrave;re</strong> avec l&apos;intelligence artificielle.
             </p>
           </div>
         </motion.div>

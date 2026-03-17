@@ -39,7 +39,7 @@ export default function Features() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-[#0A0A0A]" style={{ height: `${features.length * 100}vh` }}>
+    <section ref={containerRef} className="relative bg-[#0A0A0A]" style={{ height: `${features.length * 55}vh` }}>
       {/* Sticky viewport */}
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="relative w-full mx-auto max-w-7xl px-6 lg:px-8">

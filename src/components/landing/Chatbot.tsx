@@ -10,9 +10,9 @@ interface Message {
 
 const faqData: { keywords: string[]; answer: string }[] = [
   {
-    keywords: ["prix", "tarif", "combien", "co\u00fbt", "cher", "gratuit", "payer", "paiement"],
+    keywords: ["prix", "tarif", "combien", "co\u00fbt", "cher", "gratuit", "payer", "paiement", "plusieurs fois"],
     answer:
-      "On a 3 formules : Starter \u00e0 49\u20ac (PDF + templates), Academy \u00e0 397\u20ac (formation compl\u00e8te + plateforme + CRM), et One-to-One \u00e0 997\u20ac (accompagnement premium). Garantie 14 jours satisfait ou rembours\u00e9.",
+      "On a 3 formules : Starter \u00e0 47\u20ac (PDF + templates), Academy \u00e0 397\u20ac (formation compl\u00e8te + plateforme + CRM \u2014 payable en 3x139\u20ac), et One-to-One \u00e0 3 997\u20ac (accompagnement premium avec Marius & Igor \u2014 payable en 4x999\u20ac). Garantie 14 jours satisfait ou rembours\u00e9.",
   },
   {
     keywords: ["d\u00e9butant", "z\u00e9ro", "aucune", "connaissance", "niveau", "pr\u00e9requis", "base"],
@@ -42,7 +42,7 @@ const faqData: { keywords: string[]; answer: string }[] = [
   {
     keywords: ["support", "aide", "bloqu\u00e9", "question", "discord", "communaut\u00e9"],
     answer:
-      "Tu as acc\u00e8s \u00e0 notre Discord communautaire avec +150 entrepreneurs. L'offre Academy inclut aussi un assistant IA int\u00e9gr\u00e9. Pour le One-to-One, tu as un support prioritaire + 4 visios individuelles.",
+      "Tu as acc\u00e8s \u00e0 notre Discord communautaire avec +150 entrepreneurs. L'offre Academy inclut aussi un assistant IA int\u00e9gr\u00e9. Pour le One-to-One, tu as un support prioritaire illimit\u00e9 + 8 visios individuelles avec Marius & Igor.",
   },
   {
     keywords: ["contenu", "programme", "module", "le\u00e7on", "apprendre"],
@@ -61,7 +61,7 @@ function findAnswer(input: string): string {
       }
     }
   }
-  return "Bonne question ! Pour une r\u00e9ponse personnalis\u00e9e, n'h\u00e9site pas \u00e0 r\u00e9server un audit gratuit. On pourra discuter de ta situation en d\u00e9tail. \ud83d\ude80";
+  return "Bonne question ! \u00c9cris-nous sur WhatsApp pour une r\u00e9ponse personnalis\u00e9e, ou scroll jusqu'aux tarifs pour d\u00e9couvrir nos formules. \ud83d\ude80";
 }
 
 export default function Chatbot() {

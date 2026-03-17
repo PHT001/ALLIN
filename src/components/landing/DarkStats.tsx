@@ -44,10 +44,10 @@ function AnimatedCounter({
 }
 
 const stats = [
-  { value: 150, prefix: "+", suffix: "", label: "Entrepreneurs formés" },
+  { value: 150, prefix: "+", suffix: "", label: "Entrepreneurs form\u00e9s" },
   { value: 92, prefix: "", suffix: "%", label: "Taux de satisfaction" },
   { value: 14, prefix: "", suffix: " jours", label: "Pour le 1er client" },
-  { value: 1800, prefix: "", suffix: "€", label: "Revenu moyen / mois" },
+  { value: 200, prefix: "+", suffix: "", label: "Entreprises accompagn\u00e9es" },
 ];
 
 export default function DarkStats() {

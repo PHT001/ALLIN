@@ -18,7 +18,7 @@ export default function Hero() {
             >
               <span className="inline-flex items-center gap-2 rounded-full bg-red-50 px-4 py-1.5 text-sm font-medium text-[#FF1744] mb-8">
                 <span className="h-2 w-2 rounded-full bg-[#FF1744] animate-pulse" />
-                Le business #1 le plus profitable de 2026
+                +200 entreprises accompagn&eacute;es en IA
               </span>
             </motion.div>
 
@@ -28,18 +28,18 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-[56px] font-bold leading-[1.15] tracking-tight mb-6"
             >
-              L&apos;agence IA : le business le plus
+              Lance ton agence IA
               <br />
-              profitable de 2026 pour atteindre <span className="text-[#FF1744]">10K&euro;/mois</span>
+              et g&eacute;n&egrave;re <span className="text-[#FF1744]">10K&euro;/mois</span> en 90 jours
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative z-10 text-lg lg:text-xl text-[#6B7280] max-w-xl mx-auto mb-20 leading-relaxed"
+              className="relative z-10 text-lg lg:text-xl text-[#6B7280] max-w-xl mx-auto mb-10 leading-relaxed"
             >
-              Apprends &agrave; ma&icirc;triser les infrastructures IA, vendre des services d&apos;automatisation aux entreprises, et g&eacute;n&eacute;rer des revenus r&eacute;currents — m&ecirc;me en partant de z&eacute;ro.
+              La formation pas-&agrave;-pas pour ma&icirc;triser l&apos;IA, vendre des services d&apos;automatisation aux PME, et vivre de ton activit&eacute; — m&ecirc;me si tu pars de z&eacute;ro.
             </motion.p>
 
             <motion.div
@@ -75,7 +75,7 @@ export default function Hero() {
                   href="#pricing"
                   className="relative z-10 group inline-flex items-center justify-center rounded-full bg-[#FF1744] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#D50000] hover:shadow-xl hover:shadow-red-200"
                 >
-                  Commencer maintenant
+                  D&eacute;couvrir les formules
                   <svg
                     className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
                     fill="none"
@@ -88,20 +88,29 @@ export default function Hero() {
                 </a>
               </div>
 
-              <a href="#proof" className="text-[#6B7280] text-sm font-medium hover:text-[#111] transition-colors flex items-center gap-1.5">
+              <a href="#testimonials" className="text-[#6B7280] text-sm font-medium hover:text-[#111] transition-colors flex items-center gap-1.5">
                 Voir les r&eacute;sultats des &eacute;l&egrave;ves &darr;
               </a>
             </motion.div>
 
+            {/* Social proof mini-stats */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-6 flex justify-center"
+              className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-[#6B7280]"
             >
-              <span className="inline-flex items-center gap-2 text-xs text-[#6B7280] bg-gray-100 rounded-full px-4 py-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#FF1744] animate-pulse" />
-                Prochaine cohorte : <strong className="text-[#111]">24 mars 2026</strong> &mdash; 12 places restantes
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                <strong className="text-[#111]">+150</strong> &eacute;l&egrave;ves form&eacute;s
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                Premier client en <strong className="text-[#111]">14 jours</strong> en moyenne
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                Satisfait ou rembours&eacute; <strong className="text-[#111]">14 jours</strong>
               </span>
             </motion.div>
         </div>

@@ -31,18 +31,18 @@ export default function UrgenceIA() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-gray-900 leading-[1.15] mb-6">
-              L&apos;IA ne va pas te{" "}
-              <span className="text-[#FF1744]">remplacer</span>.
+              97% des PME n&apos;ont{" "}
+              <span className="text-[#FF1744]">aucun prestataire IA</span>.
               <br />
-              <span className="text-gray-500">Quelqu&apos;un qui maîtrise l&apos;IA, oui.</span>
+              <span className="text-gray-500">C&apos;est l&agrave; que tu interviens.</span>
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              Le marché de l&apos;IA explose. Les entreprises cherchent <strong className="text-gray-900">des prestataires IA</strong> — mais personne n&apos;est formé. <strong className="text-gray-900">Une minorité agit</strong>, les autres regardent.
+              Le march&eacute; de l&apos;IA explose. Les entreprises cherchent <strong className="text-gray-900">des prestataires IA</strong> pour automatiser leurs process — mais il n&apos;y a <strong className="text-gray-900">personne pour r&eacute;pondre</strong>. La demande est l&agrave;, l&apos;offre est vide.
             </p>
 
             <p className="text-gray-900 font-semibold text-lg mb-10">
-              La question n&apos;est pas <span className="text-[#FF1744]">si</span> tu dois te lancer, mais <span className="text-[#FF1744]">quand</span>.
+              Ceux qui se positionnent <span className="text-[#FF1744]">maintenant</span> raflent le march&eacute;. Les autres <span className="text-[#FF1744]">regarderont</span>.
             </p>
 
             {/* Stats */}

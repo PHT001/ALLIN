@@ -75,7 +75,7 @@ export default function Navbar() {
               boxShadow: "0 2px 12px rgba(255,23,68,0.4)",
             }}
           >
-            Audit Gratuit
+            Voir les tarifs
           </a>
 
           {/* Mobile hamburger */}
@@ -139,7 +139,7 @@ export default function Navbar() {
                   boxShadow: "0 2px 12px rgba(255,23,68,0.4)",
                 }}
               >
-                Audit Gratuit
+                Voir les tarifs
               </a>
             </div>
           </motion.div>

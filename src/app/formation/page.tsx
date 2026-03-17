@@ -1,16 +1,17 @@
 import Navbar from "@/components/landing/Navbar";
 import UrgencyBanner from "@/components/landing/UrgencyBanner";
 import Hero from "@/components/landing/Hero";
+import LogosBar from "@/components/landing/LogosBar";
 import PainSection from "@/components/landing/PainSection";
 import UrgenceIA from "@/components/landing/UrgenceIA";
 import DreamSection from "@/components/landing/DreamSection";
 import DarkStats from "@/components/landing/DarkStats";
-import Testimonials from "@/components/landing/Testimonials";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Features from "@/components/landing/Features";
-import Program from "@/components/landing/Program";
-
+import VideoBlock from "@/components/landing/VideoBlock";
+import Testimonials from "@/components/landing/Testimonials";
 import Pricing from "@/components/landing/Pricing";
+import FoundersFormation from "@/components/landing/FoundersFormation";
 import FAQ from "@/components/landing/FAQ";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
@@ -23,15 +24,17 @@ export default function FormationPage() {
       <UrgencyBanner />
       <Navbar />
       <Hero />
+      <LogosBar />
       <PainSection />
-      <UrgenceIA />
       <DreamSection />
+      <UrgenceIA />
       <DarkStats />
-      <Testimonials />
       <HowItWorks />
       <Features />
-      <Program />
+      <VideoBlock />
+      <Testimonials />
       <Pricing />
+      <FoundersFormation />
       <FAQ />
       <FinalCTA />
       <Footer />
