@@ -127,11 +127,11 @@ export default function ParrainagePage() {
                 Recommande Opexia,
                 <br />
                 <span className="bg-gradient-to-r from-[#FF1744] to-[#FF5252] bg-clip-text text-transparent">
-                  gagne 20% de commission.
+                  gagne jusqu&apos;à 20% de commission.
                 </span>
               </h1>
               <p className="text-sm sm:text-[15px] text-white/45 leading-relaxed max-w-md">
-                Pour chaque inscription via ton lien, tu touches 20% du forfait. Sans plafond, sans conditions, sans limite de temps.
+                Pour chaque inscription via ton lien, tu touches jusqu&apos;à 20% du forfait. Sans plafond, sans conditions, sans limite de temps.
               </p>
             </div>
 
@@ -291,9 +291,9 @@ export default function ParrainagePage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
-            { tier: "Starter", price: "47\u20AC", commission: "+9,40\u20AC", desc: "Fondamentaux", ring: "ring-gray-200", bg: "bg-white", commColor: "text-gray-700", highlight: false },
-            { tier: "Academy", price: "397\u20AC", commission: "+79,40\u20AC", desc: "13 modules + 2 masterclasses", ring: "ring-emerald-300", bg: "bg-gradient-to-b from-emerald-50/80 to-white", commColor: "text-emerald-600", highlight: true },
-            { tier: "One-to-One", price: "3 997\u20AC", commission: "+799,40\u20AC", desc: "Coaching inclus", ring: "ring-amber-300", bg: "bg-gradient-to-b from-amber-50/60 to-white", commColor: "text-amber-600", highlight: false },
+            { tier: "Starter", price: "47\u20AC", commission: "+9,40\u20AC", pct: "20%", desc: "Fondamentaux", ring: "ring-gray-200", bg: "bg-white", commColor: "text-gray-700", highlight: false },
+            { tier: "Academy", price: "397\u20AC", commission: "+59,55\u20AC", pct: "15%", desc: "13 modules + 2 masterclasses", ring: "ring-emerald-300", bg: "bg-gradient-to-b from-emerald-50/80 to-white", commColor: "text-emerald-600", highlight: true },
+            { tier: "One-to-One", price: "3 997\u20AC", commission: "+399,70\u20AC", pct: "10%", desc: "Coaching inclus", ring: "ring-amber-300", bg: "bg-gradient-to-b from-amber-50/60 to-white", commColor: "text-amber-600", highlight: false },
           ].map((t, i) => (
             <motion.div
               key={t.tier}
@@ -401,7 +401,7 @@ export default function ParrainagePage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
         {[
           { icon: <IconShield />, title: "100% transparent", desc: "Suivi en temps réel de tes filleuls, forfaits et commissions. Aucun frais caché.", color: "#6C5CE7" },
-          { icon: <IconTrendingUp />, title: "Aucun plafond", desc: "5 filleuls Academy = 397\u20AC. 10 = 794\u20AC. Le calcul est simple.", color: "#FF1744" },
+          { icon: <IconTrendingUp />, title: "Aucun plafond", desc: "5 filleuls Academy = 297\u20AC. 10 = 595\u20AC. Le calcul est simple.", color: "#FF1744" },
         ].map((item, i) => (
           <motion.div
             key={i}
