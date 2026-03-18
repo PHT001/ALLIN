@@ -230,7 +230,7 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
     label: "Outils & Services",
     items: [
       { href: "/pipeline", label: "Pipeline", icon: IconPipeline },
-      { href: "/templates", label: "Templates IA", icon: IconTemplate, lockedForStarter: true, lockedTeaser: "Bibliothèque de prompts et templates prêts à l'emploi pour tes projets clients et tes automatisations." },
+
       { href: "/generateur", label: "Générateur", icon: IconWand, lockedForStarter: true, lockedTeaser: "Génère des livrables complets en un clic : landing pages, emails, scripts de vente, propositions commerciales." },
       { href: "/marketplace", label: "Marketplace", icon: IconStore, badge: "Bientôt" },
     ],
