@@ -2,14 +2,14 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 
-// Import REAL lesson data from prisma/data files
+// Import REAL lesson data — using ACTUAL export names from each file
 import { MODULE_1_LESSONS } from "../../../../prisma/data/new_module_01";
 import { MODULE_2_LESSONS } from "../../../../prisma/data/new_module_02";
 import { MODULE_3_LESSONS } from "../../../../prisma/data/new_module_03";
 import { MODULE_4_LESSONS } from "../../../../prisma/data/new_module_04";
-import { MODULE_6_LESSONS } from "../../../../prisma/data/new_module_06";
-import { MODULE_7_LESSONS } from "../../../../prisma/data/new_module_07";
-import { MODULE_8_LESSONS } from "../../../../prisma/data/new_module_08";
+import { MODULE_5_LESSONS } from "../../../../prisma/data/new_module_06";     // file=06, exports MODULE_5
+import { MODULE_6_LESSONS } from "../../../../prisma/data/new_module_07";     // file=07, exports MODULE_6
+import { MODULE_7_LESSONS } from "../../../../prisma/data/new_module_08";     // file=08, exports MODULE_7
 import { MODULE_9_LESSONS } from "../../../../prisma/data/new_module_09";
 import { MODULE_10_LESSONS } from "../../../../prisma/data/new_module_10";
 import { MODULE_11_LESSONS } from "../../../../prisma/data/new_module_11";
@@ -27,15 +27,15 @@ const MODULE_MAP: [any[], number][] = [
   [MODULE_2_LESSONS, 1],      // M2: Prompt Engineering
   [MODULE_3_LESSONS, 2],      // M3: Sites web
   [MODULE_4_LESSONS, 3],      // M4: Backend + APIs
-  [MODULE_6_LESSONS, 4],      // M5: Automatisations (file=06)
-  [MODULE_7_LESSONS, 5],      // M6: Chatbots (file=07)
-  [MODULE_8_LESSONS, 6],      // M7: Agents (file=08)
-  [MODULE_10_LESSONS, 7],     // M8: Offre et prix (file=10)
-  [MODULE_11_LESSONS, 8],     // M9: Trouver clients (file=11)
-  [MODULE_12_LESSONS, 9],     // M10: Livrer et fidéliser (file=12)
-  [MODULE_9_LESSONS, 10],     // M11: Construire un MVP (file=09)
-  [MODULE_13_LESSONS, 11],    // M12: Scaler (file=13)
-  [MODULE_14_LESSONS, 12],    // M13: Juridique (file=14)
+  [MODULE_5_LESSONS, 4],      // M5: Automatisations
+  [MODULE_6_LESSONS, 5],      // M6: Chatbots
+  [MODULE_7_LESSONS, 6],      // M7: Agents
+  [MODULE_10_LESSONS, 7],     // M8: Offre et prix
+  [MODULE_11_LESSONS, 8],     // M9: Trouver clients
+  [MODULE_12_LESSONS, 9],     // M10: Livrer et fidéliser
+  [MODULE_9_LESSONS, 10],     // M11: Construire un MVP
+  [MODULE_13_LESSONS, 11],    // M12: Scaler
+  [MODULE_14_LESSONS, 12],    // M13: Juridique
   [MASTERCLASS_CLAUDE_CODE_LESSONS, 13], // M14: Claude Code
   [MASTERCLASS_OPENCLAW_LESSONS, 14],    // M15: OpenClaw
 ];
