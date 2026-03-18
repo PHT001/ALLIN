@@ -66,7 +66,7 @@ export async function GET(req: Request) {
             description: `Leçon ${i} du module "${mod.title}"`,
             content: `# ${mod.title} — Leçon ${i}\n\nContenu de la leçon à venir.`,
             exercise: `Exercice pratique de la leçon ${i}.`,
-            duration: 15 + (i * 5),
+            duration: `${15 + (i * 5)} min`,
             order: i,
             moduleId: mod.id,
           },
