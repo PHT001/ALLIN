@@ -114,23 +114,24 @@ export async function GET(req: Request) {
       }
     }
 
-    // Progress
+    // Progress (no createdAt/updatedAt in prod)
     const firstLessons: any[] = await prisma.$queryRawUnsafe(`SELECT id FROM "Lesson" ORDER BY "moduleId", "order" LIMIT 4`);
     for (let i = 0; i < 3 && i < firstLessons.length; i++) {
       await prisma.$executeRawUnsafe(
-        `INSERT INTO "LessonProgress" (id, "userId", "lessonId", status, "completedAt", "xpEarned", "createdAt", "updatedAt") VALUES (gen_random_uuid(), $1, $2, 'completed', NOW(), 150, NOW(), NOW())`,
+        `INSERT INTO "LessonProgress" (id, "userId", "lessonId", status, "completedAt", "xpEarned") VALUES (gen_random_uuid(), $1, $2, 'completed', NOW(), 150)`,
         student.id, firstLessons[i].id
       );
     }
     if (firstLessons[3]) {
       await prisma.$executeRawUnsafe(
-        `INSERT INTO "LessonProgress" (id, "userId", "lessonId", status, "xpEarned", "createdAt", "updatedAt") VALUES (gen_random_uuid(), $1, $2, 'in_progress', 0, NOW(), NOW())`,
+        `INSERT INTO "LessonProgress" (id, "userId", "lessonId", status, "xpEarned") VALUES (gen_random_uuid(), $1, $2, 'in_progress', 0)`,
         student.id, firstLessons[3].id
       );
     }
 
+    // Enrollment (has createdAt but NOT updatedAt)
     await prisma.$executeRawUnsafe(
-      `INSERT INTO "Enrollment" (id, "userId", tier, status, "createdAt", "updatedAt") VALUES (gen_random_uuid(), $1, 'starter', 'active', NOW(), NOW())`,
+      `INSERT INTO "Enrollment" (id, "userId", tier, status, "createdAt") VALUES (gen_random_uuid(), $1, 'starter', 'active', NOW())`,
       student.id
     );
 
