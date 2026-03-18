@@ -306,7 +306,7 @@ export default function DashboardPage() {
                   <p className="text-xs font-bold text-[#111]">Passer &agrave; <span className="text-[#FF1744]">{nextPlan.name}</span></p>
                   <p className="text-[10px] text-gray-400 mt-0.5">{nextPlan.description}</p>
                 </div>
-                <a href="/formations" className="px-5 py-2.5 rounded-xl text-xs font-bold text-white flex-shrink-0 shadow-md hover:shadow-lg transition-all" style={{ background: "linear-gradient(135deg, #FF1744, #D50000)" }}>
+                <a href="/profile?tab=subscription" className="px-5 py-2.5 rounded-xl text-xs font-bold text-white flex-shrink-0 shadow-md hover:shadow-lg transition-all" style={{ background: "linear-gradient(135deg, #FF1744, #D50000)" }}>
                   {nextPlan.price}&euro; &rarr;
                 </a>
               </div>

@@ -333,7 +333,7 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
               </div>
 
               <a
-                href="/formations"
+                href="/profile?tab=subscription"
                 className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200"
                 style={{ background: "linear-gradient(135deg, #FF1744 0%, #D50000 100%)", boxShadow: "0 4px 20px rgba(255,23,68,0.3)" }}
               >
@@ -370,7 +370,7 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
           <div className="flex items-center justify-between">
             <TierBadge tier={tier} role={role} />
             {tier === "starter" && role !== "admin" && (
-              <a href="/formations" className="text-[9px] text-[#FF1744]/60 hover:text-[#FF1744] transition-colors font-semibold uppercase tracking-wider">
+              <a href="/profile?tab=subscription" className="text-[9px] text-[#FF1744]/60 hover:text-[#FF1744] transition-colors font-semibold uppercase tracking-wider">
                 Upgrade
               </a>
             )}

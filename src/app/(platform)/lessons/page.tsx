@@ -203,7 +203,7 @@ function LessonReaderPanel({
         <div className="bg-gradient-to-br from-[#FF1744]/5 to-[#FF1744]/10 rounded-2xl p-8 border border-[#FF1744]/20 text-center">
           <h3 className="text-xl font-bold text-[#111] mb-3">Tu veux aller plus vite ?</h3>
           <p className="text-sm text-[#6B7280] mb-6">Passe {"\u00e0"} la formule One-to-One et b{"\u00e9"}n{"\u00e9"}ficie d&apos;un accompagnement personnalis{"\u00e9"}.</p>
-          <a href="/formations" className="inline-block bg-[#FF1744] text-white rounded-xl px-6 py-3 text-sm font-semibold hover:bg-[#D50000] transition-colors">
+          <a href="/profile?tab=subscription" className="inline-block bg-[#FF1744] text-white rounded-xl px-6 py-3 text-sm font-semibold hover:bg-[#D50000] transition-colors">
             D{"\u00e9"}couvrir le One-to-One
           </a>
         </div>
@@ -684,7 +684,7 @@ export default function LessonsPage() {
                 {!weekAccessible && (
                   <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-4">
                     <a
-                      href="/formations"
+                      href="/profile?tab=subscription"
                       className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-dashed border-red-200 bg-red-50/50 transition-all group hover:border-[#FF1744] hover:bg-red-50"
                     >
                       <span className="text-xs font-semibold text-gray-500 group-hover:text-[#111] transition-colors">

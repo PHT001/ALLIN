@@ -34,7 +34,7 @@ export default function CongratulationsPage() {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button href="/formations" glow>
+        <Button href="/profile?tab=subscription" glow>
           Découvrir le One-to-One
         </Button>
         <Button href="/dashboard" variant="secondary">

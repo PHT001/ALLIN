@@ -160,7 +160,12 @@ export const COACHING_PRICE = 7000; // 70e en centimes
 export const COACHING_PRICE_DISPLAY = "70";
 
 /* ——— Referral / Parrainage ——— */
-export const REFERRAL_COMMISSION_RATE = 0.20; // 20%
+export const REFERRAL_COMMISSION_RATES: Record<string, number> = {
+  starter: 0.20,     // 20% sur Starter
+  academy: 0.15,     // 15% sur Academy
+  one_to_one: 0.10,  // 10% sur One-to-One
+};
+export const REFERRAL_COMMISSION_RATE = 0.20; // max pour affichage "Gagne jusqu'à 20%"
 export const TIER_PRICES_CENTS: Record<string, number> = {
   starter: 4700,
   academy: 39700,

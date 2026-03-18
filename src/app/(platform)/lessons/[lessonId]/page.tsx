@@ -116,7 +116,7 @@ export default function LessonPage() {
             Passe à la formule One-to-One et bénéficie d&apos;un accompagnement personnalisé.
           </p>
           <a
-            href="/formations"
+            href="/profile?tab=subscription"
             className="inline-block bg-[#FF1744] text-white rounded-xl px-6 py-3 text-sm font-semibold hover:bg-[#D50000] transition-colors"
           >
             Découvrir le One-to-One
