@@ -70,11 +70,7 @@ const STEPS = [
   { num: "04", title: "Plan d'action", desc: "Tu repars avec des actions concrètes et le replay de la session.", icon: <IconTarget className="text-white" /> },
 ];
 
-const TESTIMONIALS = [
-  { name: "Maxime D.", role: "Fondateur d'agence", text: "La session m'a permis de débloquer un problème technique qui me bloquait depuis 2 semaines. Le ROI est immédiat.", rating: 5 },
-  { name: "Sarah L.", role: "Freelance IA", text: "Excellents conseils stratégiques. J'ai restructuré toute mon offre après la session. Mes revenus ont augmenté de 40%.", rating: 5 },
-  { name: "Thomas B.", role: "CTO Startup", text: "Le coach a identifié des optimisations que je n'avais jamais envisagées. Session ultra productive.", rating: 5 },
-];
+// Témoignages supprimés — à remplacer par de vrais retours quand disponibles
 
 /* ─── Animations ────────────────────────────────────── */
 const fadeUp = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } };

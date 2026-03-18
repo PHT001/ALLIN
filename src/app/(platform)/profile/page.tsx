@@ -219,67 +219,72 @@ function ProfileContent() {
               </div>
             </div>
 
-            {/* Plans */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Plans — même style que la landing page formation */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
               {TIERS.map((tier) => {
-                const isCurrent = stats.tier === tier.id || (isAdmin && tier.id === "one_to_one");
+                const isCurrent = stats.tier === tier.id || (isAdmin && (tier.id === "academy" || tier.id === "one_to_one"));
                 return (
                   <div
                     key={tier.id}
-                    className={`bg-white rounded-2xl border-2 shadow-sm p-5 relative transition-all ${
-                      isCurrent
-                        ? "border-[#FF1744] shadow-[#FF1744]/10"
-                        : tier.popular
-                        ? "border-emerald-400 shadow-emerald-400/10"
-                        : "border-gray-200"
+                    className={`relative rounded-2xl bg-white p-8 ${
+                      tier.popular
+                        ? "border-2 border-[#FF1744] shadow-xl shadow-red-100 lg:scale-105 lg:-my-4 z-10"
+                        : "border border-gray-200"
                     }`}
                   >
-                    {isCurrent && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-[#FF1744] text-white text-[9px] font-bold uppercase tracking-wider">
-                        Actuel
-                      </div>
-                    )}
-                    {tier.popular && !isCurrent && (
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-emerald-500 text-white text-[9px] font-bold uppercase tracking-wider">
-                        Populaire
+                    {tier.popular && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span className="inline-flex items-center rounded-full bg-[#FF1744] px-4 py-1 text-xs font-bold text-white uppercase tracking-wider">
+                          Populaire
+                        </span>
                       </div>
                     )}
 
-                    <h3 className="text-lg font-bold text-[#111] mb-1">{tier.name}</h3>
-                    <div className="flex items-baseline gap-1 mb-3">
-                      <span className="text-3xl font-black text-[#111]">{tier.price}\u20ac</span>
-                    </div>
-                    <p className="text-xs text-gray-400 mb-4">{tier.description}</p>
-
-                    <div className="space-y-2 mb-5">
-                      {tier.features.map((f) => (
-                        <div key={f.text} className="flex items-start gap-2">
-                          {f.included ? (
-                            <svg className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
-                          ) : (
-                            <svg className="w-4 h-4 text-gray-300 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-                          )}
-                          <span className={`text-xs ${f.included ? "text-gray-700" : "text-gray-400"}`}>{f.text}</span>
-                        </div>
-                      ))}
+                    <div className="mb-8">
+                      <h3 className="text-lg font-bold text-[#111]">{tier.name}</h3>
+                      <p className="text-sm text-[#6B7280] mt-1">{tier.description}</p>
+                      <div className="mt-6 flex items-baseline gap-2">
+                        <span className="text-5xl font-black tracking-tight text-[#111]">
+                          {tier.price.toLocaleString("fr-FR")}
+                        </span>
+                        <span className="text-lg font-medium text-[#6B7280]">&euro;</span>
+                      </div>
+                      <p className="text-sm text-[#6B7280] mt-1">paiement unique</p>
                     </div>
 
                     {isCurrent ? (
-                      <div className="w-full py-2.5 rounded-xl text-center text-xs font-bold text-gray-400 bg-gray-100">
+                      <div className="w-full py-3.5 rounded-full text-center text-sm font-semibold text-gray-400 bg-gray-100 border border-gray-200">
                         Ton plan actuel
                       </div>
                     ) : (
                       <a
                         href="/formation#pricing"
-                        className={`block w-full py-2.5 rounded-xl text-center text-xs font-bold transition-all ${
+                        className={`block w-full text-center rounded-full py-3.5 text-sm font-semibold transition-all ${
                           tier.popular
-                            ? "bg-gradient-to-r from-[#FF1744] to-[#D50000] text-white hover:shadow-lg hover:shadow-red-200"
-                            : "bg-gray-900 text-white hover:bg-gray-800"
+                            ? "bg-[#FF1744] text-white hover:bg-[#D50000] hover:shadow-lg hover:shadow-red-200"
+                            : "bg-[#111] text-white hover:bg-[#333]"
                         }`}
                       >
                         {tier.cta}
                       </a>
                     )}
+
+                    <div className="mt-8 space-y-3">
+                      {tier.features.map((f) => (
+                        <div key={f.text} className="flex items-start gap-3">
+                          {f.included ? (
+                            <svg className="h-5 w-5 text-[#FF1744] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                          ) : (
+                            <svg className="h-5 w-5 text-gray-300 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                          )}
+                          <span className={`text-sm ${f.included ? "text-[#111]" : "text-gray-400"}`}>{f.text}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 );
               })}
