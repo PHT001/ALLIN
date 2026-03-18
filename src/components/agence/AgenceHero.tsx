@@ -108,7 +108,7 @@ export default function AgenceHero() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg text-[#6B7280] max-w-xl mx-auto mb-8 leading-relaxed"
             >
-              R&eacute;cup&eacute;rez <strong className="font-semibold text-[#111]">40 &agrave; 60h/mois</strong> par &eacute;quipe sans changer vos outils. D&eacute;ploy&eacute; en <strong className="font-semibold text-[#111]">14 jours</strong>, cl&eacute; en main.
+              R&eacute;cup&eacute;rez <strong className="font-semibold text-[#111]">10 &agrave; 20h/mois</strong> par &eacute;quipe sans changer vos outils. D&eacute;ploy&eacute; en <strong className="font-semibold text-[#111]">14 jours</strong>, cl&eacute; en main.
             </motion.p>
 
             {/* Social proof badge */}
@@ -120,7 +120,7 @@ export default function AgenceHero() {
             >
               <Image src="/images/customers.webp" alt="Customers" width={100} height={28} className="h-7 w-auto" />
               <span className="text-sm text-[#6B7280]">
-                <strong className="font-semibold text-[#111]">4.9</strong>/5 par <strong className="font-semibold text-[#111]">1783</strong> clients
+                <strong className="font-semibold text-[#111]">4.9</strong>/5 par <strong className="font-semibold text-[#111]">+50</strong> clients
               </span>
               <Image src="/images/blue-badge.svg" alt="Verified" width={18} height={18} className="h-[18px] w-[18px]" />
             </motion.div>
@@ -153,11 +153,11 @@ export default function AgenceHero() {
               className="flex justify-center gap-8 border-t border-gray-200 pt-6"
             >
               <div>
-                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={200} suffix="+" /></p>
+                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={50} suffix="+" /></p>
                 <p className="text-xs text-[#9CA3AF] mt-0.5">entreprises</p>
               </div>
               <div>
-                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={2400} suffix="h" /></p>
+                <p className="text-2xl font-black text-[#111]"><AnimatedCounter target={320} suffix="h" /></p>
                 <p className="text-xs text-[#9CA3AF] mt-0.5">économisées/mois</p>
               </div>
               <div>

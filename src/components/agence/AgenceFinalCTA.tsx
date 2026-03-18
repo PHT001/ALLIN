@@ -18,7 +18,7 @@ export default function AgenceFinalCTA() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-white leading-tight">
             Dans 14 jours, votre entreprise
             <br />
-            peut tourner <span className="text-[#007AFF]">2x plus vite.</span>
+            peut gagner <span className="text-[#007AFF]">des heures chaque semaine.</span>
           </h2>
 
           <p className="mt-6 text-lg text-gray-400 max-w-xl mx-auto leading-relaxed">

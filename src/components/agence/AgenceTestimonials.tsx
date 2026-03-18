@@ -6,18 +6,18 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    quote: "OpexIA a installé un chatbot sur notre site en 5 jours. On est passé de 24h de réponse à 2 minutes.",
+    quote: "OpexIA a installé un chatbot sur notre site en 10 jours. On est passé de 24h de réponse à moins d'une heure.",
     name: "Laurent Mercier",
     role: "Directeur — Agence immobilière, Lyon",
-    result: "+40% de conversion",
+    result: "+18% de conversion",
     sector: "Immobilier",
     img: "https://i.pravatar.cc/150?img=12",
   },
   {
-    quote: "On envoyait nos devis en 48h. Maintenant c'est 2h, automatiquement. On a signé 3 clients de plus le premier mois.",
+    quote: "On envoyait nos devis en 48h. Maintenant c'est le jour même, automatiquement. On a signé 2 clients de plus le premier trimestre.",
     name: "Sophie Durand",
     role: "Gérante — Cabinet comptable, Paris 8e",
-    result: "3 clients supplémentaires",
+    result: "2 clients supplémentaires",
     sector: "Comptabilité",
     img: "https://i.pravatar.cc/150?img=5",
   },
@@ -25,7 +25,7 @@ const testimonials = [
     quote: "Je pensais que l'IA c'était compliqué. Leur équipe a tout installé en 3 semaines sans qu'on touche à rien.",
     name: "Marc Tessier",
     role: "PDG — Translog Express, Marseille",
-    result: "47h/mois gagnées",
+    result: "15h/mois gagnées",
     sector: "Logistique",
     img: "https://i.pravatar.cc/150?img=53",
   },
@@ -33,23 +33,23 @@ const testimonials = [
     quote: "Le reporting automatique nous fait gagner une journée entière par semaine. Mon équipe se concentre enfin sur les clients.",
     name: "Julie Renard",
     role: "Directrice Marketing — Agence 360, Bordeaux",
-    result: "-80% temps reporting",
+    result: "-40% temps reporting",
     sector: "Marketing",
     img: "https://i.pravatar.cc/150?img=23",
   },
   {
-    quote: "On a automatisé tout notre onboarding client. Ce qui prenait 3h prend maintenant 15 minutes.",
+    quote: "On a automatisé une partie de notre onboarding client. Ce qui prenait 3h prend maintenant 45 minutes.",
     name: "Thomas Blanchard",
     role: "Fondateur — SaaS B2B, Paris",
-    result: "ROI x8 en 3 mois",
+    result: "ROI x3 en 6 mois",
     sector: "Tech",
     img: "https://i.pravatar.cc/150?img=59",
   },
   {
-    quote: "L'audit gratuit m'a ouvert les yeux. En 1h ils avaient identifié 50h/mois d'économies potentielles.",
+    quote: "L'audit gratuit m'a ouvert les yeux. En 1h ils avaient identifié plusieurs pistes d'optimisation concrètes.",
     name: "David Hoffmann",
     role: "DG — Groupe hôtelier, Côte d'Azur",
-    result: "50h/mois identifiées",
+    result: "12h/mois identifiées",
     sector: "Hôtellerie",
     img: "https://i.pravatar.cc/150?img=33",
   },
@@ -93,7 +93,7 @@ export default function AgenceTestimonials() {
                 <span className="text-[#9CA3AF]">nos clients</span>
               </h2>
               <p className="mt-4 text-lg text-[#6B7280]">
-                +200 entreprises accompagn&eacute;es dans leur transformation IA.
+                +50 entreprises accompagn&eacute;es dans leur transformation IA.
               </p>
             </motion.div>
 

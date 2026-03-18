@@ -80,13 +80,13 @@ export default function ProblemSection() {
 
               {/* Big stat */}
               <p className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent leading-none mb-1">
-                <AnimatedCounter target={72} suffix="%" />
+                <AnimatedCounter target={65} suffix="%" />
               </p>
               <p className="text-[#111] text-lg sm:text-xl font-bold mb-3">
                 des entreprises utilisent d&eacute;j&agrave; l&apos;IA au quotidien
               </p>
               <p className="text-[#6B7280] text-sm leading-relaxed mb-5">
-                Pendant que vous traitez vos mails manuellement, vos concurrents automatisent leurs devis, relances et reporting. <strong className="text-[#111]">Chaque mois sans IA = 40 &agrave; 60h perdues</strong> par &eacute;quipe.
+                Pendant que vous traitez vos mails manuellement, vos concurrents automatisent leurs devis, relances et reporting. <strong className="text-[#111]">Chaque mois sans IA = 10 &agrave; 20h perdues</strong> par &eacute;quipe.
               </p>
 
               {/* Source */}
@@ -125,7 +125,7 @@ export default function ProblemSection() {
                 <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">pas votre menace.</span>
               </p>
               <p className="text-[#6B7280] text-sm leading-relaxed mb-6">
-                En 14 jours, on int&egrave;gre l&apos;IA dans vos op&eacute;rations. Vos &eacute;quipes r&eacute;cup&egrave;rent des dizaines d&apos;heures par mois, sans changer d&apos;outils.
+                En 14 jours, on int&egrave;gre l&apos;IA dans vos op&eacute;rations. Vos &eacute;quipes r&eacute;cup&egrave;rent des heures chaque semaine, sans changer d&apos;outils.
               </p>
 
               {/* Checklist */}

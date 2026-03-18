@@ -14,9 +14,9 @@ export default function FormationBridge() {
           className="text-center"
         >
           <h2 className="text-2xl lg:text-4xl font-bold text-white tracking-tight leading-tight">
-            Dans 30 jours, votre entreprise
+            Dans 14 jours, votre entreprise
             <br />
-            peut tourner <span className="text-[#007AFF]">2x plus vite.</span>
+            peut gagner <span className="text-[#007AFF]">des heures chaque semaine.</span>
           </h2>
 
           <p className="mt-4 text-base text-white/50 max-w-md mx-auto">

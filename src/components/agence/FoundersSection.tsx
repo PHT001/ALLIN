@@ -57,7 +57,7 @@ export default function FoundersSection() {
           {/* Personal message */}
           <div className="text-left space-y-4 text-[#6B7280] leading-relaxed">
             <p>
-              <strong className="text-[#111]">+200 entreprises</strong> accompagnées dans leur transformation IA. Notre méthode : <strong className="text-[#111]">identifier les processus à fort impact</strong>, déployer en <strong className="text-[#111]">14 jours</strong>, générer des <strong className="text-[#111]">résultats mesurables</strong> dès le premier mois.
+              <strong className="text-[#111]">+50 entreprises</strong> accompagnées dans leur transformation IA. Notre méthode : <strong className="text-[#111]">identifier les processus à fort impact</strong>, déployer en <strong className="text-[#111]">14 jours</strong>, générer des <strong className="text-[#111]">résultats mesurables</strong> dès le premier mois.
             </p>
             <p>
               Vous restez concentré sur <strong className="text-[#111]">votre activité</strong>, on s&apos;occupe de tout — audit, automatisation, déploiement et <strong className="text-[#111]">support continu</strong>.

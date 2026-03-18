@@ -32,8 +32,8 @@ export default function UrgencyTimeline() {
             <span className="text-white/40">C&apos;est la norme.</span>
           </h2>
           <p className="mt-4 text-lg text-white/40">
-            88% des entreprises d&eacute;clarent que l&apos;IA a augment&eacute; leur chiffre d&apos;affaires. O&ugrave; en &ecirc;tes-vous ?
-            <span className="block text-sm text-[#007AFF]/60 mt-2 font-medium">Source : NVIDIA, State of AI Report, 2026</span>
+            65% des entreprises d&eacute;clarent que l&apos;IA a am&eacute;lior&eacute; leur productivit&eacute;. O&ugrave; en &ecirc;tes-vous ?
+            <span className="block text-sm text-[#007AFF]/60 mt-2 font-medium">Source : McKinsey, The State of AI, 2025</span>
           </p>
         </motion.div>
 

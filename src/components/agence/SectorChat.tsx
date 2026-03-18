@@ -24,7 +24,7 @@ const sectors: Sector[] = [
     name: "BTP & Construction",
     icon: "🏗️",
     automations: [
-      { icon: "📋", title: "Devis automatisés", result: "-3h/jour", percent: 85 },
+      { icon: "📋", title: "Devis automatisés", result: "-1h/jour", percent: 85 },
       { icon: "🤖", title: "Chatbot qualification chantiers", result: "24/7", percent: 100 },
       { icon: "📊", title: "Suivi de chantier automatisé", result: "Temps réel", percent: 92 },
       { icon: "📧", title: "Relances fournisseurs auto", result: "0 oubli", percent: 100 },
@@ -44,8 +44,8 @@ const sectors: Sector[] = [
     name: "E-commerce",
     icon: "🛒",
     automations: [
-      { icon: "📦", title: "Suivi commandes automatisé", result: "-5h/jour", percent: 90 },
-      { icon: "✍️", title: "Fiches produits par IA", result: "x20 plus rapide", percent: 95 },
+      { icon: "📦", title: "Suivi commandes automatisé", result: "-2h/jour", percent: 90 },
+      { icon: "✍️", title: "Fiches produits par IA", result: "x5 plus rapide", percent: 95 },
       { icon: "💬", title: "SAV chatbot intelligent", result: "24/7", percent: 100 },
       { icon: "📊", title: "Reporting ventes auto", result: "Temps réel", percent: 88 },
     ],
@@ -54,8 +54,8 @@ const sectors: Sector[] = [
     name: "Santé",
     icon: "🏥",
     automations: [
-      { icon: "📅", title: "Prise de RDV automatisée", result: "-4h/jour", percent: 92 },
-      { icon: "🔔", title: "Rappels patients auto", result: "-80% no-show", percent: 85 },
+      { icon: "📅", title: "Prise de RDV automatisée", result: "-1h30/jour", percent: 92 },
+      { icon: "🔔", title: "Rappels patients auto", result: "-35% no-show", percent: 85 },
       { icon: "📄", title: "Comptes-rendus par IA", result: "10 min vs 1h", percent: 90 },
       { icon: "💬", title: "Chatbot pré-consultation", result: "24/7", percent: 100 },
     ],
@@ -74,7 +74,7 @@ const sectors: Sector[] = [
     name: "Cabinet Comptable",
     icon: "📊",
     automations: [
-      { icon: "🧾", title: "Saisie comptable par IA", result: "-6h/jour", percent: 95 },
+      { icon: "🧾", title: "Saisie comptable par IA", result: "-2h/jour", percent: 95 },
       { icon: "📧", title: "Relances impayés auto", result: "0 oubli", percent: 100 },
       { icon: "📄", title: "Génération bilans", result: "3x plus rapide", percent: 88 },
       { icon: "💬", title: "Chatbot client 24/7", result: "Réponse instant.", percent: 92 },
@@ -84,9 +84,9 @@ const sectors: Sector[] = [
     name: "Agence Marketing",
     icon: "📱",
     automations: [
-      { icon: "✍️", title: "Contenus réseaux sociaux", result: "x10 plus rapide", percent: 95 },
-      { icon: "📊", title: "Reporting client auto", result: "-3h/client", percent: 90 },
-      { icon: "🎯", title: "Prospection automatisée", result: "+40% leads", percent: 85 },
+      { icon: "✍️", title: "Contenus réseaux sociaux", result: "x3 plus rapide", percent: 95 },
+      { icon: "📊", title: "Reporting client auto", result: "-1h/client", percent: 90 },
+      { icon: "🎯", title: "Prospection automatisée", result: "+15% leads", percent: 85 },
       { icon: "🤖", title: "Chatbot qualification", result: "24/7", percent: 100 },
     ],
   },

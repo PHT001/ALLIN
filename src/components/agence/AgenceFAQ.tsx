@@ -18,7 +18,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Combien ça coûte ?",
-    a: <>Chaque projet est <B>sur-mesure</B>, donc le coût dépend de vos besoins. L&apos;<B>audit gratuit d&apos;1 heure</B> permet de chiffrer précisément : combien ça coûte ET combien ça vous fait économiser. La plupart de nos clients ont un <B>ROI positif dès le premier mois</B>.</>,
+    a: <>Chaque projet est <B>sur-mesure</B>, donc le coût dépend de vos besoins. L&apos;<B>audit gratuit d&apos;1 heure</B> permet de chiffrer précisément : combien ça coûte ET combien ça vous fait économiser. La plupart de nos clients constatent un <B>ROI positif en 2 à 3 mois</B>.</>,
   },
   {
     q: "Et si ça ne marche pas ?",
@@ -26,7 +26,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Mon secteur est trop spécifique pour l'IA",
-    a: <>On a accompagné plus de <B>15 secteurs différents</B> : BTP, immobilier, santé, e-commerce, restauration, logistique, cabinets comptables... <B>L&apos;IA s&apos;adapte à tout</B>. Et c&apos;est justement notre job de l&apos;adapter à votre métier.</>,
+    a: <>On a accompagné des clients dans <B>8 secteurs différents</B> : BTP, immobilier, santé, e-commerce, restauration, logistique, cabinets comptables... <B>L&apos;IA s&apos;adapte à tout</B>. Et c&apos;est justement notre job de l&apos;adapter à votre métier.</>,
   },
   {
     q: "Je n'y connais rien en IA",
@@ -38,7 +38,7 @@ const faqs: { q: string; a: ReactNode }[] = [
   },
   {
     q: "Au bout de combien de temps je vois des résultats ?",
-    a: <>Les premiers gains sont visibles <B>dès la deuxième semaine</B> de déploiement. En moyenne, nos clients récupèrent <B>40 à 60h/mois par équipe</B> dès le premier mois complet. On définit des KPIs mesurables avant de commencer pour que les résultats soient concrets et vérifiables.</>,
+    a: <>Les premiers gains sont visibles <B>dès la deuxième semaine</B> de déploiement. En moyenne, nos clients récupèrent <B>10 à 20h/mois par équipe</B> sur le premier trimestre. On définit des KPIs mesurables avant de commencer pour que les résultats soient concrets et vérifiables.</>,
   },
 ];
 
