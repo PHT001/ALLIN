@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════
 // MODULE 10 — Ton offre & tes prix
-// 6 leçons — Format JSON blocs
+// 7 leçons — Format JSON blocs
 // ═══════════════════════════════════════════════════
 
 function blocks(b: object[]): string {
@@ -548,78 +548,298 @@ Cette proposition est valable jusqu'au [date + 10 jours].
     title: "Ton premier client gratuit",
     slug: "premier-client-gratuit",
     duration: "35 min",
-    description: "Pourquoi offrir un premier projet gratuit est la stratégie la plus puissante pour démarrer, comment choisir le bon prospect, cadrer la mission et obtenir un témoignage en béton.",
+    description: "Pourquoi offrir un premier projet gratuit est un investissement stratégique, comment choisir le bon prospect, cadrer la mission en 48h, livrer comme un pro et obtenir un témoignage en béton.",
     content: blocks([
       { id: "6-1", type: "heading", level: 2, text: "Pourquoi ton premier projet doit être gratuit" },
-      { id: "6-2", type: "text", html: "<p>Intuitivement, on pense que plus on propose de services à plus de gens, plus on a de chances de trouver des clients. C'est faux. En fait, c'est exactement l'inverse.</p><p>Un <strong>spécialiste IA pour les cabinets d'avocats</strong> sera contacté par tous les cabinets d'avocats qui cherchent une solution IA. Un <strong>généraliste IA</strong> sera contacté par personne — parce que personne ne se reconnaît dans son message.</p>" },
-      { id: "6-3", type: "callout", variant: "tip", html: "<strong>Contre-intuitif mais vrai :</strong> réduire ta cible augmente ton nombre de clients. Plus tu parles à tout le monde, moins tu parles à quelqu'un." },
+      { id: "6-2", type: "text", html: "<p>Tu as les compétences. Tu sais construire un chatbot, créer un workflow n8n, déployer un agent IA. Mais tu n'as aucun client, aucun portfolio, aucune preuve. Et sans preuve, personne ne te fait confiance.</p><p>C'est le cercle vicieux du débutant : pas de client → pas de portfolio → pas de crédibilité → pas de client.</p><p>La solution ? <strong>Casser le cercle en offrant ton premier projet gratuitement.</strong> Pas par charité. Pas par manque de confiance. Par stratégie pure.</p>" },
+      { id: "6-3", type: "callout", variant: "warning", html: "<strong>Ce n'est PAS de la charité.</strong> C'est un investissement. Tu échanges 48h de travail contre 3 choses qui valent des milliers d'euros : un cas client réel, un témoignage, et la confiance en toi que tu peux livrer. Les freelances qui réussissent le plus vite sont ceux qui ont fait ce premier projet gratuit sans hésiter." },
 
       { id: "6-4", type: "separator", style: "dots" },
-      { id: "6-5", type: "heading", level: 2, text: "Généraliste vs Spécialiste : la comparaison réelle" },
-      { id: "6-6", type: "comparison", headers: ["", "Généraliste IA", "Spécialiste IA (ex: immobilier)"], rows: [
-        { cells: ["Message", "'Je fais de l'IA pour les entreprises'", "'J'automatise les agences immobilières avec l'IA'"] },
-        { cells: ["Qui répond", "Personne en particulier", "Toutes les agences immobilières"] },
-        { cells: ["Concurrence", "Tous les freelances IA du marché", "Quasi aucun concurrent spécialisé"] },
-        { cells: ["Tarif possible", "Pression vers le bas, comparaison facile", "Premium justifié par la spécialisation"] },
-        { cells: ["Bouche à oreille", "Faible (qui va te recommander à qui ?)", "Fort (les agences se parlent entre elles)"] },
-        { cells: ["Temps de vente", "Long (éduquer chaque prospect)", "Court (ils ont déjà le problème, tu as la solution)"] },
+      { id: "6-5", type: "heading", level: 2, text: "Ce que tu gagnes avec un projet gratuit" },
+      { id: "6-6", type: "comparison", headers: ["Ce que tu 'perds'", "Ce que tu gagnes"], rows: [
+        { cells: ["48h de travail non payé", "Un projet réel dans ton portfolio (valeur : premiers clients payants)"] },
+        { cells: ["0€ de revenu immédiat", "Un témoignage client (valeur : crédibilité instantanée)"] },
+        { cells: ["Un peu d'ego ('je travaille gratis')", "La preuve que tu peux livrer (valeur : confiance en toi)"] },
+        { cells: ["Du temps 'perdu'", "Un case study que tu vas réutiliser pendant des mois"] },
+        { cells: ["Rien de plus", "Du bouche-à-oreille : ton client parle de toi à son réseau"] },
       ]},
-      { id: "6-7", type: "text", html: "<p>Le généraliste concourt sur le prix. Le spécialiste concourt sur l'expertise. Ce n'est pas la même bataille — et ce n'est pas la même vie.</p>" },
+      { id: "6-7", type: "text", html: "<p>Un freelance avec zéro portfolio qui essaie de vendre à 2 000€ vs un freelance avec un cas client réel et un témoignage vidéo qui vend à 2 000€ — ce n'est pas la même conversation. Le projet gratuit te fait passer de l'autre côté.</p>" },
 
       { id: "6-8", type: "separator", style: "line" },
-      { id: "6-9", type: "heading", level: 2, text: "Comment choisir ta niche" },
-      { id: "6-10", type: "diagram", variant: "flow", nodes: [
-        { id: "n1", label: "Zone de compétence", description: "Ce que tu sais faire : chatbots, automatisations, agents, sites, consulting" },
-        { id: "n2", label: "Zone de connaissance sectorielle", description: "Un secteur que tu connais déjà (ton ancien boulot, ta famille, ton réseau proche)" },
-        { id: "n3", label: "Zone de douleur forte", description: "Un secteur où le problème est critique et le budget est là (santé, immobilier, RH, legal, e-commerce)" },
-        { id: "n4", label: "Ta niche idéale", description: "L'intersection des 3 zones : tu sais faire, tu connais le secteur, le secteur a besoin de toi et peut payer" },
+      { id: "6-9", type: "heading", level: 2, text: "Comment choisir le bon prospect" },
+      { id: "6-10", type: "text", html: "<p>Tu ne vas pas offrir ton travail à n'importe qui. Le prospect parfait pour ton premier projet gratuit doit cocher ces critères :</p>" },
+      { id: "6-11", type: "steps", steps: [
+        { title: "Critère 1 : Quelqu'un de ton réseau", description: "Un ami entrepreneur, un membre de ta famille qui a un commerce, un ancien collègue qui a lancé sa boîte, un contact LinkedIn avec qui tu as déjà échangé. Tu as besoin de quelqu'un qui te fait confiance a priori — pas un inconnu à qui tu dois tout prouver." },
+        { title: "Critère 2 : Un business réel avec un problème concret", description: "Un restaurant qui perd des réservations parce qu'il ne répond pas au téléphone. Un coach qui passe 3h par jour à répondre aux mêmes questions par DM. Un e-commerce qui n'a aucun support client le week-end. Le problème doit être visible, mesurable, et résolvable avec l'IA." },
+        { title: "Critère 3 : Quelqu'un qui va utiliser ce que tu livres", description: "Le pire scénario : tu livres un chatbot magnifique et le prospect ne l'installe jamais sur son site. Choisis quelqu'un de motivé, qui comprend la valeur, et qui va réellement utiliser ton livrable." },
+        { title: "Critère 4 : Quelqu'un capable de te donner un témoignage", description: "C'est ta monnaie d'échange. Le prospect doit être à l'aise avec l'idée de te laisser un témoignage écrit ou vidéo après le projet. Vérifie ça avant de commencer." },
       ]},
-      { id: "6-11", type: "text", html: "<p>Tu n'as pas besoin de connaître un secteur parfaitement pour te spécialiser dedans. 2-3 projets et tu seras déjà plus expert que 95% du marché sur 'IA + ce secteur'. La spécialisation se construit vite.</p>" },
+      { id: "6-12", type: "callout", variant: "tip", html: "<strong>Les meilleurs premiers prospects :</strong> un restaurant local, un coach ou consultant solo, une petite agence immobilière, un artisan, un e-commerce Shopify avec 50-200 commandes/mois. Ces profils ont des problèmes clairs, sont reconnaissants quand tu les aides, et parlent de toi à leur réseau." },
 
-      { id: "6-12", type: "heading", level: 2, text: "Exemples de niches rentables pour une agence IA" },
-      { id: "6-13", type: "comparison", headers: ["Niche", "Services qui marchent", "Budget moyen client"], rows: [
-        { cells: ["Agences immobilières", "Chatbot qualif prospects, automatisation visites, rapports auto", "2 000€ – 8 000€"] },
-        { cells: ["Cabinets RH / recrutement", "Agent tri CV, automatisation onboarding, FAQ RH chatbot", "1 500€ – 6 000€"] },
-        { cells: ["Cliniques / cabinets médicaux", "Chatbot prise RDV, rappels patients automatisés, FAQ santé", "1 000€ – 4 000€"] },
-        { cells: ["E-commerce (Shopify)", "Chatbot support, automatisation avis clients, agent retours", "1 500€ – 5 000€"] },
-        { cells: ["Restaurants / hôtellerie", "Chatbot résa/FAQ, automatisation avis Google, menu IA", "500€ – 2 500€"] },
-        { cells: ["Cabinets comptables", "Automatisation traitement factures, chatbot client, extraction données", "3 000€ – 10 000€"] },
+      { id: "6-13", type: "separator", style: "line" },
+      { id: "6-14", type: "heading", level: 2, text: "Cadrer le projet : 1 livrable max, 48h de travail" },
+      { id: "6-15", type: "text", html: "<p>L'erreur fatale du premier projet gratuit : vouloir tout faire. 'Je vais lui faire un chatbot ET une automatisation ET refaire son site ET…'. Non. Tu vas t'épuiser, dépasser les délais, livrer un truc moyen, et ne jamais recommencer.</p><p>La règle d'or : <strong>1 livrable. 48h de travail max. Point final.</strong></p>" },
+      { id: "6-16", type: "comparison", headers: ["Bon scope (1 livrable clair)", "Mauvais scope (trop ambitieux)"], rows: [
+        { cells: ["Un chatbot FAQ pour le site du restaurant (20 questions, intégré)", "Chatbot + automatisation réservations + refonte menu + analytics"] },
+        { cells: ["Un workflow n8n qui automatise les relances de devis du coach", "Automatisation complète du CRM + email marketing + reporting"] },
+        { cells: ["Un agent IA qui répond aux questions produit sur le site Shopify", "Agent IA + chatbot support + automatisation retours + dashboard"] },
+      ]},
+      { id: "6-17", type: "callout", variant: "warning", html: "<strong>Règle non négociable :</strong> avant de commencer, écris en une phrase ce que tu vas livrer. 'Je vais créer un chatbot FAQ pour le site de [nom] qui répond aux 20 questions les plus fréquentes de ses clients.' Si ta phrase contient 'ET', c'est trop. Coupe." },
+
+      { id: "6-18", type: "separator", style: "line" },
+      { id: "6-19", type: "heading", level: 2, text: "Livrer comme un professionnel" },
+      { id: "6-20", type: "text", html: "<p>Le fait que ce soit gratuit ne change rien à ta manière de travailler. Tu dois livrer comme si le client payait 3 000€. Pourquoi ? Parce que ce projet va définir ta réputation. Le témoignage que tu obtiendras dépend directement de l'expérience que tu offres.</p>" },
+      { id: "6-21", type: "steps", steps: [
+        { title: "Étape 1 : Kick-off structuré (30 min)", description: "Appel ou visio de 30 minutes. Tu poses les questions : quel est le problème exact, qui sont les utilisateurs, quels résultats tu attends. Tu prends des notes. Tu confirmes le livrable par écrit après l'appel. Même format qu'avec un client payant." },
+        { title: "Étape 2 : Mise à jour à mi-parcours", description: "Au bout de 24h, envoie un message avec une capture d'écran ou une démo rapide. 'Voilà où j'en suis, voilà ce que ça donne, est-ce que c'est aligné avec ce que tu voulais ?' Cette transparence crée de la confiance." },
+        { title: "Étape 3 : Livraison soignée", description: "Ne fais pas 'tiens, voilà le lien'. Prépare un récap : ce qui a été fait, comment ça marche, un mini tuto (vidéo Loom de 3 min ou document). Le client doit pouvoir utiliser ton livrable sans toi." },
+        { title: "Étape 4 : Suivi post-livraison (J+3)", description: "3 jours après la livraison, reprends contact. 'Est-ce que le chatbot fonctionne bien ? Tu as des retours de tes clients ?' Ce suivi montre ton professionnalisme et prépare la demande de témoignage." },
       ]},
 
-      { id: "6-14", type: "separator", style: "dots" },
-      { id: "6-15", type: "heading", level: 2, text: "Construire ton personal branding" },
-      { id: "6-16", type: "text", html: "<p>Le personal branding, c'est la réponse à la question : <em>pourquoi toi plutôt qu'un autre ?</em> Ce n'est pas un logo ou une jolie bio LinkedIn. C'est la combinaison de ton positionnement + ta preuve + ta présence.</p>" },
-      { id: "6-17", type: "steps", steps: [
-        { title: "Étape 1 : Définis ta proposition de valeur unique (PVU)", description: "En une phrase : 'J'aide [qui] à [résultat] grâce à [méthode / spécificité]'. Ex : 'J'aide les agences immobilières à doubler leurs leads qualifiés avec des systèmes IA sur-mesure.'" },
-        { title: "Étape 2 : Crée du contenu sur ta niche", description: "LinkedIn est la meilleure plateforme B2B. 2 posts par semaine sur les problèmes de ta niche et comment l'IA les résout. Tu n'as pas besoin d'être créatif — documente ce que tu fais." },
-        { title: "Étape 3 : Montre des résultats réels", description: "Capture d'écran d'un workflow en action, stats d'un chatbot, témoignage client. La preuve est le meilleur contenu. Une seule preuve vaut 100 posts théoriques." },
-        { title: "Étape 4 : Sois la ressource dans ta niche", description: "Réponds aux questions dans des groupes Facebook / Slack de ta niche. Partage des astuces spécifiques. Tu deviens la référence IA du secteur par simple présence régulière." },
-      ]},
-      { id: "6-18", type: "callout", variant: "success", html: "<strong>Résultat attendu en 3 mois de contenu régulier :</strong> des prospects inbound qui te contactent en disant 'j'ai vu tes posts sur LinkedIn, tu travailles avec des agences immo, on cherche quelqu'un pour…'. C'est ça, le personal branding qui vend." },
+      { id: "6-22", type: "separator", style: "line" },
+      { id: "6-23", type: "heading", level: 2, text: "Obtenir le témoignage : le script exact" },
+      { id: "6-24", type: "text", html: "<p>Le témoignage, c'est <strong>la raison pour laquelle tu fais ce projet</strong>. C'est ta paye. Ne le laisse pas au hasard. Voici exactement comment faire.</p>" },
+      { id: "6-25", type: "code", language: "text", filename: "script-demande-temoignage.txt", code: `QUAND DEMANDER : 3 à 5 jours après la livraison, quand le client utilise
+ton livrable et voit les premiers résultats.
 
-      { id: "6-19", type: "separator", style: "dots" },
-      { id: "6-20", type: "quiz-inline", question: "Pourquoi le spécialiste peut facturer plus cher que le généraliste ?", options: [
-        { id: "a", text: "Parce qu'il fait un travail plus difficile techniquement" },
-        { id: "b", text: "Parce qu'il est rare dans sa niche, compris immédiatement par ses clients, et n'est pas comparable à d'autres prestataires génériques" },
-        { id: "c", text: "Parce que les clients spécialisés ont plus d'argent" },
-      ], correctId: "b", explanation: "Le spécialiste ne concourt pas sur le prix mais sur l'expertise perçue. Quand tu es 'l'expert IA des agences immobilières', le client ne peut pas te comparer à un généraliste. Tu es dans une catégorie à part — et tu fixes les prix de cette catégorie." },
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-      { id: "6-21", type: "checklist", title: "Mon positionnement est clair quand…", items: [
-        { id: "c1", text: "Je peux dire en une phrase qui j'aide et quel résultat je livre" },
-        { id: "c2", text: "J'ai choisi une niche sectorielle principale (quitte à l'ajuster plus tard)" },
-        { id: "c3", text: "Mon profil LinkedIn / ma page d'offre reflète cette spécialisation" },
-        { id: "c4", text: "Je publie au moins 1 contenu par semaine sur les problèmes de ma niche" },
-        { id: "c5", text: "Je sais comment répondre à 'pourquoi toi ?' en 30 secondes" },
-        { id: "c6", text: "Je comprends que me spécialiser n'empêche pas de prendre d'autres clients — ça attire juste les bons en priorité" },
+MESSAGE TYPE (à adapter) :
+
+"Salut [prénom],
+
+Content que le [chatbot/workflow/agent] fonctionne bien !
+
+J'ai une demande : est-ce que tu serais OK pour me laisser
+un petit témoignage sur ce que je t'ai livré ? Ça m'aide
+énormément pour développer mon activité.
+
+Je te propose 2 options :
+- Option 1 : Un texto/message écrit de 3-4 lignes
+  (je t'envoie 3 questions pour te guider)
+- Option 2 : Un appel vidéo de 5 min que j'enregistre
+  (je te pose les questions, tu réponds naturellement)
+
+Qu'est-ce qui te va le mieux ?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LES 3 QUESTIONS GUIDES (pour le témoignage écrit) :
+
+1. "C'était quoi le problème / la galère AVANT que je
+   t'installe le [chatbot/workflow] ?"
+2. "Concrètement, qu'est-ce que ça a changé depuis ?"
+3. "Tu recommanderais mes services ? Pourquoi ?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+POUR LE TÉMOIGNAGE VIDÉO :
+
+- Utilise Zoom ou Google Meet (enregistrement intégré)
+- Durée : 5 minutes max
+- Pose les 3 mêmes questions, laisse le client parler
+- Pas besoin de montage : le témoignage brut est plus
+  authentique qu'une vidéo montée
+- Demande l'autorisation de l'utiliser sur ton site/LinkedIn` },
+      { id: "6-26", type: "callout", variant: "success", html: "<strong>Témoignage vidéo > témoignage écrit.</strong> Une vidéo de 2 minutes où un vrai chef d'entreprise dit 'il m'a installé un chatbot et maintenant je ne rate plus aucune demande client' vaut plus que 50 posts LinkedIn. Si ton prospect est à l'aise, pousse pour la vidéo." },
+      { id: "6-27", type: "text", html: "<p><strong>Et si le prospect refuse le témoignage ?</strong> C'est rare si tu le préviens dès le départ. Mais si ça arrive, demande au minimum : une autorisation d'utiliser le projet dans ton portfolio (anonymisé si besoin), et le droit de dire 'j'ai travaillé avec [type d'entreprise] sur [type de projet]'. Mieux que rien.</p>" },
+
+      { id: "6-28", type: "separator", style: "dots" },
+      { id: "6-29", type: "quiz-inline", question: "Pourquoi le premier projet gratuit est un investissement et non de la charité ?", options: [
+        { id: "a", text: "Parce que le client va forcément devenir un client payant ensuite" },
+        { id: "b", text: "Parce que tu échanges 48h de travail contre un cas client réel, un témoignage et la confiance en toi — des actifs qui valent des milliers d'euros pour décrocher tes prochains clients" },
+        { id: "c", text: "Parce que c'est obligatoire pour se lancer en freelance" },
+      ], correctId: "b", explanation: "Le projet gratuit casse le cercle vicieux du débutant (pas de client → pas de portfolio → pas de crédibilité). Les 48h investies te rapportent un portfolio, un témoignage et l'assurance que tu peux livrer — trois actifs qui débloquent tes premiers clients payants." },
+
+      { id: "6-30", type: "checklist", title: "Avant de passer à la suite", items: [
+        { id: "c1", text: "J'ai compris que le projet gratuit est un investissement stratégique, pas de la charité" },
+        { id: "c2", text: "J'ai identifié au moins 1 prospect dans mon réseau qui correspond aux 4 critères" },
+        { id: "c3", text: "J'ai défini mon livrable en 1 phrase (sans 'ET')" },
+        { id: "c4", text: "Je sais comment livrer professionnellement (kick-off, mise à jour, livraison soignée, suivi)" },
+        { id: "c5", text: "J'ai le script pour demander un témoignage écrit ou vidéo" },
+        { id: "c6", text: "Je suis prêt à lancer ce projet cette semaine" },
       ]},
     ]),
-    exercise: "<h3>Exercice final du module : Ton positionnement en 3 livrables</h3><p>C'est l'exercice le plus important du module. Prends 45 minutes et produis ces 3 livrables :</p><ol><li><strong>Ta PVU (Proposition de Valeur Unique)</strong> : 'J'aide [qui précis] à [résultat précis] grâce à [méthode / outil / spécificité]'. Écris 3 versions et garde la meilleure.</li><li><strong>Ta bio LinkedIn</strong> : 3 lignes max. Commence par ta PVU. Ajoute une preuve (ou un projet). Finis par un CTA ('DM pour discuter de [sujet]').</li><li><strong>Ton premier post LinkedIn</strong> : Décris un problème concret de ta niche cible. Explique comment l'IA le résout. Finis par une question ouverte. Poste-le aujourd'hui.</li></ol><p>Ces 3 éléments posent les fondations de tout ton business IA. Le reste — clients, revenus, réputation — se construit à partir de là.</p>",
+    exercise: "<h3>Exercice : Ton premier projet gratuit</h3><p>C'est l'exercice le plus important de toute la formation. Pas de théorie — de l'action pure.</p><ol><li><strong>Identifie 1 prospect dans ton réseau</strong> : quelqu'un qui a un business réel avec un problème concret (FAQ répétitives, tâches manuelles, pas de support client le soir/week-end). Vérifie qu'il coche les 4 critères.</li><li><strong>Propose-lui un projet gratuit</strong> : un chatbot OU une automatisation. Définis le livrable en 1 phrase. Cadre : 48h de travail max, 1 seul livrable.</li><li><strong>Livre-le en 48h</strong> : kick-off structuré, mise à jour à mi-parcours, livraison soignée avec récap et mini tuto.</li><li><strong>Obtiens un témoignage</strong> : écrit (3-4 lignes guidées par tes 3 questions) ou vidéo (5 min max). Utilise le script fourni dans la leçon.</li></ol><p><strong>Deadline :</strong> Ce projet doit être terminé avant de passer à la leçon suivante. Pas d'excuse, pas de 'je ferai plus tard'. C'est maintenant.</p>",
     quiz: [
-      { type: "mcq", question: "Pourquoi le spécialiste peut-il facturer plus cher que le généraliste ?", options: JSON.stringify(["Parce qu'il fait un travail techniquement plus difficile", "Parce qu'il est rare dans sa niche et n'est pas comparable à des prestataires génériques", "Parce que les clients de niche ont plus de budget", "Parce qu'il a plus d'années d'expérience"]), correctAnswer: "Parce qu'il est rare dans sa niche et n'est pas comparable à des prestataires génériques", explanation: "Le spécialiste concourt sur l'expertise perçue, pas sur le prix. Quand tu es 'l'expert IA des agences immobilières', le client ne peut pas te comparer à un généraliste. Tu fixes les prix de ta catégorie." },
-      { type: "true_false", question: "Réduire sa cible à une niche spécifique diminue le nombre de clients potentiels.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Contre-intuitif mais vrai : réduire ta cible augmente ton nombre de clients. Plus tu parles à tout le monde, moins tu parles à quelqu'un. Un message spécifique attire tous les clients de ta niche." },
-      { type: "mcq", question: "Quelle est la bonne structure pour une Proposition de Valeur Unique (PVU) ?", options: JSON.stringify(["'Je suis expert en IA et automatisation'", "'J'aide [qui] à [résultat] grâce à [méthode/spécificité]'", "'Je propose des services IA abordables'", "'Agence IA full-service pour toutes les entreprises'"]), correctAnswer: "'J'aide [qui] à [résultat] grâce à [méthode/spécificité]'", explanation: "La PVU suit le format : 'J'aide [persona précis] à [résultat mesurable] grâce à [méthode unique]'. Par exemple : 'J'aide les agences immobilières à doubler leurs leads qualifiés avec des systèmes IA sur-mesure.'" },
-      { type: "true_false", question: "Il faut connaître parfaitement un secteur avant de s'y spécialiser.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Tu n'as pas besoin de connaître un secteur parfaitement. 2-3 projets suffisent pour être plus expert que 95% du marché sur 'IA + ce secteur'. La spécialisation se construit vite avec la pratique." },
-      { type: "mcq", question: "Vous hésitez entre vous positionner comme 'agence IA généraliste pour toutes les entreprises' ou 'expert IA pour les cabinets de recrutement'. Un ami vous dit que la niche est trop étroite. Que lui répondez-vous ?", options: JSON.stringify(["Il a raison, il vaut mieux cibler tout le monde pour maximiser les opportunités", "Se spécialiser dans les cabinets de recrutement vous rend incomparable, justifie des prix plus élevés, et attire les bons clients — 2-3 projets suffisent pour devenir l'expert de cette niche", "Vous choisissez un compromis et ciblez toutes les entreprises de services", "Vous abandonnez l'idée de niche et restez généraliste"]), correctAnswer: "Se spécialiser dans les cabinets de recrutement vous rend incomparable, justifie des prix plus élevés, et attire les bons clients — 2-3 projets suffisent pour devenir l'expert de cette niche", explanation: "Le spécialiste est rare dans sa niche et n'est pas comparable à des prestataires génériques. Quand vous êtes 'l'expert IA des cabinets de recrutement', les prospects ne peuvent pas comparer votre prix. 2-3 projets dans le secteur suffisent pour être plus expert que 95% du marché sur 'IA + recrutement'." },
+      { type: "mcq", question: "Quel est le principal bénéfice du premier projet gratuit ?", options: JSON.stringify(["Gagner de l'argent rapidement", "Casser le cercle vicieux du débutant en obtenant un cas client réel, un témoignage et la confiance en soi", "Apprendre de nouvelles compétences techniques", "Se faire connaître sur les réseaux sociaux"]), correctAnswer: "Casser le cercle vicieux du débutant en obtenant un cas client réel, un témoignage et la confiance en soi", explanation: "Le cercle vicieux du débutant (pas de client → pas de portfolio → pas de crédibilité → pas de client) se brise en offrant un premier projet. Tu gagnes un cas concret, un témoignage et la preuve que tu peux livrer — trois actifs qui débloquent les clients payants." },
+      { type: "true_false", question: "Pour un premier projet gratuit, il vaut mieux livrer plusieurs services (chatbot + automatisation + site) pour impressionner le client.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La règle d'or : 1 livrable, 48h max. Vouloir tout faire mène à l'épuisement, aux retards et à un livrable moyen. Si ta description contient 'ET', c'est trop — coupe." },
+      { type: "mcq", question: "Quel est le profil idéal pour ton premier projet gratuit ?", options: JSON.stringify(["Un grand groupe du CAC 40 pour avoir un nom prestigieux", "Quelqu'un de ton réseau avec un business réel, un problème concret, et qui est OK pour te donner un témoignage", "Un inconnu trouvé sur LinkedIn avec un gros budget", "Un ami qui n'a pas vraiment besoin d'IA mais qui veut t'aider"]), correctAnswer: "Quelqu'un de ton réseau avec un business réel, un problème concret, et qui est OK pour te donner un témoignage", explanation: "Les 4 critères : quelqu'un de ton réseau (confiance a priori), un business réel avec un problème concret, quelqu'un qui va utiliser ton livrable, et quelqu'un capable de te donner un témoignage." },
+      { type: "true_false", question: "Le témoignage vidéo a plus d'impact que le témoignage écrit pour convaincre de futurs clients.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Une vidéo de 2 minutes où un vrai chef d'entreprise parle de ton travail vaut plus que 50 posts LinkedIn. Le témoignage vidéo brut est plus authentique et plus convaincant qu'un texte écrit." },
+      { type: "mcq", question: "Tu as livré un chatbot gratuit à un ami restaurateur. Il est content. Tu veux lui demander un témoignage. Quelle est la meilleure approche ?", options: JSON.stringify(["Attendre qu'il propose spontanément de te recommander", "Le contacter 3-5 jours après la livraison, lui proposer 2 options (écrit ou vidéo), et lui envoyer 3 questions guides pour structurer son retour", "Lui envoyer un formulaire Google Forms impersonnel", "Lui demander le jour même de la livraison, avant qu'il ait eu le temps de tester"]), correctAnswer: "Le contacter 3-5 jours après la livraison, lui proposer 2 options (écrit ou vidéo), et lui envoyer 3 questions guides pour structurer son retour", explanation: "Le timing est clé : 3-5 jours après, le client utilise le livrable et voit les résultats. Les 2 options (écrit/vidéo) respectent son confort. Les 3 questions guides l'aident à structurer un témoignage utile pour toi." },
+    ],
+  },
+
+  // ─── LEÇON 7 ───
+  {
+    order: 7,
+    module: 8,
+    title: "Ton portfolio avec des vrais cas",
+    slug: "portfolio-vrais-cas",
+    duration: "25 min",
+    description: "Transformer ton projet gratuit en case study pro, structurer ton portfolio, publier sur LinkedIn et exploiter ton témoignage partout pour décrocher tes premiers clients payants.",
+    content: blocks([
+      { id: "7-1", type: "heading", level: 2, text: "De projet gratuit à arme commerciale" },
+      { id: "7-2", type: "text", html: "<p>Tu as livré ton premier projet. Tu as un témoignage. Maintenant, il faut transformer tout ça en machine à clients. Un projet qui reste dans un dossier sur ton ordi ne sert à rien. Un projet transformé en case study, publié sur LinkedIn et intégré à ton portfolio — ça vend pour toi 24h/24.</p><p>Cette leçon est la suite directe de la précédente. Si tu n'as pas encore livré ton premier projet gratuit et obtenu un témoignage, <strong>retourne à la leçon 6 et fais-le d'abord</strong>. Tout ce qui suit en dépend.</p>" },
+      { id: "7-3", type: "callout", variant: "info", html: "<strong>Pourquoi le case study est si puissant :</strong> un prospect qui lit ton case study se projette. Il se dit 'ce freelance a résolu un problème similaire au mien, avec des résultats concrets'. C'est 10x plus convaincant qu'une page d'offre générique. Les agences IA qui décrochent les meilleurs contrats sont celles qui ont les meilleurs case studies — pas celles qui ont le plus beau site." },
+
+      { id: "7-4", type: "separator", style: "dots" },
+      { id: "7-5", type: "heading", level: 2, text: "La structure d'un case study qui vend : Problème → Solution → Résultats" },
+      { id: "7-6", type: "text", html: "<p>Un bon case study suit toujours la même structure en 3 actes. C'est une histoire — et les histoires vendent mieux que les arguments.</p>" },
+      { id: "7-7", type: "steps", steps: [
+        { title: "Acte 1 : Le problème (contexte + douleur)", description: "Qui est le client ? Quel était son problème concret ? Quelles étaient les conséquences (temps perdu, argent perdu, stress, clients mécontents) ? Tu dois peindre la situation AVANT ton intervention de manière vivante et spécifique. Pas 'il avait un problème de communication' mais 'il recevait 40 messages par jour sur Instagram et n'arrivait pas à répondre — il perdait 3 à 5 réservations par semaine'." },
+        { title: "Acte 2 : La solution (ce que tu as fait)", description: "Quel livrable tu as créé ? Comment ça fonctionne en 2-3 phrases simples ? Quel outil tu as utilisé (Voiceflow, n8n, Make, etc.) ? Combien de temps ça t'a pris ? Inclus une capture d'écran ou un GIF du livrable en action. Le prospect doit pouvoir visualiser ce que tu as construit." },
+        { title: "Acte 3 : Les résultats (avec des chiffres)", description: "C'est la partie la plus importante. Pas de 'le client est content'. Des chiffres. '40 messages/jour traités automatiquement. 0 réservation perdue depuis l'installation. 12h/semaine économisées.' Si tu n'as pas de chiffres exacts, demande-les à ton client ou estime-les avec lui." },
+      ]},
+      { id: "7-8", type: "callout", variant: "warning", html: "<strong>Les chiffres sont non négociables.</strong> Un case study sans chiffres est un témoignage déguisé. Avant de livrer ton projet, mets en place des métriques simples : nombre de conversations du chatbot, temps économisé par semaine, nombre de tâches automatisées. Demande à ton client les chiffres 'avant' pour pouvoir comparer." },
+
+      { id: "7-9", type: "separator", style: "line" },
+      { id: "7-10", type: "heading", level: 2, text: "Le template de case study" },
+      { id: "7-11", type: "code", language: "text", filename: "template-case-study.txt", code: `TEMPLATE CASE STUDY — À COPIER ET REMPLIR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TITRE : [Résultat chiffré] pour [type de client]
+Ex : "12h/semaine économisées pour un restaurant lyonnais
+     grâce à un chatbot IA"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+LE CLIENT :
+- Qui : [Nom ou type de business, ville, taille]
+- Secteur : [Restaurant, coaching, e-commerce, etc.]
+- Taille : [Solo, 2-5 employés, 10+, etc.]
+
+LE PROBLÈME :
+- Situation avant : [Description concrète et chiffrée]
+- Conséquences : [Temps perdu, argent perdu, stress, etc.]
+- Citation du client : "[verbatim du client décrivant sa
+  galère — tiré du témoignage]"
+
+LA SOLUTION :
+- Ce que j'ai livré : [1 phrase claire]
+- Comment ça marche : [2-3 phrases simples]
+- Outils utilisés : [Voiceflow, n8n, Make, etc.]
+- Temps de réalisation : [ex: 2 jours]
+- [CAPTURE D'ÉCRAN ou GIF du livrable en action]
+
+LES RÉSULTATS (après 1-2 semaines) :
+- Métrique 1 : [Avant → Après] (ex: 40 msg/jour → 0 msg
+  non traité)
+- Métrique 2 : [Avant → Après] (ex: 3-5 réservations
+  perdues/semaine → 0)
+- Métrique 3 : [Avant → Après] (ex: 0h libres → 12h/semaine
+  récupérées)
+- Citation du client : "[verbatim positif du client — tiré
+  du témoignage]"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CALL TO ACTION :
+"Vous avez le même type de problème ? Contactez-moi pour
+en discuter → [lien ou email]"` },
+
+      { id: "7-12", type: "separator", style: "line" },
+      { id: "7-13", type: "heading", level: 2, text: "Construire ton portfolio" },
+      { id: "7-14", type: "text", html: "<p>Ton portfolio, c'est l'endroit où tes case studies vivent. Pas besoin d'un site complexe. Voici les 3 options par ordre de priorité :</p>" },
+      { id: "7-15", type: "comparison", headers: ["Option", "Pour qui", "Comment"], rows: [
+        { cells: ["Page Notion publique", "Débutant qui veut aller vite", "Crée une page Notion avec tes case studies. Lien partageable en 5 min. Gratuit. Facile à mettre à jour."] },
+        { cells: ["Section sur ton site (Framer / Webflow)", "Si tu as déjà un site", "Ajoute une page '/portfolio' ou '/cas-clients' avec tes case studies. Design soigné. Intègre les témoignages vidéo."] },
+        { cells: ["PDF portfolio", "Pour les envois directs", "Un document de 3-5 pages avec tes meilleurs case studies. Format propre, envoyable par mail ou DM LinkedIn. Parfait pour les propositions commerciales."] },
+      ]},
+      { id: "7-16", type: "callout", variant: "tip", html: "<strong>Commence par Notion.</strong> Sérieusement. En 30 minutes, tu as un portfolio en ligne. Tu pourras migrer vers un vrai site plus tard. L'important c'est que ton case study soit visible et partageable dès maintenant — pas dans 3 semaines quand ton site sera 'parfait'." },
+
+      { id: "7-17", type: "separator", style: "line" },
+      { id: "7-18", type: "heading", level: 2, text: "Publier ton case study sur LinkedIn" },
+      { id: "7-19", type: "text", html: "<p>LinkedIn est le canal #1 pour vendre des services IA en B2B. Et un post case study est le type de contenu qui convertit le mieux. Voici la structure exacte d'un post LinkedIn case study qui génère des prospects :</p>" },
+      { id: "7-20", type: "code", language: "text", filename: "structure-post-linkedin-case-study.txt", code: `STRUCTURE DU POST LINKEDIN CASE STUDY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ACCROCHE (2 lignes — doit donner envie de cliquer "voir plus")
+"J'ai installé un chatbot IA pour un restaurant.
+Résultat : 12h/semaine économisées et 0 réservation perdue."
+
+CONTEXTE (3-4 lignes)
+Le problème du client en termes concrets.
+"[Prénom] gère un restaurant à [ville]. Il recevait 40
+messages par jour sur Instagram. Il en ratait la moitié.
+Il perdait 3 à 5 réservations par semaine."
+
+CE QUE J'AI FAIT (3-4 lignes)
+Ta solution en termes simples (pas de jargon technique).
+"J'ai créé un chatbot IA qui répond automatiquement aux
+questions fréquentes (horaires, menu, allergènes) et
+prend les réservations 24h/24."
+
+RÉSULTATS (3-4 lignes avec des chiffres)
+Les métriques avant/après.
+"Après 2 semaines :
+→ 40 messages/jour traités automatiquement
+→ 0 réservation perdue
+→ 12h/semaine récupérées pour la cuisine"
+
+LEÇON / INSIGHT (2-3 lignes)
+Ce que ça t'a appris ou un conseil actionnable.
+"Ce qui m'a surpris : le plus gros gain n'était pas le
+temps économisé. C'était le stress en moins."
+
+CTA (1-2 lignes)
+"Si tu gères un restaurant et que tu perds des clients
+parce que tu ne peux pas répondre à tout — DM moi."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TIPS :
+- Ajoute une capture d'écran du chatbot en action (image)
+- Tague le client s'il est OK (boost la visibilité)
+- Poste le mardi, mercredi ou jeudi entre 8h et 10h
+- Réponds à TOUS les commentaires dans la première heure` },
+      { id: "7-21", type: "callout", variant: "success", html: "<strong>Un seul post LinkedIn case study bien écrit peut générer 5 à 15 prospects inbound.</strong> Ce n'est pas de la théorie — c'est ce que font les freelances et agences IA qui signent régulièrement. La preuve > la promesse. Toujours." },
+
+      { id: "7-22", type: "separator", style: "line" },
+      { id: "7-23", type: "heading", level: 2, text: "Exploiter ton témoignage partout" },
+      { id: "7-24", type: "text", html: "<p>Un témoignage ne doit pas vivre dans un seul endroit. Il doit être partout où un prospect pourrait te découvrir ou hésiter à travailler avec toi. Voici la liste complète :</p>" },
+      { id: "7-25", type: "comparison", headers: ["Où placer le témoignage", "Pourquoi", "Comment"], rows: [
+        { cells: ["Page d'offre / landing page", "Rassure le prospect au moment de la décision", "Citation + nom + photo du client. Idéalement au-dessus du CTA."] },
+        { cells: ["Profil LinkedIn (section 'En vedette')", "Visible par tous ceux qui visitent ton profil", "Capture d'écran du témoignage écrit, ou lien vers le post case study."] },
+        { cells: ["Propositions commerciales", "Lève les dernières objections avant la signature", "Intègre 1-2 témoignages dans ton document de proposition."] },
+        { cells: ["Posts LinkedIn réguliers", "Rappelle ta crédibilité à ton audience", "1 post par mois qui cite un retour client ou montre un résultat."] },
+        { cells: ["Réponses aux prospects (DM / email)", "Preuve sociale dans la conversation de vente", "'Un de mes clients disait la même chose — voici ce qu'on a fait et les résultats.'"] },
+        { cells: ["Bio / description LinkedIn", "Première impression immédiate", "'J'ai aidé [X] à [résultat]. Témoignage : [lien]'"] },
+      ]},
+      { id: "7-26", type: "callout", variant: "tip", html: "<strong>Le témoignage vidéo en action :</strong> si tu as obtenu un témoignage vidéo, poste-le en natif sur LinkedIn (pas un lien YouTube). Les vidéos natives ont 5x plus de portée. Ajoute des sous-titres (80% des gens regardent sans le son). Un post avec un témoignage vidéo est ton meilleur contenu possible." },
+
+      { id: "7-27", type: "separator", style: "dots" },
+      { id: "7-28", type: "heading", level: 2, text: "Le cercle vertueux : de 1 client gratuit à des clients payants" },
+      { id: "7-29", type: "diagram", variant: "flow", nodes: [
+        { id: "n1", label: "Projet gratuit livré", description: "Tu as un livrable réel, fonctionnel, avec des résultats mesurables." },
+        { id: "n2", label: "Case study + témoignage", description: "Tu transformes le projet en preuve sociale publiée partout." },
+        { id: "n3", label: "Visibilité LinkedIn", description: "Ton post case study attire des prospects qui se reconnaissent dans le problème." },
+        { id: "n4", label: "Premiers clients payants", description: "Les prospects te contactent. Tu as la preuve. Tu fixes ton prix. Tu signes." },
+        { id: "n5", label: "Nouveaux case studies", description: "Chaque client payant = un nouveau case study. Le cercle s'accélère." },
+      ]},
+      { id: "7-30", type: "text", html: "<p>Ce cercle vertueux est la base de toute activité de freelance ou d'agence IA qui fonctionne. Un projet gratuit bien exécuté peut déboucher sur 3 à 5 clients payants dans les 30 jours qui suivent — si tu transformes ce projet en case study et que tu le publies. La plupart des gens font le projet mais ne font pas le case study. C'est comme cuisiner un excellent plat et ne jamais le servir.</p>" },
+
+      { id: "7-31", type: "separator", style: "dots" },
+      { id: "7-32", type: "quiz-inline", question: "Quelle est la partie la plus importante d'un case study ?", options: [
+        { id: "a", text: "La description technique détaillée de la solution" },
+        { id: "b", text: "Les résultats chiffrés (métriques avant/après)" },
+        { id: "c", text: "Le nom et le logo du client" },
+      ], correctId: "b", explanation: "Les résultats chiffrés sont ce qui fait vendre un case study. 'Le client est content' ne vaut rien. '40 messages/jour traités automatiquement, 12h/semaine économisées, 0 réservation perdue' — ça, ça parle au prospect qui a le même problème." },
+
+      { id: "7-33", type: "checklist", title: "Mon portfolio est prêt quand…", items: [
+        { id: "c1", text: "J'ai rédigé mon premier case study avec la structure Problème → Solution → Résultats (avec chiffres)" },
+        { id: "c2", text: "Mon case study est publié quelque part (Notion, site, PDF)" },
+        { id: "c3", text: "J'ai posté mon case study sur LinkedIn avec la structure du template" },
+        { id: "c4", text: "Mon témoignage est placé sur au moins 3 supports différents" },
+        { id: "c5", text: "Je comprends le cercle vertueux projet → case study → visibilité → clients payants" },
+      ]},
+    ]),
+    exercise: "<h3>Exercice : Ton premier case study et ta présence en ligne</h3><p>3 livrables concrets à produire maintenant :</p><ol><li><strong>Rédige ton premier case study</strong> : utilise le template fourni. Remplis chaque section (client, problème, solution, résultats avec chiffres). Inclus au moins une capture d'écran du livrable en action.</li><li><strong>Ajoute-le à ton portfolio</strong> : crée une page Notion publique (ou ajoute-le à ton site si tu en as un). Le lien doit être partageable.</li><li><strong>Poste-le sur LinkedIn</strong> : utilise la structure du post LinkedIn case study. Ajoute une image (capture d'écran du livrable). Tague ton client s'il est OK. Poste entre mardi et jeudi, 8h-10h.</li></ol><p><strong>Bonus :</strong> si tu as un témoignage vidéo, poste-le en natif sur LinkedIn avec des sous-titres. C'est ton meilleur contenu possible.</p>",
+    quiz: [
+      { type: "mcq", question: "Quelle est la structure correcte d'un case study qui vend ?", options: JSON.stringify(["Introduction → Méthodologie → Conclusion", "Problème (contexte + douleur) → Solution (ce que tu as fait) → Résultats (avec des chiffres)", "Présentation de l'entreprise → Liste des services → Tarifs", "Témoignage client → Description technique → Facture"]), correctAnswer: "Problème (contexte + douleur) → Solution (ce que tu as fait) → Résultats (avec des chiffres)", explanation: "Un case study suit toujours 3 actes : le problème (la situation avant, concrète et chiffrée), la solution (ce que tu as livré, en termes simples), et les résultats (des métriques avant/après). C'est une histoire — et les histoires vendent." },
+      { type: "true_false", question: "Un case study sans chiffres de résultats est tout aussi efficace qu'un case study avec des métriques.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Les chiffres sont non négociables. 'Le client est content' ne vend rien. '12h/semaine économisées, 0 réservation perdue, 40 messages/jour traités automatiquement' — ça, ça fait signer des contrats." },
+      { type: "mcq", question: "Quel est le meilleur support pour démarrer ton portfolio rapidement ?", options: JSON.stringify(["Un site Webflow personnalisé avec animations", "Une page Notion publique créée en 30 minutes", "Un compte Instagram dédié", "Attendre d'avoir 5 clients avant de créer un portfolio"]), correctAnswer: "Une page Notion publique créée en 30 minutes", explanation: "Notion est la solution la plus rapide : 30 minutes pour avoir un portfolio en ligne, partageable et facilement mis à jour. L'important c'est que ton case study soit visible maintenant, pas dans 3 semaines quand ton site sera parfait." },
+      { type: "true_false", question: "Un témoignage vidéo posté en natif sur LinkedIn a plus de portée qu'un lien YouTube.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Les vidéos natives sur LinkedIn ont environ 5x plus de portée que les liens externes. Poste la vidéo directement sur LinkedIn et ajoute des sous-titres — 80% des gens regardent sans le son." },
+      { type: "mcq", question: "Tu as livré un chatbot gratuit à un coach sportif. Il t'a donné un super témoignage. Quelle est ta prochaine étape pour maximiser l'impact ?", options: JSON.stringify(["Attendre qu'un deuxième client vienne à toi naturellement", "Rédiger le case study (problème → solution → résultats chiffrés), le publier sur Notion, le poster sur LinkedIn, et placer le témoignage sur au moins 3 supports différents", "Envoyer le témoignage par email à 100 prospects à froid", "Créer un site web complet avant de montrer quoi que ce soit"]), correctAnswer: "Rédiger le case study (problème → solution → résultats chiffrés), le publier sur Notion, le poster sur LinkedIn, et placer le témoignage sur au moins 3 supports différents", explanation: "Le projet gratuit ne vaut rien s'il reste dans un dossier. Transforme-le en case study structuré, publie-le sur ton portfolio, poste-le sur LinkedIn, et place le témoignage partout (page d'offre, profil LinkedIn, propositions commerciales). C'est ce qui déclenche le cercle vertueux vers les clients payants." },
     ],
   },
 ];

@@ -872,950 +872,141 @@ Prochaine action : [Quoi] le [Quand]
       { type: "mcq", question: "Quelle est la règle d'or concernant les canaux de communication avec les clients ?", options: JSON.stringify(["Être disponible sur tous les canaux pour être réactif", "Choisir un seul canal de communication par client et s'y tenir", "Utiliser WhatsApp pour les urgences et email pour le reste", "Laisser le client choisir le canal qu'il préfère à chaque message"]), correctAnswer: "Choisir un seul canal de communication par client et s'y tenir", explanation: "Un seul canal par client évite de perdre des informations dispersées entre WhatsApp, email, Slack et Notion. Chaque client qui contacte sur WhatsApp à 22h est un client dont on n'a pas clarifié les règles de communication au kickoff." },
     ],
   },
+  // ─── LEÇON 4 — Retainers mensuels ───
   {
     order: 4,
     module: 12,
-    title: "Transformer un client en ambassadeur",
-    slug: "transformer-client-ambassadeur",
-    duration: "20 min",
-    description: "Over-deliver intelligemment, collecter des témoignages qui convertissent, créer un programme de parrainage, et proposer des upsells au bon moment.",
+    title: "Structurer tes retainers mensuels",
+    slug: "retainers-mensuels",
+    duration: "25 min",
+    description: "Pourquoi les retainers sont la clé pour atteindre 10K/mois, les 3 modèles de retainer, et comment structurer ton offre récurrente.",
     content: blocks([
-      {
-        id: "4-1",
-        type: "heading",
-        level: 2,
-        text: "Le client satisfait ne recommande pas — le client étonné, oui",
-      },
-      {
-        id: "4-2",
-        type: "text",
-        html: "<p>Un client satisfait pense : 'J'ai eu ce pour quoi j'ai payé.' C'est bien, mais ça ne suffit pas pour générer du bouche-à-oreille. Un client <em>étonné</em> pense : 'Je ne m'attendais pas à ça.' C'est lui qui parle de toi à son réseau. La différence entre les deux ? L'over-deliver — donner un peu plus que ce qui était prévu, au bon moment.</p>",
-      },
-      {
-        id: "4-3",
-        type: "heading",
-        level: 2,
-        text: "L'over-deliver intelligent : créer de la surprise sans se ruiner",
-      },
-      {
-        id: "4-4",
-        type: "callout",
-        variant: "info",
-        html: "<strong>Principe :</strong> L'over-deliver ne signifie pas travailler gratuitement. Il s'agit d'<em>insights</em> inattendus, de petites attentions, ou d'un livrable bonus à faible coût pour toi mais à haute valeur perçue pour le client.",
-      },
-      {
-        id: "4-5",
-        type: "steps",
-        steps: [
-          {
-            title: "Le rapport d'analyse bonus",
-            description: "À la livraison, joins un document d'une page : 'Ce que j'ai observé sur ton site/projet et 3 recommandations pour aller plus loin.' Ça te prend 20 minutes avec l'IA, et le client a l'impression d'avoir un consultant stratégique, pas juste un prestataire.",
-          },
-          {
-            title: "La vidéo de walkthrough",
-            description: "Enregistre une vidéo Loom de 5-10 min qui présente ce qui a été livré, explique les choix techniques, et montre comment utiliser l'outil. Les clients adorent ça. Coût : 10 minutes de ton temps. Valeur perçue : énorme.",
-          },
-          {
-            title: "Le bonus surprise au go-live",
-            description: "Ajoute une petite fonctionnalité non demandée mais évidente : une page 404 personnalisée, un favicon aux couleurs de la marque, un email de bienvenue automatique. Mentionne-le dans l'email de livraison : 'En bonus, j'ai aussi ajouté...' C'est ce dont le client parlera.",
-          },
-          {
-            title: "Le suivi post-livraison à J+14",
-            description: "'Comment tu vis avec le projet 2 semaines après le go-live ? Tu as des questions ?' 99% des prestataires disparaissent après la livraison. Ce seul email te met dans le top 1% et est souvent le déclencheur d'un prochain projet ou d'une recommandation.",
-          },
-        ],
-      },
-      {
-        id: "4-6",
-        type: "heading",
-        level: 2,
-        text: "Demander des témoignages qui convertissent",
-      },
-      {
-        id: "4-7",
-        type: "text",
-        html: "<p>Un témoignage vague ('Super prestataire, je recommande !') ne convertit pas. Un témoignage spécifique avec des résultats chiffrés ('Mon taux de conversion a augmenté de 23% en 6 semaines') convertit. La différence vient de comment tu poses la question.</p>",
-      },
-      {
-        id: "4-8",
-        type: "code",
-        language: "text",
-        filename: "email-demande-temoignage.txt",
-        code: `Objet : Une petite question avant qu'on referme le projet 🙏
-
-Bonjour [Prénom],
-
-Super content qu'on ait pu livrer [projet] ensemble !
-
-Je t'écris pour te demander un service qui m'aidera beaucoup :
-un court témoignage sur notre collaboration.
-
-Pour t'aider à le formuler, voilà 3 questions auxquelles
-tu peux répondre (pas besoin de toutes les traiter) :
-
-1. Quel était ton problème/besoin avant de me contacter ?
-2. Qu'est-ce que tu as le plus apprécié dans notre façon de travailler ?
-3. Y a-t-il des résultats concrets que tu peux mesurer
-   (gain de temps, augmentation de conversions, taux de réponse...) ?
-
-Si tu veux, réponds juste à ces questions par email et je
-m'occupe de mettre en forme le témoignage — tu n'auras
-plus qu'à valider.
-
-Ça prend 5 minutes et ça m'aide vraiment. Merci d'avance !
-
-[Prénom]
-
-P.S. : Si tu préfères me laisser un avis sur Google / LinkedIn,
-le lien est ici → [lien direct]`,
-      },
-      {
-        id: "4-9",
-        type: "callout",
-        variant: "tip",
-        html: "<strong>Hack :</strong> Propose de <em>rédiger toi-même</em> le témoignage à partir des réponses du client, en lui soumettant pour validation. Les clients adorent ça car ça leur prend 2 minutes. Et toi, tu t'assures d'obtenir un texte qui mentionne les bons mots-clés pour ta cible.",
-      },
-      {
-        id: "4-10",
-        type: "heading",
-        level: 2,
-        text: "Le programme de parrainage : ton canal d'acquisition le moins cher",
-      },
-      {
-        id: "4-11",
-        type: "code",
-        language: "text",
-        filename: "email-programme-parrainage.txt",
-        code: `Objet : Un deal pour toi si tu me recommandes 👋
-
-Bonjour [Prénom],
-
-J'espère que [le projet livré] tourne bien !
-
-Je développe mon agence et le bouche-à-oreille est
-mon meilleur canal. Du coup, j'ai mis en place
-quelque chose pour mes clients satisfaits :
-
-🤝 MON PROGRAMME DE PARRAINAGE
-
-Pour chaque personne que tu me recommandes
-et qui signe un projet :
-→ Tu reçois [X]% de la prestation en bon d'avoir
-   (déductible sur ta prochaine facture ou versé en cash)
-→ Ton filleul obtient [X]% de réduction sur son premier projet
-
-Aucune démarche compliquée : il te suffit de mettre
-ton contact en copie de ton email de présentation,
-ou de lui donner ton lien de parrainage :
-→ [lien ou code : TON_PRENOM-AMI]
-
-Des questions ? Réponds directement à cet email.
-
-Merci de faire partie de l'aventure,
-[Prénom]`,
-      },
-      {
-        id: "4-12",
-        type: "heading",
-        level: 2,
-        text: "L'upsell naturel : proposer plus au bon moment",
-      },
-      {
-        id: "4-13",
-        type: "comparison",
-        headers: ["Mauvais moment pour upseller", "Bon moment pour upseller"],
-        rows: [
-          {
-            cells: [
-              "Pendant la phase de recette (le client est stressé)",
-              "À J+14 après le go-live (le client voit les premiers résultats)",
-            ],
-          },
-          {
-            cells: [
-              "Quand un problème vient d'être résolu (le client est soulagé, pas enthousiaste)",
-              "Quand le client te fait un compliment spontané",
-            ],
-          },
-          {
-            cells: [
-              "En ajoutant l'upsell dans une facture sans en parler avant",
-              "Dans une conversation naturelle lors d'un point de suivi",
-            ],
-          },
-          {
-            cells: [
-              "En proposant une prestation générique",
-              "En identifiant un besoin spécifique observé pendant le projet",
-            ],
-          },
-        ],
-      },
-      {
-        id: "4-14",
-        type: "code",
-        language: "text",
-        filename: "scripts-upsell-naturel.txt",
-        code: `--- UPSELL : Maintenance après livraison ---
-
-"Maintenant que le site est en ligne, tu vas avoir besoin
-de quelqu'un pour les mises à jour, la surveillance des
-performances et les petites évolutions. J'ai un contrat
-de maintenance à [X]€/mois qui couvre tout ça.
-Tu veux que je t'envoie le détail ?"
-
---- UPSELL : Module complémentaire ---
-
-"En travaillant sur ton chatbot, j'ai remarqué que
-tu n'as pas de séquence email automatique pour
-re-engager les prospects qui n'ont pas répondu.
-C'est quelque chose que je peux mettre en place
-en 2 jours pour environ [X]€. Ça t'intéresse ?"
-
---- UPSELL : Résultats à J+30 ---
-
-"Tu m'as dit que le chatbot a traité 847 conversations
-ce mois — c'est excellent ! J'ai une idée pour aller
-encore plus loin : on pourrait connecter ça à ton CRM
-pour qualifier automatiquement les leads. Ça doublerait
-la valeur de chaque conversation. 15 min en appel
-pour t'expliquer ?"`,
-      },
-      {
-        id: "4-15",
-        type: "separator",
-        style: "dots",
-      },
-      {
-        id: "4-16",
-        type: "callout",
-        variant: "success",
-        html: "<strong>L'effet flywheel :</strong> Over-deliver → Client étonné → Témoignage puissant → Programme de parrainage → Nouveaux clients → Upsell → Revenus récurrents. Chaque étape alimente la suivante. Un client bien traité ne vaut pas son contrat initial — il vaut potentiellement 3x ce montant sur 2 ans.",
-      },
-      {
-        id: "4-17",
-        type: "quiz-inline",
-        question: "Quel type de témoignage est le plus efficace pour convertir de nouveaux clients ?",
-        options: [
-          { id: "a", text: "'Super expérience, je recommande vivement !'" },
-          { id: "b", text: "'Très professionnel et réactif.'" },
-          { id: "c", text: "'Mon chatbot répond à 73% des questions sans intervention humaine. J'ai économisé 15h/semaine de support client en 3 mois.'" },
-          { id: "d", text: "'Bonne collaboration, le projet a été livré dans les délais.'" },
-        ],
-        correctId: "c",
-        explanation: "Les témoignages avec des chiffres concrets et un avant/après sont 3 à 5x plus efficaces que les témoignages génériques. Ils permettent au prospect de se projeter avec des résultats similaires et de justifier la dépense auprès de sa direction.",
-      },
-      {
-        id: "4-18",
-        type: "checklist",
-        title: "Checklist : mon système de fidélisation est actif",
-        items: [
-          { id: "c1", text: "J'ai identifié 1-2 petites attentions bonus à intégrer dans chaque livraison" },
-          { id: "c2", text: "J'envoie systématiquement un email de suivi à J+14 après chaque go-live" },
-          { id: "c3", text: "J'ai un template d'email de demande de témoignage prêt" },
-          { id: "c4", text: "J'ai un programme de parrainage avec une commission claire" },
-          { id: "c5", text: "J'ai un lien de parrainage trackable par client" },
-          { id: "c6", text: "Je planifie mes upsells après les jalons positifs, pas pendant les phases de stress" },
-          { id: "c7", text: "Mes témoignages mentionnent des résultats chiffrés" },
-        ],
-      },
+      { id: "4-1", type: "heading", level: 2, text: "Pourquoi les retainers changent tout" },
+      { id: "4-2", type: "text", html: "<p>La majorité des freelances et agences IA vivent au rythme des projets one-shot : un mois à 5 000€, le suivant à 0€. Ce yo-yo de revenus est <strong>épuisant et dangereux</strong>. Les retainers mensuels transforment cette réalité : tu passes d'un revenu imprévisible à un <strong>MRR (Monthly Recurring Revenue)</strong> stable et prévisible.</p><p>Avec 5 retainers à 1 000-2 000€/mois, tu atteins 5 000-10 000€ de revenus récurrents <em>avant même</em> de vendre un seul projet one-shot. C'est la différence entre survivre et prospérer.</p>" },
+      { id: "4-3", type: "callout", variant: "info", html: "<strong>La règle des 70/30 :</strong> Les agences IA les plus stables visent 70% de revenus récurrents (retainers) et 30% de projets one-shot. Les one-shots servent à acquérir de nouveaux clients que tu convertis ensuite en retainers." },
+      { id: "4-4", type: "separator", style: "dots" },
+      { id: "4-5", type: "heading", level: 2, text: "Les 3 modèles de retainer" },
+      { id: "4-6", type: "comparison", headers: ["Modèle", "Description", "Prix mensuel", "Idéal pour"], rows: [
+        { cells: ["Maintenance", "Monitoring du chatbot/IA, correction de bugs, mises à jour mineures, support technique par email", "500-800€/mois", "Clients qui ont un outil IA en production et veulent qu'il continue de fonctionner"] },
+        { cells: ["Évolution", "Maintenance + ajout de nouvelles fonctionnalités chaque mois (nouveaux prompts, intégrations, pages)", "1 000-1 500€/mois", "Clients ambitieux qui veulent faire évoluer leur outil IA continuellement"] },
+        { cells: ["Support stratégique", "Évolution + consulting mensuel (1-2 calls/mois), recommandations IA, veille technologique dédiée", "1 500-2 500€/mois", "Clients premium qui te considèrent comme leur directeur IA externe"] },
+      ]},
+      { id: "4-7", type: "heading", level: 2, text: "Structurer ton offre retainer" },
+      { id: "4-8", type: "steps", steps: [
+        { title: "1. Définis le périmètre exact", description: "Liste précisément ce qui est inclus et ce qui ne l'est pas. Exemple : '4h de développement/mois, monitoring quotidien, support email sous 24h. Hors périmètre : refonte complète, nouvelles intégrations majeures (devis séparé).'" },
+        { title: "2. Fixe le nombre d'heures ou de livrables", description: "Un retainer n'est pas un forfait illimité. Définis clairement : '8h de travail/mois' ou '2 évolutions mineures + 1 call stratégique/mois'. Les heures non utilisées ne sont pas reportables." },
+        { title: "3. Propose 3 niveaux (Bronze, Silver, Gold)", description: "Donne le choix au client avec 3 paliers de prix. Le palier du milieu sera celui choisi dans 60% des cas (effet d'ancrage). Fais en sorte que le palier du milieu soit celui que tu veux vendre." },
+        { title: "4. Durée d'engagement minimum", description: "Propose un engagement de 3 mois minimum avec préavis de 30 jours. Cela te donne la visibilité nécessaire pour planifier et garantit un revenu stable. Offre une réduction de 10% pour un engagement de 6 mois." },
+      ]},
+      { id: "4-9", type: "heading", level: 2, text: "Les éléments clés du contrat retainer" },
+      { id: "4-10", type: "checklist", items: [
+        { label: "Périmètre détaillé des services inclus", checked: false },
+        { label: "Volume mensuel (heures ou livrables)", checked: false },
+        { label: "Tarif mensuel et conditions de paiement (prélèvement automatique idéal)", checked: false },
+        { label: "Durée d'engagement et conditions de résiliation", checked: false },
+        { label: "SLA (délais de réponse et d'intervention)", checked: false },
+        { label: "Clause de révision tarifaire annuelle", checked: false },
+        { label: "Process de demande (ticket, email, formulaire Notion)", checked: false },
+        { label: "Reporting mensuel (ce qui a été fait, heures consommées)", checked: false },
+      ]},
+      { id: "4-11", type: "callout", variant: "tip", html: "<strong>Le pitch retainer en 3 phrases :</strong> 'Plutôt que de vous facturer à chaque intervention, je vous propose un accompagnement mensuel à [prix]€/mois. Vous avez [X heures/livrables] de travail garanti, un support prioritaire, et la tranquillité de savoir que votre IA est entre de bonnes mains. L'engagement est de 3 mois, résiliable ensuite avec 30 jours de préavis.'" },
+      { id: "4-12", type: "callout", variant: "success", html: "<strong>Quand proposer le retainer :</strong> Le meilleur moment est <em>juste après la livraison du projet</em>, quand le client est satisfait et réalise qu'il aura besoin de maintenance et d'évolutions. Ne le propose pas avant la livraison (trop tôt) ni 3 mois après (trop tard, il aura trouvé quelqu'un d'autre)." },
     ]),
-    exercise: "<p><strong>Exercice :</strong> Contacte 2 anciens clients avec l'email de demande de témoignage du module. Pour chacun, personnalise les 3 questions en fonction du projet réalisé. En parallèle, rédige le texte de ton programme de parrainage et fixe le montant de la commission. Si tu n'as pas encore de clients, prépare ces templates prêts à l'emploi pour ton premier projet. Durée estimée : 45 min.</p>",
+    exercise: "<p><strong>Exercice :</strong> (1) Choisis 2 de tes services actuels (ex : chatbot IA, automatisation) et crée une <strong>offre retainer pour chacun</strong> avec 3 paliers (Bronze/Silver/Gold), le périmètre de chaque palier, et le tarif mensuel. (2) Rédige ton <strong>pitch retainer en 3 phrases</strong> que tu pourras utiliser à la fin de chaque projet livré. Sauvegarde-le dans tes templates.</p>",
     quiz: [
-      { type: "mcq", question: "Quelle est la différence entre un client satisfait et un client qui recommande ?", options: JSON.stringify(["Le client satisfait recommande plus souvent", "Le client satisfait pense 'j'ai eu ce pour quoi j'ai payé' tandis que le client étonné par l'over-deliver parle de toi à son réseau", "Il n'y a aucune différence", "Le client qui recommande est toujours celui qui a payé le plus cher"]), correctAnswer: "Le client satisfait pense 'j'ai eu ce pour quoi j'ai payé' tandis que le client étonné par l'over-deliver parle de toi à son réseau", explanation: "Un client satisfait a obtenu ce qu'il attendait, point. C'est le client étonné, celui qui a reçu un peu plus que prévu (l'over-deliver), qui va spontanément parler de toi à son réseau et générer du bouche-à-oreille." },
-      { type: "true_false", question: "Un témoignage vague comme 'Super prestataire, je recommande !' est efficace pour convertir de nouveaux clients.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Les témoignages vagues ne convertissent pas. Un témoignage spécifique avec des résultats chiffrés ('Mon taux de conversion a augmenté de 23% en 6 semaines') est 3 à 5x plus efficace car il permet au prospect de se projeter." },
-      { type: "mcq", question: "Quel est le meilleur moment pour proposer un upsell à un client ?", options: JSON.stringify(["Pendant la phase de recette quand le client est stressé", "À J+14 après le go-live quand le client voit les premiers résultats positifs", "Immédiatement après avoir résolu un problème technique", "En ajoutant l'upsell directement dans la facture"]), correctAnswer: "À J+14 après le go-live quand le client voit les premiers résultats positifs", explanation: "J+14 après le go-live est le moment idéal : le client vit avec le projet, constate les résultats, et est dans un état d'esprit positif. Éviter les phases de stress (recette) ou les moments post-problème." },
-      { type: "true_false", question: "Il est recommandé de rédiger toi-même le témoignage à partir des réponses du client, puis de le lui soumettre pour validation.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Proposer de rédiger le témoignage soi-même est un hack efficace : le client n'a plus qu'à valider (2 minutes de son temps), et toi tu t'assures d'obtenir un texte qui mentionne les bons mots-clés et résultats chiffrés pour ta cible." },
-      { type: "mcq", question: "Quel est l'effet flywheel décrit dans la leçon pour transformer un client en ambassadeur ?", options: JSON.stringify(["Livrer → Facturer → Prospecter → Recommencer", "Over-deliver → Client étonné → Témoignage → Parrainage → Nouveaux clients → Upsell → Revenus récurrents", "Publicité → Leads → Vente → Livraison → Satisfaction", "Prospection → Devis → Signature → Livraison → Facturation"]), correctAnswer: "Over-deliver → Client étonné → Témoignage → Parrainage → Nouveaux clients → Upsell → Revenus récurrents", explanation: "Chaque étape du flywheel alimente la suivante : l'over-deliver crée la surprise, qui génère des témoignages puissants, qui alimentent le parrainage, qui apporte de nouveaux clients, sur lesquels on peut upseller pour créer des revenus récurrents." },
+      { type: "mcq", question: "Quel est le ratio idéal entre revenus récurrents et projets one-shot pour une agence IA stable ?", options: JSON.stringify(["100% one-shot", "50% one-shot / 50% récurrent", "70% récurrent / 30% one-shot", "100% récurrent"]), correctAnswer: "70% récurrent / 30% one-shot", explanation: "La règle des 70/30 : 70% de revenus récurrents (retainers) pour la stabilité, et 30% de projets one-shot pour l'acquisition de nouveaux clients qui seront ensuite convertis en retainers." },
+      { type: "true_false", question: "Les heures non utilisées dans un retainer mensuel doivent être reportables au mois suivant.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Les heures non utilisées ne sont pas reportables. C'est un principe essentiel du retainer : le client paie pour la disponibilité et la priorité, pas uniquement pour les heures consommées. Le report crée des déséquilibres et de la dette de travail." },
+      { type: "mcq", question: "Quel est le meilleur moment pour proposer un retainer à un client ?", options: JSON.stringify(["Avant de commencer le projet", "Pendant le développement", "Juste après la livraison, quand le client est satisfait", "3 mois après la livraison"]), correctAnswer: "Juste après la livraison, quand le client est satisfait", explanation: "Le meilleur moment est juste après la livraison quand le client est satisfait et réalise qu'il aura besoin de maintenance et d'évolutions. Trop tôt, il n'a pas encore vu la valeur. Trop tard, il aura trouvé quelqu'un d'autre." },
+      { type: "true_false", question: "Un retainer 'Support stratégique' à 2 000€/mois inclut uniquement de la maintenance technique.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Le retainer Support stratégique inclut la maintenance ET l'évolution ET du consulting mensuel (calls stratégiques, recommandations IA, veille technologique). C'est le palier premium pour les clients qui te considèrent comme leur directeur IA externe." },
+      { type: "mcq", question: "Tu livres un chatbot à un client PME. Il est ravi du résultat. Comment proposes-tu le retainer ?", options: JSON.stringify(["Tu lui envoies un email avec tes 3 paliers sans explication", "Tu lui expliques que son chatbot va planter sans maintenance et qu'il doit signer immédiatement", "Tu lui présentes les 3 paliers en expliquant la valeur de chacun, en recommandant le palier du milieu, avec un engagement de 3 mois", "Tu attends qu'il te recontacte quand il aura un problème"]), correctAnswer: "Tu lui présentes les 3 paliers en expliquant la valeur de chacun, en recommandant le palier du milieu, avec un engagement de 3 mois", explanation: "La bonne approche : présenter les 3 paliers avec la valeur de chacun, recommander le palier du milieu (effet d'ancrage), et proposer un engagement de 3 mois. Pas de pression, pas de menace — juste une proposition de valeur claire." },
     ],
   },
+
+  // ─── LEÇON 5 — Témoignages et referrals ───
   {
     order: 5,
     module: 12,
-    title: "Créer des revenus récurrents (maintenance & SaaS)",
-    slug: "revenus-recurrents-maintenance-saas",
-    duration: "25 min",
-    description: "Contrats de maintenance, hébergement, mises à jour, monitoring, support : comment construire un MRR stable qui t'affranchit de la course aux nouveaux projets.",
+    title: "Collecter témoignages et activer le referral",
+    slug: "temoignages-referrals",
+    duration: "20 min",
+    description: "Quand et comment demander un témoignage, le template parfait, vidéo vs écrit, et comment transformer tes clients satisfaits en ambassadeurs actifs.",
     content: blocks([
-      {
-        id: "5-1",
-        type: "heading",
-        level: 2,
-        text: "Pourquoi le MRR change ta vie d'entrepreneur",
-      },
-      {
-        id: "5-2",
-        type: "text",
-        html: "<p>Sans revenus récurrents, ton agence ressemble à un hamster dans une roue : tu cours en permanence après le prochain projet pour payer le mois suivant. Avec un MRR (Monthly Recurring Revenue) de 2 000€, tu te réveilles chaque 1er du mois avec une base garantie. Avec 5 000€ de MRR, tu peux te permettre de choisir tes projets. C'est le différenciel entre travailler <em>pour</em> l'argent et travailler <em>avec</em> l'argent.</p>",
-      },
-      {
-        id: "5-3",
-        type: "callout",
-        variant: "info",
-        html: "<strong>Objectif réaliste :</strong> 10 clients à 300€/mois = 3 000€ MRR. Avec tes outils IA, gérer 10 contrats de maintenance ne représente que 2-3 jours de travail par mois. Le reste du temps est disponible pour de nouveaux projets ou pour scaler.",
-      },
-      {
-        id: "5-4",
-        type: "heading",
-        level: 2,
-        text: "Les 4 piliers du contrat de maintenance",
-      },
-      {
-        id: "5-5",
-        type: "steps",
-        steps: [
-          {
-            title: "1. Hébergement & Infrastructure",
-            description: "Tu gères l'hébergement de tous tes clients sur tes propres serveurs (VPS Hetzner, DigitalOcean, Vercel Pro...). Coût réel : 5-15€/mois/client. Tu factures 50-100€/mois. Marge brute : 70-85%. Tu contrôles l'environnement, tu assures la continuité, et tu es le point de contact unique.",
-          },
-          {
-            title: "2. Mises à jour & Sécurité",
-            description: "Mises à jour des CMS (WordPress, Webflow), des dépendances npm, des APIs IA (nouveaux modèles disponibles), des règles de sécurité. Avec tes scripts automatisés, ça prend 30 min/mois par client. Valeur perçue par le client : énorme (il ne veut pas se faire hacker).",
-          },
-          {
-            title: "3. Monitoring & Alertes",
-            description: "Surveillance de la disponibilité (uptime), des performances (Core Web Vitals), des erreurs 404, des formulaires qui ne fonctionnent plus. Outils : UptimeRobot (gratuit), StatusCake, ou BetterStack. Tu envoies un rapport mensuel au client. Il se sent pris en charge sans rien faire.",
-          },
-          {
-            title: "4. Support & Petites évolutions",
-            description: "Un quota d'heures de support inclus par mois (ex: 1h pour le forfait de base, 3h pour le forfait avancé). Modifications texte, ajout d'une page, correction de bugs. Au-delà du quota : facturation au taux horaire normal.",
-          },
-        ],
-      },
-      {
-        id: "5-6",
-        type: "heading",
-        level: 2,
-        text: "Les 3 niveaux de forfait maintenance",
-      },
-      {
-        id: "5-7",
-        type: "comparison",
-        headers: ["Offre", "Essentiel", "Business", "Premium"],
-        rows: [
-          {
-            cells: ["Prix mensuel HT", "199€/mois", "349€/mois", "599€/mois"],
-          },
-          {
-            cells: ["Hébergement", "✅ Inclus", "✅ Inclus", "✅ Inclus"],
-          },
-          {
-            cells: ["Mises à jour sécurité", "✅ Mensuel", "✅ Hebdomadaire", "✅ En temps réel"],
-          },
-          {
-            cells: ["Monitoring uptime", "✅ 99% garanti", "✅ 99,9% garanti", "✅ 99,99% garanti"],
-          },
-          {
-            cells: ["Rapport mensuel", "✅ PDF", "✅ PDF + appel 15 min", "✅ Dashboard temps réel"],
-          },
-          {
-            cells: ["Support inclus", "1h/mois", "3h/mois", "8h/mois"],
-          },
-          {
-            cells: ["Heures sup.", "80€/h", "70€/h", "60€/h"],
-          },
-          {
-            cells: ["Délai de réponse", "48h ouvrés", "24h ouvrés", "4h ouvrés"],
-          },
-          {
-            cells: ["Idéal pour", "Sites vitrine, blogs", "E-commerce, chatbots", "Apps critiques, SaaS"],
-          },
-        ],
-      },
-      {
-        id: "5-8",
-        type: "heading",
-        level: 2,
-        text: "Le contrat de maintenance : cadre légal",
-      },
-      {
-        id: "5-9",
-        type: "code",
-        language: "text",
-        filename: "contrat-maintenance-framework.txt",
-        code: `CONTRAT DE MAINTENANCE ET D'HÉBERGEMENT
-Référence : MAINT-[ANNÉE]-[NUMÉRO]
-
-PARTIES
-Prestataire : [Ton nom/société], [Adresse], SIRET : [X]
-Client : [Nom société], [Adresse], représenté par [Nom], [Fonction]
-
-OBJET
-Le présent contrat a pour objet la maintenance et l'hébergement
-du site/application "[Nom]" accessible à l'adresse [URL].
-
-PRESTATIONS INCLUSES (Forfait [Essentiel / Business / Premium])
-✓ Hébergement sur serveur sécurisé ([Localisation])
-✓ Certificat SSL valide en permanence
-✓ Sauvegardes automatiques [fréquence]
-✓ Surveillance uptime [fréquence] (objectif [X]% de disponibilité)
-✓ Mises à jour de sécurité [fréquence]
-✓ Rapport mensuel d'activité
-✓ Support technique : [X]h/mois (délai de réponse : [X]h ouvrés)
-
-PRESTATIONS EXCLUES
-✗ Développements de nouvelles fonctionnalités (devis séparé)
-✗ Modifications de design majeures (devis séparé)
-✗ Interventions liées à des actes malveillants externes
-  non couverts par nos mesures de sécurité standard
-
-TARIF
-[X]€ HT/mois, soit [X]€ TTC/mois
-Prélèvement automatique le [X] de chaque mois.
-Révision tarifaire possible chaque 1er janvier avec préavis de 2 mois.
-
-DURÉE ET RÉSILIATION
-Contrat à durée indéterminée.
-Résiliation possible à tout moment avec un préavis de [30/60] jours,
-notifié par email avec accusé de réception.
-En cas de résiliation par le client, les sauvegardes sont remises
-sous 30 jours dans un format standard (ZIP).
-
-NIVEAUX DE SERVICE (SLA)
-- Disponibilité cible : [X]%
-- En cas d'indisponibilité > 4h consécutives :
-  crédit d'1 jour de maintenance offert
-- En cas d'indisponibilité > 24h consécutives :
-  crédit d'1 semaine de maintenance offert
-
-RESPONSABILITÉ
-Le prestataire ne peut être tenu responsable :
-- Des indisponibilités liées à des pannes chez les fournisseurs tiers
-- Des dommages résultant d'un accès non autorisé causé par
-  des identifiants compromis du fait du client
-- Des pertes de données antérieures à la prise en charge
-
-Fait à [Ville], le [Date]
-Signature prestataire :          Signature client :`,
-      },
-      {
-        id: "5-10",
-        type: "heading",
-        level: 2,
-        text: "Le rapport mensuel : ton outil de rétention",
-      },
-      {
-        id: "5-11",
-        type: "code",
-        language: "text",
-        filename: "template-rapport-mensuel.txt",
-        code: `Objet : [Projet] — Rapport de maintenance [Mois] [Année]
-
-Bonjour [Prénom],
-
-Voici le rapport mensuel de maintenance de [ton site/app].
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📊 RÉSUMÉ DU MOIS — [Mois Année]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✅ DISPONIBILITÉ
-Uptime : [99,97%]
-Temps d'indisponibilité total : [4 min]
-Alertes déclenchées : [0]
-
-⚡ PERFORMANCES
-Score PageSpeed (mobile) : [87/100] (vs [82/100] le mois dernier)
-Temps de chargement moyen : [1,8s]
-
-🔒 SÉCURITÉ
-Mises à jour effectuées : [5] (CMS, plugins, dépendances)
-Tentatives d'intrusion bloquées : [143]
-Certificat SSL : Valide jusqu'au [Date]
-
-💾 SAUVEGARDES
-Dernière sauvegarde : [Date] — ✅ Succès
-Sauvegardes ce mois : [28/28]
-
-🛠️ INTERVENTIONS
-- [Date] : Mise à jour de sécurité critique WordPress 6.4.2
-- [Date] : Correction d'un lien cassé signalé (support)
-Heures utilisées : [1h15 / 3h incluses]
-Heures restantes ce mois : [1h45]
-
-📈 ÉVOLUTIONS RECOMMANDÉES
-J'ai remarqué que [observation spécifique]. Je peux t'expliquer
-pourquoi ça pourrait valoir le coup de l'adresser ce trimestre.
-Tu veux qu'on en parle lors d'un appel de 15 min ?
-
-Des questions ? Réponds directement à cet email.
-
-À le mois prochain,
-[Prénom]`,
-      },
-      {
-        id: "5-12",
-        type: "heading",
-        level: 2,
-        text: "Vers le SaaS : monétiser tes outils IA",
-      },
-      {
-        id: "5-13",
-        type: "text",
-        html: "<p>Si tu crées le même type d'outil IA pour plusieurs clients du même secteur (ex: chatbot pour cabinets d'avocat, automatisation pour agences immo), tu peux transformer cette solution en produit SaaS : une base de code que tu déploies pour chaque nouveau client en quelques heures, avec un abonnement mensuel.</p>",
-      },
-      {
-        id: "5-14",
-        type: "diagram",
-        variant: "tree",
-        nodes: [
-          {
-            id: "n1",
-            label: "Modèle Agence (projet par projet)",
-            description: "CA irrégulier, dépendant du pipeline, 1 client = 1 projet unique",
-          },
-          {
-            id: "n2",
-            label: "Modèle Maintenance (MRR)",
-            description: "200-500€/client/mois, travail automatisé, scalable jusqu'à ~20 clients solo",
-          },
-          {
-            id: "n3",
-            label: "Modèle SaaS vertical (MRR à l'échelle)",
-            description: "Même outil pour 50+ clients du même secteur, 100-300€/client/mois, coût marginal quasi nul",
-          },
-          {
-            id: "n4",
-            label: "Modèle Hybride (optimal)",
-            description: "Projets sur-mesure pour financer le développement SaaS + MRR maintenance = revenus stables + croissance",
-          },
-        ],
-      },
-      {
-        id: "5-15",
-        type: "callout",
-        variant: "tip",
-        html: "<strong>Comment identifier ton SaaS vertical :</strong> Regarde tes 5 derniers projets. Est-ce qu'il y a un type de client récurrent ? Un problème que tu as résolu plusieurs fois avec des solutions similaires ? C'est là que se cache ton produit SaaS. Un chatbot pour dentistes, un outil de suivi pour coachs, un CRM simplifié pour artisans : des niches sous-servies où tu peux devenir <em>le</em> fournisseur de référence.",
-      },
-      {
-        id: "5-16",
-        type: "heading",
-        level: 2,
-        text: "Comment vendre le contrat de maintenance dès le projet initial",
-      },
-      {
-        id: "5-17",
-        type: "code",
-        language: "text",
-        filename: "script-vente-maintenance.txt",
-        code: `--- LORS DU DEVIS INITIAL ---
-
-Présente toujours 2 options dans ton devis :
-
-OPTION A : Livraison simple
-Développement + mise en ligne : [X]€ (paiement unique)
-→ Après livraison, tu gères toi-même les mises à jour,
-  l'hébergement et la maintenance.
-
-OPTION B : Livraison + Maintenance (RECOMMANDÉ)
-Développement + mise en ligne : [X]€ (paiement unique)
-+ Contrat de maintenance Essentiel : 199€/mois
-→ Je gère tout : hébergement, sécurité, mises à jour,
-  1h de support/mois. Tu te concentres sur ton business.
-
-[Note : en incluant l'hébergement dans le contrat de maintenance,
-l'OPTION B réduit le coût initial de [X]€ car je renégocie
-mes tarifs hébergeur sur le volume.]
-
---- LORS DE LA LIVRAISON ---
-
-"Maintenant que tout est en ligne, qu'est-ce que tu fais
-si WordPress sort une mise à jour de sécurité critique
-à 2h du matin et que ton site est vulnérable ?
-C'est exactement pour ça que j'ai créé le contrat de maintenance.
-Pour [199€/mois], tu ne penses plus jamais à ça."
-
---- RELANCE À J+30 ---
-
-"Ça fait un mois que ton site est en ligne — félicitations !
-J'ai fait tourner un audit et j'ai repéré [observation spécifique].
-Si tu veux, je peux tout prendre en charge avec le contrat de
-maintenance. Ça t'intéresse ?"`,
-      },
-      {
-        id: "5-18",
-        type: "separator",
-        style: "dots",
-      },
-      {
-        id: "5-19",
-        type: "callout",
-        variant: "success",
-        html: "<strong>La feuille de route MRR :</strong> Mois 1-3 : convertis tes clients existants en contrats de maintenance (objectif 3-5 contrats). Mois 4-6 : inclus systématiquement la maintenance dans chaque nouveau devis (objectif 8-10 contrats). Mois 7-12 : identifie ton SaaS vertical et commence à le construire en parallèle. À 12 mois : 2 500-5 000€ de MRR = tu cours moins après les projets.",
-      },
-      {
-        id: "5-20",
-        type: "quiz-inline",
-        question: "Quelle est la meilleure stratégie pour vendre un contrat de maintenance ?",
-        options: [
-          { id: "a", text: "Attendre que le client le demande spontanément" },
-          { id: "b", text: "Le proposer uniquement aux clients qui ont eu des problèmes techniques" },
-          { id: "c", text: "L'intégrer dans le devis initial comme option recommandée, avec une réduction du coût d'hébergement initial" },
-          { id: "d", text: "Le proposer uniquement 6 mois après la livraison" },
-        ],
-        correctId: "c",
-        explanation: "Présenter la maintenance dans le devis initial, quand le client est dans l'état d'esprit 'investissement', est 3x plus efficace que de le proposer après. Intégrer une réduction du coût initial pour les clients qui prennent la maintenance rend l'offre encore plus attrayante.",
-      },
-      {
-        id: "5-21",
-        type: "checklist",
-        title: "Checklist : mon modèle de revenus récurrents est lancé",
-        items: [
-          { id: "c1", text: "J'ai défini mes 3 niveaux de forfait maintenance avec des prix clairs" },
-          { id: "c2", text: "Mon contrat de maintenance est rédigé et prêt à signer" },
-          { id: "c3", text: "J'héberge (ou je vais héberger) mes clients sur mon infrastructure" },
-          { id: "c4", text: "J'ai configuré un outil de monitoring uptime (UptimeRobot ou équivalent)" },
-          { id: "c5", text: "J'ai un template de rapport mensuel à personnaliser en 10 minutes" },
-          { id: "c6", text: "Mes prochains devis incluent la maintenance comme option recommandée" },
-          { id: "c7", text: "J'ai identifié au moins 2 clients existants à qui proposer la maintenance dès cette semaine" },
-          { id: "c8", text: "J'ai un objectif MRR à 6 mois et un plan pour l'atteindre" },
-        ],
-      },
+      { id: "5-1", type: "heading", level: 2, text: "Le témoignage : ton arme de vente la plus puissante" },
+      { id: "5-2", type: "text", html: "<p>Un prospect qui lit un témoignage d'un client similaire a <strong>3 fois plus de chances de signer</strong>. Pourtant, 90% des freelances ne demandent jamais de témoignage. Pourquoi ? Ils ont peur de déranger, ne savent pas comment demander, ou oublient tout simplement. C'est une mine d'or que tu laisses sur la table.</p>" },
+      { id: "5-3", type: "callout", variant: "info", html: "<strong>Le bon moment :</strong> Demande le témoignage <em>immédiatement après la livraison</em>, quand l'enthousiasme est au maximum. Si tu attends 2 semaines, le client sera passé à autre chose et ton email finira dans les limbes." },
+      { id: "5-4", type: "separator", style: "dots" },
+      { id: "5-5", type: "heading", level: 2, text: "Le template de demande parfait" },
+      { id: "5-6", type: "code", language: "text", filename: "email-demande-temoignage.txt", code: "Objet : Petit retour sur notre collaboration ?\n\nBonjour [Prénom],\n\nMaintenant que [le chatbot / l'automatisation / le projet] est en place,\nj'aimerais beaucoup avoir ton retour sur notre collaboration.\n\nSi tu es satisfait(e), est-ce que tu accepterais de me laisser\nun court témoignage ? Ça m'aide énormément pour ma crédibilité.\n\nVoici 3 questions pour te guider (2 min max) :\n1. Quel problème avais-tu avant notre collaboration ?\n2. Qu'est-ce que la solution t'a apporté concrètement ?\n3. Recommanderais-tu mes services ? Pourquoi ?\n\nTu peux répondre directement à cet email, ou si tu préfères,\nje t'envoie un lien pour enregistrer un témoignage vidéo de 60 secondes\n(encore plus impactant !).\n\nMerci beaucoup,\n[Ton prénom]" },
+      { id: "5-7", type: "heading", level: 2, text: "Vidéo vs écrit : que choisir ?" },
+      { id: "5-8", type: "comparison", headers: ["Format", "Avantages", "Inconvénients", "Quand l'utiliser"], rows: [
+        { cells: ["Témoignage écrit", "Facile à obtenir, utilisable partout (site, propositions, LinkedIn)", "Moins d'impact émotionnel, peut sembler fabriqué", "Pour tous les clients — c'est le minimum à obtenir"] },
+        { cells: ["Témoignage vidéo (60s)", "Ultra-convaincant, montre la vraie personne, idéal pour le site web", "Plus difficile à obtenir, certains clients sont timides face caméra", "Pour les clients enthousiastes, les résultats impressionnants"] },
+        { cells: ["Capture d'écran (résultats)", "Preuve objective, chiffres concrets, impossible à contester", "Pas d'émotion, besoin de contexte pour être compris", "En complément d'un témoignage écrit ou vidéo"] },
+      ]},
+      { id: "5-9", type: "callout", variant: "tip", html: "<strong>Astuce pro :</strong> Propose toujours la vidéo en premier. Si le client refuse, replie-toi sur l'écrit. Utilise <strong>Loom</strong> ou <strong>VideoAsk</strong> pour faciliter l'enregistrement — le client n'a qu'à cliquer sur un lien." },
+      { id: "5-10", type: "heading", level: 2, text: "Transformer tes clients en ambassadeurs" },
+      { id: "5-11", type: "text", html: "<p>Un client satisfait qui parle de toi à son réseau vaut plus que n'importe quelle publicité. Mais le bouche-à-oreille ne se produit pas tout seul — il faut le <strong>provoquer et le récompenser</strong>.</p>" },
+      { id: "5-12", type: "heading", level: 3, text: "Le programme de parrainage simple" },
+      { id: "5-13", type: "steps", steps: [
+        { title: "1. Définis la récompense", description: "Pour chaque client référé qui signe, offre 10-15% du montant du projet en réduction sur le prochain retainer. Ou offre un mois de retainer gratuit. Le coût d'acquisition client par referral est quasi nul — tu peux te permettre d'être généreux." },
+        { title: "2. Communique le programme", description: "À la livraison, dis simplement : 'Si tu connais quelqu'un qui pourrait bénéficier du même type de solution, je t'offre [récompense] pour chaque mise en relation qui aboutit.' Simple, direct, pas de formulaire compliqué." },
+        { title: "3. Facilite la mise en relation", description: "Propose de rédiger un message que ton client peut transférer tel quel. Moins il a de travail à faire, plus il le fera. Tu peux aussi proposer un call à 3 (toi, ton client, son contact)." },
+        { title: "4. Remercie publiquement", description: "Quand un referral aboutit, remercie le parrain (avec son accord) sur LinkedIn ou par email. La reconnaissance publique motive les futurs parrainages." },
+      ]},
+      { id: "5-14", type: "callout", variant: "success", html: "<strong>Résultat attendu :</strong> Avec un bon système de témoignages et referrals, 30-50% de tes nouveaux clients viendront du bouche-à-oreille. C'est le canal d'acquisition le plus rentable et le plus fiable à long terme." },
     ]),
-    exercise: "<p><strong>Exercice :</strong> Construis ton offre de maintenance complète : (1) Définis tes 3 niveaux de forfait avec les prix adaptés à ton positionnement. (2) Personalise le contrat-cadre fourni dans ce module avec tes informations et ta politique SLA. (3) Identifie 3 clients actuels ou passés à qui tu vas envoyer une proposition de maintenance cette semaine. Rédige l'email de proposition en utilisant les scripts du module. Durée estimée : 90 min.</p>",
+    exercise: "<p><strong>Exercice :</strong> (1) <strong>Prépare ton email de demande de témoignage</strong> en personnalisant le template ci-dessus avec ton nom et ton style. Sauvegarde-le dans tes templates. (2) <strong>Envoie-le à ton premier client</strong> (ou au client le plus récent avec qui tu as travaillé). Si tu n'as pas encore de client, prépare le template et programme-le pour l'envoyer dès ta première livraison.</p>",
     quiz: [
-      { type: "mcq", question: "Quel objectif MRR est considéré comme réaliste avec 10 clients en contrat de maintenance ?", options: JSON.stringify(["500€/mois", "3 000€/mois (10 clients × 300€/mois)", "10 000€/mois", "50€/mois par client maximum"]), correctAnswer: "3 000€/mois (10 clients × 300€/mois)", explanation: "10 clients à 300€/mois = 3 000€ MRR. Avec les outils IA, gérer 10 contrats de maintenance ne représente que 2-3 jours de travail par mois. Le reste du temps est disponible pour de nouveaux projets." },
-      { type: "true_false", question: "Le rapport mensuel de maintenance est seulement un document administratif sans impact sur la rétention client.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Le rapport mensuel est un outil de rétention puissant. Il rappelle au client chaque mois la valeur de ton contrat (uptime, mises à jour, sécurité). Sans rapport, le client oublie ce qu'il paie et risque de résilier." },
-      { type: "mcq", question: "Quelle est la meilleure stratégie pour vendre un contrat de maintenance ?", options: JSON.stringify(["Attendre que le client ait des problèmes techniques", "L'intégrer dans le devis initial comme option recommandée avec une réduction sur l'hébergement", "Le proposer uniquement 6 mois après la livraison", "Ne le proposer qu'aux gros clients"]), correctAnswer: "L'intégrer dans le devis initial comme option recommandée avec une réduction sur l'hébergement", explanation: "Présenter la maintenance dans le devis initial, quand le client est dans l'état d'esprit investissement, est 3x plus efficace que de le proposer après. Intégrer une réduction du coût initial pour les clients qui prennent la maintenance rend l'offre encore plus attrayante." },
-      { type: "true_false", question: "Un SaaS vertical consiste à transformer une solution répétée pour plusieurs clients du même secteur en produit standardisé avec abonnement mensuel.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Si tu crées le même type d'outil IA pour plusieurs clients du même secteur (ex: chatbot pour dentistes), tu peux le transformer en produit SaaS : une base de code déployée en quelques heures par client, avec un abonnement mensuel et un coût marginal quasi nul." },
-      { type: "mcq", question: "Quel est le forfait maintenance intermédiaire (Business) en termes de support inclus et de délai de réponse ?", options: JSON.stringify(["1h/mois de support, réponse sous 48h", "3h/mois de support, réponse sous 24h ouvrés", "8h/mois de support, réponse sous 4h", "Support illimité, réponse immédiate"]), correctAnswer: "3h/mois de support, réponse sous 24h ouvrés", explanation: "Le forfait Business à 349€/mois inclut 3h de support par mois avec un délai de réponse de 24h ouvrés. C'est le forfait recommandé pour les e-commerces et les chatbots, entre l'Essentiel (1h, 48h) et le Premium (8h, 4h)." },
+      { type: "mcq", question: "Quel est le meilleur moment pour demander un témoignage à un client ?", options: JSON.stringify(["Avant de commencer le projet", "Pendant le développement", "Immédiatement après la livraison", "2 mois après la livraison"]), correctAnswer: "Immédiatement après la livraison", explanation: "Le meilleur moment est immédiatement après la livraison, quand l'enthousiasme du client est au maximum. Si tu attends 2 semaines ou plus, le client sera passé à autre chose." },
+      { type: "true_false", question: "Un témoignage vidéo de 60 secondes est plus convaincant qu'un témoignage écrit.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Le témoignage vidéo est ultra-convaincant car il montre la vraie personne avec ses émotions. Il est idéal pour le site web. Cependant, il est plus difficile à obtenir car certains clients sont timides face caméra." },
+      { type: "mcq", question: "Quelle récompense proposer dans un programme de parrainage simple ?", options: JSON.stringify(["Rien, le client devrait recommander par altruisme", "10-15% de réduction sur le prochain retainer ou un mois gratuit", "50% de réduction sur tous les services futurs", "Un cadeau physique d'une valeur de 500€"]), correctAnswer: "10-15% de réduction sur le prochain retainer ou un mois gratuit", explanation: "10-15% du montant du projet en réduction ou un mois de retainer gratuit est la bonne fourchette. Le coût d'acquisition client par referral est quasi nul, donc tu peux être généreux sans que cela impacte ta rentabilité." },
+      { type: "true_false", question: "Pour maximiser les referrals, il faut laisser le client rédiger lui-même le message de recommandation.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Il faut faciliter la mise en relation en proposant de rédiger un message que le client peut transférer tel quel. Moins il a de travail à faire, plus il le fera. Tu peux aussi proposer un call à 3." },
+      { type: "mcq", question: "Tu livres un projet à un client PME qui te dit 'C'est exactement ce qu'il nous fallait, merci !'. Quelle est ta prochaine action ?", options: JSON.stringify(["Tu le remercies et tu passes au projet suivant", "Tu lui demandes immédiatement un témoignage vidéo en lui envoyant le lien Loom, et tu mentionnes ton programme de parrainage", "Tu attends 1 mois pour voir si tout fonctionne bien avant de demander quoi que ce soit", "Tu lui envoies une facture supplémentaire pour le témoignage"]), correctAnswer: "Tu lui demandes immédiatement un témoignage vidéo en lui envoyant le lien Loom, et tu mentionnes ton programme de parrainage", explanation: "Le client vient d'exprimer sa satisfaction — c'est LE moment idéal. Propose la vidéo en premier (plus impactante), replie-toi sur l'écrit s'il refuse. Et mentionne le programme de parrainage dans la foulée." },
     ],
   },
-  // ─── LEÇON 6 ───
+
+  // ─── LEÇON 6 — Gestion de crise ───
   {
     order: 6,
     module: 12,
-    title: "Revenus récurrents : comment atteindre 10K en MRR",
-    slug: "revenus-recurrents-10k-mrr",
-    duration: "30 min",
-    description: "Les maths pour atteindre 10 000€/mois de revenus récurrents : mix one-shot et retainer, projection à 6 mois, et les 4 métriques clés (MRR, churn, LTV, CAC) pour piloter ta croissance.",
+    title: "Quand ça se passe mal : gestion de crise",
+    slug: "gestion-crise-client",
+    duration: "20 min",
+    description: "Les 5 crises les plus courantes en agence IA, comment réagir à chacune, et les templates de communication de crise.",
     content: blocks([
-      {
-        id: "6-1",
-        type: "heading",
-        level: 2,
-        text: "10K€/mois : les maths derrière l'objectif",
-      },
-      {
-        id: "6-2",
-        type: "text",
-        html: "<p>10 000€ de MRR (Monthly Recurring Revenue) est le seuil qui change la vie d'une agence IA. En dessous, tu survis. Au-dessus, tu construis. Mais ce chiffre fait peur parce que la plupart des gens ne décomposent jamais les maths. Quand tu le fais, l'objectif devient concret — et atteignable.</p><p>La question n'est pas <em>'comment gagner 10K/mois'</em>, c'est <strong>'combien de clients à quel tarif'</strong>.</p>",
-      },
-      {
-        id: "6-3",
-        type: "comparison",
-        headers: ["Scénario", "Nombre de clients", "Retainer mensuel", "MRR total"],
-        rows: [
-          {
-            cells: ["Scénario A : Premium", "3 clients", "3 300€/mois", "9 900€"],
-          },
-          {
-            cells: ["Scénario B : Standard", "5 clients", "2 000€/mois", "10 000€"],
-          },
-          {
-            cells: ["Scénario C : Volume", "10 clients", "1 000€/mois", "10 000€"],
-          },
-          {
-            cells: ["Scénario D : Mix", "3 × 2K + 4 × 1K", "Mix", "10 000€"],
-          },
-        ],
-      },
-      {
-        id: "6-4",
-        type: "callout",
-        variant: "info",
-        html: "<strong>Le scénario le plus réaliste :</strong> Le scénario D (mix) est celui qui fonctionne pour la majorité des agences IA. 3 clients à 2 000€/mois (chatbot + automatisation + maintenance) et 4 clients à 1 000€/mois (maintenance + support). C'est 7 clients au total — parfaitement gérable en solo ou avec un assistant.",
-      },
-      {
-        id: "6-5",
-        type: "separator",
-        style: "dots",
-      },
-      {
-        id: "6-6",
-        type: "heading",
-        level: 2,
-        text: "Le mix one-shot + récurrent : la formule gagnante",
-      },
-      {
-        id: "6-7",
-        type: "text",
-        html: "<p>L'erreur classique est de vouloir passer à 100% de récurrent du jour au lendemain. Le modèle réaliste est un <strong>mix one-shot (projets) + récurrent (retainers)</strong> qui évolue progressivement vers plus de récurrent.</p>",
-      },
-      {
-        id: "6-8",
-        type: "comparison",
-        headers: ["Phase", "One-shot (projets)", "Récurrent (retainers)", "CA mensuel estimé"],
-        rows: [
-          {
-            cells: ["Mois 1-3 (lancement)", "80%", "20%", "2 000-4 000€"],
-          },
-          {
-            cells: ["Mois 4-6 (transition)", "50%", "50%", "5 000-7 000€"],
-          },
-          {
-            cells: ["Mois 7-9 (maturité)", "30%", "70%", "7 000-10 000€"],
-          },
-          {
-            cells: ["Mois 10-12 (scale)", "20%", "80%", "10 000-15 000€"],
-          },
-        ],
-      },
-      {
-        id: "6-9",
-        type: "callout",
-        variant: "tip",
-        html: "<strong>Stratégie clé :</strong> chaque projet one-shot doit se transformer en contrat récurrent. Tu livres un chatbot à 2 000€ → tu proposes la maintenance à 300€/mois. Tu automatises un process à 3 000€ → tu proposes le monitoring + évolutions à 500€/mois. Le one-shot finance ton acquisition, le récurrent construit ta stabilité.",
-      },
-      {
-        id: "6-10",
-        type: "separator",
-        style: "line",
-      },
-      {
-        id: "6-11",
-        type: "heading",
-        level: 2,
-        text: "Projection financière à 6 mois",
-      },
-      {
-        id: "6-12",
-        type: "text",
-        html: "<p>Voici une projection réaliste pour atteindre 10K€/mois en partant de zéro, basée sur 2 nouveaux clients par mois avec un taux de conversion de 60% en contrat de maintenance.</p>",
-      },
-      {
-        id: "6-13",
-        type: "comparison",
-        headers: ["Mois", "Nouveaux clients", "Projets one-shot", "Nouveaux retainers", "MRR cumulé", "CA total du mois"],
-        rows: [
-          {
-            cells: ["Mois 1", "2", "2 × 2 000€ = 4 000€", "+1 × 300€", "300€", "4 300€"],
-          },
-          {
-            cells: ["Mois 2", "2", "2 × 2 500€ = 5 000€", "+1 × 400€", "700€", "5 700€"],
-          },
-          {
-            cells: ["Mois 3", "2", "1 × 3 000€ + 1 × 1 500€", "+2 × 350€", "1 400€", "5 900€"],
-          },
-          {
-            cells: ["Mois 4", "3", "2 × 2 000€ + 1 × 3 500€", "+2 × 500€", "2 400€", "9 900€"],
-          },
-          {
-            cells: ["Mois 5", "2", "1 × 3 000€ + 1 × 2 000€", "+2 × 400€", "3 200€", "8 200€"],
-          },
-          {
-            cells: ["Mois 6", "2", "2 × 2 500€ = 5 000€", "+1 × 500€", "3 700€", "8 700€"],
-          },
-        ],
-      },
-      {
-        id: "6-14",
-        type: "callout",
-        variant: "warning",
-        html: "<strong>Attention au piège de la croissance linéaire :</strong> cette projection suppose 0% de churn (aucun client ne part). En réalité, tu perdras 5-10% de tes clients récurrents par mois. C'est pour ça que tu dois toujours signer plus de retainers que tu n'en perds. La formule magique : <strong>nouveaux retainers par mois > churn par mois</strong>. Si tu signes 2 retainers/mois et perds 0,5/mois, ton MRR net grandit de 1,5 retainer par mois.",
-      },
-      {
-        id: "6-15",
-        type: "separator",
-        style: "dots",
-      },
-      {
-        id: "6-16",
-        type: "heading",
-        level: 2,
-        text: "Les 4 métriques qui pilotent tout",
-      },
-      {
-        id: "6-17",
-        type: "text",
-        html: "<p>Tu ne peux pas améliorer ce que tu ne mesures pas. Ces 4 métriques sont ta boussole financière. Mets-les à jour chaque 1er du mois dans un Google Sheet simple.</p>",
-      },
-      {
-        id: "6-18",
-        type: "comparison",
-        headers: ["Métrique", "Définition", "Comment la calculer", "Objectif cible"],
-        rows: [
-          {
-            cells: [
-              "MRR (Monthly Recurring Revenue)",
-              "Revenus récurrents mensuels garantis",
-              "Somme de tous les retainers actifs",
-              "10 000€/mois à 12 mois",
-            ],
-          },
-          {
-            cells: [
-              "Churn rate (taux d'attrition)",
-              "% de clients récurrents qui partent chaque mois",
-              "(Clients perdus ce mois / Clients récurrents début de mois) × 100",
-              "< 5%/mois (idéal : < 3%)",
-            ],
-          },
-          {
-            cells: [
-              "LTV (Lifetime Value)",
-              "Revenu total moyen généré par un client sur toute la relation",
-              "Retainer mensuel moyen × (1 / churn rate mensuel) + panier one-shot moyen",
-              "> 5 000€ par client",
-            ],
-          },
-          {
-            cells: [
-              "CAC (Customer Acquisition Cost)",
-              "Coût moyen pour acquérir un nouveau client",
-              "(Temps prospection en heures × taux horaire + outils) / Nombre de clients signés",
-              "< 500€ (ratio LTV/CAC > 3:1)",
-            ],
-          },
-        ],
-      },
-      {
-        id: "6-19",
-        type: "callout",
-        variant: "success",
-        html: "<strong>La règle du 3:1 :</strong> ton LTV doit être au moins 3 fois ton CAC. Si ton CAC est de 400€ (20h de prospection pour 1 client signé), ton LTV doit être d'au moins 1 200€. Avec un retainer de 300€/mois et une durée moyenne de 8 mois + un projet initial de 2 000€, ton LTV est de 4 400€ → ratio de 11:1. Excellent.",
-      },
-      {
-        id: "6-20",
-        type: "separator",
-        style: "line",
-      },
-      {
-        id: "6-21",
-        type: "heading",
-        level: 2,
-        text: "Comment réduire le churn et maximiser la LTV",
-      },
-      {
-        id: "6-22",
-        type: "steps",
-        steps: [
-          {
-            title: "1. Le rapport mensuel (rétention passive)",
-            description: "Envoie chaque mois un rapport de valeur : uptime, performances, interventions, opportunités détectées. Le client voit concrètement ce qu'il paie. Sans rapport, il oublie et résilie.",
-          },
-          {
-            title: "2. Le check-in trimestriel (rétention active)",
-            description: "Un appel de 20 minutes tous les 3 mois : 'Comment ça va ? Quels sont tes objectifs pour le prochain trimestre ? Comment je peux t'aider à les atteindre ?' Ce call est aussi ton moment d'upsell naturel.",
-          },
-          {
-            title: "3. L'upsell proactif (croissance du compte)",
-            description: "Chaque rapport mensuel inclut une section 'opportunités détectées'. Tu ne vends pas — tu montres des données. Le client te demande de les exploiter. Le panier moyen par client augmente mécaniquement.",
-          },
-          {
-            title: "4. Le contrat annuel avec réduction (lock-in)",
-            description: "Propose une réduction de 15-20% pour un engagement annuel. Le client économise, tu sécurises 12 mois de MRR. Un client en contrat annuel a un churn rate 3x plus bas qu'un client mensuel.",
-          },
-        ],
-      },
-      {
-        id: "6-23",
-        type: "separator",
-        style: "dots",
-      },
-      {
-        id: "6-24",
-        type: "heading",
-        level: 2,
-        text: "Le tableau de bord financier (template)",
-      },
-      {
-        id: "6-25",
-        type: "code",
-        language: "text",
-        filename: "dashboard-financier-mrr.txt",
-        code: `═══════════════════════════════════════════════
-TABLEAU DE BORD FINANCIER — [Mois] [Année]
-═══════════════════════════════════════════════
-
-REVENUS RÉCURRENTS (MRR)
-┌─────────────────────────────────────────────┐
-│ MRR début de mois :         [X] €           │
-│ + Nouveaux retainers :      +[X] €          │
-│ + Upsells / expansions :    +[X] €          │
-│ - Churn (clients perdus) :  -[X] €          │
-│ = MRR fin de mois :         [X] €           │
-│                                             │
-│ Croissance MRR net :        +[X]% vs M-1    │
-└─────────────────────────────────────────────┘
-
-REVENUS ONE-SHOT (projets)
-┌─────────────────────────────────────────────┐
-│ Nombre de projets livrés :  [X]             │
-│ CA one-shot du mois :       [X] €           │
-│ Panier moyen par projet :   [X] €           │
-│ Taux de conversion en       [X]%            │
-│ retainer après livraison :                  │
-└─────────────────────────────────────────────┘
-
-MÉTRIQUES CLÉS
-┌─────────────────────────────────────────────┐
-│ CA total du mois :          [X] €           │
-│ % récurrent / total :       [X]%            │
-│ Churn rate :                [X]%            │
-│ LTV moyenne :               [X] €           │
-│ CAC moyen :                 [X] €           │
-│ Ratio LTV/CAC :             [X]:1           │
-│ Nb clients récurrents :     [X]             │
-│ Nb clients total (actifs) : [X]             │
-└─────────────────────────────────────────────┘
-
-OBJECTIFS vs RÉALITÉ
-┌─────────────────────────────────────────────┐
-│ Objectif MRR ce mois :      [X] €          │
-│ MRR réel :                  [X] € ([X]%)   │
-│ Objectif CA total :         [X] €          │
-│ CA réel :                   [X] € ([X]%)   │
-│ Prochaine milestone :       [X] € MRR      │
-│ Mois estimé d'atteinte :    [Mois Année]   │
-└─────────────────────────────────────────────┘
-
-PLAN D'ACTION MOIS PROCHAIN
-1. [Action prioritaire pour augmenter le MRR]
-2. [Action pour réduire le churn]
-3. [Action pour augmenter le panier moyen]`,
-      },
-      {
-        id: "6-26",
-        type: "separator",
-        style: "dots",
-      },
-      {
-        id: "6-27",
-        type: "quiz-inline",
-        question: "Quel ratio LTV/CAC est considéré comme sain pour une agence IA ?",
-        options: [
-          { id: "a", text: "1:1 (LTV = CAC)" },
-          { id: "b", text: "Au moins 3:1 (LTV = 3× CAC)" },
-          { id: "c", text: "Au moins 10:1 (LTV = 10× CAC)" },
-          { id: "d", text: "Le ratio n'a pas d'importance" },
-        ],
-        correctId: "b",
-        explanation: "Un ratio LTV/CAC d'au moins 3:1 signifie que chaque euro investi dans l'acquisition rapporte au moins 3 euros sur la durée de vie du client. En dessous de 3:1, tu dépenses trop pour acquérir des clients par rapport à ce qu'ils rapportent.",
-      },
-      {
-        id: "6-28",
-        type: "checklist",
-        title: "Checklist — Ma route vers 10K€ MRR",
-        items: [
-          { id: "c1", text: "J'ai choisi mon scénario cible (nombre de clients × tarif mensuel)" },
-          { id: "c2", text: "J'ai défini mon mix one-shot / récurrent pour les 6 prochains mois" },
-          { id: "c3", text: "Ma projection financière à 6 mois est rédigée avec des chiffres réalistes" },
-          { id: "c4", text: "Mon tableau de bord financier est créé (Google Sheet ou Notion)" },
-          { id: "c5", text: "Je mesure les 4 métriques clés (MRR, churn, LTV, CAC) chaque 1er du mois" },
-          { id: "c6", text: "J'ai un plan pour réduire le churn (rapports, check-ins, contrats annuels)" },
-          { id: "c7", text: "Chaque nouveau projet est conçu pour se transformer en retainer" },
-          { id: "c8", text: "Mon objectif MRR à 6 mois est écrit quelque part où je le vois chaque jour" },
-        ],
-      },
+      { id: "6-1", type: "heading", level: 2, text: "Les crises arrivent — ce qui compte, c'est ta réaction" },
+      { id: "6-2", type: "text", html: "<p>Même avec le meilleur process du monde, des problèmes surviendront. Un bug en production, un client mécontent, un retard imprévu, un scope qui explose, une facture impayée. Ce qui distingue un amateur d'un professionnel, ce n'est pas l'absence de problèmes — c'est la <strong>vitesse et la qualité de la réponse</strong>.</p><p>Un client qui vit une crise bien gérée devient souvent <em>plus fidèle</em> qu'un client qui n'a jamais eu de problème. C'est le paradoxe de la récupération de service.</p>" },
+      { id: "6-3", type: "callout", variant: "info", html: "<strong>La règle d'or :</strong> Réagis dans les 2 heures maximum. Même si tu n'as pas de solution, accuse réception et donne un délai. Le silence est la pire réponse possible en situation de crise." },
+      { id: "6-4", type: "separator", style: "dots" },
+      { id: "6-5", type: "heading", level: 2, text: "Les 5 crises les plus courantes et comment réagir" },
+      { id: "6-6", type: "heading", level: 3, text: "Crise #1 : Le scope creep incontrôlé" },
+      { id: "6-7", type: "text", html: "<p><strong>Situation :</strong> Le client ajoute des demandes sans arrêt. Le projet a doublé de taille mais le budget n'a pas bougé. Tu travailles 2x plus pour le même prix.</p><p><strong>Réaction :</strong> Stop. Ne continue pas à absorber. Organise un call, ressors le périmètre initial (CR de kickoff), montre factuellement ce qui a été ajouté, et propose un avenant avec devis pour le travail supplémentaire. Pas d'agressivité — juste des faits et une solution.</p>" },
+      { id: "6-8", type: "heading", level: 3, text: "Crise #2 : Le client insatisfait du résultat" },
+      { id: "6-9", type: "text", html: "<p><strong>Situation :</strong> Le client n'est pas content de ce que tu as livré. Il trouve que 'ça ne correspond pas à ce qu'il attendait'.</p><p><strong>Réaction :</strong> Écoute d'abord, sans te justifier. Demande des retours précis et écrits (pas de vague 'je n'aime pas'). Compare avec le brief et le périmètre validé. Si c'est un malentendu, clarifie. Si tu as fait une erreur, assume et corrige rapidement. Si les attentes ont changé, propose un avenant.</p>" },
+      { id: "6-10", type: "heading", level: 3, text: "Crise #3 : Bug critique en production" },
+      { id: "6-11", type: "text", html: "<p><strong>Situation :</strong> Le chatbot/l'IA que tu as livrée plante, donne des réponses fausses, ou cause un problème visible pour les utilisateurs finaux du client.</p><p><strong>Réaction :</strong> (1) Accuse réception immédiatement. (2) Évalue la gravité : est-ce que ça bloque l'activité du client ? (3) Si critique, mets en place un workaround temporaire (désactiver la fonctionnalité, revenir à la version précédente). (4) Corrige le bug. (5) Fais un post-mortem : pourquoi c'est arrivé et comment éviter que ça se reproduise.</p>" },
+      { id: "6-12", type: "heading", level: 3, text: "Crise #4 : Le retard de livraison" },
+      { id: "6-13", type: "text", html: "<p><strong>Situation :</strong> Tu vas dépasser la deadline. Maladie, sous-estimation de la charge, problème technique imprévu.</p><p><strong>Réaction :</strong> Préviens le client <em>dès que tu sais</em>, pas la veille de la deadline. Explique la raison (sans t'excuser 10 fois), donne un nouveau délai réaliste (ajoute 20% de marge), et propose une compensation si le retard est significatif (réduction, fonctionnalité bonus). Le client préfère un retard annoncé à une surprise.</p>" },
+      { id: "6-14", type: "heading", level: 3, text: "Crise #5 : Le non-paiement" },
+      { id: "6-15", type: "text", html: "<p><strong>Situation :</strong> Le client ne paie pas. La facture est en retard de 15, 30, 60 jours.</p><p><strong>Réaction :</strong> Suis le processus de relance structuré : J+1 relance amicale, J+7 relance ferme + appel, J+15 mise en demeure par recommandé, J+30 injonction de payer. En parallèle, suspends tout travail en cours pour ce client. Ne livre jamais un nouveau livrable tant que les factures précédentes ne sont pas réglées.</p>" },
+      { id: "6-16", type: "separator", style: "dots" },
+      { id: "6-17", type: "heading", level: 2, text: "Templates d'emails de crise" },
+      { id: "6-18", type: "heading", level: 3, text: "Email #1 : Accusé de réception de problème" },
+      { id: "6-19", type: "code", language: "text", filename: "email-crise-accuse-reception.txt", code: "Objet : [Nom du projet] — Problème identifié, on s'en occupe\n\nBonjour [Prénom],\n\nJ'ai bien pris connaissance du problème que tu as signalé concernant\n[description courte du problème].\n\nJe suis dessus. Voici ce que je fais maintenant :\n- [Action immédiate 1 : ex: diagnostic en cours]\n- [Action immédiate 2 : ex: workaround temporaire mis en place]\n\nJe te fais un point complet d'ici [délai : ex: 2h / ce soir / demain 9h].\n\nEn attendant, [instruction si nécessaire : ex: le chatbot est temporairement\ndésactivé pour éviter tout impact utilisateur].\n\n[Ton prénom]" },
+      { id: "6-20", type: "heading", level: 3, text: "Email #2 : Annonce de retard" },
+      { id: "6-21", type: "code", language: "text", filename: "email-crise-retard.txt", code: "Objet : [Nom du projet] — Point sur le planning\n\nBonjour [Prénom],\n\nJe te contacte pour être transparent sur l'avancement du projet.\n\n[Explication factuelle : ex: L'intégration avec votre CRM s'est avérée\nplus complexe que prévu en raison de la structure de données spécifique.]\n\nLa livraison initialement prévue le [date initiale] sera décalée\nau [nouvelle date]. J'ai ajouté une marge de sécurité pour m'assurer\nque cette nouvelle date sera tenue.\n\nPour compenser ce retard, je propose [compensation : ex: une session\nde formation supplémentaire gratuite / une fonctionnalité bonus].\n\nJe reste disponible pour en discuter par téléphone si tu préfères.\n\n[Ton prénom]" },
+      { id: "6-22", type: "heading", level: 3, text: "Email #3 : Réponse à un client insatisfait" },
+      { id: "6-23", type: "code", language: "text", filename: "email-crise-insatisfaction.txt", code: "Objet : Re: [Sujet original] — Vos retours sont pris en compte\n\nBonjour [Prénom],\n\nMerci d'avoir pris le temps de partager tes retours. Je comprends\nta frustration et je la prends très au sérieux.\n\nVoici ce que je propose :\n\n1. On planifie un call de 30 min cette semaine pour que tu puisses\n   détailler précisément ce qui ne te convient pas.\n2. Je prépare un plan de correction avec des délais clairs.\n3. On valide ensemble les corrections avant que je les implémente.\n\nPeux-tu me proposer 2 créneaux qui t'arrangent ?\n\nMon objectif est que tu sois pleinement satisfait du résultat final.\n\n[Ton prénom]" },
+      { id: "6-24", type: "callout", variant: "warning", html: "<strong>Ce qu'il ne faut JAMAIS faire en crise :</strong> (1) Ignorer le problème en espérant qu'il disparaisse. (2) Se justifier avant d'avoir écouté. (3) Blâmer le client, même s'il a tort. (4) Promettre une solution sans être sûr de pouvoir la tenir. (5) Communiquer uniquement par écrit quand la situation est émotionnelle — décroche le téléphone." },
     ]),
-    exercise: "<p><strong>Exercice :</strong> Fais ta projection financière à 6 mois. (1) Choisis ton scénario cible parmi les 4 présentés (ou crée le tien). (2) Définis ton mix one-shot/retainer pour chaque mois (en % et en euros). (3) Remplis le tableau mois par mois : nouveaux clients, projets one-shot, nouveaux retainers, MRR cumulé, CA total. (4) Calcule combien de clients il te faut pour atteindre 10 000€/mois avec ton tarif moyen. (5) Crée ton tableau de bord financier (copie le template dans un Google Sheet) et remplis la colonne 'Mois 1' avec tes chiffres actuels. Durée estimée : 60 min.</p>",
+    exercise: "<p><strong>Exercice :</strong> Rédige tes <strong>3 emails-types de gestion de crise</strong> en personnalisant les templates ci-dessus avec ton style et ton nom. (1) Email d'accusé de réception de bug/problème. (2) Email d'annonce de retard avec compensation. (3) Email de réponse à un client insatisfait. Sauvegarde-les dans ton dossier 'Templates' pour pouvoir les utiliser rapidement le jour où tu en auras besoin.</p>",
     quiz: [
-      { type: "mcq", question: "Quel est le scénario le plus réaliste pour atteindre 10K€ de MRR ?", options: JSON.stringify(["1 seul client à 10 000€/mois", "Un mix de 3 clients à 2 000€/mois et 4 clients à 1 000€/mois", "100 clients à 100€/mois", "Uniquement des projets one-shot à 10K€"]), correctAnswer: "Un mix de 3 clients à 2 000€/mois et 4 clients à 1 000€/mois", explanation: "Le scénario mix (7 clients au total avec des retainers variés) est le plus réaliste. Il est parfaitement gérable en solo ou avec un assistant, et diversifie le risque sur plusieurs clients plutôt que de dépendre d'un seul gros contrat." },
-      { type: "true_false", question: "Le churn rate idéal pour une agence IA est inférieur à 5% par mois.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Un churn rate inférieur à 5% par mois (idéalement inférieur à 3%) signifie que tu perds moins de 1 client sur 20 chaque mois. Pour maintenir la croissance du MRR, il faut que les nouveaux retainers signés chaque mois dépassent les clients perdus par churn." },
-      { type: "mcq", question: "Quelle est la formule pour calculer la LTV (Lifetime Value) d'un client récurrent ?", options: JSON.stringify(["Retainer mensuel × 12 mois", "Retainer mensuel moyen × (1 / churn rate mensuel) + panier one-shot moyen", "CA total / nombre de clients", "Nombre de mois de contrat × prix du projet initial"]), correctAnswer: "Retainer mensuel moyen × (1 / churn rate mensuel) + panier one-shot moyen", explanation: "La LTV combine la durée de vie moyenne du client (1 / churn rate) multipliée par le retainer mensuel, plus la valeur du projet initial. Avec un retainer de 300€/mois et un churn de 12%/mois (durée moyenne 8 mois), la LTV récurrente seule est de 2 400€." },
-      { type: "true_false", question: "Passer à 100% de revenus récurrents dès le premier mois est la meilleure stratégie.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La transition doit être progressive : 80% one-shot au début (mois 1-3), puis 50/50 (mois 4-6), puis 30/70 (mois 7-9), et enfin 20/80 (mois 10-12). Les projets one-shot financent l'acquisition de clients et permettent de proposer des retainers après chaque livraison." },
-      { type: "mcq", question: "Tu as actuellement 4 000€ de MRR avec 8 clients. Ce mois, tu signes 2 nouveaux retainers à 500€/mois chacun, mais 1 client à 300€/mois résilie. Quel est ton MRR en fin de mois et ta croissance nette ?", options: JSON.stringify(["4 700€ MRR, croissance nette de +700€", "5 000€ MRR, croissance nette de +1 000€", "3 700€ MRR, décroissance de -300€", "4 300€ MRR, croissance nette de +300€"]), correctAnswer: "4 700€ MRR, croissance nette de +700€", explanation: "MRR début : 4 000€. Ajout : 2 × 500€ = +1 000€. Churn : -300€. MRR fin : 4 000 + 1 000 - 300 = 4 700€. Croissance nette : +700€. Le churn rate ce mois : 1/8 = 12,5% (trop élevé, il faut investiguer pourquoi ce client part et mettre en place des actions de rétention)." },
+      { type: "mcq", question: "Quel est le délai maximum pour accuser réception d'un problème signalé par un client ?", options: JSON.stringify(["24 heures", "2 heures", "1 semaine", "Le jour ouvré suivant"]), correctAnswer: "2 heures", explanation: "La règle d'or : réagis dans les 2 heures maximum. Même sans solution, accuse réception et donne un délai. Le silence est la pire réponse possible en situation de crise." },
+      { type: "true_false", question: "Un client qui vit une crise bien gérée peut devenir plus fidèle qu'un client qui n'a jamais eu de problème.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "C'est le paradoxe de la récupération de service : un client qui vit une crise bien gérée (réaction rapide, communication transparente, correction efficace) développe une confiance renforcée envers le prestataire." },
+      { type: "mcq", question: "Face à un scope creep incontrôlé, quelle est la bonne réaction ?", options: JSON.stringify(["Absorber les demandes supplémentaires pour garder le client content", "Organiser un call, ressortir le périmètre initial, et proposer un avenant avec devis pour le travail supplémentaire", "Arrêter immédiatement le projet et menacer le client", "Accepter les demandes mais doubler le tarif du prochain projet"]), correctAnswer: "Organiser un call, ressortir le périmètre initial, et proposer un avenant avec devis pour le travail supplémentaire", explanation: "Pas d'agressivité, juste des faits : ressors le CR de kickoff, montre factuellement ce qui a été ajouté hors périmètre, et propose un avenant avec devis. Le client comprendra si la présentation est factuelle et professionnelle." },
+      { type: "true_false", question: "En cas de retard, il vaut mieux attendre la veille de la deadline pour prévenir le client.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Préviens le client dès que tu sais que tu vas dépasser la deadline, pas la veille. Le client préfère un retard annoncé en avance à une surprise. Donne un nouveau délai réaliste avec 20% de marge." },
+      { type: "mcq", question: "Ton chatbot IA plante en production chez un client un mardi matin. Les utilisateurs voient des erreurs. Quelles sont tes 3 premières actions ?", options: JSON.stringify(["Accuser réception, diagnostiquer, et envoyer un email de résolution dans 48h", "Accuser réception immédiatement, mettre en place un workaround temporaire, et corriger le bug", "Attendre de comprendre le problème avant de contacter le client", "Appeler le client pour s'excuser, puis prendre le temps de réfléchir à une solution"]), correctAnswer: "Accuser réception immédiatement, mettre en place un workaround temporaire, et corriger le bug", explanation: "Les 3 premières actions : (1) Accuser réception immédiatement. (2) Évaluer la gravité et mettre un workaround (désactiver la fonctionnalité, revenir à la version précédente). (3) Corriger le bug. Ensuite : post-mortem pour éviter la récurrence." },
     ],
   },
 ];
+
