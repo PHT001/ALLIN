@@ -66,11 +66,18 @@ export async function GET() {
     }
   }
 
-  // Get user enrollment tier
-  const enrollment = await prisma.enrollment.findFirst({
-    where: { userId, status: "active" },
-    orderBy: { createdAt: "desc" },
-  });
+  // Get user enrollment tier (admin = academy)
+  const isAdmin = session.user.role === "admin";
+  let tier: string | null = null;
+  if (isAdmin) {
+    tier = "academy";
+  } else {
+    const enrollment = await prisma.enrollment.findFirst({
+      where: { userId, status: "active" },
+      orderBy: { createdAt: "desc" },
+    });
+    tier = enrollment?.tier || null;
+  }
 
   return NextResponse.json({
     totalLessons,
@@ -80,7 +87,7 @@ export async function GET() {
       : null,
     streak,
     xp,
-    tier: enrollment?.tier || null,
+    tier,
     modules: modules.map((m) => ({
       id: m.id,
       title: m.title,
