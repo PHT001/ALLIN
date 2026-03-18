@@ -15,7 +15,7 @@ import { MODULE_10_LESSONS } from "../../../../prisma/data/new_module_10";
 import { MODULE_11_LESSONS } from "../../../../prisma/data/new_module_11";
 import { MODULE_12_LESSONS } from "../../../../prisma/data/new_module_12";
 import { MODULE_13_LESSONS } from "../../../../prisma/data/new_module_13";
-import { MODULE_14_LESSONS } from "../../../../prisma/data/new_module_14";
+// M14 removed — duplicate juridique slugs with M13
 import { MASTERCLASS_CLAUDE_CODE_LESSONS } from "../../../../prisma/data/masterclass_claude_code";
 import { MASTERCLASS_OPENCLAW_LESSONS } from "../../../../prisma/data/masterclass_openclaw";
 
@@ -34,8 +34,8 @@ const MODULE_MAP: [any[], number][] = [
   [MODULE_11_LESSONS, 8],     // M9: Trouver clients
   [MODULE_12_LESSONS, 9],     // M10: Livrer et fidéliser
   [MODULE_9_LESSONS, 10],     // M11: Construire un MVP
-  [MODULE_13_LESSONS, 11],    // M12: Scaler
-  [MODULE_14_LESSONS, 12],    // M13: Juridique
+  // M12 Scaler: skipped (no dedicated file yet)
+  [MODULE_13_LESSONS, 12],    // M13: Juridique
   [MASTERCLASS_CLAUDE_CODE_LESSONS, 13], // M14: Claude Code
   [MASTERCLASS_OPENCLAW_LESSONS, 14],    // M15: OpenClaw
 ];
