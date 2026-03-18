@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════
 // MODULE 11 — Trouver des clients (SALES & PROSPECTING)
-// 6 leçons — Format JSON blocs
+// 5 leçons — Format JSON blocs
 // ═══════════════════════════════════════════════════
 
 function blocks(b: object[]): string {
@@ -12,13 +12,13 @@ export const MODULE_11_LESSONS = [
   {
     order: 1,
     module: 11,
-    title: "Les 3 canaux qui marchent pour trouver des clients IA",
-    slug: "3-canaux-trouver-clients-ia",
-    duration: "20 min",
-    description: "Découvrir les 3 canaux d'acquisition qui fonctionnent vraiment pour une agence IA débutante — et pourquoi ignorer le SEO et la pub te fera gagner du temps.",
+    title: "Les 3 canaux d'acquisition et la machine LinkedIn",
+    slug: "3-canaux-acquisition-machine-linkedin",
+    duration: "35 min",
+    description: "Les 3 canaux qui fonctionnent pour une agence IA débutante (LinkedIn, cold email, réseau local), pourquoi ignorer le SEO et la pub — puis construire ta machine de prospection LinkedIn : profil, posts, DMs avec les templates exacts.",
     content: blocks([
       { id: "1-1", type: "heading", level: 2, text: "Le piège du débutant : vouloir être partout" },
-      { id: "1-2", type: "text", html: "<p>Quand on lance une agence IA, la tentation est forte de tout faire en même temps : créer un site, faire du SEO, lancer des pubs Facebook, poster sur Instagram, TikTok, LinkedIn... Résultat : tu t'épuises, tu obtiens zéro client, et tu abandones en pensant que ça ne marche pas.</p><p>La vérité : <strong>3 canaux seulement suffisent pour passer de 0 à 5 000€/mois</strong>. Et ces 3 canaux ne demandent ni budget pub, ni 6 mois d'attente pour voir des résultats.</p>" },
+      { id: "1-2", type: "text", html: "<p>Quand on lance une agence IA, la tentation est forte de tout faire en même temps : créer un site, faire du SEO, lancer des pubs Facebook, poster sur Instagram, TikTok, LinkedIn... Résultat : tu t'épuises, tu obtiens zéro client, et tu abandonnes en pensant que ça ne marche pas.</p><p>La vérité : <strong>3 canaux seulement suffisent pour passer de 0 à 5 000€/mois</strong>. Et ces 3 canaux ne demandent ni budget pub, ni 6 mois d'attente pour voir des résultats.</p>" },
       { id: "1-3", type: "callout", variant: "warning", html: "<strong>Erreur fatale :</strong> commencer par le SEO ou la pub payante. Le SEO prend 6 à 12 mois. La pub coûte cher sans avoir encore prouvé son offre. Les deux tuent les agences qui démarrent." },
       { id: "1-4", type: "separator", style: "dots" },
 
@@ -29,92 +29,47 @@ export const MODULE_11_LESSONS = [
         { id: "n3", label: "Cold email", description: "Séquences automatisées vers des cibles précises → rendez-vous" },
         { id: "n4", label: "Réseau local", description: "BNI, CCI, commerçants, PME → deals rapides et fiables" },
       ]},
-      { id: "1-7", type: "text", html: "<p>Ces 3 canaux ont un point commun : <strong>ils permettent d'obtenir un premier rendez-vous en moins de 7 jours</strong>, sans budget, et sans attendre que Google te trouve.</p>" },
-      { id: "1-8", type: "separator", style: "line" },
-
-      { id: "1-9", type: "heading", level: 2, text: "Pourquoi LinkedIn en premier ?" },
-      { id: "1-10", type: "comparison", headers: ["Canal", "Délai avant résultats", "Coût", "Qualité des leads", "Facilité débutant"], rows: [
+      { id: "1-7", type: "comparison", headers: ["Canal", "Délai avant résultats", "Coût", "Qualité des leads", "Facilité débutant"], rows: [
         { cells: ["LinkedIn", "3 à 7 jours", "Gratuit", "Très haute", "Facile"] },
         { cells: ["Cold email", "7 à 14 jours", "10-50€/mois", "Haute", "Moyen"] },
         { cells: ["Réseau local", "1 à 30 jours", "Gratuit / cotisation", "Très haute", "Très facile"] },
         { cells: ["SEO", "6 à 12 mois", "Temps ou budget", "Variable", "Difficile"] },
         { cells: ["Pub Facebook/Google", "Immédiat mais cher", "300-1000€/mois min.", "Basse à variable", "Difficile"] },
-        { cells: ["Instagram/TikTok", "3 à 6 mois", "Temps", "Basse pour B2B", "Difficile"] },
       ]},
-      { id: "1-11", type: "callout", variant: "info", html: "<strong>La règle des 90 jours :</strong> concentre-toi sur UN seul canal pendant 30 jours, puis ajoute le deuxième, puis le troisième. Ne dilue jamais ton énergie." },
-      { id: "1-12", type: "separator", style: "dots" },
+      { id: "1-8", type: "callout", variant: "info", html: "<strong>La règle des 90 jours :</strong> concentre-toi sur UN seul canal pendant 30 jours, puis ajoute le deuxième, puis le troisième. Ne dilue jamais ton énergie." },
 
-      { id: "1-13", type: "heading", level: 2, text: "Ton plan d'attaque sur 90 jours" },
-      { id: "1-14", type: "steps", steps: [
+      { id: "1-9", type: "heading", level: 2, text: "Ton plan d'attaque sur 90 jours" },
+      { id: "1-10", type: "steps", steps: [
         { title: "Jours 1-30 : LinkedIn only", description: "Optimise ton profil, poste 3x/semaine, envoie 10 DMs/jour. Objectif : 2-3 rendez-vous." },
         { title: "Jours 31-60 : LinkedIn + Cold email", description: "Continue LinkedIn, lance ta première séquence email sur 200 contacts. Objectif : 5 rendez-vous en cumulé." },
         { title: "Jours 61-90 : Les 3 canaux actifs", description: "Ajoute le réseau local (1 événement/semaine). Objectif : 10 rendez-vous, 2-3 clients signés." },
       ]},
-      { id: "1-15", type: "callout", variant: "success", html: "<strong>Objectif réaliste :</strong> avec ce plan, la plupart des agences IA décrochent leur premier client entre le jour 14 et le jour 45. La clé : la régularité, pas le volume." },
+      { id: "1-11", type: "callout", variant: "success", html: "<strong>Objectif réaliste :</strong> avec ce plan, la plupart des agences IA décrochent leur premier client entre le jour 14 et le jour 45. La clé : la régularité, pas le volume." },
+      { id: "1-12", type: "separator", style: "dots" },
 
-      { id: "1-16", type: "quiz-inline", question: "Pourquoi ne faut-il pas commencer par la pub payante quand on lance une agence IA ?", options: [
-        { id: "a", text: "Parce que la pub est illégale pour les agences IA" },
-        { id: "b", text: "Parce qu'elle coûte cher et nécessite une offre déjà prouvée pour être rentable" },
-        { id: "c", text: "Parce que LinkedIn est gratuit" },
-      ], correctId: "b", explanation: "La pub payante peut fonctionner, mais seulement quand tu connais déjà ton client idéal, ton message, et ta conversion. Sans ces éléments, tu brûles du budget pour rien." },
-
-      { id: "1-17", type: "separator", style: "dots" },
-      { id: "1-18", type: "checklist", title: "Actions à faire maintenant", items: [
-        { id: "c1", text: "Décide ton canal n°1 (LinkedIn recommandé pour débuter)" },
-        { id: "c2", text: "Note ta cible idéale : secteur, taille d'entreprise, poste du décideur" },
-        { id: "c3", text: "Bloque 1h par jour dans ton agenda pour la prospection (non-négociable)" },
-        { id: "c4", text: "Supprime les canaux que tu n'utiliseras PAS dans les 90 prochains jours de ta liste mentale" },
-        { id: "c5", text: "Fixe ton objectif : X rendez-vous en 30 jours" },
-      ]},
-    ]),
-    exercise: "<p><strong>Exercice :</strong> Remplis cette fiche en 15 minutes.</p><p>1. <strong>Ma cible idéale</strong> : Secteur : ___ / Taille : ___ salariés / Décideur : ___<br>2. <strong>Mon canal n°1 pour les 30 prochains jours</strong> : ___<br>3. <strong>Mon objectif de rendez-vous à 30 jours</strong> : ___<br>4. <strong>Mon créneau prospection quotidien</strong> : de ___ à ___ heures<br><br>Colle cette fiche quelque part où tu la vois chaque matin.</p>",
-    quiz: [
-      { type: "mcq", question: "Quels sont les 3 canaux d'acquisition recommandés pour une agence IA débutante ?", options: JSON.stringify(["SEO, publicité Facebook, Instagram", "LinkedIn, cold email, réseau local", "TikTok, YouTube, podcast", "Google Ads, affiliation, webinaires"]), correctAnswer: "LinkedIn, cold email, réseau local", explanation: "Ces 3 canaux ne demandent ni budget pub ni 6 mois d'attente. LinkedIn pour la visibilité et les DMs, le cold email pour le volume, et le réseau local pour la confiance en présentiel." },
-      { type: "true_false", question: "Commencer par le SEO ou la pub payante est recommandé pour une agence IA qui démarre.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Le SEO prend 6 à 12 mois pour donner des résultats. La pub coûte cher sans avoir encore prouvé son offre. Ces deux canaux tuent les agences qui démarrent. Il vaut mieux commencer par LinkedIn, cold email et réseau local." },
-      { type: "mcq", question: "Quel est l'objectif réaliste de rendez-vous pour les 30 premiers jours de prospection ?", options: JSON.stringify(["10 à 15 rendez-vous", "2 à 3 rendez-vous", "0 rendez-vous, c'est la phase de préparation", "50 rendez-vous minimum"]), correctAnswer: "2 à 3 rendez-vous", explanation: "Les 30 premiers jours sont consacrés à LinkedIn uniquement : optimiser le profil, poster 3x/semaine, envoyer 10 DMs/jour. L'objectif réaliste est 2-3 rendez-vous découverte." },
-      { type: "true_false", question: "3 canaux d'acquisition suffisent pour passer de 0 à 5 000€/mois.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "3 canaux seulement (LinkedIn, cold email, réseau local) suffisent pour atteindre 5 000€/mois. Ils ne demandent ni budget pub ni 6 mois d'attente pour voir des résultats." },
-      { type: "mcq", question: "Vous venez de lancer votre agence IA et vous avez 0 client. Un ami vous conseille de lancer des Facebook Ads et de créer un blog SEO. Que faites-vous ?", options: JSON.stringify(["Vous suivez son conseil et investissez 500€ en pub dès la première semaine", "Vous ignorez ces canaux pour l'instant et commencez par LinkedIn (profil + posts + DMs) car c'est gratuit et les résultats viennent en 30 jours", "Vous faites les deux en même temps plus du cold email", "Vous attendez d'avoir un site web parfait avant de commencer toute prospection"]), correctAnswer: "Vous ignorez ces canaux pour l'instant et commencez par LinkedIn (profil + posts + DMs) car c'est gratuit et les résultats viennent en 30 jours", explanation: "Le SEO prend 6-12 mois et la pub coûte cher sans offre prouvée. Ces canaux tuent les agences qui démarrent. La roadmap recommande : jours 1-30 LinkedIn uniquement, puis cold email à J+31, puis réseau local à J+61. Pas de dispersion." },
-    ],
-  },
-
-  // ─── LEÇON 2 ───
-  {
-    order: 2,
-    module: 11,
-    title: "Prospection LinkedIn : de 0 à 10 prospects/jour",
-    slug: "prospection-linkedin-10-prospects-jour",
-    duration: "30 min",
-    description: "Construire une machine de prospection LinkedIn : profil qui convertit, posts qui attirent, DMs qui décro chent des rendez-vous — avec les templates exacts.",
-    content: blocks([
-      { id: "2-1", type: "heading", level: 2, text: "LinkedIn : le terrain de chasse des agences IA" },
-      { id: "2-2", type: "text", html: "<p>LinkedIn est la plateforme où se trouvent <strong>tous tes clients potentiels</strong> : directeurs, gérants de PME, responsables marketing, DRH. Ils sont connectés, ils cherchent des solutions, et ils ont l'habitude d'être démarchés professionnellement.</p><p>La plupart des agences IA font du LinkedIn à la va-vite et récoltent 0 réponse. Voici comment faire partie des rares qui convertissent.</p>" },
-      { id: "2-3", type: "separator", style: "dots" },
-
-      { id: "2-4", type: "heading", level: 2, text: "Étape 1 : Ton profil — ta vitrine commerciale" },
-      { id: "2-5", type: "steps", steps: [
+      { id: "1-13", type: "heading", level: 2, text: "LinkedIn : ton profil est ta vitrine commerciale" },
+      { id: "1-14", type: "steps", steps: [
         { title: "Photo professionnelle", description: "Fond neutre, sourire, qualité correcte. Pas de selfie flou. Pas de fond de plage. Une photo de confiance." },
         { title: "Titre accrocheur (pas ton job title)", description: "Mauvais : 'Fondateur chez XYZ Agency'. Bien : 'J'automatise les tâches répétitives des PME avec l'IA → +20% de productivité'" },
         { title: "Section 'À propos' qui vend", description: "3 paragraphes : le problème que tu règles / comment tu le règles / ce que ça apporte concrètement. Termine par un appel à l'action." },
         { title: "Section 'Services' remplie", description: "LinkedIn permet d'afficher tes services. Utilise-la. Mets 3 services avec des titres clairs et des prix indicatifs si tu veux attirer les bons leads." },
         { title: "Bannière personnalisée", description: "Crée une bannière Canva avec ta proposition de valeur. Ex : 'J'installe l'IA dans ta PME en 30 jours — Zéro technique requis de ta part'" },
       ]},
-      { id: "2-6", type: "callout", variant: "tip", html: "<strong>Test rapide :</strong> montre ton profil à quelqu'un qui ne te connaît pas. Après 10 secondes, peut-il dire ce que tu fais et pour qui ? Sinon, retravaille ton titre et ton résumé." },
-      { id: "2-7", type: "separator", style: "line" },
+      { id: "1-15", type: "callout", variant: "tip", html: "<strong>Test rapide :</strong> montre ton profil à quelqu'un qui ne te connaît pas. Après 10 secondes, peut-il dire ce que tu fais et pour qui ? Sinon, retravaille ton titre et ton résumé." },
+      { id: "1-16", type: "separator", style: "line" },
 
-      { id: "2-8", type: "heading", level: 2, text: "Étape 2 : Les posts qui attirent les clients" },
-      { id: "2-9", type: "text", html: "<p>Poster sur LinkedIn a deux objectifs : <strong>rester visible</strong> dans le fil de tes prospects et <strong>démontrer ton expertise</strong>. Tu n'as pas besoin de devenir influenceur — 3 posts par semaine suffisent.</p>" },
-      { id: "2-10", type: "comparison", headers: ["Format de post", "Objectif", "Fréquence recommandée"], rows: [
+      { id: "1-17", type: "heading", level: 2, text: "Les posts LinkedIn qui attirent les clients" },
+      { id: "1-18", type: "comparison", headers: ["Format de post", "Objectif", "Fréquence recommandée"], rows: [
         { cells: ["Cas client / résultat concret", "Preuve sociale — le plus puissant", "1x/semaine"] },
         { cells: ["Astuce IA actionnable", "Expertise + partage", "1x/semaine"] },
         { cells: ["Prise de position / opinion", "Visibilité + engagement", "1x/semaine"] },
-        { cells: ["Question à ta cible", "Interactions + identifier des leads", "Optionnel"] },
       ]},
-      { id: "2-11", type: "callout", variant: "info", html: "<strong>Formule d'accroche qui cartonne :</strong> commence toujours par une ligne de choc. Ex : 'Cette PME de 8 personnes a récupéré 12h/semaine grâce à l'IA. Voici comment.' → Stop le scroll garanti." },
-      { id: "2-12", type: "separator", style: "dots" },
+      { id: "1-19", type: "callout", variant: "info", html: "<strong>Formule d'accroche qui cartonne :</strong> commence toujours par une ligne de choc. Ex : 'Cette PME de 8 personnes a récupéré 12h/semaine grâce à l'IA. Voici comment.' → Stop le scroll garanti." },
+      { id: "1-20", type: "separator", style: "dots" },
 
-      { id: "2-13", type: "heading", level: 2, text: "Étape 3 : Les DMs qui convertissent" },
-      { id: "2-14", type: "text", html: "<p>Le DM LinkedIn, c'est l'art d'être direct sans être lourd. La règle d'or : <strong>personnalise les 2 premières lignes</strong>, puis donne de la valeur avant de demander quoi que ce soit.</p>" },
-      { id: "2-15", type: "code", language: "text", filename: "Template DM LinkedIn — Premier contact (version courte)", code: `Bonjour [Prénom],
+      { id: "1-21", type: "heading", level: 2, text: "Les DMs LinkedIn qui convertissent" },
+      { id: "1-22", type: "text", html: "<p>Le DM LinkedIn, c'est l'art d'être direct sans être lourd. La règle d'or : <strong>personnalise les 2 premières lignes</strong>, puis donne de la valeur avant de demander quoi que ce soit.</p>" },
+      { id: "1-23", type: "code", language: "text", filename: "Template DM LinkedIn — Premier contact (version courte)", code: `Bonjour [Prénom],
 
 J'ai vu ton post sur [sujet spécifique] — le point sur [élément précis] m'a vraiment parlé.
 
@@ -123,18 +78,7 @@ Je travaille avec des [secteur/type d'entreprise] pour automatiser [tâche spéc
 Est-ce que c'est un sujet qui t'intéresse en ce moment ?
 
 — [Ton prénom]` },
-      { id: "2-16", type: "code", language: "text", filename: "Template DM LinkedIn — Relance J+3 (si pas de réponse)", code: `Salut [Prénom],
-
-Je me permets de relancer rapidement — je sais que les messages LinkedIn se perdent vite.
-
-Je t'avais contacté car [entreprise] ressemble exactement au profil des clients avec qui je travaille.
-
-Si tu as 20 minutes cette semaine, je peux t'expliquer comment [résultat concret] concrètement pour [entreprise].
-
-Pas de pression, juste un échange si le timing est bon pour toi.
-
-— [Ton prénom]` },
-      { id: "2-17", type: "code", language: "text", filename: "Template DM LinkedIn — Approche avec valeur gratuite", code: `Bonjour [Prénom],
+      { id: "1-24", type: "code", language: "text", filename: "Template DM LinkedIn — Approche avec valeur gratuite", code: `Bonjour [Prénom],
 
 En regardant le site de [entreprise], j'ai repéré 3 points où l'IA pourrait vous faire gagner du temps rapidement :
 
@@ -145,37 +89,38 @@ En regardant le site de [entreprise], j'ai repéré 3 points où l'IA pourrait v
 Je peux t'envoyer un mini-audit gratuit (5 minutes à lire) si ça t'intéresse ?
 
 — [Ton prénom]` },
-      { id: "2-18", type: "callout", variant: "warning", html: "<strong>Ce qui tue les DMs :</strong> commencer par 'Je suis expert en IA et je propose mes services...'. C'est le message que tout le monde envoie. Parle toujours du PROSPECT, pas de toi." },
+      { id: "1-25", type: "callout", variant: "warning", html: "<strong>Ce qui tue les DMs :</strong> commencer par 'Je suis expert en IA et je propose mes services...'. C'est le message que tout le monde envoie. Parle toujours du PROSPECT, pas de toi." },
 
-      { id: "2-19", type: "quiz-inline", question: "Quelle est la première chose à mentionner dans un DM LinkedIn de prospection ?", options: [
+      { id: "1-26", type: "quiz-inline", question: "Quelle est la première chose à mentionner dans un DM LinkedIn de prospection ?", options: [
         { id: "a", text: "Ton titre et ton expérience" },
         { id: "b", text: "Quelque chose de personnalisé sur le prospect (son post, son entreprise, son secteur)" },
         { id: "c", text: "Ton offre et tes tarifs" },
       ], correctId: "b", explanation: "La personnalisation dans les 2 premières lignes est ce qui différencie un DM qui obtient une réponse d'un DM qui finit à la corbeille. Le prospect doit sentir que tu lui parles vraiment à lui, pas à 200 autres personnes." },
 
-      { id: "2-20", type: "checklist", title: "Checklist LinkedIn — À valider avant de prospecter", items: [
-        { id: "c1", text: "Photo pro, fond neutre, expression de confiance" },
-        { id: "c2", text: "Titre avec proposition de valeur claire (pas ton job title)" },
-        { id: "c3", text: "Section 'À propos' avec problème, solution, résultat et CTA" },
-        { id: "c4", text: "Au moins 1 post publié cette semaine" },
-        { id: "c5", text: "Liste de 50 prospects qualifiés prête (secteur + poste + entreprise)" },
-        { id: "c6", text: "Template DM personnalisable prêt" },
+      { id: "1-27", type: "separator", style: "dots" },
+      { id: "1-28", type: "checklist", title: "Actions à faire maintenant", items: [
+        { id: "c1", text: "Décide ton canal n°1 (LinkedIn recommandé pour débuter)" },
+        { id: "c2", text: "Note ta cible idéale : secteur, taille d'entreprise, poste du décideur" },
+        { id: "c3", text: "Bloque 1h par jour dans ton agenda pour la prospection" },
+        { id: "c4", text: "Optimise ton profil LinkedIn (photo, titre, à propos, bannière)" },
+        { id: "c5", text: "Écris et publie ton premier post LinkedIn" },
+        { id: "c6", text: "Identifie 50 prospects cibles et prépare ton template DM" },
         { id: "c7", text: "Objectif quotidien : 10 demandes de connexion + 5 DMs envoyés" },
       ]},
     ]),
-    exercise: "<p><strong>Exercice pratique :</strong></p><p>1. Ouvre ton profil LinkedIn et note une note de 1 à 10 sur chaque point (photo, titre, à propos, bannière).<br>2. Améliore les 2 points les moins bien notés aujourd'hui.<br>3. Écris un premier post LinkedIn en suivant cette structure : accroche choc (1 ligne) → contexte (2 lignes) → contenu valeur (5-7 lignes courtes) → conclusion + question.<br>4. Identifie 20 prospects cibles sur LinkedIn (utilise le filtre 'Personnes' avec secteur + poste) et sauvegarde leurs profils.<br>5. Personnalise et envoie 5 DMs en utilisant les templates ci-dessus.</p>",
+    exercise: "<p><strong>Exercice :</strong> Remplis cette fiche en 15 minutes puis passe à l'action LinkedIn.</p><p>1. <strong>Ma cible idéale</strong> : Secteur : ___ / Taille : ___ salariés / Décideur : ___<br>2. <strong>Mon canal n°1 pour les 30 prochains jours</strong> : ___<br>3. <strong>Mon objectif de rendez-vous à 30 jours</strong> : ___<br>4. <strong>Mon créneau prospection quotidien</strong> : de ___ à ___ heures<br><br>Puis : (5) Ouvre ton profil LinkedIn et note de 1 à 10 chaque point (photo, titre, à propos, bannière). (6) Améliore les 2 points les moins bien notés. (7) Écris un premier post : accroche choc (1 ligne) → contexte (2 lignes) → contenu valeur (5-7 lignes) → conclusion + question. (8) Identifie 20 prospects cibles et envoie 5 DMs personnalisés avec les templates ci-dessus.</p>",
     quiz: [
+      { type: "mcq", question: "Quels sont les 3 canaux d'acquisition recommandés pour une agence IA débutante ?", options: JSON.stringify(["SEO, publicité Facebook, Instagram", "LinkedIn, cold email, réseau local", "TikTok, YouTube, podcast", "Google Ads, affiliation, webinaires"]), correctAnswer: "LinkedIn, cold email, réseau local", explanation: "Ces 3 canaux ne demandent ni budget pub ni 6 mois d'attente. LinkedIn pour la visibilité et les DMs, le cold email pour le volume, et le réseau local pour la confiance en présentiel." },
+      { type: "true_false", question: "Commencer par le SEO ou la pub payante est recommandé pour une agence IA qui démarre.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Le SEO prend 6 à 12 mois pour donner des résultats. La pub coûte cher sans avoir encore prouvé son offre. Ces deux canaux tuent les agences qui démarrent." },
       { type: "mcq", question: "Quelle est la première chose à mentionner dans un DM LinkedIn de prospection ?", options: JSON.stringify(["Ton titre et ton expérience", "Quelque chose de personnalisé sur le prospect (son post, son entreprise)", "Ton offre et tes tarifs", "Un lien vers ton site web"]), correctAnswer: "Quelque chose de personnalisé sur le prospect (son post, son entreprise)", explanation: "La personnalisation dans les 2 premières lignes différencie un DM qui obtient une réponse d'un DM qui finit à la corbeille. Le prospect doit sentir que tu lui parles vraiment à lui." },
       { type: "true_false", question: "Le titre LinkedIn doit être ton job title officiel, comme 'Fondateur chez XYZ Agency'.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Le titre LinkedIn doit être une proposition de valeur, pas un job title. 'J'automatise les tâches répétitives des PME avec l'IA -> +20% de productivité' est bien meilleur que 'Fondateur chez XYZ Agency'." },
-      { type: "mcq", question: "Quelle fréquence de publication LinkedIn est recommandée pour attirer des clients ?", options: JSON.stringify(["1 post par mois", "3 posts par semaine", "1 post par jour minimum", "1 post tous les 2 mois"]), correctAnswer: "3 posts par semaine", explanation: "3 posts par semaine suffisent : 1 cas client/résultat concret, 1 astuce IA actionnable, 1 prise de position/opinion. Tu n'as pas besoin de devenir influenceur pour attirer des clients." },
-      { type: "true_false", question: "Un DM LinkedIn doit commencer par 'Je suis expert en IA et je propose mes services' pour montrer sa crédibilité.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "C'est le message que tout le monde envoie et qui finit à la corbeille. Il faut toujours parler du PROSPECT d'abord, pas de soi. Personnalise les 2 premières lignes puis donne de la valeur avant de demander quoi que ce soit." },
-      { type: "mcq", question: "Vous envoyez 20 DMs LinkedIn par jour depuis 2 semaines mais vous n'avez aucune réponse. Vos messages commencent par 'Bonjour, je suis expert en IA et je propose des chatbots'. Quel est le problème ?", options: JSON.stringify(["Vous n'envoyez pas assez de DMs, il faut passer à 100 par jour", "Vos DMs parlent de vous au lieu du prospect — il faut commencer par quelque chose de personnalisé sur lui (son post, son entreprise, son secteur)", "LinkedIn bloque vos messages car vous envoyez trop", "Le problème vient de votre photo de profil"]), correctAnswer: "Vos DMs parlent de vous au lieu du prospect — il faut commencer par quelque chose de personnalisé sur lui (son post, son entreprise, son secteur)", explanation: "Le message 'Je suis expert en...' est le DM que tout le monde envoie et qui finit à la corbeille. La personnalisation dans les 2 premières lignes (référence à un post, une actualité de l'entreprise) est ce qui différencie un DM qui obtient une réponse." },
+      { type: "mcq", question: "Vous envoyez 20 DMs LinkedIn par jour depuis 2 semaines mais vous n'avez aucune réponse. Vos messages commencent par 'Bonjour, je suis expert en IA et je propose des chatbots'. Quel est le problème ?", options: JSON.stringify(["Vous n'envoyez pas assez de DMs, il faut passer à 100 par jour", "Vos DMs parlent de vous au lieu du prospect — il faut commencer par quelque chose de personnalisé sur lui (son post, son entreprise, son secteur)", "LinkedIn bloque vos messages car vous envoyez trop", "Le problème vient de votre photo de profil"]), correctAnswer: "Vos DMs parlent de vous au lieu du prospect — il faut commencer par quelque chose de personnalisé sur lui (son post, son entreprise, son secteur)", explanation: "Le message 'Je suis expert en...' est le DM que tout le monde envoie et qui finit à la corbeille. La personnalisation dans les 2 premières lignes est ce qui différencie un DM qui obtient une réponse." },
     ],
   },
 
-  // ─── LEÇON 3 ───
+  // ─── LEÇON 2 ───
   {
-    order: 3,
+    order: 2,
     module: 11,
     title: "Cold email : la machine à rendez-vous",
     slug: "cold-email-machine-a-rendez-vous",
@@ -280,9 +225,9 @@ Bonne continuation dans tous les cas.
     ],
   },
 
-  // ─── LEÇON 4 ───
+  // ─── LEÇON 3 ───
   {
-    order: 4,
+    order: 3,
     module: 11,
     title: "L'appel de closing : convertir un prospect en client",
     slug: "appel-closing-convertir-prospect-client",
@@ -433,9 +378,9 @@ OBJECTION : "On a peur que ce soit trop complexe à mettre en place."
     ],
   },
 
-  // ─── LEÇON 5 ───
+  // ─── LEÇON 4 ───
   {
-    order: 5,
+    order: 4,
     module: 11,
     title: "Le réseau local : ton arme secrète sous-estimée",
     slug: "reseau-local-arme-secrete",
@@ -547,9 +492,9 @@ Voici mon calendrier si vous voulez qu'on trouve un créneau :
     ],
   },
 
-  // ─── LEÇON 6 ───
+  // ─── LEÇON 5 ───
   {
-    order: 6,
+    order: 5,
     module: 11,
     title: "Ton système de prospection automatisé",
     slug: "systeme-prospection-automatise",

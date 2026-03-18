@@ -2,21 +2,20 @@ import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
 
-// Import lesson data — 14 formation modules
-import { MODULE_1_LESSONS } from "./data/new_module_01";
-import { MODULE_2_LESSONS } from "./data/new_module_02";
-import { MODULE_3_LESSONS } from "./data/new_module_03";
-import { MODULE_4_LESSONS } from "./data/new_module_04";
-import { MODULE_5_LESSONS } from "./data/new_module_05";
-import { MODULE_6_LESSONS } from "./data/new_module_06";
-import { MODULE_7_LESSONS } from "./data/new_module_07";
-import { MODULE_8_LESSONS } from "./data/new_module_08";
-import { MODULE_9_LESSONS } from "./data/new_module_09";
-import { MODULE_10_LESSONS } from "./data/new_module_10";
-import { MODULE_11_LESSONS } from "./data/new_module_11";
-import { MODULE_12_LESSONS } from "./data/new_module_12";
-import { MODULE_13_LESSONS } from "./data/new_module_13";
-import { MODULE_14_LESSONS } from "./data/new_module_14";
+// Import lesson data — 13 formation modules (new structure)
+import { MODULE_1_LESSONS } from "./data/new_module_01";   // M1: Découvrir l'IA
+import { MODULE_2_LESSONS } from "./data/new_module_02";   // M2: Prompt Engineering
+import { MODULE_3_LESSONS } from "./data/new_module_03";   // M3: Sites web
+import { MODULE_4_LESSONS } from "./data/new_module_04";   // M4: Backend + APIs (merged)
+import { MODULE_6_LESSONS } from "./data/new_module_06";   // M5: Automatisations
+import { MODULE_7_LESSONS } from "./data/new_module_07";   // M6: Chatbots
+import { MODULE_8_LESSONS } from "./data/new_module_08";   // M7: Agents IA
+import { MODULE_10_LESSONS } from "./data/new_module_10";  // M8: Offre et prix
+import { MODULE_11_LESSONS } from "./data/new_module_11";  // M9: Trouver des clients
+import { MODULE_12_LESSONS } from "./data/new_module_12";  // M10: Livrer et fidéliser
+import { MODULE_9_LESSONS } from "./data/new_module_09";   // M11: Construire un MVP
+import { MODULE_13_LESSONS } from "./data/new_module_13";  // M12: Scaler → will be overridden
+import { MODULE_14_LESSONS } from "./data/new_module_14";  // M13: Juridique → will be overridden
 
 // Import masterclass data
 import { MASTERCLASS_CLAUDE_CODE_LESSONS } from "./data/masterclass_claude_code";
@@ -25,29 +24,25 @@ import { MASTERCLASS_OPENCLAW_LESSONS } from "./data/masterclass_openclaw";
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
 const prisma = new PrismaClient({ adapter });
 
-const FORMATION_LESSONS = [
-  ...MODULE_1_LESSONS,
-  ...MODULE_2_LESSONS,
-  ...MODULE_3_LESSONS,
-  ...MODULE_4_LESSONS,
-  ...MODULE_5_LESSONS,
-  ...MODULE_6_LESSONS,
-  ...MODULE_7_LESSONS,
-  ...MODULE_8_LESSONS,
-  ...MODULE_9_LESSONS,
-  ...MODULE_10_LESSONS,
-  ...MODULE_11_LESSONS,
-  ...MODULE_12_LESSONS,
-  ...MODULE_13_LESSONS,
-  ...MODULE_14_LESSONS,
+// Map file imports to NEW module order (1-13 formation + 14-15 masterclass)
+// Each array is [lessons, targetModuleIndex (0-based)]
+const MODULE_MAP: [any[], number][] = [
+  [MODULE_1_LESSONS, 0],     // M1: Découvrir l'IA
+  [MODULE_2_LESSONS, 1],     // M2: Prompt Engineering
+  [MODULE_3_LESSONS, 2],     // M3: Sites web
+  [MODULE_4_LESSONS, 3],     // M4: Backend + APIs
+  [MODULE_6_LESSONS, 4],     // M5: Automatisations (was M6)
+  [MODULE_7_LESSONS, 5],     // M6: Chatbots (was M7)
+  [MODULE_8_LESSONS, 6],     // M7: Agents (was M8)
+  [MODULE_10_LESSONS, 7],    // M8: Offre et prix (was M10)
+  [MODULE_11_LESSONS, 8],    // M9: Trouver des clients (was M11)
+  [MODULE_12_LESSONS, 9],    // M10: Livrer et fidéliser (was M12)
+  [MODULE_9_LESSONS, 10],    // M11: Construire un MVP (was M9)
+  [MODULE_13_LESSONS, 11],   // M12: Scaler (was M13)
+  [MODULE_14_LESSONS, 12],   // M13: Juridique (was M14)
+  [MASTERCLASS_CLAUDE_CODE_LESSONS, 13], // M14: Claude Code
+  [MASTERCLASS_OPENCLAW_LESSONS, 14],    // M15: OpenClaw
 ];
-
-const MASTERCLASS_LESSONS = [
-  ...MASTERCLASS_CLAUDE_CODE_LESSONS,
-  ...MASTERCLASS_OPENCLAW_LESSONS,
-];
-
-const ALL_LESSONS = [...FORMATION_LESSONS, ...MASTERCLASS_LESSONS];
 
 function makeQuiz(lessonOrder: number): Array<{ type: string; question: string; options: string; correctAnswer: string; explanation: string; order: number }> {
   const defaultQuiz = [
@@ -69,8 +64,8 @@ function makeQuiz(lessonOrder: number): Array<{ type: string; question: string; 
 }
 
 async function main() {
-  const totalModules = 14 + 2; // 14 formation + 2 masterclasses
-  console.log(`Seeding database with ${ALL_LESSONS.length} lessons across ${totalModules} modules...`);
+  const totalModules = 13 + 2; // 13 formation + 2 masterclasses
+  console.log(`Seeding database with ${MODULE_MAP.reduce((s, [l]) => s + l.length, 0)} lessons across ${totalModules} modules...`);
 
   // Clean all data — use TRUNCATE CASCADE for PostgreSQL
   const tables = ["Referral","PipelineDeal","CoachingSession","Streak","QuizSubmission","LessonProgress","Enrollment","QuizQuestion","Quiz","Lesson","Module","User"];
@@ -94,41 +89,39 @@ async function main() {
   console.log(`Student: ${student.email} / test123`);
 
   // ═══════════════════════════════════════════════════
-  // 14 FORMATION MODULES
+  // 13 FORMATION MODULES + 2 MASTERCLASSES
   // ═══════════════════════════════════════════════════
-  const formationModules = await Promise.all([
-    prisma.module.create({ data: { title: "Découvrir l'IA & les opportunités", description: "Comprendre l'IA, les outils, et le potentiel business d'une agence IA", order: 1, category: "formation" } }),
-    prisma.module.create({ data: { title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", order: 2, category: "formation" } }),
-    prisma.module.create({ data: { title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne, même sans savoir coder", order: 3, category: "formation" } }),
-    prisma.module.create({ data: { title: "Backend & Bases de données", description: "Supabase : donner un cerveau et une mémoire à tes projets", order: 4, category: "formation" } }),
-    prisma.module.create({ data: { title: "APIs & Intégrations", description: "Connecter les outils entre eux : Stripe, webhooks, APIs", order: 5, category: "formation" } }),
-    prisma.module.create({ data: { title: "Automatisations", description: "Make, n8n, Zapier : créer des machines qui bossent pour toi", order: 6, category: "formation" } }),
-    prisma.module.create({ data: { title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", order: 7, category: "formation" } }),
-    prisma.module.create({ data: { title: "Agents IA autonomes", description: "Des IA qui travaillent seules : veille, prospection, analyse", order: 8, category: "formation" } }),
-    prisma.module.create({ data: { title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", order: 9, category: "formation" } }),
-    prisma.module.create({ data: { title: "Ton offre & tes prix", description: "Passer de \"je sais faire\" à \"je vends\"", order: 10, category: "formation" } }),
-    prisma.module.create({ data: { title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing", order: 11, category: "formation" } }),
-    prisma.module.create({ data: { title: "Livrer & fidéliser", description: "Un client satisfait = 3 clients en plus", order: 12, category: "formation" } }),
-    prisma.module.create({ data: { title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", order: 13, category: "formation" } }),
-    prisma.module.create({ data: { title: "Juridique, contrats & admin", description: "Statuts, contrats, RGPD, facturation et assurances", order: 14, category: "formation" } }),
-  ]);
+  const modules = [];
+  const moduleDefinitions = [
+    { title: "Découvrir l'IA et lancer ton agence", description: "Comprendre l'IA, les outils, et poser les bases de ton business", order: 1 },
+    { title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", order: 2 },
+    { title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne + ton portfolio", order: 3 },
+    { title: "Backend, Supabase et APIs", description: "Base de données, auth, paiements et webhooks", order: 4 },
+    { title: "Automatisations", description: "Make, n8n : créer des machines qui bossent pour toi", order: 5 },
+    { title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", order: 6 },
+    { title: "Agents IA", description: "Des IA autonomes : veille, analyse et actions", order: 7 },
+    { title: "Ton offre et tes prix", description: "De \"je sais faire\" à \"je vends\" — ton premier client", order: 8 },
+    { title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing et upselling", order: 9 },
+    { title: "Livrer et fidéliser", description: "Process de livraison, retainers et témoignages", order: 10 },
+    { title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", order: 11 },
+    { title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", order: 12 },
+    { title: "Juridique, contrats et admin", description: "Statuts, contrats, RGPD et facturation", order: 13 },
+    { title: "Masterclass Claude Code", description: "Coder avec Claude directement dans ton terminal", order: 14 },
+    { title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", order: 15 },
+  ];
 
-  // ═══════════════════════════════════════════════════
-  // 2 MASTERCLASSES
-  // ═══════════════════════════════════════════════════
-  const masterclassModules = await Promise.all([
-    prisma.module.create({ data: { title: "Masterclass Claude Code", description: "Ton environnement de dev IA : coder avec Claude directement dans ton terminal", order: 15, category: "masterclass" } }),
-    prisma.module.create({ data: { title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", order: 16, category: "masterclass" } }),
-  ]);
+  for (const def of moduleDefinitions) {
+    const mod = await prisma.module.create({ data: { title: def.title, description: def.description, order: def.order } });
+    modules.push(mod);
+  }
 
-  const modules = [...formationModules, ...masterclassModules];
-  console.log(`${modules.length} modules created (${formationModules.length} formation + ${masterclassModules.length} masterclasses)`);
+  console.log(`${modules.length} modules created`);
 
-  // Lessons + Quizzes
+  // Lessons + Quizzes — use MODULE_MAP to assign lessons to correct modules
   let lessonCount = 0;
-  for (const lessonData of ALL_LESSONS) {
-    const moduleIdx = lessonData.module - 1;
-    const lesson = await prisma.lesson.create({
+  for (const [lessons, moduleIdx] of MODULE_MAP) {
+    for (const lessonData of lessons) {
+      const lesson = await prisma.lesson.create({
       data: {
         title: lessonData.title,
         slug: lessonData.slug,
@@ -163,6 +156,7 @@ async function main() {
     }
 
     lessonCount++;
+    }
   }
 
   console.log(`${lessonCount} lessons created with quizzes`);

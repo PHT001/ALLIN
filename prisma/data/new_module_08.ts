@@ -1,17 +1,17 @@
 // ═══════════════════════════════════════════════════
-// MODULE 8 — Agents IA autonomes
-// 5 leçons — Format JSON blocs
+// MODULE 7 — Agents IA autonomes
+// 4 leçons — Format JSON blocs
 // ═══════════════════════════════════════════════════
 
 function blocks(b: object[]): string {
   return JSON.stringify(b);
 }
 
-export const MODULE_8_LESSONS = [
+export const MODULE_7_LESSONS = [
   // ─── LEÇON 1 ───
   {
     order: 1,
-    module: 8,
+    module: 7,
     title: "Chatbot vs Agent : quelle différence ?",
     slug: "chatbot-vs-agent-ia-difference",
     duration: "20 min",
@@ -85,7 +85,7 @@ export const MODULE_8_LESSONS = [
   // ─── LEÇON 2 ───
   {
     order: 2,
-    module: 8,
+    module: 7,
     title: "Les frameworks d'agents : LangChain, CrewAI, Claude Tools",
     slug: "frameworks-agents-langchain-crewai-claude-tools",
     duration: "25 min",
@@ -240,7 +240,7 @@ while True:
   // ─── LEÇON 3 ───
   {
     order: 3,
-    module: 8,
+    module: 7,
     title: "Créer un agent de veille concurrentielle",
     slug: "agent-veille-concurrentielle-scraping",
     duration: "30 min",
@@ -499,106 +499,7 @@ if __name__ == "__main__":
     ],
   },
 
-  // ─── LEÇON 4 ───
-  {
-    order: 4,
-    module: 8,
-    title: "Agent de prospection LinkedIn automatisé",
-    slug: "agent-prospection-linkedin-automatise",
-    duration: "30 min",
-    description: "Construire un agent complet de prospection : scraping de profils, enrichissement des données, génération de messages ultra-personnalisés et workflow d'envoi.",
-    content: blocks([
-      { id: "4-1", type: "heading", level: 2, text: "La prospection manuelle : un gouffre de temps" },
-      { id: "4-2", type: "text", html: "<p>Un commercial passe en moyenne <strong>3 à 4 heures par jour</strong> sur LinkedIn : chercher des profils, les qualifier, écrire des messages. Sur 100 messages envoyés, 10% répondent, 2% convertissent. C'est mathématiquement un problème d'échelle — il faut envoyer plus, plus vite, sans perdre la personnalisation.</p><p>C'est là qu'un agent IA change complètement la donne. En automatisant la recherche, l'enrichissement et la génération de messages, tu passes de 20 prospects/jour à 200+, avec des messages <em>plus</em> personnalisés que ce qu'un humain ferait.</p>" },
-      { id: "4-3", type: "callout", variant: "tip", html: "<strong>Use case agence :</strong> Propose ce service à des PME B2B pour 800-2 000€/mois. Tu gères l'agent, ils reçoivent des leads qualifiés chaque semaine. Revenu récurrent, faible effort de maintenance." },
-      { id: "4-4", type: "separator", style: "dots" },
-
-      { id: "4-5", type: "heading", level: 2, text: "Architecture du workflow de prospection" },
-      { id: "4-6", type: "diagram", variant: "flow", nodes: [
-        { id: "n1", label: "Critères ICP", description: "Titre, secteur, taille entreprise, localisation" },
-        { id: "n2", label: "search_linkedin_profiles()", description: "Recherche via SalesNav API ou scraping avec Proxycurl" },
-        { id: "n3", label: "enrich_profile()", description: "Récupère email pro, infos entreprise, activité récente" },
-        { id: "n4", label: "score_lead()", description: "Score de 1-10 basé sur les critères ICP (Claude)" },
-        { id: "n5", label: "generate_message()", description: "Message personnalisé basé sur le profil (Claude)" },
-        { id: "n6", label: "save_to_crm()", description: "Création du contact dans HubSpot/Notion/Airtable" },
-        { id: "n7", label: "schedule_outreach()", description: "Ajout à la séquence d'envoi (Lemlist, Reply.io...)" },
-      ]},
-      { id: "4-7", type: "separator", style: "line" },
-
-      { id: "4-8", type: "heading", level: 2, text: "Le code complet de l'agent" },
-      { id: "4-9", type: "code", language: "python", filename: "linkedin_prospecting_agent.py", code: `import anthropic
-import json
-import random
-from datetime import datetime
-
-client = anthropic.Anthropic()
-
-# ── Simulation de données LinkedIn (en prod : Proxycurl API) ──
-
-MOCK_PROFILES = [
-    {
-        "id": "prof_001",
-        "full_name": "Sophie Martin",
-        "headline": "Directrice Marketing | SaaS B2B | Growth",
-        "company": "TechFlow SAS",
-        "company_size": "50-200",
-        "location": "Paris",
-        "recent_post": "Super conférence hier sur l'automatisation marketing. On a encore du chemin à faire dans nos équipes !",
-        "email": "sophie.martin@techflow.fr",
-        "linkedin_url": "https://linkedin.com/in/sophie-martin-techflow"
-    },
-    {
-        "id": "prof_002",
-        "full_name": "Marc Dubois",
-        "headline": "CEO & Co-founder | Startup fintech | Scaling",
-        "company": "PayZen",
-        "company_size": "10-50",
-        "location": "Lyon",
-        "recent_post": "On vient de lever notre Série A. On recrute des commerciaux seniors — beaucoup de travail à venir.",
-        "email": "marc@payzen.io",
-        "linkedin_url": "https://linkedin.com/in/marc-dubois-payzen"
-    },
-]
-
-# ── Fonctions outils ───────────────────────────────────────
-
-def search_linkedin_profiles(job_title: str, industry: str, location: str, limit: int = 10) -> dict:
-    """En prod : appel à l'API Proxycurl ou PhantomBuster"""
-    print(f"  [search] {job_title} | {industry} | {location}")
-    profiles = [p for p in MOCK_PROFILES if location.lower() in p["location"].lower()]
-    return {
-        "profiles": profiles[:limit],
-        "total_found": len(profiles),
-        "query": f"{job_title} in {industry}"
-    }
-
-
-def enrich_profile(profile_id: str) -> dict:
-    """Enrichit un profil avec des données supplémentaires"""
-    profile = next((p for p in MOCK_PROFILES if p["id"] == profile_id), None)
-    if not profile:
-        return {"error": "Profil introuvable"}
-
-    # En prod : appel Clearbit, Hunter.io, ou Proxycurl pour l'email
-    return {
-        **profile,
-        "email_verified": True,
-        "company_revenue": "2-10M€",
-        "technologies_used": ["HubSpot", "Slack", "Notion"],
-        "mutual_connections": random.randint(0, 15)
-    }
-
-
-def score_lead(profile_data: dict, icp_criteria: dict) -> dict:
-    """Calcule un score de qualification du lead (0-10)"""
-    score = 0
-    reasons = []
-
-    # Titre correspond ?
-    if any(t.lower() in profile_data.get("headline", "").lower()
-           for t in icp_criteria.get("target_titles", [])):
-        score += 3
-        reasons.append("Titre cible ✓")
+  // ─── __LINKEDIN_R4__ ───
 
     # Taille d'entreprise ?
     if profile_data.get("company_size") in icp_criteria.get("company_sizes", []):
@@ -620,18 +521,7 @@ def score_lead(profile_data: dict, icp_criteria: dict) -> dict:
         score += 2
         reasons.append("Activité LinkedIn récente")
 
-    return {"score": min(score, 10), "reasons": reasons, "qualified": score >= 5}
-
-
-def generate_personalized_message(profile_data: dict, sender_context: str) -> dict:
-    """Génère un message LinkedIn personnalisé via Claude"""
-    # Note : ceci est un appel Claude DANS l'agent Claude (nested)
-    # En prod tu peux utiliser claude-haiku pour réduire les coûts
-    msg_response = client.messages.create(
-        model="claude-haiku-4-5",
-        max_tokens=500,
-        messages=[{
-            "role": "user",
+  // ─── __LINKEDIN_R9__ ───
             "content": f"""Rédige un message LinkedIn de connexion pour ce prospect.
 
 PROFIL DU PROSPECT :
@@ -678,199 +568,10 @@ def save_to_crm(profile_data: dict, score_data: dict, message: str) -> dict:
     return {"status": "saved", "contact_id": contact["id"]}
 
 
-# ── Définition des outils Claude ──────────────────────────
-
-TOOLS = [
-    {
-        "name": "search_linkedin_profiles",
-        "description": "Recherche des profils LinkedIn selon des critères ICP",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "job_title": {"type": "string", "description": "Titre de poste cible (ex: 'Directeur Marketing')"},
-                "industry": {"type": "string", "description": "Secteur d'activité"},
-                "location": {"type": "string", "description": "Ville ou région"},
-                "limit": {"type": "integer", "description": "Nombre de profils à retourner", "default": 10}
-            },
-            "required": ["job_title", "industry", "location"]
-        }
-    },
-    {
-        "name": "enrich_profile",
-        "description": "Enrichit un profil avec email, données entreprise et technologies utilisées",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "profile_id": {"type": "string", "description": "ID du profil à enrichir"}
-            },
-            "required": ["profile_id"]
-        }
-    },
-    {
-        "name": "score_lead",
-        "description": "Calcule un score de qualification (0-10) pour un lead",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "profile_data": {"type": "object", "description": "Données complètes du profil"},
-                "icp_criteria": {
-                    "type": "object",
-                    "description": "Critères ICP : target_titles, company_sizes, industries"
-                }
-            },
-            "required": ["profile_data", "icp_criteria"]
-        }
-    },
-    {
-        "name": "generate_personalized_message",
-        "description": "Génère un message LinkedIn personnalisé pour le prospect",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "profile_data": {"type": "object", "description": "Données du profil enrichi"},
-                "sender_context": {"type": "string", "description": "Contexte sur l'expéditeur et sa proposition de valeur"}
-            },
-            "required": ["profile_data", "sender_context"]
-        }
-    },
-    {
-        "name": "save_to_crm",
-        "description": "Sauvegarde le contact qualifié dans le CRM avec le message draft",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "profile_data": {"type": "object"},
-                "score_data": {"type": "object"},
-                "message": {"type": "string"}
-            },
-            "required": ["profile_data", "score_data", "message"]
-        }
-    }
-]
-
-
-def execute_tool(name: str, input_data: dict) -> str:
-    dispatch = {
-        "search_linkedin_profiles": lambda: search_linkedin_profiles(**input_data),
-        "enrich_profile": lambda: enrich_profile(**input_data),
-        "score_lead": lambda: score_lead(**input_data),
-        "generate_personalized_message": lambda: generate_personalized_message(**input_data),
-        "save_to_crm": lambda: save_to_crm(**input_data),
-    }
-    fn = dispatch.get(name)
-    return json.dumps(fn() if fn else {"error": f"Outil inconnu: {name}"}, ensure_ascii=False)
-
-
-# ── Agent principal ────────────────────────────────────────
-
-def run_prospecting_agent(campaign_config: dict):
-    messages = [{
-        "role": "user",
-        "content": f"""Lance une campagne de prospection LinkedIn avec ces paramètres :
-
-CIBLE :
-- Titre : {campaign_config['target_title']}
-- Secteur : {campaign_config['industry']}
-- Localisation : {campaign_config['location']}
-- Taille entreprise : {campaign_config['company_sizes']}
-
-EXPÉDITEUR :
-{campaign_config['sender_context']}
-
-PROCESSUS :
-1. Cherche les profils correspondants
-2. Pour chaque profil : enrichis les données
-3. Score le lead avec les critères ICP
-4. Si score >= 5 : génère un message personnalisé
-5. Sauvegarde les leads qualifiés dans le CRM
-6. Présente un résumé de la campagne à la fin"""
-    }]
-
-    icp = {
-        "target_titles": campaign_config["target_title"].split(","),
-        "company_sizes": campaign_config["company_sizes"]
-    }
-
-    while True:
-        response = client.messages.create(
-            model="claude-opus-4-5",
-            max_tokens=8096,
-            tools=TOOLS,
-            messages=messages
-        )
-
-        if response.stop_reason == "end_turn":
-            summary = next((b.text for b in response.content if hasattr(b, "text")), "")
-            print("\\n✅ Campagne terminée")
-            print(summary)
-            break
-
-        if response.stop_reason == "tool_use":
-            messages.append({"role": "assistant", "content": response.content})
-            tool_results = []
-            for block in response.content:
-                if block.type == "tool_use":
-                    print(f"  → {block.name}")
-                    result = execute_tool(block.name, block.input)
-                    tool_results.append({
-                        "type": "tool_result",
-                        "tool_use_id": block.id,
-                        "content": result
-                    })
-            messages.append({"role": "user", "content": tool_results})
-
-
-if __name__ == "__main__":
-    run_prospecting_agent({
-        "target_title": "Directeur Marketing, CMO, Head of Growth",
-        "industry": "SaaS B2B",
-        "location": "Paris",
-        "company_sizes": ["10-50", "50-200"],
-        "sender_context": "Je suis consultant IA spécialisé en automatisation marketing. J'aide les équipes SaaS à multiplier par 3 leur pipeline avec des agents IA. J'ai récemment aidé une startup fintech à passer de 50 à 200 leads qualifiés/semaine."
-    })
-` },
-      { id: "4-10", type: "callout", variant: "info", html: "<strong>APIs recommandées en production :</strong> <a href='https://proxycurl.com'>Proxycurl</a> pour les données LinkedIn (~0.01$ par profil), <a href='https://hunter.io'>Hunter.io</a> pour les emails, et <a href='https://www.lemlist.com'>Lemlist</a> ou <a href='https://reply.io'>Reply.io</a> pour l'envoi séquencé automatique." },
-      { id: "4-11", type: "separator", style: "dots" },
-
-      { id: "4-12", type: "heading", level: 2, text: "Respecter les limites de LinkedIn" },
-      { id: "4-13", type: "steps", steps: [
-        { title: "Limites natives LinkedIn", description: "Compte gratuit : 100 connexions/semaine. Sales Navigator : 2500 messages InMail/mois. Ne jamais dépasser ces limites pour éviter le ban." },
-        { title: "Utiliser des APIs officielles", description: "Proxycurl utilise des méthodes conformes aux CGU. Évite les outils qui utilisent ta session LinkedIn directement (Phantombuster peut triggrer des bans)." },
-        { title: "Qualité > Quantité", description: "Un agent qui envoie 30 messages ultra-personnalisés vaut mieux que 300 messages génériques. LinkedIn pénalise les faibles taux d'acceptation." },
-        { title: "Warm-up du compte", description: "Sur un nouveau compte, commence par 10-20 connexions/jour pendant 2 semaines avant de monter en volume." },
-      ]},
-      { id: "4-14", type: "separator", style: "line" },
-
-      { id: "4-15", type: "quiz-inline", question: "Pourquoi utilise-t-on claude-haiku dans generate_personalized_message plutôt que claude-opus ?", options: [
-        { id: "a", text: "Haiku est plus créatif pour les messages courts" },
-        { id: "b", text: "Haiku est 10-20x moins cher et suffisant pour une tâche de génération courte" },
-        { id: "c", text: "Opus ne peut pas générer des messages LinkedIn" },
-        { id: "d", text: "Haiku a une meilleure connaissance de LinkedIn" },
-      ], correctId: "b", explanation: "claude-haiku est 10 à 20 fois moins cher que claude-opus pour des performances similaires sur des tâches simples comme la génération de messages courts. Dans un agent qui traite des centaines de profils, l'optimisation des coûts par modèle est cruciale." },
-
-      { id: "4-16", type: "checklist", title: "Agent de prospection : prêt pour la prod", items: [
-        { id: "c1", text: "Les critères ICP sont clairement définis (titre, secteur, taille, localisation)" },
-        { id: "c2", text: "Le scoring des leads filtre automatiquement les non-qualifiés" },
-        { id: "c3", text: "Les messages générés font moins de 300 caractères (limite LinkedIn)" },
-        { id: "c4", text: "Les données sont sauvegardées dans le CRM avec le message draft" },
-        { id: "c5", text: "Le volume d'envoi respecte les limites LinkedIn (< 100/semaine en gratuit)" },
-        { id: "c6", text: "Le coût par lead est optimisé (haiku pour la génération de messages)" },
-      ]},
-    ]),
-    exercise: "<h3>Exercice : Personnalise l'agent pour un vrai client</h3><p>Prends le code et adapte la campagne pour un secteur réel : choisissez un type d'entreprise que tu connais (agences web, restaurants, cabinets RH...). Modifie les <code>MOCK_PROFILES</code> pour qu'ils reflètent ce secteur. Lance l'agent et observe les messages générés. Sont-ils vraiment personnalisés ? Ajuste le prompt de <code>generate_personalized_message</code> jusqu'à obtenir des messages que tu enverrais toi-même. Mesure ensuite le coût de la campagne en tokens.</p>",
-    quiz: [
-      { type: "mcq", question: "Pourquoi utilise-t-on claude-haiku plutôt que claude-opus dans la fonction generate_personalized_message ?", options: JSON.stringify(["Haiku est plus créatif pour les messages courts", "Haiku est 10-20x moins cher et suffisant pour une tâche de génération simple", "Opus ne sait pas générer de messages LinkedIn", "Haiku a accès aux données LinkedIn"]), correctAnswer: "Haiku est 10-20x moins cher et suffisant pour une tâche de génération simple", explanation: "Dans un agent qui traite des centaines de profils, l'optimisation des coûts par modèle est cruciale. Claude-haiku est 10 à 20 fois moins cher que Claude-opus avec des performances similaires sur des tâches simples comme la génération de messages courts." },
-      { type: "true_false", question: "Sur LinkedIn, un compte gratuit peut envoyer jusqu'à 500 connexions par semaine sans risque de ban.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La limite sur un compte gratuit LinkedIn est de 100 connexions par semaine. Dépasser cette limite risque un ban du compte. Il faut aussi faire un warm-up progressif sur les nouveaux comptes (10-20 connexions/jour pendant 2 semaines)." },
-      { type: "mcq", question: "Quel est le workflow complet de l'agent de prospection dans le bon ordre ?", options: JSON.stringify(["Enrichir → Chercher → Scorer → Envoyer → Sauvegarder", "Chercher profils → Enrichir données → Scorer le lead → Générer message → Sauvegarder dans CRM", "Sauvegarder → Chercher → Enrichir → Scorer → Générer", "Générer message → Chercher profils → Enrichir → Scorer → Sauvegarder"]), correctAnswer: "Chercher profils → Enrichir données → Scorer le lead → Générer message → Sauvegarder dans CRM", explanation: "L'agent suit un workflow logique : d'abord rechercher les profils correspondant aux critères ICP, enrichir avec des données supplémentaires, scorer pour qualifier le lead (score >= 5), puis générer un message personnalisé et sauvegarder dans le CRM." },
-      { type: "true_false", question: "Un agent de prospection qui envoie 300 messages génériques est plus efficace qu'un agent qui envoie 30 messages ultra-personnalisés.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "LinkedIn pénalise les faibles taux d'acceptation. 30 messages ultra-personnalisés avec un bon taux de réponse valent beaucoup plus que 300 messages génériques qui risquent de faire bannir le compte et qui ont un taux de conversion très faible." },
-      { type: "mcq", question: "Quel service est recommandé en production pour récupérer les données de profils LinkedIn ?", options: JSON.stringify(["Scraper directement LinkedIn avec Selenium", "Utiliser l'API Proxycurl (~0.01$/profil)", "Copier-coller manuellement les profils", "Utiliser uniquement l'API gratuite de LinkedIn"]), correctAnswer: "Utiliser l'API Proxycurl (~0.01$/profil)", explanation: "Proxycurl utilise des méthodes conformes aux CGU de LinkedIn à environ 0.01$ par profil. Scraper directement LinkedIn avec la session utilisateur (PhantomBuster, Selenium) peut déclencher des bans de compte." },
-    ],
-  },
-
-  // ─── LEÇON 5 ───
+  // ─── LEÇON 4 ───
   {
-    order: 5,
-    module: 8,
+    order: 4,
+    module: 7,
     title: "Projet : un agent multi-outils déployé",
     slug: "projet-agent-multi-outils-deploye",
     duration: "25 min",

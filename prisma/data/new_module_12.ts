@@ -1481,4 +1481,341 @@ maintenance. Ça t'intéresse ?"`,
       { type: "mcq", question: "Quel est le forfait maintenance intermédiaire (Business) en termes de support inclus et de délai de réponse ?", options: JSON.stringify(["1h/mois de support, réponse sous 48h", "3h/mois de support, réponse sous 24h ouvrés", "8h/mois de support, réponse sous 4h", "Support illimité, réponse immédiate"]), correctAnswer: "3h/mois de support, réponse sous 24h ouvrés", explanation: "Le forfait Business à 349€/mois inclut 3h de support par mois avec un délai de réponse de 24h ouvrés. C'est le forfait recommandé pour les e-commerces et les chatbots, entre l'Essentiel (1h, 48h) et le Premium (8h, 4h)." },
     ],
   },
+  // ─── LEÇON 6 ───
+  {
+    order: 6,
+    module: 12,
+    title: "Revenus récurrents : comment atteindre 10K en MRR",
+    slug: "revenus-recurrents-10k-mrr",
+    duration: "30 min",
+    description: "Les maths pour atteindre 10 000€/mois de revenus récurrents : mix one-shot et retainer, projection à 6 mois, et les 4 métriques clés (MRR, churn, LTV, CAC) pour piloter ta croissance.",
+    content: blocks([
+      {
+        id: "6-1",
+        type: "heading",
+        level: 2,
+        text: "10K€/mois : les maths derrière l'objectif",
+      },
+      {
+        id: "6-2",
+        type: "text",
+        html: "<p>10 000€ de MRR (Monthly Recurring Revenue) est le seuil qui change la vie d'une agence IA. En dessous, tu survis. Au-dessus, tu construis. Mais ce chiffre fait peur parce que la plupart des gens ne décomposent jamais les maths. Quand tu le fais, l'objectif devient concret — et atteignable.</p><p>La question n'est pas <em>'comment gagner 10K/mois'</em>, c'est <strong>'combien de clients à quel tarif'</strong>.</p>",
+      },
+      {
+        id: "6-3",
+        type: "comparison",
+        headers: ["Scénario", "Nombre de clients", "Retainer mensuel", "MRR total"],
+        rows: [
+          {
+            cells: ["Scénario A : Premium", "3 clients", "3 300€/mois", "9 900€"],
+          },
+          {
+            cells: ["Scénario B : Standard", "5 clients", "2 000€/mois", "10 000€"],
+          },
+          {
+            cells: ["Scénario C : Volume", "10 clients", "1 000€/mois", "10 000€"],
+          },
+          {
+            cells: ["Scénario D : Mix", "3 × 2K + 4 × 1K", "Mix", "10 000€"],
+          },
+        ],
+      },
+      {
+        id: "6-4",
+        type: "callout",
+        variant: "info",
+        html: "<strong>Le scénario le plus réaliste :</strong> Le scénario D (mix) est celui qui fonctionne pour la majorité des agences IA. 3 clients à 2 000€/mois (chatbot + automatisation + maintenance) et 4 clients à 1 000€/mois (maintenance + support). C'est 7 clients au total — parfaitement gérable en solo ou avec un assistant.",
+      },
+      {
+        id: "6-5",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "6-6",
+        type: "heading",
+        level: 2,
+        text: "Le mix one-shot + récurrent : la formule gagnante",
+      },
+      {
+        id: "6-7",
+        type: "text",
+        html: "<p>L'erreur classique est de vouloir passer à 100% de récurrent du jour au lendemain. Le modèle réaliste est un <strong>mix one-shot (projets) + récurrent (retainers)</strong> qui évolue progressivement vers plus de récurrent.</p>",
+      },
+      {
+        id: "6-8",
+        type: "comparison",
+        headers: ["Phase", "One-shot (projets)", "Récurrent (retainers)", "CA mensuel estimé"],
+        rows: [
+          {
+            cells: ["Mois 1-3 (lancement)", "80%", "20%", "2 000-4 000€"],
+          },
+          {
+            cells: ["Mois 4-6 (transition)", "50%", "50%", "5 000-7 000€"],
+          },
+          {
+            cells: ["Mois 7-9 (maturité)", "30%", "70%", "7 000-10 000€"],
+          },
+          {
+            cells: ["Mois 10-12 (scale)", "20%", "80%", "10 000-15 000€"],
+          },
+        ],
+      },
+      {
+        id: "6-9",
+        type: "callout",
+        variant: "tip",
+        html: "<strong>Stratégie clé :</strong> chaque projet one-shot doit se transformer en contrat récurrent. Tu livres un chatbot à 2 000€ → tu proposes la maintenance à 300€/mois. Tu automatises un process à 3 000€ → tu proposes le monitoring + évolutions à 500€/mois. Le one-shot finance ton acquisition, le récurrent construit ta stabilité.",
+      },
+      {
+        id: "6-10",
+        type: "separator",
+        style: "line",
+      },
+      {
+        id: "6-11",
+        type: "heading",
+        level: 2,
+        text: "Projection financière à 6 mois",
+      },
+      {
+        id: "6-12",
+        type: "text",
+        html: "<p>Voici une projection réaliste pour atteindre 10K€/mois en partant de zéro, basée sur 2 nouveaux clients par mois avec un taux de conversion de 60% en contrat de maintenance.</p>",
+      },
+      {
+        id: "6-13",
+        type: "comparison",
+        headers: ["Mois", "Nouveaux clients", "Projets one-shot", "Nouveaux retainers", "MRR cumulé", "CA total du mois"],
+        rows: [
+          {
+            cells: ["Mois 1", "2", "2 × 2 000€ = 4 000€", "+1 × 300€", "300€", "4 300€"],
+          },
+          {
+            cells: ["Mois 2", "2", "2 × 2 500€ = 5 000€", "+1 × 400€", "700€", "5 700€"],
+          },
+          {
+            cells: ["Mois 3", "2", "1 × 3 000€ + 1 × 1 500€", "+2 × 350€", "1 400€", "5 900€"],
+          },
+          {
+            cells: ["Mois 4", "3", "2 × 2 000€ + 1 × 3 500€", "+2 × 500€", "2 400€", "9 900€"],
+          },
+          {
+            cells: ["Mois 5", "2", "1 × 3 000€ + 1 × 2 000€", "+2 × 400€", "3 200€", "8 200€"],
+          },
+          {
+            cells: ["Mois 6", "2", "2 × 2 500€ = 5 000€", "+1 × 500€", "3 700€", "8 700€"],
+          },
+        ],
+      },
+      {
+        id: "6-14",
+        type: "callout",
+        variant: "warning",
+        html: "<strong>Attention au piège de la croissance linéaire :</strong> cette projection suppose 0% de churn (aucun client ne part). En réalité, tu perdras 5-10% de tes clients récurrents par mois. C'est pour ça que tu dois toujours signer plus de retainers que tu n'en perds. La formule magique : <strong>nouveaux retainers par mois > churn par mois</strong>. Si tu signes 2 retainers/mois et perds 0,5/mois, ton MRR net grandit de 1,5 retainer par mois.",
+      },
+      {
+        id: "6-15",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "6-16",
+        type: "heading",
+        level: 2,
+        text: "Les 4 métriques qui pilotent tout",
+      },
+      {
+        id: "6-17",
+        type: "text",
+        html: "<p>Tu ne peux pas améliorer ce que tu ne mesures pas. Ces 4 métriques sont ta boussole financière. Mets-les à jour chaque 1er du mois dans un Google Sheet simple.</p>",
+      },
+      {
+        id: "6-18",
+        type: "comparison",
+        headers: ["Métrique", "Définition", "Comment la calculer", "Objectif cible"],
+        rows: [
+          {
+            cells: [
+              "MRR (Monthly Recurring Revenue)",
+              "Revenus récurrents mensuels garantis",
+              "Somme de tous les retainers actifs",
+              "10 000€/mois à 12 mois",
+            ],
+          },
+          {
+            cells: [
+              "Churn rate (taux d'attrition)",
+              "% de clients récurrents qui partent chaque mois",
+              "(Clients perdus ce mois / Clients récurrents début de mois) × 100",
+              "< 5%/mois (idéal : < 3%)",
+            ],
+          },
+          {
+            cells: [
+              "LTV (Lifetime Value)",
+              "Revenu total moyen généré par un client sur toute la relation",
+              "Retainer mensuel moyen × (1 / churn rate mensuel) + panier one-shot moyen",
+              "> 5 000€ par client",
+            ],
+          },
+          {
+            cells: [
+              "CAC (Customer Acquisition Cost)",
+              "Coût moyen pour acquérir un nouveau client",
+              "(Temps prospection en heures × taux horaire + outils) / Nombre de clients signés",
+              "< 500€ (ratio LTV/CAC > 3:1)",
+            ],
+          },
+        ],
+      },
+      {
+        id: "6-19",
+        type: "callout",
+        variant: "success",
+        html: "<strong>La règle du 3:1 :</strong> ton LTV doit être au moins 3 fois ton CAC. Si ton CAC est de 400€ (20h de prospection pour 1 client signé), ton LTV doit être d'au moins 1 200€. Avec un retainer de 300€/mois et une durée moyenne de 8 mois + un projet initial de 2 000€, ton LTV est de 4 400€ → ratio de 11:1. Excellent.",
+      },
+      {
+        id: "6-20",
+        type: "separator",
+        style: "line",
+      },
+      {
+        id: "6-21",
+        type: "heading",
+        level: 2,
+        text: "Comment réduire le churn et maximiser la LTV",
+      },
+      {
+        id: "6-22",
+        type: "steps",
+        steps: [
+          {
+            title: "1. Le rapport mensuel (rétention passive)",
+            description: "Envoie chaque mois un rapport de valeur : uptime, performances, interventions, opportunités détectées. Le client voit concrètement ce qu'il paie. Sans rapport, il oublie et résilie.",
+          },
+          {
+            title: "2. Le check-in trimestriel (rétention active)",
+            description: "Un appel de 20 minutes tous les 3 mois : 'Comment ça va ? Quels sont tes objectifs pour le prochain trimestre ? Comment je peux t'aider à les atteindre ?' Ce call est aussi ton moment d'upsell naturel.",
+          },
+          {
+            title: "3. L'upsell proactif (croissance du compte)",
+            description: "Chaque rapport mensuel inclut une section 'opportunités détectées'. Tu ne vends pas — tu montres des données. Le client te demande de les exploiter. Le panier moyen par client augmente mécaniquement.",
+          },
+          {
+            title: "4. Le contrat annuel avec réduction (lock-in)",
+            description: "Propose une réduction de 15-20% pour un engagement annuel. Le client économise, tu sécurises 12 mois de MRR. Un client en contrat annuel a un churn rate 3x plus bas qu'un client mensuel.",
+          },
+        ],
+      },
+      {
+        id: "6-23",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "6-24",
+        type: "heading",
+        level: 2,
+        text: "Le tableau de bord financier (template)",
+      },
+      {
+        id: "6-25",
+        type: "code",
+        language: "text",
+        filename: "dashboard-financier-mrr.txt",
+        code: `═══════════════════════════════════════════════
+TABLEAU DE BORD FINANCIER — [Mois] [Année]
+═══════════════════════════════════════════════
+
+REVENUS RÉCURRENTS (MRR)
+┌─────────────────────────────────────────────┐
+│ MRR début de mois :         [X] €           │
+│ + Nouveaux retainers :      +[X] €          │
+│ + Upsells / expansions :    +[X] €          │
+│ - Churn (clients perdus) :  -[X] €          │
+│ = MRR fin de mois :         [X] €           │
+│                                             │
+│ Croissance MRR net :        +[X]% vs M-1    │
+└─────────────────────────────────────────────┘
+
+REVENUS ONE-SHOT (projets)
+┌─────────────────────────────────────────────┐
+│ Nombre de projets livrés :  [X]             │
+│ CA one-shot du mois :       [X] €           │
+│ Panier moyen par projet :   [X] €           │
+│ Taux de conversion en       [X]%            │
+│ retainer après livraison :                  │
+└─────────────────────────────────────────────┘
+
+MÉTRIQUES CLÉS
+┌─────────────────────────────────────────────┐
+│ CA total du mois :          [X] €           │
+│ % récurrent / total :       [X]%            │
+│ Churn rate :                [X]%            │
+│ LTV moyenne :               [X] €           │
+│ CAC moyen :                 [X] €           │
+│ Ratio LTV/CAC :             [X]:1           │
+│ Nb clients récurrents :     [X]             │
+│ Nb clients total (actifs) : [X]             │
+└─────────────────────────────────────────────┘
+
+OBJECTIFS vs RÉALITÉ
+┌─────────────────────────────────────────────┐
+│ Objectif MRR ce mois :      [X] €          │
+│ MRR réel :                  [X] € ([X]%)   │
+│ Objectif CA total :         [X] €          │
+│ CA réel :                   [X] € ([X]%)   │
+│ Prochaine milestone :       [X] € MRR      │
+│ Mois estimé d'atteinte :    [Mois Année]   │
+└─────────────────────────────────────────────┘
+
+PLAN D'ACTION MOIS PROCHAIN
+1. [Action prioritaire pour augmenter le MRR]
+2. [Action pour réduire le churn]
+3. [Action pour augmenter le panier moyen]`,
+      },
+      {
+        id: "6-26",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "6-27",
+        type: "quiz-inline",
+        question: "Quel ratio LTV/CAC est considéré comme sain pour une agence IA ?",
+        options: [
+          { id: "a", text: "1:1 (LTV = CAC)" },
+          { id: "b", text: "Au moins 3:1 (LTV = 3× CAC)" },
+          { id: "c", text: "Au moins 10:1 (LTV = 10× CAC)" },
+          { id: "d", text: "Le ratio n'a pas d'importance" },
+        ],
+        correctId: "b",
+        explanation: "Un ratio LTV/CAC d'au moins 3:1 signifie que chaque euro investi dans l'acquisition rapporte au moins 3 euros sur la durée de vie du client. En dessous de 3:1, tu dépenses trop pour acquérir des clients par rapport à ce qu'ils rapportent.",
+      },
+      {
+        id: "6-28",
+        type: "checklist",
+        title: "Checklist — Ma route vers 10K€ MRR",
+        items: [
+          { id: "c1", text: "J'ai choisi mon scénario cible (nombre de clients × tarif mensuel)" },
+          { id: "c2", text: "J'ai défini mon mix one-shot / récurrent pour les 6 prochains mois" },
+          { id: "c3", text: "Ma projection financière à 6 mois est rédigée avec des chiffres réalistes" },
+          { id: "c4", text: "Mon tableau de bord financier est créé (Google Sheet ou Notion)" },
+          { id: "c5", text: "Je mesure les 4 métriques clés (MRR, churn, LTV, CAC) chaque 1er du mois" },
+          { id: "c6", text: "J'ai un plan pour réduire le churn (rapports, check-ins, contrats annuels)" },
+          { id: "c7", text: "Chaque nouveau projet est conçu pour se transformer en retainer" },
+          { id: "c8", text: "Mon objectif MRR à 6 mois est écrit quelque part où je le vois chaque jour" },
+        ],
+      },
+    ]),
+    exercise: "<p><strong>Exercice :</strong> Fais ta projection financière à 6 mois. (1) Choisis ton scénario cible parmi les 4 présentés (ou crée le tien). (2) Définis ton mix one-shot/retainer pour chaque mois (en % et en euros). (3) Remplis le tableau mois par mois : nouveaux clients, projets one-shot, nouveaux retainers, MRR cumulé, CA total. (4) Calcule combien de clients il te faut pour atteindre 10 000€/mois avec ton tarif moyen. (5) Crée ton tableau de bord financier (copie le template dans un Google Sheet) et remplis la colonne 'Mois 1' avec tes chiffres actuels. Durée estimée : 60 min.</p>",
+    quiz: [
+      { type: "mcq", question: "Quel est le scénario le plus réaliste pour atteindre 10K€ de MRR ?", options: JSON.stringify(["1 seul client à 10 000€/mois", "Un mix de 3 clients à 2 000€/mois et 4 clients à 1 000€/mois", "100 clients à 100€/mois", "Uniquement des projets one-shot à 10K€"]), correctAnswer: "Un mix de 3 clients à 2 000€/mois et 4 clients à 1 000€/mois", explanation: "Le scénario mix (7 clients au total avec des retainers variés) est le plus réaliste. Il est parfaitement gérable en solo ou avec un assistant, et diversifie le risque sur plusieurs clients plutôt que de dépendre d'un seul gros contrat." },
+      { type: "true_false", question: "Le churn rate idéal pour une agence IA est inférieur à 5% par mois.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Un churn rate inférieur à 5% par mois (idéalement inférieur à 3%) signifie que tu perds moins de 1 client sur 20 chaque mois. Pour maintenir la croissance du MRR, il faut que les nouveaux retainers signés chaque mois dépassent les clients perdus par churn." },
+      { type: "mcq", question: "Quelle est la formule pour calculer la LTV (Lifetime Value) d'un client récurrent ?", options: JSON.stringify(["Retainer mensuel × 12 mois", "Retainer mensuel moyen × (1 / churn rate mensuel) + panier one-shot moyen", "CA total / nombre de clients", "Nombre de mois de contrat × prix du projet initial"]), correctAnswer: "Retainer mensuel moyen × (1 / churn rate mensuel) + panier one-shot moyen", explanation: "La LTV combine la durée de vie moyenne du client (1 / churn rate) multipliée par le retainer mensuel, plus la valeur du projet initial. Avec un retainer de 300€/mois et un churn de 12%/mois (durée moyenne 8 mois), la LTV récurrente seule est de 2 400€." },
+      { type: "true_false", question: "Passer à 100% de revenus récurrents dès le premier mois est la meilleure stratégie.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "La transition doit être progressive : 80% one-shot au début (mois 1-3), puis 50/50 (mois 4-6), puis 30/70 (mois 7-9), et enfin 20/80 (mois 10-12). Les projets one-shot financent l'acquisition de clients et permettent de proposer des retainers après chaque livraison." },
+      { type: "mcq", question: "Tu as actuellement 4 000€ de MRR avec 8 clients. Ce mois, tu signes 2 nouveaux retainers à 500€/mois chacun, mais 1 client à 300€/mois résilie. Quel est ton MRR en fin de mois et ta croissance nette ?", options: JSON.stringify(["4 700€ MRR, croissance nette de +700€", "5 000€ MRR, croissance nette de +1 000€", "3 700€ MRR, décroissance de -300€", "4 300€ MRR, croissance nette de +300€"]), correctAnswer: "4 700€ MRR, croissance nette de +700€", explanation: "MRR début : 4 000€. Ajout : 2 × 500€ = +1 000€. Churn : -300€. MRR fin : 4 000 + 1 000 - 300 = 4 700€. Croissance nette : +700€. Le churn rate ce mois : 1/8 = 12,5% (trop élevé, il faut investiguer pourquoi ce client part et mettre en place des actions de rétention)." },
+    ],
+  },
 ];

@@ -181,172 +181,6 @@ Make it look like a $10,000 agency website.` },
   {
     order: 3,
     module: 3,
-    title: "HTML, CSS, JavaScript : les bases en accéléré",
-    slug: "html-css-javascript-bases-accelere",
-    duration: "30 min",
-    description: "Juste assez de code pour comprendre ce que l'IA génère, modifier les bons endroits et ne plus être bloqué devant un fichier source.",
-    content: blocks([
-      { id: "3-1", type: "heading", level: 2, text: "Tu n'as pas besoin de tout apprendre" },
-      { id: "3-2", type: "text", html: "<p>Tu n'as pas besoin de devenir développeur pour créer des sites avec l'IA. Par contre, tu dois comprendre <strong>assez</strong> de code pour :</p><ul><li>Identifier quel fichier modifier</li><li>Comprendre la structure d'un composant</li><li>Faire des modifications simples sans casser le projet</li><li>Donner des instructions précises à l'IA</li></ul><p>Cette leçon te donne le <em>minimum viable</em> en 30 minutes.</p>" },
-      { id: "3-3", type: "callout", variant: "tip", html: "Règle d'or : si tu ne comprends pas un bout de code, colle-le dans Claude et demande-lui d'expliquer. Tu apprendras 10x plus vite qu'avec n'importe quel cours." },
-      { id: "3-4", type: "separator", style: "dots" },
-
-      { id: "3-5", type: "heading", level: 2, text: "HTML — La structure de la page" },
-      { id: "3-6", type: "text", html: "<p>HTML, c'est le squelette. Chaque élément est une <strong>balise</strong> qui ouvre et ferme. Rien de magique.</p>" },
-      { id: "3-7", type: "code", language: "html", filename: "index.html", code: `<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <title>Mon site</title>
-    <!-- Ici : les ressources chargées (CSS, fonts...) -->
-  </head>
-  <body>
-    <!-- Ici : ce que l'utilisateur voit -->
-
-    <header>
-      <nav>Mon menu</nav>
-    </header>
-
-    <main>
-      <h1>Titre principal</h1>
-      <p>Un paragraphe de texte.</p>
-      <a href="https://monsite.com">Un lien</a>
-      <img src="photo.jpg" alt="Description" />
-
-      <!-- Une section avec une classe CSS -->
-      <section class="hero">
-        <h2>Sous-titre</h2>
-        <button>Clique ici</button>
-      </section>
-    </main>
-
-    <footer>Pied de page</footer>
-  </body>
-</html>` },
-      { id: "3-8", type: "callout", variant: "info", html: "Les balises les plus importantes à retenir : <code>&lt;div&gt;</code> (conteneur), <code>&lt;p&gt;</code> (paragraphe), <code>&lt;h1&gt; à &lt;h6&gt;</code> (titres), <code>&lt;a&gt;</code> (lien), <code>&lt;img&gt;</code> (image), <code>&lt;button&gt;</code> (bouton), <code>&lt;section&gt;</code> et <code>&lt;main&gt;</code> (structure)." },
-
-      { id: "3-9", type: "separator", style: "space" },
-      { id: "3-10", type: "heading", level: 2, text: "CSS — Le style visuel" },
-      { id: "3-11", type: "text", html: "<p>CSS, c'est ce qui rend une page jolie. Tu cibles un élément et tu lui appliques des propriétés visuelles. En 2025, la majorité des sites modernes utilisent <strong>Tailwind CSS</strong> — des classes prédéfinies directement dans le HTML.</p>" },
-      { id: "3-12", type: "code", language: "css", filename: "styles.css", code: `/* CSS classique */
-.hero {
-  background-color: #0F172A;  /* couleur de fond */
-  padding: 80px 20px;          /* espace intérieur */
-  text-align: center;
-}
-
-h1 {
-  font-size: 48px;
-  color: white;
-  font-weight: 700;            /* gras */
-}
-
-.cta-button {
-  background-color: #3B82F6;  /* bleu */
-  color: white;
-  padding: 16px 32px;
-  border-radius: 8px;         /* coins arrondis */
-  cursor: pointer;
-}
-
-/* Responsive : sur mobile (< 768px) */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 28px;           /* titre plus petit sur mobile */
-  }
-}` },
-      { id: "3-13", type: "code", language: "html", filename: "tailwind-example.html", code: `<!-- Tailwind CSS : les styles sont des classes dans le HTML -->
-<!-- Pas de fichier CSS séparé à gérer -->
-
-<div class="bg-slate-900 p-20 text-center">
-  <h1 class="text-5xl font-bold text-white">
-    Mon titre
-  </h1>
-  <button class="mt-8 bg-blue-500 text-white px-8 py-4 rounded-lg hover:bg-blue-600">
-    Clique ici
-  </button>
-</div>
-
-<!-- Logique Tailwind :
-  bg-slate-900 = background dark
-  p-20 = padding
-  text-5xl = font-size large
-  font-bold = gras
-  hover:bg-blue-600 = couleur au survol
--->` },
-
-      { id: "3-14", type: "separator", style: "space" },
-      { id: "3-15", type: "heading", level: 2, text: "JavaScript — Le comportement interactif" },
-      { id: "3-16", type: "text", html: "<p>JavaScript, c'est ce qui rend la page <em>vivante</em> : animations, formulaires, boutons qui font quelque chose. Tu n'as pas besoin de le coder — mais tu dois comprendre les patterns de base pour naviguer dans le code de l'IA.</p>" },
-      { id: "3-17", type: "code", language: "javascript", filename: "app.js", code: `// Variables
-const titre = "Bonjour";
-let compteur = 0;
-
-// Fonction : bloc de code réutilisable
-function direBonjour(nom) {
-  return "Bonjour " + nom + " !";
-}
-
-// Événement : réagir à un clic
-document.querySelector("#mon-bouton").addEventListener("click", () => {
-  compteur++;
-  console.log("Clics :", compteur);
-});
-
-// Fetch : appeler une API (ex: envoyer un formulaire)
-async function envoyerFormulaire(email) {
-  const response = await fetch("/api/contact", {
-    method: "POST",
-    body: JSON.stringify({ email }),
-    headers: { "Content-Type": "application/json" },
-  });
-  const data = await response.json();
-  console.log("Réponse :", data);
-}
-
-// Condition
-if (compteur > 5) {
-  console.log("Tu as cliqué plus de 5 fois !");
-}` },
-      { id: "3-18", type: "callout", variant: "warning", html: "Si tu rencontres une erreur JavaScript, copie-la <strong>exactement</strong> dans Claude avec le code concerné. Claude diagnostique et corrige en quelques secondes. Ne passe pas des heures à débugger seul." },
-
-      { id: "3-19", type: "heading", level: 2, text: "Comment lire du code généré par l'IA" },
-      { id: "3-20", type: "steps", steps: [
-        { title: "Identifier la structure", description: "Repère les grandes sections : imports en haut, composant/fonction principale, export en bas." },
-        { title: "Trouver le texte à modifier", description: "Utilise Ctrl+F pour chercher le texte exact que tu veux changer. Le code est du texte." },
-        { title: "Comprendre les props", description: "Les paramètres entre accolades {title}, {children}, {onClick} sont des données passées au composant." },
-        { title: "Ne pas tout comprendre", description: "Normal. L'IA a écrit ce code. Demande-lui d'expliquer les parties floues." },
-      ]},
-
-      { id: "3-21", type: "separator", style: "line" },
-      { id: "3-22", type: "quiz-inline", question: "Tu veux changer la couleur d'un bouton généré par v0 en Tailwind. Le bouton a la classe 'bg-blue-500'. Quelle classe utilises-tu pour le passer en vert ?", options: [
-        { id: "a", text: "color-green-500" },
-        { id: "b", text: "bg-green-500" },
-        { id: "c", text: "background: green" },
-        { id: "d", text: "style='green'" },
-      ], correctId: "b", explanation: "En Tailwind, le préfixe 'bg-' correspond à background-color. Les couleurs suivent le pattern couleur-intensité (green-500, red-600, blue-400...). Il suffit de remplacer 'bg-blue-500' par 'bg-green-500'." },
-
-      { id: "3-23", type: "checklist", title: "Compétences acquises", items: [
-        { id: "c1", text: "Je comprends la structure de base d'un fichier HTML" },
-        { id: "c2", text: "Je sais lire et modifier du CSS classique et Tailwind" },
-        { id: "c3", text: "Je comprends ce qu'est une fonction JavaScript et un événement" },
-        { id: "c4", text: "Je sais naviguer dans du code généré par l'IA sans paniquer" },
-        { id: "c5", text: "Je sais utiliser Claude pour expliquer et corriger du code" },
-      ]},
-    ]),
-    exercise: "<h3>Exercice : Lire et modifier du code</h3><p>Ouvre n'importe quel composant généré par v0 lors de la leçon précédente. Fais les 3 modifications suivantes <strong>manuellement</strong> (sans re-prompter v0) :</p><ol><li>Change le texte du bouton CTA</li><li>Modifie la couleur de fond du hero (cherche <code>bg-</code> dans le code Tailwind)</li><li>Change le titre h1</li></ol><p>Si tu bloques, demande à Claude d'expliquer la partie concernée du code.</p>",
-    quiz: [
-      { type: "mcq", question: "En Tailwind CSS, quelle classe utilise-t-on pour changer la couleur de fond d'un élément en bleu ?", options: JSON.stringify(["color-blue-500", "bg-blue-500", "background: blue", "text-blue-500"]), correctAnswer: "bg-blue-500", explanation: "En Tailwind, le préfixe 'bg-' correspond à background-color. Les couleurs suivent le pattern couleur-intensité (blue-500, red-600, green-400...). 'text-' est pour la couleur du texte." },
-      { type: "true_false", question: "En HTML, la balise <a> sert à créer un lien hypertexte.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "La balise <a href='url'>texte</a> est bien la balise pour créer un lien hypertexte en HTML. C'est l'une des balises les plus fondamentales du web." },
-      { type: "mcq", question: "Quelle balise HTML est utilisée comme conteneur générique sans signification sémantique ?", options: JSON.stringify(["<section>", "<main>", "<div>", "<article>"]), correctAnswer: "<div>", explanation: "La balise <div> est le conteneur générique le plus utilisé en HTML. Contrairement à <section>, <main> ou <article>, elle n'a pas de signification sémantique particulière." },
-      { type: "true_false", question: "En JavaScript, la fonction fetch() permet d'appeler une API pour envoyer ou récupérer des données.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "fetch() est la fonction JavaScript standard pour faire des appels réseau (API). On l'utilise pour envoyer des formulaires, récupérer des données depuis un serveur, etc." },
-      { type: "mcq", question: "Vous rencontrez la situation suivante : le site que tu as créé pour un client affiche un bouton CTA bleu, mais le client veut le changer en rouge. Comment procèdes-tu le plus efficacement ?", options: JSON.stringify(["Tu demandes à v0 de régénérer toute la page avec un bouton rouge", "Tu cherches la classe Tailwind bg-blue-500 dans le code et la remplaces par bg-red-500", "Tu recodes le bouton entièrement en CSS personnalisé", "Tu dis au client que le bleu est mieux pour les conversions"]), correctAnswer: "Tu cherches la classe Tailwind bg-blue-500 dans le code et la remplaces par bg-red-500", explanation: "En Tailwind CSS, changer une couleur est aussi simple que modifier le préfixe de couleur dans la classe : bg-blue-500 devient bg-red-500. C'est une modification de quelques secondes qui ne nécessite pas de régénérer quoi que ce soit." },
-    ],
-  },
-
-  // ─── LEÇON 4 ───
-  {
-    order: 4,
-    module: 3,
     title: "Next.js & React en 30 min avec l'IA",
     slug: "nextjs-react-30min-ia",
     duration: "30 min",
@@ -496,9 +330,9 @@ Exemple de données mock inclus pour tester.` },
     ],
   },
 
-  // ─── LEÇON 5 ───
+  // ─── LEÇON 4 ───
   {
-    order: 5,
+    order: 4,
     module: 3,
     title: "Déployer ton site gratuitement (Vercel)",
     slug: "deployer-site-vercel-gratuit",
@@ -616,9 +450,9 @@ git push -u origin main
     ],
   },
 
-  // ─── LEÇON 6 ───
+  // ─── LEÇON 5 ───
   {
-    order: 6,
+    order: 5,
     module: 3,
     title: "Ton premier site client : portfolio ou landing page",
     slug: "premier-site-client-portfolio-landing",
@@ -795,6 +629,93 @@ Belle continuation,
       { type: "mcq", question: "Quel est le bon ordre des étapes pour créer un site client complet ?", options: JSON.stringify(["Design → Code → Contenu → Déploiement", "Contenu (Claude) → Design (v0) → Finalisation (Cursor) → Déploiement (Vercel)", "Déploiement → Design → Contenu → Test", "Code → Test → Contenu → Design"]), correctAnswer: "Contenu (Claude) → Design (v0) → Finalisation (Cursor) → Déploiement (Vercel)", explanation: "Le workflow complet est : 1) Contenu généré avec Claude (30 min), 2) Design créé avec v0 (30 min), 3) Finalisation avec Cursor (responsive, animations, pages secondaires — 2h), 4) Déploiement sur Vercel (20 min)." },
       { type: "true_false", question: "Il est recommandé d'inclure une proposition de maintenance mensuelle dans l'email de livraison client.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "L'email de livraison mentionne un tarif de maintenance mensuel (X€/mois pour 1h de modifications incluses). C'est le revenu récurrent qui construit la rentabilité de l'agence." },
       { type: "mcq", question: "Un prospect te demande un devis pour un site vitrine. Tu estimes 6h de travail. Il te dit que son neveu peut le faire pour 200€. Comment justifies-tu ton prix de 1 500€ ?", options: JSON.stringify(["Tu baisses ton prix pour t'aligner sur le neveu", "Tu expliques que la valeur n'est pas dans les heures mais dans le résultat : design pro, SEO, responsive, déploiement, et surtout la crédibilité que le site apporte à son business", "Tu refuses le projet car le client n'a pas le budget", "Tu proposes de faire le site gratuitement pour ton portfolio"]), correctAnswer: "Tu expliques que la valeur n'est pas dans les heures mais dans le résultat : design pro, SEO, responsive, déploiement, et surtout la crédibilité que le site apporte à son business", explanation: "Le prix se justifie par la valeur créée pour le client, pas par le temps passé. Un site professionnel qui convertit des visiteurs en clients a un ROI mesurable. Le taux horaire minimum acceptable pour un freelance tech est de 100€/h." },
+    ],
+  },
+
+  // ─── LEÇON 6 ───
+  {
+    order: 6,
+    module: 3,
+    title: "Ton portfolio en ligne",
+    slug: "portfolio-en-ligne",
+    duration: "30 min",
+    description: "Crée une page portfolio professionnelle pour présenter tes projets aux prospects et convertir les visiteurs en clients.",
+    content: blocks([
+      { id: "p-1", type: "heading", level: 2, text: "Pas de portfolio = pas de crédibilité" },
+      { id: "p-2", type: "text", html: "<p>Tu peux avoir toutes les compétences du monde — si tu n'as rien à montrer, tu ne signeras pas de client. Le portfolio est ton <strong>meilleur outil de vente</strong>. Quand un prospect hésite, la première chose qu'il demande c'est : \"Tu peux me montrer ce que tu as déjà fait ?\"</p><p>Bonne nouvelle : tu as déjà des projets à montrer (la landing page de la leçon 5 + les exercices des leçons précédentes). Maintenant on va les mettre en valeur sur une vraie page pro.</p>" },
+      { id: "p-3", type: "callout", variant: "tip", html: "Même avec des projets fictifs, un portfolio bien présenté est 10x plus convaincant que pas de portfolio du tout. Les prospects veulent voir <strong>ce que tu sais faire</strong>, pas forcément pour qui tu l'as fait." },
+
+      { id: "p-4", type: "separator", style: "dots" },
+      { id: "p-5", type: "heading", level: 2, text: "Ce que ton portfolio doit contenir" },
+      { id: "p-6", type: "steps", steps: [
+        { title: "Hero personnel", description: "Ton nom / nom d'agence, ton titre (ex: 'Consultant IA pour PME'), un pitch d'une ligne et un CTA ('Me contacter')." },
+        { title: "Section Projets (minimum 2)", description: "Pour chaque projet : capture d'écran, nom du projet, description du problème résolu, technologies utilisées, lien live si possible." },
+        { title: "Section Services", description: "Les 2-3 services que tu proposes avec une phrase d'accroche pour chacun. Pas besoin de prix ici." },
+        { title: "Section À propos (optionnel)", description: "2-3 lignes sur toi, ton parcours, pourquoi tu fais ça. Humanise ton profil." },
+        { title: "CTA de contact", description: "Un formulaire simple (nom, email, message) ou un lien Calendly pour réserver un appel." },
+      ]},
+
+      { id: "p-7", type: "heading", level: 2, text: "Structure de la page portfolio" },
+      { id: "p-8", type: "diagram", variant: "flow", nodes: [
+        { id: "n1", label: "Hero", description: "Nom + pitch + CTA" },
+        { id: "n2", label: "Projets", description: "Cards avec captures + descriptions" },
+        { id: "n3", label: "Services", description: "Ce que tu proposes" },
+        { id: "n4", label: "Contact", description: "Formulaire ou Calendly" },
+      ]},
+
+      { id: "p-9", type: "separator", style: "line" },
+      { id: "p-10", type: "heading", level: 2, text: "Créer ton portfolio avec v0 + Cursor" },
+      { id: "p-11", type: "text", html: "<p>On utilise le même workflow que pour les sites clients : contenu avec Claude, design avec v0, finalisation avec Cursor, déploiement sur Vercel.</p>" },
+      { id: "p-12", type: "code", language: "text", filename: "prompt-portfolio-claude.txt", code: "Tu es expert en personal branding pour freelances tech.\n\nContexte :\n- Mon nom / agence : [NOM]\n- Mes services : [chatbots IA, automatisations, sites web]\n- Ma cible : [PME, restaurants, coachs...]\n- Mes projets réalisés :\n  1. [Landing page pour un coach business — Next.js + Tailwind]\n  2. [Chatbot de réservation pour un restaurant — Claude API]\n\nGénère le contenu complet de ma page portfolio :\n1. Titre + sous-titre percutant pour le hero\n2. Description de chaque projet (problème résolu, solution, résultat)\n3. Section services (3 services avec accroches)\n4. Courte bio (3 lignes, ton pro et humain)\n5. CTA final\n\nTon : professionnel, direct, inspire confiance." },
+      { id: "p-13", type: "code", language: "text", filename: "prompt-portfolio-v0.txt", code: "Create a modern developer portfolio page using this content:\n\n[COLLE ICI LE CONTENU GÉNÉRÉ PAR CLAUDE]\n\nDesign requirements:\n- Style: minimal, clean, dark theme (#0A0A0A background)\n- Accent color: electric blue (#3B82F6)\n- Font: Inter or Geist\n- Full responsive (mobile first)\n- Sections: Hero, Projects grid (2 columns), Services, Contact form\n- Project cards with hover effect showing description overlay\n- Smooth scroll between sections\n- Sticky navigation\n- Use shadcn/ui components\n\nMake it look like a premium tech portfolio." },
+
+      { id: "p-14", type: "heading", level: 2, text: "Présenter tes projets comme un pro" },
+      { id: "p-15", type: "text", html: "<p>La clé d'un bon portfolio n'est pas le nombre de projets — c'est <strong>comment tu les présentes</strong>. Chaque projet doit raconter une mini-histoire :</p>" },
+      { id: "p-16", type: "comparison", headers: ["Présentation amateur", "Présentation pro"], rows: [
+        { cells: ["\"Landing page pour un coach\"", "\"Site de conversion pour Sophie Martin, coach business — +40% de prises de RDV en 1 mois\""] },
+        { cells: ["Screenshot brut sans contexte", "Screenshot annoté + version mobile + lien live"] },
+        { cells: ["\"J'ai utilisé Next.js et Tailwind\"", "\"Problème : pas de présence en ligne. Solution : landing page optimisée conversion avec formulaire et Calendly. Stack : Next.js, Tailwind, Vercel.\""] },
+      ]},
+      { id: "p-17", type: "callout", variant: "warning", html: "<strong>Astuce pour débutant :</strong> si tes projets sont fictifs, ne mens pas en disant que ce sont de vrais clients. Dis 'Projet personnel' ou 'Concept'. La qualité du travail parle d'elle-même. Un prospect préfère un projet fictif bien fait qu'un vrai projet mal présenté." },
+
+      { id: "p-18", type: "heading", level: 3, text: "Template de description de projet" },
+      { id: "p-19", type: "code", language: "text", filename: "template-projet.txt", code: "NOM DU PROJET : [Ex: Site de conversion — Coach Business]\n\nCONTEXTE :\nSophie Martin est coach business freelance. Elle n'avait pas\nde site web et perdait des prospects qui ne trouvaient\naucune info en ligne.\n\nSOLUTION :\nLanding page complète avec 7 sections (hero, problème,\nsolution, témoignages, FAQ, CTA), formulaire de contact,\net intégration Calendly pour la prise de RDV automatique.\n\nSTACK TECHNIQUE :\nNext.js · Tailwind CSS · Vercel · Calendly API\n\nRÉSULTAT :\nSite livré en 2 jours. Design responsive. SEO optimisé.\n[Si fictif : 'Projet concept / personnel']\n\nLIEN : https://sophie-martin-coaching.vercel.app" },
+
+      { id: "p-20", type: "separator", style: "line" },
+      { id: "p-21", type: "heading", level: 2, text: "Déployer et optimiser ton portfolio" },
+      { id: "p-22", type: "steps", steps: [
+        { title: "Déploie sur Vercel", description: "Même workflow que la leçon 4 : git push → Vercel déploie automatiquement. Tu auras une URL type ton-nom.vercel.app." },
+        { title: "Achète un domaine personnalisé", description: "Investis 10-15€ dans un domaine type prenom-nom.fr ou nom-agence.com. Ça change tout pour la crédibilité." },
+        { title: "Ajoute Google Analytics", description: "Pour savoir combien de personnes visitent ton portfolio. Script à ajouter dans le layout.tsx — demande à Claude." },
+        { title: "Mets le lien partout", description: "LinkedIn (section 'Site web'), bio Twitter/X, signature email, lien Linktree si tu utilises Instagram." },
+        { title: "Mets à jour régulièrement", description: "Chaque nouveau projet = un ajout au portfolio. Un portfolio vivant est plus convaincant qu'un portfolio statique." },
+      ]},
+
+      { id: "p-23", type: "callout", variant: "success", html: "<strong>Félicitations :</strong> avec ce portfolio en ligne, tu as maintenant tout ce qu'il faut pour te présenter comme un professionnel de l'IA. Ton nom, ton pitch, tes projets, tes services — tout est accessible en un clic. C'est ton meilleur vendeur, il travaille pour toi 24h/24." },
+
+      { id: "p-24", type: "separator", style: "dots" },
+      { id: "p-25", type: "quiz-inline", question: "Combien de projets minimum faut-il sur ton portfolio pour commencer à prospecter ?", options: [
+        { id: "a", text: "Au moins 10 projets variés" },
+        { id: "b", text: "2 projets bien présentés suffisent" },
+        { id: "c", text: "Pas besoin de portfolio pour prospecter" },
+      ], correctId: "b", explanation: "2 projets bien présentés (avec contexte, solution, résultat) sont largement suffisants pour commencer. La qualité de présentation compte plus que la quantité. Tu ajouteras les suivants au fur et à mesure." },
+
+      { id: "p-26", type: "checklist", title: "Bilan du Module 3", items: [
+        { id: "c1", text: "Je maîtrise les outils IA de création web (v0, Bolt, Cursor, Lovable)" },
+        { id: "c2", text: "Je sais créer une landing page avec le workflow Claude → v0 → Cursor" },
+        { id: "c3", text: "Je comprends Next.js et React assez pour travailler avec l'IA" },
+        { id: "c4", text: "Je sais déployer sur Vercel et connecter un domaine" },
+        { id: "c5", text: "J'ai au moins 2 projets présentables" },
+        { id: "c6", text: "Mon portfolio est en ligne et accessible aux prospects" },
+      ]},
+    ]),
+    exercise: "<h3>Exercice : Déploie ton portfolio</h3><p>Crée et déploie ton portfolio professionnel en suivant ces étapes :</p><ol><li><strong>Contenu :</strong> utilise le prompt Claude fourni pour générer le contenu de ton portfolio. Adapte avec tes vrais projets (la landing page du Module 3 + le chatbot du Module 1).</li><li><strong>Design :</strong> utilise le prompt v0 pour générer la page. Itère jusqu'à obtenir un rendu premium.</li><li><strong>Finalisation :</strong> ouvre dans Cursor, vérifie le responsive mobile, ajoute les liens vers tes projets live.</li><li><strong>Déploiement :</strong> push sur GitHub, déploie sur Vercel. Bonus : achète un domaine personnalisé.</li><li><strong>Distribution :</strong> mets le lien dans ton profil LinkedIn (titre + section site web).</li></ol><p><strong>Livrable :</strong> URL de ton portfolio en ligne avec au moins 2 projets dessus. Partage le lien dans la communauté.</p>",
+    quiz: [
+      { type: "mcq", question: "Quel est l'élément le plus important d'un portfolio pour convaincre un prospect ?", options: JSON.stringify(["Le nombre de projets affichés", "La qualité de présentation de chaque projet (contexte, solution, résultat)", "Les technologies utilisées listées en détail", "Un design très coloré et animé"]), correctAnswer: "La qualité de présentation de chaque projet (contexte, solution, résultat)", explanation: "Un prospect veut comprendre ce que tu sais faire et quel problème tu résous. 2 projets bien présentés (avec contexte, solution et résultat) sont plus convaincants que 10 projets mal présentés." },
+      { type: "true_false", question: "Il est acceptable de mettre des projets fictifs dans son portfolio tant qu'on ne prétend pas que ce sont de vrais clients.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Oui, des projets personnels ou concepts sont tout à fait acceptables dans un portfolio. L'important est la qualité du travail et l'honnêteté : marque-les comme 'Projet concept' ou 'Projet personnel'. Un projet fictif bien fait est plus convaincant que pas de portfolio du tout." },
+      { type: "mcq", question: "Quelles sections sont indispensables sur une page portfolio ?", options: JSON.stringify(["Uniquement les projets", "Hero + Projets + Contact", "Hero + Projets + Services + Contact", "Blog + CV + Diplômes + Références"]), correctAnswer: "Hero + Projets + Services + Contact", explanation: "Les 4 sections indispensables sont : le Hero (qui tu es), les Projets (ce que tu sais faire), les Services (ce que tu proposes) et le Contact (comment te joindre). La section À propos est un bonus utile mais optionnel." },
+      { type: "true_false", question: "Un nom de domaine personnalisé (type prenom-nom.fr) augmente significativement la crédibilité d'un portfolio.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Un domaine personnalisé (10-15 euros/an) donne un aspect beaucoup plus professionnel que nom-projet.vercel.app. C'est un petit investissement qui change la perception des prospects." },
+      { type: "mcq", question: "Un prospect te dit : 'Je vois que tu as seulement 2 projets sur ton portfolio, c'est peu non ?'. Que lui réponds-tu ?", options: JSON.stringify(["Tu t'excuses et promets d'en ajouter bientôt", "Tu expliques que ces 2 projets montrent exactement les compétences dont il a besoin, et tu détailles le problème résolu et le résultat pour chacun", "Tu inventes 5 faux projets pour compléter ton portfolio", "Tu proposes de travailler gratuitement pour étoffer ton portfolio"]), correctAnswer: "Tu expliques que ces 2 projets montrent exactement les compétences dont il a besoin, et tu détailles le problème résolu et le résultat pour chacun", explanation: "La qualité bat la quantité. Détaille le contexte, la solution et le résultat de chaque projet pour montrer ta méthode et ta valeur. Un prospect convaincu par 2 projets bien présentés signera sans hésiter." },
     ],
   },
 ];

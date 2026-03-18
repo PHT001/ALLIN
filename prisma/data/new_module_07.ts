@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════
-// MODULE 7 — Chatbots IA (service #1 à vendre)
+// MODULE 6 — Chatbots IA (service #1 à vendre)
 // 6 leçons — Format JSON blocs
 // ═══════════════════════════════════════════════════
 
@@ -7,11 +7,11 @@ function blocks(b: object[]): string {
   return JSON.stringify(b);
 }
 
-export const MODULE_7_LESSONS = [
+export const MODULE_6_LESSONS = [
   // ─── LEÇON 1 ───
   {
     order: 1,
-    module: 7,
+    module: 6,
     title: "Pourquoi les chatbots IA sont le service #1 à vendre",
     slug: "pourquoi-chatbots-ia-service-numero-1",
     duration: "20 min",
@@ -88,7 +88,7 @@ export const MODULE_7_LESSONS = [
   // ─── LEÇON 2 ───
   {
     order: 2,
-    module: 7,
+    module: 6,
     title: "Les plateformes de chatbots : Voiceflow, Botpress, custom",
     slug: "plateformes-chatbots-voiceflow-botpress-custom",
     duration: "25 min",
@@ -165,7 +165,7 @@ export const MODULE_7_LESSONS = [
   // ─── LEÇON 3 ───
   {
     order: 3,
-    module: 7,
+    module: 6,
     title: "Créer un chatbot avec Voiceflow",
     slug: "creer-chatbot-voiceflow-step-by-step",
     duration: "35 min",
@@ -275,7 +275,7 @@ Max tokens : 300` },
   // ─── LEÇON 4 ───
   {
     order: 4,
-    module: 7,
+    module: 6,
     title: "Créer un chatbot custom (Next.js + API Claude)",
     slug: "chatbot-custom-nextjs-api-claude",
     duration: "35 min",
@@ -540,7 +540,7 @@ export default function Home() {
   // ─── LEÇON 5 ───
   {
     order: 5,
-    module: 7,
+    module: 6,
     title: "RAG : donner une mémoire à ton chatbot",
     slug: "rag-memoire-chatbot-embeddings-vector-db",
     duration: "30 min",
@@ -781,7 +781,7 @@ CONTEXTE PERTINENT :
   // ─── LEÇON 6 ───
   {
     order: 6,
-    module: 7,
+    module: 6,
     title: "Projet : un chatbot support client déployé",
     slug: "projet-chatbot-support-client-deploye",
     duration: "25 min",

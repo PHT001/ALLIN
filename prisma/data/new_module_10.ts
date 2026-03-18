@@ -11,7 +11,7 @@ export const MODULE_10_LESSONS = [
   // ─── LEÇON 1 ───
   {
     order: 1,
-    module: 10,
+    module: 8,
     title: "De 'je sais faire' à 'je vends' : le mindset shift",
     slug: "mindset-shift-je-sais-faire-je-vends",
     duration: "20 min",
@@ -77,7 +77,7 @@ export const MODULE_10_LESSONS = [
   // ─── LEÇON 2 ───
   {
     order: 2,
-    module: 10,
+    module: 8,
     title: "Les 5 services IA les plus rentables à vendre",
     slug: "5-services-ia-les-plus-rentables",
     duration: "25 min",
@@ -161,7 +161,7 @@ export const MODULE_10_LESSONS = [
   // ─── LEÇON 3 ───
   {
     order: 3,
-    module: 10,
+    module: 8,
     title: "Construire ton offre irrésistible",
     slug: "construire-ton-offre-irresistible",
     duration: "25 min",
@@ -256,7 +256,7 @@ Il reste 1 place disponible ce mois-ci.` },
   // ─── LEÇON 4 ───
   {
     order: 4,
-    module: 10,
+    module: 8,
     title: "Fixer tes prix sans avoir peur",
     slug: "fixer-tes-prix-sans-avoir-peur",
     duration: "20 min",
@@ -343,7 +343,7 @@ c'est de l'argent que vous gagnez chaque mois."` },
   // ─── LEÇON 5 ───
   {
     order: 5,
-    module: 10,
+    module: 8,
     title: "Créer ta page d'offre et tes supports de vente",
     slug: "page-offre-supports-de-vente",
     duration: "25 min",
@@ -544,13 +544,13 @@ Cette proposition est valable jusqu'au [date + 10 jours].
   // ─── LEÇON 6 ───
   {
     order: 6,
-    module: 10,
-    title: "Ton positionnement : généraliste vs spécialiste",
-    slug: "positionnement-generaliste-vs-specialiste",
-    duration: "20 min",
-    description: "Comprendre pourquoi le spécialiste gagne toujours, choisir sa niche, construire son personal branding, et se différencier dans un marché qui commence à se remplir.",
+    module: 8,
+    title: "Ton premier client gratuit",
+    slug: "premier-client-gratuit",
+    duration: "35 min",
+    description: "Pourquoi offrir un premier projet gratuit est la stratégie la plus puissante pour démarrer, comment choisir le bon prospect, cadrer la mission et obtenir un témoignage en béton.",
     content: blocks([
-      { id: "6-1", type: "heading", level: 2, text: "Le paradoxe du spécialiste" },
+      { id: "6-1", type: "heading", level: 2, text: "Pourquoi ton premier projet doit être gratuit" },
       { id: "6-2", type: "text", html: "<p>Intuitivement, on pense que plus on propose de services à plus de gens, plus on a de chances de trouver des clients. C'est faux. En fait, c'est exactement l'inverse.</p><p>Un <strong>spécialiste IA pour les cabinets d'avocats</strong> sera contacté par tous les cabinets d'avocats qui cherchent une solution IA. Un <strong>généraliste IA</strong> sera contacté par personne — parce que personne ne se reconnaît dans son message.</p>" },
       { id: "6-3", type: "callout", variant: "tip", html: "<strong>Contre-intuitif mais vrai :</strong> réduire ta cible augmente ton nombre de clients. Plus tu parles à tout le monde, moins tu parles à quelqu'un." },
 

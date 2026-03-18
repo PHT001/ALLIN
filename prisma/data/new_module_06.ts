@@ -1,17 +1,17 @@
 // ═══════════════════════════════════════════════════
-// MODULE 6 — Automatisations (Make, n8n, Zapier, IA)
-// 6 leçons — Format JSON blocs
+// MODULE 5 — Automatisations (Make, n8n, Zapier, IA)
+// 5 leçons — Format JSON blocs
 // ═══════════════════════════════════════════════════
 
 function blocks(b: object[]): string {
   return JSON.stringify(b);
 }
 
-export const MODULE_6_LESSONS = [
+export const MODULE_5_LESSONS = [
   // ─── LEÇON 1 ───
   {
     order: 1,
-    module: 6,
+    module: 5,
     title: "Pourquoi automatiser ? (ROI et cas concrets)",
     slug: "pourquoi-automatiser-roi-cas-concrets",
     duration: "20 min",
@@ -53,6 +53,18 @@ export const MODULE_6_LESSONS = [
         { id: "n4", label: "Résultat", description: "Temps libéré, zéro oubli, traitement immédiat" },
       ]},
       { id: "1-16", type: "callout", variant: "info", html: "Les outils qu'on va utiliser dans ce module (Make, n8n, Zapier) ne nécessitent <strong>aucune compétence en code</strong> pour les cas basiques. Pour les cas avancés avec IA, on verra comment intégrer du code JavaScript simple." },
+      { id: "1-16b", type: "separator", style: "line" },
+
+      { id: "1-16c", type: "heading", level: 2, text: "Make, n8n ou Zapier : lequel choisir ?" },
+      { id: "1-16d", type: "text", html: "<p>Tu vas apprendre Make et n8n dans les leçons suivantes. Mais avant de plonger, voici le <strong>résumé exécutif</strong> pour savoir quel outil recommander à quel client :</p>" },
+      { id: "1-16e", type: "comparison", headers: ["Critère", "Zapier", "Make", "n8n (self-hosted)"], rows: [
+        { cells: ["Prix de base", "Gratuit (100 tâches)", "Gratuit (1000 ops)", "Hébergement ~5-10€/mois"] },
+        { cells: ["Courbe d'apprentissage", "Très facile", "Moyenne", "Avancée"] },
+        { cells: ["Logique avancée", "Limitée", "Très puissante", "Puissante + code JS"] },
+        { cells: ["Self-hosting / RGPD", "Non (serveurs US)", "Non (serveurs EU)", "Oui (ton serveur)"] },
+        { cells: ["Idéal pour", "Client non-technique, PME simple", "80% des projets agence", "Santé, finance, gros volume"] },
+      ]},
+      { id: "1-16f", type: "callout", variant: "tip", html: "<strong>Règle pratique :</strong> commence avec <strong>Make</strong> pour 80% des projets. Utilise <strong>n8n self-hosted</strong> pour les clients avec contraintes de données (santé, finance). Utilise <strong>Zapier</strong> uniquement si le client veut gérer lui-même ou si une intégration critique manque dans Make." },
       { id: "1-17", type: "separator", style: "space" },
 
       { id: "1-18", type: "quiz-inline", question: "Un client passe 4h/semaine à saisir manuellement des données dans son CRM. Son coût horaire chargé est de 35€. Quel est le coût annuel de cette tâche ?", options: [
@@ -82,7 +94,7 @@ export const MODULE_6_LESSONS = [
   // ─── LEÇON 2 ───
   {
     order: 2,
-    module: 6,
+    module: 5,
     title: "Make (ex-Integromat) : ton premier scénario",
     slug: "make-premier-scenario-automatisation",
     duration: "30 min",
@@ -159,7 +171,7 @@ export const MODULE_6_LESSONS = [
   // ─── LEÇON 3 ───
   {
     order: 3,
-    module: 6,
+    module: 5,
     title: "n8n : l'alternative open-source puissante",
     slug: "n8n-alternative-open-source-workflows",
     duration: "25 min",
@@ -263,89 +275,15 @@ docker run -d \\
   // ─── LEÇON 4 ───
   {
     order: 4,
-    module: 6,
-    title: "Zapier vs Make vs n8n : lequel choisir ?",
-    slug: "zapier-vs-make-vs-n8n-comparaison",
-    duration: "20 min",
-    description: "Comparaison honnête et détaillée des trois outils : prix, limites, courbe d'apprentissage, et guide de décision selon le profil client.",
-    content: blocks([
-      { id: "4-1", type: "heading", level: 2, text: "Le bon outil pour le bon client" },
-      { id: "4-2", type: "text", html: "<p>La question \"quel outil utiliser ?\" revient constamment dans les projets d'automatisation. La vérité : <strong>il n'y a pas de meilleur outil universel</strong>. Il y a le meilleur outil pour un client donné, avec ses contraintes, son budget, et son niveau technique.</p><p>En tant qu'agence, tu dois maîtriser les trois et savoir recommander sans préférence dogmatique. Un client qui paie pour la bonne solution — même si ce n'est pas celle que tu préfères — est un client qui revient.</p>" },
-      { id: "4-3", type: "separator", style: "dots" },
-
-      { id: "4-4", type: "heading", level: 2, text: "Comparaison complète" },
-      { id: "4-5", type: "comparison", headers: ["Critère", "Zapier", "Make", "n8n (cloud)", "n8n (self-hosted)"], rows: [
-        { cells: ["Prix de base", "Gratuit (100 tâches)", "Gratuit (1000 ops)", "20€/mois", "Hébergement ~5-10€/mois"] },
-        { cells: ["Plan pro", "~50-70€/mois", "~16-29€/mois", "50€/mois", "Illimité (coût fixe)"] },
-        { cells: ["Nombre d'intégrations", "6 000+", "1 500+", "400+", "400+ + custom"] },
-        { cells: ["Logique avancée", "Limitée", "Très puissante", "Puissante", "Puissante + code JS"] },
-        { cells: ["Courbe d'apprentissage", "Très facile", "Moyenne", "Moyenne", "Avancée"] },
-        { cells: ["Gestion des erreurs", "Basique", "Avancée", "Avancée", "Avancée"] },
-        { cells: ["Self-hosting", "Non", "Non", "Non", "Oui"] },
-        { cells: ["Confidentialité données", "Serveurs US", "Serveurs EU", "Serveurs n8n", "Ton serveur"] },
-        { cells: ["Idéal pour", "Non-techniques, PME simple", "Agences, logique complexe", "Équipes tech, SaaS", "Santé, finance, volume"] },
-      ]},
-      { id: "4-6", type: "separator", style: "line" },
-
-      { id: "4-7", type: "heading", level: 2, text: "Guide de décision : 5 questions à poser" },
-      { id: "4-8", type: "steps", steps: [
-        { title: "Le client veut-il gérer lui-même ?", description: "Oui → Zapier (le plus simple pour des non-techniques). Non → Make ou n8n selon le reste." },
-        { title: "Y a-t-il des contraintes de confidentialité ?", description: "Santé, finance, juridique → n8n self-hosted obligatoire. Sinon → Make ou n8n cloud." },
-        { title: "Quel volume d'opérations par mois ?", description: "< 10 000 ops → Make Core suffit. 10 000-100 000 → Make Pro ou n8n cloud. > 100 000 → n8n self-hosted obligatoire économiquement." },
-        { title: "La logique du workflow est-elle complexe ?", description: "Zaps simples (si/alors) → Zapier. Boucles, transformations, gestion d'erreurs → Make ou n8n." },
-        { title: "Y a-t-il des intégrations très spécifiques ?", description: "Si l'app existe dans Zapier mais pas Make → Zapier. Sinon préfère Make/n8n. Toujours vérifier avant de promettre." },
-      ]},
-      { id: "4-9", type: "callout", variant: "tip", html: "Règle pratique : commence avec <strong>Make</strong> pour 80% des projets clients standard. Utilise <strong>n8n self-hosted</strong> pour les clients avec contraintes de données. Utilise <strong>Zapier</strong> uniquement si une intégration critique n'existe pas encore dans Make." },
-      { id: "4-10", type: "separator", style: "dots" },
-
-      { id: "4-11", type: "heading", level: 2, text: "Profils clients types et recommandations" },
-      { id: "4-12", type: "diagram", variant: "tree", nodes: [
-        { id: "n1", label: "E-commerce Shopify (PME)", description: "Make → 1 500 intégrations, logique panier abandonnée complexe, 16€/mois" },
-        { id: "n2", label: "Cabinet médical", description: "n8n self-hosted → données patients, RGPD strict, VPS dédié client" },
-        { id: "n3", label: "Startup SaaS", description: "n8n cloud ou self-hosted → volume élevé, dev en interne, webhooks custom" },
-        { id: "n4", label: "Consultant indépendant", description: "Zapier → utilise lui-même, no-code total, peu d'opérations" },
-        { id: "n5", label: "Agence marketing", description: "Make → intégrations Meta Ads, Google Ads, CRM, rapports automatisés" },
-      ]},
-      { id: "4-13", type: "text", html: "<p>En pratique, <strong>tu vas souvent utiliser Make en priorité</strong> car l'interface est la plus adaptée pour livrer rapidement à des clients non-techniques. n8n self-hosted devient une offre premium que tu peux vendre plus cher, justifiée par la souveraineté des données et l'absence de limite d'opérations.</p>" },
-      { id: "4-14", type: "callout", variant: "warning", html: "Attention aux coûts cachés de Zapier pour les clients. 1 000 tâches/mois semble beaucoup, mais un e-commerce avec 200 commandes/jour + 5 zaps par commande = 30 000 tâches/mois = 400€+/mois. Make ferait la même chose pour 29€/mois." },
-      { id: "4-15", type: "separator", style: "space" },
-
-      { id: "4-16", type: "quiz-inline", question: "Un cabinet comptable avec 500 clients te demande d'automatiser la génération de rapports mensuels. Lequel recommandes-tu ?", options: [
-        { id: "a", text: "Zapier — le plus simple et le plus connu" },
-        { id: "b", text: "Make — bon rapport puissance/prix pour ce volume" },
-        { id: "c", text: "n8n self-hosted — données financières sensibles, volume important, coût maîtrisé" },
-      ], correctId: "c", explanation: "Données comptables = données sensibles. Un cabinet ne peut pas risquer que les chiffres clients passent par des serveurs tiers. n8n self-hosted garantit la conformité. Le volume (500 rapports/mois) rendrait Make cher, tandis que n8n self-hosted a un coût fixe." },
-
-      { id: "4-17", type: "separator", style: "dots" },
-      { id: "4-18", type: "checklist", title: "Acquis de cette leçon", items: [
-        { id: "c1", text: "Je connais les différences clés entre Zapier, Make et n8n" },
-        { id: "c2", text: "Je sais poser les 5 questions pour recommander le bon outil" },
-        { id: "c3", text: "Je peux expliquer pourquoi n8n self-hosted est une offre premium justifiable" },
-        { id: "c4", text: "Je comprends les pièges de coûts Zapier à fort volume" },
-      ]},
-    ]),
-    exercise: "<h3>Simulation de conseil</h3><p>Trois clients fictifs te contactent. Pour chacun, recommande un outil, justifie en 3 arguments, et propose un prix de setup + maintenance mensuelle :<br/><br/><strong>Client A</strong> : Restaurant avec 3 employés. Veut automatiser les réservations en ligne → email de confirmation → ajout dans Google Calendar. Budget max 50€/mois.<br/><strong>Client B</strong> : Clinique vétérinaire. Veut automatiser les rappels de vaccination par SMS + email. Données des animaux = données client sensibles.<br/><strong>Client C</strong> : Agence de pub avec 2M€ de budget géré. Veut des dashboards automatiques depuis Meta Ads, Google Ads et Notion. ~50 000 opérations/mois estimées.</p>",
-    quiz: [
-      { type: "mcq", question: "Un cabinet comptable avec 500 clients doit automatiser la génération de rapports mensuels. Quel outil recommandes-tu ?", options: JSON.stringify(["Zapier — le plus simple et le plus connu", "Make — bon rapport puissance/prix", "n8n self-hosted — données sensibles, volume important, coût maîtrisé", "Aucun outil ne convient"]), correctAnswer: "n8n self-hosted — données sensibles, volume important, coût maîtrisé", explanation: "Les données comptables sont sensibles : elles ne doivent pas transiter par des serveurs tiers. Le volume (500 rapports/mois) rendrait Make coûteux, alors que n8n self-hosted a un coût fixe. La confidentialité et le volume orientent vers n8n." },
-      { type: "true_false", question: "Pour un e-commerce qui traite 200 commandes par jour, Zapier peut coûter plus de 400€/mois là où Make ferait le même travail pour environ 29€/mois.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Zapier facture par tâche. 200 commandes/jour x 5 actions par commande x 30 jours = 30 000 tâches/mois, ce qui dépasse 400€/mois chez Zapier. Make, qui facture par opération avec des plans plus généreux, couvre le même volume pour environ 29€/mois." },
-      { type: "mcq", question: "Quelle est la première question à poser pour recommander le bon outil d'automatisation à un client ?", options: JSON.stringify(["Quel est ton budget mensuel ?", "Le client veut-il gérer lui-même les automatisations ?", "Combien d'employés as-tu ?", "Quel est ton chiffre d'affaires ?"]), correctAnswer: "Le client veut-il gérer lui-même les automatisations ?", explanation: "Si le client veut gérer lui-même, Zapier est le plus simple pour un non-technique. Si c'est toi qui gères, tu peux utiliser Make ou n8n qui sont plus puissants. Cette question oriente toute la recommandation." },
-      { type: "true_false", question: "Make est généralement recommandé pour 80% des projets clients standard d'une agence IA.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Make offre le meilleur rapport puissance/prix pour la majorité des projets : logique avancée, 1 500+ intégrations, plans abordables, interface adaptée pour livrer rapidement. n8n self-hosted est réservé aux cas premium (données sensibles, volume)." },
-      { type: "mcq", question: "Un client e-commerce hésite entre Make et Zapier. Il traite 150 commandes par jour avec 4 actions automatisées par commande. Quel conseil lui donnez-vous pour optimiser ses coûts ?", options: JSON.stringify(["Zapier est parfait car il a plus d'intégrations", "Make est plus adapté car son modèle de facturation par opération est plus économique à ce volume", "Les deux outils coûtent exactement la même chose", "Il devrait tout faire manuellement pour économiser"]), correctAnswer: "Make est plus adapté car son modèle de facturation par opération est plus économique à ce volume", explanation: "150 commandes x 4 actions x 30 jours = 18 000 opérations/mois. Chez Zapier, ce volume coûterait plus de 300€/mois. Chez Make, le plan Pro à 16€/mois couvre largement ce volume. Le modèle de facturation de Make est plus avantageux à fort volume." },
-    ],
-  },
-
-  // ─── LEÇON 5 ───
-  {
-    order: 5,
-    module: 6,
+    module: 5,
     title: "Automatiser avec l'IA : le combo gagnant",
     slug: "automatiser-avec-ia-combo-gagnant",
     duration: "30 min",
     description: "Intègre Claude ou GPT-4 dans tes workflows Make et n8n. Analyse automatique de documents, classification de leads, réponses intelligentes : les automatisations IA que les clients paient le plus cher.",
     content: blocks([
-      { id: "5-1", type: "heading", level: 2, text: "Pourquoi l'IA transforme l'automatisation" },
-      { id: "5-2", type: "text", html: "<p>Une automatisation classique suit des règles fixes : <em>si A alors B</em>. C'est utile, mais limité. Dès qu'il faut <strong>comprendre du texte libre, prendre une décision nuancée, ou générer du contenu</strong>, les règles rigides échouent.</p><p>L'IA dans les workflows change tout : tu peux maintenant automatiser des tâches qui semblaient impossibles à automatiser. Un email client qui arrive et qui est <strong>automatiquement classifié, priorisé, et auquel une réponse pertinente est suggérée</strong> — sans intervention humaine. C'est ça le combo gagnant.</p>" },
-      { id: "5-3", type: "callout", variant: "success", html: "Les workflows avec IA se vendent 2 à 5 fois plus cher que les automatisations classiques. Un client comprend que \"surveiller un Google Sheet\" vaut 500€. Il comprend que \"analyser automatiquement ses emails clients et créer des tickets priorisés\" vaut 3 000€." },
+      { id: "4-1", type: "heading", level: 2, text: "Pourquoi l'IA transforme l'automatisation" },
+      { id: "4-2", type: "text", html: "<p>Une automatisation classique suit des règles fixes : <em>si A alors B</em>. C'est utile, mais limité. Dès qu'il faut <strong>comprendre du texte libre, prendre une décision nuancée, ou générer du contenu</strong>, les règles rigides échouent.</p><p>L'IA dans les workflows change tout : tu peux maintenant automatiser des tâches qui semblaient impossibles à automatiser. Un email client qui arrive et qui est <strong>automatiquement classifié, priorisé, et auquel une réponse pertinente est suggérée</strong> — sans intervention humaine. C'est ça le combo gagnant.</p>" },
+      { id: "4-3", type: "callout", variant: "success", html: "Les workflows avec IA se vendent 2 à 5 fois plus cher que les automatisations classiques. Un client comprend que \"surveiller un Google Sheet\" vaut 500€. Il comprend que \"analyser automatiquement ses emails clients et créer des tickets priorisés\" vaut 3 000€." },
       { id: "5-4", type: "separator", style: "dots" },
 
       { id: "5-5", type: "heading", level: 2, text: "Les 4 patterns d'IA dans les workflows" },
@@ -429,10 +367,10 @@ docker run -d \\
     ],
   },
 
-  // ─── LEÇON 6 ───
+  // ─── LEÇON 5 ───
   {
-    order: 6,
-    module: 6,
+    order: 5,
+    module: 5,
     title: "Projet : un système de veille automatisé",
     slug: "projet-systeme-veille-automatise",
     duration: "25 min",

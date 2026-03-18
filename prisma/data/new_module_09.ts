@@ -1838,4 +1838,310 @@ export function FeedbackWidget() {
       { type: "mcq", question: "Vous venez de déployer le MVP de votre client sur Vercel. Après une semaine, seulement 15% des utilisateurs reviennent une deuxième fois. Le client panique. Que lui proposez-vous comme démarche structurée ?", options: JSON.stringify(["Vous ajoutez 10 nouvelles fonctionnalités pour rendre l'app plus complète", "Vous analysez les session replays PostHog pour identifier les points de friction, faites 5 calls de 20 min avec des utilisateurs, et planifiez un sprint d'itération", "Vous relancez une campagne marketing pour attirer plus d'utilisateurs", "Vous changez complètement de stack technique"]), correctAnswer: "Vous analysez les session replays PostHog pour identifier les points de friction, faites 5 calls de 20 min avec des utilisateurs, et planifiez un sprint d'itération", explanation: "La boucle de feedback MVP : observer les session replays pour voir où les utilisateurs bloquent, faire des interviews qualitatives avec 5 utilisateurs cibles, identifier les 3 plus gros points de friction, et itérer. Ajouter des features sans comprendre le problème est une erreur classique." },
     ],
   },
+  // ─── LEÇON 7 ───
+  {
+    order: 7,
+    module: 9,
+    title: "Upselling et cross-selling : maximiser chaque client",
+    slug: "upselling-cross-selling",
+    duration: "25 min",
+    description: "Apprends à vendre plus à chaque client existant grâce à une matrice d'upsell structurée, le bon timing pour proposer, et les maths qui prouvent que fidéliser coûte 5x moins cher qu'acquérir.",
+    content: blocks([
+      {
+        id: "7-1",
+        type: "heading",
+        level: 2,
+        text: "Pourquoi l'upsell est ton levier de croissance n°1",
+      },
+      {
+        id: "7-2",
+        type: "text",
+        html: "<p>Trouver un nouveau client coûte <strong>5 à 7 fois plus cher</strong> que de vendre un service supplémentaire à un client existant. Pourtant, la plupart des agences IA passent 90% de leur énergie à chercher de nouveaux clients et 0% à maximiser la valeur de ceux qu'elles ont déjà.</p><p>L'upselling (vendre un service supérieur) et le cross-selling (vendre un service complémentaire) sont les deux leviers qui transforment une agence qui survit en une agence qui prospère.</p>",
+      },
+      {
+        id: "7-3",
+        type: "callout",
+        variant: "info",
+        html: "<strong>Les maths qui changent tout :</strong> Vendre 3 services à 1 client = 1 relation, 1 confiance déjà établie, 0€ de coût d'acquisition. Trouver 3 nouveaux clients = 3 cycles de prospection, 3 phases de confiance à construire, des semaines d'effort. À chiffre d'affaires égal, la première option te prend 5x moins de temps et d'énergie.",
+      },
+      {
+        id: "7-4",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "7-5",
+        type: "heading",
+        level: 2,
+        text: "La matrice d'upsell pour une agence IA",
+      },
+      {
+        id: "7-6",
+        type: "text",
+        html: "<p>Voici la logique de progression pour chaque type de client. L'idée : chaque service livré ouvre la porte au suivant, naturellement.</p>",
+      },
+      {
+        id: "7-7",
+        type: "comparison",
+        headers: ["Service initial", "Upsell naturel", "Cross-sell complémentaire", "Maintenance récurrente"],
+        rows: [
+          {
+            cells: [
+              "Chatbot client (800-1 500€)",
+              "Chatbot avancé avec CRM intégré (2 500-4 000€)",
+              "Automatisation email/SMS post-conversation (1 000-2 000€)",
+              "Maintenance + optimisation mensuelle (200-400€/mois)",
+            ],
+          },
+          {
+            cells: [
+              "Automatisation de process (1 500-3 000€)",
+              "Dashboard de reporting IA (2 000-3 500€)",
+              "Agent IA autonome pour le même process (3 000-5 000€)",
+              "Monitoring + évolutions mensuelles (300-500€/mois)",
+            ],
+          },
+          {
+            cells: [
+              "Site web / landing page (1 000-2 500€)",
+              "Ajout chatbot sur le site (800-1 500€)",
+              "SEO local + contenu IA (1 500-2 500€)",
+              "Hébergement + mises à jour (150-300€/mois)",
+            ],
+          },
+          {
+            cells: [
+              "Agent IA (3 000-6 000€)",
+              "Multi-agents connectés (5 000-10 000€)",
+              "Formation équipe à l'utilisation (1 000-2 000€)",
+              "Support prioritaire + évolutions (400-800€/mois)",
+            ],
+          },
+        ],
+      },
+      {
+        id: "7-8",
+        type: "callout",
+        variant: "tip",
+        html: "<strong>La règle d'or :</strong> chaque projet livré doit contenir une 'graine' pour le prochain. Quand tu livres un chatbot, montre au client les données qu'il génère et dis : 'Imagine si on automatisait les relances basées sur ces données.' Tu ne vends pas — tu plantes l'idée.",
+      },
+      {
+        id: "7-9",
+        type: "separator",
+        style: "line",
+      },
+      {
+        id: "7-10",
+        type: "heading",
+        level: 2,
+        text: "Le parcours d'upsell sur 6 mois",
+      },
+      {
+        id: "7-11",
+        type: "steps",
+        steps: [
+          {
+            title: "Mois 0 : Livraison du service initial",
+            description: "Tu livres un chatbot client à 1 200€. Le client est satisfait. Tu envoies un rapport de performance à J+14 montrant les conversations traitées et le temps gagné.",
+          },
+          {
+            title: "Mois 1 : Le rapport qui ouvre la porte",
+            description: "Tu envoies un rapport mensuel avec une section 'Opportunités détectées'. Ex : '37% des conversations demandent un suivi par email → on pourrait automatiser ça.' Tu ne vends pas encore. Tu montres la donnée.",
+          },
+          {
+            title: "Mois 2 : La proposition naturelle (cross-sell)",
+            description: "Tu proposes l'automatisation email/SMS en complément : 'Vu les données du chatbot, ajouter les relances automatiques pourrait doubler ton taux de conversion. Budget : 1 500€ one-shot + 200€/mois de maintenance.'",
+          },
+          {
+            title: "Mois 3-4 : L'upgrade (upsell)",
+            description: "Le client voit les résultats des deux services combinés. Tu proposes le chatbot avancé avec intégration CRM : 'Au lieu de copier-coller les leads du chatbot dans ton CRM, on connecte tout. Tes commerciaux reçoivent les leads qualifiés en temps réel.'",
+          },
+          {
+            title: "Mois 5-6 : Le contrat de maintenance global",
+            description: "Tu gères maintenant chatbot + automatisation + CRM. Tu proposes un contrat de maintenance mensuel global à 400€/mois : monitoring, optimisation, support prioritaire, rapport mensuel. Le client signe sans hésiter car tu es devenu indispensable.",
+          },
+        ],
+      },
+      {
+        id: "7-12",
+        type: "callout",
+        variant: "warning",
+        html: "<strong>Erreur fatale :</strong> proposer l'upsell trop tôt. Si tu vends un service complémentaire avant que le client ait vu les résultats du premier, tu passes pour un vendeur de tapis. Attends toujours que le client ait constaté la valeur (minimum 2-4 semaines après la livraison).",
+      },
+      {
+        id: "7-13",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "7-14",
+        type: "heading",
+        level: 2,
+        text: "Le timing parfait pour proposer",
+      },
+      {
+        id: "7-15",
+        type: "comparison",
+        headers: ["Moment", "Pourquoi c'est le bon timing", "Quoi proposer"],
+        rows: [
+          {
+            cells: [
+              "J+14 après livraison",
+              "Le client voit les premiers résultats et est dans l'euphorie du 'ça marche'",
+              "Le contrat de maintenance (sécuriser le récurrent)",
+            ],
+          },
+          {
+            cells: [
+              "Lors du rapport mensuel",
+              "Tu montres des données concrètes qui révèlent des opportunités",
+              "Un cross-sell basé sur les données ('37% des conversations demandent X')",
+            ],
+          },
+          {
+            cells: [
+              "Quand le client te contacte spontanément",
+              "Il pense déjà à toi, il a un besoin — c'est le moment parfait",
+              "Un upsell vers le service supérieur",
+            ],
+          },
+          {
+            cells: [
+              "À la fin d'un trimestre",
+              "Le client fait son bilan, il mesure le ROI de tes services",
+              "Un package global (bundle de services avec réduction)",
+            ],
+          },
+          {
+            cells: [
+              "Quand il mentionne un nouveau problème",
+              "Il exprime un besoin explicite — tu n'as même pas besoin de vendre",
+              "La solution exacte à son problème (agent IA, automatisation, dashboard)",
+            ],
+          },
+        ],
+      },
+      {
+        id: "7-16",
+        type: "separator",
+        style: "line",
+      },
+      {
+        id: "7-17",
+        type: "heading",
+        level: 2,
+        text: "Les maths de l'upsell : pourquoi c'est 5x plus rentable",
+      },
+      {
+        id: "7-18",
+        type: "comparison",
+        headers: ["Stratégie", "3 nouveaux clients", "1 client × 3 services"],
+        rows: [
+          {
+            cells: [
+              "Temps de prospection",
+              "3 × 2-4 semaines = 6-12 semaines",
+              "0 semaines (client existant)",
+            ],
+          },
+          {
+            cells: [
+              "Coût d'acquisition",
+              "3 × 200-500€ (temps + outils) = 600-1 500€",
+              "0€ (relation déjà établie)",
+            ],
+          },
+          {
+            cells: [
+              "Phase de confiance",
+              "3 cycles complets à construire",
+              "Confiance déjà acquise",
+            ],
+          },
+          {
+            cells: [
+              "Risque de non-paiement",
+              "3 clients inconnus = risque élevé",
+              "1 client qui a déjà payé = risque très faible",
+            ],
+          },
+          {
+            cells: [
+              "Panier moyen par client",
+              "1 200€ (service unique)",
+              "4 500€+ (3 services + maintenance)",
+            ],
+          },
+          {
+            cells: [
+              "Revenu récurrent généré",
+              "0 à 600€/mois (si 1 sur 3 prend la maintenance)",
+              "400€/mois (maintenance globale quasi garantie)",
+            ],
+          },
+        ],
+      },
+      {
+        id: "7-19",
+        type: "callout",
+        variant: "success",
+        html: "<strong>L'objectif à viser :</strong> un panier moyen de 3 500 à 5 000€ par client sur 6 mois (service initial + upsells + maintenance). Si tu signes 2 clients par mois avec ce panier, tu atteins 7 000-10 000€/mois sans courir après 10 nouveaux clients.",
+      },
+      {
+        id: "7-20",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "7-21",
+        type: "heading",
+        level: 2,
+        text: "Exemples concrets d'upsell réussis",
+      },
+      {
+        id: "7-22",
+        type: "text",
+        html: "<p><strong>Exemple 1 — Cabinet comptable :</strong> Service initial : chatbot FAQ pour les clients du cabinet (1 200€). Mois 2 : automatisation de la collecte de documents comptables par email (1 800€). Mois 4 : dashboard de suivi des dossiers clients avec alertes IA (2 500€). Maintenance mensuelle : 350€/mois. Total sur 6 mois : <strong>5 500€ + 1 400€ MRR = 7 600€</strong> pour un seul client.</p><p><strong>Exemple 2 — Agence immobilière :</strong> Service initial : agent IA de qualification des leads entrants (2 000€). Mois 2 : automatisation des emails de suivi avec les acheteurs potentiels (1 500€). Mois 5 : chatbot sur le site web connecté au CRM immo (2 500€). Maintenance : 400€/mois. Total sur 6 mois : <strong>6 000€ + 1 600€ MRR = 8 400€</strong>.</p><p><strong>Exemple 3 — E-commerce :</strong> Service initial : chatbot de support client (1 000€). Mois 1 : automatisation des relances panier abandonné par email/SMS (1 200€). Mois 3 : recommandations produits personnalisées par IA (2 000€). Maintenance : 300€/mois. Total sur 6 mois : <strong>4 200€ + 1 200€ MRR = 6 000€</strong>.</p>",
+      },
+      {
+        id: "7-23",
+        type: "separator",
+        style: "dots",
+      },
+      {
+        id: "7-24",
+        type: "quiz-inline",
+        question: "Quel est le meilleur moment pour proposer un upsell à un client ?",
+        options: [
+          { id: "a", text: "Pendant la phase de vente initiale, pour maximiser le panier" },
+          { id: "b", text: "Quand le client a constaté les résultats du premier service et que tu as des données à montrer" },
+          { id: "c", text: "6 mois après la livraison, quand il a oublié le projet" },
+          { id: "d", text: "Quand tu as besoin de revenus supplémentaires" },
+        ],
+        correctId: "b",
+        explanation: "Le meilleur timing est quand le client a vu les résultats concrets (minimum 2-4 semaines après livraison) et que tu peux t'appuyer sur des données réelles. Proposer trop tôt te fait passer pour un vendeur de tapis. Proposer trop tard, c'est rater la fenêtre d'enthousiasme.",
+      },
+      {
+        id: "7-25",
+        type: "checklist",
+        title: "Checklist — Ta stratégie d'upsell est en place",
+        items: [
+          { id: "c1", text: "Ma matrice d'upsell/cross-sell est définie pour mes 3 services principaux" },
+          { id: "c2", text: "J'ai un parcours d'upsell sur 6 mois pour chaque type de client" },
+          { id: "c3", text: "Mon rapport mensuel inclut une section 'opportunités détectées'" },
+          { id: "c4", text: "J'ai identifié le bon timing pour chaque type de proposition" },
+          { id: "c5", text: "J'ai calculé mon panier moyen cible par client sur 6 mois" },
+          { id: "c6", text: "J'ai identifié 2-3 clients existants à qui proposer un service complémentaire cette semaine" },
+        ],
+      },
+    ]),
+    exercise: "<p><strong>Exercice :</strong> Crée ta matrice d'upsell/cross-sell pour tes 3 services principaux. Pour chaque service, définis : (1) l'upsell naturel (version supérieure), (2) le cross-sell complémentaire, (3) la maintenance récurrente associée. Ensuite, pour chaque type de client (cabinet comptable, commerce local, e-commerce, etc.), écris le parcours d'upsell sur 6 mois : quel service proposer, à quel moment, avec quel argument basé sur les données. Calcule ton panier moyen cible par client. Durée estimée : 45 min.</p>",
+    quiz: [
+      { type: "mcq", question: "Combien coûte-t-il en moyenne de vendre un service à un client existant par rapport à trouver un nouveau client ?", options: JSON.stringify(["C'est le même coût", "2 fois moins cher", "5 à 7 fois moins cher", "10 à 15 fois moins cher"]), correctAnswer: "5 à 7 fois moins cher", explanation: "Trouver un nouveau client coûte 5 à 7 fois plus cher que vendre un service supplémentaire à un client existant. La confiance est déjà établie, le coût d'acquisition est nul, et le risque de non-paiement est très faible." },
+      { type: "true_false", question: "Il faut proposer l'upsell dès la livraison du premier service pour maximiser les revenus.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Proposer l'upsell trop tôt (avant que le client ait constaté la valeur du premier service) te fait passer pour un vendeur de tapis. Il faut attendre minimum 2 à 4 semaines après la livraison, quand le client a vu les résultats concrets." },
+      { type: "mcq", question: "Quelle est la meilleure façon de 'planter la graine' d'un futur upsell ?", options: JSON.stringify(["Envoyer un email promotionnel avec tous tes services", "Inclure une section 'opportunités détectées' dans ton rapport mensuel avec des données réelles", "Appeler le client chaque semaine pour lui proposer de nouveaux services", "Attendre que le client te contacte spontanément"]), correctAnswer: "Inclure une section 'opportunités détectées' dans ton rapport mensuel avec des données réelles", explanation: "Le rapport mensuel avec une section 'opportunités détectées' est le meilleur outil d'upsell. Tu montres des données réelles (ex : '37% des conversations demandent un suivi email') sans vendre directement. Le client voit l'opportunité et te demande de la réaliser." },
+      { type: "true_false", question: "Vendre 3 services à 1 client existant génère le même chiffre d'affaires que trouver 3 nouveaux clients, mais avec 5 fois moins d'effort.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "À chiffre d'affaires égal, vendre 3 services à 1 client = 1 relation, 0€ de coût d'acquisition, confiance déjà établie. Trouver 3 nouveaux clients = 3 cycles de prospection, des semaines d'effort, et un risque plus élevé sur chaque deal." },
+      { type: "mcq", question: "Tu as livré un chatbot à un cabinet comptable il y a 1 mois. Le rapport montre que 40% des conversations portent sur la collecte de documents. Quelle est ta prochaine action ?", options: JSON.stringify(["Tu proposes immédiatement un agent IA à 5 000€", "Tu montres la donnée au client et proposes l'automatisation de la collecte de documents comme cross-sell naturel à 1 800€", "Tu attends 6 mois avant de proposer quoi que ce soit", "Tu baisses le prix du chatbot pour le fidéliser"]), correctAnswer: "Tu montres la donnée au client et proposes l'automatisation de la collecte de documents comme cross-sell naturel à 1 800€", explanation: "Le cross-sell basé sur des données réelles du service existant est le plus puissant. Le client voit que 40% de ses conversations portent sur la collecte de documents → la solution s'impose naturellement. C'est le parcours d'upsell structuré : montrer la donnée, puis proposer la solution logique." },
+    ],
+  },
 ];

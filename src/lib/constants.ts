@@ -9,29 +9,28 @@ export const BADGES = [
   { id: "first_lesson", name: "Premier pas", description: "Complète ta première leçon", icon: "target" },
   { id: "module_1", name: "Fondations IA", description: "Termine le Module 1", icon: "cpu" },
   { id: "streak_7", name: "Régularité", description: "7 jours consécutifs", icon: "flame" },
-  { id: "halfway", name: "Mi-parcours", description: "50 leçons complétées", icon: "bolt" },
-  { id: "graduate", name: "Diplôme Opexia", description: "100 leçons complétées", icon: "award" },
+  { id: "halfway", name: "Mi-parcours", description: "44 leçons complétées", icon: "bolt" },
+  { id: "graduate", name: "Diplôme Opexia", description: "88 leçons complétées", icon: "award" },
 ] as const;
 
 export const MODULES = [
-  // ── Formation principale (14 modules) ──
-  { order: 1,  title: "Découvrir l'IA & les opportunités", description: "Comprendre l'IA, les outils, et le potentiel business", category: "formation" },
+  // ── Formation principale (13 modules) ──
+  { order: 1,  title: "Découvrir l'IA et lancer ton agence", description: "Comprendre l'IA, les outils, et poser les bases de ton business", category: "formation" },
   { order: 2,  title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", category: "formation" },
-  { order: 3,  title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne, même sans savoir coder", category: "formation" },
-  { order: 4,  title: "Backend & Bases de données", description: "Supabase : donner un cerveau et une mémoire à tes projets", category: "formation" },
-  { order: 5,  title: "APIs & Intégrations", description: "Connecter les outils entre eux : Stripe, webhooks, APIs", category: "formation" },
-  { order: 6,  title: "Automatisations", description: "Make, n8n, Zapier : créer des machines qui bossent pour toi", category: "formation" },
-  { order: 7,  title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", category: "formation" },
-  { order: 8,  title: "Agents IA autonomes", description: "Des IA qui travaillent seules : veille, prospection, analyse", category: "formation" },
-  { order: 9,  title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", category: "formation" },
-  { order: 10, title: "Ton offre & tes prix", description: "Passer de \"je sais faire\" à \"je vends\"", category: "formation" },
-  { order: 11, title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing", category: "formation" },
-  { order: 12, title: "Livrer & fidéliser", description: "Un client satisfait = 3 clients en plus", category: "formation" },
-  { order: 13, title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", category: "formation" },
-  { order: 14, title: "Juridique, contrats & admin", description: "Statuts, contrats, RGPD, facturation et assurances", category: "formation" },
+  { order: 3,  title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne + ton portfolio", category: "formation" },
+  { order: 4,  title: "Backend, Supabase et APIs", description: "Base de données, auth, paiements et webhooks", category: "formation" },
+  { order: 5,  title: "Automatisations", description: "Make, n8n : créer des machines qui bossent pour toi", category: "formation" },
+  { order: 6,  title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", category: "formation" },
+  { order: 7,  title: "Agents IA", description: "Des IA autonomes : veille, analyse et actions", category: "formation" },
+  { order: 8,  title: "Ton offre et tes prix", description: "De \"je sais faire\" à \"je vends\" — ton premier client", category: "formation" },
+  { order: 9,  title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing et upselling", category: "formation" },
+  { order: 10, title: "Livrer et fidéliser", description: "Process de livraison, retainers et témoignages", category: "formation" },
+  { order: 11, title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", category: "formation" },
+  { order: 12, title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", category: "formation" },
+  { order: 13, title: "Juridique, contrats et admin", description: "Statuts, contrats, RGPD et facturation", category: "formation" },
   // ── Masterclasses (bonus) ──
-  { order: 15, title: "Masterclass Claude Code", description: "Ton environnement de dev IA : coder avec Claude dans ton terminal", category: "masterclass" },
-  { order: 16, title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", category: "masterclass" },
+  { order: 14, title: "Masterclass Claude Code", description: "Coder avec Claude directement dans ton terminal", category: "masterclass" },
+  { order: 15, title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", category: "masterclass" },
 ] as const;
 
 /* ——— Module metadata (brand, difficulty, estimated time) ——— */
@@ -47,24 +46,26 @@ export interface ModuleMetadata {
 }
 
 export const MODULE_METADATA: Record<number, ModuleMetadata> = {
-  // Formation
+  // Semaine 1 — Fondations
   1:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 6  },
   2:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h",    lessonCount: 5  },
   3:  { brands: ["claude"],    difficulty: "debutant",       estimatedTime: "~2h30",  lessonCount: 6  },
   4:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
+  // Semaine 2 — Construction
   5:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
-  6:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
-  7:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
-  8:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
-  9:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
+  6:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h30",  lessonCount: 6  },
+  7:  { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~1h30",  lessonCount: 4  },
+  8:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 7  },
+  // Semaine 3 — Business
+  9:  { brands: [],            difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 7  },
   10: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
-  11: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
-  12: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
-  13: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
-  14: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
+  11: { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
+  12: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
+  // Semaine 4 — Juridique
+  13: { brands: [],            difficulty: "avance",         estimatedTime: "~1h30",  lessonCount: 4  },
   // Masterclasses
-  15: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 7  },
-  16: { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h30",  lessonCount: 8  },
+  14: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
+  15: { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 7  },
 };
 
 export const DIFFICULTY_CONFIG = {
@@ -76,20 +77,20 @@ export const DIFFICULTY_CONFIG = {
 /* ——— Weeks structure (4 weeks x 3 modules) ——— */
 
 export const WEEKS = [
-  { week: 1, title: "Fondations",          subtitle: "IA, prompting et création de sites web",                 modules: [1, 2, 3, 4] },
-  { week: 2, title: "Construction",         subtitle: "APIs, automatisations, chatbots et agents IA",           modules: [5, 6, 7, 8] },
-  { week: 3, title: "Business",             subtitle: "MVP, offre, clients et livraison",                      modules: [9, 10, 11, 12] },
-  { week: 4, title: "Scale & Juridique",    subtitle: "Scaling, juridique et masterclasses",                   modules: [13, 14] },
+  { week: 1, title: "Fondations",      subtitle: "IA, prompting, sites web et backend",              modules: [1, 2, 3, 4] },
+  { week: 2, title: "Construction",     subtitle: "Automatisations, chatbots, agents et ton offre",   modules: [5, 6, 7, 8] },
+  { week: 3, title: "Business",         subtitle: "Clients, livraison, MVP et scaling",               modules: [9, 10, 11, 12] },
+  { week: 4, title: "Scale & Juridique", subtitle: "Juridique et masterclasses",                      modules: [13] },
 ] as const;
 
-export const MASTERCLASS_MODULES = [15, 16] as const;
+export const MASTERCLASS_MODULES = [14, 15] as const;
 
 /* ——— Tier-based module access ——— */
 
 export const TIER_MODULE_ACCESS: Record<string, number[]> = {
   starter:    [1],
-  academy:    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-  one_to_one: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  academy:    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+  one_to_one: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
 };
 
 export const TIERS = [
@@ -118,7 +119,7 @@ export const TIERS = [
     description: "La formation complète pour lancer ton agence IA",
     features: [
       { text: "Tout ce qui est dans Starter", included: true },
-      { text: "100+ leçons progressives en 15 modules", included: true },
+      { text: "88 leçons progressives en 13 modules + 2 masterclasses", included: true },
       { text: "Quiz de validation par leçon", included: true },
       { text: "Exercices pratiques", included: true },
       { text: "Assistant IA intégré", included: true },
