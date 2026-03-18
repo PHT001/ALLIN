@@ -1,7 +1,7 @@
 "use client";
 
 import { useSession, signOut } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { TIERS } from "@/lib/constants";
@@ -24,6 +24,14 @@ const BADGES = [
 type Tab = "profile" | "subscription";
 
 export default function ProfilePage() {
+  return (
+    <Suspense fallback={<div className="max-w-4xl mx-auto w-full animate-pulse"><div className="h-32 bg-gray-100 rounded-2xl" /></div>}>
+      <ProfileContent />
+    </Suspense>
+  );
+}
+
+function ProfileContent() {
   const { data: session } = useSession();
   const searchParams = useSearchParams();
   const [stats, setStats] = useState({ xp: 0, streak: 0, tier: "starter", lessonsCompleted: 0, quizzesPassed: 0 });
