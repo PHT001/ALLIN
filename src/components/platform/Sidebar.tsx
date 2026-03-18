@@ -232,7 +232,6 @@ const SIDEBAR_SECTIONS: SidebarSection[] = [
       { href: "/pipeline", label: "Pipeline", icon: IconPipeline },
 
       { href: "/generateur", label: "Générateur", icon: IconWand, lockedForStarter: true, lockedTeaser: "Génère des livrables complets en un clic : landing pages, emails, scripts de vente, propositions commerciales." },
-      { href: "/marketplace", label: "Marketplace", icon: IconStore, badge: "Bientôt" },
     ],
   },
   {
