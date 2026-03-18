@@ -390,7 +390,7 @@ export default function NotesPage() {
                       }`}
                       style={{
                         backgroundColor: c,
-                        ringColor: c,
+                        boxShadow: activeNote.color === c ? `0 0 0 2px white, 0 0 0 4px ${c}` : undefined,
                       }}
                       title={COLOR_NAMES[c]}
                     />
