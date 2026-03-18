@@ -54,12 +54,12 @@ export const authOptions: NextAuthOptions = {
             },
           });
           user.id = created.id;
-          (user as Record<string, unknown>).role = created.role;
-          (user as Record<string, unknown>).createdAt = created.createdAt.toISOString();
+          (user as any).role = created.role;
+          (user as any).createdAt = created.createdAt.toISOString();
         } else {
           user.id = existing.id;
-          (user as Record<string, unknown>).role = existing.role;
-          (user as Record<string, unknown>).createdAt = existing.createdAt.toISOString();
+          (user as any).role = existing.role;
+          (user as any).createdAt = existing.createdAt.toISOString();
         }
       }
       return true;
@@ -67,8 +67,8 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
-        token.role = (user as Record<string, unknown>).role as string;
-        token.createdAt = (user as Record<string, unknown>).createdAt as string;
+        token.role = (user as any).role as string;
+        token.createdAt = (user as any).createdAt as string;
       }
       return token;
     },
