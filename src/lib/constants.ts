@@ -97,7 +97,7 @@ export const TIERS = [
   {
     id: "starter",
     name: "Starter",
-    price: 49,
+    price: 47,
     period: "one-shot",
     description: "Pour les curieux qui veulent comprendre avant de se lancer",
     features: [
@@ -108,13 +108,13 @@ export const TIERS = [
       { text: "Accompagnement personnalisé", included: false },
       { text: "Sessions en visio", included: false },
     ],
-    cta: "Commencer pour 49\u20ac",
+    cta: "Commencer pour 47\u20ac",
     popular: false,
   },
   {
     id: "academy",
     name: "Academy",
-    price: 399,
+    price: 397,
     period: "one-shot",
     description: "La formation complète pour lancer ton agence IA",
     features: [
@@ -131,7 +131,7 @@ export const TIERS = [
   {
     id: "one_to_one",
     name: "One-to-One",
-    price: 1299,
+    price: 3997,
     period: "one-shot",
     description: "L'accompagnement premium pour aller plus vite",
     features: [
@@ -162,7 +162,7 @@ export const COACHING_PRICE_DISPLAY = "70";
 /* ——— Referral / Parrainage ——— */
 export const REFERRAL_COMMISSION_RATE = 0.20; // 20%
 export const TIER_PRICES_CENTS: Record<string, number> = {
-  starter: 4900,
-  academy: 39900,
-  one_to_one: 129900,
+  starter: 4700,
+  academy: 39700,
+  one_to_one: 399700,
 };
