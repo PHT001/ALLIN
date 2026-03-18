@@ -257,7 +257,14 @@ interface SidebarProps {
   onClose?: () => void;
 }
 
-function TierBadge({ tier }: { tier: string }) {
+function TierBadge({ tier, role }: { tier: string; role?: string }) {
+  if (role === "admin") {
+    return (
+      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border bg-[#FF1744]/15 text-[#FF1744] border-[#FF1744]/25">
+        Admin
+      </div>
+    );
+  }
   const config = {
     one_to_one: { label: "Premium", classes: "bg-gradient-to-r from-amber-500/20 to-amber-600/20 text-amber-300 border-amber-500/30" },
     academy: { label: "Academy", classes: "bg-[#FF1744]/15 text-[#FF1744] border-[#FF1744]/25" },
@@ -362,8 +369,8 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
           </Link>
           <div className="h-px bg-gradient-to-r from-transparent via-white/8 to-transparent mt-4 mb-3" />
           <div className="flex items-center justify-between">
-            <TierBadge tier={tier} />
-            {tier === "starter" && (
+            <TierBadge tier={tier} role={role} />
+            {tier === "starter" && role !== "admin" && (
               <a href="/formations" className="text-[9px] text-[#FF1744]/60 hover:text-[#FF1744] transition-colors font-semibold uppercase tracking-wider">
                 Upgrade
               </a>
