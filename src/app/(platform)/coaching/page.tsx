@@ -635,40 +635,7 @@ function CoachingContent() {
         </div>
       )}
 
-      {/* ═══════════════ TESTIMONIALS ═══════════════ */}
-      <div>
-        <h2 className="text-lg font-bold text-gray-900 mb-1">Ce qu&apos;ils en disent</h2>
-        <p className="text-xs text-gray-500 mb-5">Les retours de ceux qui sont passés par le coaching.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={i}
-              className="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-all"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              transition={{ delay: i * 0.08 }}
-            >
-              <div className="flex items-center gap-1 mb-3">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <IconStar key={j} className="text-amber-400 w-3.5 h-3.5" />
-                ))}
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
-              <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FF1744] to-[#D50000] flex items-center justify-center">
-                  <span className="text-[10px] font-bold text-white">{t.name.charAt(0)}</span>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-800">{t.name}</p>
-                  <p className="text-[10px] text-gray-400">{t.role}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      {/* Testimonials supprimés */}
 
       {/* ═══════════════ TRUST BADGES ═══════════════ */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
