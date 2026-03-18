@@ -6,8 +6,9 @@ import bcrypt from "bcryptjs";
 import { MODULE_1_LESSONS } from "./data/new_module_01";   // M1: Découvrir l'IA
 import { MODULE_2_LESSONS } from "./data/new_module_02";   // M2: Prompt Engineering
 import { MODULE_3_LESSONS } from "./data/new_module_03";   // M3: Sites web
-import { MODULE_4_LESSONS } from "./data/new_module_04";   // M4: Backend + APIs (merged)
-import { MODULE_6_LESSONS } from "./data/new_module_06";   // M5: Automatisations
+import { MODULE_4_LESSONS } from "./data/new_module_04";   // M4: Backend + APIs
+import { MODULE_5_LESSONS } from "./data/new_module_05";   // M5: APIs avancées, Stripe, Webhooks
+import { MODULE_6_LESSONS } from "./data/new_module_06";   // M6: Automatisations
 import { MODULE_7_LESSONS } from "./data/new_module_07";   // M6: Chatbots
 import { MODULE_8_LESSONS } from "./data/new_module_08";   // M7: Agents IA
 import { MODULE_10_LESSONS } from "./data/new_module_10";  // M8: Offre et prix
@@ -30,18 +31,19 @@ const MODULE_MAP: [any[], number][] = [
   [MODULE_1_LESSONS, 0],     // M1: Découvrir l'IA
   [MODULE_2_LESSONS, 1],     // M2: Prompt Engineering
   [MODULE_3_LESSONS, 2],     // M3: Sites web
-  [MODULE_4_LESSONS, 3],     // M4: Backend + APIs
-  [MODULE_6_LESSONS, 4],     // M5: Automatisations (was M6)
-  [MODULE_7_LESSONS, 5],     // M6: Chatbots (was M7)
-  [MODULE_8_LESSONS, 6],     // M7: Agents (was M8)
-  [MODULE_10_LESSONS, 7],    // M8: Offre et prix (was M10)
-  [MODULE_11_LESSONS, 8],    // M9: Trouver des clients (was M11)
-  [MODULE_12_LESSONS, 9],    // M10: Livrer et fidéliser (was M12)
-  [MODULE_9_LESSONS, 10],    // M11: Construire un MVP (was M9)
-  [MODULE_13_LESSONS, 11],   // M12: Scaler (was M13)
-  [MODULE_14_LESSONS, 12],   // M13: Juridique (was M14)
-  [MASTERCLASS_CLAUDE_CODE_LESSONS, 13], // M14: Claude Code
-  [MASTERCLASS_OPENCLAW_LESSONS, 14],    // M15: OpenClaw
+  [MODULE_4_LESSONS, 3],     // M4: Backend + Supabase
+  [MODULE_5_LESSONS, 4],     // M5: APIs avancées, Stripe, Webhooks
+  [MODULE_6_LESSONS, 5],     // M6: Automatisations
+  [MODULE_7_LESSONS, 6],     // M7: Chatbots
+  [MODULE_8_LESSONS, 7],     // M8: Agents IA
+  [MODULE_10_LESSONS, 8],    // M9: Offre et prix
+  [MODULE_11_LESSONS, 9],    // M10: Trouver des clients
+  [MODULE_12_LESSONS, 10],   // M11: Livrer et fidéliser
+  [MODULE_9_LESSONS, 11],    // M12: Construire un MVP
+  [MODULE_13_LESSONS, 12],   // M13: Scaler
+  [MODULE_14_LESSONS, 13],   // M14: Juridique
+  [MASTERCLASS_CLAUDE_CODE_LESSONS, 14], // M15: Claude Code
+  [MASTERCLASS_OPENCLAW_LESSONS, 15],    // M16: OpenClaw
 ];
 
 function makeQuiz(lessonOrder: number): Array<{ type: string; question: string; options: string; correctAnswer: string; explanation: string; order: number }> {
@@ -64,7 +66,7 @@ function makeQuiz(lessonOrder: number): Array<{ type: string; question: string; 
 }
 
 async function main() {
-  const totalModules = 13 + 2; // 13 formation + 2 masterclasses
+  const totalModules = 14 + 2; // 14 formation + 2 masterclasses
   console.log(`Seeding database with ${MODULE_MAP.reduce((s, [l]) => s + l.length, 0)} lessons across ${totalModules} modules...`);
 
   // Clean all data — use TRUNCATE CASCADE for PostgreSQL
@@ -96,18 +98,19 @@ async function main() {
     { title: "Découvrir l'IA et lancer ton agence", description: "Comprendre l'IA, les outils, et poser les bases de ton business", order: 1 },
     { title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", order: 2 },
     { title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne + ton portfolio", order: 3 },
-    { title: "Backend, Supabase et APIs", description: "Base de données, auth, paiements et webhooks", order: 4 },
-    { title: "Automatisations", description: "Make, n8n : créer des machines qui bossent pour toi", order: 5 },
-    { title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", order: 6 },
-    { title: "Agents IA", description: "Des IA autonomes : veille, analyse et actions", order: 7 },
-    { title: "Ton offre et tes prix", description: "De \"je sais faire\" à \"je vends\" — ton premier client", order: 8 },
-    { title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing et upselling", order: 9 },
-    { title: "Livrer et fidéliser", description: "Process de livraison, retainers et témoignages", order: 10 },
-    { title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", order: 11 },
-    { title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", order: 12 },
-    { title: "Juridique, contrats et admin", description: "Statuts, contrats, RGPD et facturation", order: 13 },
-    { title: "Masterclass Claude Code", description: "Coder avec Claude directement dans ton terminal", order: 14 },
-    { title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", order: 15 },
+    { title: "Backend, Supabase et APIs", description: "Base de données, auth et premiers pas avec Supabase", order: 4 },
+    { title: "APIs avancées, Stripe et Webhooks", description: "Paiements en ligne, webhooks et intégration IA", order: 5 },
+    { title: "Automatisations", description: "Make, n8n : créer des machines qui bossent pour toi", order: 6 },
+    { title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", order: 7 },
+    { title: "Agents IA", description: "Des IA autonomes : veille, analyse et actions", order: 8 },
+    { title: "Ton offre et tes prix", description: "De \"je sais faire\" à \"je vends\" — ton premier client", order: 9 },
+    { title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing et upselling", order: 10 },
+    { title: "Livrer et fidéliser", description: "Process de livraison, retainers et témoignages", order: 11 },
+    { title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", order: 12 },
+    { title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", order: 13 },
+    { title: "Juridique, contrats et admin", description: "Statuts, contrats, RGPD et facturation", order: 14 },
+    { title: "Masterclass Claude Code", description: "Coder avec Claude directement dans ton terminal", order: 15 },
+    { title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", order: 16 },
   ];
 
   for (const def of moduleDefinitions) {
@@ -204,8 +207,8 @@ async function main() {
 
   console.log("Seed complete!");
   console.log(`${lessonCount} lessons across ${modules.length} modules`);
-  console.log(`  → ${formationModules.length} formation modules`);
-  console.log(`  → ${masterclassModules.length} masterclass modules`);
+  console.log(`  → 14 formation modules`);
+  console.log(`  → 2 masterclass modules`);
   console.log("Test student has 3 completed lessons, 1 in progress, 3-day streak");
 }
 

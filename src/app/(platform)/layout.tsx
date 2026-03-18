@@ -33,7 +33,7 @@ export default function PlatformLayout({ children }: { children: React.ReactNode
       />
 
       {/* Mobile topbar */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-xl border-b border-gray-200 flex items-center px-4 shadow-sm">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-30 h-14 bg-white/95 backdrop-blur-xl border-b border-gray-200 flex items-center px-4 shadow-sm">
         <button
           onClick={() => setSidebarOpen(true)}
           className="p-2 text-gray-500"
@@ -50,8 +50,8 @@ export default function PlatformLayout({ children }: { children: React.ReactNode
         </span>
       </div>
 
-      <main className="md:ml-[260px] pt-14 md:pt-0 min-h-screen">
-        <div className="p-6 md:p-10 max-w-7xl">
+      <main className="lg:ml-[260px] pt-14 lg:pt-0 min-h-screen overflow-x-hidden">
+        <div className="p-4 sm:p-6 lg:p-8 xl:p-10 w-full">
           {children}
         </div>
       </main>

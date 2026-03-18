@@ -14,23 +14,24 @@ export const BADGES = [
 ] as const;
 
 export const MODULES = [
-  // ── Formation principale (13 modules) ──
+  // ── Formation principale (14 modules) ──
   { order: 1,  title: "Découvrir l'IA et lancer ton agence", description: "Comprendre l'IA, les outils, et poser les bases de ton business", category: "formation" },
   { order: 2,  title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", category: "formation" },
   { order: 3,  title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne + ton portfolio", category: "formation" },
-  { order: 4,  title: "Backend, Supabase et APIs", description: "Base de données, auth, paiements et webhooks", category: "formation" },
-  { order: 5,  title: "Automatisations", description: "Make, n8n : créer des machines qui bossent pour toi", category: "formation" },
-  { order: 6,  title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", category: "formation" },
-  { order: 7,  title: "Agents IA", description: "Des IA autonomes : veille, analyse et actions", category: "formation" },
-  { order: 8,  title: "Ton offre et tes prix", description: "De \"je sais faire\" à \"je vends\" — ton premier client", category: "formation" },
-  { order: 9,  title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing et upselling", category: "formation" },
-  { order: 10, title: "Livrer et fidéliser", description: "Process de livraison, retainers et témoignages", category: "formation" },
-  { order: 11, title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", category: "formation" },
-  { order: 12, title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", category: "formation" },
-  { order: 13, title: "Juridique, contrats et admin", description: "Statuts, contrats, RGPD et facturation", category: "formation" },
+  { order: 4,  title: "Backend, Supabase et APIs", description: "Base de données, auth et premiers pas avec Supabase", category: "formation" },
+  { order: 5,  title: "APIs avancées, Stripe et Webhooks", description: "Paiements en ligne, webhooks et intégration IA", category: "formation" },
+  { order: 6,  title: "Automatisations", description: "Make, n8n : créer des machines qui bossent pour toi", category: "formation" },
+  { order: 7,  title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", category: "formation" },
+  { order: 8,  title: "Agents IA", description: "Des IA autonomes : veille, analyse et actions", category: "formation" },
+  { order: 9,  title: "Ton offre et tes prix", description: "De \"je sais faire\" à \"je vends\" — ton premier client", category: "formation" },
+  { order: 10, title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing et upselling", category: "formation" },
+  { order: 11, title: "Livrer et fidéliser", description: "Process de livraison, retainers et témoignages", category: "formation" },
+  { order: 12, title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", category: "formation" },
+  { order: 13, title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", category: "formation" },
+  { order: 14, title: "Juridique, contrats et admin", description: "Statuts, contrats, RGPD et facturation", category: "formation" },
   // ── Masterclasses (bonus) ──
-  { order: 14, title: "Masterclass Claude Code", description: "Coder avec Claude directement dans ton terminal", category: "masterclass" },
-  { order: 15, title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", category: "masterclass" },
+  { order: 15, title: "Masterclass Claude Code", description: "Coder avec Claude directement dans ton terminal", category: "masterclass" },
+  { order: 16, title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", category: "masterclass" },
 ] as const;
 
 /* ——— Module metadata (brand, difficulty, estimated time) ——— */
@@ -83,14 +84,14 @@ export const WEEKS = [
   { week: 4, title: "Scale & Juridique", subtitle: "Juridique et masterclasses",                      modules: [13] },
 ] as const;
 
-export const MASTERCLASS_MODULES = [14, 15] as const;
+export const MASTERCLASS_MODULES = [15, 16] as const;
 
 /* ——— Tier-based module access ——— */
 
 export const TIER_MODULE_ACCESS: Record<string, number[]> = {
   starter:    [1],
-  academy:    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-  one_to_one: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+  academy:    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  one_to_one: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
 };
 
 export const TIERS = [
@@ -119,7 +120,7 @@ export const TIERS = [
     description: "La formation complète pour lancer ton agence IA",
     features: [
       { text: "Tout ce qui est dans Starter", included: true },
-      { text: "88 leçons progressives en 13 modules + 2 masterclasses", included: true },
+      { text: "93 leçons progressives en 14 modules + 2 masterclasses", included: true },
       { text: "Quiz de validation par leçon", included: true },
       { text: "Exercices pratiques", included: true },
       { text: "Assistant IA intégré", included: true },

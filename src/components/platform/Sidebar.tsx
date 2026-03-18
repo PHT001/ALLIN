@@ -288,7 +288,7 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
   return (
     <>
       {open && (
-        <div className="fixed inset-0 bg-black/60 z-40 md:hidden" onClick={onClose} />
+        <div className="fixed inset-0 bg-black/60 z-40 lg:hidden" onClick={onClose} />
       )}
 
       {/* Upgrade overlay */}
@@ -354,8 +354,8 @@ export function Sidebar({ userName, xp = 0, streak = 0, tier = "starter", role, 
       <aside
         className={cn(
           "fixed top-0 left-0 h-full w-[260px] bg-[#1A1A2E] z-50 flex flex-col transition-transform duration-300",
-          "md:translate-x-0",
-          open ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+          "lg:translate-x-0",
+          open ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
       >
         {/* Logo */}
