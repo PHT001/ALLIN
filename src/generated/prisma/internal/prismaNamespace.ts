@@ -1360,8 +1360,7 @@ export const ModuleScalarFieldEnum = {
   id: 'id',
   title: 'title',
   description: 'description',
-  order: 'order',
-  category: 'category'
+  order: 'order'
 } as const
 
 export type ModuleScalarFieldEnum = (typeof ModuleScalarFieldEnum)[keyof typeof ModuleScalarFieldEnum]
