@@ -30,26 +30,26 @@ export async function GET(req: Request) {
 
     // 14 Formation Modules
     const formationModules = await Promise.all([
-      prisma.module.create({ data: { title: "Découvrir l'IA & les opportunités", description: "Comprendre l'IA, les outils, et le potentiel business d'une agence IA", order: 1, category: "formation" } }),
-      prisma.module.create({ data: { title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", order: 2, category: "formation" } }),
-      prisma.module.create({ data: { title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne, même sans savoir coder", order: 3, category: "formation" } }),
-      prisma.module.create({ data: { title: "Backend & Bases de données", description: "Supabase : donner un cerveau et une mémoire à tes projets", order: 4, category: "formation" } }),
-      prisma.module.create({ data: { title: "APIs & Intégrations", description: "Connecter les outils entre eux : Stripe, webhooks, APIs", order: 5, category: "formation" } }),
-      prisma.module.create({ data: { title: "Automatisations", description: "Make, n8n, Zapier : créer des machines qui bossent pour toi", order: 6, category: "formation" } }),
-      prisma.module.create({ data: { title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", order: 7, category: "formation" } }),
-      prisma.module.create({ data: { title: "Agents IA autonomes", description: "Des IA qui travaillent seules : veille, prospection, analyse", order: 8, category: "formation" } }),
-      prisma.module.create({ data: { title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", order: 9, category: "formation" } }),
-      prisma.module.create({ data: { title: "Ton offre & tes prix", description: "Passer de \"je sais faire\" à \"je vends\"", order: 10, category: "formation" } }),
-      prisma.module.create({ data: { title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing", order: 11, category: "formation" } }),
-      prisma.module.create({ data: { title: "Livrer & fidéliser", description: "Un client satisfait = 3 clients en plus", order: 12, category: "formation" } }),
-      prisma.module.create({ data: { title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", order: 13, category: "formation" } }),
-      prisma.module.create({ data: { title: "Juridique, contrats & admin", description: "Statuts, contrats, RGPD, facturation et assurances", order: 14, category: "formation" } }),
+      prisma.module.create({ data: { title: "Découvrir l'IA & les opportunités", description: "Comprendre l'IA, les outils, et le potentiel business d'une agence IA", order: 1, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Prompt Engineering avancé", description: "Maîtriser Claude comme outil de travail quotidien", order: 2, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Créer des sites web avec l'IA", description: "De zéro à un site en ligne, même sans savoir coder", order: 3, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Backend & Bases de données", description: "Supabase : donner un cerveau et une mémoire à tes projets", order: 4, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "APIs & Intégrations", description: "Connecter les outils entre eux : Stripe, webhooks, APIs", order: 5, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Automatisations", description: "Make, n8n, Zapier : créer des machines qui bossent pour toi", order: 6, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Chatbots IA", description: "Le service le plus demandé et le plus facile à vendre", order: 7, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Agents IA autonomes", description: "Des IA qui travaillent seules : veille, prospection, analyse", order: 8, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Construire un MVP", description: "Ton premier vrai produit de A à Z", order: 9, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Ton offre & tes prix", description: "Passer de \"je sais faire\" à \"je vends\"", order: 10, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Trouver des clients", description: "Prospection LinkedIn, cold email, closing", order: 11, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Livrer & fidéliser", description: "Un client satisfait = 3 clients en plus", order: 12, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Scaler à 10K€/mois", description: "De freelance solo à agence rentable", order: 13, /* category: "formation" */ } }),
+      prisma.module.create({ data: { title: "Juridique, contrats & admin", description: "Statuts, contrats, RGPD, facturation et assurances", order: 14, /* category: "formation" */ } }),
     ]);
 
     // 2 Masterclasses
     const masterclassModules = await Promise.all([
-      prisma.module.create({ data: { title: "Masterclass Claude Code", description: "Ton environnement de dev IA : coder avec Claude directement dans ton terminal", order: 15, category: "masterclass" } }),
-      prisma.module.create({ data: { title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", order: 16, category: "masterclass" } }),
+      prisma.module.create({ data: { title: "Masterclass Claude Code", description: "Ton environnement de dev IA : coder avec Claude directement dans ton terminal", order: 15, /* category: "masterclass" */ } }),
+      prisma.module.create({ data: { title: "Masterclass OpenClaw", description: "Assistant IA personnel self-hosted multi-canal", order: 16, /* category: "masterclass" */ } }),
     ]);
 
     const modules = [...formationModules, ...masterclassModules];
