@@ -80,8 +80,8 @@ export const DIFFICULTY_CONFIG = {
 export const WEEKS = [
   { week: 1, title: "Fondations",      subtitle: "IA, prompting, sites web et backend",              modules: [1, 2, 3, 4] },
   { week: 2, title: "Construction",     subtitle: "Automatisations, chatbots, agents et ton offre",   modules: [5, 6, 7, 8] },
-  { week: 3, title: "Business",         subtitle: "Clients, livraison, MVP et scaling",               modules: [9, 10, 11, 12] },
-  { week: 4, title: "Scale & Juridique", subtitle: "Juridique et masterclasses",                      modules: [13] },
+  { week: 3, title: "Business",         subtitle: "Clients, livraison et ton premier MVP",             modules: [9, 10, 11, 12] },
+  { week: 4, title: "Finalisation",     subtitle: "Scaling, juridique et masterclasses",              modules: [13, 14] },
 ] as const;
 
 export const MASTERCLASS_MODULES = [15, 16] as const;
