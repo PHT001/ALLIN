@@ -319,31 +319,6 @@ export default function AssistantPage() {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4">
-            <h3 className="text-xs font-bold text-gray-900 mb-3">📊 Stats assistant</h3>
-            <div className="space-y-2.5">
-              {[
-                { label: "Temps de réponse", value: "~3s", color: "text-emerald-600" },
-                { label: "Précision", value: "96%", color: "text-blue-600" },
-                { label: "Satisfaction", value: "4.8/5", color: "text-amber-600" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex items-center justify-between">
-                  <span className="text-[10px] text-gray-400">{stat.label}</span>
-                  <span className={cn("text-[11px] font-bold", stat.color)}>{stat.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Keyboard shortcut */}
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl border border-gray-200 p-4 text-center">
-            <p className="text-[10px] text-gray-400">Appuie sur</p>
-            <div className="flex items-center justify-center gap-1.5 mt-1">
-              <kbd className="px-2 py-1 text-[10px] font-mono font-bold text-gray-500 bg-white rounded-md border border-gray-200 shadow-sm">Enter</kbd>
-              <span className="text-[10px] text-gray-300">pour envoyer</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>

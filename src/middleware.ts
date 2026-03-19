@@ -1,7 +1,14 @@
 import { withAuth } from "next-auth/middleware";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export default withAuth(
+// DEV BYPASS — remove before deploying to production
+const DEV_BYPASS = process.env.NODE_ENV === "development";
+
+function devMiddleware(req: NextRequest) {
+  return NextResponse.next();
+}
+
+const authMiddleware = withAuth(
   function middleware(req) {
     const token = req.nextauth.token;
     const pathname = req.nextUrl.pathname;
@@ -16,6 +23,8 @@ export default withAuth(
     },
   }
 );
+
+export default DEV_BYPASS ? devMiddleware : authMiddleware;
 
 export const config = {
   matcher: [
