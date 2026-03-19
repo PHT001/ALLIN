@@ -1008,5 +1008,56 @@ Prochaine action : [Quoi] le [Quand]
       { type: "mcq", question: "Ton chatbot IA plante en production chez un client un mardi matin. Les utilisateurs voient des erreurs. Quelles sont tes 3 premières actions ?", options: JSON.stringify(["Accuser réception, diagnostiquer, et envoyer un email de résolution dans 48h", "Accuser réception immédiatement, mettre en place un workaround temporaire, et corriger le bug", "Attendre de comprendre le problème avant de contacter le client", "Appeler le client pour s'excuser, puis prendre le temps de réfléchir à une solution"]), correctAnswer: "Accuser réception immédiatement, mettre en place un workaround temporaire, et corriger le bug", explanation: "Les 3 premières actions : (1) Accuser réception immédiatement. (2) Évaluer la gravité et mettre un workaround (désactiver la fonctionnalité, revenir à la version précédente). (3) Corriger le bug. Ensuite : post-mortem pour éviter la récurrence." },
     ],
   },
+
+  // ─── LEÇON 7 — Fidélisation & support client ───
+  {
+    order: 7,
+    module: 12,
+    title: "Fid\u00e9liser et g\u00e9rer le support : transformer un client en partenaire",
+    slug: "fidelisation-support-client-long-terme",
+    duration: "25 min",
+    description: "Comment mettre en place un support efficace, g\u00e9rer les SLAs, et transformer chaque client en source de revenus r\u00e9currents sur 12+ mois.",
+    content: blocks([
+      { id: "7-1", type: "heading", level: 2, text: "Pourquoi la fid\u00e9lisation vaut 5x plus que l'acquisition" },
+      { id: "7-2", type: "text", html: "<p>Trouver un nouveau client co\u00fbte <strong>5 \u00e0 7 fois plus cher</strong> que garder un client existant. Un client fid\u00e8le pendant 12 mois \u00e0 500\u20ac/mois de retainer, c'est 6000\u20ac de revenus r\u00e9currents. Deux appels de vente. Z\u00e9ro prospection.</p><p>Pourtant, la plupart des freelances IA se concentrent sur l'acquisition et n\u00e9gligent compl\u00e8tement la r\u00e9tention. R\u00e9sultat : ils courent en permanence apr\u00e8s de nouveaux clients au lieu de <strong>construire une base stable</strong>.</p>" },
+      { id: "7-3", type: "callout", variant: "tip", html: "<strong>Objectif :</strong> 60% de ton chiffre d'affaires devrait venir de clients existants (retainers + upsells). Si c'est moins, tu as un probl\u00e8me de fid\u00e9lisation, pas d'acquisition." },
+      { id: "7-4", type: "separator", style: "dots" },
+
+      { id: "7-5", type: "heading", level: 2, text: "Mettre en place un support structur\u00e9" },
+      { id: "7-6", type: "steps", steps: [
+        { title: "D\u00e9finir tes SLAs", description: "SLA = Service Level Agreement. D\u00e9finis clairement : d\u00e9lai de r\u00e9ponse (ex: 4h en semaine), d\u00e9lai de r\u00e9solution (ex: 24h bug mineur, 4h bug critique), heures de disponibilit\u00e9 (ex: lun-ven 9h-18h). \u00c9cris-le dans ton contrat." },
+        { title: "Cr\u00e9er un canal d\u00e9di\u00e9", description: "Un email support@ ou un canal Slack/Discord d\u00e9di\u00e9 par client. Jamais de support par SMS ou WhatsApp personnel \u2014 tu ne pourras pas scaler." },
+        { title: "Documenter les probl\u00e8mes", description: "Chaque ticket = date, description, gravit\u00e9, temps de r\u00e9solution, cause racine. Un simple Notion suffit. Ces donn\u00e9es te permettront de montrer ta valeur lors du renouvellement." },
+        { title: "Rapport mensuel", description: "Chaque mois, envoie un email r\u00e9capitulatif : probl\u00e8mes r\u00e9solus, uptime, am\u00e9liorations faites, suggestions pour le mois prochain. C'est ce qui justifie ton retainer." },
+      ]},
+      { id: "7-7", type: "separator", style: "line" },
+
+      { id: "7-8", type: "heading", level: 2, text: "Les 3 niveaux de retainer" },
+      { id: "7-9", type: "comparison", headers: ["Niveau", "Inclus", "Prix indicatif"], rows: [
+        { cells: ["Maintenance", "Monitoring + bug fixes + mises \u00e0 jour s\u00e9curit\u00e9", "200-500\u20ac/mois"] },
+        { cells: ["Support actif", "Maintenance + am\u00e9liorations mineures + reporting", "500-1500\u20ac/mois"] },
+        { cells: ["Partenariat", "Support actif + nouvelles fonctionnalit\u00e9s + conseil strat\u00e9gique", "1500-5000\u20ac/mois"] },
+      ]},
+      { id: "7-10", type: "text", html: "<p>Commence toujours par proposer le niveau <strong>Support actif</strong>. C'est le sweet spot : assez de valeur pour justifier le prix, pas trop de charge pour toi. Monte en <strong>Partenariat</strong> quand le client grandit.</p>" },
+      { id: "7-11", type: "separator", style: "dots" },
+
+      { id: "7-12", type: "heading", level: 2, text: "Upselling naturel : quand et comment proposer plus" },
+      { id: "7-13", type: "text", html: "<p>L'upsell ne devrait jamais ressembler \u00e0 de la vente. Il devrait \u00eatre une <strong>recommandation naturelle</strong> bas\u00e9e sur ce que tu observes chez ton client.</p><ul><li><strong>Apr\u00e8s la livraison :</strong> \u00ab Maintenant que le chatbot fonctionne, je remarque que votre \u00e9quipe perd du temps sur [X]. On pourrait automatiser \u00e7a aussi. \u00bb</li><li><strong>Lors du rapport mensuel :</strong> \u00ab Le chatbot g\u00e8re 200 conversations/mois. Avec une int\u00e9gration CRM, vous pourriez convertir 15% de plus en leads qualifi\u00e9s. \u00bb</li><li><strong>Quand le client mentionne un probl\u00e8me :</strong> \u00c9coute activement. Si le probl\u00e8me entre dans tes comp\u00e9tences, propose une solution. Sinon, recommande quelqu'un (et fais jouer le r\u00e9seau).</li></ul>" },
+
+      { id: "7-14", type: "checklist", title: "Checklist \u2014 Ton syst\u00e8me de fid\u00e9lisation", items: [
+        { id: "c1", text: "SLAs d\u00e9finis et int\u00e9gr\u00e9s dans ton mod\u00e8le de contrat" },
+        { id: "c2", text: "Canal de support d\u00e9di\u00e9 cr\u00e9\u00e9 (email pro ou Slack)" },
+        { id: "c3", text: "Template de rapport mensuel pr\u00eat (Notion ou Google Doc)" },
+        { id: "c4", text: "Grille de retainer avec 3 niveaux de prix" },
+        { id: "c5", text: "Process d'upsell identifi\u00e9 pour chaque type de service" },
+        { id: "c6", text: "Rappel calendrier : point trimestriel avec chaque client retainer" },
+      ]},
+    ]),
+    exercise: "<p><strong>Exercice :</strong> (1) R\u00e9dige tes SLAs en t'appuyant sur les exemples de la le\u00e7on. (2) Cr\u00e9e ton template de rapport mensuel avec les sections : r\u00e9sum\u00e9, probl\u00e8mes r\u00e9solus, m\u00e9triques, recommandations. (3) D\u00e9finis ta grille de retainer avec tes 3 niveaux de prix adapt\u00e9s \u00e0 ton march\u00e9.</p>",
+    quiz: [
+      { type: "mcq", question: "Quel pourcentage de votre chiffre d'affaires devrait id\u00e9alement venir de clients existants ?", options: JSON.stringify(["20%", "40%", "60%", "90%"]), correctAnswer: "60%", explanation: "60% du CA devrait venir de clients existants (retainers + upsells). Si c'est moins, vous avez un probl\u00e8me de fid\u00e9lisation, pas d'acquisition. Un client fid\u00e8le co\u00fbte 5 \u00e0 7 fois moins cher qu'un nouveau." },
+      { type: "true_false", question: "Le support client devrait \u00eatre g\u00e9r\u00e9 par WhatsApp personnel pour \u00eatre plus r\u00e9actif.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Faux", explanation: "Jamais de support par SMS ou WhatsApp personnel \u2014 vous ne pourrez pas scaler. Utilisez un email support@ ou un canal Slack/Discord d\u00e9di\u00e9 par client." },
+    ],
+  },
 ];
 

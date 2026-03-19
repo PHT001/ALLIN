@@ -9,14 +9,14 @@ import { MODULE_3_LESSONS } from "./data/new_module_03";   // M3: Sites web
 import { MODULE_4_LESSONS } from "./data/new_module_04";   // M4: Backend + APIs
 import { MODULE_5_LESSONS } from "./data/new_module_05";   // M5: APIs avancées, Stripe, Webhooks
 import { MODULE_6_LESSONS } from "./data/new_module_06";   // M6: Automatisations
-import { MODULE_7_LESSONS } from "./data/new_module_07";   // M6: Chatbots
-import { MODULE_8_LESSONS } from "./data/new_module_08";   // M7: Agents IA
-import { MODULE_10_LESSONS } from "./data/new_module_10";  // M8: Offre et prix
-import { MODULE_11_LESSONS } from "./data/new_module_11";  // M9: Trouver des clients
-import { MODULE_12_LESSONS } from "./data/new_module_12";  // M10: Livrer et fidéliser
-import { MODULE_9_LESSONS } from "./data/new_module_09";   // M11: Construire un MVP
-import { MODULE_13_LESSONS } from "./data/new_module_13";  // M12: Scaler → will be overridden
-import { MODULE_14_LESSONS } from "./data/new_module_14";  // M13: Juridique → will be overridden
+import { MODULE_7_LESSONS } from "./data/new_module_07";   // M7: Chatbots IA
+import { MODULE_8_LESSONS } from "./data/new_module_08";   // M8: Agents IA
+import { MODULE_10_LESSONS } from "./data/new_module_10";  // M9: Offre et prix
+import { MODULE_11_LESSONS } from "./data/new_module_11";  // M10: Trouver des clients (+ closing)
+import { MODULE_12_LESSONS } from "./data/new_module_12";  // M11: Livrer et fidéliser (+ support)
+import { MODULE_9_LESSONS } from "./data/new_module_09";   // M12: Construire un MVP
+import { MODULE_13_SCALER_LESSONS } from "./data/new_module_13_scaler";  // M13: Scaler à 10K€/mois
+import { MODULE_14_LESSONS } from "./data/new_module_14";  // M14: Juridique, contrats et admin
 
 // Import masterclass data
 import { MASTERCLASS_CLAUDE_CODE_LESSONS } from "./data/masterclass_claude_code";
@@ -40,7 +40,7 @@ const MODULE_MAP: [any[], number][] = [
   [MODULE_11_LESSONS, 9],    // M10: Trouver des clients
   [MODULE_12_LESSONS, 10],   // M11: Livrer et fidéliser
   [MODULE_9_LESSONS, 11],    // M12: Construire un MVP
-  [MODULE_13_LESSONS, 12],   // M13: Scaler
+  [MODULE_13_SCALER_LESSONS, 12],   // M13: Scaler à 10K€/mois
   [MODULE_14_LESSONS, 13],   // M14: Juridique
   [MASTERCLASS_CLAUDE_CODE_LESSONS, 14], // M15: Claude Code
   [MASTERCLASS_OPENCLAW_LESSONS, 15],    // M16: OpenClaw

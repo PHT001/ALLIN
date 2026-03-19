@@ -611,4 +611,55 @@ Soir :
       { type: "mcq", question: "Vous avez 15 prospects dans votre CRM Notion : 5 contactés sans réponse, 3 avec un RDV planifié, 4 avec une proposition envoyée, et 3 classés 'perdus'. Vendredi matin, vous faites votre bilan hebdomadaire. Quelle action prioritaire identifiez-vous ?", options: JSON.stringify(["Ajouter 50 nouveaux prospects car vous n'en avez pas assez", "Relancer les 4 propositions envoyées car c'est là que le closing est le plus proche, puis relancer les 5 sans réponse à J+4/J+9", "Recontacter les 3 perdus pour leur proposer une réduction", "Supprimer les prospects sans réponse pour nettoyer le CRM"]), correctAnswer: "Relancer les 4 propositions envoyées car c'est là que le closing est le plus proche, puis relancer les 5 sans réponse à J+4/J+9", explanation: "La priorité va toujours au bas du funnel : les propositions envoyées sont les plus proches du closing. Ensuite, les relances des prospects tièdes à J+4 et J+9. 80% des deals se signent après 5-8 points de contact. Un bon système de relance est votre meilleur commercial." },
     ],
   },
+
+  // ─── LEÇON 6 : Closing & Objections ───
+  {
+    order: 6,
+    module: 11,
+    title: "Closer un deal : objections, n\u00e9gociation et signature",
+    slug: "closer-deal-objections-negociation",
+    duration: "25 min",
+    description: "Comment g\u00e9rer les objections classiques des prospects, n\u00e9gocier sans brader et transformer un 'je r\u00e9fl\u00e9chis' en contrat sign\u00e9.",
+    content: blocks([
+      { id: "7-1", type: "heading", level: 2, text: "Pourquoi 70% des deals meurent apr\u00e8s la proposition" },
+      { id: "7-2", type: "text", html: "<p>Tu as fait le plus dur : trouver le prospect, le qualifier, faire l'appel d\u00e9couverte, envoyer une proposition. Et l\u00e0\u2026 silence radio. Ou pire : <strong>\u00ab Je vais r\u00e9fl\u00e9chir \u00bb</strong>.</p><p>Ce n'est pas que ton offre est mauvaise. C'est que tu n'as pas structur\u00e9 ton closing. Le closing n'est pas une manipulation \u2014 c'est l'art de <strong>lever les derni\u00e8res incertitudes</strong> du prospect pour qu'il prenne une d\u00e9cision.</p>" },
+      { id: "7-3", type: "callout", variant: "info", html: "<strong>R\u00e8gle d'or :</strong> Si le prospect dit \u00ab c'est trop cher \u00bb, il ne parle pas du prix. Il dit \u00ab je ne comprends pas encore la valeur \u00bb. Ton job n'est pas de baisser le prix, c'est de mieux expliquer le ROI." },
+      { id: "7-4", type: "separator", style: "dots" },
+
+      { id: "7-5", type: "heading", level: 2, text: "Les 5 objections que tu vas entendre (et comment y r\u00e9pondre)" },
+      { id: "7-6", type: "comparison", headers: ["Objection", "R\u00e9ponse"], rows: [
+        { cells: ["\u00ab C'est trop cher \u00bb", "Combien vous co\u00fbte le probl\u00e8me aujourd'hui ? Si mon chatbot vous fait gagner 20h/mois \u00e0 35\u20ac/h, c'est 700\u20ac/mois d'\u00e9conomie. Mon prix se rembourse en 6 semaines."] },
+        { cells: ["\u00ab Je vais r\u00e9fl\u00e9chir \u00bb", "Bien s\u00fbr. Pour vous aider \u00e0 d\u00e9cider, qu'est-ce qui vous ferait dire oui aujourd'hui ? Y a-t-il un point que je n'ai pas assez clarifi\u00e9 ?"] },
+        { cells: ["\u00ab J'ai d\u00e9j\u00e0 un prestataire \u00bb", "Parfait. Qu'est-ce qui pourrait \u00eatre am\u00e9lior\u00e9 dans ce que vous avez actuellement ? Je peux travailler en compl\u00e9ment, pas en remplacement."] },
+        { cells: ["\u00ab L'IA c'est pas fiable \u00bb", "Je comprends. C'est pour \u00e7a qu'on met en place un syst\u00e8me de validation humaine. L'IA g\u00e8re 80% du volume, votre \u00e9quipe supervise les 20% critiques."] },
+        { cells: ["\u00ab On peut commencer petit ? \u00bb", "Absolument. C'est m\u00eame ce que je recommande. On fait un projet pilote de 2 semaines, si les r\u00e9sultats sont l\u00e0, on passe \u00e0 l'\u00e9chelle."] },
+      ]},
+      { id: "7-7", type: "separator", style: "line" },
+
+      { id: "7-8", type: "heading", level: 2, text: "La structure d'un appel de closing" },
+      { id: "7-9", type: "steps", steps: [
+        { title: "R\u00e9cap (2 min)", description: "R\u00e9sume le probl\u00e8me du client et ta solution. \u00ab Si j'ai bien compris, vous perdez X heures par semaine sur Y, et la solution qu'on propose c'est Z. C'est bien \u00e7a ? \u00bb" },
+        { title: "Valider la valeur (3 min)", description: "Quantifie le ROI ensemble. \u00ab Combien d'heures votre \u00e9quipe passe sur cette t\u00e2che ? \u00c0 quel co\u00fbt horaire ? \u00bb Laisse le prospect calculer lui-m\u00eame." },
+        { title: "Traiter les objections (5 min)", description: "Pose la question : \u00ab Qu'est-ce qui vous emp\u00eacherait de d\u00e9marrer ce mois-ci ? \u00bb. Traite chaque objection avec les r\u00e9ponses ci-dessus." },
+        { title: "Proposer le next step (2 min)", description: "Ne demande pas \u00ab Alors on fait quoi ? \u00bb. Propose directement : \u00ab Je vous envoie le contrat ce soir, on d\u00e9marre lundi ? \u00bb" },
+      ]},
+      { id: "7-10", type: "callout", variant: "warning", html: "<strong>Erreur fatale :</strong> Ne jamais baisser ton prix sans retirer quelque chose. Si le client veut moins cher, propose un p\u00e9rim\u00e8tre r\u00e9duit. \u00ab Pour 2000\u20ac au lieu de 3000\u20ac, je fais le chatbot sans l'int\u00e9gration CRM. On l'ajoute en phase 2 si les r\u00e9sultats sont l\u00e0. \u00bb" },
+
+      { id: "7-11", type: "heading", level: 2, text: "N\u00e9gocier sans brader" },
+      { id: "7-12", type: "text", html: "<p>La n\u00e9gociation n'est pas un combat. C'est un \u00e9change o\u00f9 <strong>les deux parties doivent gagner</strong>. Voici les r\u00e8gles :</p><ul><li><strong>Jamais le premier \u00e0 proposer une r\u00e9duction.</strong> Attends que le client demande.</li><li><strong>Toujours \u00e9changer.</strong> Si tu baisses de 20%, retire 20% du scope.</li><li><strong>Ancre haut.</strong> Si tu veux vendre \u00e0 3000\u20ac, pr\u00e9sente d'abord l'option \u00e0 5000\u20ac.</li><li><strong>Le silence est ton alli\u00e9.</strong> Apr\u00e8s avoir annonc\u00e9 ton prix, tais-toi. Le premier qui parle perd.</li></ul>" },
+
+      { id: "7-13", type: "checklist", title: "Checklist \u2014 Ton process de closing", items: [
+        { id: "c1", text: "Liste des 5 objections pr\u00e9par\u00e9e avec tes r\u00e9ponses personnalis\u00e9es" },
+        { id: "c2", text: "Template de proposition avec 2-3 options de prix (ancrage)" },
+        { id: "c3", text: "Script d'appel closing r\u00e9p\u00e9t\u00e9 \u00e0 voix haute au moins une fois" },
+        { id: "c4", text: "Contrat pr\u00eat \u00e0 envoyer dans l'heure qui suit le 'oui'" },
+        { id: "c5", text: "Syst\u00e8me de relance post-proposition (J+2, J+5, J+10)" },
+      ]},
+    ]),
+    exercise: "<p><strong>Exercice :</strong> Prends tes 3 derni\u00e8res propositions envoy\u00e9es (ou imagine 3 sc\u00e9narios types). Pour chacune, \u00e9cris les 2 objections les plus probables et ta r\u00e9ponse. Ensuite, r\u00e9p\u00e8te ton script de closing \u00e0 voix haute \u2014 seul devant un miroir ou avec un ami. L'objectif : que \u00e7a sonne naturel, pas r\u00e9cit\u00e9.</p>",
+    quiz: [
+      { type: "mcq", question: "Un prospect dit 'c'est trop cher'. Quelle est la meilleure r\u00e9ponse ?", options: JSON.stringify(["Proposer imm\u00e9diatement une r\u00e9duction de 20%", "Quantifier le ROI pour montrer que le prix se rembourse rapidement", "Dire que c'est le prix du march\u00e9 et qu'il n'y a pas de n\u00e9gociation", "Proposer de travailler gratuitement pour prouver la valeur"]), correctAnswer: "Quantifier le ROI pour montrer que le prix se rembourse rapidement", explanation: "Quand un prospect dit 'c'est trop cher', il dit en r\u00e9alit\u00e9 'je ne comprends pas encore la valeur'. Votre job est de quantifier le ROI concr\u00e8tement, pas de baisser le prix." },
+      { type: "true_false", question: "Lors d'une n\u00e9gociation, si vous baissez votre prix de 20%, vous devez retirer 20% du scope.", options: JSON.stringify(["Vrai", "Faux"]), correctAnswer: "Vrai", explanation: "Ne jamais baisser le prix sans retirer quelque chose du p\u00e9rim\u00e8tre. Sinon vous \u00e9tablissez un pr\u00e9c\u00e9dent o\u00f9 le client sait qu'il peut toujours n\u00e9gocier." },
+    ],
+  },
 ];

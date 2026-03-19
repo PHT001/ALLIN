@@ -59,14 +59,15 @@ export const MODULE_METADATA: Record<number, ModuleMetadata> = {
   8:  { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 7  },
   // Semaine 3 — Business
   9:  { brands: [],            difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 7  },
-  10: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
-  11: { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~2h",    lessonCount: 5  },
+  10: { brands: [],            difficulty: "avance",         estimatedTime: "~3h",    lessonCount: 6  },
+  11: { brands: ["claude"],    difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 7  },
   12: { brands: [],            difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 6  },
-  // Semaine 4 — Juridique
-  13: { brands: [],            difficulty: "avance",         estimatedTime: "~1h30",  lessonCount: 4  },
+  // Semaine 4 — Finalisation
+  13: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
+  14: { brands: [],            difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
   // Masterclasses
-  14: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h",    lessonCount: 5  },
-  15: { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 7  },
+  15: { brands: ["claude"],    difficulty: "avance",         estimatedTime: "~2h30",  lessonCount: 5  },
+  16: { brands: [],            difficulty: "intermediaire",  estimatedTime: "~3h",    lessonCount: 7  },
 };
 
 export const DIFFICULTY_CONFIG = {
