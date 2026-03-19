@@ -1,36 +1,44 @@
-"use client";
+import Navbar from "@/components/landing/Navbar";
 
-import AgenceNavbar from "@/components/agence/AgenceNavbar";
-import AgenceHero from "@/components/agence/AgenceHero";
-import SectorChat from "@/components/agence/SectorChat";
-import ProblemSection from "@/components/agence/ProblemSection";
-import UrgencyTimeline from "@/components/agence/UrgencyTimeline";
-// import ServicesSection from "@/components/agence/ServicesSection";
-import ProcessSteps from "@/components/agence/ProcessSteps";
-import BeforeAfter from "@/components/agence/BeforeAfter";
-import AgenceTestimonials from "@/components/agence/AgenceTestimonials";
-import FoundersSection from "@/components/agence/FoundersSection";
-import AgenceFAQ from "@/components/agence/AgenceFAQ";
-import AgenceFooter from "@/components/agence/AgenceFooter";
-import AgenceStickyMobileCTA from "@/components/agence/AgenceStickyMobileCTA";
-import AgenceChatbot from "@/components/agence/AgenceChatbot";
+import Hero from "@/components/landing/Hero";
+import LogosBar from "@/components/landing/LogosBar";
+import PainSection from "@/components/landing/PainSection";
+import UrgenceIA from "@/components/landing/UrgenceIA";
+import DreamSection from "@/components/landing/DreamSection";
+import DarkStats from "@/components/landing/DarkStats";
+import HowItWorks from "@/components/landing/HowItWorks";
+import Features from "@/components/landing/Features";
+import VideoBlock from "@/components/landing/VideoBlock";
+import Testimonials from "@/components/landing/Testimonials";
+import Pricing from "@/components/landing/Pricing";
+import FoundersFormation from "@/components/landing/FoundersFormation";
+import FAQ from "@/components/landing/FAQ";
+import FinalCTA from "@/components/landing/FinalCTA";
+import Footer from "@/components/landing/Footer";
+import StickyFloatingCTA from "@/components/landing/StickyFloatingCTA";
+import Chatbot from "@/components/landing/Chatbot";
+
 export default function Home() {
   return (
     <>
-      <AgenceNavbar />
-      <AgenceHero />
-      <ProblemSection />
-      <UrgencyTimeline />
-      {/* <ServicesSection /> */}
-      <ProcessSteps />
-      <SectorChat />
-      {/* <BeforeAfter /> */}
-      <AgenceTestimonials />
-      <FoundersSection />
-      <AgenceFAQ />
-      <AgenceFooter />
-      <AgenceStickyMobileCTA />
-      <AgenceChatbot />
+      <Navbar />
+      <Hero />
+      <LogosBar />
+      <PainSection />
+      <DreamSection />
+      <UrgenceIA />
+      <DarkStats />
+      <HowItWorks />
+      <Features />
+      <VideoBlock />
+      <Testimonials />
+      <Pricing />
+      <FoundersFormation />
+      <FAQ />
+      <FinalCTA />
+      <Footer />
+      <StickyFloatingCTA />
+      <Chatbot />
     </>
   );
 }
