@@ -379,8 +379,8 @@ export default function LessonsPage() {
     fetch("/api/lessons")
       .then((r) => r.json())
       .then((data) => {
-        const mods = Array.isArray(data) ? data : data.modules;
-        const tier = Array.isArray(data) ? "academy" : data.userTier;
+        const mods = Array.isArray(data) ? data : (data.modules ?? []);
+        const tier = Array.isArray(data) ? "academy" : (data.userTier ?? "starter");
         setModules(mods);
         setUserTier(tier);
         const activeModule = mods.find((m: ModuleGroup) => m.lessons.some((l: LessonItem) => l.status === "in_progress"));
@@ -419,33 +419,36 @@ export default function LessonsPage() {
       <div className="mx-auto">
         {/* Hero */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="relative py-4 mb-10">
-          <div className="flex items-center justify-between gap-8">
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight text-[#111] mb-2">Formation</h1>
-              <p className="text-sm text-gray-400 mb-5 max-w-md">
-                Progresse {"\u00e0"} ton rythme et deviens un expert IA. Chaque semaine te rapproche de l&apos;autonomie compl{"\u00e8"}te.
-              </p>
-              <div className="flex items-center gap-3 flex-wrap">
-                {[
-                  { icon: IconBook, text: `${totalLessons} le\u00e7ons` },
-                  { icon: IconLayers, text: `${totalModules} modules` },
-                  { icon: IconClock, text: "4 semaines" },
-                ].map((pill) => (
-                  <span key={pill.text} className="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
-                    <pill.icon className="w-3.5 h-3.5 text-[#FF1744]" />
-                    {pill.text}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="flex-shrink-0 hidden sm:block">
-              <CircularProgress percentage={totalProgress} size={80} strokeWidth={5} strokeColor="stroke-[#FF1744]" />
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-[#111] mb-2">Formation</h1>
+            <p className="text-sm text-gray-400 mb-5 max-w-md">
+              Progresse {"\u00e0"} ton rythme et deviens un expert IA. Chaque semaine te rapproche de l&apos;autonomie compl{"\u00e8"}te.
+            </p>
+            <div className="flex items-center gap-3 flex-wrap">
+              {[
+                { icon: IconBook, text: `${totalLessons} le\u00e7ons` },
+                { icon: IconLayers, text: `${totalModules} modules` },
+                { icon: IconClock, text: "4 semaines" },
+              ].map((pill) => (
+                <span key={pill.text} className="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white px-3 py-1.5 rounded-full border border-gray-200 shadow-sm">
+                  <pill.icon className="w-3.5 h-3.5 text-[#FF1744]" />
+                  {pill.text}
+                </span>
+              ))}
+              {totalProgress > 0 && (
+                <span className="flex items-center gap-2 text-xs font-bold text-[#FF1744] bg-red-50 px-3 py-1.5 rounded-full border border-red-200">
+                  {totalProgress}% compl{"\u00e9"}t{"\u00e9"}
+                </span>
+              )}
             </div>
           </div>
         </motion.div>
 
-        {/* Weeks */}
-        <div className="space-y-14">
+        {/* ══ Timeline ══ */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-[18px] md:left-[22px] top-0 bottom-0 w-px bg-gray-200" />
+
           {WEEKS.map((week, weekIdx) => {
             const theme = WEEK_THEMES[weekIdx];
             const weekModuleOrders = week.modules as readonly number[];
@@ -456,95 +459,119 @@ export default function LessonsPage() {
             const weekProgress = weekTotal > 0 ? Math.round((weekCompleted / weekTotal) * 100) : 0;
 
             return (
-              <motion.section key={week.week} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}>
-                {/* Week Header */}
-                <div className={cn("relative overflow-hidden rounded-2xl bg-white border border-gray-200 mb-6 shadow-sm", !weekAccessible && "opacity-60")}>
-                  <div className={cn("absolute left-0 top-0 bottom-0 w-1.5 rounded-l-2xl", theme.bar)} />
-                  <div className="relative p-6 pl-7">
-                    <div className="flex items-center justify-between gap-4">
-                      <div>
-                        <div className="flex items-center gap-3 mb-1.5">
-                          <span className={cn("text-[10px] font-black uppercase tracking-[0.2em]", theme.accent)}>
-                            Semaine {week.week}
+              <motion.div key={week.week} variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }}>
+                {/* ── Week Header Node ── */}
+                <div className={cn("relative pl-14 md:pl-16 py-5", !weekAccessible && "opacity-60")}>
+                  {/* Big dot */}
+                  <div className={cn("absolute left-2.5 md:left-3 w-[22px] h-[22px] rounded-full border-4 border-white shadow-sm z-10", theme.bar)} />
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <div className="flex items-center gap-3 mb-1">
+                        <span className={cn("text-[10px] font-black uppercase tracking-[0.2em]", theme.accent)}>
+                          Semaine {week.week}
+                        </span>
+                        {weekAccessible ? (
+                          <span className={cn("text-[10px] font-semibold px-2 py-0.5 rounded-full border", theme.accentBg, theme.accent, theme.border)}>
+                            {userTier === "starter" && week.week === 1 ? "Starter" : "Academy"}
                           </span>
-                          {weekAccessible ? (
-                            <span className={cn("text-[10px] font-semibold px-2 py-0.5 rounded-full border", theme.accentBg, theme.accent, theme.border)}>
-                              {userTier === "starter" && week.week === 1 ? "Starter" : "Academy"}
-                            </span>
-                          ) : (
-                            <span className="flex items-center gap-1 text-[10px] font-semibold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-200">
-                              <IconLock className="w-2.5 h-2.5" /> Academy
-                            </span>
-                          )}
-                        </div>
-                        <h2 className="text-xl font-bold text-[#111] mb-1">{week.title}</h2>
-                        <p className="text-sm text-gray-400 max-w-lg">{week.subtitle}</p>
+                        ) : (
+                          <span className="flex items-center gap-1 text-[10px] font-semibold text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full border border-gray-200">
+                            <IconLock className="w-2.5 h-2.5" /> Academy
+                          </span>
+                        )}
                       </div>
-                      {weekAccessible && weekTotal > 0 && (
-                        <div className="flex-shrink-0 hidden sm:flex flex-col items-center gap-1.5">
-                          <CircularProgress percentage={weekProgress} size={52} strokeWidth={3.5} strokeColor={theme.ring} />
-                          <span className="text-[10px] text-gray-400 font-semibold">{weekCompleted}/{weekTotal}</span>
-                        </div>
-                      )}
+                      <h2 className="text-lg font-bold text-[#111]">{week.title}</h2>
+                      <p className="text-xs text-gray-400">{week.subtitle}</p>
                     </div>
+                    {weekAccessible && weekTotal > 0 && (
+                      <div className="flex-shrink-0 hidden sm:flex items-center gap-2">
+                        <div className="w-24 h-2 rounded-full bg-gray-100 overflow-hidden">
+                          <div className={cn("h-full rounded-full transition-all duration-700", theme.bar)} style={{ width: `${weekProgress}%` }} />
+                        </div>
+                        <span className="text-[10px] text-gray-400 font-semibold whitespace-nowrap">{weekCompleted}/{weekTotal}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                {/* Module Cards */}
-                <motion.div variants={cardContainerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-40px" }} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                  {weekModules.map((mod) => {
-                    const modAccessible = accessibleModules.includes(mod.order);
-                    const completed = mod.lessons.filter((l) => l.status === "completed").length;
-                    const pct = mod.lessons.length > 0 ? Math.round((completed / mod.lessons.length) * 100) : 0;
-                    const isExpanded = expandedModule === mod.order;
-                    const hasActive = mod.lessons.some((l) => l.status === "in_progress");
-                    const isModuleCompleted = completed === mod.lessons.length && mod.lessons.length > 0;
-                    const meta = MODULE_METADATA[mod.order] ?? DEFAULT_META;
-                    const hasClaude = meta.brands.includes("claude");
-                    const hasClawBot = meta.brands.includes("clawbot");
+                {/* ── Module Nodes ── */}
+                {weekModules.map((mod, modIdx) => {
+                  const modAccessible = accessibleModules.includes(mod.order);
+                  const completed = mod.lessons.filter((l) => l.status === "completed").length;
+                  const pct = mod.lessons.length > 0 ? Math.round((completed / mod.lessons.length) * 100) : 0;
+                  const isExpanded = expandedModule === mod.order;
+                  const hasActive = mod.lessons.some((l) => l.status === "in_progress");
+                  const isModuleCompleted = completed === mod.lessons.length && mod.lessons.length > 0;
+                  const meta = MODULE_METADATA[mod.order] ?? DEFAULT_META;
+                  const hasClaude = meta.brands.includes("claude");
+                  const hasClawBot = meta.brands.includes("clawbot");
 
-                    return (
-                      <motion.div
-                        key={mod.id}
-                        variants={cardVariants}
-                        className={cn(
-                          "group relative rounded-2xl border overflow-hidden transition-all duration-300 bg-white",
-                          isExpanded && "lg:col-span-2",
-                          modAccessible
-                            ? "border-gray-200 hover:shadow-lg hover:shadow-gray-100 hover:border-gray-300"
-                            : "border-gray-100 bg-gray-50/50",
+                  return (
+                    <motion.div
+                      key={mod.id}
+                      id={`module-${mod.order}`}
+                      variants={cardVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "-30px" }}
+                      transition={{ delay: modIdx * 0.08 }}
+                      className="relative pl-14 md:pl-16 pb-4"
+                    >
+                      {/* Timeline dot */}
+                      <div className="absolute left-[9px] md:left-[13px] z-10 mt-5">
+                        {isModuleCompleted ? (
+                          <div className={cn("w-[18px] h-[18px] rounded-full flex items-center justify-center shadow-sm", theme.bar)}>
+                            <IconCheck className="text-white w-2.5 h-2.5" />
+                          </div>
+                        ) : hasActive ? (
+                          <div className="relative">
+                            <div className={cn("w-[18px] h-[18px] rounded-full border-[3px] bg-white", `border-current ${theme.accent}`)} />
+                            <div className={cn("absolute inset-0 w-[18px] h-[18px] rounded-full border-[3px] border-current animate-ping opacity-30", theme.accent)} />
+                          </div>
+                        ) : modAccessible ? (
+                          <div className="w-3 h-3 ml-[3px] rounded-full border-2 border-gray-300 bg-white" />
+                        ) : (
+                          <div className="w-3 h-3 ml-[3px] rounded-full bg-gray-200" />
                         )}
-                      >
-                        {/* Module header */}
+                      </div>
+
+                      {/* Module card */}
+                      <div className={cn(
+                        "rounded-2xl border overflow-hidden transition-all duration-300 bg-white",
+                        isExpanded ? "shadow-lg border-gray-300" : "shadow-sm",
+                        modAccessible
+                          ? "border-gray-200 hover:shadow-md hover:border-gray-300"
+                          : "border-gray-100 bg-gray-50/50",
+                      )}>
                         <button
                           onClick={() => { if (!modAccessible) return; setExpandedModule(isExpanded ? null : mod.order); }}
                           disabled={!modAccessible}
-                          className={cn("w-full flex items-center gap-4 p-5 text-left transition-colors", modAccessible ? "cursor-pointer" : "cursor-default")}
+                          className={cn("w-full flex items-center gap-4 p-4 md:p-5 text-left transition-colors", modAccessible ? "cursor-pointer" : "cursor-default")}
                         >
                           <div className={cn(
-                            "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 border",
+                            "w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 border",
                             modAccessible
-                              ? cn(theme.lightBg, theme.border, hasActive && "ring-2 ring-[#FF1744]/20")
+                              ? cn(theme.lightBg, theme.border, hasActive && "ring-2 ring-offset-1 ring-[#FF1744]/20")
                               : "bg-gray-100 border-gray-200"
                           )}>
                             {modAccessible ? (
-                              <span className={cn("text-lg font-black", theme.accent)}>{String(mod.order).padStart(2, "0")}</span>
+                              <span className={cn("text-base font-black", theme.accent)}>{String(mod.order).padStart(2, "0")}</span>
                             ) : (
-                              <IconLock className="text-gray-300 w-5 h-5" />
+                              <IconLock className="text-gray-300 w-4 h-4" />
                             )}
                           </div>
 
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
+                            <div className="flex items-center gap-2 mb-0.5 flex-wrap">
                               <h3 className={cn("text-sm font-bold", modAccessible ? "text-[#111]" : "text-gray-400")}>{mod.title}</h3>
                               {hasClaude && (
-                                <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-orange-50 border border-orange-200 flex-shrink-0" title="Claude">
-                                  <IconClaude className="text-orange-500 w-3.5 h-3.5" />
+                                <span className="flex items-center justify-center w-5 h-5 rounded-md bg-orange-50 border border-orange-200 flex-shrink-0" title="Claude">
+                                  <IconClaude className="text-orange-500 w-3 h-3" />
                                 </span>
                               )}
                               {hasClawBot && (
-                                <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-red-50 border border-red-200 flex-shrink-0" title="ClawBot">
-                                  <IconOpenClaw className="text-red-500 w-3.5 h-3.5" />
+                                <span className="flex items-center justify-center w-5 h-5 rounded-md bg-red-50 border border-red-200 flex-shrink-0" title="ClawBot">
+                                  <IconOpenClaw className="text-red-500 w-3 h-3" />
                                 </span>
                               )}
                               {modAccessible && isModuleCompleted && (
@@ -558,8 +585,7 @@ export default function LessonsPage() {
                                 </span>
                               )}
                             </div>
-                            <p className={cn("text-xs mb-2", modAccessible ? "text-gray-400" : "text-gray-300")}>{mod.description}</p>
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-3 mt-1">
                               <span className={cn("flex items-center gap-1 text-[10px]", modAccessible ? "text-gray-400" : "text-gray-300")}>
                                 <IconClock /> {meta.estimatedTime}
                               </span>
@@ -577,7 +603,7 @@ export default function LessonsPage() {
                           {modAccessible && (
                             <div className="flex items-center gap-3 flex-shrink-0">
                               <div className="hidden sm:block">
-                                <div className="w-20 h-2 rounded-full bg-gray-100 overflow-hidden">
+                                <div className="w-16 h-1.5 rounded-full bg-gray-100 overflow-hidden">
                                   <div className={cn("h-full rounded-full transition-all duration-700", theme.bar)} style={{ width: `${pct}%`, opacity: pct > 0 ? 1 : 0 }} />
                                 </div>
                               </div>
@@ -588,113 +614,117 @@ export default function LessonsPage() {
 
                         {/* Lock overlay */}
                         {!modAccessible && (
-                          <div className="absolute inset-0 flex items-end rounded-2xl bg-gradient-to-t from-white/90 via-white/40 to-transparent">
-                            <div className="w-full p-5 pt-12 rounded-b-2xl">
+                          <div className="absolute inset-0 flex items-end rounded-2xl bg-gradient-to-t from-white/90 via-white/40 to-transparent pointer-events-none">
+                            <div className="w-full p-4 pt-10 rounded-b-2xl">
                               <div className="flex items-center gap-2">
                                 <IconLock className="text-gray-400 w-3.5 h-3.5" />
-                                <span className="text-[11px] text-gray-400">{meta.lessonCount} le{"\u00e7"}ons {"\u2014"} {mod.title}</span>
+                                <span className="text-[11px] text-gray-400">{meta.lessonCount} le{"\u00e7"}ons</span>
                               </div>
                             </div>
                           </div>
                         )}
 
                         {/* Lessons list */}
-                        {modAccessible && isExpanded && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="border-t border-gray-100"
-                          >
-                            {mod.lessons.map((lesson, idx) => {
-                              const isLocked = lesson.status === "locked";
-                              const isActive = lesson.status === "in_progress";
-                              const isCompleted = lesson.status === "completed";
-                              const isLast = idx === mod.lessons.length - 1;
-                              const isSelected = openLessonSlug === lesson.slug;
+                        <AnimatePresence>
+                          {modAccessible && isExpanded && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3, ease: "easeOut" }}
+                              className="border-t border-gray-100"
+                            >
+                              {mod.lessons.map((lesson, idx) => {
+                                const isLocked = lesson.status === "locked";
+                                const isActive = lesson.status === "in_progress";
+                                const isCompleted = lesson.status === "completed";
+                                const isLast = idx === mod.lessons.length - 1;
+                                const isSelected = openLessonSlug === lesson.slug;
 
-                              const innerContent = (
-                                <>
-                                  <div className="flex-shrink-0 mt-0.5">
-                                    {isCompleted && (
-                                      <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center">
-                                        <IconCheck className="text-emerald-500" />
-                                      </div>
-                                    )}
-                                    {isActive && (
-                                      <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center border", theme.accentBg, theme.border)}>
-                                        <IconPlay className={theme.accent} />
-                                      </div>
-                                    )}
-                                    {isLocked && (
-                                      <div className="w-8 h-8 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center">
-                                        <IconLock className="text-gray-300" />
-                                      </div>
-                                    )}
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2 mb-1">
-                                      <span className="text-[10px] font-bold text-gray-300 uppercase tracking-wide">{String(lesson.order).padStart(2, "0")}</span>
-                                      <h3 className={cn("text-sm font-semibold truncate", isLocked ? "text-gray-300" : "text-[#111]")}>{lesson.title}</h3>
-                                    </div>
-                                    <p className={cn("text-xs leading-relaxed line-clamp-2", isLocked ? "text-gray-300" : "text-gray-400")}>{lesson.description}</p>
-                                    <div className="flex items-center gap-3 mt-2">
-                                      <span className={cn("flex items-center gap-1 text-[10px]", isLocked ? "text-gray-300" : "text-gray-400")}><IconClock /> {lesson.duration}</span>
-                                      {lesson.hasQuiz && (
-                                        <span className={cn("flex items-center gap-1 text-[10px]", lesson.quizPassed ? "text-emerald-500" : isLocked ? "text-gray-300" : "text-gray-400")}>
-                                          <IconQuiz /> {lesson.quizPassed ? "Quiz valid\u00e9" : "Quiz inclus"}
-                                        </span>
+                                const innerContent = (
+                                  <>
+                                    <div className="flex-shrink-0 mt-0.5">
+                                      {isCompleted && (
+                                        <div className="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center">
+                                          <IconCheck className="text-emerald-500 w-3 h-3" />
+                                        </div>
                                       )}
-                                      {isCompleted && lesson.xpEarned > 0 && (
-                                        <span className="text-[10px] text-[#FF1744] font-semibold">+{lesson.xpEarned} XP</span>
+                                      {isActive && (
+                                        <div className={cn("w-7 h-7 rounded-lg flex items-center justify-center border", theme.accentBg, theme.border)}>
+                                          <IconPlay className={cn(theme.accent, "w-3 h-3")} />
+                                        </div>
+                                      )}
+                                      {isLocked && (
+                                        <div className="w-7 h-7 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center">
+                                          <IconLock className="text-gray-300 w-3 h-3" />
+                                        </div>
                                       )}
                                     </div>
-                                  </div>
-                                  {!isLocked && (
-                                    <div className="flex-shrink-0 self-center">
-                                      <IconChevron className={cn("text-gray-300 transition-colors", isActive && theme.accent)} />
+                                    <div className="flex-1 min-w-0">
+                                      <div className="flex items-center gap-2 mb-0.5">
+                                        <span className="text-[10px] font-bold text-gray-300 uppercase tracking-wide">{String(lesson.order).padStart(2, "0")}</span>
+                                        <h4 className={cn("text-sm font-semibold truncate", isLocked ? "text-gray-300" : "text-[#111]")}>{lesson.title}</h4>
+                                      </div>
+                                      <div className="flex items-center gap-3 mt-1">
+                                        <span className={cn("flex items-center gap-1 text-[10px]", isLocked ? "text-gray-300" : "text-gray-400")}><IconClock /> {lesson.duration}</span>
+                                        {lesson.hasQuiz && (
+                                          <span className={cn("flex items-center gap-1 text-[10px]", lesson.quizPassed ? "text-emerald-500" : isLocked ? "text-gray-300" : "text-gray-400")}>
+                                            <IconQuiz /> {lesson.quizPassed ? "Quiz valid\u00e9" : "Quiz"}
+                                          </span>
+                                        )}
+                                        {isCompleted && lesson.xpEarned > 0 && (
+                                          <span className="text-[10px] text-[#FF1744] font-semibold">+{lesson.xpEarned} XP</span>
+                                        )}
+                                      </div>
                                     </div>
-                                  )}
-                                </>
-                              );
+                                    {!isLocked && (
+                                      <div className="flex-shrink-0 self-center">
+                                        <IconChevron className={cn("text-gray-300 transition-colors", isActive && theme.accent)} />
+                                      </div>
+                                    )}
+                                  </>
+                                );
 
-                              const sharedClassName = cn(
-                                "flex items-start gap-4 px-5 py-4 transition-all relative",
-                                !isLast && "border-b border-gray-50",
-                                isLocked ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover:bg-gray-50/50",
-                                isActive && "bg-gray-50/30",
-                                isSelected && "bg-[#FF1744]/5 border-l-2 border-l-[#FF1744]"
-                              );
+                                const sharedClassName = cn(
+                                  "flex items-center gap-3 px-4 py-3 transition-all relative",
+                                  !isLast && "border-b border-gray-50",
+                                  isLocked ? "opacity-50 cursor-not-allowed" : "cursor-pointer hover:bg-gray-50/50",
+                                  isActive && "bg-gray-50/30",
+                                  isSelected && "bg-[#FF1744]/5 border-l-2 border-l-[#FF1744]"
+                                );
 
-                              return isLocked ? (
-                                <div key={lesson.id} className={sharedClassName}>{innerContent}</div>
-                              ) : (
-                                <button key={lesson.id} onClick={() => openLesson(lesson.slug)} className={cn(sharedClassName, "w-full text-left")}>{innerContent}</button>
-                              );
-                            })}
-                          </motion.div>
-                        )}
-                      </motion.div>
-                    );
-                  })}
-                </motion.div>
+                                return isLocked ? (
+                                  <div key={lesson.id} className={sharedClassName}>{innerContent}</div>
+                                ) : (
+                                  <button key={lesson.id} onClick={() => openLesson(lesson.slug)} className={cn(sharedClassName, "w-full text-left")}>{innerContent}</button>
+                                );
+                              })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </motion.div>
+                  );
+                })}
 
-                {/* Upgrade CTA */}
+                {/* Upgrade CTA on timeline */}
                 {!weekAccessible && (
-                  <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="mt-4">
+                  <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative pl-14 md:pl-16 pb-4">
+                    <div className="absolute left-[12px] md:left-[16px] z-10 mt-4">
+                      <div className="w-[12px] h-[12px] rounded-full border-2 border-dashed border-red-300 bg-red-50" />
+                    </div>
                     <a
                       href="/profile?tab=subscription"
-                      className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border-2 border-dashed border-red-200 bg-red-50/50 transition-all group hover:border-[#FF1744] hover:bg-red-50"
+                      className="flex items-center gap-3 px-5 py-3.5 rounded-xl border-2 border-dashed border-red-200 bg-red-50/50 transition-all group hover:border-[#FF1744] hover:bg-red-50"
                     >
                       <span className="text-xs font-semibold text-gray-500 group-hover:text-[#111] transition-colors">
-                        D{"\u00e9"}bloquer 12 modules suppl{"\u00e9"}mentaires {"\u2014"} 397{"\u20ac"}
+                        D{"\u00e9"}bloquer les modules suivants {"\u2014"} 397{"\u20ac"}
                       </span>
                       <IconArrowRight className="w-3.5 h-3.5 transition-all group-hover:translate-x-0.5 text-[#FF1744]" />
                     </a>
                   </motion.div>
                 )}
-              </motion.section>
+              </motion.div>
             );
           })}
         </div>
