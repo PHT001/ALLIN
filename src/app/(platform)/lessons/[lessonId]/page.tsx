@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -32,6 +33,8 @@ interface LessonData {
 
 export default function LessonPage() {
   const params = useParams();
+  const { data: session } = useSession();
+  const isAdmin = session?.user?.role === "admin";
   const [lesson, setLesson] = useState<LessonData | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -69,7 +72,7 @@ export default function LessonPage() {
 
   const format = detectContentFormat(lesson.content);
   const isBlocks = format === "blocks";
-  const showUpsell = lesson.order === 10;
+  const showUpsell = lesson.order === 10 && !isAdmin;
 
   // Navigation footer
   const navigationFooter = (

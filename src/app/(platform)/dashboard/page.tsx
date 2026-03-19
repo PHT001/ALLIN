@@ -96,6 +96,7 @@ export default function DashboardPage() {
 
   const progress = data ? Math.round((data.completedLessons / data.totalLessons) * 100) : 0;
   const firstName = session?.user?.name?.split(" ")[0] || "\u00c9l\u00e8ve";
+  const isAdmin = session?.user?.role === "admin";
 
   if (loading) {
     return (
@@ -299,8 +300,8 @@ export default function DashboardPage() {
               ))}
             </div>
 
-            {/* Upgrade */}
-            {nextPlan && (
+            {/* Upgrade — hidden for admins */}
+            {nextPlan && !isAdmin && (
               <div className="flex items-center justify-between p-4 rounded-xl border-2 border-dashed border-red-200 bg-red-50/60">
                 <div>
                   <p className="text-xs font-bold text-[#111]">Passer &agrave; <span className="text-[#FF1744]">{nextPlan.name}</span></p>
